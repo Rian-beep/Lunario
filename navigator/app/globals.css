@@ -2827,6 +2827,7 @@ select:focus-visible {
   }
   .site-drawer {
     position: absolute;
+    grid-area: auto;
     left: 16px;
     right: auto;
     top: auto;
@@ -2834,9 +2835,15 @@ select:focus-visible {
     width: min(var(--site-width), calc(100% - 32px));
     max-height: 55%;
     min-height: 0;
+    /* Keep all controls reachable when the drawer chrome exceeds its height. */
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    z-index: 16;
   }
+  .site-drawer > * { flex-shrink: 0; }
   .workspace:has(.inspector) .site-drawer { max-width: calc(40% - 32px); }
-  .site-list { min-height: 0; }
+  .site-list { flex: none; min-height: 0; max-height: none; overflow: visible; }
   .workspace:has(.inspector) .workspace-heading { max-width: calc(100% - min(60%, var(--active-inspector-width)) - 32px); }
   .map-bottom-tools { top: auto; bottom: 40px; }
   .layer-popover { top: auto; bottom: 92px; max-height: calc(100% - 110px); overflow: auto; }
