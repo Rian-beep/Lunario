@@ -129,7 +129,7 @@ test('audit ice evidence retains association counts and missing abundance; LCROS
  const response=responses.find(row=>row.url.includes('20140005563.pdf'))!,original=json('pipeline/ice/source-manifest.json').sources[1].originals[0];
  assert.equal(response.sha256,original.sha256);assert.equal(response.bytes,original.bytes);
  const dir=mkdtempSync(join(tmpdir(),'audit-sources-lcross-'));
- try{const path=join(dir,'source.pdf');writeFileSync(path,Buffer.from(response.bodyBase64,'base64'));const result=spawnSync('pdftotext',['-layout',path,'-'],{encoding:'utf8'});assert.equal(result.status,0,result.stderr);assert.match(result.stdout,/84\.6796/);assert.match(result.stdout,/48\.7093/);assert.match(result.stdout,/11:31:19\.506/);}finally{rmSync(dir,{recursive:true,force:true});}
+ try{const path=join(dir,'source.pdf');writeFileSync(path,Buffer.from(response.bodyBase64,'base64'));const result=spawnSync('pdftotext',['-layout',path,'-'],{encoding:'utf8'});assert.ifError(result.error);assert.equal(result.status,0,result.stderr);assert.match(result.stdout,/84\.6796/);assert.match(result.stdout,/48\.7093/);assert.match(result.stdout,/11:31:19\.506/);}finally{rmSync(dir,{recursive:true,force:true});}
  // Fresh M3 archive re-extraction is uncertain when the author host returns HTTP 403.
  assert.ok(capture.failures.some((f:{name:string})=>f.name==='lemelin'));
 });
