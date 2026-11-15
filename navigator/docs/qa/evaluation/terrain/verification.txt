@@ -1,0 +1,108 @@
+Material regression BEFORE (exit 1; 1 pass / 3 fail)
+    -   blendSrc: 204,
+    -   blendSrcAlpha: null,
+    ...
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 1
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 240.927997
+Full local log: /tmp/lunario-eval-terrain-material-before.txt
+
+Listener regression BEFORE (exit 1; 1 fail / 13 filtered skips)
+# Subtest: normal cached tile disposal releases actual parsed geometry and materials
+ok 14 - normal cached tile disposal releases actual parsed geometry and materials # SKIP test name does not match pattern
+  ---
+  duration_ms: 0.475263
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 13
+# todo 0
+# duration_ms 242.105384
+Full local log: /tmp/lunario-eval-terrain-listener-before.txt
+
+npx tsx --test tests/ion/*.test.ts tests/terrain-evaluation/*.test.ts (exit 0)
+  ---
+  duration_ms: 0.302559
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 304.023266
+Full local log: /tmp/lunario-eval-terrain-focused.txt
+
+npm test (exit 0)
+  ---
+  duration_ms: 15.978555
+  ...
+1..1368
+# tests 1371
+# suites 0
+# pass 1371
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 33068.590158
+Full local log: /tmp/lunario-eval-terrain-full-tests.txt
+
+npm run typecheck -- --incremental false (exit 0)
+
+> solarreach-navigator@0.1.0 typecheck
+> tsc --noEmit --incremental false
+
+
+Full local log: /tmp/lunario-eval-terrain-typecheck.txt
+
+npm run lint (exit 1)
+
+> solarreach-navigator@0.1.0 lint
+> eslint
+
+
+/tmp/lunario-eval-terrain/navigator/components/workbench/scene/lunar-terrain.js
+  1:1  error  Do not use "@ts-nocheck" because it alters compilation errors  @typescript-eslint/ban-ts-comment
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+Full local log: /tmp/lunario-eval-terrain-lint.txt
+
+Exact base isolated: npm --prefix /tmp/lunario-eval-terrain-lint-base/navigator run lint (exit 1)
+
+> solarreach-navigator@0.1.0 lint
+> eslint
+
+
+/tmp/lunario-eval-terrain-lint-base/navigator/components/workbench/scene/lunar-terrain.js
+  1:1  error  Do not use "@ts-nocheck" because it alters compilation errors  @typescript-eslint/ban-ts-comment
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+Full local log: /tmp/lunario-eval-terrain-lint-base.txt
+
+npx eslint components/workbench/scene/ion lib/ion tests/ion tests/terrain-evaluation scripts/evaluation-terrain (exit 0; no diagnostics)
+
+Full local log: /tmp/lunario-eval-terrain-owned-lint.txt
+
+python3 scripts/compile-scientific-verification.py --check (exit 0)
+{"publicationCheck": "pass", "counts": {"verified": 41, "uncertain": 21, "failing": 0}}
+
+Full local log: /tmp/lunario-eval-terrain-publication-check.txt

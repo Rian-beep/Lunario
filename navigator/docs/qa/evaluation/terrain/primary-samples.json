@@ -1,0 +1,435 @@
+{
+  "retrievedUtc": "2026-11-15T18:39:47.977Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "bytes": 2752512,
+  "receipts": [
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+      "range": "bytes=0-65535",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "bc8d3d7b03f1650284d2a34611e5192b11f04c277617dd3cc0e9886b3566ac39",
+      "file": "range-0.bin",
+      "contentRange": "bytes 0-65535/40980806",
+      "etag": "W/\"2715146-17285c863d0\"",
+      "lastModified": "Fri, 05 Jun 2020 18:40:02 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+      "range": "bytes=20447232-20578303",
+      "status": 206,
+      "bytes": 131072,
+      "sha256": "62bbc8482055db2110dc9bcc125adf3964bc722a5a5b217fd930b8fd14969ff4",
+      "file": "range-1.bin",
+      "contentRange": "bytes 20447232-20578303/40980806",
+      "etag": "W/\"2715146-17285c863d0\"",
+      "lastModified": "Fri, 05 Jun 2020 18:40:02 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+      "range": "bytes=13631488-13697023",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "a25bc2ccc3bd8d1bc9910454941cdb1423a6b8f89489a5be42b576401a2a780a",
+      "file": "range-2.bin",
+      "contentRange": "bytes 13631488-13697023/40980806",
+      "etag": "W/\"2715146-17285c863d0\"",
+      "lastModified": "Fri, 05 Jun 2020 18:40:02 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+      "range": "bytes=27262976-27394047",
+      "status": 206,
+      "bytes": 131072,
+      "sha256": "2a7b0eb6720715af8c85612063decfe4dfbe0851d277a213cdc8753629a69000",
+      "file": "range-3.bin",
+      "contentRange": "bytes 27262976-27394047/40980806",
+      "etag": "W/\"2715146-17285c863d0\"",
+      "lastModified": "Fri, 05 Jun 2020 18:40:02 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+      "range": "bytes=0-65535",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "3b0211f63c4c7d84c4c8ab487b8c8bc315b66263bf3b296188325d9d6bb9f1ea",
+      "file": "range-4.bin",
+      "contentRange": "bytes 0-65535/2696082051",
+      "etag": "W/\"a0b2f283-189327867b8\"",
+      "lastModified": "Fri, 07 Jul 2023 22:28:19 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+      "range": "bytes=1731723264-1732444159",
+      "status": 206,
+      "bytes": 720896,
+      "sha256": "aceec2ac785aebe2a94645b33f66d4bc329238a81a6c896692bec7cc6e372a1b",
+      "file": "range-5.bin",
+      "contentRange": "bytes 1731723264-1732444159/2696082051",
+      "etag": "W/\"a0b2f283-189327867b8\"",
+      "lastModified": "Fri, 07 Jul 2023 22:28:19 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+      "range": "bytes=1696923648-1697579007",
+      "status": 206,
+      "bytes": 655360,
+      "sha256": "d969bf1e74095f127a8bd1364ee00b6fcb3816db6224464b8ed453744f4c075b",
+      "file": "range-6.bin",
+      "contentRange": "bytes 1696923648-1697579007/2696082051",
+      "etag": "W/\"a0b2f283-189327867b8\"",
+      "lastModified": "Fri, 07 Jul 2023 22:28:19 GMT"
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+      "range": "bytes=1766981632-1767636991",
+      "status": 206,
+      "bytes": 655360,
+      "sha256": "ace8f4ce0f2ca25589689525ac1a184f9c5938b0b1dd894e8b1e19d1735167fa",
+      "file": "range-7.bin",
+      "contentRange": "bytes 1766981632-1767636991/2696082051",
+      "etag": "W/\"a0b2f283-189327867b8\"",
+      "lastModified": "Fri, 07 Jul 2023 22:28:19 GMT"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "range": "bytes=0-65535",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "7699c3cef1863b641ee56e18e9b0b037a65bf3718fcc5dbbe045b4e07363d50b",
+      "file": "range-8.bin",
+      "contentRange": "bytes 0-65535/25020674",
+      "etag": "\"4006d7fa8cc11def4d79edb1ad04728d\"",
+      "lastModified": "Fri, 14 Aug 2026 18:27:21 GMT"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "range": "bytes=12517376-12582911",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "07ebba1ad53883bfcb806c9be8501d7528cb087b27186e90e2740640ddc41ea2",
+      "file": "range-9.bin",
+      "contentRange": "bytes 12517376-12582911/25020674",
+      "etag": "\"4006d7fa8cc11def4d79edb1ad04728d\"",
+      "lastModified": "Fri, 14 Aug 2026 18:27:21 GMT"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "range": "bytes=8323072-8388607",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "005f5b7a36d6dc4eb67ba05a29ad997361d750b087ac3c978cd05fe9819d9b9c",
+      "file": "range-10.bin",
+      "contentRange": "bytes 8323072-8388607/25020674",
+      "etag": "\"4006d7fa8cc11def4d79edb1ad04728d\"",
+      "lastModified": "Fri, 14 Aug 2026 18:27:21 GMT"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "range": "bytes=16646144-16711679",
+      "status": 206,
+      "bytes": 65536,
+      "sha256": "b9429d2dd27f00569289ef7051e96bcf874b217bf98d7482b26bdc3d115e430d",
+      "file": "range-11.bin",
+      "contentRange": "bytes 16646144-16711679/25020674",
+      "etag": "\"4006d7fa8cc11def4d79edb1ad04728d\"",
+      "lastModified": "Fri, 14 Aug 2026 18:27:21 GMT"
+    }
+  ],
+  "results": [
+    {
+      "id": "shackleton-rim-5m",
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site04/Site04_final_adj_5mpp_surf.tif",
+      "width": 3200,
+      "height": 3200,
+      "origin": [
+        -9000,
+        1000,
+        0
+      ],
+      "resolution": [
+        5,
+        -5,
+        0
+      ],
+      "pixelIsArea": true,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "unnamed",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = unnamed ellipse|Datum = unknown|Ellipsoid = unnamed|Primem = Greenwich|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "samples": [
+        {
+          "row": 1600,
+          "col": 1600,
+          "x": -997.5,
+          "y": -7002.5,
+          "sourcePixelCentre": [
+            1600,
+            1600
+          ],
+          "sourceStencil": [
+            767.9786376953125,
+            764.6425170898438,
+            767.6083984375,
+            764.474365234375
+          ],
+          "sourceM": 767.9786376953125,
+          "decodedM": 768,
+          "errorM": 0.0213623046875
+        },
+        {
+          "row": 1066,
+          "col": 1066,
+          "x": -3667.5,
+          "y": -4332.5,
+          "sourcePixelCentre": [
+            1066,
+            1066
+          ],
+          "sourceStencil": [
+            1385.2972412109375,
+            1386.3162841796875,
+            1385.9420166015625,
+            1386.987548828125
+          ],
+          "sourceM": 1385.2972412109375,
+          "decodedM": 1385.5,
+          "errorM": 0.2027587890625
+        },
+        {
+          "row": 2133,
+          "col": 2133,
+          "x": 1667.5,
+          "y": -9667.5,
+          "sourcePixelCentre": [
+            2133,
+            2133
+          ],
+          "sourceStencil": [
+            -412.81317138671875,
+            -415.5794677734375,
+            -411.7430114746094,
+            -414.330078125
+          ],
+          "sourceM": -412.81317138671875,
+          "decodedM": -413,
+          "errorM": -0.18682861328125
+        }
+      ]
+    },
+    {
+      "id": "shackleton-20m",
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+      "width": 30400,
+      "height": 30400,
+      "origin": [
+        -304000,
+        304000,
+        0
+      ],
+      "resolution": [
+        20,
+        -20,
+        0
+      ],
+      "pixelIsArea": true,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Moon (2015) - Sphere / Ocentric / South Polar",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Moon (2015) - Sphere / Ocentric|Datum = Moon (2015) - Sphere|Ellipsoid = Moon (2015) - Sphere|Primem = Reference Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "samples": [
+        {
+          "row": 1200,
+          "col": 1200,
+          "x": 0,
+          "y": 0,
+          "sourcePixelCentre": [
+            15199.5,
+            15199.5
+          ],
+          "sourceStencil": [
+            1291.4853515625,
+            1286.8792724609375,
+            1291.374755859375,
+            1287.495849609375
+          ],
+          "sourceM": 1289.3088073730469,
+          "decodedM": 1289.5,
+          "errorM": 0.191192626953125
+        },
+        {
+          "row": 800,
+          "col": 800,
+          "x": -8000,
+          "y": 8000,
+          "sourcePixelCentre": [
+            14799.5,
+            14799.5
+          ],
+          "sourceStencil": [
+            -1115.6556396484375,
+            -1116.63134765625,
+            -1120.10595703125,
+            -1121.13525390625
+          ],
+          "sourceM": -1118.3820495605469,
+          "decodedM": -1118.5,
+          "errorM": -0.117950439453125
+        },
+        {
+          "row": 1600,
+          "col": 1600,
+          "x": 8000,
+          "y": -8000,
+          "sourcePixelCentre": [
+            15599.5,
+            15599.5
+          ],
+          "sourceStencil": [
+            -2518.440185546875,
+            -2516.92138671875,
+            -2513.13525390625,
+            -2511.978515625
+          ],
+          "sourceM": -2515.1188354492188,
+          "decodedM": -2515,
+          "errorM": 0.11883544921875
+        }
+      ]
+    },
+    {
+      "id": "shackleton-stereo-2m",
+      "sourceUrl": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "width": 2500,
+      "height": 2500,
+      "origin": [
+        -5141,
+        -4859,
+        0
+      ],
+      "resolution": [
+        2,
+        -2,
+        0
+      ],
+      "pixelIsArea": true,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "PolarStereographic Moon",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = GCS_Moon|Datum = D_Moon|Ellipsoid = Moon_polarRadius|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "samples": [
+        {
+          "row": 1250,
+          "col": 1250,
+          "x": -2640,
+          "y": -7360,
+          "sourcePixelCentre": [
+            1250,
+            1250
+          ],
+          "sourceStencil": [
+            1655.530029296875,
+            1654.68994140625,
+            1655.6199951171875,
+            1654.780029296875
+          ],
+          "sourceM": 1655.530029296875,
+          "decodedM": 1655.5,
+          "errorM": -0.030029296875
+        },
+        {
+          "row": 833,
+          "col": 833,
+          "x": -3474,
+          "y": -6526,
+          "sourcePixelCentre": [
+            833,
+            833
+          ],
+          "sourceStencil": [
+            1588.89990234375,
+            1589.6199951171875,
+            1588.81005859375,
+            1589.5
+          ],
+          "sourceM": 1588.89990234375,
+          "decodedM": 1588.9,
+          "errorM": 0.00009765625009094947
+        },
+        {
+          "row": 1666,
+          "col": 1666,
+          "x": -1808,
+          "y": -8192,
+          "sourcePixelCentre": [
+            1666,
+            1666
+          ],
+          "sourceStencil": [
+            1275.3699951171875,
+            1274.2900390625,
+            1275.4599609375,
+            1274.3499755859375
+          ],
+          "sourceM": 1275.3699951171875,
+          "decodedM": 1275.4,
+          "errorM": 0.03000488281259095
+        }
+      ]
+    }
+  ]
+}
