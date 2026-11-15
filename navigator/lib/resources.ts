@@ -1,4 +1,9 @@
 export const RESOURCES = [
+ {id:'gods-eye-view',name:'God’s Eye View · Bilawal Sidhu',role:'Earth-layer implementation reference',kind:'MIT source reference',url:'https://github.com/bilawalsidhu/gods-eye-view',detail:'Reviewed satellite propagation, common-frame orbit display, provider provenance, age limits and cache budgets. Source code is a resource, not observational evidence or a Moon relay service. Third-party imagery/data retain separate terms.'},
+ {id:'celestrak-orbits',name:'CelesTrak GP / OMM',role:'Dated Earth-orbit elements',kind:'Bundled snapshot, explicit refresh and JSON import',url:'https://celestrak.org/NORAD/documentation/gp-data-formats.php',detail:'SGP4-predicted satellite positions at a separate orbit UTC; epoch and source visible. The ±72h display policy is not accuracy certification. Refreshes cached at least two hours; unsupported mission-date extrapolation is hidden.'},
+ {id:'starcloud-1',name:'Starcloud-1',role:'Orbital computing example',kind:'Operator mission description',url:'https://www.starcloud.com/starcloud-1',detail:'NORAD66303 carries an NVIDIA H100 GPU for an orbital computing demonstration. Educational context for onboard processing, power and downlink tradeoffs; not a lunar relay or contracted computing service.'},
+ {id:'noaa-nowcoast',name:'NOAA nowCOAST',role:'Observed Earth-weather resource',kind:'External observation reference',url:'https://nowcoast.noaa.gov/',detail:'Observed radar and satellite weather are distinct from a model forecast. This link does not install a live global weather layer or convert cloud brightness into communication loss. Check product coverage and timestamps.'},
+
   {
     id: "horizons",
     name: "JPL Horizons",

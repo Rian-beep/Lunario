@@ -13,7 +13,6 @@ import {evaluateScenario} from '../lib/assessment';
 import {indexToMs} from '../lib/astro';
 import {diffScenarios} from '../lib/scenario-diff';
 import {EXPERIMENTS,captureTeachingBaseline,recordTeachingExperiment,serializeTeachingRecords,teachingCandidate} from '../lib/teaching';
-import {publicAssessmentGuidance} from '../components/workbench/audience-context';
 import {audienceGuidance} from '../lib/audience/guidance';
 import type {MissionInterval} from '../lib/mission';
 import {controlledResponse,controlledFiniteRate,experimentValue,ILLUSTRATIVE_SOLAR,illustrativeDerivative,selectedSolarResponse} from '../lib/audience/experiments';

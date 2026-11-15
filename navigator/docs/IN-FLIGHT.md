@@ -1,3 +1,7 @@
+## Earth context, terrain and chart follow-up
+
+Implemented: six dated spacecraft identities and predictions, source/epoch/age, independent orbit time, explicit cached refresh and offline import; pole/site navigation labels; measured close-view tessellation; stable polar texture projection; circular help and proportionate plots. These do not close the qualified evidence tasks below. Fine terrain is limited to measured bundled coverage. GP predictions and DSN look angles do not establish relay capability, current operation, weather losses or booked station support.
+
 # Workspace room and Planner Var
 
 The wide context banner is now an optional inspector disclosure; desktop inspectors reserve canvas space and fill the available height. Compare is docked separately, Earth station controls are grouped, and Planner Var brings relevant native formulae into the inspector. See [workspace evidence](qa/workspace-room/VERIFICATION.md). Hosting stays teammate-owned. Existing operational-evidence and human/device acceptance TODOs below are preserved.

@@ -69,3 +69,9 @@ The original Lunario logo and loader are pinned under `public/branding/lunario/`
 
 
 Scene initialization yields through an animation-frame opportunity and a subsequent task before constructing WebGL. This lets an asset selection paint first. The pending mount is cancelled when dependencies change or the scene unmounts; a transferred globe is retained for the next mount or the existing unmount disposer. Already-mounted scenes keep consuming live inputs without rebuilding the renderer. `tests/after-paint.test.ts` checks both cancellation windows and one-shot execution; actual framing/playback is checked in the browser. This scheduling change does not change the physical model or guarantee a frame-rate/latency bound on every device.
+
+## Optional Earth orbital context
+
+`lib/orbits.ts` validates dated GP elements and predicts positions with satellite.js SGP4. `earth-orbits.tsx` owns explicit catalogue controls; the persistent scene updates markers without rebuilding lunar assets. `app/api/orbits/route.ts` caches a fixed, bounded set of CelesTrak identities and retains prior dated data on failure. Offline imports use the same validator and no HTTP. Orbital time never modifies the lunar scenario or evaluator. See ADR 0011 for frame, cache and validity boundaries.
+
+Measured close-view tessellation uses `lib/terrain-lod.ts`; existing source spacing and coverage determine detail. Cooperative geometry replacement retains the prior mesh until ready. `lib/lunar-projection.ts` avoids polar floating-point cancellation in texture lookup. Chart SVG viewboxes and circular variable controls preserve proportions across layouts.

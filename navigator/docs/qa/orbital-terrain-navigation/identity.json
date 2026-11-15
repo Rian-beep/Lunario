@@ -1,0 +1,16 @@
+{
+  "artifact": "public/solarreach-navigator.html",
+  "bytes": 81236036,
+  "sha256": "8de622395941c418dcdaf73ad95454c3909f6974ebaf4bec336ebdaec2a3be8d",
+  "nextBuildId": "Wp9jW32A8PlWQhUC7HeZr",
+  "runtimeSourceCommit": "26d88918a7c8f8f18e87d279d1c17ab463aff5a4",
+  "teamBase": "885c4017cd5f2c7c707e774d1af34f7358885042",
+  "sourceTests": 822,
+  "nativeZoomTests": 8,
+  "flightGroups": 16,
+  "chartWidthsPerTransport": [
+    1600,
+    1280,
+    800
+  ]
+}

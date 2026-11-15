@@ -90,3 +90,13 @@ Public guidance now explains why sunlight, battery storage and a clear Earth vie
 - Open Compare from the side, clear of flight telemetry. Earth station selection is grouped under Ground stations to keep its toolbar compact.
 - In Planner, use Var for docked native formulae, symbol explanations and assumptions relevant to Moon, Earth or lander focus.
 - Read calmer panel frames and disclosure surfaces while retaining the light/dark palette and original branding.
+
+## 15 November 2026 — Orbital context and clearer lunar navigation
+
+- Explore six real Earth-orbit identities, including Starcloud-1, from a dated CelesTrak snapshot. Select and frame them, inspect orbit paths and learn each mission’s role.
+- Use a separate orbit clock, explicit cached refresh or bounded GP JSON import. Unsupported dates show unavailable positions; satellite markers do not imply lunar relay coverage.
+- Inspect approximate station-to-satellite azimuth, elevation and range with source/epoch/frame limits.
+- Reach north/south poles and east/west rotation directly. Visible lunar landmark labels and a geographic readout restore orientation in both globe and orbit views.
+- Zoom into covered points using measured DEM relief and finer mesh sampling. Stable polar texture projection removes close-up quantization; ground-level views hide the oversized site annotation ring. Source resolution remains explicit.
+- Read circular information buttons and charts whose text, markers and icons retain their proportions in wide workspaces.
+- Open Flight preview from Public’s inspector with the lander already in focus; an early Follow click completes the approach instead of keeping a distant intermediate camera position.

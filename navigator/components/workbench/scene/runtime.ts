@@ -1,3 +1,5 @@
+import {terrainDetailPolicy} from '@/lib/terrain-lod';
+import {orbitState,orbitTrack,orbitTime} from '@/lib/orbits';
 import {boxCorners, frameVehicle, observeSceneOcclusion, projectedBounds, pullBackForDebris, type ScreenRect} from "@/lib/camera-framing";
 import {ASSET_RADII_KM, assetClipPlanes, physicalAsset, sampleAssetFlight, type AssetFlight} from "@/lib/asset-focus";
 import {framingDistanceKm} from "@/lib/solar-system";
@@ -65,7 +67,7 @@ export function mountScene(
   onCelestialStatus:(kind:CelestialAssetKind,status:string)=>void=()=>{},
   onSiteMode:()=>void=()=>{},
   onSurfaceStatus:(status:string)=>void=()=>{},
-  onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string})=>void=()=>{},
+  onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>})=>void=()=>{},
   onStation:(id:string|null)=>void=()=>{},
   onVehicleFocus:()=>void=()=>{},
 ) {
@@ -213,6 +215,19 @@ export function mountScene(
     mesh.position.set(x,z,-y);stationRoot.add(mesh);
     return{station,mesh,direction};
   });
+  const orbitRoot=new T.Group();scene.add(orbitRoot);
+  const orbitalGeometry=new T.OctahedronGeometry(1);
+  let orbitCatalog:unknown=null;
+  let orbitalPins:{id:number;mesh:T.Mesh}[]=[];
+  const track=new T.Line(new T.BufferGeometry(),new T.LineBasicMaterial({color:0xf4b86c,transparent:true,opacity:.65,depthTest:true}));orbitRoot.add(track);
+  let lastOrbitAtMs=NaN;const orbitalStateCache=new Map<number,ReturnType<typeof orbitState>>();
+  let trackKey='',orbitTelemetryAt=0,orbitalLabelId:number|null=null,orbitalLabel:T.Sprite|null=null;
+  const inspectSatellite=(id:number)=>{
+    const o=getLive().orbits;if(!o)return;const element=o.catalog.elements.find(e=>e.NORAD_CAT_ID===id),state=element&&orbitState(element,orbitTime(o,performance.now()));if(!state)return;
+    const target=earth.position.clone(),direction=new T.Vector3(...state.sceneKm).normalize(),radius=Math.max(ASSET_RADII_KM.earth,Math.hypot(...state.sceneKm));
+    const toCamera=target.clone().addScaledVector(direction,framingDistanceKm(radius*1.15,camera.aspect,camera.fov));
+    assetMotion={plan:{startMs:performance.now(),fromCamera:tuple(camera.position),fromTarget:tuple(controls.target),fromCentre:tuple(target),toCamera:tuple(toCamera),toTarget:tuple(target),toCentre:tuple(target),clearanceKm:radius*2},fromUp:camera.up.clone(),toUp:new T.Vector3(0,1,0),anchor:target,mode:'earth'};
+  };
   let selectedStation:string|null=null,hoveredStation:string|null=null;
   const inspectStation=(id:string)=>{
     const pin=stationPins.find(item=>item.station.id===id);if(!pin)return;
@@ -446,8 +461,9 @@ export function mountScene(
   };
   const localDirection = (v:T.Vector3, source:ReturnType<typeof siteFrame>) => bodyToLocal(source.east.clone().multiplyScalar(v.x).addScaledVector(source.up,v.y).addScaledVector(source.north,-v.z),true);
   let preparingProps = initial;
-  let surfaceGeneration = 0;
-  const prepareSurface = (live:SceneProps) => {
+  let surfaceGeneration = 0, surfaceSegments=384, requestedSurfaceSegments=384, lodChangedAt=0;
+  const prepareSurface = (live:SceneProps, detailSegments=surfaceSegments) => {
+    const detailOnly=siteNavigationKey(surfaceProps.lat,surfaceProps.lon)===siteNavigationKey(live.lat,live.lon)&&surfaceProps.terrain===live.terrain;requestedSurfaceSegments=detailSegments;
     preparingProps = live; surfaceAbort?.abort();
     const abort = surfaceAbort = new AbortController(), generation = ++surfaceGeneration;
     host.dataset.surfacePreparationStarted=String(performance.now());
@@ -456,11 +472,11 @@ export function mountScene(
     const destination=siteFrame(live.lat,live.lon,reference);
     const replaceMaterial=surfaceProps.imagery!==live.imagery||surfaceProps.map!==live.map;
     const nextMaterial=replaceMaterial?createSurfaceMaterial(live.imagery,live.map,live.lat,live.lon,renderer.capabilities.getMaxAnisotropy(),onTextureFailure):surfaceMaterial;
-    Promise.all([buildSurfaceCooperatively(live.terrain,destination,frame,abort.signal),nextMaterial.prepareSite(live.lat,live.lon).catch(()=>{if(!abort.signal.aborted)onTextureFailure();return ()=>{};})]).then(([geometry,applyImages])=>{
+    Promise.all([buildSurfaceCooperatively(live.terrain,destination,frame,abort.signal,undefined,detailSegments),nextMaterial.prepareSite(live.lat,live.lon).catch(()=>{if(!abort.signal.aborted)onTextureFailure();return ()=>{};})]).then(([geometry,applyImages])=>{
       if(disposed||abort.signal.aborted||generation!==surfaceGeneration){geometry.dispose();if(replaceMaterial)nextMaterial.dispose();return;}
       const previous=ground.geometry;ground.geometry=geometry;previous.dispose();
       if(replaceMaterial){surfaceMaterial.dispose();surfaceMaterial=nextMaterial;ground.material=nextMaterial.material;}
-      applyImages();surfaceProps=live;visualFlight=null;
+      applyImages();surfaceProps=live;if(!detailOnly)visualFlight=null;surfaceSegments=detailSegments;host.dataset.surfaceAngularSegments=String(detailSegments);
       const siteHeight=displayHeight(live.terrain,live.lat,live.lon,reference).heightM;
       siteRing.position.copy(bodyToScene(destination.up,siteHeight,frame));
       const up=localDirection(new T.Vector3(0,1,0),destination);
@@ -491,8 +507,8 @@ export function mountScene(
   };
   let poleMeridian=0;
   let geographicMotion:{start:number;from:T.Vector3;to:T.Vector3;fromUp:T.Vector3;toUp:T.Vector3;fromTarget:T.Vector3}|null=null;
-  const navigateGeography=(latDeg:number,lonDeg:number)=>{
-    const physical=sceneToBody(camera.position),radius=Math.max(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770),physical.length());
+  const navigateGeography=(latDeg:number,lonDeg:number,overview=false)=>{
+    const physical=sceneToBody(camera.position),radius=Math.max(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770),overview?framingDistanceKm(1770,camera.aspect,camera.fov):physical.length());
     assetMotion=null;focusedAnchor=null;poleMeridian=lonDeg;hoveredId=undefined;navigation.cancel();awaitingHandoff=false;
     geographicMotion={start:performance.now(),from:physical,to:new T.Vector3(...geographicBodyVector(latDeg,lonDeg,radius)),fromUp:sceneToBody(camera.up,true).normalize(),toUp:new T.Vector3(...geographicNorthVector(latDeg,lonDeg)),fromTarget:sceneToBody(controls.target)};
     lastMode='globe';lastReset=getSettings().reset;controls.minDistance=.006;controls.maxDistance=Math.max(3e9,radius*1.01);controls.maxPolarAngle=Math.PI;
@@ -516,7 +532,7 @@ export function mountScene(
   updatePois(initial);
   const raycaster=new T.Raycaster(),pointer=new T.Vector2(),pickingCamera=camera.clone();
   const pickPoi=(event:PointerEvent)=>{
-    if(getSettings().mode!=='globe')return undefined;
+    if(!['globe','orbit'].includes(getSettings().mode))return undefined;
     const rect=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);
     raycaster.setFromCamera(pointer,camera);
     const hit=raycaster.intersectObjects(poiRecords.filter(item=>item.mesh.visible).map(item=>item.mesh),false)[0];
@@ -529,11 +545,16 @@ export function mountScene(
     const rect=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);
     const hit=raycaster.intersectObjects(stationPins.filter(pin=>pin.mesh.visible).map(pin=>pin.mesh),false)[0];return stationPins.find(pin=>pin.mesh===hit?.object);
   };
-  const poiMove=(event:PointerEvent)=>{const site=pickPoi(event),station=pickStation(event);hoveredId=site?.id;const next=station?.station.id??null;if(next!==hoveredStation){hoveredStation=next;onStation(next??selectedStation);}renderer.domElement.style.cursor=site||station?'pointer':'';};
+  const pickOrbital=(event:PointerEvent)=>{
+    if(!orbitRoot.visible)return undefined;const rect=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);
+    const hit=raycaster.intersectObjects(orbitalPins.filter(p=>p.mesh.visible).map(p=>p.mesh),false)[0];if(!hit)return undefined;const body=raycaster.intersectObject(registeredEarth,false)[0];if(body&&body.distance<hit.distance)return undefined;return orbitalPins.find(p=>p.mesh===hit.object);
+  };
+  const poiMove=(event:PointerEvent)=>{const site=pickPoi(event),station=pickStation(event);hoveredId=site?.id;const next=station?.station.id??null;if(next!==hoveredStation){hoveredStation=next;onStation(next??selectedStation);}renderer.domElement.style.cursor=site||station||pickOrbital(event)?'pointer':'';};
   const poiUp=(event:PointerEvent)=>{
     if(pointerDown?.button===0&&Math.hypot(event.clientX-pointerDown.x,event.clientY-pointerDown.y)<5){
       const site=pickPoi(event),station=pickStation(event);
       if(site)getLive().onSelectSite?.(site.id);
+      else if(pickOrbital(event))getLive().onSelectOrbital?.(pickOrbital(event)!.id);
       else if(station)inspectStation(station.station.id);
       else {
         const viewCamera=['follow','vehicle'].includes(getSettings().mode)?pickingCamera:camera;
@@ -700,6 +721,21 @@ export function mountScene(
     if (disposed) return;
     const live = getLive(), settings = getSettings();
     placeBodies(live);
+    const orbital=live.orbits;
+    orbitRoot.position.copy(earth.position);orbitRoot.visible=settings.mode==='earth'&&earth.visible&&!!orbital?.enabled;
+    if(orbital&&orbitRoot.visible){
+      if(orbitCatalog!==orbital.catalog){for(const pin of orbitalPins){orbitRoot.remove(pin.mesh);(pin.mesh.material as T.Material).dispose();}orbitalPins=orbital.catalog.elements.map(e=>{const mesh=new T.Mesh(orbitalGeometry,new T.MeshBasicMaterial({color:e.NORAD_CAT_ID===66303?0xffb05d:0xa9def6}));orbitRoot.add(mesh);return{id:e.NORAD_CAT_ID,mesh};});orbitCatalog=orbital.catalog;trackKey='';lastOrbitAtMs=NaN;}
+      const atMs=orbitTime(orbital,now),positions=[];
+      if(atMs!==lastOrbitAtMs){lastOrbitAtMs=atMs;orbitalStateCache.clear();for(const e of orbital.catalog.elements)orbitalStateCache.set(e.NORAD_CAT_ID,orbitState(e,atMs));}
+      for(const pin of orbitalPins){const state=orbitalStateCache.get(pin.id);pin.mesh.visible=!!state;if(!state)continue;pin.mesh.position.set(...state.sceneKm);const distance=camera.position.distanceTo(pin.mesh.position.clone().add(earth.position));pin.mesh.scale.setScalar(Math.max(2,distance*.003));(pin.mesh.material as T.MeshBasicMaterial).color.setHex(pin.id===orbital.selectedId?0xffb05d:0xa9def6);positions.push({id:pin.id,ecefKm:state.ecefKm,sceneKm:state.sceneKm});}
+      const selectedOrbital=orbitalPins.find(p=>p.id===orbital.selectedId);
+      if(orbitalLabelId!==orbital.selectedId){if(orbitalLabel){orbitRoot.remove(orbitalLabel);orbitalLabel.material.map?.dispose();orbitalLabel.material.dispose();}orbitalLabelId=orbital.selectedId;const element=orbital.catalog.elements.find(e=>e.NORAD_CAT_ID===orbital.selectedId);orbitalLabel=element?label(element.OBJECT_NAME,'#ffe0ac'):null;if(orbitalLabel)orbitRoot.add(orbitalLabel);}
+      if(orbitalLabel){orbitalLabel.visible=!!selectedOrbital?.mesh.visible;if(selectedOrbital)orbitalLabel.position.copy(selectedOrbital.mesh.position).addScaledVector(camera.up,selectedOrbital.mesh.scale.x*3);}
+      const key=`${orbital.selectedId}:${Math.floor(atMs/30000)}`;
+      if(key!==trackKey){trackKey=key;const element=orbital.catalog.elements.find(e=>e.NORAD_CAT_ID===orbital.selectedId);const points=element?orbitTrack(element,atMs):[];const previous=track.geometry;track.geometry=new T.BufferGeometry().setFromPoints(points.map(p=>new T.Vector3(...p)));previous.dispose();track.visible=points.length>1;}
+      if(now-orbitTelemetryAt>200){orbitTelemetryAt=now;host.dataset.orbitPositions=JSON.stringify(positions);host.dataset.orbitEpochUtc=new Date(atMs).toISOString();host.dataset.orbitSelected=String(orbital.selectedId);host.dataset.orbitCount=String(positions.length);}
+    }else{host.dataset.orbitCount='0';host.dataset.orbitPositions='[]';}
+
     stars.visible=Number.isFinite(live.epochMs)&&live.epochMs!>=Date.UTC(1972,0,1)&&live.epochMs!<=8.64e15;
     if(stars.visible&&starEpoch!==live.epochMs){
       starEpoch=live.epochMs;
@@ -738,7 +774,11 @@ export function mountScene(
       }).catch(error=>{if(!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
     }
     if(poiSites!==live.sites)updatePois(live);
-    const globalSurface=settings.mode==='globe'||sceneToBody(camera.position).length()>1850;
+    const terrainRangeKm=camera.position.distanceTo(siteRing.position),detail=terrainDetailPolicy(live.terrain,live.lat,live.lon,terrainRangeKm,requestedSurfaceSegments);
+    if(detail.segments!==requestedSurfaceSegments&&!navigating){if(!lodChangedAt)lodChangedAt=now;if(now-lodChangedAt>500){lodChangedAt=0;prepareSurface(live,detail.segments);}}else lodChangedAt=0;
+    host.dataset.terrainSourceSpacingM=detail.spacingM===null?'unavailable':String(detail.spacingM);
+    host.dataset.terrainDetail=detail.spacingM===null?'No fine measured DEM at selected point':`Measured DEM sampling ${detail.spacingM.toFixed(1)} m; mesh ${surfaceSegments} angular segments`;
+    const globalSurface=(settings.mode==='globe'&&!detail.measuredCloseView)||sceneToBody(camera.position).length()>1850;
     ground.visible=!globalSurface||!nasaGlobe;
     if(nasaGlobe)nasaGlobe.mesh.visible=globalSurface;
     path.visible=travelled.visible=groundTrack.visible=pathVectors.length>1&&!['globe','earth','sun'].includes(settings.mode)&&!navigating;
@@ -817,6 +857,7 @@ export function mountScene(
     if (!navigating && !missingRange && (settings.mode !== lastMode || settings.reset !== lastReset || missingFocusRange)) {
       const fromCamera=camera.position.clone(),fromTarget=controls.target.clone(),fromUp=camera.up.clone();
       const sourceCentre=earth.visible&&camera.position.distanceTo(earth.position)<camera.position.distanceTo(moonCentre)?earth.position.clone():sun.visible&&camera.position.distanceTo(sun.position)<camera.position.distanceTo(moonCentre)?sun.position.clone():moonCentre.clone();
+      const focusWasMoving=assetMotion!==null;
       assetMotion=null;focusedAnchor=null;geographicMotion=null;
       controls.enabled = true;
       allowFullPolarOrbit(controls);
@@ -847,7 +888,7 @@ export function mountScene(
         camera.position.copy(currentPoint).add(localDirection(followOffset,visualFrame));
         followPosition = currentPoint.clone();
       } else followPosition = null;
-      const trackingTransfer = lastMode !== settings.mode &&
+      const trackingTransfer = !focusWasMoving && lastMode !== settings.mode &&
         (lastMode === 'vehicle' || lastMode === 'follow') &&
         (settings.mode === 'vehicle' || settings.mode === 'follow');
       if (trackingTransfer) {
@@ -920,7 +961,7 @@ export function mountScene(
     const centre = moonCentre;
     const radial = camera.position.clone().sub(centre);
     const cameraGround = radial.length()<2500?toGround(camera.position).point:null;
-    const minRadius = !navigating&&!assetMotion&&settings.mode==='globe' ? globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm ?? 1770) : cameraGround?cameraGround.distanceTo(centre) + 0.002:0;
+    const minRadius = !navigating&&!assetMotion&&settings.mode==='globe'&&globalSurface ? globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm ?? 1770) : cameraGround?cameraGround.distanceTo(centre) + 0.002:0;
     controls.enablePan = !['sun','earth'].includes(settings.mode);
     if(!navigating&&!assetMotion&&(settings.mode==='sun'||settings.mode==='earth')){const object=settings.mode==='earth'?earth:sun;controls.minDistance=object.visible&&controls.target.distanceTo(object.position)<1?ASSET_RADII_KM[settings.mode]*1.02:.006;}
     // Orbit target may be panned off-centre: target-distance is not body radius.
@@ -969,7 +1010,7 @@ export function mountScene(
     const siteDistance = camera.position.distanceTo(siteRing.position);
     siteRing.scale.setScalar(Math.max(0.03, siteDistance * 0.003));
     siteLabel.visible = settings.guides && settings.mode !== "surface" && settings.mode !== "follow" && !['globe','earth','sun'].includes(settings.mode)&&!navigating;
-    siteRing.visible = !['globe','earth','sun','follow','vehicle'].includes(settings.mode)&&!navigating;
+    siteRing.visible = !['globe','earth','sun','follow','vehicle','surface'].includes(settings.mode)&&!navigating&&terrainRangeKm>5;
     axes.visible = settings.guides && settings.mode !== "surface" && settings.mode !== "follow" && !['globe','earth','sun'].includes(settings.mode)&&!navigating;
     tickLabels.forEach((tick) => { tick.visible = settings.mode === "flight"&&!navigating; });
     horizon.visible = settings.horizon && settings.mode === "surface"&&!navigating;
@@ -1012,7 +1053,7 @@ export function mountScene(
     }
     sunlight.shadow.normalBias = shadowHalfSpanKm * 0.00008;
     const physicalCamera=sceneToBody(camera.position),bodyDirection=physicalCamera.clone().normalize();
-    const showPois=globalSurface&&!navigating&&settings.mode==='globe';
+    const showPois=!navigating&&['globe','orbit'].includes(settings.mode);
     for(const item of poiRecords){
       item.mesh.visible=showPois&&item.direction.dot(bodyDirection)>Math.min(.9999,1737.4/physicalCamera.length());
       const pixelKm=2*camera.position.distanceTo(item.mesh.position)*Math.tan(T.MathUtils.degToRad(camera.fov/2))/Math.max(1,host.clientHeight);
@@ -1022,6 +1063,7 @@ export function mountScene(
     const poiText=poi?.site.name??'';
     if(poiText!==lastPoiLabel){if(poiLabel){scene.remove(poiLabel);poiLabel.material.map?.dispose();poiLabel.material.dispose();}poiLabel=poi?label(poiText):null;if(poiLabel){poiLabel.material.depthTest=false;poiLabel.renderOrder=21;scene.add(poiLabel);}lastPoiLabel=poiText;}
     if(poiLabel&&poi){poiLabel.position.copy(poi.mesh.position).addScaledVector(camera.up,poi.mesh.scale.x*3);poiLabel.visible=showPois;}
+    for(const node of host.parentElement?.querySelectorAll<HTMLButtonElement>('[data-globe-label]')??[]){const id=node.dataset.globeLabel,poi=poiRecords.find(p=>p.site.id===id);const point=poi?.mesh.position??((id==='nav-north-pole'||id==='nav-south-pole')?bodyToLocal(new T.Vector3(...geographicBodyVector(id==='nav-north-pole'?90:-90,0)).multiplyScalar(1740)):null);if(point){const screen=point.clone().project(camera),translate=`${(screen.x+1)*host.clientWidth/2}px ${(1-screen.y)*host.clientHeight/2}px`;if(node.style.translate!==translate)node.style.translate=translate;}}
     host.dataset.visiblePoiCount=String(poiRecords.filter(item=>item.mesh.visible).length);
     host.dataset.visiblePois=JSON.stringify(poiRecords.filter(item=>item.mesh.visible).map(item=>{const screen=item.mesh.position.clone().project(camera);return {id:item.site.id,name:item.site.name,lat:item.site.lat,lon:item.site.lon,x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2};}));
     cameraOffset.copy(camera.position).sub(controls.target);
@@ -1087,7 +1129,13 @@ export function mountScene(
       const nx=north.dot(right),ny=north.dot(screenUp);
       const angle=Math.hypot(nx,ny)>1e-6?Math.atan2(nx,ny)*180/Math.PI:undefined;
       host.dataset.viewLatitude=String(geographic.latDeg);host.dataset.viewLongitude=String(geographic.lonDeg);host.dataset.screenNorthAngle=angle===undefined?'':String(angle);
-      onGeography({...geographic,screenNorthAngleDeg:angle,hoveredId});lastGeographicReadout=now;
+      const labels:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>=[];
+      if(showPois){
+        for(const pole of [{id:'nav-north-pole',name:'North pole · 90°N',lat:90},{id:'nav-south-pole',name:'South pole · 90°S',lat:-90}]){const direction=new T.Vector3(...geographicBodyVector(pole.lat,0));if(direction.dot(bodyDirection)>Math.min(.9999,1737.4/physicalCamera.length())){const screen=bodyToLocal(direction.multiplyScalar(1740)).project(camera);if(screen.z>-1&&screen.z<1)labels.push({...pole,lon:0,pole:true,x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2});}}
+        for(const item of [...poiRecords].sort((a,b)=>Number(b.site.id===live.selectedSiteId)-Number(a.site.id===live.selectedSiteId))){if(!item.mesh.visible)continue;const screen=item.mesh.position.clone().project(camera),x=(screen.x+1)*host.clientWidth/2,y=(1-screen.y)*host.clientHeight/2;if(screen.z<=-1||screen.z>=1||x<16||x>host.clientWidth-16||y<16||y>host.clientHeight-16||labels.some(l=>Math.abs(l.x-x)<145&&Math.abs(l.y-y)<36))continue;labels.push({id:item.site.id,name:item.site.name,x,y,lat:item.site.lat,lon:item.site.lon});if(labels.length>=8)break;}
+      }
+      host.dataset.globeLabels=JSON.stringify(labels);
+      onGeography({...geographic,screenNorthAngleDeg:angle,hoveredId,labels});lastGeographicReadout=now;
     }
     camera.updateProjectionMatrix();
     if (now - lastReadout >= 160) {
@@ -1138,6 +1186,6 @@ export function mountScene(
     animationFrame = requestAnimationFrame(render);
   };
   animationFrame = requestAnimationFrame(render);
-  return Object.assign(dispose,{capture:()=>capture(),navigateGeography,stepLongitude,inspectStation,isNavigating:()=>navigation.sample(performance.now())!==null||awaitingHandoff||geographicMotion!==null||assetMotion!==null});
+  return Object.assign(dispose,{capture:()=>capture(),navigateGeography,stepLongitude,inspectStation,inspectSatellite,isNavigating:()=>navigation.sample(performance.now())!==null||awaitingHandoff||geographicMotion!==null||assetMotion!==null});
   } catch (error) { dispose(); throw error; }
 }

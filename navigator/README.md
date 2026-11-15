@@ -4,6 +4,8 @@ Explore lunar south-pole landing sites on a map, inspect measured terrain in 3D,
 
 Built for the [2026 NASA Space Apps Lunar Landing Site Navigator challenge](https://www.spaceappschallenge.org/2026/challenges/lunar-landing-site-navigator/). This is an educational and preliminary engineering workbench, not a NASA operational or flight-qualified product. The original team handoff and development chronology are preserved in Git history and `HANDOFF.md`.
 
+Earth focus also includes six sourced spacecraft, including Starcloud-1, with dated orbital predictions, an independent UTC clock, station look angles and explicit refresh/import. These are educational context, not a claim of lunar relay service. Moon view restores labelled poles and landing sites; close views refine only where measured terrain exists.
+
 ## Release and team handoff
 
 See [the current handoff and full to-do list](docs/IN-FLIGHT.md) for completed software, qualification gaps and independent teammate tasks. Hosting is owned by the teammate.

@@ -638,6 +638,7 @@ const ALIASES: Record<string, string> = {
   "Sunlight %": "Time in sunlight",
   "Earth view %": "Earth visibility",
   "Earth contact": "Earth visibility",
+  "Earth in view": "Earth visibility",
   "Antenna contact %": "Earth visibility",
   "Longest dark h": "Longest darkness",
   "Blackout h": "Longest blackout",

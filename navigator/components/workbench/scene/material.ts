@@ -1,3 +1,4 @@
+import {POLAR_BODY_GLSL} from '@/lib/lunar-projection';
 import * as T from "three";
 import {acquireMoonAtlas} from "@/lib/moon-atlas-texture";
 import {LUNAR_LINEAR_LUMINANCE_GLSL} from "@/lib/lunar-appearance";
@@ -200,11 +201,10 @@ export function createSurfaceMaterial(
       .replace("#include <map_fragment>", `
         vec3 body = normalize(vBodyDirection);
         float longitude = atan(body.y, body.x);
-        float latitude = asin(clamp(body.z, -1.0, 1.0));
+        float latitude = atan(body.z, length(body.xy));
         vec2 globalUv = vec2(longitude / (2.0 * PI) + 0.5, latitude / PI + 0.5);
         vec3 regolith = mix(vec3(0.48), texture2D(globalImage, globalUv).rgb, hasGlobal);
-        float rhoM = 3474800.0 * tan(PI/4.0 + latitude/2.0);
-        vec2 xyM = rhoM * vec2(sin(longitude), cos(longitude));
+        vec2 xyM = ${POLAR_BODY_GLSL};
         vec2 polarUv = projectedUv(xyM, polarBoundsM);
         vec2 detailUv = projectedUv(xyM, detailBoundsM);
         vec2 regionalUv = projectedUv(xyM, regionalBoundsM);

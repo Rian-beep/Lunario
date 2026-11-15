@@ -5,10 +5,13 @@ import { createPortal } from "react-dom";
 import type { LandingDynamicsReadout } from "@/lib/landing-contract";
 import {PublicStationStory} from "./public-exploration";
 import { StationWeather } from "./station-weather";
+import {EarthOrbits} from './earth-orbits';
+import orbitSnapshot from '@/public/data/orbits/catalog.json';
+import {catalogEpoch,parseOrbitCatalog,type OrbitLayerState} from '@/lib/orbits';
 import { HeaderLeanDropdown } from "./header-lean-dropdown";
 import { physicalAsset, type AssetFocus } from "@/lib/asset-focus";
 import { DSN_STATIONS, DSN_SOURCES, DSN_GEOMETRY_STATUS } from "@/lib/dsn";
-import type { TerrainData } from "@/lib/terrain";
+import {heightAt,type TerrainData } from "@/lib/terrain";
 import type { FlightResult } from "@/lib/flight";
 import type { TerrainChoice } from "@/lib/astro";
 import type { ImageryData } from "@/lib/imagery";
@@ -48,6 +51,8 @@ export type SceneProps = {
   sunRangeKm?: number;
   /** UTC Unix milliseconds for the approximate IAU_MOON star background. */
   epochMs?: number;
+  orbits?:OrbitLayerState;
+  onSelectOrbital?:(id:number)=>void;
   imagery?: ImageryData | null;
   map: MapMeta;
   sites?:readonly Site[];
@@ -67,7 +72,10 @@ export type SceneProps = {
   referenceHeightM?: number;
 };
 
+const bundledOrbits=parseOrbitCatalog(orbitSnapshot);
 export function LunarScene(props: SceneProps) {
+  const [orbits,setOrbits]=useState<OrbitLayerState>(()=>({catalog:bundledOrbits,atMs:catalogEpoch(bundledOrbits),enabled:true,selectedId:66303,rate:0,startedPerf:0}));
+  const [orbitRequest,setOrbitRequest]=useState(0);
   const host = useRef<HTMLDivElement>(null);
 
   const runtime = useRef<ReturnType<typeof mountScene> | null>(null);
@@ -77,7 +85,7 @@ export function LunarScene(props: SceneProps) {
   const [revision, setRevision] = useState(0);
   const [navigationStatus, setNavigationStatus] = useState("");
   const live = useRef(props);
-  live.current = props;
+  live.current = {...props,orbits,onSelectOrbital:id=>{setOrbits(v=>({...v,selectedId:id}));setOrbitRequest(v=>v+1);}};
   const descriptionId = useId();
   const [error, setError] = useState<string | null>(null);
   const [textureFailed, setTextureFailed] = useState(false);
@@ -92,10 +100,11 @@ export function LunarScene(props: SceneProps) {
   const [horizon, setHorizon] = useState(false);
   const [inspection, setInspection] = useState(true);
   const [guides,setGuides]=useState(false);
+  const [mapLabels,setMapLabels]=useState(true);
   const [showReadout,setShowReadout]=useState(false);
   const [reset, setReset] = useState(0);
   const [retry, setRetry] = useState(0);
-  const [geography,setGeography]=useState<{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string}>({latDeg:props.lat,lonDeg:props.lon});
+  const [geography,setGeography]=useState<{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>}>({latDeg:props.lat,lonDeg:props.lon});
   const [surfaceStatus,setSurfaceStatus]=useState('');
   const [modelStatus,setModelStatus]=useState('');
   const [equipmentStatus,setEquipmentStatus]=useState('loading');
@@ -184,7 +193,13 @@ export function LunarScene(props: SceneProps) {
   const terrainSamplingM = props.terrain ? [props.terrain.overview, ...props.terrain.patches]
     .map((grid) => grid.inputPixelM ?? props.terrain!.sourcePixelM) : [];
   const sceneControls = <>
+      {focus==='moon'&&['globe','orbit','surface'].includes(activeMode)&&<div className="globe-cardinals" role="group" aria-label="Moon navigation directions"><Button variant="ghost" aria-label="View north pole" onClick={()=>{setMode('globe');runtime.current?.navigateGeography(90,geography.lonDeg,true);}}>N ↑</Button><Button variant="ghost" aria-label="Rotate view west" onClick={()=>{setMode('globe');runtime.current?.stepLongitude(-30);}}>W ←</Button><Button variant="ghost" aria-label="Rotate view east" onClick={()=>{setMode('globe');runtime.current?.stepLongitude(30);}}>E →</Button><Button variant="ghost" aria-label="View south pole" onClick={()=>{setMode('globe');runtime.current?.navigateGeography(-90,geography.lonDeg,true);}}>S ↓</Button><Button variant="ghost" aria-pressed={mapLabels} onClick={()=>setMapLabels(v=>!v)}>Map labels</Button></div>}
+      {focus==='moon'&&['globe','orbit'].includes(activeMode)&&<HeaderLeanDropdown label="Globe directions" className="header-globe-navigation"><GlobeNavigation viewLatDeg={geography.latDeg} viewLonDeg={geography.lonDeg} screenNorthAngleDeg={geography.screenNorthAngleDeg}
+        onNorthPole={()=>{setMode('globe');runtime.current?.navigateGeography(90,geography.lonDeg,true);}} onSouthPole={()=>{setMode('globe');runtime.current?.navigateGeography(-90,geography.lonDeg,true);}}
+        onEast={()=>{setMode('globe');runtime.current?.stepLongitude(30);}} onWest={()=>{setMode('globe');runtime.current?.stepLongitude(-30);}}
+        selectedSite={props.sites?.find(site=>site.id===props.selectedSiteId)} hoveredSite={props.sites?.find(site=>site.id===geography.hoveredId)??null} onSelect={props.onSelectSite}/></HeaderLeanDropdown>}
       {focus === 'earth' && <div className="header-dsn-context">
+        <EarthOrbits value={orbits} onChange={setOrbits} missionEpochMs={props.epochMs} offline={props.offline} audienceMode={props.audienceMode} openRequest={orbitRequest} onInspect={id=>runtime.current?.inspectSatellite(id)}/>
 
         <HeaderLeanDropdown label="Ground stations" className="header-station-details" openRequest={props.audienceMode==='public'?stationDetailsRequest:undefined}>
         <div role="group" aria-label="DSN ground complexes" className="header-station-buttons">{DSN_STATIONS.map(station => <Button key={station.id} variant="ghost" aria-pressed={stationId === station.id} onClick={() => {selectStation(station.id);setMode('earth');runtime.current?.inspectStation(station.id);}}>{station.name}</Button>)}</div>
@@ -212,10 +227,7 @@ export function LunarScene(props: SceneProps) {
         <Button variant="ghost" aria-pressed={inspection} onClick={() => setInspection(v=>!v)} title="Toggle stable neutral source atlas and illustrative epoch lighting; computed sunlight and visibility are unchanged">{inspection ? "Stable atlas appearance" : "Epoch light"}</Button>
         <Button variant="ghost" aria-pressed={showReadout} onClick={()=>setShowReadout(v=>!v)}>Vehicle readout</Button>
         <Button variant="ghost" aria-pressed={guides} onClick={()=>setGuides(v=>!v)}>Coordinate guides</Button>
-      {activeMode==='globe'&&props.sites?.length&&<details className="header-globe-navigation"><summary>Globe directions</summary><GlobeNavigation viewLatDeg={geography.latDeg} viewLonDeg={geography.lonDeg} screenNorthAngleDeg={geography.screenNorthAngleDeg}
-        onNorthPole={()=>{setMode('globe');runtime.current?.navigateGeography(90,geography.lonDeg);}} onSouthPole={()=>{setMode('globe');runtime.current?.navigateGeography(-90,geography.lonDeg);}}
-        onEast={()=>{setMode('globe');runtime.current?.stepLongitude(30);}} onWest={()=>{setMode('globe');runtime.current?.stepLongitude(-30);}}
-        selectedSite={props.sites.find(site=>site.id===props.selectedSiteId)} hoveredSite={props.sites.find(site=>site.id===geography.hoveredId)??null} onSelect={props.onSelectSite}/></details>}
+
       <details className="sq-notes" id={descriptionId}>
         <summary>Surface & scale</summary>
         <div className="sq-notes-body">
@@ -223,6 +235,7 @@ export function LunarScene(props: SceneProps) {
           <p>Original NASA Sun model: {celestialStatus.sun}. Original NASA Earth model: {celestialStatus.earth}. {CELESTIAL_ASSETS.sun.scope} Physical body radii and supplied JPL centre ranges are used; bodies with unavailable ranges are hidden. Directions retain the existing local pose and source-frame caveats. Inspection cameras change the viewpoint. Labels are enlarged. Earth credit: {CELESTIAL_ASSETS.earth.credit}.</p>
           <p>{LANDER_ASSET.scope} Vehicle scale is fixed at nominal 1× (7 m height); camera zoom never resizes the spacecraft. Asset credit: {LANDER_ASSET.credit}. Equipment status: {equipmentStatus}. {equipmentStatus==='error' ? 'NASA equipment could not load; no replacement geometry is shown.' : ''}</p>
           <p>Continuous lunar surface. LOLA heights are shown at <strong>1× relief</strong>, feathered over four grid cells at DEM edges. Areas outside prepared coverage use calibrated coarse global LOLA geometry where available (approximately 4.3 km equatorial output spacing), otherwise the smooth reference sphere. Imagery supplies no numerical heights or hazard measurements.</p>
+          <p>Zooming close to the selected point switches from the nominal NASA globe to measured local relief where a DEM patch covers it. Close views refine the mesh cooperatively without restarting the scene. Extra triangles do not add measured detail.</p><p>{props.terrain&&heightAt(props.terrain,props.lat,props.lon,true)?`At this point: source pixels ${heightAt(props.terrain,props.lat,props.lon,true)!.inputPixelM} m; bundled samples approximately ${heightAt(props.terrain,props.lat,props.lon,true)!.stepM.toFixed(1)} m. Rocks smaller than this sampling are unresolved.`:'No fine local DEM covers this point. Coarse regional/global context remains available; zoom does not turn it into a landing-footprint survey.'}</p>
           <p>{props.terrain ? `DEM input sampling: ${Math.min(...terrainSamplingM)}–${Math.max(...terrainSamplingM)} m across bundled products. Surface mesh sampling is densest at the site and coarser regionally; interpolated display detail is not a new measurement.` : "Numerical terrain is unavailable. Only the reference-sphere shape is shown."}</p>
           <p>{textureFailed ? "Some bundled imagery could not load. Numerical shape remains available with a neutral material or the images that loaded." : props.imagery ? "NASA LROC / Moon Trek imagery is mapped from its polar extent and global longitude/latitude metadata. Its acquisition shadows are historical, not a simulation for this date." : "The bundled LOLA hillshade supplies the polar fallback texture with historical lighting. Outside its extent the surface uses a neutral material."}</p>
           <p>Epoch light follows the supplied Sun direction with a small display fill. Stable atlas appearance shows neutral source imagery without camera-dependent lighting or exposure. Its acquisition shadows remain historical. Disable it for illustrative epoch lighting. Neither changes computed terrain/sphere visibility. The Moon has no atmospheric sky glow.</p>
@@ -254,6 +267,8 @@ export function LunarScene(props: SceneProps) {
         <span>{readout.currentCoverage === "fine" ? "Fine numerical terrain coverage" : readout.currentCoverage === "global-coarse" ? "Coarse global LOLA terrain · approximately 4.3 km spacing · fine clearance unknown" : readout.currentCoverage === "regional" ? "Regional DEM only · flight terrain clearance unknown" : "Reference-sphere context · terrain clearance unknown"}</span>
       </output>}
       {props.controlsTarget ? createPortal(sceneControls, props.controlsTarget) : <div className="scene-inline-controls">{sceneControls}</div>}
+      {mapLabels&&focus==='moon'&&['globe','orbit'].includes(activeMode)&&<div className="globe-map-labels" aria-label="Visible lunar landmarks">{geography.labels?.map(point=><button key={point.id} data-globe-label={point.id} className={point.pole?'pole-label':''} style={{left:0,top:0,translate:`${point.x}px ${point.y}px`}} onClick={()=>point.pole?runtime.current?.navigateGeography(point.lat,geography.lonDeg):props.onSelectSite?.(point.id)}>{point.name}</button>)}</div>}
+      {focus==='moon'&&['globe','orbit','surface'].includes(activeMode)&&<output className="globe-location-readout" aria-label="Current globe orientation">{Math.abs(geography.latDeg).toFixed(1)}°{geography.latDeg<0?'S':'N'} · {Math.abs(geography.lonDeg).toFixed(1)}°{geography.lonDeg<0?'W':'E'} <span aria-hidden="true" style={{display:'inline-block',transform:`rotate(${geography.screenNorthAngleDeg??0}deg)`}}>↑ N</span></output>}
       <div className="scene-legend sq-legend">
         <span className="sun-dot" /> Sun <span className="earth-dot" /> Earth
         <span role={activeMode==='globe'?'status':undefined}>{activeMode==='sun'||activeMode==='earth'?`NASA ${activeMode==='sun'?'Sun':'Earth'} · physical km · ${activeMode==='earth'?'station inspection · display attitude':'authored orientation'}`:activeMode==='globe'?`${modelStatus||'NASA globe'} · nominal scale`:`Relief 1× · ${hasFlight && readout ? `Vehicle fixed ${readout.vehicleScale.toFixed(0)}× · ` : ""}Local ENU · km`}</span>

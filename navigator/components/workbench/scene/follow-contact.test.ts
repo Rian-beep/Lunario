@@ -102,7 +102,7 @@ test('cached playback retains the solver fragment masses instead of reconstructi
 
 test('local numerical terrain is clickable with the NASA globe hidden; missed paths and Earth cannot become Moon picks',async()=>{
   const {siteFrame}=await import('./surface');
-  const body=source.match(/  const poiUp=\(event:PointerEvent\)=>\{[\s\S]*?\n  \};/)?.[0].replace('(event:PointerEvent)','(event)').replace(':T.Object3D[]','');
+  const body=source.match(/  const poiUp=\(event:PointerEvent\)=>\{[\s\S]*?\n  \};/)?.[0].replace('(event:PointerEvent)','(event)').replace(':T.Object3D[]','').replace('pickOrbital(event)!.id','pickOrbital(event).id');
   assert.ok(body,'surface picking handler exists');
   const camera=new T.PerspectiveCamera(45,1,.0001,100); camera.position.set(0,.02,0); camera.up.set(0,0,-1); camera.lookAt(0,0,0);camera.updateMatrixWorld(true);
   const ground=new T.Mesh(new T.PlaneGeometry(1,1).rotateX(-Math.PI/2),new T.MeshBasicMaterial()); ground.updateMatrixWorld(true);
@@ -116,7 +116,7 @@ test('local numerical terrain is clickable with the NASA globe hidden; missed pa
   const frame=siteFrame(-89,40,0);
   const sceneToBody=(p:T.Vector3)=>frame.east.clone().multiplyScalar(p.x).addScaledVector(frame.up,p.y+frame.referenceRadiusM/1000).addScaledVector(frame.north,-p.z);
   const {cameraBodyGeography}=await import('./geographic-navigation');
-  const context={T,pointerDown:{x:50,y:50,button:0},pickPoi:()=>undefined,pickStation:()=>undefined,
+  const context={T,pointerDown:{x:50,y:50,button:0},pickPoi:()=>undefined,pickOrbital:()=>undefined,pickStation:()=>undefined,
     getLive:()=>({showFlight:true,onPlace:(lat:number,lon:number)=>placed.push([lat,lon])}),inspectStation:()=>assert.fail('unexpected Earth station'),
     renderer:{domElement:{getBoundingClientRect:()=>({left:0,top:0,width:100,height:100})}},pointer:new T.Vector2(),raycaster,camera,
     currentPoint:new T.Vector3(),path,currentRing,lander,contactPieces,onVehicleFocus:()=>assert.fail('missed path should fall through'),
@@ -150,4 +150,15 @@ test('render telemetry uses current COM/sample state, leaves collective breakup 
   publish(...Object.values({...values,contactParts:null,contactModel:null,dynamicsFrame:null,touchdown:undefined,dynamics:null,vehicleMassKg:null,terrainClearanceM:null,lander:{...values.lander,visible:false},contactPieces:{visible:false}}));
   for(const key of ['vehicleWorldPosition','vehicleQuaternion','landingContact','landingDynamics','landingMassKg','terrainClearanceM','landingContactTimeS','landingContactFrameIndex','landingContactFrameTimeS']) assert.equal(host.dataset[key],'',key);
   assert.equal(host.dataset.vehicleVisible,'false');assert.equal(host.dataset.landingFragmentCount,'0');
+});
+
+// Retargeting before focus finishes must complete the approach, not retain a distant offset.
+test('Follow preserves only settled local camera offsets',()=>{
+  const expression=source.match(/const trackingTransfer = ([\s\S]*?);/)?.[1];
+  assert.ok(expression);
+  const transfer=new Function('lastMode','settings','focusWasMoving',`return ${expression}`);
+  assert.equal(transfer('vehicle',{mode:'follow'},false),true);
+  assert.equal(transfer('vehicle',{mode:'follow'},true),false);
+  assert.equal(transfer('globe',{mode:'follow'},false),false);
+  assert.equal(transfer('follow',{mode:'vehicle'},false),true);
 });

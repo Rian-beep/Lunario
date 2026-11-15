@@ -31,3 +31,11 @@ Use the header Dark/Light control; light retains the reference mint/cream appear
 The right inspector now fills available desktop height and reserves real canvas space instead of covering Earth/Moon. Compare is side-docked, Earth station controls are grouped, mission guidance is an optional inspector disclosure, and Planner Var supplies relevant native formulae without a modal. Panel edges and navigation surfaces are quieter while both palettes and original branding are preserved.
 
 [Latest workspace QA](navigator/docs/qa/workspace-room/VERIFICATION.md): final source797/797, actual web/offline journeys and8/8 native zoom tests pass. Offline HTML81,169,598bytes, SHA256 `f75705f8e651552be500aaf4a9e6331f717970b9cb81489d7d293bb1defa4cfd`. This supersedes the previous release identity above. Hosting and qualified-evidence TODOs remain unchanged.
+
+## Latest: orbital context and stable lunar navigation
+
+Earth focus now includes six dated spacecraft identities and predicted orbits, including Starcloud-1, with a separate UTC clock, mission descriptions, source/age/frame limits, bounded JSON import and explicit cached refresh. This educational layer does not infer lunar relay service, station bookings or RF weather losses.
+
+Moon view restores labelled poles and landing-site orientation, direct N/S/E/W navigation, cooperative measured close-view refinement and stable polar texture lookup. Information controls and chart SVGs retain their proportions. Public Flight preview enters the lander focus; Follow no longer preserves an unfinished distant approach. The team's current logo/About header, dark default and loader changes are retained.
+
+[Current QA and exact artifact identity](navigator/docs/qa/orbital-terrain-navigation/VERIFICATION.md) supersede earlier receipts. [Full remaining TODOs](navigator/docs/IN-FLIGHT.md) retain the qualified evidence, human/device acceptance and hosting tasks.
