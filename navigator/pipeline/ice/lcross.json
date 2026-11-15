@@ -1,0 +1,18 @@
+{
+  "id": "lcross-centaur-2009",
+  "name": "LCROSS Centaur — Cabeus impact",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -48.7093,
+      -84.6796
+    ]
+  },
+  "evidence": "impact-water-detection",
+  "sourceId": "lcross-2009-centaur",
+  "description": "Water vapor and ice were detected spectroscopically in impact ejecta. Published Centaur location: 1-sigma uncertainty 115 m along latitude, 44 m along longitude. This point is not an ice footprint; coverage and abundance elsewhere are unknown.",
+  "resolutionM": null,
+  "observationUtc": "2009-10-09T11:31:19.506Z",
+  "value": null,
+  "unit": null
+}
