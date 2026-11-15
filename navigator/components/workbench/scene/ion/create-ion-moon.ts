@@ -1,3 +1,5 @@
+import {useStreamedAtlasMaterials} from "./atlas-material";
+import {ionFailureLabel,type IonFailure} from "@/lib/ion/diagnostics";
 import { Box3, Group, PerspectiveCamera, Raycaster, Vector2, Vector3, WebGLRenderer, type Object3D } from "three";
 import { GLTFExtensionsPlugin } from "3d-tiles-renderer/plugins";
 import { validateIonConfiguration } from "../../../../lib/ion/config";
@@ -93,11 +95,13 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
     group.clear();
   }
 
-  function fail() {
+  const tileFailure=()=>fail({stage:"tile-fetch"});
+
+  function fail(failure?:IonFailure) {
     if (stopped) return;
     stopped = true;
     group.visible = false;
-    publish("error", false, FAILURE);
+    publish("error", false, FAILURE+ionFailureLabel(failure));
     // Finish the current upstream traversal/event before draining its queues.
     queueMicrotask(release);
   }
@@ -179,7 +183,7 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
           tiles.registerPlugin(new GLTFExtensionsPlugin({ dracoLoader: draco, autoDispose: false }));
           auth = new AbortableIonAuthPlugin(credentials.value.accessToken, abort.signal, fail);
           tiles.registerPlugin(auth);
-          tiles.addEventListener("load-error", fail);
+          tiles.addEventListener("load-error", tileFailure);
           tiles.setCamera(camera);
           group.add(tiles.group);
           publish("loading");
@@ -191,7 +195,7 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
         tiles.setResolution(camera, Math.max(1, viewport.x), Math.max(1, viewport.y));
         tiles.update();
         if (!stopped) publish(tiles.visibleTiles.size > 0 ? "ready" : "loading", tiles.visibleTiles.size > 0);
-      } catch { fail(); }
+      } catch { fail({stage:"renderer"}); }
     },
     setFrame(lat, lon, radiusKm) {
       if (stopped) return;

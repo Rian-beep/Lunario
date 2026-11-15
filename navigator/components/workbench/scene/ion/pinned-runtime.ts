@@ -1,3 +1,4 @@
+import {ionHttpStatus,type IonFailure} from "@/lib/ion/diagnostics";
 import { TilesRenderer } from "3d-tiles-renderer";
 import type { Tile, Tileset } from "3d-tiles-renderer/core";
 import { CesiumIonAuthPlugin } from "3d-tiles-renderer/plugins";
@@ -21,7 +22,7 @@ export class IonTilesRenderer extends TilesRenderer {
   private parsing = 0;
   private released = false;
 
-  constructor(private fail: () => void) {
+  constructor(private fail: (failure?:IonFailure) => void) {
     super();
     this.registerCleanup();
   }
@@ -35,19 +36,19 @@ export class IonTilesRenderer extends TilesRenderer {
 
   async loadRootTileset(): Promise<Tileset> {
     try { return await hooks.loadRootTileset.call(this); }
-    catch { this.fail(); throw cancelled(); }
+    catch (error) { this.fail({stage:"manifest",status:ionHttpStatus(error)}); throw cancelled(); }
   }
 
   preprocessTileset(json: Tileset, url: string, parent: Tile | null = null): void {
     try { hooks.preprocessTileset.call(this, json, url, parent); }
-    catch { this.fail(); throw cancelled(); }
+    catch (error) { this.fail({stage:"manifest",status:ionHttpStatus(error)}); throw cancelled(); }
   }
 
   async parseTile(buffer: ArrayBuffer, tile: Tile, extension: string, url: string, signal: AbortSignal): Promise<void> {
     if (this.released || signal.aborted) throw cancelled();
     this.parsing++;
     try { await hooks.parseTile.call(this, buffer, tile, extension, url, signal); }
-    catch { if (!signal.aborted) this.fail(); throw cancelled(); }
+    catch (error) { if (!signal.aborted) this.fail({stage:"mesh-decode",status:ionHttpStatus(error)}); throw cancelled(); }
     finally {
       const scene = this.parsingScenes.get(tile);
       this.parsingScenes.delete(tile);
@@ -117,7 +118,7 @@ export class AbortableIonAuthPlugin extends CesiumIonAuthPlugin {
   declare tiles: IonTilesRenderer;
   declare _initializeFromAsset: (asset: object) => void;
 
-  constructor(token: string, private signal: AbortSignal, private fail: () => void) {
+  constructor(token: string, private signal: AbortSignal, private fail: (failure?:IonFailure) => void) {
     super({
       apiToken: token, assetId: ION_MOON_ASSET_ID,
       autoRefreshToken: false, useRecommendedSettings: false,
@@ -126,6 +127,7 @@ export class AbortableIonAuthPlugin extends CesiumIonAuthPlugin {
   }
 
   async loadRootTileset(): Promise<Tileset | null> {
+    let stage:IonFailure["stage"]="endpoint";
     try {
       this.signal.throwIfAborted();
       // Upstream calls refreshToken() without options, leaving its endpoint
@@ -133,12 +135,13 @@ export class AbortableIonAuthPlugin extends CesiumIonAuthPlugin {
       const asset = await this.auth.refreshToken({ signal: this.signal, cache: "no-store" });
       this.signal.throwIfAborted();
       if (!("type" in asset) || asset.type !== "3DTILES" || "externalType" in asset) throw cancelled();
+      stage="manifest";
       this._initializeFromAsset(asset);
       const root = await this.tiles.loadRootTileset();
       this.signal.throwIfAborted();
       return root;
-    } catch {
-      if (!this.signal.aborted) this.fail();
+    } catch (error) {
+      if (!this.signal.aborted) this.fail({stage,status:ionHttpStatus(error)});
       else this.auth._bearerToken = null;
       // The upstream root catch logs errors. Resolve an empty root after our
       // terminal failure instead; no raw URL/error reaches its diagnostics.
@@ -151,13 +154,13 @@ export class AbortableIonAuthPlugin extends CesiumIonAuthPlugin {
     try {
       signal.throwIfAborted();
       const response = await this.auth.fetch(url, { ...options, signal, cache: "no-store" });
-      if (!response.ok) throw cancelled();
+      if (!response.ok) {this.fail({stage:"tile-fetch",status:response.status});throw cancelled();}
       const json = new URL(url).pathname.endsWith(".json") || response.headers.get("content-type")?.includes("json");
       const content = await (json ? response.json() : response.arrayBuffer());
       signal.throwIfAborted();
       return content;
-    } catch {
-      if (!signal.aborted) this.fail();
+    } catch (error) {
+      if (!signal.aborted) this.fail({stage:"tile-fetch",status:ionHttpStatus(error)});
       throw cancelled();
     }
   }
