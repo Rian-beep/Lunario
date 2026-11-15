@@ -1,0 +1,108 @@
+TAP version 13
+# Subtest: nonfinite terrain NaN stays unknown and cannot poison legacy contact
+ok 1 - nonfinite terrain NaN stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 3.118767
+  ...
+# Subtest: nonfinite terrain Infinity stays unknown and cannot poison legacy contact
+ok 2 - nonfinite terrain Infinity stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 1.176937
+  ...
+# Subtest: nonfinite terrain -Infinity stays unknown and cannot poison legacy contact
+ok 3 - nonfinite terrain -Infinity stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 0.772152
+  ...
+# Subtest: both solvers reject an initial point below known numerical terrain
+ok 4 - both solvers reject an initial point below known numerical terrain
+  ---
+  duration_ms: 0.388956
+  ...
+# (node:737779) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: legacy force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+ok 5 - legacy force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+  ---
+  duration_ms: 1.070341
+  ...
+# Subtest: legacy fractional burn, propellant depletion and ideal delta-v
+ok 6 - legacy fractional burn, propellant depletion and ideal delta-v
+  ---
+  duration_ms: 0.651287
+  ...
+# Subtest: legacy circular two-body closed form, energy and angular momentum
+ok 7 - legacy circular two-body closed form, energy and angular momentum
+  ---
+  duration_ms: 9.526045
+  ...
+# Subtest: configured force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+ok 8 - configured force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+  ---
+  duration_ms: 0.983464
+  ...
+# Subtest: configured fractional burn, propellant depletion and ideal delta-v
+ok 9 - configured fractional burn, propellant depletion and ideal delta-v
+  ---
+  duration_ms: 2.731761
+  ...
+# Subtest: configured circular two-body closed form, energy and angular momentum
+ok 10 - configured circular two-body closed form, energy and angular momentum
+  ---
+  duration_ms: 90.770605
+  ...
+# Subtest: configured radial fall reaches the same surface with independent energy and exact time-of-fall
+ok 11 - configured radial fall reaches the same surface with independent energy and exact time-of-fall
+  ---
+  duration_ms: 2.852917
+  ...
+# Subtest: constant-spin equatorial frame agrees with circular inertial solution transformed analytically
+ok 12 - constant-spin equatorial frame agrees with circular inertial solution transformed analytically
+  ---
+  duration_ms: 20.044334
+  ...
+# Subtest: target distance is a sphere arc in metres, separate from chord and tangent-plane distance
+ok 13 - target distance is a sphere arc in metres, separate from chord and tangent-plane distance
+  ---
+  duration_ms: 0.218332
+  ...
+# Subtest: negative numerical surfaces, contact mass and known failure precedence remain explicit
+ok 14 - negative numerical surfaces, contact mass and known failure precedence remain explicit
+  ---
+  duration_ms: 3.899259
+  ...
+# Subtest: trajectory screen agrees with independent angular-momentum/apsis equations and reverse transfer
+ok 15 - trajectory screen agrees with independent angular-momentum/apsis equations and reverse transfer
+  ---
+  duration_ms: 0.895308
+  ...
+# Subtest: touchdown screen work/energy and static support boundary; missing inputs cannot become pass
+ok 16 - touchdown screen work/energy and static support boundary; missing inputs cannot become pass
+  ---
+  duration_ms: 0.385756
+  ...
+# Subtest: radiative blackbody limiting case uses independent total power and no instantaneous survival pass
+ok 17 - radiative blackbody limiting case uses independent total power and no instantaneous survival pass
+  ---
+  duration_ms: 0.129285
+  ...
+# Subtest: rigid proxy follows disclosed constant-gravity ballistic limit before any contact
+ok 18 - rigid proxy follows disclosed constant-gravity ballistic limit before any contact
+  ---
+  duration_ms: 94.966933
+  ...
+# Subtest: fragment mass shares follow padded bounding boxes, independent of nominal mesh naming
+ok 19 - fragment mass shares follow padded bounding boxes, independent of nominal mesh naming
+  ---
+  duration_ms: 476.193896
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 880.688577

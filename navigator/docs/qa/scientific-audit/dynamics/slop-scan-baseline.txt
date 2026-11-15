@@ -1,0 +1,33 @@
+medium  Directory fan-out is a repo hotspot (34 files vs baseline 5.0)  structure.directory-fanout-hotspot
+  at components/workbench:1:1
+
+strong  Found 1 empty catch block  defensive.empty-catch
+  at components/workbench/scene/ion/create-ion-moon.ts:71:1
+
+medium  Directory fan-out is a repo hotspot (82 files vs baseline 5.5)  structure.directory-fanout-hotspot
+  at lib:1:1
+
+strong  Found 2 error-obscuring catch blocks  defensive.error-obscuring
+  at lib/nasa-model.ts:132:1, 144:1
+
+strong  Found 2 error-obscuring catch blocks  defensive.error-obscuring
+  at lib/scenario.ts:59:1, 106:1
+
+strong  Found 1 empty catch block  defensive.empty-catch
+  at lib/ui-theme.ts:21:1
+
+strong  Found 1 empty catch block  defensive.empty-catch
+  at public/branding/lunario/loader/loader.js:27:1
+
+medium  Directory fan-out is a repo hotspot (40 files vs baseline 5.5)  structure.directory-fanout-hotspot
+  at scripts:1:1
+
+medium  Found 1 async-noise pattern  defensive.async-noise
+  at scripts/verify-refinement-framing.mjs:49:1
+
+strong  Found 1 pass-through wrapper  structure.pass-through-wrappers
+  at scripts/verify-refinement-framing.mjs:49:1
+
+
+
+10 findings

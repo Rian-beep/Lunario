@@ -1,0 +1,70 @@
+{
+  "checkedUtc": "2026-11-15T14:41:43.631268+00:00",
+  "runtime": {
+    "node": "v20.20.2",
+    "python": "3.14.4"
+  },
+  "auditOnly": {
+    "tests": 19,
+    "passed": 19,
+    "failed": 0,
+    "skipped": 0
+  },
+  "focused": {
+    "tests": 126,
+    "passed": 126,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "log": "focused-tests.txt"
+  },
+  "typecheck": {
+    "command": "npm run typecheck -- --incremental false",
+    "exitCode": 0,
+    "errors": 0,
+    "log": "typecheck.txt"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 0,
+    "log": "lint.txt"
+  },
+  "sourceChecksums": {
+    "responses": 12,
+    "passed": 12,
+    "command": "python3 scripts/audit-dynamics-fetch.py --check"
+  },
+  "resultContract": {
+    "rows": 18,
+    "requiredFieldsPresent": true,
+    "counts": {
+      "verified": 13,
+      "uncertain": 4,
+      "failing": 1
+    }
+  },
+  "horizons": {
+    "status": "not-run",
+    "reason": "No ephemeris/Sun/Earth geometry changes in this lane; not claimed passed"
+  },
+  "builds": {
+    "status": "not-run",
+    "reason": "Parent-owned; no web/offline/generated output changed"
+  },
+  "slopScan": {
+    "version": "0.3.0",
+    "status": "completed",
+    "exitCode": 0,
+    "findings": 10,
+    "baselineFindings": 10,
+    "baseline": "96079ae isolated git archive",
+    "newCodeFindings": 0,
+    "logs": [
+      "slop-scan.txt",
+      "slop-scan-baseline.txt"
+    ],
+    "triage": "Same ten rule/location groups on isolated baseline; scripts directory file count rises 40 to 41. Empty/error-obscuring catch and wrapper findings are outside owned files; parent follow-up, no cross-lane edits."
+  }
+}
