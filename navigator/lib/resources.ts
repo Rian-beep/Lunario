@@ -20,7 +20,25 @@ export const RESOURCES = [
     kind: "Computed data",
     url: "https://pgda.gsfc.nasa.gov/products/90",
     detail:
-      "Catalog horizons from 40 m / 240 m DEMs. Displayed terrain uses nested 5 m, 10 m, 40 m and 80 m LOLA products where covered; source and display sampling are distinct.",
+      "Catalog horizons from 40 m / 240 m DEMs. Displayed terrain uses nested 5 m, 10 m, 40 m and 80 m LOLA products where covered; source and display sampling are distinct. A close zoom inside the south-polar cap switches to a measured inspection mesh so the ridges stay visible.",
+  },
+  {
+    id: "lola-site04",
+    name: "LOLA Site 04 · 5 m",
+    role: "Shackleton rim close-up",
+    kind: "Measured elevation",
+    url: "https://pgda.gsfc.nasa.gov/products/78",
+    detail:
+      "NASA's 5 m south-pole site DEM, with 20 m, 60 m and 150 m LOLA context. The close-up is lit for inspection. It does not change the sunlight calculation.",
+  },
+  {
+    id: "lroc-stereo",
+    name: "LROC / DLR Shackleton stereo",
+    role: "2 m rim elevation",
+    kind: "Measured elevation",
+    url: "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_ESALL_SR12",
+    detail:
+      "NAC_DTM_ESALL_SR12, confidence class 14 only, blended into LOLA over 20 m at the holes. NASA / GSFC / Arizona State University, DLR and the ESA Lunar Lander project.",
   },
   {
     id: "trek",
