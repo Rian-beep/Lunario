@@ -41,3 +41,12 @@ export function missionReplayTimeLabels(data: MissionTrajectory): { start: strin
     elapsed: `Elapsed source time (${data.epoch.scale} seconds)`,
   };
 }
+
+/** Fit the path bounding sphere in both frustum dimensions with a 15% margin. */
+export function missionReplayFitDistance(radiusKm: number, aspect: number, verticalFovDeg = 45): number {
+  if (!Number.isFinite(radiusKm) || radiusKm < 0 || !Number.isFinite(aspect) || aspect <= 0 || !Number.isFinite(verticalFovDeg) || verticalFovDeg <= 0 || verticalFovDeg >= 180)
+    throw Error('A finite path radius, positive aspect and valid field of view are required');
+  const halfVertical = verticalFovDeg * Math.PI / 360;
+  const halfHorizontal = Math.atan(Math.tan(halfVertical) * aspect);
+  return Math.max(radiusKm, .001) * 1.15 / Math.sin(Math.min(halfVertical, halfHorizontal));
+}

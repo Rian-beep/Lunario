@@ -26,12 +26,14 @@ window.showReplay=(id,patch={})=>{
  const points=data.samples.map(s=>new T.Vector3(...trajectorySceneKm(s.position)));
  const bounds=new T.Box3().setFromPoints(points),target=bounds.getCenter(new T.Vector3());
  const span=Math.max(bounds.getSize(new T.Vector3()).length(),2);
- window.expected={target:target.toArray(),destination:target.clone().addScaledVector(target.clone().normalize(),span*1.4).add(new T.Vector3(0,span*.3,0)).toArray(),data};
+ window.expected={target:target.toArray(),radius:span/2,data};
  window.probe=null;window.requestedRevision=(window.requestedRevision??0)+1;
  root.render(<PublishedTrajectoryReplay key={id+JSON.stringify(patch)} data={data}/>);
 };
 window.captureRenderer=renderer=>{const revision=window.requestedRevision;const original=renderer.render;renderer.render=function(scene,camera){
  const paths=scene.children.filter(o=>o.isLine||o.isPoints);
+ const expected=window.expected,halfVertical=camera.fov*Math.PI/360,halfHorizontal=Math.atan(Math.tan(halfVertical)*camera.aspect);
+ const center=new T.Vector3(...expected.target);expected.destination=center.clone().addScaledVector(center.clone().normalize(),expected.radius*1.15/Math.sin(Math.min(halfVertical,halfHorizontal))).toArray();
  const marker=scene.children.find(o=>o.isMesh);
  window.probe={revision,camera:camera.position.toArray(),target:window.controls.target.toArray(),paths:paths.map(o=>({type:o.type,positions:Array.from(o.geometry.attributes.position.array)})),markerVisible:marker?.visible,markerPosition:marker?.position.toArray()};
  window.firstProbes??={};window.firstProbes[revision]??=window.probe;

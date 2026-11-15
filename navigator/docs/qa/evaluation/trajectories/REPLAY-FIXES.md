@@ -42,3 +42,7 @@ The original camera destination/framing formula is retained. The inspected unthe
 No original trajectory JSON, primary-source provenance, scientific receipt, model identity, assessment/ephemeris/terrain code, shared styles, package/configuration, generated hosted/offline artifact or existing evaluation evidence was edited. No Horizons/scientific publication gate or full-repository test/lint pass is claimed. No Simulator, Metro, app server, shared browser, push or further integration merge was started. Parent integrator retains publication/build and complete-app acceptance.
 
 Delivery bundle: `/tmp/lunario-fix-trajectories.bundle`, containing only the new replay fix/report commits after prerequisite `8cfb59a`. It can be imported and reviewed without merging or pushing by default.
+
+## Parent framing correction
+
+The parent corrected the separately reported portrait clipping: initial destination now fits the path bounding sphere in both frustum dimensions with a 15% margin. `Fit path` restores that view after user navigation. Regression projection checks cover every supplied path at portrait, wide desktop and narrow aspect ratios; this verifies display containment, not visibility through the Moon or terrain registration. The original worker framing observation above is preserved as the pre-fix evidence.
