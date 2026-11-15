@@ -1,0 +1,46 @@
+name: Commit verified Lunario bundle to PR 16
+
+on:
+  push:
+    branches: [codex/lunario-build-pr16]
+    paths: ['.github/workflows/commit-pr16-standalone.yml']
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  commit-bundle:
+    if: github.repository == 'Rian-beep/Lunario'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    env:
+      GH_TOKEN: ${{ github.token }}
+      VERIFY_RUN: '43719402575'
+      EXPECTED_HEAD: b8614e3d1bd05fa44b362ff7dca1d4f39e17f670
+      BRANCH: codex/lunar-ice-education
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: codex/lunar-ice-education
+      - name: Add the verified standalone bundle to the draft branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test "$(gh run view "$VERIFY_RUN" --json headSha --jq .headSha)" = "$EXPECTED_HEAD"
+          gh run watch "$VERIFY_RUN" --exit-status --interval 10
+          test "$(gh run view "$VERIFY_RUN" --json conclusion --jq .conclusion)" = success
+          gh run download "$VERIFY_RUN" --name lunario-standalone --dir "$RUNNER_TEMP/lunario-standalone"
+          bundle="$RUNNER_TEMP/lunario-standalone/solarreach-navigator.html"
+          test -s "$bundle"
+          test "$(wc -c < "$bundle")" -lt 104857600
+          grep -Fq 'Lunar ice evidence' "$bundle"
+          sha256sum "$bundle"
+          cp "$bundle" navigator/public/solarreach-navigator.html
+          git rm -- navigator/components/education-materials/resource-evidence.module.css
+          git add -- navigator/public/solarreach-navigator.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Rebuild standalone navigator with lunar ice lessons'
+          git push origin "HEAD:refs/heads/$BRANCH"
