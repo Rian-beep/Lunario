@@ -50,6 +50,11 @@
     {
       "command": "Python ast.parse for audit-resources scripts",
       "exitCode": 0
+    },
+    {
+      "command": "git diff 96079ae HEAD --check -- . ':(exclude)docs/qa/scientific-audit/resources/sources/handbook.html' ':(exclude)docs/qa/scientific-audit/resources/sources/power.html'",
+      "exitCode": 0,
+      "scope": "Authored files plus non-HTML reference responses."
     }
   ],
   "notRun": [
@@ -64,5 +69,6 @@
   ],
   "productionChanges": false,
   "operationalCertification": false,
-  "memoryHandoff": "Milestone and limitations persisted in owned REPORT.md/results.json. Global vault was not edited because worker instructions prohibit edits outside ownership; parent may record integrated milestone."
+  "memoryHandoff": "Milestone and limitations persisted in owned REPORT.md/results.json. Global vault was not edited because worker instructions prohibit edits outside ownership; parent may record integrated milestone.",
+  "sourceWhitespaceException": "Full-tree git diff --check reports original source whitespace in handbook.html and power.html. Preserved exact HTTP bytes and manifest hashes; not an authored-code failure."
 }
