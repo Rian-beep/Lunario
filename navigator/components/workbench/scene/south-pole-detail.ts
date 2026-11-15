@@ -32,10 +32,18 @@ export function sceneToTerrainRotation(matrix: T.Matrix4) {
   return new T.Matrix3().setFromMatrix4(matrix).invert();
 }
 
-/** Manifest URL for both the Next app and the static navigator file. */
+const SOUTH_POLE_MANIFEST = "/data/south-pole-detail/manifest.json";
+
+/**
+ * Manifest URL for the hosted Pages app, the offline HTML file, and Next.
+ * The dashboard loads `web/index.html`, which resolves public files through
+ * `__LUNARIO_PUBLIC_ASSET_URL__` into `navigator/public/`.
+ */
 export function southPoleManifestUrl() {
+  const resolve = (globalThis as { __LUNARIO_PUBLIC_ASSET_URL__?: (path: string) => string }).__LUNARIO_PUBLIC_ASSET_URL__;
+  if (typeof resolve === "function") return resolve(SOUTH_POLE_MANIFEST);
   if (typeof location !== "undefined" && /solarreach-navigator\.html$/.test(location.pathname)) {
     return new URL("data/south-pole-detail/manifest.json", location.href).href;
   }
-  return "/data/south-pole-detail/manifest.json";
+  return SOUTH_POLE_MANIFEST;
 }
