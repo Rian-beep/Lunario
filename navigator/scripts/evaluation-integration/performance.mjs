@@ -27,7 +27,7 @@ try{
   const edits=[];
   for(const [name,delta]of [['Thrust',10]]){
    const input=page.locator('label.number-field').filter({has:page.getByRole('button',{name:'About '+name,exact:true})}).getByRole('spinbutton');assert.equal(await input.count(),1,`${name} editable control must be present`);
-   const before=await page.locator('[data-flight-edit-feedback]').textContent(),value=Number(await input.inputValue());const start=performance.now();
+   const feedback=page.locator('[data-flight-edit-feedback]');const before=await feedback.count()?await feedback.textContent():null,value=Number(await input.inputValue());const start=performance.now();
    await input.fill(String(value+delta));await input.press('Tab');
    await page.waitForFunction(({before,name})=>{const text=document.querySelector('[data-flight-edit-feedback]')?.textContent;return text!==before&&text?.includes('Changed '+name);},{before,name},{timeout:15000});
    edits.push({name,feedbackMs:performance.now()-start});
