@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import * as T from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
@@ -26,7 +27,7 @@ export function equipmentUrl(path: string): string {
   if (typeof location !== "undefined" && location.protocol === "file:") {
     throw new Error(`Offline equipment asset is missing: ${path}`);
   }
-  return path;
+  return publicAssetURL(path);
 }
 
 /** glTF is Y-up; translate the lowest point to the ground and centre X/Z. */

@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 export type NasaMesh = {
   /** Original, unitless NASA GLB positions. Multiply by positionToKm for the scene. */
   positions: Float32Array;
@@ -154,7 +155,7 @@ export async function loadNasaModel(options: { signal?: AbortSignal } = {}): Pro
 }
 
 async function checkedFetch(url: string, signal?: AbortSignal) {
-  const response = await fetch(url, { signal });
+  const response = await fetch(publicAssetURL(url), { signal });
   if (!response.ok) throw new Error(`NASA Moon asset ${url} could not be loaded: HTTP ${response.status}`);
   return response;
 }

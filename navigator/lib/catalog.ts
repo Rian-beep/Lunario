@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import type {GlobalTerrainData} from "./global-terrain";
 export type SiteGroup = "artemis" | "clps" | "contrast" | "reference" | "derived" | "apollo" | "robotic" | "attempt";
 
@@ -170,7 +171,7 @@ export function decodeCatalog(raw: RawCatalog): Catalog {
 export async function loadCatalog(): Promise<Catalog> {
   const injected = (globalThis as { __SOLARREACH_CATALOG__?: RawCatalog }).__SOLARREACH_CATALOG__;
   if (injected) return decodeCatalog(injected);
-  const response = await fetch("/data/catalog.json");
+  const response = await fetch(publicAssetURL("/data/catalog.json"));
   if (!response.ok) {
     throw new Error("The precomputed catalog is not available. Run python3 pipeline/build_dataset.py.");
   }
