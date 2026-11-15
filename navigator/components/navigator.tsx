@@ -117,7 +117,11 @@ import {
 type Mode = "public" | "teach" | "plan";
 import {sampleGlobalHeight,loadGlobalTerrain} from "@/lib/global-terrain";
 import {resolveTerrainChoice,isGlobalTerrainChoice} from "@/lib/analysis-context";
-import {loadPlanningDemo} from "@/lib/planning-demo-loader";
+import {
+  borrowedHorizonTopWarning,
+  firstSunlitPlayheadForScenario,
+  loadDelayedLandingDemo,
+} from "@/lib/delayed-landing-demo";
 import {TeachingWorkbench} from "./workbench/teaching-workbench";
 import {MissionCalendar} from "./workbench/mission-calendar";
 import {SensitivityPanel} from "./workbench/sensitivity-panel";
@@ -200,6 +204,7 @@ export function Navigator() {
     [speed, setSpeed] = useState(6),
     [reduced, setReduced] = useState(false),
     [notice, setNotice] = useState(""),
+    [demoContrastLine, setDemoContrastLine] = useState(""),
     [flightTime, setFlightTime] = useState(0),
     [flightPlaying, setFlightPlaying] = useState(false),
     [flightSpeed, setFlightSpeed] = useState(10);
@@ -275,7 +280,8 @@ export function Navigator() {
         setCatalog(c);
         void globalReady.then(globalTerrain=>{if(active&&globalTerrain)setCatalog(previous=>previous?{...previous,globalTerrain}:previous);});
         setState(initial);
-        setPlayhead(initial.startIndex);
+        const opensOnCatalogDemo=initial.siteId===c.meta.demo.siteId&&initial.startIndex===start&&!initial.custom;
+        setPlayhead(opensOnCatalogDemo?firstSunlitPlayheadForScenario(c,initial):initial.startIndex);
       })
       .catch(
         (e) =>
@@ -574,7 +580,24 @@ export function Navigator() {
   }
   async function exploreDelayDemo(){
     if(!catalog||!evidenceManifest)return;
-    try{const demo=await loadPlanningDemo(catalog,evidenceManifest);const selected=demo.filter(c=>c.role!=='unknown-historical').map(c=>({id:crypto.randomUUID(),name:c.role==='baseline'?'Demo · original arrival':c.role==='delayed'?'Demo · delayed arrival':'Demo · alternative site',state:c.state}));setSaved(v=>[...v,...selected]);setComparisonReferenceId(selected[0].id);setComparisonFocus(selected.map(c=>c.id));landingConfigured.current=false;setState(structuredClone(selected[0].state));setPlayhead(selected[0].state.startIndex);setPlaying(false);setFlightPlaying(false);setComparisonMode('saved');setCompareMinimized(false);setCompareOpen(true);setNotice('Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.');}
+    try{
+      const demo=await loadDelayedLandingDemo(catalog,evidenceManifest);
+      const selected=demo.cases.map(c=>({id:crypto.randomUUID(),name:c.name,state:c.state}));
+      setSaved(v=>[...v,...selected]);
+      setComparisonReferenceId(selected[0].id);
+      setComparisonFocus(selected.map(c=>c.id));
+      landingConfigured.current=false;
+      setState(structuredClone(selected[0].state));
+      setPlayhead(demo.baselinePlayheadIndex);
+      setPlaying(false);
+      setFlightPlaying(false);
+      setComparisonMode('saved');
+      setCompareMinimized(false);
+      setCompareOpen(true);
+      setGuideOpen(false);
+      setDemoContrastLine(demo.contrastLine);
+      setNotice(`${demo.contrastLine}. Loaded original arrival, 14-day delay, and site-only alternative into Compare. Hardware and stay length are unchanged; source limits remain conditional.`);
+    }
     catch(error){setNotice(error instanceof Error?error.message:'Demonstration could not load.');}
   }
   function saveExactScenario(s:ScenarioState,name='Tested scenario'){setSaved(v=>[...v,{id:crypto.randomUUID(),name,state:structuredClone(s)}]);setNotice('Exact scenario saved for comparison.');}
@@ -621,6 +644,7 @@ export function Navigator() {
   const dynamics=currentLandingDynamics(landingReadout,landingReadoutKey,landingFlight?.contact,flightTime,flightPlaying?flightSpeed:0);
   const shift = (h: number) => range(state.startIndex + h, state.endIndex + h);
   const poseDescription = `Sun ${number(pose.sunEl, 2)}° above the local horizontal; Earth ${number(pose.earthEl, 2)}°. Terrain horizons determine actual visibility.`;
+  const borrowedHorizonBanner=borrowedHorizonTopWarning(terrain);
   const tabs: [Panel, string, typeof Compass][] = [
     ["overview", "Site overview", Compass],
     ["analysis", "Horizon analysis", ChartNoAxesCombined],
@@ -639,6 +663,19 @@ export function Navigator() {
         <div className="sr-only" aria-live="polite">
           {notice}
         </div>
+        {borrowedHorizonBanner&&!focusMode&&(
+          <aside className="borrowed-horizon-banner" role="alert">
+            <strong>Borrowed horizon</strong>
+            <span>{borrowedHorizonBanner}</span>
+          </aside>
+        )}
+        {demoContrastLine&&!focusMode&&(
+          <aside className="demo-contrast-banner" aria-label="Delayed landing contrast">
+            <strong>Terrain vs smooth Moon</strong>
+            <span>{demoContrastLine}</span>
+            <Button variant="ghost" size="icon" aria-label="Dismiss terrain contrast" onClick={()=>setDemoContrastLine('')}><X size={14}/></Button>
+          </aside>
+        )}
         <header className="app-header" hidden={focusMode}>
           <div className="header-primary-row">
           <a href="#lunar-workspace" className="brand">
@@ -767,6 +804,7 @@ export function Navigator() {
             {mode!=='public'&&<Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':learnOpen} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen(true)}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>}
             {mode!=='public'&&<Button variant="ghost" onClick={()=>{setPlaying(false);setFlightPlaying(false);setTouchdownOpen(true);}}>Lab</Button>}
             {mode==='public'&&<Button variant="outline" aria-label="Compare sites and dates" onClick={()=>{setCompareMinimized(false);setCompareOpen(true);}}><Columns3 size={15}/>Compare</Button>}
+            <Button variant="outline" aria-label="Show a delayed landing" disabled={!evidenceManifest} onClick={exploreDelayDemo}>Show a delayed landing</Button>
           </div>
 
         </header>
@@ -1012,6 +1050,8 @@ export function Navigator() {
                 <details hidden={panel==='variables'} className="audience-mode-context" open={!audienceContextCollapsed} onToggle={e=>setAudienceContextCollapsed(!e.currentTarget.open)}><summary>{mode==='public'?'How to read this site':mode==='teach'?'Equations & guided investigation':'Planning context & decision margins'}</summary><AudienceContextPanel mode={mode} state={state} assessment={planning.result} siteName={name}/></details>
                 {panel === "overview" && (
                   <>
+                    <Button className="wide-button" variant="outline" disabled={!evidenceManifest} onClick={exploreDelayDemo} aria-label="Show a delayed landing">Show a delayed landing</Button>
+                    {demoContrastLine&&<aside className="constraint" aria-label="Delayed landing contrast"><strong>Terrain vs smooth Moon</strong><p>{demoContrastLine}</p></aside>}
                     <Section title="At this moment">
                       {summary.known < summary.samples && <p className="constraint warning">{summary.known===0?"No local terrain horizon is prepared for this site. The smooth-sphere figures below exclude local hills and craters.":`Terrain coverage is known for ${number(100 * summary.known / summary.samples, 1)}% of this period. Visibility percentages use known samples; interrupted darkness forecasts remain unknown.`}</p>}
                       <div className="instant-status">
@@ -1154,7 +1194,7 @@ export function Navigator() {
                     {planning.result&&<details className="planning-details"><summary>Why this plan has this result</summary><AssessmentExplanation assessment={planning.result}/></details>}
                     <DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={globalThis.location?.protocol==='file:'}/>
                     <DecisionPanel state={state} result={planning.result} error={planning.error} stepHours={catalog.meta.stepHours} onChange={next=>update(next)} onInspect={i=>{setPlaying(false);setPlayhead(state.startIndex+i);setPanel("analysis");}}/>
-                    {evidenceManifest&&<><Button className="wide-button" variant="outline" onClick={exploreDelayDemo}>Explore a real delay contingency</Button><Button className="wide-button" onClick={()=>{setComparisonMode('calendar');setCompareMinimized(false);setCompareOpen(true);}}>Find whole-mission arrival windows</Button><SensitivityPanel catalog={catalog} manifest={evidenceManifest} state={state} onOpen={openSavedScenario} onSave={saveExactScenario}/><DecisionPackageControls catalog={catalog} manifest={evidenceManifest} state={state} onImport={openSavedScenario}/></>}
+                    {evidenceManifest&&<><Button className="wide-button" variant="outline" onClick={exploreDelayDemo} aria-label="Show a delayed landing">Show a delayed landing</Button><Button className="wide-button" onClick={()=>{setComparisonMode('calendar');setCompareMinimized(false);setCompareOpen(true);}}>Find whole-mission arrival windows</Button><SensitivityPanel catalog={catalog} manifest={evidenceManifest} state={state} onOpen={openSavedScenario} onSave={saveExactScenario}/><DecisionPackageControls catalog={catalog} manifest={evidenceManifest} state={state} onImport={openSavedScenario}/></>}
                     <Section title="Replan a slipped mission" detail="Hold the stay length and hardware constant. Screen date slips and nearby sites against your own power, contact and terrain limits."><Button className="wide-button" onClick={openAlternatives}><Columns3 size={15}/> Compare alternative dates & sites</Button></Section>
                     <Section
                       title="Mission resource budget"
@@ -1687,6 +1727,7 @@ export function Navigator() {
           >
             <div className="comparison-header"><div className="comparison-tabs" role="group" aria-label="Comparison workspace"><Button variant="ghost" aria-pressed={comparisonMode==='replan'} onClick={openReplanning}>Replan mission</Button><Button variant="ghost" aria-pressed={comparisonMode==='alternatives'} onClick={()=>setComparisonMode('alternatives')}>Contingency planning</Button><Button variant="ghost" aria-pressed={comparisonMode==='calendar'} onClick={()=>setComparisonMode('calendar')}>Mission calendar</Button><Button variant="ghost" aria-pressed={comparisonMode==='saved'} onClick={()=>setComparisonMode('saved')}>Saved scenarios ({saved.length})</Button></div><div className="comparison-window-actions"><Button variant="ghost" size="icon" aria-label="Minimize comparisons" onClick={()=>setCompareMinimized(true)}><ChevronDown size={16}/></Button><Button variant="ghost" size="icon" aria-label="Close comparisons" onClick={()=>setCompareOpen(false)}><X size={16}/></Button></div></div>
             {notice&&<aside className="comparison-notice" aria-label="Comparison update"><span>{notice}</span><Button variant="ghost" size="icon" aria-label="Dismiss notification" onClick={()=>setNotice('')}><X size={14}/></Button></aside>}
+            {demoContrastLine&&comparisonMode==='saved'&&<aside className="comparison-notice demo-contrast-notice" aria-label="Delayed landing contrast"><span>{demoContrastLine}</span></aside>}
             {comparisonMode==='saved'&&comparisonFocus&&<div className="comparison-coverage-notice">Showing the controlled comparison ({comparisonFocus.length} scenarios). <Button variant="ghost" onClick={()=>setComparisonFocus(null)}>Show all saved scenarios</Button></div>}
             {comparisonMode==='saved'&&saved.length>0&&saved.every(item=>(item.state.terrainMode??'prepared')==='prepared'&&!item.state.custom&&!catalog.sites.find(s=>s.id===item.state.siteId)?.horizons.length)&&<aside className="comparison-coverage-notice"><strong>Historical coordinates do not yet have terrain coverage.</strong><p>These records locate past spacecraft or approximate impact regions. The smooth-sphere values are geometric context; terrain, power and storage feasibility remain unassessed.</p><Button variant="outline" onClick={()=>{selectSite(catalog.meta.demo.siteId);setCompareOpen(false);setMode('plan');setPanel('plan');setRightOpen(true);}}>Use a prepared polar planning baseline</Button></aside>}
             {comparisonMode==='replan'?(evidenceManifest?<ReplanningWorkspace catalog={catalog} manifest={evidenceManifest} current={state} scenarios={saved} referenceId={comparisonReferenceId} onOpen={openSavedScenario} onInspect={inspectReplannedScenario} onSave={saveExactScenario} onCalendar={()=>setComparisonMode('calendar')} onClose={()=>setCompareOpen(false)}/>:<p>{evidenceError||'Loading evidence manifest…'}</p>):comparisonMode==='calendar'?(evidenceManifest?<MissionCalendar catalog={catalog} manifest={evidenceManifest} state={state} onOpen={openSavedScenario} onSave={saveExactScenario} onCompare={comparePair}/>:<p>{evidenceError||'Loading evidence manifest…'}</p>):comparisonMode==='alternatives'?<Alternatives catalog={catalog} baseline={state} onOpen={openSavedScenario} onSave={(scenario,name)=>{setSaved(v=>[...v,{id:crypto.randomUUID(),name,state:structuredClone(scenario)}]);setNotice('Alternative saved with its date, site and hardware assumptions.');}}/>:<Comparison

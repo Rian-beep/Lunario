@@ -2535,7 +2535,7 @@ select:focus-visible {
 .metric-value .metric-unknown{font-size:inherit;color:#7c8471;line-height:inherit}
 /* Each instrument can be put away without changing its mission inputs. */
 .focus-mode.lunar-app{grid-template-rows:0 minmax(0,1fr) 0;min-height:0}
-.focus-mode>.app-header,.focus-mode .workspace-heading,.focus-mode .location-restore,.focus-mode .view-switch,.focus-mode .drawer-toggles,.focus-mode .site-drawer,.focus-mode .inspector,.focus-mode .map-bottom-tools,.focus-mode .flight-telemetry,.focus-mode .flight-hud-restore,.focus-mode .timeline,.focus-mode .timeline-restore,.focus-mode .scene-legend,.focus-mode .sq-position,.focus-mode .sq-camera,.focus-mode .comparison-sheet,.focus-mode .comparison-restore,.focus-mode [data-map-caption],.focus-mode [data-global-sites],.focus-mode [aria-label="Map zoom"]{display:none!important}
+.focus-mode>.app-header,.focus-mode .borrowed-horizon-banner,.focus-mode .demo-contrast-banner,.focus-mode .workspace-heading,.focus-mode .location-restore,.focus-mode .view-switch,.focus-mode .drawer-toggles,.focus-mode .site-drawer,.focus-mode .inspector,.focus-mode .map-bottom-tools,.focus-mode .flight-telemetry,.focus-mode .flight-hud-restore,.focus-mode .timeline,.focus-mode .timeline-restore,.focus-mode .scene-legend,.focus-mode .sq-position,.focus-mode .sq-camera,.focus-mode .comparison-sheet,.focus-mode .comparison-restore,.focus-mode [data-map-caption],.focus-mode [data-global-sites],.focus-mode [aria-label="Map zoom"]{display:none!important}
 .focus-restore{position:fixed;right:18px;top:18px;z-index:60;border-radius:30px;font-size:12px;gap:7px;padding:9px 14px}
 .location-actions{position:absolute!important;right:7px;top:7px;display:flex;gap:2px}.location-actions button{width:25px;height:25px;min-width:25px;padding:3px;opacity:.7}.location-actions button:hover{opacity:1}
 .workspace-heading{padding-right:66px}.workspace-heading.location-minimized{max-width:min(350px,32%);padding:12px 64px 11px 14px;min-height:59px}
@@ -2567,6 +2567,36 @@ select:focus-visible {
 .workspace-dialog::backdrop{background:#12191288;backdrop-filter:blur(6px)}
 .comparison-notice{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;margin-bottom:12px;border:1px solid #d8dccf;border-radius:8px;background:#f0f2e8;font-size:13px;line-height:1.5}
 .comparison-notice button{flex-shrink:0}
+.borrowed-horizon-banner,
+.demo-contrast-banner{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  width:100%;
+  margin:0;
+  padding:10px 24px;
+  font-size:13px;
+  line-height:1.45;
+  border-bottom:1px solid #a87b3e59;
+  background:#b17d2318;
+  color:#805318;
+  z-index:120;
+}
+.borrowed-horizon-banner strong,
+.demo-contrast-banner strong{
+  flex:0 0 auto;
+  font-size:12px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.borrowed-horizon-banner span,
+.demo-contrast-banner span{flex:1;min-width:0}
+.demo-contrast-banner{
+  border-bottom-color:#79865759;
+  background:#dfe5d28c;
+  color:#354a26;
+}
+.demo-contrast-notice{border-color:#79865759;background:#e8ecdf}
 @media(max-width:640px){.workspace-dialog{inset:8px;width:calc(100vw - 16px);height:calc(100dvh - 16px);border-radius:14px}}
 
 .terrain-source-caption{display:block;font-size:10px;line-height:1.4;margin-top:3px;color:#58634b}.location-minimized .terrain-source-caption{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
