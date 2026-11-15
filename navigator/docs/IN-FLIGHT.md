@@ -1,3 +1,13 @@
+# Scientific audit, mission paths and NASA visual upgrade
+
+The parallel Clevo science, framework, trajectory, visual and independent-review lanes are integrated. Planning-5 corrects range direction, site parallax, terrain cutout registration, producer unknown support and legacy contact-event interpolation. The current register records41 verified bounded claims,21 uncertain and0 currently failing recorded numerical comparisons. This is not operational qualification. Three final-review integrity/documentation findings were corrected; baseline evidence remains archived. See qa/final-science-review/RESOLUTION.md.
+
+Location exposes mission history in all audiences and Mission paths & reasons. Two bounded source paths replay independently of planning time; no confirmed as-flown lander/launch/ascent dataset is claimed for all missions. Other sites have editable educational simulation. NASA2025 colour and calibrated1× visual relief reach8K on supported web devices,4K offline; global imagery still does not resolve touchdown-footprint hazards. Cesium's authenticated close-up texture acceptance remains unresolved; a connected mesh is not a quality pass.
+
+Highest-leverage teammate tasks: deploy the tested repository-root build on the final host; test real target devices and network latency; observe first-time public users; obtain and qualify site-specific fine DEM/hazard, vehicle/GNC/contact, thermal and station-support evidence. Hosting remains teammate-owned. The full outstanding physical/operations and acceptance list below remains applicable.
+
+---
+
 ## Earth context, terrain and chart follow-up
 
 Implemented: six dated spacecraft identities and predictions, source/epoch/age, independent orbit time, explicit cached refresh and offline import; pole/site navigation labels; measured close-view tessellation; stable polar texture projection; circular help and proportionate plots. These do not close the qualified evidence tasks below. Fine terrain is limited to measured bundled coverage. GP predictions and DSN look angles do not establish relay capability, current operation, weather losses or booked station support.

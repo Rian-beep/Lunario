@@ -1,3 +1,9 @@
+## Mission paths and NASA Moon detail
+
+- Open Mission paths & reasons from an expanded Location card: inspect cited phase/route explanations, reference-data coverage and source limitations. Replay the bounded Chandrayaan-3 reference descent or Apollo15 command-module orbit at1×, seek, pause, restart and follow position; the editable educational landing remains separate.
+- NASA2025 colour and calibrated1× LOLA visual relief load progressively. Supported high-memory web devices can reach8K; offline and unknown-memory devices cap at4K with explicit texture budgets. No procedural surface measurements are invented.
+- Audit publication now rejects stale numerical inputs, code or receipts and failed outcome gates. Current and historical comparison identities remain distinct.
+
 ## Scientific verification and traceability
 
 - Inspect source-to-output pipelines, native equations, current dataset identities and scoped NASA/JPL audit findings through Data & math.

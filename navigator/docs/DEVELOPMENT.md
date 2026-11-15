@@ -136,3 +136,15 @@ The entry mounts the existing Navigator, compiles real Tailwind `app/globals.css
 The deterministic receipt inventories payload/metafile bytes and SHA-256 hashes; gzip-6 values are estimates. `initialJS` is the complete transitive static import closure, not just the entry file, and excludes dynamic imports. Builds fail on missing emitted dependencies or eager Three/Rapier/scene-runtime imports. Receipts contain no output-directory names or timestamps, and the builder test compares two independently emitted destinations. No module preloading of deferred branches is added. Previously hashed assets are retained when rebuilding a destination; publish/prune an immutable candidate as part of the integrator's release process.
 
 Ownership handoff: the integrator must apply `publicAssetURL` at map/image/material I/O boundaries (including `catalog.map.url` and nested imagery URLs), preserve/wire the parent ready/error bridge, and retarget the root entry to `web/index.html`. Those shared files are intentionally outside the web-entry worker delivery. Until those adapters are integrated, the standalone hosted candidate can still request map images from origin-absolute `/data/` paths. Static tests validate chunks, CSS/fonts, transport helper and loader semantics; actual map paint, one-loader parent/iframe behavior, restored URLs, 3D and disconnected offline regression remain integrator browser gates. No browser timing or user acceptance is implied by byte reductions.
+
+## Scientific audit dependencies and publication
+
+The source-replay tests additionally require Python with the pinned NumPy audit dependency. In a temporary environment:
+
+```sh
+python3 -m venv /tmp/lunario-audit-python
+/tmp/lunario-audit-python/bin/python -m pip install -r pipeline/audit-requirements.txt
+PATH=/tmp/lunario-audit-python/bin:$PATH npm test
+```
+
+CI creates that environment before tests. Do not treat a missing dependency as a skipped pass. Rerun affected independent audits before changing `docs/qa/scientific-audit/integration/receipt-bindings.json`; the compiler deliberately rejects stale numerical code, inputs and failed receipts. Compilation time is not a new comparison timestamp. Run `python3 scripts/compile-scientific-verification.py`, then rebuild web/offline and execute `node scripts/verify-mission-paths.mjs` against the documented local4356 root server. See scientific-audit reports for independent source replay commands.
