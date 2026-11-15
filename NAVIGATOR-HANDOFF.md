@@ -1,6 +1,6 @@
 # Lunario navigator delivery
 
-15 November 2026. The `navigator/` directory is the complete, tested release snapshot from commit `4a47f8e4091ad4e71508e932a293b91e56e49a8f`; private Git history is not imported. Every application file matches that release byte for byte. Lunario's original brand assets retain their provenance at `aeb673fff6de377e5dba0982c0c55c8b0d874ee8`. Existing static shell files are preserved.
+15 November 2026. The `navigator/` directory began as a byte-identical import of tested source `4a47f8e4091ad4e71508e932a293b91e56e49a8f`; private Git history was not imported. It now includes the original per-load animation, persistent light/dark themes and Public mission/DSN/weather context. The current file manifest records every delivery file independently. Lunario's original brand assets retain their provenance at `aeb673fff6de377e5dba0982c0c55c8b0d874ee8`. Original static-shell artwork and loader implementation are preserved; entry configuration now replays the original animation on each load with a three-second minimum.
 
 ## Run and validate
 
@@ -19,3 +19,9 @@ See [the exact QA receipt](navigator/docs/qa/public-flight-usability/VERIFICATIO
 [Full TODOs and teammate handoff](navigator/docs/IN-FLIGHT.md) distinguish implemented software from evidence still required. Priorities are unprompted novice/educator/planner studies; final-host/provider/CSP/cache and actual-device/screen-reader acceptance; and qualified terrain/frame/vehicle/control/structural/station/thermal evidence. Educational flight/contact models and attractive maps do not certify an operational landing. Hosting belongs to the teammate. No authentication, credentials, private repository history, local dependencies or build caches are included.
 
 The byte-preserved import retains one existing trailing space in `navigator/scripts/verify-extended-flows.mjs`; no source or numerical behavior was changed to reformat the release.
+
+## Current themes and Public-context update
+
+Use the header Dark/Light control; light retains the reference mint/cream appearance and dark uses near-black/grey and orange. Reload preference is separate from mission inputs and NASA renderer state. Public lunar selection opens sourced mission context; Earth-complex selection opens role, geometry and weather explanations. Station availability, signal strength and far-future weather are explicitly not inferred from a visible model.
+
+[Current QA and artifact receipt](navigator/docs/qa/public-context-theme/VERIFICATION.md) supersedes the historical baseline counts/hash above for this update. Final HTML is 81,164,024 bytes with SHA256 `a7270fc95067acfacb422a368eb8f24c72a3d54c2ba0418b45e881cbbeea5342`. Hosting remains teammate-owned.
