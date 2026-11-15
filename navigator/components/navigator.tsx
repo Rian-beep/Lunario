@@ -662,7 +662,7 @@ export function Navigator() {
                 aria-pressed={mode === id}
                 onClick={() => {
                   setMode(id);setAudienceContextCollapsed(false);
-
+                  if(id==='public'&&assetFocus==='lander')requestAssetFocus('moon');
                   openPanel(id === "public" ? "overview" : id);
                   setGuideOpen(true);
                 }}
@@ -742,12 +742,12 @@ export function Navigator() {
           <div className="drawer-toggles">
             <Button
               variant="outline"
-              aria-label={leftOpen ? "Hide site drawer" : "Show site drawer"}
+              aria-label={leftOpen ? (mode==='public'?"Hide pick-a-site drawer":"Hide site drawer") : (mode==='public'?"Pick a site":"Show site drawer")}
               aria-expanded={leftOpen}
               onClick={() => setLeftOpen(!leftOpen)}
             >
               <Navigation size={15} />
-              Sites
+              {mode==='public'?'Pick a site':'Sites'}
             </Button>
             <Button
               variant="outline"
@@ -759,13 +759,14 @@ export function Navigator() {
               Inspector
             </Button>
           </div>
-            <div className="header-asset-focus" role="group" aria-label="3D asset focus">{(['moon','earth','lander'] as const).map(value=><Button key={value} variant="ghost" aria-pressed={assetFocus===value} disabled={value==='earth'&&!physicalAsset('earth',sceneContext?.rangeKm)} onClick={()=>requestAssetFocus(value)}>{value==='moon'?'Moon':value==='earth'?'Earth':'Lander'}</Button>)}</div>
+            <div className="header-asset-focus" role="group" aria-label="3D asset focus">{(mode==='public'?(['moon','earth'] as const):(['moon','earth','lander'] as const)).map(value=><Button key={value} variant="ghost" aria-pressed={assetFocus===value} disabled={value==='earth'&&!physicalAsset('earth',sceneContext?.rangeKm)} onClick={()=>requestAssetFocus(value)}>{value==='moon'?'Moon':value==='earth'?'Earth':'Lander'}</Button>)}</div>
             <div className="header-scene-controls" ref={setControlsTarget} hidden={view==='map'} />
-            <Button variant="outline" aria-label="Replan mission" disabled={!evidenceManifest} onClick={openReplanning}><Columns3 size={15}/>Replan mission</Button>
+            {mode!=='public'&&<Button variant="outline" aria-label="Replan mission" disabled={!evidenceManifest} onClick={openReplanning}><Columns3 size={15}/>Replan mission</Button>}
             {mode==='teach'&&<Button variant="outline" onClick={openTeachingStudio} disabled={!evidenceManifest}>Teaching studio</Button>}
             {mode==='plan'&&<Button variant="outline" onClick={openEngineeringEvidence} disabled={!evidenceManifest||!planning.result}>Engineering evidence</Button>}
-            <Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':learnOpen} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen(true)}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>
-            <Button variant="ghost" onClick={()=>{setPlaying(false);setFlightPlaying(false);setTouchdownOpen(true);}}>Lab</Button>
+            {mode!=='public'&&<Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':learnOpen} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen(true)}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>}
+            {mode!=='public'&&<Button variant="ghost" onClick={()=>{setPlaying(false);setFlightPlaying(false);setTouchdownOpen(true);}}>Lab</Button>}
+            {mode==='public'&&<Button variant="outline" aria-label="Compare sites and dates" onClick={()=>{setCompareMinimized(false);setCompareOpen(true);}}><Columns3 size={15}/>Compare</Button>}
           </div>
 
         </header>
@@ -1018,20 +1019,20 @@ export function Navigator() {
                           className={current?.sun ? "sun-dot" : "shadow-dot"}
                         />
                         {current?.sun === null
-                          ? "Sunlight unknown"
+                          ? (mode==='public'?"We do not know if sunlight reaches here":"Sunlight unknown")
                           : current?.sun
-                            ? "In sunlight"
-                            : "In shadow"}
+                            ? (mode==='public'?"Sunlight reaches this place":"In sunlight")
+                            : (mode==='public'?"Sun is hidden behind the hills":"In shadow")}
                         <span
                           className={
                             current?.contact ? "earth-dot" : "shadow-dot"
                           }
                         />
                         {current?.contact === null
-                          ? "Earth view unknown"
+                          ? (mode==='public'?"Earth view is unknown":"Earth view unknown")
                           : current?.contact
-                            ? "Earth in view"
-                            : "Earth below mask"}
+                            ? (mode==='public'?"Earth is above the hills":"Earth in view")
+                            : (mode==='public'?"Earth is hidden behind the hills":"Earth below mask")}
                       </div>
                       <p className="muted">{poseDescription}</p>
                     </Section>
@@ -1044,8 +1045,10 @@ export function Navigator() {
                         sphere={formatPercent(summary.sunlitSphere)}
                       />
                       <Metric
-                        label="Earth contact"
-                        detail={`At the ${state.heightM} m display height, Earth must clear both terrain and the ${state.mission.antennaMaskDeg}° minimum antenna elevation above horizontal. Terrain-only visibility: ${number((terrainOnlySummary?.earthTerrain??NaN)*100)}%.${state.antennaHeightM!==state.heightM?` The mission antenna is at ${state.antennaHeightM} m and has ${number((mission.contactFraction??NaN)*100)}% contact geometry.`:""} This is not a confirmed radio service.`}
+                        label={mode==='public'?"Earth in view":"Earth contact"}
+                        detail={mode==='public'
+                          ?`From ${state.heightM} m above the ground, Earth must clear the surrounding hills. Terrain-only share of samples: ${number((terrainOnlySummary?.earthTerrain??NaN)*100)}%. Seeing Earth is not the same as a working radio link.`
+                          :`At the ${state.heightM} m display height, Earth must clear both terrain and the ${state.mission.antennaMaskDeg}° minimum antenna elevation above horizontal. Terrain-only visibility: ${number((terrainOnlySummary?.earthTerrain??NaN)*100)}%.${state.antennaHeightM!==state.heightM?` The mission antenna is at ${state.antennaHeightM} m and has ${number((mission.contactFraction??NaN)*100)}% contact geometry.`:""} This is not a confirmed radio service.`}
                         value={number(summary.earthTerrain * 100)}
                         unit="%"
                         sphere={formatPercent(summary.earthSphere)}

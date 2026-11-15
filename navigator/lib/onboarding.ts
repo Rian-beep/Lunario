@@ -1,15 +1,15 @@
 export type AudienceMode = 'public' | 'teach' | 'plan';
 export const AUDIENCE_GUIDES = {
   public: {
-    name: 'Public', title: 'Find a place in the lunar light',
-    intro: 'At the Moon’s south pole, a small ridge can hide the Sun or Earth for days. Explore how a place and a date change what a mission can do.',
+    name: 'Public', title: 'Lunar Landing Site Navigator',
+    intro: 'Lunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south pole.',
     steps: [
-      ['Choose a place', 'Pick a pin on the 2D map or enter coordinates. Switch to 3D to explore the measured terrain around it.'],
-      ['Move through time', 'The amber track shows sunlight; the blue track shows a view of Earth. Drag the UTC timeline and watch both change.'],
-      ['Understand the numbers', 'Read the stay guidance in the header for the current moment, the whole stay and what to try next. Hover or focus ⓘ to explore the terrain and smooth-Moon comparison.'],
+      ['Pick a site', 'Choose a pin on the 2D map or enter coordinates. Switch to 3D to walk the measured terrain around it.'],
+      ['Move the date', 'Drag the UTC timeline. The amber track shows sunlight; the blue track shows whether Earth clears the hills.'],
+      ['Compare', 'Open Compare to try another place or date side by side. Horizon analysis stays one click away in the inspector.'],
     ],
-    limits: 'Sunlight is an opportunity to generate power. Seeing Earth is an opportunity to communicate. A spacecraft still needs the right equipment.',
-    action: 'Explore the Moon',
+    limits: 'Sunlight is a chance to generate power. Seeing Earth is a chance to communicate. A spacecraft still needs the right equipment.',
+    action: 'Pick a site',
   },
   teach: {
     name: 'Educator', title: 'Make a prediction. Test it on the Moon.',

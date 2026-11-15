@@ -158,7 +158,7 @@ test('frozen audience exports render task scope, explicit controls, local study 
  new Function('require','module','exports',compiled.outputFiles.find(f=>f.path.endsWith('.cjs'))!.text)(createRequire(import.meta.url),output,output.exports);
  const {AudienceTaskStrip,TeachingStudio,SolarLesson,ExperimentRelation}=output.exports;
  const before=structuredClone(base);const noop=()=>{};
- for(const mode of ['public','teach','plan'] as const){const html=renderToStaticMarkup(createElement(AudienceTaskStrip,{mode,catalog:c,manifest:m,state:base,assessment:a,playhead:base.startIndex,siteName:'Selected site',onInspect:noop,onReplan:noop,onTeach:noop}));assert.match(html,/Dismiss/);if(mode==='public'){assert.match(html,/At this sampled moment/);assert.match(html,/Whole stay/);assert.match(html,/Smooth sphere/);assert.ok(html.includes(publicAssessmentGuidance(a).why));}if(mode==='plan'){assert.match(html,/Required:/);assert.match(html,/unassessed disciplines/);}}
+ for(const mode of ['public','teach','plan'] as const){const html=renderToStaticMarkup(createElement(AudienceTaskStrip,{mode,catalog:c,manifest:m,state:base,assessment:a,playhead:base.startIndex,siteName:'Selected site',onInspect:noop,onReplan:noop,onTeach:noop}));assert.match(html,/Dismiss/);if(mode==='public'){assert.match(html,/At this moment/);assert.match(html,/Whole stay/);assert.match(html,/Without local hills|smooth Moon/);assert.match(html,/Pick a site · Move the date · Compare/);assert.doesNotMatch(html,/antenna viewing limit|assessed requirements/i);}if(mode==='plan'){assert.match(html,/Required:/);assert.match(html,/unassessed disciplines/);}}
  const studio=renderToStaticMarkup(createElement(TeachingStudio,{catalog:c,manifest:m,state:base,onChange:noop,onCompare:noop,onClose:noop}));
  assert.match(studio,/Capture current scenario as baseline/);assert.match(studio,/Audience validation evidence/);assert.match(studio,/0 locally recorded sessions/);assert.doesNotMatch(studio,/Observed complete: [1-9]/);
  const lesson=renderToStaticMarkup(createElement(SolarLesson,{catalog:c,manifest:m,state:base,localIndex:0}));assert.match(lesson,/<math/);assert.match(lesson,/<mfrac>/);assert.match(lesson,/Illustrative algebra example/);assert.match(lesson,/Populate from captured scenario/);assert.match(lesson,/W per \(W\/m²\)/);assert.match(lesson,/Solar irradiance S \(W\/m²\)/);
@@ -166,8 +166,11 @@ test('frozen audience exports render task scope, explicit controls, local study 
  assert.deepEqual(base,before);
 });
 
-test('Public instant labels explain the chosen antenna limit without cutoff shorthand',()=>{
+test('Public instant labels use plain hill language without antenna or cutoff jargon',()=>{
  const g=audienceGuidance(c,base,a,base.startIndex);
- assert.match(g.currentPublic,/chosen antenna viewing limit|Earth view is unknown/);assert.doesNotMatch(g.currentPublic,/cutoff/);assert.match(g.currentSpherePublic,/sunlight|shadow/);
+ assert.match(g.currentPublic,/Earth is above the hills|Earth is hidden behind the hills|Earth view is unknown/);
+ assert.doesNotMatch(g.currentPublic,/cutoff|antenna viewing limit/i);
+ assert.match(g.currentSpherePublic,/sunlight|hills|Earth/);
+ assert.doesNotMatch(g.currentPublic,/\bin shadow\b/i);
  assert.match(audienceGuidance(c,base,a,base.endIndex+2).currentPublic,/outside this stay/);
 });
