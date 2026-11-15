@@ -1,0 +1,15 @@
+# Pre-registered comparison limits
+
+Registered 2026-11-15, before fetching the expanded audit fixtures. Baseline 96079ae. Existing narrow verifier ran first (56 samples, maximum azimuth 0.0115762°, elevation 0.0088293°).
+
+- Decoded direction: 0.020° great-circle angular separation and elevation; azimuth limit 0.020° / max(0.001, |cos(reference elevation)|). Latitude/longitude are rounded to 0.01° (each ±0.005°, vector perturbation at most 0.007072°). Remaining budget covers known non-equivalence of reverse light-time/subobserver construction and direct apparent observer directions, including ~0.006° Earth orbital aberration and <0.0007° solar parallax. This is an implementation screen, not physical uncertainty. Use angular separation at zenith, not unbounded azimuth residual as an accuracy measure.
+- Encoded Earth-to-Moon observer centre range versus the identical fresh quantity 20: 0.050 km (50 m). Float32 half-ULP at 300000–500000 km is 0.015625 km; remainder allows output precision and changed provider realizations. This is not a lunar site range.
+- Site Earth range from vector subtraction versus direct apparent Earth observer range: 5 km. The reversed light-time construction is not simultaneous geometric separation; Earth motion during ~1.3 s is kilometres. Record actual residual, do not describe this as centimetre astrometry.
+- Solar angular semidiameter versus quantity 13 at Moon centre: 0.000070° (0.252 arcsec). Half an encoded full-diameter arcsecond becomes ±0.000069444° semidiameter. Site comparison: 0.000080° allowing lunar parallax in solar distance. Solar range is not stored in the catalog; independent estimate from diameter uses the provider's adopted solar radius, not an invented measured range.
+- Earth semidiameter versus quantity 13 at lunar site: 0.000100° (0.36 arcsec), using equatorial 6378.137 km radius and topocentric range. A geocentric semidiameter is explicitly tested separately to expose site parallax; do not widen this tolerance if it fails.
+- Fresh unquantized source coordinates versus encoded coordinates: ±0.005001° (wrapped longitude), source range as above; full solar diameter ±0.500001 arcsec.
+- UTC hourly identities: exact requested epoch to nearest millisecond (JD decimal conversion allowed 1 ms); sample count exact. UT post-1962 is UTC in Horizons; future leap seconds unknown. JavaScript POSIX time cannot represent 23:59:60. Reject TDB/TT headers rather than relabelling them.
+- Synthetic Euclidean parallax test: 1e-10° angles, 1e-8 km range. This verifies vector implementation only.
+- Rise/set: the adjacent hourly samples bracket a sign change at most 3600 s apart; no sub-hour timing accuracy is inferred. Synthetic straight-horizon finite disk tests distinguish any limb, centre and whole disk. Real terrain event qualification is outside this lane.
+
+Primary definitions: https://ssd.jpl.nasa.gov/horizons/manual.html (quantities 4,13,14,15,20; time scales); https://ssd-api.jpl.nasa.gov/doc/horizons.html (API 1.3); https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/time.html ; https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/frames.html .

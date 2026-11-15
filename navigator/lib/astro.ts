@@ -149,6 +149,16 @@ export function earthAzEl(lat: number, lon: number, elat: number, elon: number, 
   return [(az + 360) % 360, el];
 }
 
+/** Site-to-Earth distance in the catalog's approximate apparent-vector model, km.
+ * The input is the archived Earth-observed Moon range, not a fresh lunar observer range.
+ */
+export function earthRangeAtSiteKm(lat: number, lon: number, elat: number, elon: number, rangeKm: number): number {
+  const r = Math.PI / 180;
+  const cosAngle = Math.sin(lat * r) * Math.sin(elat * r)
+    + Math.cos(lat * r) * Math.cos(elat * r) * Math.cos((elon - lon) * r);
+  return Math.sqrt(rangeKm ** 2 + MOON_RADIUS_KM ** 2 - 2 * rangeKm * MOON_RADIUS_KM * cosAngle);
+}
+
 /** Fraction of a uniform disk above a straight horizon. */
 export function diskFraction(elevation: number, horizon: number, radius: number): number {
   if (!(radius > 0)) return elevation > horizon ? 1 : 0;
@@ -296,7 +306,7 @@ export function buildSeries(
     sunHorizon[k] = horizonAt(terrain.mask, terrain.stepDeg, saz);
     earthHorizon[k] = horizonAt(terrain.mask, terrain.stepDeg, eaz);
     sunRadius[k] = catalog.sunRadiusDeg[i];
-    const range = catalog.earthRangeKm[i];
+    const range = earthRangeAtSiteKm(lat, lon, catalog.subearthLat[i], catalog.subearthLon[i], catalog.earthRangeKm[i]);
     earthRadius[k] = (Math.asin(Math.min(1, EARTH_RADIUS_KM / range)) * 180) / Math.PI;
   }
   return { index0: i0, sunAz, sunEl, earthAz, earthEl, sunHorizon, earthHorizon, sunRadius, earthRadius };

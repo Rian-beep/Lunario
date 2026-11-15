@@ -1,0 +1,18 @@
+{
+  "checkedUtcDate": "2026-11-15",
+  "checks": [
+    {"command":"npx tsx --test tests/audit-ephemeris.test.ts","exitCode":0,"tests":15,"passed":15,"failed":0,"skipped":0},
+    {"command":"bash scripts/audit-ephemeris-baseline.sh","exitCode":0,"baseline":"96079ae","baselineTests":15,"baselinePassed":14,"baselineFailed":1,"meaning":"Harness succeeds only when the single expected missing-parallax regression and 52 baseline disk comparison failures reproduce"},
+    {"command":"npm test","exitCode":0,"tests":1000,"passed":1000,"failed":0,"skipped":0,"cancelled":0},
+    {"command":"npm run typecheck -- --incremental false","exitCode":0,"errors":0},
+    {"command":"npm run lint","exitCode":0,"errors":0,"warnings":0},
+    {"command":"npm run verify:horizons","exitCode":1,"validTables":19,"siteSamples":112,"providerErrors":0,"directionFailures":0,"earthRangeFailures":56,"earthSemidiameterFailures":40,"meaning":"Expected retained scientific discrepancies; no tolerance widened"},
+    {"command":"npx tsx scripts/audit-ephemeris.ts","exitCode":1,"meaning":"Offline exact-fixture reproduction of the same retained discrepancies"},
+    {"command":"npx tsx scripts/audit-ephemeris-events.ts --live","exitCode":0,"events":4,"sourceRows":100},
+    {"command":"npx tsx scripts/audit-ephemeris-events.ts","exitCode":0,"events":4,"sourceRows":100},
+    {"command":"git diff --check","exitCode":0},
+    {"command":"python3 -c 'from pipeline.build_dataset import parse_rows'","exitCode":1,"error":"ModuleNotFoundError: No module named tifffile","meaning":"Python pipeline not executed or passed; no regeneration attempted"}
+  ],
+  "slopScan":"Unavailable on PATH; existing repository triage inspected; no tool installed",
+  "scope":"Bounded numerical/software verification, not independent observation, UI acceptance or operational certification"
+}
