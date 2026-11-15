@@ -652,3 +652,8 @@ html:root[data-ui-theme="dark"] .lunar-app summary:hover { color: var(--primary)
 html:root[data-ui-theme="dark"] :is(.inspector-nav, .drawer-heading, .comparison-header, .comparison-tabs) summary:hover { color: var(--mission-ink); }
 html:root[data-ui-theme="dark"] :is([aria-label="Touchdown experiment controls"], [aria-label="Sun, Earth and Moon explorer"] > aside) { color: var(--foreground); }
 html:root[data-ui-theme="dark"] :is(section:has(> [data-controls]) > header, .inspector-section > h3, .inspector details > summary, .header-dropdown-content details > summary) { color: var(--mission-ink); }
+/* Scoped legacy captions must inherit the selected dark reading palette. */
+html:root[data-ui-theme="dark"] .lunar-app .inspector .audience-context header small,
+html:root[data-ui-theme="dark"] .lunar-app .inspector .audience-source { color: var(--muted-foreground); }
+html:root[data-ui-theme="dark"] .scene-legend > span:not(.sun-dot):not(.earth-dot) { color: var(--mission-on-space-muted); }
+html:root[data-ui-theme="dark"] .map-imagery-tools [data-slot="button"] { color: var(--foreground); }

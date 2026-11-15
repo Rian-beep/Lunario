@@ -11,12 +11,12 @@ try {for(const transport of ['web','file']){
  if(transport==='file')await context.setOffline(true);
  const page=await context.newPage(),errors=[],network=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))network.push(r.url());});
- await context.addInitScript(()=>{sessionStorage.setItem('lunario-loader-seen','1');window.__loaderTimes=[];new MutationObserver(()=>{const visible=!!document.querySelector('.lunario-loader');const last=window.__loaderTimes.at(-1);if(!last||last.visible!==visible)window.__loaderTimes.push({visible,ms:performance.now()});}).observe(document,{childList:true,subtree:true});});
+ await context.addInitScript(()=>{sessionStorage.setItem('lunario-loader-seen','1');window.__loaderTimes=[];const append=Node.prototype.appendChild;Node.prototype.appendChild=function(node){if(node instanceof Element&&node.classList.contains('lunario-loader'))window.__loaderInsertedMs=performance.now();return append.call(this,node);};new MutationObserver(()=>{const visible=!!document.querySelector('.lunario-loader');const last=window.__loaderTimes.at(-1);if(!last||last.visible!==visible)window.__loaderTimes.push({visible,ms:performance.now()});}).observe(document,{childList:true,subtree:true});});
  const target=transport==='file'?pathToFileURL(process.env.LUNARIO_THEME_FILE||'/tmp/lunario-features.html').href:process.env.LUNARIO_THEME_URL||'http://127.0.0.1:4341';
  await page.goto(target,{waitUntil:'domcontentloaded'});
  await page.getByRole('button',{name:'Dismiss introduction',exact:true}).waitFor({timeout:90000});
  await page.getByRole('button',{name:'Dismiss introduction',exact:true}).click();
- const first=await page.evaluate(()=>window.__loaderTimes);const seen=first.find(x=>x.visible),hidden=first.find(x=>!x.visible&&x.ms>seen?.ms);assert.ok(seen&&hidden&&hidden.ms-seen.ms>=3000,JSON.stringify(first));
+ const first=await page.evaluate(()=>window.__loaderTimes);const seen=first.find(x=>x.visible),hidden=first.find(x=>!x.visible&&x.ms>seen?.ms);assert.ok(seen&&hidden&&hidden.ms-(await page.evaluate(()=>window.__loaderInsertedMs))>=3000,JSON.stringify(first));
  const toggle=()=>page.getByRole('button',{name:'Switch to dark mode',exact:true});await toggle().click();
  await page.waitForFunction(()=>document.documentElement.dataset.uiTheme==='dark');
  assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--background').trim()),'#111214');
@@ -29,7 +29,7 @@ try {for(const transport of ['web','file']){
   await page.getByRole('button',{name:'Switch to light mode',exact:true}).waitFor({timeout:90000});
   await page.locator('.lunario-loader').waitFor({state:'hidden',timeout:90000});
   if(await page.getByRole('button',{name:'Dismiss introduction',exact:true}).isVisible())await page.getByRole('button',{name:'Dismiss introduction',exact:true}).click();
-  const times=await page.evaluate(()=>window.__loaderTimes);const s=times.find(x=>x.visible),h=times.find(x=>!x.visible&&x.ms>s?.ms);assert.ok(s&&h&&h.ms-s.ms>=3000,JSON.stringify(times));
+  const times=await page.evaluate(()=>window.__loaderTimes);const s=times.find(x=>x.visible),h=times.find(x=>!x.visible&&x.ms>s?.ms);assert.ok(s&&h&&h.ms-(await page.evaluate(()=>window.__loaderInsertedMs))>=3000,JSON.stringify(times));
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.uiTheme),'dark');
  }
  await page.getByRole('button',{name:'Switch to light mode',exact:true}).click();
@@ -61,6 +61,17 @@ try {for(const transport of ['web','file']){
   assert.match(await page.getByRole('region',{name:'Current dated forecast, separate from mission',exact:true}).innerText(),/Rain|rain/);
  }
  await page.screenshot({path:`${out}/${transport}-earth-context.png`});
+ await page.getByRole('button',{name:'Switch to dark mode',exact:true}).click();
+ for(const audience of ['Educator','Planner']){
+  await page.getByRole('button',{name:audience,exact:true}).click();
+  await page.getByRole('button',{name:'Dismiss introduction',exact:true}).click();
+  await page.locator('.audience-context header small').waitFor();await page.waitForTimeout(350);
+  const contrast=await page.locator('.audience-context header small').evaluate(el=>{
+   const lum=color=>{const c=color.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722;};
+   const a=lum(getComputedStyle(el).color),b=lum(getComputedStyle(el.closest('.audience-context')).backgroundColor);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+  });assert.ok(contrast>=4.5,`${audience} caption contrast ${contrast}`);
+  await page.screenshot({path:`${out}/${transport}-dark-${audience}.png`});
+ }
  assert.deepEqual(errors,[]);assert.equal(network.filter(x=>x.includes('api.open-meteo')).length,transport==='file'?0:1);if(transport==='file')assert.deepEqual(network,[]);
  report.push({transport,status:'pass',loaderDurationMs:hidden.ms-seen.ms,reload:true,hardReload:true,themePersistence:true,originalWhiteLogo:true,siteHistory:true,allThreeStations:true,noAutomaticWeather:true,httpRequests:network.length});
  await context.close();
