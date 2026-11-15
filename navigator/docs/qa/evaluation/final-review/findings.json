@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "reviewedBase": "913d9d4",
+  "reviewedHead": "3365672043fb24737b1090327cee8e64628db5df",
+  "cameraPatch": "6bf2afdd8ca097985a2126d5b72e4a26971e75ba",
+  "reviewDate": "2026-11-15",
+  "introducedFindingCounts": { "critical": 0, "important": 0, "minor": 0 },
+  "openInheritedFindingCounts": { "critical": 0, "important": 1, "minor": 0 },
+  "findings": [
+    {
+      "id": "FR01",
+      "severity": "important",
+      "status": "open",
+      "introducedByReviewedDelta": false,
+      "title": "Station reference changes escape publication freshness checks",
+      "locations": [
+        { "file": "scripts/compile-scientific-verification.py", "line": 63 },
+        { "file": "docs/qa/scientific-audit/integration/receipt-bindings.json", "line": 61 },
+        { "file": "tests/comms-evaluation/compare-sources.mts", "line": 9 },
+        { "file": "scripts/audit-resources-compare.ts", "line": 56 }
+      ],
+      "observedBehavior": "An isolated +10 degree mutation of the retained CSPICE reference makes a fresh source comparison fail while publication --check still exits 0 with 42 verified, 22 uncertain and 0 failing claims.",
+      "rootCause": "The result receipts and observer archives are bound, but public/data/engineering-evidence/spice-reference.json is neither bound nor covered by the registered asset inventory.",
+      "reproducibleSteps": [
+        "Create a disposable relative-path copy of compiler, binding, bound files, registered assets, both published JSON registers, CSPICE reference and scientific-audit/resources/sources. Do not modify the checkout or rebind receipts.",
+        "Run the original checkout's tsx and scripts/audit-resources-compare.ts with the scratch copy as cwd; confirm 288 comparisons pass. Run python3 scripts/compile-scientific-verification.py --check there; confirm exit 0.",
+        "Change only public/data/engineering-evidence/spice-reference.json samples[0].azimuthDeg from 191.25633627568297 to 201.25633627568297.",
+        "Repeat the comparison: exit 1, Goldstone first-epoch azimuth error 10.000078898683 degrees versus tolerance 0.002. Repeat publication --check: exit 0, unchanged 42/22/0.",
+        "Repeat the publication mutation on an isolated exact 913d9d4 snapshot: exit 0, unchanged 41/21/0, establishing inherited lineage."
+      ],
+      "recommendedChange": "Bind actual comparison reference and implementation dependencies; add a reference-drift rejection regression without regenerating or restamping evidence to bypass failure.",
+      "changeTestEvidence": "No production fix made. Both endpoint controls and mutations executed in disposable copies. Fresh untouched resource and CLPS checks pass.",
+      "limitations": "A publication integrity gap, not evidence of corrupt current science or an operational qualification requirement. Inherited from the review base."
+    }
+  ],
+  "cameraReview": {
+    "status": "no-additional-defect-found",
+    "knownIssue": "Plain canvas pointer-down cancels asset travel at the reviewed endpoint; isolated patch addresses this and related focus-request paths.",
+    "focusedTests": { "passed": 6, "failed": 0 },
+    "retainedBrowserReceipt": "/tmp/lunario-camera-delivery/report.json",
+    "productionSourceHashesMatchReceipt": true,
+    "retainedBrowserGroups": { "passed": 10, "failed": 0, "pageErrors": 0 },
+    "browserRerunByThisReviewer": false,
+    "integrationStatus": "pending-parent-integration-and-generated-app-verification"
+  },
+  "verification": {
+    "publicationCheck": "pass: 42 verified, 22 uncertain, 0 failing",
+    "staleMutationRejections": 5,
+    "resourceComparisonsPassed": 288,
+    "resourceSourceIntegrityChecksPassed": 11,
+    "clpsSourceStatesPassed": 740,
+    "focusedTestSelectionsPassed": [73, 46],
+    "focusedTestSelectionsOverlap": true,
+    "typecheck": "pass: npm run typecheck -- --incremental false",
+    "fullSuiteRerun": false,
+    "generatedApplicationJourneysRerun": false,
+    "productionSourceEdited": false,
+    "receiptsOrBindingsEdited": false,
+    "generatorsRun": false,
+    "serversOrSharedBrowsersStarted": false
+  }
+}
