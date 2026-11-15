@@ -1,0 +1,9 @@
+# UI changes kept separate from scientific acceptance
+
+15 November 2026. White plot surfaces preserve line colours/shapes, labels, axes, legends and unknown gaps. Copy chart image writes an actual PNG; Download PNG remains available when clipboard access is unavailable or denied. Exports are opaque white at 2× resolution and carry chart title, axis units, legend and scope notes.
+
+Independent chart component checks: five focused tests, six isolated offline browser checks, types and lint passed. Integrated browser checks (`scripts/verify-chart-images.mjs`) pass HTTP clipboard readback with an actual image/png item and disconnected-file PNG download; output 1292×1392, opaque-white corner, readable labelled source plot and zero offline HTTP. Temporary receipts `/tmp/lunario-chart-images-final/report.json` and `/tmp/lunario-chart-browser-independent-r2.log`.
+
+Earth/Moon retargeting and live-date drift fixes passed 24 independent focused checks, types and lint. Real normal-motion HTTP and disconnected-file journeys both reached Earth and Moon, including mid-flight retargeting, finite camera states, stable renderer identity and zero offline HTTP (`scripts/verify-asset-transfer.mjs`, `/tmp/lunario-asset-transfer-final/report.json`). These are camera/UI checks, not trajectory validation.
+
+Location history was nested inside a Public-only disclosure. The summary and outcomes now appear directly in the expanded Location card in all three modes; restoring Location expands it. All 40 historical catalogue pins plus legacy LCROSS have a sourced record (41 selectable historical entries). Candidate/custom/reference points without histories do not acquire an asserted landing. 31 focused history/context tests pass, including every historical entry in all three audiences. Full source suite before this last Location correction passed 985 tests; scientific audit and final combined acceptance remain separate.

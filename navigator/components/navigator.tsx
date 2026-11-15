@@ -532,7 +532,8 @@ export function Navigator() {
     return () => clearTimeout(timer);
   }, [notice]);
   const selectSite = (id: string) => {
-    if(mode==='public'){setLeftOpen(false);if(headingVisible)setHeadingMinimized(false);}
+    if(mode==='public')setLeftOpen(false);
+    if(headingVisible)setHeadingMinimized(false);
     const selected=catalog?.sites.find(s=>s.id===id);
     if(catalog&&selected)setMapArea(mapAreaForLocation(catalog.map,selected.lat,selected.lon));
     update({ siteId: id, custom: null, terrainMode:state?.terrainMode??'prepared' });
@@ -925,9 +926,9 @@ export function Navigator() {
                 {(((location.lon % 360) + 360) % 360).toFixed(4)}° E ·{" "}
                 {terrain.heightM} m observer
               </span><small className="terrain-source-caption">{isGlobalTerrainChoice(terrain)?'≈4.3 km coarse terrain context':terrain.mask.some(Number.isFinite)?terrain.exact?'Prepared site horizon':`Borrowed horizon · ${number(terrain.distanceKm,2)} km away`:'Terrain horizon unavailable'}</small>{!terrain.mask.some(Number.isFinite)&&catalog.globalTerrain&&state.terrainMode!=='global-context'&&<Button className="terrain-context-action" variant="ghost" onClick={()=>update({terrainMode:'global-context'})} title="Uses calibrated coarse LOLA elevations at approximately4.3km spacing; fine obstacles remain unassessed">Calculate coarse global context</Button>}
-              {mode==='public'&&!headingMinimized&&<PublicSiteStory site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
+              {!headingMinimized&&<PublicSiteStory mode={mode} site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
             </div>
-          </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>setHeadingVisible(true)}><Navigation size={14}/> Location</Button>}
+          </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>{setHeadingVisible(true);setHeadingMinimized(false);}}><Navigation size={14}/> Location</Button>}
           {leftOpen && (
             <aside hidden={focusMode} className="site-drawer glass" aria-label="Landing sites">
               <div className="drawer-heading">

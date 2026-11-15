@@ -1,5 +1,11 @@
 # Changelog
 
+## 15 November 2026 — shareable charts and location stories
+
+- Copy labelled charts as PNG images or download them, with white backgrounds and readable axes/legends.
+- Read each historical site’s mission summary directly in Location across Public, Educator and Planner; expand facts for hardware, objectives, support, findings and cited exploration evidence.
+- Switch Earth/Moon focus smoothly when retargeting or changing the displayed date.
+
 ## 15 November 2026 — integrated map and mission context
 
 - Rank sampled map cells by sunlight, darkness, regional slope and Earth visibility; inspect published ice references separately in Layers.

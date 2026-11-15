@@ -7,12 +7,13 @@ import {nearbyMissionPins,publicLunarContact,publicStationRole,siteHistoryLabel}
 import {Info} from './info';
 import {MissionHistoryCard} from '@/components/mission-history';
 import {missionHistoryForSite} from '@/lib/mission-history';
-export function PublicSiteStory({site,sites,lat,lon,radiusM}:{site:Site|null;sites:readonly Site[];lat:number;lon:number;radiusM:number}){
+export function PublicSiteStory({site,sites,lat,lon,radiusM,mode="public"}:{site:Site|null;sites:readonly Site[];lat:number;lon:number;radiusM:number;mode?:"public"|"teach"|"plan"}){
  const nearby=useMemo(()=>nearbyMissionPins(sites,lat,lon,site?.id??null,radiusM),[sites,lat,lon,site?.id,radiusM]);
+ const history=site?missionHistoryForSite(site.id):null;
  return <section className="public-site-context" aria-label="Selected location mission history">
-  <strong>{siteHistoryLabel(site)}</strong>
-  <details key={site?.id??`${lat},${lon}`}><summary>Mission story & nearby missions</summary><div className="public-story-body"><MissionHistoryCard mode="public" record={site?missionHistoryForSite(site.id):null}/>
-   <p>{site?.summary??'This is your chosen lunar coordinate. No historical landing is asserted at the exact point.'}</p>
+  <strong>{history&&!site?.mission?`${history.name} · historical mission context`:siteHistoryLabel(site)}</strong>
+  <div className="location-mission-story">{history?<MissionHistoryCard mode={mode} record={history}/>:<p>{site?.summary??'This is your chosen lunar coordinate. No historical landing is asserted at the exact point.'}</p>}</div>
+  <details key={site?.id??`${lat},${lon}`}><summary>Nearby missions & coordinate context</summary><div className="public-story-body">
    {site?.mission&&<p>{site.mission.approximate||site.mission.coordinateKind==='planned-target'?'The pin is an approximate region or intended target; check the source for its uncertainty.':'This pin represents the published spacecraft position, rather than the full area explored by its mission.'} Historical mission dates are context; the timeline still evaluates your selected simulation date.</p>}
    {nearby.length>0?<><h4>Other published mission pins within about 5 km</h4><ul>{nearby.map(({site:s,distanceKm})=><li key={s.id}><a href={s.sourceUrl} target="_blank" rel="noreferrer">{s.name}</a> · about {distanceKm.toFixed(1)} km · {s.mission!.date}</li>)}</ul><p>Distances compare reported pins on a sphere. Source frames and coordinate uncertainty apply; nearby does not mean the same landing point.</p></>:<p>No other observed, non-approximate touchdown pin is listed within 5 km. This catalogue is not a complete inventory of lunar hardware.</p>}
    {site&&<a href={site.sourceUrl} target="_blank" rel="noreferrer">Mission/location source</a>}
