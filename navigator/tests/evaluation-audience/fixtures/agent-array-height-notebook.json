@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "version": 1,
+      "id": "ed3e79dc-d27d-4635-b153-0d8ea5125a30",
+      "experimentId": "array-height",
+      "question": "Does raising only the array change modeled generation?",
+      "prediction": "Raising only the array may change generation while antenna contact stays fixed.",
+      "explanation": "Agent observation: use the displayed paired terrain/sphere table; array height varies independently of antenna height. No universal or operational conclusion.",
+      "createdUtc": "2026-11-15T18:45:05.638Z",
+      "baseline": {
+        "siteId": "malapert-massif",
+        "custom": null,
+        "startIndex": 13067,
+        "endIndex": 13402,
+        "heightM": 2,
+        "mission": {
+          "areaM2": 4,
+          "efficiency": 0.3,
+          "lossFraction": 0.15,
+          "solarFlux": 1361,
+          "arrayMode": "tracking",
+          "tiltDeg": 90,
+          "azimuthDeg": 0,
+          "loadW": 250,
+          "batteryWh": 10000,
+          "initialSoc": 1,
+          "reserveSoc": 0.2,
+          "chargeEfficiency": 0.95,
+          "dischargeEfficiency": 0.95,
+          "antennaMaskDeg": 0
+        },
+        "flight": {
+          "mode": "descent",
+          "altitudeM": 300,
+          "horizontalMps": 10,
+          "verticalMps": -8,
+          "headingDeg": 90,
+          "pitchDeg": 90,
+          "finalPitchDeg": 90,
+          "wetMassKg": 4700,
+          "dryMassKg": 2200,
+          "thrustN": 16000,
+          "ispSeconds": 311,
+          "burnSeconds": 150,
+          "durationSeconds": 180,
+          "eastOffsetM": -300,
+          "northOffsetM": 0,
+          "landing": {
+            "guidance": "target-landing",
+            "targetRadiusM": 20,
+            "maxVerticalMps": 2,
+            "maxHorizontalMps": 1,
+            "maxTiltDeg": 15,
+            "breakupEnergyJ": 100000,
+            "friction": 0.8,
+            "restitution": 0.1,
+            "contactPreviewSeconds": 12
+          }
+        },
+        "schemaVersion": 2,
+        "terrainMode": "global-context",
+        "arrayHeightM": 2,
+        "antennaHeightM": 2,
+        "requirements": {
+          "scope": "resource-screening",
+          "requireZeroUnmetWh": true,
+          "requireReserve": true,
+          "maxGeometricOutageHours": null,
+          "minAssumedRadioMarginDb": null,
+          "criticalContacts": [],
+          "requiredExternal": [],
+          "extraScreens": {}
+        },
+        "operations": {
+          "deploymentDelayHours": 0,
+          "maxChargeW": null,
+          "maxDischargeW": null,
+          "loadSegments": []
+        }
+      },
+      "candidate": {
+        "siteId": "malapert-massif",
+        "custom": null,
+        "startIndex": 13067,
+        "endIndex": 13402,
+        "heightM": 2,
+        "mission": {
+          "areaM2": 4,
+          "efficiency": 0.3,
+          "lossFraction": 0.15,
+          "solarFlux": 1361,
+          "arrayMode": "tracking",
+          "tiltDeg": 90,
+          "azimuthDeg": 0,
+          "loadW": 250,
+          "batteryWh": 10000,
+          "initialSoc": 1,
+          "reserveSoc": 0.2,
+          "chargeEfficiency": 0.95,
+          "dischargeEfficiency": 0.95,
+          "antennaMaskDeg": 0
+        },
+        "flight": {
+          "mode": "descent",
+          "altitudeM": 300,
+          "horizontalMps": 10,
+          "verticalMps": -8,
+          "headingDeg": 90,
+          "pitchDeg": 90,
+          "finalPitchDeg": 90,
+          "wetMassKg": 4700,
+          "dryMassKg": 2200,
+          "thrustN": 16000,
+          "ispSeconds": 311,
+          "burnSeconds": 150,
+          "durationSeconds": 180,
+          "eastOffsetM": -300,
+          "northOffsetM": 0,
+          "landing": {
+            "guidance": "target-landing",
+            "targetRadiusM": 20,
+            "maxVerticalMps": 2,
+            "maxHorizontalMps": 1,
+            "maxTiltDeg": 15,
+            "breakupEnergyJ": 100000,
+            "friction": 0.8,
+            "restitution": 0.1,
+            "contactPreviewSeconds": 12
+          }
+        },
+        "schemaVersion": 2,
+        "terrainMode": "global-context",
+        "arrayHeightM": 10,
+        "antennaHeightM": 2,
+        "requirements": {
+          "scope": "resource-screening",
+          "requireZeroUnmetWh": true,
+          "requireReserve": true,
+          "maxGeometricOutageHours": null,
+          "minAssumedRadioMarginDb": null,
+          "criticalContacts": [],
+          "requiredExternal": [],
+          "extraScreens": {}
+        },
+        "operations": {
+          "deploymentDelayHours": 0,
+          "maxChargeW": null,
+          "maxDischargeW": null,
+          "loadSegments": []
+        }
+      },
+      "baselineKey": "planning-5-df6196bd-880ad867-1358",
+      "candidateKey": "planning-5-59e8011c-18694954-1359",
+      "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+      "modelVersion": "planning-5",
+      "changedPaths": [
+        "arrayHeightM"
+      ],
+      "lockedFields": "All scenario fields except arrayHeightM",
+      "expectedRelationship": "Compare generation while antenna height stays fixed.",
+      "sourceIds": [
+        "ephemeris",
+        "horizon-catalog"
+      ],
+      "before": {
+        "generatedWh": 109686.19116778225,
+        "minBatteryWh": 0,
+        "unmetWh": 36239.67210802588,
+        "contactFraction": 0.37797619047619047,
+        "assumedMarginDb": null,
+        "outcome": "fails-assessed"
+      },
+      "after": {
+        "generatedWh": 121251.30020183996,
+        "minBatteryWh": 0,
+        "unmetWh": 35159.231054526754,
+        "contactFraction": 0.37797619047619047,
+        "assumedMarginDb": null,
+        "outcome": "fails-assessed"
+      },
+      "observedExplanation": "Some evidence is unavailable. Compare known values; unknown does not mean zero or no effect."
+    }
+  ]
+}

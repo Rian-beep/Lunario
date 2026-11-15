@@ -1,0 +1,3 @@
+# Actual agent export fixture
+
+`agent-array-height-notebook.json` is the real Teaching studio download from the disconnected incoming artifact SHA256 afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d, Chrome149 agent walkthrough on15Nov2026. It records an agent-authored prediction/conclusion, not a participant or human study. BaselineMalapert, array2→10m, planning-5. Recorded numerical outputs are historical fixture values; this file does not independently validate them. The test independently compares held/changed fields to prevent reporting a multi-input experiment as controlled. Do not silently regenerate this fixture from a candidate and call it baseline evidence.
