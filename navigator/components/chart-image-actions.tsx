@@ -11,6 +11,10 @@ html:root .chart-image-surface :is(figcaption,.plot-area,.chart-axis-heading,.ch
 }
 html:root .chart-image-surface svg { background: #ffffff !important; }
 html:root .chart-image-surface svg text { fill: #1c1915 !important; }
+html:root .chart-image-surface :is(.chart-note,.chart-sample-readout,.chart-gradient-help),
+html:root .chart-image-surface :is(.chart-sample-readout,.chart-gradient-help) * {
+  background: #ffffff !important; color: #1c1915 !important;
+}
 html:root .chart-image-surface .chart-marker-label { stroke: #ffffff !important; }
 html:root .chart-image-surface .chart-gridline { stroke: #dedede !important; }
 html:root .chart-image-surface .chart-axis { stroke: #585858 !important; }
