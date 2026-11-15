@@ -171,8 +171,11 @@ export function simulateFlight(
     maxAltitudeM = a.altitudeM;
   const clearance = (p: FlightPoint) => {
     const h = terrainHeight?.(p.eastM, p.northM);
-    return { value: h != null ? p.yM - h : p.altitudeM, terrain: h != null };
+    const known = typeof h === "number" && Number.isFinite(h);
+    return { value: known ? p.yM - h : p.altitudeM, terrain: known };
   };
+  if (clearance(points[0]).value < -1e-6)
+    throw new RangeError("Flight starts below the numerical surface");
   while (t < a.durationSeconds - 1e-8) {
     let dt = Math.min(0.25, a.durationSeconds - t);
     if (t < burnEnd && t + dt > burnEnd) dt = burnEnd - t;
