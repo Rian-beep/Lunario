@@ -1,0 +1,551 @@
+{
+  "producer": "CSPICE via spiceypy 8.4.0",
+  "method": "spkcpo MOON / ITRF93 / OBSERVER / LT+S, WGS84 georec and independent ENU dot products",
+  "generatedUtc": "2026-11-14T20:07:05.408246+00:00",
+  "kernels": [
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_000101_270208_261113.bpc",
+      "sha256": "6e77690ba455a644e509b0b9cb308b0dec1a7154ceecf3355659b917b21ca45e"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp",
+      "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+    }
+  ],
+  "samples": [
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T00:00:00Z",
+      "azimuthDeg": 191.25633627568297,
+      "elevationDeg": 26.80932488052298,
+      "rangeKm": 402684.211968896
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T01:00:00Z",
+      "azimuthDeg": 205.1622770883966,
+      "elevationDeg": 23.160658109513605,
+      "rangeKm": 403038.170055262
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T02:00:00Z",
+      "azimuthDeg": 217.51720762005604,
+      "elevationDeg": 17.043273548735822,
+      "rangeKm": 403660.70853310765
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T03:00:00Z",
+      "azimuthDeg": 228.16333507882598,
+      "elevationDeg": 9.038896657325894,
+      "rangeKm": 404510.2118567903
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T04:00:00Z",
+      "azimuthDeg": 237.32585401214095,
+      "elevationDeg": -0.3208981599792254,
+      "rangeKm": 405530.29745890445
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T05:00:00Z",
+      "azimuthDeg": 245.3823229939992,
+      "elevationDeg": -10.621425016857655,
+      "rangeKm": 406653.7005607322
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T06:00:00Z",
+      "azimuthDeg": 252.75036250440428,
+      "elevationDeg": -21.558852092723207,
+      "rangeKm": 407806.79971093725
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T07:00:00Z",
+      "azimuthDeg": 259.8896618141993,
+      "elevationDeg": -32.90925331769909,
+      "rangeKm": 408914.4310358285
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T08:00:00Z",
+      "azimuthDeg": 267.4167507880834,
+      "elevationDeg": -44.491258207778266,
+      "rangeKm": 409904.6541954926
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T09:00:00Z",
+      "azimuthDeg": 276.4701826804691,
+      "elevationDeg": -56.11196194623959,
+      "rangeKm": 410713.1755670851
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T10:00:00Z",
+      "azimuthDeg": 290.0772930875454,
+      "elevationDeg": -67.41605143165863,
+      "rangeKm": 411287.19078807294
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T11:00:00Z",
+      "azimuthDeg": 319.7161158066904,
+      "elevationDeg": -77.06674196983988,
+      "rangeKm": 411588.4681614921
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T12:00:00Z",
+      "azimuthDeg": 24.45151634801995,
+      "elevationDeg": -78.77285177987962,
+      "rangeKm": 411595.5486541865
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T13:00:00Z",
+      "azimuthDeg": 63.38896362254391,
+      "elevationDeg": -70.3042738921877,
+      "rangeKm": 411304.98340725986
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T14:00:00Z",
+      "azimuthDeg": 79.48556050225312,
+      "elevationDeg": -59.17464995499828,
+      "rangeKm": 410731.5666461437
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T15:00:00Z",
+      "azimuthDeg": 89.29203433749312,
+      "elevationDeg": -47.51058352100486,
+      "rangeKm": 409907.5532529999
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T16:00:00Z",
+      "azimuthDeg": 97.03294502793071,
+      "elevationDeg": -35.7833615997309,
+      "rangeKm": 408880.8809311786
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T17:00:00Z",
+      "azimuthDeg": 104.14212776185079,
+      "elevationDeg": -24.20135579293053,
+      "rangeKm": 407712.45188717
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T18:00:00Z",
+      "azimuthDeg": 111.32767464348746,
+      "elevationDeg": -12.935768738508312,
+      "rangeKm": 406472.5721439714
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T19:00:00Z",
+      "azimuthDeg": 119.08505911167269,
+      "elevationDeg": -2.1877264647932524,
+      "rangeKm": 405236.6998502292
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T20:00:00Z",
+      "azimuthDeg": 127.86234886986195,
+      "elevationDeg": 7.7701153444004625,
+      "rangeKm": 404080.71543039096
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T21:00:00Z",
+      "azimuthDeg": 138.09981266401695,
+      "elevationDeg": 16.554738341239503,
+      "rangeKm": 403075.9897997001
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T22:00:00Z",
+      "azimuthDeg": 150.15732774054007,
+      "elevationDeg": 23.645436065802265,
+      "rangeKm": 402284.58146426955
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-14T23:00:00Z",
+      "azimuthDeg": 164.08857370471398,
+      "elevationDeg": 28.411727178475015,
+      "rangeKm": 401754.92562465166
+    },
+    {
+      "stationId": "goldstone",
+      "utc": "2026-11-15T00:00:00Z",
+      "azimuthDeg": 179.33431425818728,
+      "elevationDeg": 30.266375972603633,
+      "rangeKm": 401518.37472168944
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T00:00:00Z",
+      "azimuthDeg": 269.1623276227365,
+      "elevationDeg": -42.33495276930151,
+      "rangeKm": 409878.3443097413
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T01:00:00Z",
+      "azimuthDeg": 279.61270414119224,
+      "elevationDeg": -53.1580006845049,
+      "rangeKm": 410685.94373694214
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T02:00:00Z",
+      "azimuthDeg": 294.31945710698085,
+      "elevationDeg": -63.52866976343012,
+      "rangeKm": 411286.1553158652
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T03:00:00Z",
+      "azimuthDeg": 320.14896609924307,
+      "elevationDeg": -72.2154047253054,
+      "rangeKm": 411640.12435522623
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T04:00:00Z",
+      "azimuthDeg": 6.210290107360695,
+      "elevationDeg": -75.4449914741643,
+      "rangeKm": 411724.1763658809
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T05:00:00Z",
+      "azimuthDeg": 47.40830671348121,
+      "elevationDeg": -70.25012280367483,
+      "rangeKm": 411531.185600504
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T06:00:00Z",
+      "azimuthDeg": 69.26955141640542,
+      "elevationDeg": -60.86708189721526,
+      "rangeKm": 411071.00871987984
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T07:00:00Z",
+      "azimuthDeg": 82.43932863457867,
+      "elevationDeg": -50.24607845039106,
+      "rangeKm": 410369.9664104745
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T08:00:00Z",
+      "azimuthDeg": 92.2588617328512,
+      "elevationDeg": -39.29541667022958,
+      "rangeKm": 409469.3866195353
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T09:00:00Z",
+      "azimuthDeg": 100.7789022009467,
+      "elevationDeg": -28.375606807424326,
+      "rangeKm": 408423.2565379432
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T10:00:00Z",
+      "azimuthDeg": 108.96808038665506,
+      "elevationDeg": -17.71698828162568,
+      "rangeKm": 407295.07012879796
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T11:00:00Z",
+      "azimuthDeg": 117.41903345214355,
+      "elevationDeg": -7.540146591447522,
+      "rangeKm": 406154.0056081878
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T12:00:00Z",
+      "azimuthDeg": 126.58659096305979,
+      "elevationDeg": 1.8910975247442476,
+      "rangeKm": 405070.6217980758
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T13:00:00Z",
+      "azimuthDeg": 136.85844897973968,
+      "elevationDeg": 10.235605729153843,
+      "rangeKm": 404112.31854656886
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T14:00:00Z",
+      "azimuthDeg": 148.52288562451386,
+      "elevationDeg": 17.0577360172123,
+      "rangeKm": 403338.8563247527
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T15:00:00Z",
+      "azimuthDeg": 161.63792506640536,
+      "elevationDeg": 21.850976544209907,
+      "rangeKm": 402798.2617208667
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T16:00:00Z",
+      "azimuthDeg": 175.85600096871144,
+      "elevationDeg": 24.138763693480847,
+      "rangeKm": 402523.4477391523
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T17:00:00Z",
+      "azimuthDeg": 190.39511936360924,
+      "elevationDeg": 23.64654560244161,
+      "rangeKm": 402529.84190439084
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T18:00:00Z",
+      "azimuthDeg": 204.33027275679865,
+      "elevationDeg": 20.435362864083732,
+      "rangeKm": 402814.2398047882
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T19:00:00Z",
+      "azimuthDeg": 217.01679062379904,
+      "elevationDeg": 14.870183425266584,
+      "rangeKm": 403354.99375640525
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T20:00:00Z",
+      "azimuthDeg": 228.26951152612347,
+      "elevationDeg": 7.45574881248724,
+      "rangeKm": 404113.5211361372
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T21:00:00Z",
+      "azimuthDeg": 238.25622443480603,
+      "elevationDeg": -1.3171521119626735,
+      "rangeKm": 405036.9943241748
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T22:00:00Z",
+      "azimuthDeg": 247.32603750061992,
+      "elevationDeg": -11.041836742038827,
+      "rangeKm": 406061.9730111192
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-14T23:00:00Z",
+      "azimuthDeg": 255.91652840601589,
+      "elevationDeg": -21.399735279123814,
+      "rangeKm": 407118.6735727894
+    },
+    {
+      "stationId": "madrid",
+      "utc": "2026-11-15T00:00:00Z",
+      "azimuthDeg": 264.5656229680857,
+      "elevationDeg": -32.13274805897389,
+      "rangeKm": 408135.5437234908
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T00:00:00Z",
+      "azimuthDeg": 108.31557347952193,
+      "elevationDeg": 19.2402308418538,
+      "rangeKm": 403477.7611099413
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T01:00:00Z",
+      "azimuthDeg": 101.26390157042815,
+      "elevationDeg": 30.697691970578585,
+      "rangeKm": 402317.3761814438
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T02:00:00Z",
+      "azimuthDeg": 93.92894302158116,
+      "elevationDeg": 42.47807328914418,
+      "rangeKm": 401260.5878238006
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T03:00:00Z",
+      "azimuthDeg": 85.28105493008958,
+      "elevationDeg": 54.39126815987108,
+      "rangeKm": 400375.40793404344
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T04:00:00Z",
+      "azimuthDeg": 72.64017829309417,
+      "elevationDeg": 66.11157064379074,
+      "rangeKm": 399719.1444457887
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T05:00:00Z",
+      "azimuthDeg": 45.63317741901826,
+      "elevationDeg": 76.4894525836313,
+      "rangeKm": 399334.39933777566
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T06:00:00Z",
+      "azimuthDeg": 339.70085414635287,
+      "elevationDeg": 79.39302635808065,
+      "rangeKm": 399246.01678422507
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T07:00:00Z",
+      "azimuthDeg": 296.9742188133598,
+      "elevationDeg": 70.94970929540077,
+      "rangeKm": 399459.26035564346
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T08:00:00Z",
+      "azimuthDeg": 280.3655571213619,
+      "elevationDeg": 59.50922329496844,
+      "rangeKm": 399959.3940311034
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T09:00:00Z",
+      "azimuthDeg": 270.53030027346006,
+      "elevationDeg": 47.55030980487537,
+      "rangeKm": 400712.7094902058
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T10:00:00Z",
+      "azimuthDeg": 262.84117700533636,
+      "elevationDeg": 35.58406881213653,
+      "rangeKm": 401668.90308928996
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T11:00:00Z",
+      "azimuthDeg": 255.80540933997753,
+      "elevationDeg": 23.829530382308338,
+      "rangeKm": 402764.5825927957
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T12:00:00Z",
+      "azimuthDeg": 248.70919058459015,
+      "elevationDeg": 12.459482117104802,
+      "rangeKm": 403927.59496818355
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T13:00:00Z",
+      "azimuthDeg": 241.06423785362497,
+      "elevationDeg": 1.6680162822914977,
+      "rangeKm": 405081.8213851537
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T14:00:00Z",
+      "azimuthDeg": 232.43515687780723,
+      "elevationDeg": -8.289672404058134,
+      "rangeKm": 406152.08378808136
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T15:00:00Z",
+      "azimuthDeg": 222.39606217420842,
+      "elevationDeg": -17.06051360652745,
+      "rangeKm": 407068.8395476041
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T16:00:00Z",
+      "azimuthDeg": 210.59376317915564,
+      "elevationDeg": -24.166327260205797,
+      "rangeKm": 407772.3939277837
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T17:00:00Z",
+      "azimuthDeg": 196.95374891043835,
+      "elevationDeg": -29.02414611628645,
+      "rangeKm": 408216.42118967755
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T18:00:00Z",
+      "azimuthDeg": 181.97173456869757,
+      "elevationDeg": -31.07754690476088,
+      "rangeKm": 408370.6437647745
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T19:00:00Z",
+      "azimuthDeg": 166.75933036799245,
+      "elevationDeg": -30.03784940028527,
+      "rangeKm": 408222.5695515148
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T20:00:00Z",
+      "azimuthDeg": 152.54497232113965,
+      "elevationDeg": -26.053238275218025,
+      "rangeKm": 407778.2282257794
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T21:00:00Z",
+      "azimuthDeg": 140.04855088947997,
+      "elevationDeg": -19.618060505793228,
+      "rangeKm": 407061.880934109
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T22:00:00Z",
+      "azimuthDeg": 129.3506617977028,
+      "elevationDeg": -11.327890951168362,
+      "rangeKm": 406114.70774166496
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-14T23:00:00Z",
+      "azimuthDeg": 120.1501842560561,
+      "elevationDeg": -1.7036186278684167,
+      "rangeKm": 404992.50929744676
+    },
+    {
+      "stationId": "canberra",
+      "utc": "2026-11-15T00:00:00Z",
+      "azimuthDeg": 112.01361763003534,
+      "elevationDeg": 8.858746113927712,
+      "rangeKm": 403762.49803582573
+    }
+  ],
+  "limits": "DE440s vs Horizons DE441, separate Earth EOP realizations and omitted relativistic bending. Residual tolerance is a regression check, not measurement uncertainty."
+}

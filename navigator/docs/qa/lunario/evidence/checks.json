@@ -1,0 +1,25 @@
+{
+  "full-source": {
+    "sha256": "9255c921205e6c50b317019ef63730166584b5882be0cc5a35a545791beee448",
+    "exitCode": 0,
+    "passed": 784
+  },
+  "focused-source": {
+    "sha256": "ce13d4612a2f13ec20e84606a02381b7e2153bfb583732d8b8cb2d3dd17558f5",
+    "exitCode": 0,
+    "passed": 26
+  },
+  "lint": {
+    "sha256": "8833bd6848daeacfca219ffc3f9cba53d34cc5d870885f5d48f47ff4ea1b5350",
+    "exitCode": 0
+  },
+  "types": {
+    "sha256": "59210fc5c79414cea713e78d8845ed1bde84a5c76d23d1920837b4f17d410976",
+    "exitCode": 0
+  },
+  "native-final": {
+    "sha256": "b4d61c9cc1ac9cd4cb0e6ac684a76e5bcd1ddad3661cf9a192270fbf5191a466",
+    "exitCode": 0,
+    "passed": 8
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Loader first, so the dashboard never flashes before it. Plays once per tab session. -->
+<link rel="stylesheet" href="loader/loader.css">
+<script src="loader/loader.js" data-min-duration="1800" data-once="session"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:title" content="Lunario">
+<meta property="og:description" content="Lunar south pole landing dashboard">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rian-beep.github.io/Lunario/">
+<meta property="og:image" content="https://rian-beep.github.io/Lunario/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<title>Lunario · Dashboard</title>
+<meta name="description" content="Lunar south pole landing dashboard">
+</head>
+<body>
+<header class="nav">
+  <a class="nav__brand" href="./" aria-label="Lunario home"><img src="assets/logo.svg" alt="Lunario" width="123" height="26"></a>
+  <nav aria-label="Main">
+    <ul class="nav__links">
+      <li><a href="./" aria-current="page">Dashboard</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="dash" id="dashboard">
+  <div class="dash__head">
+    <h1>Dashboard</h1>
+    <span class="mono">Placeholder layout</span>
+  </div>
+  <!-- PLACEHOLDER: replace the contents of #dashboard-root with the real Lunario dashboard. -->
+  <div class="dash__grid" id="dashboard-root">
+    <section class="dash__panel dash__panel--map" aria-label="Map placeholder">
+      <span class="tag">Placeholder</span>
+      <span class="mono">South pole map</span>
+      <p class="dash__note">The real dashboard mounts here. Nothing on this page is live data.</p>
+    </section>
+    <section class="dash__panel" aria-label="Timeline placeholder">
+      <span class="tag">Placeholder</span>
+      <span class="mono">Sunlight and Earth view</span>
+    </section>
+    <section class="dash__panel dash__panel--wide" aria-label="Options placeholder">
+      <span class="tag">Placeholder</span>
+      <span class="mono">Alternatives</span>
+    </section>
+  </div>
+</main>
+</body>
+</html>

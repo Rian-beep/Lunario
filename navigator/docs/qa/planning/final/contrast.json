@@ -1,0 +1,1649 @@
+{
+  "createdUtc": "2026-11-14T18:28:41.876Z",
+  "target": "file:///tmp/solarreach-landing-release-r4.html",
+  "offline": true,
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "measurements": [
+    {
+      "name": "planner-verdict",
+      "tag": "P",
+      "text": "Conditional: modeled requirements met with unresolved evidence.",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "ASIDE",
+          "color": "rgba(255, 253, 247, 0.96)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 1102,
+        "y": 536.671875,
+        "width": 439,
+        "height": 48
+      },
+      "surfaceRect": {
+        "x": 1077,
+        "y": 259,
+        "width": 500,
+        "height": 588
+      },
+      "surfaceBackground": "rgba(255, 253, 247, 0.96)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 1096,
+          "y": 544,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        },
+        {
+          "x": 1096,
+          "y": 561,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        },
+        {
+          "x": 1096,
+          "y": 578,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          244.79999999999998,
+          242.88,
+          237.12
+        ],
+        "white": [
+          255,
+          253.08,
+          247.32000000000002
+        ],
+        "minimumContrast": 10.95189192118831,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 10.963563521071237,
+      "conservativeMinimum": 10.95189192118831
+    },
+    {
+      "name": "requirements-normal-copy",
+      "tag": "P",
+      "text": "Limits are mission assumptions. There is no universal safe launch or landing threshold.",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DETAILS",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "ASIDE",
+          "color": "rgba(255, 253, 247, 0.96)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 1102,
+        "y": 538.953125,
+        "width": 439,
+        "height": 43.375
+      },
+      "surfaceRect": {
+        "x": 1077,
+        "y": 259,
+        "width": 500,
+        "height": 588
+      },
+      "surfaceBackground": "rgba(255, 253, 247, 0.96)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 1096,
+          "y": 546,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        },
+        {
+          "x": 1096,
+          "y": 561,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        },
+        {
+          "x": 1096,
+          "y": 575,
+          "rgb": [
+            245,
+            243,
+            237
+          ],
+          "ratio": 10.963563521071237
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          244.79999999999998,
+          242.88,
+          237.12
+        ],
+        "white": [
+          255,
+          253.08,
+          247.32000000000002
+        ],
+        "minimumContrast": 10.95189192118831,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 10.963563521071237,
+      "conservativeMinimum": 10.95189192118831
+    },
+    {
+      "name": "deployment-input",
+      "tag": "INPUT",
+      "text": "",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "INPUT",
+          "color": "rgba(89, 96, 71, 0.282)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "LABEL",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DETAILS",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "ASIDE",
+          "color": "rgba(255, 253, 247, 0.96)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 1102,
+        "y": 497.453125,
+        "width": 439,
+        "height": 42
+      },
+      "surfaceRect": {
+        "x": 1077,
+        "y": 259,
+        "width": 500,
+        "height": 588
+      },
+      "surfaceBackground": "rgba(255, 253, 247, 0.96)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 1107,
+          "y": 502,
+          "rgb": [
+            203,
+            204,
+            192
+          ],
+          "ratio": 7.494721307863691
+        },
+        {
+          "x": 1536,
+          "y": 502,
+          "rgb": [
+            201,
+            201,
+            190
+          ],
+          "ratio": 7.28854799854047
+        },
+        {
+          "x": 1107,
+          "y": 534,
+          "rgb": [
+            201,
+            201,
+            190
+          ],
+          "ratio": 7.28854799854047
+        },
+        {
+          "x": 1536,
+          "y": 534,
+          "rgb": [
+            201,
+            201,
+            190
+          ],
+          "ratio": 7.28854799854047
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          200.8644,
+          201.45983999999999,
+          190.27416
+        ],
+        "white": [
+          208.188,
+          208.78344,
+          197.59776
+        ],
+        "minimumContrast": 7.312639574993548,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 7.28854799854047,
+      "conservativeMinimum": 7.28854799854047
+    },
+    {
+      "name": "requirements-table-cell",
+      "tag": "TD",
+      "text": "conditional",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgb(250, 249, 244)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 1409.921875,
+        "y": 682.515625,
+        "width": 89.046875,
+        "height": 41
+      },
+      "surfaceRect": {
+        "x": 1409.921875,
+        "y": 682.515625,
+        "width": 89.046875,
+        "height": 41
+      },
+      "surfaceBackground": "rgb(250, 249, 244)",
+      "threshold": 4.5,
+      "method": "opaque-cell-corner-pixels",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 1415,
+          "y": 688,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1494,
+          "y": 688,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1415,
+          "y": 719,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1494,
+          "y": 719,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          250,
+          249,
+          244
+        ],
+        "white": [
+          250,
+          249,
+          244
+        ],
+        "minimumContrast": 11.540419259168212,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 11.540419259168212,
+      "conservativeMinimum": 11.540419259168212,
+      "expectedOpaqueBackground": [
+        250,
+        249,
+        244,
+        1
+      ]
+    },
+    {
+      "name": "evidence-table-cell",
+      "tag": "TD",
+      "text": "complete",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgb(250, 249, 244)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 1345.96875,
+        "y": 747.234375,
+        "width": 80.59375,
+        "height": 39.140625
+      },
+      "surfaceRect": {
+        "x": 1345.96875,
+        "y": 747.234375,
+        "width": 80.59375,
+        "height": 39.140625
+      },
+      "surfaceBackground": "rgb(250, 249, 244)",
+      "threshold": 4.5,
+      "method": "opaque-cell-corner-pixels",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 1351,
+          "y": 752,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1422,
+          "y": 752,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1351,
+          "y": 781,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 1422,
+          "y": 781,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          250,
+          249,
+          244
+        ],
+        "white": [
+          250,
+          249,
+          244
+        ],
+        "minimumContrast": 11.540419259168212,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 11.540419259168212,
+      "conservativeMinimum": 11.540419259168212,
+      "expectedOpaqueBackground": [
+        250,
+        249,
+        244,
+        1
+      ]
+    },
+    {
+      "name": "calendar-normal-copy",
+      "tag": "P",
+      "text": "Every cell re-evaluates the complete mission, starting with your configured battery state. Hardware, requirements and stay length remain fixed.",
+      "foreground": "rgb(48, 52, 45)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(250, 249, 244, 0.97)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 124,
+        "y": 245,
+        "width": 850,
+        "height": 42
+      },
+      "surfaceRect": {
+        "x": 18,
+        "y": 100,
+        "width": 1564,
+        "height": 820
+      },
+      "surfaceBackground": "rgba(250, 249, 244, 0.97)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 118,
+          "y": 252,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 11.221411098630952
+        },
+        {
+          "x": 118,
+          "y": 266,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 11.221411098630952
+        },
+        {
+          "x": 118,
+          "y": 280,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 11.221411098630952
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          242.5,
+          241.53,
+          236.68
+        ],
+        "white": [
+          250.15,
+          249.18,
+          244.33
+        ],
+        "minimumContrast": 11.274886241433546,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 11.221411098630952,
+      "conservativeMinimum": 11.221411098630952
+    },
+    {
+      "name": "calendar-large-heading",
+      "tag": "H2",
+      "text": "Which arrival dates support the whole stay?",
+      "foreground": "rgb(48, 52, 45)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "H2",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(250, 249, 244, 0.97)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 124,
+        "y": 224,
+        "width": 1352,
+        "height": 21
+      },
+      "surfaceRect": {
+        "x": 18,
+        "y": 100,
+        "width": 1564,
+        "height": 820
+      },
+      "surfaceBackground": "rgba(250, 249, 244, 0.97)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 118,
+          "y": 231,
+          "rgb": [
+            249,
+            248,
+            243
+          ],
+          "ratio": 11.934701302312117
+        },
+        {
+          "x": 118,
+          "y": 235,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 11.221411098630952
+        },
+        {
+          "x": 118,
+          "y": 238,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 11.221411098630952
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          242.5,
+          241.53,
+          236.68
+        ],
+        "white": [
+          250.15,
+          249.18,
+          244.33
+        ],
+        "minimumContrast": 11.274886241433546,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 11.221411098630952,
+      "conservativeMinimum": 11.221411098630952
+    },
+    {
+      "name": "calendar-requirement-cell",
+      "tag": "TD",
+      "text": "conditional",
+      "foreground": "rgb(48, 56, 43)",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgb(250, 249, 244)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 660.890625,
+        "y": 880.890625,
+        "width": 221.921875,
+        "height": 38.5
+      },
+      "surfaceRect": {
+        "x": 660.890625,
+        "y": 880.890625,
+        "width": 221.921875,
+        "height": 38.5
+      },
+      "surfaceBackground": "rgb(250, 249, 244)",
+      "threshold": 4.5,
+      "method": "opaque-cell-corner-pixels",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 666,
+          "y": 886,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 878,
+          "y": 886,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 666,
+          "y": 914,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        },
+        {
+          "x": 878,
+          "y": 914,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 11.540419259168212
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          250,
+          249,
+          244
+        ],
+        "white": [
+          250,
+          249,
+          244
+        ],
+        "minimumContrast": 11.540419259168212,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 11.540419259168212,
+      "conservativeMinimum": 11.540419259168212,
+      "expectedOpaqueBackground": [
+        250,
+        249,
+        244,
+        1
+      ]
+    },
+    {
+      "name": "comparison-normal-copy",
+      "tag": "P",
+      "text": "Each row assesses its own site, dates, subsystem heights, hardware and operating schedule. User-entered numeric annotations never change the assessment or certify a site.",
+      "foreground": "rgb(96, 111, 80)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "P",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(250, 249, 244, 0.97)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 49,
+        "y": 268,
+        "width": 1094.796875,
+        "height": 21
+      },
+      "surfaceRect": {
+        "x": 18,
+        "y": 100,
+        "width": 1564,
+        "height": 820
+      },
+      "surfaceBackground": "rgba(250, 249, 244, 0.97)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 43,
+          "y": 275,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 5.125171895204121
+        },
+        {
+          "x": 43,
+          "y": 279,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 5.125171895204121
+        },
+        {
+          "x": 43,
+          "y": 282,
+          "rgb": [
+            250,
+            249,
+            244
+          ],
+          "ratio": 5.125171895204121
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          242.5,
+          241.53,
+          236.68
+        ],
+        "white": [
+          250.15,
+          249.18,
+          244.33
+        ],
+        "minimumContrast": 4.799952271771011,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 5.125171895204121,
+      "conservativeMinimum": 4.799952271771011
+    },
+    {
+      "name": "comparison-large-heading",
+      "tag": "H2",
+      "text": "Compare mission scenarios",
+      "foreground": "rgb(54, 76, 41)",
+      "fontSize": 26,
+      "fontWeight": 450,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "H2",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(250, 249, 244, 0.97)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 49,
+        "y": 224,
+        "width": 1094.796875,
+        "height": 39
+      },
+      "surfaceRect": {
+        "x": 18,
+        "y": 100,
+        "width": 1564,
+        "height": 820
+      },
+      "surfaceBackground": "rgba(250, 249, 244, 0.97)",
+      "threshold": 3,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 43,
+          "y": 231,
+          "rgb": [
+            250,
+            248,
+            243
+          ],
+          "ratio": 8.901975569386902
+        },
+        {
+          "x": 43,
+          "y": 244,
+          "rgb": [
+            245,
+            244,
+            239
+          ],
+          "ratio": 8.579475618484528
+        },
+        {
+          "x": 43,
+          "y": 256,
+          "rgb": [
+            248,
+            247,
+            242
+          ],
+          "ratio": 8.808297336102916
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          242.5,
+          241.53,
+          236.68
+        ],
+        "white": [
+          250.15,
+          249.18,
+          244.33
+        ],
+        "minimumContrast": 8.394162775023126,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 8.579475618484528,
+      "conservativeMinimum": 8.394162775023126
+    },
+    {
+      "name": "comparison-body-value",
+      "tag": "TD",
+      "text": "Conditional",
+      "foreground": "rgb(52, 70, 42)",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "textShadow": "none",
+      "ancestors": [
+        {
+          "tag": "TD",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "TR",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "TBODY",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "TABLE",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "DIV",
+          "color": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        },
+        {
+          "tag": "SECTION",
+          "color": "rgba(250, 249, 244, 0.97)",
+          "image": "none",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "blend": "normal"
+        }
+      ],
+      "unsupportedEffects": [],
+      "rect": {
+        "x": 390.671875,
+        "y": 804,
+        "width": 226.78125,
+        "height": 115
+      },
+      "surfaceRect": {
+        "x": 18,
+        "y": 100,
+        "width": 1564,
+        "height": 820
+      },
+      "surfaceBackground": "rgba(250, 249, 244, 0.97)",
+      "threshold": 4.5,
+      "method": "adjacent-blank-margin-pixels-and-alpha-backdrop-bounds",
+      "status": "pass",
+      "samples": [
+        {
+          "x": 385,
+          "y": 811,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 9.033667911115412
+        },
+        {
+          "x": 385,
+          "y": 862,
+          "rgb": [
+            242,
+            241,
+            236
+          ],
+          "ratio": 9.033667911115412
+        },
+        {
+          "x": 385,
+          "y": 912,
+          "rgb": [
+            245,
+            244,
+            238
+          ],
+          "ratio": 9.271362996776945
+        }
+      ],
+      "backdropBounds": {
+        "black": [
+          242.5,
+          241.53,
+          236.68
+        ],
+        "white": [
+          250.15,
+          249.18,
+          244.33
+        ],
+        "minimumContrast": 9.076717459637615,
+        "note": "Known CSS solid-alpha layers over arbitrary bounded sRGB backdrop. Backdrop blur/saturation is not asserted to be measured; its output is conservatively allowed anywhere between black and white."
+      },
+      "minimumObserved": 9.033667911115412,
+      "conservativeMinimum": 9.033667911115412
+    }
+  ],
+  "keyboard": [
+    {
+      "surface": "requirements",
+      "controls": [
+        {
+          "tree": "- combobox \"Planning terrain evidence mode\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- combobox \"Assessment scope\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Require stored-energy reserve\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Require zero unserved demand\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- combobox \"Solar-array height\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- combobox \"Antenna height\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Limit geometric Earth outage\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Maximum geometric outage About Maximum geometric outage h\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Require additional assumed radio margin\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Additional assumed radio margin About Additional assumed radio margin dB\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        }
+      ]
+    },
+    {
+      "surface": "operations",
+      "controls": [
+        {
+          "tree": "- spinbutton \"Array deployment delay About Array deployment delay h\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Charging bus power cap About Battery rate limit\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Maximum charging power About Maximum charging power W\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Discharging bus power cap About Battery rate limit\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Maximum discharging power About Maximum discharging power W\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Load start offset About Load start offset h\": \"0\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Load end offset About Load end offset h\": \"1\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Additional load About Additional load W\": \"100\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        }
+      ]
+    },
+    {
+      "surface": "external-report",
+      "controls": [
+        {
+          "tree": "- combobox \"Consideration\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- combobox \"Reported conclusion\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Source or report reference\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Author / organization\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Scope, assumptions and limitations\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"External assessment source URL\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"External assessment document title\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"External assessment UTC\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"External assessment scope note\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        }
+      ]
+    },
+    {
+      "surface": "calendar",
+      "controls": [
+        {
+          "tree": "- textbox \"First arrival UTC\": 2027-06-29T11:00",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Last arrival UTC\": 2027-07-29T11:00",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Arrival search cadence About Arrival search cadence h\": \"24\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        }
+      ]
+    },
+    {
+      "surface": "comparison",
+      "controls": [
+        {
+          "tree": "- checkbox \"Sunlight %\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Earth view %\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Longest dark h\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Blackout h\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Energy kWh\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Min charge Wh\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Unmet load Wh\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Slope °\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Height m\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Sun + Earth h\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Latitude °\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Longitude °E\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Link margin dB\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Assessment outcome\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"First known failure UTC\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Required unknowns\" [checked]",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Dataset version\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Model version\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Reserve margin Wh\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- checkbox \"Known solar coverage %\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Custom metric name\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- textbox \"Custom metric unit\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- spinbutton \"Highlight sunlight below About Highlight sunlight below %\": \"70\"",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        },
+        {
+          "tree": "- combobox \"Reference scenario\":",
+          "named": true,
+          "focused": true,
+          "tabReturned": true
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "pageErrors": [],
+  "httpErrors": [],
+  "manualGates": [
+    "Actual screen-reader interaction and announcements were not performed.",
+    "Contrast results apply to measured text/surfaces/states, not all imagery, icons, focus indicators or all app states.",
+    "Real 200% Chrome layout zoom is covered by the separate existing T17 verifier; this script does not duplicate or substitute viewport scaling for it."
+  ],
+  "summary": {
+    "measured": 11,
+    "passed": 11,
+    "failed": 0,
+    "unverified": 0,
+    "minimumVerifiedContrast": 4.799952271771011
+  }
+}

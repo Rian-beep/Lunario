@@ -45,3 +45,18 @@ python3 -m http.server 8000
 ## Team photos
 
 `about.html` shows initials avatars for now. To use photos, save square images as `assets/team/luke.jpg` and `assets/team/rian.jpg` (at least 144x144), then in `about.html` follow the "Photo slot" comment above each avatar: replace the `<svg class="person__avatar">` with the `<img class="person__photo">` line. Photos show in greyscale and turn to colour on hover.
+
+
+## Integrated lunar navigator workbench
+
+The tested map-first Public / Educator / Planner application is in [`navigator/`](navigator/README.md). The existing static shell, branding and About page remain unchanged.
+
+```bash
+cd navigator
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:4317/. For a host that runs Next.js, choose **`navigator` as the project root**, then use `npm run build` and `npm run start -- --port 4317`. Hosting remains the teammate's responsibility; this change does not change Pages or deployment settings.
+
+A prebuilt disconnected version is [`navigator/public/solarreach-navigator.html`](navigator/public/solarreach-navigator.html). Download the actual HTML file and open it locally; GitHub's file preview is not the application. See [the team handoff](NAVIGATOR-HANDOFF.md) for exact release identity, validation and remaining work.

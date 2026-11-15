@@ -1,0 +1,113 @@
+{
+  "checkedUtc": "2026-11-14T23:26:11.936Z",
+  "target": "file:///tmp/lunar-window-c12.html",
+  "checks": [
+    {
+      "name": "public-zero-cutoff-retains-raw-visibility",
+      "status": "pass",
+      "detail": {
+        "text": "Earth contact\ni\n50.0%\nSmooth sphere\n50.0%\n\nAt the 2 m display height, Earth must clear both terrain and the 0° minimum antenna elevation above horizontal. Terrain-only visibility: 56.0%. This is not a confirmed radio service.",
+        "state": {
+          "siteId": "degerlache-shackleton",
+          "custom": null,
+          "startIndex": 13403,
+          "endIndex": 13738,
+          "heightM": 2,
+          "mission": {
+            "areaM2": 4,
+            "efficiency": 0.3,
+            "lossFraction": 0.15,
+            "solarFlux": 1361,
+            "arrayMode": "tracking",
+            "tiltDeg": 90,
+            "azimuthDeg": 0,
+            "loadW": 250,
+            "batteryWh": 10000,
+            "initialSoc": 1,
+            "reserveSoc": 0.2,
+            "chargeEfficiency": 0.95,
+            "dischargeEfficiency": 0.95,
+            "antennaMaskDeg": 0
+          },
+          "flight": {
+            "mode": "ascent",
+            "altitudeM": 1,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 16000,
+            "ispSeconds": 311,
+            "burnSeconds": 210,
+            "durationSeconds": 480
+          },
+          "schemaVersion": 2,
+          "arrayHeightM": 2,
+          "antennaHeightM": 2,
+          "requirements": {
+            "scope": "resource-screening",
+            "requireZeroUnmetWh": true,
+            "requireReserve": true,
+            "maxGeometricOutageHours": null,
+            "minAssumedRadioMarginDb": null,
+            "criticalContacts": [],
+            "requiredExternal": [],
+            "extraScreens": {}
+          },
+          "operations": {
+            "deploymentDelayHours": 0,
+            "maxChargeW": null,
+            "maxDischargeW": null,
+            "loadSegments": []
+          }
+        }
+      }
+    },
+    {
+      "name": "contact-countdown-is-masked-and-explicit",
+      "status": "pass",
+      "detail": {
+        "text": "Antenna visibility\ni\nContact opens\n~7 days\n20 Jul 2027\n10:00–11:00 UTC"
+      }
+    },
+    {
+      "name": "horizon-windows-use-the-same-zero-cutoff",
+      "status": "pass",
+      "detail": {
+        "text": "Earth contact windows\n\nEarth-centre clearance above both terrain and the 0° minimum antenna elevation, at the 2 m display height. The plots retain the raw terrain horizon; negative horizons do not disable a 0° antenna cutoff. Different mission antenna heights are assessed separately. Hourly boundaries are uncertain by one sample; this is not a booked radio link.\n\n20 Jul 2027, 11:00 UTC\n168 h"
+      }
+    },
+    {
+      "name": "comparison-column-identifies-antenna-contact",
+      "status": "pass",
+      "detail": {
+        "column": 4,
+        "text": "50.0\nΔ +5.1\n(50.0%)"
+      }
+    },
+    {
+      "name": "changed-absolute-cutoff-matches-export-and-public",
+      "status": "pass",
+      "detail": {
+        "fraction": 0.3958333333333333,
+        "value": "39.6%",
+        "text": "Earth contact\ni\n39.6%\nSmooth sphere\n39.6%\n\nAt the 2 m display height, Earth must clear both terrain and the 2° minimum antenna elevation above horizontal. Terrain-only visibility: 56.0%. This is not a confirmed radio service."
+      }
+    },
+    {
+      "name": "errors-and-offline-network",
+      "status": "pass",
+      "detail": {
+        "errors": [],
+        "httpRequests": 0
+      }
+    }
+  ],
+  "errors": [],
+  "httpRequests": [],
+  "artifactSha256": "5caf68a6d4d6ad66401545afd3a773adf8ce0213e4fd3dccc7fe703a6b5484bf",
+  "browser": "157.0.8103.52"
+}

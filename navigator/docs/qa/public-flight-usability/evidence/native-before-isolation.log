@@ -1,0 +1,26 @@
+✔ expanded polar overview covers wide, narrow and zoomed canvases with one projection scale (1.381458ms)
+✔ embedded polar overview retains all finite data (0.138958ms)
+✔ cropped polar image and pointer coordinates round trip after pan and zoom (0.274917ms)
+✔ resizing preserves manually panned image centre and metres per pixel (0.182334ms)
+✔ whole-Moon mapping keeps its 2:1 projection and pointer coordinates at resized dimensions (0.6405ms)
+✖ native 200% at 800×496 frames the 1× lander through every HUD and location state over HTTP and disconnected file (80563.184875ms)
+✔ focused science graphs keep every horizontal axis label below the visible keyboard ring (69421.677708ms)
+✔ inspector scrolling keeps the actual map viewport visible at 800px (71038.460458ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 222085.451417
+
+✖ failing tests:
+
+test at tests/refinement-viewport.test.ts:44:3
+✖ native 200% at 800×496 frames the 1× lander through every HUD and location state over HTTP and disconnected file (80563.184875ms)
+  page.waitForFunction: Timeout 15000ms exceeded.
+      at TestContext.<anonymous> (/Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator/tests/refinement-viewport.test.ts:99:26) {
+    name: 'TimeoutError',
+    log: []
+  }

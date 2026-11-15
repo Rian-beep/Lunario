@@ -1,0 +1,19 @@
+.windows{border-top:1px solid var(--border);padding-top:16px;margin-top:18px}
+.events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto auto;gap:6px 10px;margin:0 0 18px}
+.card{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:6px;min-width:0;padding:11px 10px 12px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--foreground)}
+.cardHeader{display:grid;grid-template-columns:12px minmax(0,1fr) 18px;gap:5px;align-items:center;font-size:11px;font-weight:600;line-height:1.25;min-height:28px}
+.cardHeader>span{overflow-wrap:normal}.cardHeader button{width:18px;height:18px;min-width:18px;min-height:18px;padding:0;font-size:10px}
+.sun,.earth{display:block;width:10px;height:10px;border-radius:50%;box-sizing:border-box}.sun{background:var(--sun)}.earth{border:2px solid var(--earth);background:transparent}
+.eventName{font-size:12px;line-height:1.25;color:var(--muted-foreground)}
+.countdown{display:block;font-size:clamp(17px,1.25vw,21px);line-height:1.15;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:-.03em;overflow-wrap:anywhere}
+.unavailable .countdown{font-size:13px;line-height:1.35;letter-spacing:0;font-weight:550}
+.utc{display:grid;gap:2px;align-content:start;font-size:10px;line-height:1.4;color:var(--muted-foreground);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.caption{display:flex;align-items:center;gap:6px;font-size:12px;margin:0 0 8px}.bar{display:flex;height:7px;overflow:hidden;border-radius:4px;gap:2px}
+.windows ul{list-style:none;display:grid;gap:6px;padding:0;margin:12px 0}.windows li{display:flex;align-items:center;gap:8px;font-size:12px}.windows li i{width:8px;height:8px;border-radius:2px;flex:none}.windows li strong{margin-left:auto;font-weight:500;font-variant-numeric:tabular-nums}.empty{font-size:12px;line-height:1.4;color:var(--muted-foreground);margin:8px 0}
+
+/* React may serialize inline colours as hex on the server or rgb in the browser. */
+.windows :is([style*="#9a863d"], [style*="154, 134, 61"]) { background: var(--mission-success) !important; }
+.windows :is([style*="#cba958"], [style*="203, 169, 88"]) { background: var(--sun) !important; }
+.windows :is([style*="#3d7d90"], [style*="61, 125, 144"]) { background: var(--earth) !important; }
+.windows :is([style*="#61675d"], [style*="97, 103, 93"]) { background: var(--border) !important; }
+.windows :is([style*="#b4b6ad"], [style*="180, 182, 173"]) { background: var(--muted-foreground) !important; }

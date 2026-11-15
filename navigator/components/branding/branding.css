@@ -1,0 +1,25 @@
+.lunario-wordmark {
+  display: block;
+  flex: none;
+  width: 152px;
+  height: auto;
+  max-width: 100%;
+}
+.lunario-loading-fallback {
+  max-width: 100%;
+  padding: clamp(24px, 6vw, 48px);
+  color: #0b0d12;
+  background: #fff6eb;
+  text-align: center;
+}
+.lunario-loading-fallback h1 { margin: 0; }
+.lunario-loading-fallback .lunario-wordmark { width: 228px; margin-inline: auto; }
+.lunario-loading-fallback [role="status"] {
+  margin: 24px 0 0;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .lunario-wordmark { width: 132px; }
+}

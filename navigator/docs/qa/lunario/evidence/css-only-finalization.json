@@ -1,0 +1,8 @@
+{
+  "change": "Restore pale, haloed unboxed scene annotations over dark lunar imagery; preserve high-contrast dark chart ink on paper cards.",
+  "beforeSha256": "3e399bf69f6926d8dbee5d2892c01ae217eb7e8f02b738b18e8d9a709d9c5b21",
+  "afterSha256": "6daf411c4d0eac5869671277d8e22c955666da118887b4ddd3c10e6d481c3c60",
+  "dataScriptUnchanged": true,
+  "applicationScriptUnchanged": true,
+  "applicationScriptSha256": "ca8f13295dd67ed7ace910b1e91bd6cf02c32484f2e81b2ef97f61e617e841d0"
+}

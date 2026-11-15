@@ -1,0 +1,176 @@
+{
+  "candidateSource": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+  "artifactSha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c",
+  "frozenRunnerSha256": "b64ab1eb73087e82f93ee18bca850e486ea281e841ccc2a861deda8e4222d873",
+  "scopes": [
+    {
+      "scope": "main800",
+      "required": 49,
+      "executed": 49,
+      "failed": 0,
+      "unexecuted": 0,
+      "reportSha256": "f2aaf1d6c24c8d52cebf491d80989f1a30eb6690c05506a5727e179b743280fc",
+      "startedUtc": "2026-11-15T00:18:23.954Z",
+      "finishedUtc": "2026-11-15T00:29:45.190Z"
+    },
+    {
+      "scope": "main1280-1728",
+      "required": 99,
+      "executed": 99,
+      "failed": 0,
+      "unexecuted": 0,
+      "reportSha256": "9dede927200b8bbce49e45ab8a72219977e76ba16c58c5f2aa5bedfbdae3bf3d",
+      "startedUtc": "2026-11-15T00:18:25.097Z",
+      "finishedUtc": "2026-11-15T00:59:22.108Z"
+    },
+    {
+      "scope": "native",
+      "required": 104,
+      "executed": 104,
+      "failed": 0,
+      "unexecuted": 0,
+      "reportSha256": "75572b18bcfa3175ac32ccfb81fb1e8f72b3ba71ca3390ab80d18bff429e49ce",
+      "startedUtc": "2026-11-15T00:29:45.264Z",
+      "finishedUtc": "2026-11-15T00:54:44.569Z"
+    }
+  ],
+  "uniqueNamedRows": 246,
+  "invariantRowsRepeatedAcrossReports": 6,
+  "visualContexts": 10,
+  "sciencePlotInstances": 60,
+  "teachingPlotInstances": 40,
+  "mapContexts": 10,
+  "minimumFocusRingTextGapCssPx": 6.25,
+  "nativeHudStates": 24,
+  "nativeCriticalContacts": [
+    {
+      "name": "http-native100-critical-contact-frame",
+      "clearanceM": -0.0004775590416681158
+    },
+    {
+      "name": "http-native200-critical-contact-frame",
+      "clearanceM": -0.0004775590416681158
+    },
+    {
+      "name": "file-native100-critical-contact-frame",
+      "clearanceM": -0.0004775590416681158
+    },
+    {
+      "name": "file-native200-critical-contact-frame",
+      "clearanceM": -0.0004775590416681158
+    }
+  ],
+  "nativeZoom": [
+    {
+      "mode": "http",
+      "measurements": [
+        {
+          "factor": 1,
+          "dpr": 1,
+          "innerWidth": 1600,
+          "outerWidth": 1600,
+          "innerHeight": 993,
+          "visualScale": 1,
+          "documentWidth": 1600,
+          "screenshotWidthPx": 1600
+        },
+        {
+          "factor": 2,
+          "dpr": 2,
+          "innerWidth": 800,
+          "outerWidth": 1600,
+          "innerHeight": 496,
+          "visualScale": 1,
+          "documentWidth": 800,
+          "screenshotWidthPx": 1600
+        }
+      ]
+    },
+    {
+      "mode": "file",
+      "measurements": [
+        {
+          "factor": 1,
+          "dpr": 1,
+          "innerWidth": 1600,
+          "outerWidth": 1600,
+          "innerHeight": 993,
+          "visualScale": 1,
+          "documentWidth": 1600,
+          "screenshotWidthPx": 1600
+        },
+        {
+          "factor": 2,
+          "dpr": 2,
+          "innerWidth": 800,
+          "outerWidth": 1600,
+          "innerHeight": 496,
+          "visualScale": 1,
+          "documentWidth": 800,
+          "screenshotWidthPx": 1600
+        }
+      ]
+    }
+  ],
+  "uniqueRasterCaptures": 120,
+  "minimumSampledGlyphContrast": 7.001970971057991,
+  "historicalFilesUnchanged": 1319,
+  "c15PreflightFilesUnchanged": 107,
+  "liveOtherLaneFilesExcluded": 7,
+  "outerToolExitStatus": 143,
+  "outerToolExitClassification": "Unverified wrapper termination; explicit child subprocess receipts all0. Not normalized to a clean outer exit.",
+  "sourceChecks": [
+    {
+      "name": "tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit": 0,
+      "seconds": 40.522,
+      "log": "/tmp/refine-c15-visual-source-tests.log",
+      "sha256": "f796ed9c20142da49d66f8d966bd12d3c16c3f0dd70c8943c59905993d63d34a"
+    },
+    {
+      "name": "types",
+      "command": [
+        "npm",
+        "run",
+        "typecheck",
+        "--",
+        "--incremental",
+        "false"
+      ],
+      "exit": 0,
+      "seconds": 11.229,
+      "log": "/tmp/refine-c15-visual-source-types.log",
+      "sha256": "59210fc5c79414cea713e78d8845ed1bde84a5c76d23d1920837b4f17d410976"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit": 0,
+      "seconds": 9.16,
+      "log": "/tmp/refine-c15-visual-source-lint.log",
+      "sha256": "8833bd6848daeacfca219ffc3f9cba53d34cc5d870885f5d48f47ff4ea1b5350"
+    },
+    {
+      "name": "math",
+      "command": [
+        "npm",
+        "run",
+        "math:check"
+      ],
+      "exit": 0,
+      "seconds": 0.467,
+      "log": "/tmp/refine-c15-visual-source-math.log",
+      "sha256": "927abb2f81d81d8f07f046043b4a9af3126b351839a999d6da9f4831464aa93c"
+    }
+  ],
+  "verifiedUtc": "2026-11-15T01:01:26.236752+00:00",
+  "limits": "Automated software-rendered visual scope only; separate physical worker owns full nominal/unchanged-engine C13 bounce/breakup. No human, operational, screen-reader or hardware-performance acceptance."
+}

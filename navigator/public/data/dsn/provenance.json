@@ -1,0 +1,14 @@
+{
+  "asset": "earth-blue-marble-2048.jpg",
+  "title": "NASA Blue Marble: land surface, shallow water and shaded topography",
+  "sourceUrl": "https://assets.science.nasa.gov/content/dam/science/esd/eo/content-feature/bluemarble/images/land_shallow_topo_2048.jpg",
+  "sourcePage": "https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/",
+  "credit": "Reto Stöckli, NASA Goddard Space Flight Center; Robert Simmon, enhancements; MODIS, USGS, NOAA",
+  "publication": "2002; historical composite, not weather at the selected epoch",
+  "registration": "Geographic equirectangular: west edge 180W, east edge 180E, north edge 90N, south edge 90S",
+  "dimensions": [2048, 1024],
+  "bytes": 238676,
+  "sha256": "5b54cc586c6cbf2b28762ef4d4011f6cf4227a8b93a637b818a0c54090ce6c2c",
+  "retrieval": "Reused identical upstream/cursor/earth-weather-2608 public/earth/blue-marble.jpg NASA asset; original eoimages host timed out on Mac and Clevo. No resampling or modification.",
+  "license": "NASA public-domain imagery; no NASA endorsement implied"
+}

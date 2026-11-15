@@ -1,0 +1,98 @@
+{
+  "createdUtc": "2026-11-14T13:51:37.084Z",
+  "target": "file:///Users/lukedudley/Documents/ChatGPT/COMPUTER%20OPS/solarreach-navigator/public/solarreach-navigator.html",
+  "offline": true,
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "checks": [
+    {
+      "name": "application-bootstrap",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "planner-decision-controls",
+      "status": "pass",
+      "detail": {
+        "siteId": "connecting-ridge",
+        "startIndex": 13067,
+        "endIndex": 13402
+      }
+    },
+    {
+      "name": "calendar-31-and-controlled-slip",
+      "status": "pass",
+      "detail": {
+        "saved": [
+          {
+            "name": "Controlled baseline",
+            "startIndex": 13067,
+            "endIndex": 13402
+          },
+          {
+            "name": "Controlled candidate",
+            "startIndex": 13091,
+            "endIndex": 13426
+          }
+        ]
+      }
+    },
+    {
+      "name": "comparison-and-open-exact",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "export-import-exact-state",
+      "status": "pass",
+      "detail": {
+        "scenarioKey": "planning-2-770c1619-ed71c4bb-1039",
+        "events": 0,
+        "model": "planning-2",
+        "dataset": "solarreach-catalog-00d28b6c04511cae"
+      }
+    },
+    {
+      "name": "sensitivity-explicit-invalid-cancel",
+      "status": "pass",
+      "detail": {
+        "explicitCases": 3,
+        "cancelled": true,
+        "cancellationCpuThrottle": 8
+      }
+    },
+    {
+      "name": "educator-record-preserved-and-public-state",
+      "status": "pass",
+      "detail": {
+        "recordsPersisted": true,
+        "physicalInputsUnchanged": true
+      }
+    },
+    {
+      "name": "nasa-equipment-and-runtime",
+      "status": "pass",
+      "detail": {
+        "pageErrors": [],
+        "httpErrors": [],
+        "httpRequests": 0
+      }
+    },
+    {
+      "name": "historical-apollo-remains-unassessed",
+      "status": "pass",
+      "detail": {
+        "siteId": "apollo-11",
+        "verdict": "Incomplete: required evidence is missing."
+      }
+    }
+  ],
+  "limitations": [
+    "Dedicated headless browser; no user profile. Screenshots do not establish contrast, screen-reader or real-device conformance."
+  ],
+  "pageErrors": [],
+  "httpErrors": [],
+  "httpRequests": []
+}

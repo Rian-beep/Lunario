@@ -1,0 +1,16 @@
+✔ expanded polar overview covers wide, narrow and zoomed canvases with one projection scale (1.198625ms)
+✔ embedded polar overview retains all finite data (0.116834ms)
+✔ cropped polar image and pointer coordinates round trip after pan and zoom (0.159208ms)
+✔ resizing preserves manually panned image centre and metres per pixel (0.117292ms)
+✔ whole-Moon mapping keeps its 2:1 projection and pointer coordinates at resized dimensions (0.47575ms)
+✔ native 200% at 800×496 frames the 1× lander through every HUD and location state over HTTP and disconnected file (107592.588458ms)
+✔ focused science graphs keep every horizontal axis label below the visible keyboard ring (9845.906166ms)
+✔ inspector scrolling keeps the actual map viewport visible at 800px (7906.882917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125629.64175

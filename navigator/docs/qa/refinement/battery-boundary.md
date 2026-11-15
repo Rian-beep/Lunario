@@ -1,0 +1,9 @@
+# Inspecting the final stored-energy boundary
+
+C14 independent visual finding F11 reproduced an unreachable keyboard endpoint in Battery energy and reserve. Stored-energy data include the final end-exclusive integration boundary, while the environmental pose is limited to the last sampled hour. A controlled plot discarded its explicit selection in favor of that clamped pose. Resource clicks could also publish an out-of-range raw playhead even though the displayed pose stayed clamped.
+
+The fix keeps explicit point inspection separate from the simulation cursor. Selected/readout values persist while the controlled plot has focus; leaving it restores the shared clock. Resource scrubbing clamps to the configured stay. The dashed cursor uses the supplied simulation time for UTC and flight plots, and help explains that inspected values may differ from that cursor. Final stored energy remains inspectable without inventing a Sun/Earth pose after the stay.
+
+The real-browser regression fails on immutable C14 at `End inspects the actual final battery boundary` (`/tmp/lunar-window-battery-end-red.log`). It passes on the new artifact across all six plots, verifies Next sample disabled at the real final boundary, verifies the environmental slider equals its supported maximum, then verifies inspection returns to the shared clock on blur (`/tmp/lunar-window-battery-end-green-final.log`). The first green attempt exposed an assertion bug reading an absent aria-valuemax instead of the native input max attribute; the corrected test retains the same bound, not a relaxed tolerance.
+
+No numerical mission, contact, trajectory, imagery, asset or dataset code changes. Planning-model identity remains planning-4. Full source, web/offline workflow and independent final visual checks remain required; this regression is not operational or human acceptance.

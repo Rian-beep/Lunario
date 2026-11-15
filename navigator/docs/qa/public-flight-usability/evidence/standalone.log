@@ -1,0 +1,13 @@
+
+> solarreach-navigator@0.1.0 standalone
+> npm run math:check && node scripts/build-standalone.mjs
+
+
+> solarreach-navigator@0.1.0 math:check
+> tsx scripts/build-mathml.ts --check
+
+Native MathML checked: 314 expressions, SHA-256 a55b52f3bafbbc401531949e92479c49014ee0fb59afa60dc8451c22be992f7f
+≈ tailwindcss v4.3.5
+
+Done in 5s
+Wrote /tmp/lunario-public-flight-responsive.html (81.15 MB), including numerical terrain, science and 3D code.

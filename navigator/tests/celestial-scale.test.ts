@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {angularProxyRadiusKm} from '../lib/celestial-scale';
+test('compressed direction proxies retain catalog apparent radii for Sun and Earth',()=>{for(const angle of [.25,.27,.9,1.1]){const r=angularProxyRadiusKm(5000,angle)!;assert.ok(Math.abs(Math.asin(r/5000)*180/Math.PI-angle)<1e-12);}assert.ok(angularProxyRadiusKm(5000,1)!>angularProxyRadiusKm(5000,.27)!);});
+test('missing or invalid angular/range evidence never creates an arbitrary body size',()=>{for(const angle of [NaN,Infinity,0,-1,90])assert.equal(angularProxyRadiusKm(5000,angle),null);assert.equal(angularProxyRadiusKm(0,.27),null);});

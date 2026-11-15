@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "source": {
+    "title": "Moon 3D Models for Web, AR, and Animation — color map and height map",
+    "credit": "NASA's Goddard Space Flight Center",
+    "page": "https://svs.gsfc.nasa.gov/14959/",
+    "url": "https://svs.gsfc.nasa.gov/vis/a010000/a014900/a014959/Moon_NASA_LRO_8k_Topo_Small.glb",
+    "sha256": "c4b65fb4df622a37fd75366c2ed9bf9e163e41c0fde178b3b27e31b0173e6953",
+    "bytes": 81505784,
+    "generator": "Khronos glTF Blender I/O v4.3.47"
+  },
+  "mesh": {
+    "url": "/data/nasa-moon-mesh.bin.gz",
+    "sha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+    "bytes": 9587461,
+    "decodedSha256": "c062ce53c0dfdd491d42ebe22e4531a1782e7dffc964e2dca2f12e1d6143b8bb",
+    "decodedBytes": 18284616,
+    "format": "NASAMOON v1; little-endian; 48-byte header, Float32 XYZ, Uint32 triangle indices",
+    "originalVertexCount": 2021340,
+    "vertexCount": 507906,
+    "indexCount": 3047424,
+    "triangleCount": 1015808,
+    "weld": "Bit-identical Float32 XYZ only, first occurrence retained. Original triangle order and winding retained. No topography generated, no simplification.",
+    "positionAccessor": {
+      "count": 2021340,
+      "accessor": 0,
+      "bufferView": 0,
+      "offset": 0
+    },
+    "indexAccessor": {
+      "count": 3047424,
+      "accessor": 3,
+      "bufferView": 3,
+      "offset": 64682880
+    }
+  },
+  "texture": {
+    "url": "/data/imagery/nasa-moon-8k.jpg",
+    "sha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f",
+    "bytes": 4631745,
+    "width": 8192,
+    "height": 4096,
+    "mimeType": "image/jpeg",
+    "extraction": "Embedded JPEG copied byte-for-byte, no re-encoding",
+    "uv": "u = 0.5 + atan2(-z,x)/(2*pi); vTop = 0.5 - atan2(y,hypot(x,z))/pi. JPEG top row is north. Shader sampling must handle longitude wrap per fragment."
+  },
+  "coordinates": {
+    "longitude": "Degrees east; prime meridian at texture center (NASA CGI Moon Kit https://svs.gsfc.nasa.gov/4720/)",
+    "axes": {
+      "primeMeridian": "+X",
+      "north": "+Y",
+      "east90": "-Z"
+    },
+    "latLonToXyz": "r * [cos(lat)*cos(lon), sin(lat), -cos(lat)*sin(lon)]",
+    "moonFixedToNasa": "[X,Y,Z] -> [X,Z,-Y] (right-handed)",
+    "sourceHasNodeTransform": false,
+    "evidence": {
+      "method": "Original TEXCOORD_0 interpreted as equirectangular u=(lon+180)/360, vTop=(90-lat)/180; compared against POSITION directions at every source vertex",
+      "samples": [
+        {
+          "originalVertex": 504,
+          "weldedVertex": 119,
+          "uv": [
+            0.5000001192092896,
+            0.49999988079071045
+          ],
+          "position": [
+            0.9793487787246704,
+            3.862654120168063e-12,
+            1.4114822022293083e-7
+          ]
+        },
+        {
+          "originalVertex": 1496,
+          "weldedVertex": 360,
+          "uv": [
+            0,
+            0.4999999403953552
+          ],
+          "position": [
+            -0.9857012033462524,
+            1.4015048011017939e-9,
+            -3.8996452644823876e-7
+          ]
+        },
+        {
+          "originalVertex": 984,
+          "weldedVertex": 239,
+          "uv": [
+            0.2500000298023224,
+            0.49999988079071045
+          ],
+          "position": [
+            -2.9447633664858586e-7,
+            -3.565455486409519e-8,
+            0.9815251231193542
+          ]
+        },
+        {
+          "originalVertex": 12,
+          "weldedVertex": 3,
+          "uv": [
+            0.7500001192092896,
+            0.49999988079071045
+          ],
+          "position": [
+            2.2301765056909062e-7,
+            -6.8935004371439845e-9,
+            -0.9729370474815369
+          ]
+        },
+        {
+          "originalVertex": 216822,
+          "weldedVertex": 54283,
+          "uv": [
+            0.48535168170928955,
+            0.0039060115814208984
+          ],
+          "position": [
+            0.023866698145866394,
+            0.9864686131477356,
+            4.030513256481072e-9
+          ]
+        },
+        {
+          "originalVertex": 217002,
+          "weldedVertex": 54328,
+          "uv": [
+            0.48535168170928955,
+            0.9960936903953552
+          ],
+          "position": [
+            0.02398671582341194,
+            -0.9882290959358215,
+            -3.846964968801103e-10
+          ]
+        }
+      ],
+      "maxAngularErrorDeg": 1.5536320822929512,
+      "rmsAngularErrorDeg": 0.23394917653836836,
+      "caveat": "Axis convention is verified, but the original deformed mesh/UVs do not coincide exactly with a mathematical sphere, especially near pinched poles. Derived direction UVs intentionally discard source seam duplication."
+    }
+  },
+  "scale": {
+    "positionUnits": "Original NASA GLB unitless Float32 positions, unchanged",
+    "radiusNormalizationDivisor": 0.9822867872752492,
+    "normalizationMethod": "Triangle-area-weighted mean of vertex radii over all original triangles; computed in Float64",
+    "referenceRadiusKm": 1737.4,
+    "positionToKm": 1768.7298887724514,
+    "sourceRadiusMin": 0.9652995145539758,
+    "sourceRadiusMax": 1.0003156891895486,
+    "normalizedRadiusMin": 0.9827064021003539,
+    "normalizedRadiusMax": 1.0183540104049547,
+    "visualizationRadiusMinKm": 1707.3541030091549,
+    "visualizationRadiusMaxKm": 1769.2882576775685,
+    "caveat": "1737.4 km is the nominal lunar reference radius, not a recovered metric calibration of this artistic GLB. Its relief amplitude is preserved as supplied; mesh radii must not be interpreted as scientific heights."
+  },
+  "limitations": [
+    "Visualization only. Scientific illumination, line-of-sight, terrain, contact, and landing computations must continue to use Horizons and local LOLA numerical terrain.",
+    "NASA documents pinched-pole mesh artifacts. Use local LOLA for ground rendering near a landing site, not this global mesh.",
+    "NASA CGI Moon Kit color maps are optimized for aesthetics rather than science; polar color includes lower-resolution LOLA albedo."
+  ]
+}

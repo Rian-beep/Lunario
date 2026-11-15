@@ -1,0 +1,40 @@
+{
+  "source": {
+    "sha256": "ce8901555b6ece8846b62d182dd1697a286fd7b46dbbb4ed725834da5dbbb548",
+    "exitCode": 0,
+    "passed": 790,
+    "rawCommandLogSha256": "ce8901555b6ece8846b62d182dd1697a286fd7b46dbbb4ed725834da5dbbb548",
+    "evidenceFile": "source-tests.log"
+  },
+  "types": {
+    "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f",
+    "exitCode": 0,
+    "rawCommandLogSha256": "59210fc5c79414cea713e78d8845ed1bde84a5c76d23d1920837b4f17d410976",
+    "evidenceFile": "types.log"
+  },
+  "lint": {
+    "sha256": "ac8d21e95284435efae7165338d29139a0a6888bec29aeb58b02f452a3d050d5",
+    "exitCode": 0,
+    "rawCommandLogSha256": "8833bd6848daeacfca219ffc3f9cba53d34cc5d870885f5d48f47ff4ea1b5350",
+    "evidenceFile": "lint.log"
+  },
+  "build": {
+    "sha256": "4ace9c6f2997bfabb5e8c46fb796750d8c4674842f1d0f9d0642dbe65effe664",
+    "exitCode": 0,
+    "rawCommandLogSha256": "9cf100355c6f5ff1d1891b0a7c45facc080a88e235de9b052142c871ba6274f0",
+    "evidenceFile": "build.log"
+  },
+  "standalone": {
+    "sha256": "bcd562351b6e0b578d7a961701b2888427810bdea9b4db56ae768e9ab78604e4",
+    "exitCode": 0,
+    "rawCommandLogSha256": "bcd562351b6e0b578d7a961701b2888427810bdea9b4db56ae768e9ab78604e4",
+    "evidenceFile": "standalone.log"
+  },
+  "native": {
+    "sha256": "6c1303a168b0e649b2748e2d90ae06e24fb92b0027532a90829ccbfd835ca096",
+    "exitCode": 0,
+    "passed": 8,
+    "rawCommandLogSha256": "6c1303a168b0e649b2748e2d90ae06e24fb92b0027532a90829ccbfd835ca096",
+    "evidenceFile": "native-final.log"
+  }
+}

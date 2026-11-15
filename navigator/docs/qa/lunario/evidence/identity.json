@@ -1,0 +1,11 @@
+{
+  "brandRepository": "https://github.com/Rian-beep/Lunario",
+  "brandCommit": "aeb673fff6de377e5dba0982c0c55c8b0d874ee8",
+  "referenceSha256": "bf379c50886e0fb42fcee4ef085cde3f27a15e002943cd565ecfb521ded56b34",
+  "offlineSha256": "6daf411c4d0eac5869671277d8e22c955666da118887b4ddd3c10e6d481c3c60",
+  "offlineBytes": 81133804,
+  "sourceBase": "50498798549ba91eaa9ec792c315185957db24bf",
+  "claims": "Software checks only; no human engagement, screen-reader or operational qualification.",
+  "sourceCommit": "329241f4a30e8e2475f36de72ae3b10402f72649",
+  "offlineDeliveryCommit": "b87779e"
+}

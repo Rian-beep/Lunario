@@ -1,0 +1,13 @@
+{
+  "artifact": "lunario-public-flight-responsive.html",
+  "sha256": "30994eb901aec5d6e593d2b01364fd96f2bd6e07bfdfb41208a0b2d919a01fc9",
+  "bytes": 81145681,
+  "publicFirstUseViewport": [
+    1440,
+    900
+  ],
+  "nativeZoomGate": "8/8 isolated; all 12 actual HTTP/file HUD/location states; earlier failed attempts retained",
+  "physicsOrAssessmentModelChanges": false,
+  "sourceCommit": "dc827ab892121b5978cf0120318938a9fb311c07",
+  "offlineDeliveryCommit": "ece9ea79abd17c9d756cc1af73102e3b53534113"
+}

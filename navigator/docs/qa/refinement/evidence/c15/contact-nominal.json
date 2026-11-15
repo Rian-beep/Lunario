@@ -1,0 +1,6504 @@
+{
+  "startedUtc": "2026-11-15T00:14:18.930Z",
+  "opts": {
+    "marker": "/tmp/solarreach-refinement-c15-ready.json",
+    "instructions": "/tmp/refinement-c15-qa-instructions.txt",
+    "output": "/tmp/refinement-framing-c15-contact",
+    "modes": "http,file",
+    "scenarios": "nominal",
+    "widths": "1280",
+    "sections": "physical,contrast,expanded-contrast",
+    "executable": "/usr/bin/google-chrome",
+    "playwright": "/home/luke/.npm/_npx/9833c18b2d85bc59/node_modules/playwright-core/index.mjs"
+  },
+  "checks": [
+    {
+      "name": "original-nasa-asset-identity",
+      "status": "pass",
+      "elapsedMs": 169.08921,
+      "detail": [
+        {
+          "path": "original-nasa-moon-mesh.bin.gz",
+          "bytes": 9587461,
+          "sha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e"
+        },
+        {
+          "path": "original-nasa-moon-8k.jpg",
+          "bytes": 4631745,
+          "sha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f"
+        },
+        {
+          "path": "/data/imagery/malapert-massif-nac-surface.jpg",
+          "bytes": 48580,
+          "sha256": "21a6883970916e4199759bc8f1f19de4e1aba3f21f4ac5891005a4209d477e60",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/imagery/connecting-ridge-nac-surface.jpg",
+          "bytes": 181038,
+          "sha256": "5efc025f460cc19c8203aa4d75a3585ab7de62870669e125c12c9f675deaab96",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/imagery/peak-near-shackleton-nac-surface.jpg",
+          "bytes": 22868,
+          "sha256": "84861e480c8895eeff1992a330713ca18e6573f15c2d359b294e22676e81f1ef",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/imagery/degerlache-shackleton-nac-surface.jpg",
+          "bytes": 85396,
+          "sha256": "abe247c34f41be87cb457ac20747da05c0aa4dc8fbed17bd3074916f1cc490b0",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/imagery/south-pole-nac-surface.jpg",
+          "bytes": 161612,
+          "sha256": "a34576c418818c0a01ae67bae741566c6d2eeeb08f5398eb6de3785875747792",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/imagery/shackleton-crest-nac-surface.jpg",
+          "bytes": 127061,
+          "sha256": "b794cb82edb944a925667e3630b7053d12c9a4652b98fdddefc4764deef754eb",
+          "outputSamplingM": 2.090320587158203,
+          "sourcePixelM": 1
+        },
+        {
+          "path": "/data/equipment/apollo-lunar-module.glb",
+          "bytes": 716840,
+          "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e"
+        },
+        {
+          "path": "/data/celestial-models/assets/earth.glb",
+          "bytes": 12916400,
+          "sha256": "05a5aea99db8ab472487a06debc3b5d0b2cae7636a1a6b9ecfa40b7d1722ba23"
+        },
+        {
+          "path": "/data/celestial-models/assets/sun.glb",
+          "bytes": 4343656,
+          "sha256": "a178f5c43c2c9a6ee6c011c315149a7ab5a2594fd5aa9119ee219625a18da1dd"
+        }
+      ]
+    },
+    {
+      "name": "exact-http-file-identity-before",
+      "status": "pass",
+      "elapsedMs": 89.34233699999999,
+      "detail": {
+        "bytes": 81081637,
+        "sha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c",
+        "status": 200
+      }
+    },
+    {
+      "name": "http-1280-fresh-public",
+      "status": "pass",
+      "elapsedMs": 3724.2124410000006,
+      "detail": {
+        "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-public.png"
+      }
+    },
+    {
+      "name": "http-1280-inspector-actual-glyph-contrast",
+      "status": "pass",
+      "elapsedMs": 6448.707615000001,
+      "detail": {
+        "name": "http-1280-inspector-glyph-contrast",
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "text": "✓ Within entered contact limits",
+        "color": "rgb(243, 241, 235)",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "layers": [
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(36, 56, 46)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(32, 35, 40)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          }
+        ],
+        "rect": {
+          "x": 617,
+          "y": 669.5,
+          "width": 206.859375,
+          "height": 16
+        },
+        "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+        "physicalPixelsPerCssPixel": {
+          "x": 1,
+          "y": 1
+        },
+        "background": [
+          {
+            "x": 612,
+            "y": 673,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 612,
+            "y": 677,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 612,
+            "y": 681,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 673,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 677,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 681,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          }
+        ],
+        "glyphPixels": 1057,
+        "corePixels": 106,
+        "actualGlyph": [
+          243,
+          241,
+          235
+        ],
+        "glyphExamples": [
+          {
+            "x": 647,
+            "y": 671,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 638,
+            "y": 672,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 639,
+            "y": 673,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 813,
+            "y": 673,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 656,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 727,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 782,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 634,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 668,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 715,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 747,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 789,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          }
+        ],
+        "glyphContrast": 11.066191360830526,
+        "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-inspector-glyph-contrast.png"
+      }
+    },
+    {
+      "name": "http-1280-expanded-contact-card-raster-contrast",
+      "status": "pass",
+      "elapsedMs": 16054.472754999999,
+      "detail": {
+        "state": "constraint landing-outcome within-assumed-limits",
+        "verdict": {
+          "name": "http-1280-initial-expanded-contact-verdict",
+          "viewport": {
+            "width": 1280,
+            "height": 1000
+          },
+          "text": "✓ Within entered contact limits",
+          "color": "rgb(243, 241, 235)",
+          "fontSize": "13px",
+          "fontWeight": "700",
+          "layers": [
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(36, 56, 46)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(32, 35, 40)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            }
+          ],
+          "rect": {
+            "x": 617,
+            "y": 635.109375,
+            "width": 192.078125,
+            "height": 15
+          },
+          "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+          "physicalPixelsPerCssPixel": {
+            "x": 1,
+            "y": 1
+          },
+          "background": [
+            {
+              "x": 612,
+              "y": 638,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 612,
+              "y": 642,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 612,
+              "y": 646,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 638,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 642,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 646,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            }
+          ],
+          "glyphPixels": 893,
+          "corePixels": 90,
+          "actualGlyph": [
+            243,
+            241,
+            235
+          ],
+          "glyphExamples": [
+            {
+              "x": 632,
+              "y": 638,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 638,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 642,
+              "y": 639,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 799,
+              "y": 639,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 653,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 742,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 636,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 676,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 738,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 622,
+              "y": 642,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            }
+          ],
+          "glyphContrast": 11.066191360830526,
+          "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-initial-expanded-contact-verdict.png"
+        },
+        "paragraphs": [
+          {
+            "name": "http-1280-initial-expanded-contact-body-0",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Incoming vertical -0.56 m/s (limit ±2.0 m/s) · horizontal 0.71 m/s (limit 1.0 m/s).",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 665.546875,
+              "width": 592,
+              "height": 23.09375
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 671,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 677,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 682,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 671,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 677,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 682,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 1683,
+            "corePixels": 169,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 656,
+                "y": 670,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 972,
+                "y": 671,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 815,
+                "y": 673,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1038,
+                "y": 673,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 951,
+                "y": 674,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 815,
+                "y": 675,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 675,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 716,
+                "y": 676,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 906,
+                "y": 676,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 751,
+                "y": 677,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1038,
+                "y": 677,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 909,
+                "y": 678,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-initial-expanded-contact-body-0.png"
+          },
+          {
+            "name": "http-1280-initial-expanded-contact-body-1",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Ideal tilt 1.94° (limit 15.0°) · surface target error 8.43 m (radius 20.0 m).",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 700.640625,
+              "width": 592,
+              "height": 23.09375
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 706,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 712,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 717,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 706,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 712,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 717,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 1601,
+            "corePixels": 161,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 673,
+                "y": 706,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 653,
+                "y": 708,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 840,
+                "y": 708,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 805,
+                "y": 709,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 802,
+                "y": 710,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 710,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 707,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 832,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 883,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 722,
+                "y": 712,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 712,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 753,
+                "y": 713,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-initial-expanded-contact-body-1.png"
+          },
+          {
+            "name": "http-1280-initial-expanded-contact-body-2",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Contact at 50.48 s · incoming mass 4,562.23 kg · numerical ground +0.16 m relative to reference. Incoming kinetic energy",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 735.734375,
+              "width": 592,
+              "height": 46.1875
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 747,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 758,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 770,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 747,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 758,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 770,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 3683,
+            "corePixels": 369,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 744,
+                "y": 740,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1032,
+                "y": 743,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 797,
+                "y": 745,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 804,
+                "y": 746,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1112,
+                "y": 746,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1027,
+                "y": 747,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 858,
+                "y": 748,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 774,
+                "y": 750,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 996,
+                "y": 751,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 723,
+                "y": 767,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 635,
+                "y": 769,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 793,
+                "y": 769,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-initial-expanded-contact-body-2.png"
+          }
+        ]
+      }
+    },
+    {
+      "name": "http-1280-physical-follow-contact-bounce-breakup-replay",
+      "status": "pass",
+      "elapsedMs": 139861.861516,
+      "detail": [
+        {
+          "scenario": "nominal",
+          "contactCard": {
+            "state": "constraint landing-outcome within-assumed-limits",
+            "verdict": {
+              "name": "http-1280-nominal-expanded-contact-verdict",
+              "viewport": {
+                "width": 1280,
+                "height": 1000
+              },
+              "text": "✓ Within entered contact limits",
+              "color": "rgb(243, 241, 235)",
+              "fontSize": "13px",
+              "fontWeight": "700",
+              "layers": [
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(36, 56, 46)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(32, 35, 40)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                }
+              ],
+              "rect": {
+                "x": 617,
+                "y": 697.421875,
+                "width": 192.078125,
+                "height": 15
+              },
+              "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+              "physicalPixelsPerCssPixel": {
+                "x": 1,
+                "y": 1
+              },
+              "background": [
+                {
+                  "x": 612,
+                  "y": 701,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 612,
+                  "y": 704,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 612,
+                  "y": 708,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 701,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 704,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 708,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                }
+              ],
+              "glyphPixels": 893,
+              "corePixels": 90,
+              "actualGlyph": [
+                243,
+                241,
+                235
+              ],
+              "glyphExamples": [
+                {
+                  "x": 632,
+                  "y": 700,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 700,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 642,
+                  "y": 701,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 799,
+                  "y": 701,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 653,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 742,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 636,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 676,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 738,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 622,
+                  "y": 704,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                }
+              ],
+              "glyphContrast": 11.066191360830526,
+              "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-nominal-expanded-contact-verdict.png"
+            },
+            "paragraphs": [
+              {
+                "name": "http-1280-nominal-expanded-contact-body-0",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Incoming vertical -0.56 m/s (limit ±2.0 m/s) · horizontal 0.71 m/s (limit 1.0 m/s).",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 727.859375,
+                  "width": 592,
+                  "height": 23.09375
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 733,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 739,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 745,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 733,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 739,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 745,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 1683,
+                "corePixels": 169,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 656,
+                    "y": 732,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 972,
+                    "y": 733,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 815,
+                    "y": 735,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1038,
+                    "y": 735,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 951,
+                    "y": 736,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 815,
+                    "y": 737,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 737,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 716,
+                    "y": 738,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 906,
+                    "y": 738,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 751,
+                    "y": 739,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1038,
+                    "y": 739,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 909,
+                    "y": 740,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-nominal-expanded-contact-body-0.png"
+              },
+              {
+                "name": "http-1280-nominal-expanded-contact-body-1",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Ideal tilt 1.94° (limit 15.0°) · surface target error 8.43 m (radius 20.0 m).",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 762.953125,
+                  "width": 592,
+                  "height": 23.09375
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 768,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 774,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 780,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 768,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 774,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 780,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 1601,
+                "corePixels": 161,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 673,
+                    "y": 769,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 653,
+                    "y": 771,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 840,
+                    "y": 771,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 805,
+                    "y": 772,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 802,
+                    "y": 773,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 773,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 707,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 832,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 883,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 722,
+                    "y": 775,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 775,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 753,
+                    "y": 776,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-nominal-expanded-contact-body-1.png"
+              },
+              {
+                "name": "http-1280-nominal-expanded-contact-body-2",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Contact at 50.48 s · incoming mass 4,562.23 kg · numerical ground +0.16 m relative to reference. Incoming kinetic energy",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 754.046875,
+                  "width": 592,
+                  "height": 46.1875
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 765,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 777,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 788,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 765,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 777,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 788,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 3683,
+                "corePixels": 369,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 744,
+                    "y": 759,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1032,
+                    "y": 762,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 797,
+                    "y": 764,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 804,
+                    "y": 765,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1112,
+                    "y": 765,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1027,
+                    "y": 766,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 858,
+                    "y": 767,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 774,
+                    "y": 769,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 996,
+                    "y": 770,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 723,
+                    "y": 786,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 635,
+                    "y": 788,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 793,
+                    "y": 788,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-nominal-expanded-contact-body-2.png"
+              }
+            ]
+          },
+          "productionPlaybackSpeed": 1,
+          "samples": 94,
+          "allCompletedFrames": true,
+          "elapsedMs": 83528,
+          "renderedFps": 1.416266660171156,
+          "radii": [
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0.43249999997616395,
+              "radiusKm": 0.026570660511172833,
+              "broken": false
+            },
+            {
+              "timeS": 0.9157999999761524,
+              "radiusKm": 0.026570660511172833,
+              "broken": false
+            },
+            {
+              "timeS": 1.4157999999761524,
+              "radiusKm": 0.026570660511172833,
+              "broken": false
+            },
+            {
+              "timeS": 1.9657999999761524,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 2.532399999976158,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 3.099099999976155,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 3.615699999976161,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 4.098999999976164,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 4.648999999976164,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 5.1656999999761615,
+              "radiusKm": 0.026570660511172847,
+              "broken": false
+            },
+            {
+              "timeS": 5.632299999976152,
+              "radiusKm": 0.02657066051117285,
+              "broken": false
+            },
+            {
+              "timeS": 6.115599999976156,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 6.7488999999761585,
+              "radiusKm": 0.026570660511172847,
+              "broken": false
+            },
+            {
+              "timeS": 7.3322999999761524,
+              "radiusKm": 0.02657066051117285,
+              "broken": false
+            },
+            {
+              "timeS": 7.948899999976158,
+              "radiusKm": 0.02657066051117285,
+              "broken": false
+            },
+            {
+              "timeS": 8.582199999976162,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 9.215499999976164,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 9.882099999976155,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 10.515399999976157,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 11.131999999976165,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 11.765399999976157,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 12.398699999976161,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 13.015299999976152,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 13.698599999976155,
+              "radiusKm": 0.026570660511172847,
+              "broken": false
+            },
+            {
+              "timeS": 14.315299999976153,
+              "radiusKm": 0.026570660511172843,
+              "broken": false
+            },
+            {
+              "timeS": 14.948599999976155,
+              "radiusKm": 0.026570660511172847,
+              "broken": false
+            },
+            {
+              "timeS": 15.598499999976164,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 16.231899999976157,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 16.881799999976153,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 17.53179999997615,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 18.181799999976153,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 18.831799999976152,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 19.498399999976158,
+              "radiusKm": 0.02657066051117285,
+              "broken": false
+            },
+            {
+              "timeS": 20.148399999976156,
+              "radiusKm": 0.02657066051117285,
+              "broken": false
+            },
+            {
+              "timeS": 20.815099999976155,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 21.448299999976154,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 22.098299999976152,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 22.764999999976165,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 23.398299999976153,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 24.081499999976163,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 24.798199999976163,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 25.481499999976165,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 26.14819999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 26.814799999976152,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 27.464699999976162,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 28.114799999976153,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 28.76479999997615,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 29.48139999997616,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 30.114599999976154,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 30.781299999976152,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 31.447999999976165,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 32.08129999997615,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 32.73119999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 33.38119999997616,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 34.031099999976156,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 34.71439999997616,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 35.39779999997615,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 36.064499999976164,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 36.71439999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 37.39769999997616,
+              "radiusKm": 0.02657066051117286,
+              "broken": false
+            },
+            {
+              "timeS": 38.04759999997616,
+              "radiusKm": 0.02657066051117286,
+              "broken": false
+            },
+            {
+              "timeS": 38.69769999997616,
+              "radiusKm": 0.02657066051117286,
+              "broken": false
+            },
+            {
+              "timeS": 39.330999999976164,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 39.98099999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 40.614299999976154,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 41.21419999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 41.83079999997615,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 42.447499999976166,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 43.39749999997616,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 45.21399999997617,
+              "radiusKm": 0.026570660511172864,
+              "broken": false
+            },
+            {
+              "timeS": 45.23069999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 45.91399999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 46.613999999976166,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 47.44729999997615,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 48.28059999997617,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 49.21389999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 50.23049999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 51.23049999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 51.96379999997615,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 53.03039999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 54.09699999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 55.196999999976164,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 56.26359999997617,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 56.99689999997616,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 58.13019999997615,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 59.213499999976165,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 60.246799999976155,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 61.246799999976155,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 61.94669999997615,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 62.48139816962106,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            },
+            {
+              "timeS": 62.48139816962106,
+              "radiusKm": 0.026570660511172874,
+              "broken": false
+            }
+          ],
+          "max": 62.48139816962106,
+          "end": {
+            "focusRequestId": "1",
+            "sceneInstance": "9de35c5b-93f5-449e-82c8-bb599ee31008",
+            "flightRevision": "0",
+            "horizonRevision": "0",
+            "renderFrame": "226",
+            "vehicleWorldPosition": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+            "vehicleQuaternion": "-0.011358408257365227,-0.7086247205734253,-0.003073920961469412,-0.7054875493049622",
+            "vehicleVisible": "true",
+            "landingContact": "{\"timeS\":50.48139816962106,\"eastM\":-8.425036257719135,\"northM\":-0.000005182250200764983,\"yM\":0.16407225420698524,\"velocityMps\":[0.7107326256015903,-0.5593293012008084,1.688674808083655e-7],\"massKg\":4562.229294846625,\"terrainHeightM\":0.16407225403994793,\"terrainKnown\":true,\"slopeDeg\":1.4221188703828147,\"tiltDeg\":1.9372902810000852,\"headingDeg\":269.99617469401676,\"targetErrorM\":8.425035462788589}",
+            "landingDynamics": "{\"phase\":\"settled\",\"elapsedContactS\":12,\"speedMps\":0.01851020594024011,\"verticalMps\":-0.010475733317434788,\"eastM\":-8.015073727260292,\"northM\":0.09760950554119897,\"yM\":1.9340078680985924,\"fragmentCount\":0,\"note\":\"128 m finite contact patch, 2.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+            "landingFragmentCount": "0",
+            "landingMassKg": "4562.229294846625",
+            "terrainClearanceM": "-0.0004775590416681158",
+            "flightTimeS": "62.48139816962106",
+            "landingContactTimeS": "50.48139816962106",
+            "landingContactFrameIndex": "1440",
+            "landingContactFrameTimeS": "62.48139816962106",
+            "sunModel": "ready",
+            "sunDraws": "0",
+            "earthModel": "ready",
+            "earthDraws": "0",
+            "earthRangeKm": "380159.34375",
+            "sunRangeKm": "151931103.42258206",
+            "starCount": "523",
+            "moonModel": "ready",
+            "contactReplay": "ready",
+            "contactFrames": "1441",
+            "contactCacheBytes": "23645369",
+            "focusRange": "ready",
+            "assetFlight": "idle",
+            "globeMinimumRadiusKm": "1769.3382576775684",
+            "zoomEnabled": "true",
+            "panEnabled": "true",
+            "rotateEnabled": "true",
+            "vehicleScale": "1",
+            "cameraMode": "follow",
+            "lunarAppearance": "neutral-linear-rec709-v1",
+            "lightingMode": "atlas",
+            "stationInspection": "false",
+            "visibleStations": "[]",
+            "visiblePoiCount": "0",
+            "visiblePois": "[]",
+            "vehicleFraming": "framed",
+            "vehicleScreenBounds": "{\"left\":114.14138314657087,\"top\":155.59374999999997,\"right\":449.11703647009824,\"bottom\":429.7118467533585}",
+            "unoccludedCanvas": "{\"left\":12,\"right\":565,\"top\":155.59375,\"bottom\":463.5625}",
+            "cameraPosition": "0.006984926272739882,0.010934007867930595,0.01990239049445862",
+            "cameraTarget": "-0.008015073727260118,0.0019340078679306427,-0.00009760950554138505",
+            "vehicleCameraDistanceKm": "0.02657066051117287",
+            "cameraBodyRadiusKm": "1739.064014281954",
+            "cameraNearKm": "0.0001",
+            "cameraFarKm": "167889500.16493922",
+            "framingProjectionZoom": "0.8010736112370258",
+            "viewLatitude": "-89.5349756538142",
+            "viewLongitude": "-150.02397558981886",
+            "screenNorthAngle": "65.71612306052107",
+            "stationTexture": "ready"
+          },
+          "replayFraming": {
+            "renderFrame": 240,
+            "framing": "framed",
+            "bounds": {
+              "left": 114.1413831465713,
+              "top": 155.59375,
+              "right": 449.1170364700983,
+              "bottom": 429.7118467533581
+            },
+            "safe": {
+              "left": 12,
+              "right": 565,
+              "top": 155.59375,
+              "bottom": 463.5625
+            },
+            "measurement": {
+              "viewport": {
+                "left": 0,
+                "top": 0,
+                "right": 1280,
+                "bottom": 1000
+              },
+              "host": {
+                "x": 0,
+                "y": 290.4375,
+                "width": 1280,
+                "height": 646.5625
+              },
+              "panels": [
+                {
+                  "selector": ".inspector",
+                  "left": 577,
+                  "right": 1257,
+                  "top": 132,
+                  "bottom": 556.5625
+                },
+                {
+                  "selector": ".workspace-heading",
+                  "left": 18,
+                  "right": 315.125,
+                  "top": 24,
+                  "bottom": 143.59375
+                },
+                {
+                  "selector": ".timeline",
+                  "left": 0,
+                  "right": 1280,
+                  "top": 646.5625,
+                  "bottom": 709.5625
+                },
+                {
+                  "selector": ".flight-telemetry",
+                  "left": 18,
+                  "right": 562,
+                  "top": 475.5625,
+                  "bottom": 546.5625
+                },
+                {
+                  "selector": ".header-dropdown-content",
+                  "left": 1272.1875,
+                  "right": 1712.1875,
+                  "top": -50.4375,
+                  "bottom": 174.15625
+                },
+                {
+                  "selector": ".sq-legend",
+                  "left": 484.734375,
+                  "right": 795.265625,
+                  "top": 610.0625,
+                  "bottom": 626.5625
+                },
+                {
+                  "selector": ".drawer-toggles",
+                  "left": 268.609375,
+                  "right": 438,
+                  "top": -208.4375,
+                  "bottom": -174.4375
+                }
+              ]
+            },
+            "screenshot": "/tmp/refinement-framing-c15-contact/http-1280-nominal-backwards-replay.png",
+            "physical": {
+              "target": "-0.008015073727260125,0.0019340078679306316,-0.00009760950554138505",
+              "camera": "0.0069849262727398834,0.010934007867930584,0.019902390494458615",
+              "com": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+              "zoom": "0.8010736112370248",
+              "vehicleScale": "1"
+            }
+          },
+          "clearanceFailures": []
+        }
+      ]
+    },
+    {
+      "name": "http-1280-actual-errors-and-offline-requests",
+      "status": "pass",
+      "elapsedMs": 0.778132999985246,
+      "detail": {
+        "requestCount": 11,
+        "httpAttempts": 1
+      }
+    },
+    {
+      "name": "file-1280-fresh-public",
+      "status": "pass",
+      "elapsedMs": 2004.9417390000017,
+      "detail": {
+        "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-public.png"
+      }
+    },
+    {
+      "name": "file-1280-inspector-actual-glyph-contrast",
+      "status": "pass",
+      "elapsedMs": 3085.5175570000138,
+      "detail": {
+        "name": "file-1280-inspector-glyph-contrast",
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "text": "✓ Within entered contact limits",
+        "color": "rgb(243, 241, 235)",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "layers": [
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(36, 56, 46)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(32, 35, 40)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgb(23, 25, 28)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none",
+            "opacity": "1",
+            "filter": "none",
+            "blend": "normal"
+          }
+        ],
+        "rect": {
+          "x": 617,
+          "y": 669.5,
+          "width": 206.859375,
+          "height": 16
+        },
+        "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+        "physicalPixelsPerCssPixel": {
+          "x": 1,
+          "y": 1
+        },
+        "background": [
+          {
+            "x": 612,
+            "y": 673,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 612,
+            "y": 677,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 612,
+            "y": 681,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 673,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 677,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          },
+          {
+            "x": 614,
+            "y": 681,
+            "color": [
+              36,
+              56,
+              46
+            ],
+            "contrast": 11.066191360830526
+          }
+        ],
+        "glyphPixels": 1057,
+        "corePixels": 106,
+        "actualGlyph": [
+          243,
+          241,
+          235
+        ],
+        "glyphExamples": [
+          {
+            "x": 647,
+            "y": 671,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 638,
+            "y": 672,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 639,
+            "y": 673,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 813,
+            "y": 673,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 656,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 727,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 782,
+            "y": 674,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 634,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 668,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 715,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 747,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          },
+          {
+            "x": 789,
+            "y": 675,
+            "color": [
+              243,
+              241,
+              235
+            ]
+          }
+        ],
+        "glyphContrast": 11.066191360830526,
+        "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-inspector-glyph-contrast.png"
+      }
+    },
+    {
+      "name": "file-1280-expanded-contact-card-raster-contrast",
+      "status": "pass",
+      "elapsedMs": 12133.962587000016,
+      "detail": {
+        "state": "constraint landing-outcome within-assumed-limits",
+        "verdict": {
+          "name": "file-1280-initial-expanded-contact-verdict",
+          "viewport": {
+            "width": 1280,
+            "height": 1000
+          },
+          "text": "✓ Within entered contact limits",
+          "color": "rgb(243, 241, 235)",
+          "fontSize": "13px",
+          "fontWeight": "700",
+          "layers": [
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(36, 56, 46)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(32, 35, 40)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgb(23, 25, 28)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            },
+            {
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "opacity": "1",
+              "filter": "none",
+              "blend": "normal"
+            }
+          ],
+          "rect": {
+            "x": 617,
+            "y": 635.109375,
+            "width": 192.078125,
+            "height": 15
+          },
+          "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+          "physicalPixelsPerCssPixel": {
+            "x": 1,
+            "y": 1
+          },
+          "background": [
+            {
+              "x": 612,
+              "y": 638,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 612,
+              "y": 642,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 612,
+              "y": 646,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 638,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 642,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            },
+            {
+              "x": 614,
+              "y": 646,
+              "color": [
+                36,
+                56,
+                46
+              ],
+              "contrast": 11.066191360830526
+            }
+          ],
+          "glyphPixels": 893,
+          "corePixels": 90,
+          "actualGlyph": [
+            243,
+            241,
+            235
+          ],
+          "glyphExamples": [
+            {
+              "x": 632,
+              "y": 638,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 638,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 642,
+              "y": 639,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 799,
+              "y": 639,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 653,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 742,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 640,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 636,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 676,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 738,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 776,
+              "y": 641,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            },
+            {
+              "x": 622,
+              "y": 642,
+              "color": [
+                243,
+                241,
+                235
+              ]
+            }
+          ],
+          "glyphContrast": 11.066191360830526,
+          "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-initial-expanded-contact-verdict.png"
+        },
+        "paragraphs": [
+          {
+            "name": "file-1280-initial-expanded-contact-body-0",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Incoming vertical -0.56 m/s (limit ±2.0 m/s) · horizontal 0.71 m/s (limit 1.0 m/s).",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 665.546875,
+              "width": 592,
+              "height": 23.09375
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 671,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 677,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 682,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 671,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 677,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 682,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 1683,
+            "corePixels": 169,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 656,
+                "y": 670,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 972,
+                "y": 671,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 815,
+                "y": 673,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1038,
+                "y": 673,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 951,
+                "y": 674,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 815,
+                "y": 675,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 675,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 716,
+                "y": 676,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 906,
+                "y": 676,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 751,
+                "y": 677,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1038,
+                "y": 677,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 909,
+                "y": 678,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-initial-expanded-contact-body-0.png"
+          },
+          {
+            "name": "file-1280-initial-expanded-contact-body-1",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Ideal tilt 1.94° (limit 15.0°) · surface target error 8.43 m (radius 20.0 m).",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 700.640625,
+              "width": 592,
+              "height": 23.09375
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 706,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 712,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 717,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 706,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 712,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 717,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 1601,
+            "corePixels": 161,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 673,
+                "y": 706,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 653,
+                "y": 708,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 840,
+                "y": 708,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 805,
+                "y": 709,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 802,
+                "y": 710,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 710,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 707,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 832,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 883,
+                "y": 711,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 722,
+                "y": 712,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1031,
+                "y": 712,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 753,
+                "y": 713,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-initial-expanded-contact-body-1.png"
+          },
+          {
+            "name": "file-1280-initial-expanded-contact-body-2",
+            "viewport": {
+              "width": 1280,
+              "height": 1000
+            },
+            "text": "Contact at 50.48 s · incoming mass 4,562.23 kg · numerical ground +0.16 m relative to reference. Incoming kinetic energy",
+            "color": "rgb(192, 194, 197)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "layers": [
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(36, 56, 46)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(32, 35, 40)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgb(23, 25, 28)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              },
+              {
+                "background": "rgba(0, 0, 0, 0)",
+                "image": "none",
+                "opacity": "1",
+                "filter": "none",
+                "blend": "normal"
+              }
+            ],
+            "rect": {
+              "x": 617,
+              "y": 735.734375,
+              "width": 592,
+              "height": 46.1875
+            },
+            "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+            "physicalPixelsPerCssPixel": {
+              "x": 1,
+              "y": 1
+            },
+            "background": [
+              {
+                "x": 612,
+                "y": 747,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 758,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 612,
+                "y": 770,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 747,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 758,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              },
+              {
+                "x": 614,
+                "y": 770,
+                "color": [
+                  36,
+                  56,
+                  46
+                ],
+                "contrast": 7.001970971057991
+              }
+            ],
+            "glyphPixels": 3683,
+            "corePixels": 369,
+            "actualGlyph": [
+              192,
+              194,
+              197
+            ],
+            "glyphExamples": [
+              {
+                "x": 744,
+                "y": 740,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1032,
+                "y": 743,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 797,
+                "y": 745,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 804,
+                "y": 746,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1112,
+                "y": 746,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 1027,
+                "y": 747,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 858,
+                "y": 748,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 774,
+                "y": 750,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 996,
+                "y": 751,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 723,
+                "y": 767,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 635,
+                "y": 769,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              },
+              {
+                "x": 793,
+                "y": 769,
+                "color": [
+                  192,
+                  194,
+                  197
+                ]
+              }
+            ],
+            "glyphContrast": 7.001970971057991,
+            "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-initial-expanded-contact-body-2.png"
+          }
+        ]
+      }
+    },
+    {
+      "name": "file-1280-physical-follow-contact-bounce-breakup-replay",
+      "status": "pass",
+      "elapsedMs": 138015.252041,
+      "detail": [
+        {
+          "scenario": "nominal",
+          "contactCard": {
+            "state": "constraint landing-outcome within-assumed-limits",
+            "verdict": {
+              "name": "file-1280-nominal-expanded-contact-verdict",
+              "viewport": {
+                "width": 1280,
+                "height": 1000
+              },
+              "text": "✓ Within entered contact limits",
+              "color": "rgb(243, 241, 235)",
+              "fontSize": "13px",
+              "fontWeight": "700",
+              "layers": [
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(36, 56, 46)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(32, 35, 40)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgb(23, 25, 28)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                },
+                {
+                  "background": "rgba(0, 0, 0, 0)",
+                  "image": "none",
+                  "opacity": "1",
+                  "filter": "none",
+                  "blend": "normal"
+                }
+              ],
+              "rect": {
+                "x": 617,
+                "y": 697.421875,
+                "width": 192.078125,
+                "height": 15
+              },
+              "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+              "physicalPixelsPerCssPixel": {
+                "x": 1,
+                "y": 1
+              },
+              "background": [
+                {
+                  "x": 612,
+                  "y": 701,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 612,
+                  "y": 704,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 612,
+                  "y": 708,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 701,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 704,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                },
+                {
+                  "x": 614,
+                  "y": 708,
+                  "color": [
+                    36,
+                    56,
+                    46
+                  ],
+                  "contrast": 11.066191360830526
+                }
+              ],
+              "glyphPixels": 893,
+              "corePixels": 90,
+              "actualGlyph": [
+                243,
+                241,
+                235
+              ],
+              "glyphExamples": [
+                {
+                  "x": 632,
+                  "y": 700,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 700,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 642,
+                  "y": 701,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 799,
+                  "y": 701,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 653,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 742,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 702,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 636,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 676,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 738,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 776,
+                  "y": 703,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                },
+                {
+                  "x": 622,
+                  "y": 704,
+                  "color": [
+                    243,
+                    241,
+                    235
+                  ]
+                }
+              ],
+              "glyphContrast": 11.066191360830526,
+              "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-nominal-expanded-contact-verdict.png"
+            },
+            "paragraphs": [
+              {
+                "name": "file-1280-nominal-expanded-contact-body-0",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Incoming vertical -0.56 m/s (limit ±2.0 m/s) · horizontal 0.71 m/s (limit 1.0 m/s).",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 727.859375,
+                  "width": 592,
+                  "height": 23.09375
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 733,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 739,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 745,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 733,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 739,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 745,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 1683,
+                "corePixels": 169,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 656,
+                    "y": 732,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 972,
+                    "y": 733,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 815,
+                    "y": 735,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1038,
+                    "y": 735,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 951,
+                    "y": 736,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 815,
+                    "y": 737,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 737,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 716,
+                    "y": 738,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 906,
+                    "y": 738,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 751,
+                    "y": 739,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1038,
+                    "y": 739,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 909,
+                    "y": 740,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-nominal-expanded-contact-body-0.png"
+              },
+              {
+                "name": "file-1280-nominal-expanded-contact-body-1",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Ideal tilt 1.94° (limit 15.0°) · surface target error 8.43 m (radius 20.0 m).",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 762.953125,
+                  "width": 592,
+                  "height": 23.09375
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 768,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 774,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 780,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 768,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 774,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 780,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 1601,
+                "corePixels": 161,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 673,
+                    "y": 769,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 653,
+                    "y": 771,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 840,
+                    "y": 771,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 805,
+                    "y": 772,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 802,
+                    "y": 773,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 773,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 707,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 832,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 883,
+                    "y": 774,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 722,
+                    "y": 775,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1031,
+                    "y": 775,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 753,
+                    "y": 776,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-nominal-expanded-contact-body-1.png"
+              },
+              {
+                "name": "file-1280-nominal-expanded-contact-body-2",
+                "viewport": {
+                  "width": 1280,
+                  "height": 1000
+                },
+                "text": "Contact at 50.48 s · incoming mass 4,562.23 kg · numerical ground +0.16 m relative to reference. Incoming kinetic energy",
+                "color": "rgb(192, 194, 197)",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "layers": [
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(36, 56, 46)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(32, 35, 40)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgb(23, 25, 28)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  },
+                  {
+                    "background": "rgba(0, 0, 0, 0)",
+                    "image": "none",
+                    "opacity": "1",
+                    "filter": "none",
+                    "blend": "normal"
+                  }
+                ],
+                "rect": {
+                  "x": 617,
+                  "y": 754.046875,
+                  "width": 592,
+                  "height": 46.1875
+                },
+                "method": "Unmodified screenshot only: actual pale glyph cores against adjacent rendered background; CSS diagnostic only",
+                "physicalPixelsPerCssPixel": {
+                  "x": 1,
+                  "y": 1
+                },
+                "background": [
+                  {
+                    "x": 612,
+                    "y": 765,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 777,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 612,
+                    "y": 788,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 765,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 777,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  },
+                  {
+                    "x": 614,
+                    "y": 788,
+                    "color": [
+                      36,
+                      56,
+                      46
+                    ],
+                    "contrast": 7.001970971057991
+                  }
+                ],
+                "glyphPixels": 3683,
+                "corePixels": 369,
+                "actualGlyph": [
+                  192,
+                  194,
+                  197
+                ],
+                "glyphExamples": [
+                  {
+                    "x": 744,
+                    "y": 759,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1032,
+                    "y": 762,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 797,
+                    "y": 764,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 804,
+                    "y": 765,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1112,
+                    "y": 765,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 1027,
+                    "y": 766,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 858,
+                    "y": 767,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 774,
+                    "y": 769,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 996,
+                    "y": 770,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 723,
+                    "y": 786,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 635,
+                    "y": 788,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  },
+                  {
+                    "x": 793,
+                    "y": 788,
+                    "color": [
+                      192,
+                      194,
+                      197
+                    ]
+                  }
+                ],
+                "glyphContrast": 7.001970971057991,
+                "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-nominal-expanded-contact-body-2.png"
+              }
+            ]
+          },
+          "productionPlaybackSpeed": 1,
+          "samples": 79,
+          "allCompletedFrames": true,
+          "elapsedMs": 90232,
+          "renderedFps": 1.175112916298394,
+          "radii": [
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0,
+              "radiusKm": 0.026570660511172853,
+              "broken": false
+            },
+            {
+              "timeS": 0.511200000071527,
+              "radiusKm": 0.026570660511172867,
+              "broken": false
+            },
+            {
+              "timeS": 1.0445000000715228,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 1.661200000071527,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 2.2278000000715257,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 2.877700000071527,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 3.4611000000715286,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 4.044400000071525,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 4.694300000071525,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 5.37770000007152,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 5.97770000007152,
+              "radiusKm": 0.026570660511172885,
+              "broken": false
+            },
+            {
+              "timeS": 6.710900000071532,
+              "radiusKm": 0.02657066051117291,
+              "broken": false
+            },
+            {
+              "timeS": 7.460900000071532,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 8.21090000007153,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 8.960800000071526,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 9.727500000071522,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 10.510800000071525,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 11.277400000071532,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 12.077500000071522,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 12.86070000007152,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 13.66070000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 14.51070000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 15.32720000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 16.16060000007153,
+              "radiusKm": 0.02657066051117293,
+              "broken": false
+            },
+            {
+              "timeS": 17.710500000071523,
+              "radiusKm": 0.02657066051117293,
+              "broken": false
+            },
+            {
+              "timeS": 18.510500000071524,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 19.343800000071525,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 19.410500000071522,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 20.21040000007153,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 20.99370000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 21.82700000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 22.660300000071526,
+              "radiusKm": 0.026570660511172933,
+              "broken": false
+            },
+            {
+              "timeS": 23.510300000071524,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 24.34360000007153,
+              "radiusKm": 0.026570660511172933,
+              "broken": false
+            },
+            {
+              "timeS": 25.193600000071527,
+              "radiusKm": 0.02657066051117293,
+              "broken": false
+            },
+            {
+              "timeS": 25.976800000071524,
+              "radiusKm": 0.026570660511172933,
+              "broken": false
+            },
+            {
+              "timeS": 26.743500000071524,
+              "radiusKm": 0.02657066051117293,
+              "broken": false
+            },
+            {
+              "timeS": 27.56010000007153,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 28.39340000007153,
+              "radiusKm": 0.026570660511172923,
+              "broken": false
+            },
+            {
+              "timeS": 29.260100000071528,
+              "radiusKm": 0.026570660511172923,
+              "broken": false
+            },
+            {
+              "timeS": 30.11010000007153,
+              "radiusKm": 0.026570660511172923,
+              "broken": false
+            },
+            {
+              "timeS": 30.926600000071527,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 31.76000000007152,
+              "radiusKm": 0.026570660511172926,
+              "broken": false
+            },
+            {
+              "timeS": 32.57660000007153,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 33.44320000007152,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 34.27650000007152,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 35.12650000007152,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 35.90980000007153,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 36.77640000007153,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 37.59310000007153,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 38.40970000007152,
+              "radiusKm": 0.026570660511172916,
+              "broken": false
+            },
+            {
+              "timeS": 39.20970000007152,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 40.00960000007153,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 40.809600000071526,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 41.60950000007152,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 42.45950000007152,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 43.27620000007152,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 44.07610000007153,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 44.87610000007153,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 45.62610000007153,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 46.44270000007152,
+              "radiusKm": 0.026570660511172912,
+              "broken": false
+            },
+            {
+              "timeS": 47.25940000007153,
+              "radiusKm": 0.02657066051117291,
+              "broken": false
+            },
+            {
+              "timeS": 48.14260000007153,
+              "radiusKm": 0.02657066051117291,
+              "broken": false
+            },
+            {
+              "timeS": 49.242600000071526,
+              "radiusKm": 0.026570660511172902,
+              "broken": false
+            },
+            {
+              "timeS": 50.47580000007152,
+              "radiusKm": 0.026570660511172902,
+              "broken": false
+            },
+            {
+              "timeS": 51.675800000071526,
+              "radiusKm": 0.0265706605111729,
+              "broken": false
+            },
+            {
+              "timeS": 52.95910000007153,
+              "radiusKm": 0.026570660511172895,
+              "broken": false
+            },
+            {
+              "timeS": 54.30910000007153,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 55.62560000007153,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 56.942300000071526,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 57.82560000007153,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 58.72560000007153,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 60.02540000007153,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 61.40880000007152,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 62.30870000007152,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 62.48139816962106,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            },
+            {
+              "timeS": 62.48139816962106,
+              "radiusKm": 0.026570660511172888,
+              "broken": false
+            }
+          ],
+          "max": 62.48139816962106,
+          "end": {
+            "focusRequestId": "1",
+            "sceneInstance": "eff65ba5-2fdf-4623-a390-479cad08dcac",
+            "flightRevision": "0",
+            "horizonRevision": "0",
+            "renderFrame": "216",
+            "vehicleWorldPosition": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+            "vehicleQuaternion": "-0.011358408257365227,-0.7086247205734253,-0.003073920961469412,-0.7054875493049622",
+            "vehicleVisible": "true",
+            "landingContact": "{\"timeS\":50.48139816962106,\"eastM\":-8.425036257719135,\"northM\":-0.000005182250200764983,\"yM\":0.16407225420698524,\"velocityMps\":[0.7107326256015903,-0.5593293012008084,1.688674808083655e-7],\"massKg\":4562.229294846625,\"terrainHeightM\":0.16407225403994793,\"terrainKnown\":true,\"slopeDeg\":1.4221188703828147,\"tiltDeg\":1.9372902810000852,\"headingDeg\":269.99617469401676,\"targetErrorM\":8.425035462788589}",
+            "landingDynamics": "{\"phase\":\"settled\",\"elapsedContactS\":12,\"speedMps\":0.01851020594024011,\"verticalMps\":-0.010475733317434788,\"eastM\":-8.015073727260292,\"northM\":0.09760950554119897,\"yM\":1.9340078680985924,\"fragmentCount\":0,\"note\":\"128 m finite contact patch, 2.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+            "landingFragmentCount": "0",
+            "landingMassKg": "4562.229294846625",
+            "terrainClearanceM": "-0.0004775590416681158",
+            "flightTimeS": "62.48139816962106",
+            "landingContactTimeS": "50.48139816962106",
+            "landingContactFrameIndex": "1440",
+            "landingContactFrameTimeS": "62.48139816962106",
+            "sunModel": "ready",
+            "sunDraws": "0",
+            "earthModel": "ready",
+            "earthDraws": "0",
+            "earthRangeKm": "380159.34375",
+            "sunRangeKm": "151931103.42258206",
+            "starCount": "523",
+            "moonModel": "ready",
+            "contactReplay": "ready",
+            "contactFrames": "1441",
+            "contactCacheBytes": "23645369",
+            "focusRange": "ready",
+            "assetFlight": "idle",
+            "globeMinimumRadiusKm": "1769.3382576775684",
+            "zoomEnabled": "true",
+            "panEnabled": "true",
+            "rotateEnabled": "true",
+            "vehicleScale": "1",
+            "cameraMode": "follow",
+            "lunarAppearance": "neutral-linear-rec709-v1",
+            "lightingMode": "atlas",
+            "stationInspection": "false",
+            "visibleStations": "[]",
+            "visiblePoiCount": "0",
+            "visiblePois": "[]",
+            "vehicleFraming": "framed",
+            "vehicleScreenBounds": "{\"left\":114.1413831465703,\"top\":155.59375,\"right\":449.1170364701008,\"bottom\":429.7118467533628}",
+            "unoccludedCanvas": "{\"left\":12,\"right\":565,\"top\":155.59375,\"bottom\":463.5625}",
+            "cameraPosition": "0.006984926272739838,0.010934007867930801,0.01990239049445858",
+            "cameraTarget": "-0.008015073727260161,0.0019340078679307238,-0.00009760950554138503",
+            "vehicleCameraDistanceKm": "0.026570660511172888",
+            "cameraBodyRadiusKm": "1739.064014281954",
+            "cameraNearKm": "0.0001",
+            "cameraFarKm": "167889500.16493922",
+            "framingProjectionZoom": "0.801073611237033",
+            "viewLatitude": "-89.5349756538142",
+            "viewLongitude": "-150.02397558981886",
+            "screenNorthAngle": "65.71612306052081",
+            "stationTexture": "ready"
+          },
+          "replayFraming": {
+            "renderFrame": 230,
+            "framing": "framed",
+            "bounds": {
+              "left": 114.14138314657109,
+              "top": 155.59375,
+              "right": 449.11703647010313,
+              "bottom": 429.7118467533643
+            },
+            "safe": {
+              "left": 12,
+              "right": 565,
+              "top": 155.59375,
+              "bottom": 463.5625
+            },
+            "measurement": {
+              "viewport": {
+                "left": 0,
+                "top": 0,
+                "right": 1280,
+                "bottom": 1000
+              },
+              "host": {
+                "x": 0,
+                "y": 290.4375,
+                "width": 1280,
+                "height": 646.5625
+              },
+              "panels": [
+                {
+                  "selector": ".inspector",
+                  "left": 577,
+                  "right": 1257,
+                  "top": 132,
+                  "bottom": 556.5625
+                },
+                {
+                  "selector": ".workspace-heading",
+                  "left": 18,
+                  "right": 315.125,
+                  "top": 24,
+                  "bottom": 143.59375
+                },
+                {
+                  "selector": ".timeline",
+                  "left": 0,
+                  "right": 1280,
+                  "top": 646.5625,
+                  "bottom": 709.5625
+                },
+                {
+                  "selector": ".flight-telemetry",
+                  "left": 18,
+                  "right": 562,
+                  "top": 475.5625,
+                  "bottom": 546.5625
+                },
+                {
+                  "selector": ".header-dropdown-content",
+                  "left": 1272.1875,
+                  "right": 1712.1875,
+                  "top": -50.4375,
+                  "bottom": 174.15625
+                },
+                {
+                  "selector": ".sq-legend",
+                  "left": 484.734375,
+                  "right": 795.265625,
+                  "top": 610.0625,
+                  "bottom": 626.5625
+                },
+                {
+                  "selector": ".drawer-toggles",
+                  "left": 268.609375,
+                  "right": 438,
+                  "top": -208.4375,
+                  "bottom": -174.4375
+                }
+              ]
+            },
+            "screenshot": "/tmp/refinement-framing-c15-contact/file-1280-nominal-backwards-replay.png",
+            "physical": {
+              "target": "-0.008015073727260236,0.0019340078679307426,-0.000097609505541385",
+              "camera": "0.006984926272739778,0.010934007867930804,0.019902390494458577",
+              "com": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+              "zoom": "0.8010736112370358",
+              "vehicleScale": "1"
+            }
+          },
+          "clearanceFailures": []
+        }
+      ]
+    },
+    {
+      "name": "file-1280-actual-errors-and-offline-requests",
+      "status": "pass",
+      "elapsedMs": 0.5529309999546967,
+      "detail": {
+        "requestCount": 11,
+        "httpAttempts": 0
+      }
+    },
+    {
+      "name": "immutable-candidate-after",
+      "status": "pass",
+      "elapsedMs": 238.04340799996862,
+      "detail": {
+        "bytes": 81081637,
+        "sha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c",
+        "status": 200
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "http-1280",
+      "requests": [
+        {
+          "url": "http://127.0.0.1:43328/",
+          "type": "document"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/f3d20b3f-c1f7-4306-aae9-f6c3a1b57822",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/3ead263f-17da-4854-80fd-c3572acd21e0",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/591016d2-3116-4ae2-b634-7edaa9ec5053",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/af5317d9-057e-4283-8803-337d7308239e",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/d84da190-b9bb-484c-a09d-da8679eafcb5",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/75ce7b3a-c002-4972-a87f-8148d8830b7b",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/78db4d8e-cc5d-49c0-897e-35b1b2ada720",
+          "type": "script"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/78db4d8e-cc5d-49c0-897e-35b1b2ada720",
+          "type": "script"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/78db4d8e-cc5d-49c0-897e-35b1b2ada720",
+          "type": "script"
+        },
+        {
+          "url": "blob:http://127.0.0.1:43328/78db4d8e-cc5d-49c0-897e-35b1b2ada720",
+          "type": "script"
+        }
+      ],
+      "failedRequests": [],
+      "httpErrors": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "webgl": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "renderPerformance": {
+        "intent": "normal production flight playback, at least6 completed renders; software only",
+        "before": 257,
+        "after": 265,
+        "elapsedMs": 5003.625063000014,
+        "renderedFps": 1.5988408202599127
+      }
+    },
+    {
+      "id": "file-1280",
+      "requests": [
+        {
+          "url": "file:///tmp/lunar-window-c15.html",
+          "type": "document"
+        },
+        {
+          "url": "blob:null/ae707f1a-e90d-4444-b088-e48a955d7ea0",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/4e95fe19-d7b8-45be-ac44-1f095da20eec",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/e49a64cc-be97-4839-81ca-d46cb0ccae5c",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/1bec70f9-80b3-4489-b549-b0cfcd97aa3d",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/2b4ab0f8-b1b8-4351-b1c8-bca0ad1d654b",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/8cec9ff9-efa6-4a82-b563-5d52995750e0",
+          "type": "fetch"
+        },
+        {
+          "url": "blob:null/9a2483f4-e889-4c97-a5a1-febc9d7788f6",
+          "type": "script"
+        },
+        {
+          "url": "blob:null/9a2483f4-e889-4c97-a5a1-febc9d7788f6",
+          "type": "script"
+        },
+        {
+          "url": "blob:null/9a2483f4-e889-4c97-a5a1-febc9d7788f6",
+          "type": "script"
+        },
+        {
+          "url": "blob:null/9a2483f4-e889-4c97-a5a1-febc9d7788f6",
+          "type": "script"
+        }
+      ],
+      "failedRequests": [],
+      "httpErrors": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "webgl": {
+        "vendor": "Google Inc. (Google)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "renderPerformance": {
+        "intent": "normal production flight playback, at least6 completed renders; software only",
+        "before": 249,
+        "after": 257,
+        "elapsedMs": 6237.550263000012,
+        "renderedFps": 1.2825547951820946
+      }
+    }
+  ],
+  "machine": {
+    "host": "CLEVO-X2",
+    "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+    "logicalCpus": 32,
+    "memoryBytes": 130148806656
+  },
+  "limitations": [
+    "Agent verification is not human acceptance. No actual screen-reader testing.",
+    "Forced ANGLE SwiftShader software rendering; timing is not hardware GPU performance.",
+    "Fresh browser contexts; OS, server and disk caches are not flushed.",
+    "Only production-owned DOM/model/render readouts; no independent terrain/vehicle qualification."
+  ],
+  "instructions": "C15 immutable candidate, source f7ecd636f36955509e6e24f54c1fe85df2a25ab2, HTML SHA 094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c, HTTP43328, readonlysource/sourcebundle in marker and /tmp/lunar-window-c15-source.bundle. Root763tests/types/lint/math314/Next+standalone GREEN. C15 fixes F11: controlled Plot explicit inspection persists while focused, resets to shared cursor on leaving figure; resource scrubbing clamps playhead to configured stay; supplied simulation cursor is used for UTC and flight graphs, separate from inspected sample. Help explains final energy boundary vs supported Sun/Earth pose. Root new browser regression RED on C14, GREEN C15: final battery End reachable/Nextdisabled, environmental clock stays atmax, blur restores sharedclock. F10axis8pxgap and F9native200dockedHUD retained. No physical/science/data/asset/assessment changes; numerical planning-4 unchanged. C13 sixscenario/13check physical gate staysC13, parenttool143afterfinalPASS recordedunverified; C15 musthave fresh nominal HTTP/file with clean process exit and source/engine hash proof, never relabelolderbounce/breakup. Everyfinalnamedworkflow82, visual800/1280/1728, native100/200/HUD/maps/workspaces, graphaxes/nativeMath/keyboard/batteryboundary and actualrastercontrast scope mustfinishbeforegreen. No source/physics overrides; original157NASAparts,1xscales,5cmgate unchanged. Freezeexecutingrunner/artifact/HTTP/marker/instructions/source identities. Nativebrowserzoom actualphysicalwindowCSS800x496/DPR2/visualscale1. Source763tests/types/lint/math fresh. No QA app/config/generated/dependency/server/sharedbrowser/Simulator/Metro/push/merge. Missingqualifiedmission/human/screenreader/hardwareperformance gatesremainexplicit; hostingteammate/noVercel. PreserveREDhistoryandreportnewactualblockersimmediately.\n",
+  "instructionsSha256": "73f9eb4b133b5241b574c1e405ff5fbd0cf680d09c0941c005cc3a82ce5c9da0",
+  "marker": {
+    "artifactPath": "/tmp/lunar-window-c15.html",
+    "artifactSha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c",
+    "sourceCommit": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+    "url": "http://127.0.0.1:43328/",
+    "createdUtc": "2026-11-15T00:11:27.708415+00:00",
+    "sourceCheckPath": "/home/luke/Storage/solarreach-navigator-20261114-worktrees/refine-c15-final-check",
+    "sha256": "73725066d42333a0983cb151d94d864c2160e2b2d2d5d051fce8bc36efdeec37"
+  },
+  "artifact": {
+    "bytes": 81081637,
+    "sha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c"
+  },
+  "scriptSha256": "04603af83b18b0a5159cece00f61de0236c61782b8a5300f738252d2082c5b6d",
+  "playwright": {
+    "version": "1.63.0-alpha-2026-08-05",
+    "packageSha256": "cc20d8407732820e1a334b890b204360aabf5e675ebfe0d2881bc2f54d32e681",
+    "path": "/home/luke/.npm/_npx/9833c18b2d85bc59/node_modules/playwright-core/index.mjs"
+  },
+  "browser": "149.0.7827.155",
+  "launchFlags": [
+    "--use-gl=angle",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader",
+    "--disable-dev-shm-usage",
+    "--force-color-profile=srgb"
+  ],
+  "finishedUtc": "2026-11-15T00:20:21.257Z",
+  "overall": "pass"
+}

@@ -1,0 +1,648 @@
+{
+  "status": "pass",
+  "productSource": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+  "rawBytes": 7318832,
+  "rawSha256": "5d065643ec758aebd9daa01ae19d5a81dc5f65a895b32cce5acd3eb2dde95b64",
+  "compressedBytes": 526840,
+  "compressedSha256": "1022852ac8e1ae4cb53949a724e288ddaedd4ad53e5fe20c40e488660aa274fe",
+  "before": {
+    "sourceCommit": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+    "sourceStatus": "",
+    "httpSha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c"
+  },
+  "after": {
+    "sourceCommit": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+    "sourceStatus": "",
+    "httpSha256": "094b080b03fdcb8629f71ba294fb20c43e448d670367fe11001ecf4839e9765c"
+  },
+  "cases": [
+    {
+      "mode": "http",
+      "loadAverage": [
+        6.11,
+        14.47,
+        23.26
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "warnings": [
+        "THREE.DRACOLoader: setDecoderConfig to has been deprecated and will be removed in r194."
+      ],
+      "requestFailures": [],
+      "checks": [
+        {
+          "name": "actual-app-hardware-and-original-assets"
+        },
+        {
+          "name": "visible-focus-controls-and-persistent-scene"
+        },
+        {
+          "name": "isolated-edit-visible-framed-continuity"
+        },
+        {
+          "name": "visible-wet-mass-edit-ui-and-completed-render"
+        },
+        {
+          "name": "fixture-restored-through-controls"
+        },
+        {
+          "name": "bounded-observations-no-errors-reloads-context-loss"
+        },
+        {
+          "name": "no-duplicate-observed-asset-requests"
+        }
+      ],
+      "browser": "149.0.7827.155",
+      "load": {
+        "elapsedMs": 655.5634939999999,
+        "navigation": {
+          "name": "http://127.0.0.1:43328/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 652.8999999761581,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.0",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 0.2999999523162842,
+          "domainLookupStart": 0.2999999523162842,
+          "domainLookupEnd": 0.2999999523162842,
+          "connectStart": 0.2999999523162842,
+          "secureConnectionStart": 0,
+          "connectEnd": 0.2999999523162842,
+          "requestStart": 0.8999999761581421,
+          "responseStart": 1.1999999284744263,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 1.1999999284744263,
+          "responseEnd": 494,
+          "transferSize": 81081937,
+          "encodedBodySize": 81081637,
+          "decodedBodySize": 81081637,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 641,
+          "domContentLoadedEventStart": 641,
+          "domContentLoadedEventEnd": 641.0999999046326,
+          "domComplete": 641.6999999284744,
+          "loadEventStart": 652.8999999761581,
+          "loadEventEnd": 652.8999999761581,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        }
+      },
+      "workbenchReadyMs": 1323.834988,
+      "assetsReadyAfterActivationMs": 1142.6046539999998,
+      "assetsReadyAfterNavigationMs": 2516.420266,
+      "datasetKeysBeforeSite": [
+        "assetFlight",
+        "cameraBodyRadiusKm",
+        "cameraFarKm",
+        "cameraMode",
+        "cameraNearKm",
+        "cameraPosition",
+        "cameraTarget",
+        "contactCacheBytes",
+        "contactFrames",
+        "contactReplay",
+        "earthDraws",
+        "earthModel",
+        "earthRangeKm",
+        "flightEndpoint",
+        "flightPointCount",
+        "flightRevision",
+        "flightTimeS",
+        "focusRange",
+        "focusRequestId",
+        "framingProjectionZoom",
+        "globeMinimumRadiusKm",
+        "horizonRevision",
+        "landingContact",
+        "landingContactFrameIndex",
+        "landingContactFrameTimeS",
+        "landingContactTimeS",
+        "landingDynamics",
+        "landingFragmentCount",
+        "landingMassKg",
+        "lightingMode",
+        "lunarAppearance",
+        "moonModel",
+        "panEnabled",
+        "renderFrame",
+        "rotateEnabled",
+        "sceneInstance",
+        "screenNorthAngle",
+        "starCount",
+        "stationInspection",
+        "stationTexture",
+        "sunDraws",
+        "sunModel",
+        "sunRangeKm",
+        "terrainClearanceM",
+        "unoccludedCanvas",
+        "vehicleCameraDistanceKm",
+        "vehicleFraming",
+        "vehicleQuaternion",
+        "vehicleScale",
+        "vehicleScreenBounds",
+        "vehicleVisible",
+        "vehicleWorldPosition",
+        "viewLatitude",
+        "viewLongitude",
+        "visiblePoiCount",
+        "visiblePois",
+        "visibleStations",
+        "zoomEnabled"
+      ],
+      "edit": {
+        "expected": "4800",
+        "beforeRevision": "3",
+        "beforePropellant": "2,500 kg",
+        "inputAt": 59415.5,
+        "eventTimestamp": 59415.199999928474,
+        "trusted": true,
+        "uiAt": 59463,
+        "propellant": "2,600 kg",
+        "revisionAt": 59477.39999997616,
+        "revision": "4",
+        "renderAt": 59477.39999997616,
+        "renderFrame": "3369",
+        "massKg": "4800",
+        "inputValue": "4800",
+        "uiLatencyMs": 47.5,
+        "renderLatencyMs": 61.89999997615814,
+        "revisionLatencyMs": 61.89999997615814,
+        "contactReadyLatencyMs": 2629.1999999284744
+      },
+      "editContinuity": {
+        "completedFrames": 322,
+        "failures": [],
+        "contactReplayStates": [
+          "preparing",
+          "ready"
+        ],
+        "minCameraDistanceKm": 0.026570660511174647,
+        "maxCameraDistanceKm": 0.02657066051117543
+      },
+      "frameMetrics": [
+        {
+          "name": "idle",
+          "observedCompletedFrames": 132,
+          "counterAdvance": 131,
+          "missedCounterSteps": 0,
+          "spanMs": 2182.600000023842,
+          "firstRenderAfterWindowStartMs": 6.100000023841858,
+          "lastRenderBeforeWindowEndMs": 13.399999976158142,
+          "completedFramesPerSecond": 60.02015944221067,
+          "p50Ms": 16.600000023841858,
+          "p95Ms": 17.59999990463257,
+          "maxMs": 19.699999928474426,
+          "cameraChanges": 0
+        },
+        {
+          "name": "focus-Moon",
+          "observedCompletedFrames": 626,
+          "counterAdvance": 625,
+          "missedCounterSteps": 0,
+          "spanMs": 10415.399999976158,
+          "firstRenderAfterWindowStartMs": 11.899999976158142,
+          "lastRenderBeforeWindowEndMs": 4.200000047683716,
+          "completedFramesPerSecond": 60.007296887438855,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 17.799999952316284,
+          "maxMs": 38.89999997615814,
+          "cameraChanges": 601
+        },
+        {
+          "name": "focus-Earth",
+          "observedCompletedFrames": 627,
+          "counterAdvance": 626,
+          "missedCounterSteps": 0,
+          "spanMs": 10433.100000023842,
+          "firstRenderAfterWindowStartMs": 3.399999976158142,
+          "lastRenderBeforeWindowEndMs": 5.300000071525574,
+          "completedFramesPerSecond": 60.00134188290819,
+          "p50Ms": 16.600000023841858,
+          "p95Ms": 17.5,
+          "maxMs": 42.09999990463257,
+          "cameraChanges": 601
+        },
+        {
+          "name": "focus-Lander",
+          "observedCompletedFrames": 639,
+          "counterAdvance": 638,
+          "missedCounterSteps": 0,
+          "spanMs": 10966.399999976158,
+          "firstRenderAfterWindowStartMs": 3,
+          "lastRenderBeforeWindowEndMs": 10.100000023841858,
+          "completedFramesPerSecond": 58.17770644891551,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 21.699999928474426,
+          "maxMs": 236.30000007152557,
+          "cameraChanges": 582
+        },
+        {
+          "name": "site-selection",
+          "observedCompletedFrames": 1227,
+          "counterAdvance": 1226,
+          "missedCounterSteps": 0,
+          "spanMs": 20648.399999976158,
+          "firstRenderAfterWindowStartMs": 12.100000023841858,
+          "lastRenderBeforeWindowEndMs": 3.100000023841858,
+          "completedFramesPerSecond": 59.37506053744676,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 21.700000047683716,
+          "maxMs": 89.70000004768372,
+          "cameraChanges": 1190
+        },
+        {
+          "name": "wet-mass-edit",
+          "observedCompletedFrames": 323,
+          "counterAdvance": 322,
+          "missedCounterSteps": 0,
+          "spanMs": 5397.100000023842,
+          "firstRenderAfterWindowStartMs": 18.5,
+          "lastRenderBeforeWindowEndMs": 8.700000047683716,
+          "completedFramesPerSecond": 59.66167015593144,
+          "p50Ms": 16.700000047683716,
+          "p95Ms": 18.299999952316284,
+          "maxMs": 65.80000007152557,
+          "cameraChanges": 10
+        }
+      ],
+      "duplicateRequests": [
+        {
+          "url": "blob:http://127.0.0.1:43328/9d88fc07-1ab5-4fe7-b38f-9894fcab0c96",
+          "count": 4,
+          "requests": [
+            {
+              "url": "blob:http://127.0.0.1:43328/9d88fc07-1ab5-4fe7-b38f-9894fcab0c96",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:http://127.0.0.1:43328/9d88fc07-1ab5-4fe7-b38f-9894fcab0c96",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:http://127.0.0.1:43328/9d88fc07-1ab5-4fe7-b38f-9894fcab0c96",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:http://127.0.0.1:43328/9d88fc07-1ab5-4fe7-b38f-9894fcab0c96",
+              "type": "script",
+              "phase": "startup"
+            }
+          ]
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "mode": "file",
+      "loadAverage": [
+        3.86,
+        12.16,
+        21.86
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "warnings": [
+        "THREE.DRACOLoader: setDecoderConfig to has been deprecated and will be removed in r194."
+      ],
+      "requestFailures": [],
+      "checks": [
+        {
+          "name": "actual-app-hardware-and-original-assets"
+        },
+        {
+          "name": "visible-focus-controls-and-persistent-scene"
+        },
+        {
+          "name": "isolated-edit-visible-framed-continuity"
+        },
+        {
+          "name": "visible-wet-mass-edit-ui-and-completed-render"
+        },
+        {
+          "name": "fixture-restored-through-controls"
+        },
+        {
+          "name": "bounded-observations-no-errors-reloads-context-loss"
+        },
+        {
+          "name": "no-duplicate-observed-asset-requests"
+        }
+      ],
+      "browser": "149.0.7827.155",
+      "load": {
+        "elapsedMs": 889.9588720000029,
+        "navigation": {
+          "name": "file:///tmp/lunar-window-c15.html",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 883.0999999046326,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 1,
+          "domainLookupStart": 1,
+          "domainLookupEnd": 1,
+          "connectStart": 1,
+          "secureConnectionStart": 0,
+          "connectEnd": 1,
+          "requestStart": 1,
+          "responseStart": 1,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 0,
+          "responseEnd": 706.1999999284744,
+          "transferSize": 81081937,
+          "encodedBodySize": 81081637,
+          "decodedBodySize": 81081637,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 869.1999999284744,
+          "domContentLoadedEventStart": 869.1999999284744,
+          "domContentLoadedEventEnd": 869.2999999523163,
+          "domComplete": 870.0999999046326,
+          "loadEventStart": 883.0999999046326,
+          "loadEventEnd": 883.0999999046326,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {
+            "randomizedTriggerRate": 0.4994798,
+            "value": "low"
+          }
+        }
+      },
+      "workbenchReadyMs": 2804.721995,
+      "assetsReadyAfterActivationMs": 2784.2592060000025,
+      "assetsReadyAfterNavigationMs": 5644.603314000007,
+      "datasetKeysBeforeSite": [
+        "assetFlight",
+        "cameraBodyRadiusKm",
+        "cameraFarKm",
+        "cameraMode",
+        "cameraNearKm",
+        "cameraPosition",
+        "cameraTarget",
+        "contactCacheBytes",
+        "contactFrames",
+        "contactReplay",
+        "earthDraws",
+        "earthModel",
+        "earthRangeKm",
+        "flightEndpoint",
+        "flightPointCount",
+        "flightRevision",
+        "flightTimeS",
+        "focusRange",
+        "focusRequestId",
+        "framingProjectionZoom",
+        "globeMinimumRadiusKm",
+        "horizonRevision",
+        "landingContact",
+        "landingContactFrameIndex",
+        "landingContactFrameTimeS",
+        "landingContactTimeS",
+        "landingDynamics",
+        "landingFragmentCount",
+        "landingMassKg",
+        "lightingMode",
+        "lunarAppearance",
+        "moonModel",
+        "panEnabled",
+        "renderFrame",
+        "rotateEnabled",
+        "sceneInstance",
+        "screenNorthAngle",
+        "starCount",
+        "stationInspection",
+        "stationTexture",
+        "sunDraws",
+        "sunModel",
+        "sunRangeKm",
+        "terrainClearanceM",
+        "unoccludedCanvas",
+        "vehicleCameraDistanceKm",
+        "vehicleFraming",
+        "vehicleQuaternion",
+        "vehicleScale",
+        "vehicleScreenBounds",
+        "vehicleVisible",
+        "vehicleWorldPosition",
+        "viewLatitude",
+        "viewLongitude",
+        "visiblePoiCount",
+        "visiblePois",
+        "visibleStations",
+        "zoomEnabled"
+      ],
+      "edit": {
+        "expected": "4800",
+        "beforeRevision": "3",
+        "beforePropellant": "2,500 kg",
+        "inputAt": 63922.59999990463,
+        "eventTimestamp": 63922.299999952316,
+        "trusted": true,
+        "uiAt": 63968.199999928474,
+        "propellant": "2,600 kg",
+        "revisionAt": 63982,
+        "revision": "4",
+        "renderAt": 63982,
+        "renderFrame": "3334",
+        "massKg": "4800",
+        "inputValue": "4800",
+        "uiLatencyMs": 45.60000002384186,
+        "renderLatencyMs": 59.40000009536743,
+        "revisionLatencyMs": 59.40000009536743,
+        "contactReadyLatencyMs": 2841.100000023842
+      },
+      "editContinuity": {
+        "completedFrames": 335,
+        "failures": [],
+        "contactReplayStates": [
+          "preparing",
+          "ready"
+        ],
+        "minCameraDistanceKm": 0.026570660511174647,
+        "maxCameraDistanceKm": 0.02657066051117543
+      },
+      "frameMetrics": [
+        {
+          "name": "idle",
+          "observedCompletedFrames": 132,
+          "counterAdvance": 131,
+          "missedCounterSteps": 0,
+          "spanMs": 2181.7999999523163,
+          "firstRenderAfterWindowStartMs": 14.600000023841858,
+          "lastRenderBeforeWindowEndMs": 8,
+          "completedFramesPerSecond": 60.042167019370716,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 17.5,
+          "maxMs": 22.700000047683716,
+          "cameraChanges": 0
+        },
+        {
+          "name": "focus-Moon",
+          "observedCompletedFrames": 623,
+          "counterAdvance": 622,
+          "missedCounterSteps": 0,
+          "spanMs": 10415.899999976158,
+          "firstRenderAfterWindowStartMs": 12.299999952316284,
+          "lastRenderBeforeWindowEndMs": 6.400000095367432,
+          "completedFramesPerSecond": 59.716395126818014,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 17.899999976158142,
+          "maxMs": 80.60000002384186,
+          "cameraChanges": 598
+        },
+        {
+          "name": "focus-Earth",
+          "observedCompletedFrames": 577,
+          "counterAdvance": 576,
+          "missedCounterSteps": 0,
+          "spanMs": 10432.5,
+          "firstRenderAfterWindowStartMs": 7.799999952316284,
+          "lastRenderBeforeWindowEndMs": 6.100000023841858,
+          "completedFramesPerSecond": 55.21207764198419,
+          "p50Ms": 16.700000047683716,
+          "p95Ms": 32.799999952316284,
+          "maxMs": 55.5,
+          "cameraChanges": 551
+        },
+        {
+          "name": "focus-Lander",
+          "observedCompletedFrames": 638,
+          "counterAdvance": 637,
+          "missedCounterSteps": 0,
+          "spanMs": 10968.599999904633,
+          "firstRenderAfterWindowStartMs": 15.400000095367432,
+          "lastRenderBeforeWindowEndMs": 2.600000023841858,
+          "completedFramesPerSecond": 58.074868260811634,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 18.799999952316284,
+          "maxMs": 259.5,
+          "cameraChanges": 581
+        },
+        {
+          "name": "site-selection",
+          "observedCompletedFrames": 1214,
+          "counterAdvance": 1213,
+          "missedCounterSteps": 0,
+          "spanMs": 20665.5,
+          "firstRenderAfterWindowStartMs": 11.899999976158142,
+          "lastRenderBeforeWindowEndMs": 2.8000000715255737,
+          "completedFramesPerSecond": 58.696861919624496,
+          "p50Ms": 16.699999928474426,
+          "p95Ms": 22.299999952316284,
+          "maxMs": 96.60000002384186,
+          "cameraChanges": 1176
+        },
+        {
+          "name": "wet-mass-edit",
+          "observedCompletedFrames": 336,
+          "counterAdvance": 335,
+          "missedCounterSteps": 0,
+          "spanMs": 5616.600000023842,
+          "firstRenderAfterWindowStartMs": 5.700000047683716,
+          "lastRenderBeforeWindowEndMs": 6.5,
+          "completedFramesPerSecond": 59.644624861762985,
+          "p50Ms": 16.899999976158142,
+          "p95Ms": 18.700000047683716,
+          "maxMs": 70.10000002384186,
+          "cameraChanges": 10
+        }
+      ],
+      "duplicateRequests": [
+        {
+          "url": "blob:null/22446140-d4a8-4555-a026-ec5884f5635d",
+          "count": 4,
+          "requests": [
+            {
+              "url": "blob:null/22446140-d4a8-4555-a026-ec5884f5635d",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:null/22446140-d4a8-4555-a026-ec5884f5635d",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:null/22446140-d4a8-4555-a026-ec5884f5635d",
+              "type": "script",
+              "phase": "startup"
+            },
+            {
+              "url": "blob:null/22446140-d4a8-4555-a026-ec5884f5635d",
+              "type": "script",
+              "phase": "startup"
+            }
+          ]
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "limits": [
+    "Fresh private browser per transport; OS/disk caches warm, local HTTP, no cold internet claim. Normal motion, DPR 1; no CPU/network throttling.",
+    "Frame timestamps are MutationObserver delivery after production renderFrame increments (renderer.render returned), not GPU fences, scanout, presentation FPS or RAF callback counts.",
+    "Short single-device samples under concurrent workstation load; no universal FPS/latency acceptance threshold and no optimization comparison.",
+    "Resource/request observations cannot prove internal GPU allocation reuse or unobservable embedded decodes. Contact replay precomputation is separate from terrain/texture readiness.",
+    "Human, other device/network, screen-reader, full scene/viewport and qualified mission acceptance are outside this benchmark."
+  ],
+  "flags": [
+    "--no-sandbox",
+    "--enable-gpu",
+    "--use-gl=angle",
+    "--use-angle=vulkan"
+  ],
+  "host": {
+    "hostname": "CLEVO-X2",
+    "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+    "cpuCount": 32,
+    "memoryBytes": 130148806656,
+    "platform": "linux",
+    "release": "7.0.0-38-generic",
+    "loadAverage": [
+      6.11,
+      14.47,
+      23.26
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "createdUtc": "2026-11-14T19:20:47.981Z",
+  "target": "http://127.0.0.1:4317",
+  "offline": false,
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "checks": [
+    {
+      "name": "application-bootstrap",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "planner-decision-controls",
+      "status": "pass",
+      "detail": {
+        "siteId": "connecting-ridge",
+        "startIndex": 13067,
+        "endIndex": 13402
+      }
+    },
+    {
+      "name": "calendar-31-and-controlled-slip",
+      "status": "pass",
+      "detail": {
+        "saved": [
+          {
+            "name": "Controlled baseline",
+            "startIndex": 13067,
+            "endIndex": 13402
+          },
+          {
+            "name": "Controlled candidate",
+            "startIndex": 13091,
+            "endIndex": 13426
+          }
+        ]
+      }
+    },
+    {
+      "name": "comparison-and-open-exact",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "export-import-exact-state",
+      "status": "pass",
+      "detail": {
+        "scenarioKey": "planning-4-1b2d080d-d5ceca49-1094",
+        "events": 0,
+        "model": "planning-4",
+        "dataset": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748"
+      }
+    },
+    {
+      "name": "sensitivity-explicit-invalid-cancel",
+      "status": "pass",
+      "detail": {
+        "explicitCases": 3,
+        "cancelled": true,
+        "cancellationCpuThrottle": 8
+      }
+    },
+    {
+      "name": "educator-record-preserved-and-public-state",
+      "status": "pass",
+      "detail": {
+        "recordsPersisted": true,
+        "physicalInputsUnchanged": true
+      }
+    },
+    {
+      "name": "nasa-equipment-and-runtime",
+      "status": "pass",
+      "detail": {
+        "pageErrors": [],
+        "httpErrors": [],
+        "httpRequests": 41
+      }
+    },
+    {
+      "name": "historical-apollo-remains-unassessed",
+      "status": "pass",
+      "detail": {
+        "siteId": "apollo-11",
+        "verdict": "Incomplete: required evidence is missing."
+      }
+    }
+  ],
+  "limitations": [
+    "Dedicated headless browser; no user profile. Screenshots do not establish contrast, screen-reader or real-device conformance."
+  ],
+  "pageErrors": [],
+  "httpErrors": [],
+  "httpRequests": [
+    "http://127.0.0.1:4317/",
+    "http://127.0.0.1:4317/_next/static/media/7b0b24f36b1a6d0b-s.p.woff2",
+    "http://127.0.0.1:4317/_next/static/media/af4bf8399d1aacdf-s.p.woff2",
+    "http://127.0.0.1:4317/_next/static/css/9e0e4f194f7287ba.css",
+    "http://127.0.0.1:4317/_next/static/css/07c02508cd1e2404.css",
+    "http://127.0.0.1:4317/_next/static/css/46fb99c52c7a4475.css",
+    "http://127.0.0.1:4317/_next/static/chunks/webpack-a8e9fc7ebf609c60.js",
+    "http://127.0.0.1:4317/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+    "http://127.0.0.1:4317/_next/static/chunks/255-73938ce8a8eac1ad.js",
+    "http://127.0.0.1:4317/_next/static/chunks/main-app-bced2f044e615300.js",
+    "http://127.0.0.1:4317/_next/static/chunks/590-e5e48628e36e41ef.js",
+    "http://127.0.0.1:4317/_next/static/chunks/app/page-119f4c80b9982aff.js",
+    "http://127.0.0.1:4317/data/global-terrain.json",
+    "http://127.0.0.1:4317/data/catalog.json",
+    "http://127.0.0.1:4317/data/evidence-manifest.json",
+    "http://127.0.0.1:4317/data/imagery.json",
+    "http://127.0.0.1:4317/data/terrain.json",
+    "http://127.0.0.1:4317/data/global-terrain.bin.gz",
+    "http://127.0.0.1:4317/data/imagery.json",
+    "http://127.0.0.1:4317/data/map.png",
+    "http://127.0.0.1:4317/data/imagery/polar.jpg",
+    "http://127.0.0.1:4317/_next/static/media/98848575513c9742-s.woff2",
+    "http://127.0.0.1:4317/_next/static/chunks/bd904a5c.9227cf776674624d.js",
+    "http://127.0.0.1:4317/_next/static/chunks/b536a0f1.069a2cc2641e422e.js",
+    "http://127.0.0.1:4317/_next/static/chunks/790.3d5830239d86f823.js",
+    "http://127.0.0.1:4317/_next/static/chunks/406.b40163f05ab0f779.js",
+    "http://127.0.0.1:4317/_next/static/chunks/411.07b57a44a38d05c5.js",
+    "http://127.0.0.1:4317/_next/static/chunks/430.1495b2f5230168e0.js",
+    "http://127.0.0.1:4317/_next/static/chunks/460.4c5d41530274b13e.js",
+    "http://127.0.0.1:4317/_next/static/css/34c09a1aa67097d2.css",
+    "http://127.0.0.1:4317/data/imagery/polar.jpg",
+    "http://127.0.0.1:4317/data/celestial-models/assets/sun.glb",
+    "http://127.0.0.1:4317/data/celestial-models/assets/earth.glb",
+    "http://127.0.0.1:4317/data/equipment/apollo-lunar-module.glb",
+    "http://127.0.0.1:4317/data/imagery/global.jpg",
+    "http://127.0.0.1:4317/data/imagery/connecting-ridge-nac.jpg",
+    "http://127.0.0.1:4317/data/imagery/connecting-ridge.jpg",
+    "http://127.0.0.1:4317/data/dsn/earth-blue-marble-2048.jpg",
+    "http://127.0.0.1:4317/data/nasa-model.json",
+    "http://127.0.0.1:4317/data/equipment/draco/draco_decoder.js",
+    "http://127.0.0.1:4317/data/nasa-moon-mesh.bin.gz",
+    "http://127.0.0.1:4317/data/imagery/nasa-moon-8k.jpg",
+    "http://127.0.0.1:4317/data/imagery.json",
+    "http://127.0.0.1:4317/data/map.png",
+    "http://127.0.0.1:4317/data/imagery/polar.jpg",
+    "http://127.0.0.1:4317/data/imagery/nasa-moon-8k.jpg"
+  ]
+}

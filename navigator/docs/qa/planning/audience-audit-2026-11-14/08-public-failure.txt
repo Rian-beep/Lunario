@@ -1,0 +1,152 @@
+Skip to lunar workspace
+Paused. Sunlit.
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.
+SolarReach
+Lunar navigator
+Public
+Educator
+Planner
+Hide panels
+Mode guide
+NASA data
+Share
+Export
+2D map
+3D terrain
+South pole
+Whole Moon
+Sites
+Inspector
+Moon
+Earth
+Lander
+Learn
+Lab
+Load online NAC
+LROC WAC imagery · NASA / ASU · Finest visible WAC source ≈100 m/px · output sampling 268 m/px · Historical image illumination
+Connecting Ridge
+89.5343°S   209.9477° E · 2 m observer
+Prepared site horizon
+⋮
+How to read this site
+Look · question · compare
+What makes this place work?
+
+Connecting Ridge
+
+Latitude changes how high the Sun can climb; near the poles it often skims the horizon. A ridge can hide the Sun or Earth even when a smooth Moon would leave them visible.
+
+This stay needs a change
+
+The modeled power system cannot supply all electrical demand.
+
+Next comparison: Compare lower load, more usable storage, or a different arrival one at a time. More array helps only while usable sunlight is available.
+
+Look for the dark gap. Can the battery keep enough reserve while the equipment still needs power?
+Look for the communication gap. Does the longest Earth-visibility outage fit the stay? A visible Earth does not mean a ground antenna is booked.
+Try another arrival or place. The date shifts the Sun path; latitude and longitude select different terrain. A longer stay can cross a dark gap that a short visit avoids. Compare the whole stay with the same equipment.
+
+Current model: reserve margin -2,000 Wh; longest geometric outage 169 h. Missing information is not a favorable result.
+
+See the model relations
+Explore a symbol, unit and physical meaning
+At this moment
+In sunlight
+Earth below mask
+
+Sun -0.95° above the local horizontal; Earth -7.35°. Terrain horizons determine actual visibility.
+
+Time in sunlight
+i
+16.1%
+Smooth sphere
+24.1%
+Earth contact
+i
+49.7%
+Smooth sphere
+49.7%
+
+At the 2 m display height, Earth must clear both terrain and the 0° minimum antenna elevation above horizontal. Terrain-only visibility: 51.5%. This is not a confirmed radio service.
+
+Longest darkness
+i
+≥ 211h
+Smooth sphere
+255 h
+
+The longest observed run touches a selected-date boundary; its full duration may be longer.
+
+Longest blackout
+i
+≥ 169h
+
+Includes antenna mask. The longest observed run touches a selected-date boundary; its full duration may be longer.
+
+Terrain evidence
+
+Prepared site or nearest polar-grid horizon; original source resolution and observer height are retained.
+
+Terrain calculation mode
+Prepared horizons only
+Prepared first, coarse global fallback
+Coarse global at exact custom coordinates
+Array sunlight
+i
+Sunset
+~30 min
+13 Jul 2027
+11:00–12:00 UTC
+Antenna visibility
+i
+Contact opens
+~7 days
+20 Jul 2027
+11:00–12:00 UTC
+
+Array sunlight and antenna visibility across the stay
+i
+
+Array 2 m · antenna 2 m · minimum antenna elevation 0° above horizontal. These are geometric windows, not confirmed communication service.
+
+Sun + contact
+0.0%
+Sun only
+16.1%
+Contact only
+49.7%
+Neither
+34.2%
+Why this site matters
+
+A published point on the ridge between Shackleton and de Gerlache, inside NASA's 2022 Connecting Ridge region.
+
+Elevation
+i
+1,653 m
+Slope (40 m DEM)
+i
+0.3°
+
+Published coordinate source
+A different kind of day
+
+Earth’s day is about 24 hours. A lunar sunrise-to-sunrise cycle averages about 29.5 Earth days; near the poles, low Sun angles and local terrain break that simple pattern. The next sunlight and Earth-visibility changes above come from this site and date, not that average.
+
+NASA lunar-day reference
+See the terrain change the result
+
+At the south pole, a crater rim can hide the Sun or Earth. The smooth-sphere values show how much local terrain changes the picture.
+
+Inspect the horizon
+Preview a lunar flight
+Save to comparison
+Hourly ephemeris · Terrain-aware horizons
+Layers
+Compare scenarios
+3
+13 Jul 2027, 11:00 UTC
+1 h/s
+6 h/s
+1 d/s
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.

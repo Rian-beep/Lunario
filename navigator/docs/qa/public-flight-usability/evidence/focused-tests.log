@@ -1,0 +1,16 @@
+✔ reference uses light peach paper, cream, orange, mint and a yellow/chartreuse backing (11.109541ms)
+✔ ink frames and offset hard shadows decorate existing panels without changing placement (1.314292ms)
+✔ reading ink and semantic colours have measured contrast on the actual light surfaces (0.857041ms)
+✔ renderer and independent loader palettes remain isolated, with readable stage annotations (224.612333ms)
+✔ public explanation names each failed production contact check and retains missing evidence (2010.282208ms)
+✔ no contact and takeoff are separate from a successful landing (2701.412166ms)
+✔ control explanations distinguish trajectory, acceptance-only and post-contact effects (5397.540458ms)
+✔ every displayed flight numeric variable has adjacent substantive i help, including contact controls (4158.490459ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21598.085542

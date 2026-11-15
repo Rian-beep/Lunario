@@ -1,0 +1,3 @@
+# Short viewport control separation (F7)
+
+At native200% zoom the compact flight HUD could intercept the location card's expand button. In short viewports up to1080px wide, the location card now has a bounded top band and telemetry stays below it, with internal scrolling for expanded content. Desktop placement/icons and font size are unchanged. The existing actual-browser viewport gate now clicks location and telemetry expansion/minimization normally at960×496CSS pixels, checks their rectangles do not overlap, and retains the800px internal scrolling/global map projection assertions. Fresh disconnected scratch artifact:6/6 checks pass, no force clicks. The independent true-native200% and final web/offline rerun remain required.

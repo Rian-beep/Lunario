@@ -1,0 +1,1595 @@
+{
+  "schemaVersion": 1,
+  "identity": "a55b52f3bafbbc401531949e92479c49014ee0fb59afa60dc8451c22be992f7f",
+  "parser": {
+    "name": "temml",
+    "version": "0.14.0"
+  },
+  "options": {
+    "throwOnError": true,
+    "trust": false,
+    "annotate": false,
+    "maxExpand": 100,
+    "maxSize": [
+      10,
+      10
+    ],
+    "xml": true,
+    "displayModes": [
+      false,
+      true
+    ]
+  },
+  "entries": {
+    "(Eb/N0)_assumed": {
+      "tex": "(E_b/N_0)_{\\mathrm{assumed}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>assumed</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>assumed</mi></mpadded></msub></math>"
+    },
+    "(Eb/N0)_req": {
+      "tex": "(E_b/N_0)_{\\mathrm{req}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>req</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>req</mi></mpadded></msub></math>"
+    },
+    "(x − x̄)ᵀ Σ⁻¹(x − x̄) ≤ k²": {
+      "tex": "(x-\\bar x)^{\\mathsf T}\\Sigma^{-1}(x-\\bar x)\\le k^2",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mi>𝖳</mi></msup><msup><mrow><mi mathvariant=\"normal\">Σ</mi><mspace></mspace></mrow><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">−</mo><mn>1</mn></mrow></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>≤</mo><msup><mi>k</mi><mn>2</mn></msup></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mi>𝖳</mi></msup><msup><mrow><mi mathvariant=\"normal\">Σ</mi><mspace></mspace></mrow><mrow><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">−</mo><mn>1</mn></mrow></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>≤</mo><msup><mi>k</mi><mn>2</mn></msup></mrow></math>"
+    },
+    "0 ≤ t ≤ τ_preview": {
+      "tex": "0\\le t\\le\\tau_{\\mathrm{preview}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></mrow></math>"
+    },
+    "0 ≤ t_flight ≤ τ_preview": {
+      "tex": "0\\le t_{\\mathrm{flight}}\\le\\tau_{\\mathrm{preview}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>0</mn><mo>≤</mo><msub><mi>t</mi><mpadded lspace=\"0\"><mi>flight</mi></mpadded></msub><mo>≤</mo><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mn>0</mn><mo>≤</mo><msub><mi>t</mi><mpadded lspace=\"0\"><mi>flight</mi></mpadded></msub><mo>≤</mo><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></mrow></math>"
+    },
+    "A": {
+      "tex": "A",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>A</mi></math>"
+    },
+    "A_rad": {
+      "tex": "A_{\\mathrm{rad}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>A</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>A</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub></math>"
+    },
+    "Acontact": {
+      "tex": "A_{\\mathrm{contact}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>A</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>A</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>"
+    },
+    "C": {
+      "tex": "C",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>C</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>C</mi></math>"
+    },
+    "C dT/dt = Q̇solar + Q̇IR + Q̇internal + Q̇conduction − Q̇radiated − Q̇cooling": {
+      "tex": "C\\frac{\\mathrm dT}{\\mathrm dt}=\\dot Q_{\\mathrm{solar}}+\\dot Q_{\\mathrm{IR}}+\\dot Q_{\\mathrm{internal}}+\\dot Q_{\\mathrm{conduction}}-\\dot Q_{\\mathrm{radiated}}-\\dot Q_{\\mathrm{cooling}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>C</mi><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>T</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>solar</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>IR</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>internal</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>conduction</mi></mpadded></msub><mo>−</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub><mo>−</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>cooling</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>C</mi><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>T</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>solar</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>IR</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>internal</mi></mpadded></msub><mo>+</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>conduction</mi></mpadded></msub><mo>−</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub><mo>−</mo><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>cooling</mi></mpadded></msub></mrow></math>"
+    },
+    "C_B": {
+      "tex": "C_{B}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>C</mi><mi>B</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>C</mi><mi>B</mi></msub></math>"
+    },
+    "Cremaining": {
+      "tex": "C_{\\mathrm{remaining}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>C</mi><mpadded lspace=\"0\"><mi>remaining</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>C</mi><mpadded lspace=\"0\"><mi>remaining</mi></mpadded></msub></math>"
+    },
+    "Cremaining ≥ ∫return ċ(t) dt + Creserve": {
+      "tex": "C_{\\mathrm{remaining}}\\ge\\int_{\\mathrm{return}}\\dot c(t)\\,\\mathrm dt+C_{\\mathrm{reserve}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>C</mi><mpadded lspace=\"0\"><mi>remaining</mi></mpadded></msub><mo>≥</mo><msub><mo movablelimits=\"false\">∫</mo><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mover><mi>c</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">˙</mo></mover><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi><mo>+</mo><msub><mi>C</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>C</mi><mpadded lspace=\"0\"><mi>remaining</mi></mpadded></msub><mo>≥</mo><msub><mo movablelimits=\"false\">∫</mo><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mover><mi>c</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">˙</mo></mover><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi><mo>+</mo><msub><mi>C</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></mrow></math>"
+    },
+    "Creserve": {
+      "tex": "C_{\\mathrm{reserve}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>C</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>C</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>"
+    },
+    "D": {
+      "tex": "D",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>D</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>D</mi></math>"
+    },
+    "D = R_link H_overlap f_alloc": {
+      "tex": "D=R_{\\mathrm{link}}H_{\\mathrm{overlap}}f_{\\mathrm{alloc}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>D</mi><mo>=</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><msub><mi>H</mi><mpadded lspace=\"0\"><mi>overlap</mi></mpadded></msub><msub><mi>f</mi><mpadded lspace=\"0\"><mi>alloc</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>D</mi><mo>=</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><msub><mi>H</mi><mpadded lspace=\"0\"><mi>overlap</mi></mpadded></msub><msub><mi>f</mi><mpadded lspace=\"0\"><mi>alloc</mi></mpadded></msub></mrow></math>"
+    },
+    "E": {
+      "tex": "E",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>E</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>E</mi></math>"
+    },
+    "E_B": {
+      "tex": "E_{B}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>E</mi><mi>B</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>E</mi><mi>B</mi></msub></math>"
+    },
+    "E_B(arrival) = f₀ C_B": {
+      "tex": "E_B(\\mathrm{arrival})=f_0 C_B",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>E</mi><mi>B</mi></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mpadded lspace=\"0\"><mi>arrival</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mn>0</mn></msub><msub><mi>C</mi><mi>B</mi></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>E</mi><mi>B</mi></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mpadded lspace=\"0\"><mi>arrival</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>f</mi><mn>0</mn></msub><msub><mi>C</mi><mi>B</mi></msub></mrow></math>"
+    },
+    "E_k": {
+      "tex": "E_k",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>E</mi><mi>k</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>E</mi><mi>k</mi></msub></math>"
+    },
+    "Eb/N0": {
+      "tex": "E_b/N_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub></mrow></math>"
+    },
+    "Eb/N0 = P_rx[dBW] − 10 log₁₀(k T_noise) − 10 log₁₀(R_bit)": {
+      "tex": "(E_b/N_0)[\\mathrm{dB}]=P_{\\mathrm{rx}}[\\mathrm{dBW}]-10\\log_{10}(k_B T_{\\mathrm{noise}})-10\\log_{10}(R_{\\mathrm{bit}})",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dB</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dB</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "Eb/N0[dB] = P_rx[dBW] − 10 log₁₀(k_B T_noise) − 10 log₁₀(R_bit)": {
+      "tex": "(E_b/N_0)[\\mathrm{dB}]=P_{\\mathrm{rx}}[\\mathrm{dBW}]-10\\log_{10}(k_B T_{\\mathrm{noise}})-10\\log_{10}(R_{\\mathrm{bit}})",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dB</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dB</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><mn>10</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "Fnormal": {
+      "tex": "F_{\\mathrm{normal}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub></math>"
+    },
+    "Ftangent": {
+      "tex": "F_{\\mathrm{tangent}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>F</mi><mpadded lspace=\"0\"><mi>tangent</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>F</mi><mpadded lspace=\"0\"><mi>tangent</mi></mpadded></msub></math>"
+    },
+    "F☉": {
+      "tex": "F_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>F</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>F</mi><mi>☉</mi></msub></math>"
+    },
+    "F☉ = diskFraction(h☉, horizon_array, ρ☉)": {
+      "tex": "F_{☉}=\\operatorname{diskFraction}(h_{☉},h_{\\mathrm{horizon,array}},\\rho_{☉})",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>F</mi><mi>☉</mi></msub><mo>=</mo><mi>diskFraction</mi><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mi>☉</mi></msub><mo separator=\"true\">,</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">y</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>ρ</mi><mi>☉</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>F</mi><mi>☉</mi></msub><mo>=</mo><mi>diskFraction</mi><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mi>☉</mi></msub><mo separator=\"true\">,</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">y</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>ρ</mi><mi>☉</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "G": {
+      "tex": "G",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>G</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>G</mi></math>"
+    },
+    "G_rx": {
+      "tex": "G_{\\mathrm{rx}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>G</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub></math>"
+    },
+    "G_tx": {
+      "tex": "G_{\\mathrm{tx}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>G</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub></math>"
+    },
+    "Gr": {
+      "tex": "G_r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mi>r</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>G</mi><mi>r</mi></msub></math>"
+    },
+    "Gt": {
+      "tex": "G_t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>G</mi><mi>t</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>G</mi><mi>t</mi></msub></math>"
+    },
+    "H": {
+      "tex": "H",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>H</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>H</mi></math>"
+    },
+    "H_overlap": {
+      "tex": "H_{\\mathrm{overlap}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>H</mi><mpadded lspace=\"0\"><mi>overlap</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>H</mi><mpadded lspace=\"0\"><mi>overlap</mi></mpadded></msub></math>"
+    },
+    "Isp": {
+      "tex": "I_{\\mathrm{sp}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub></math>"
+    },
+    "L": {
+      "tex": "L",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>L</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>L</mi></math>"
+    },
+    "L = h / tan e": {
+      "tex": "L=\\frac h{\\tan e}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>L</mi><mo>=</mo><mfrac><mi>h</mi><mrow><mrow><mi>tan</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>e</mi></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>L</mi><mo>=</mo><mfrac><mi>h</mi><mrow><mrow><mi>tan</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>e</mi></mrow></mfrac></mrow></math>"
+    },
+    "L_fs": {
+      "tex": "L_{\\mathrm{fs}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub></math>"
+    },
+    "L_fs = 20 log₁₀(4π R f / c)": {
+      "tex": "L_{\\mathrm{fs}}=20\\log_{10}\\left(\\frac{4\\pi R f}{c}\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub><mo>=</mo><mn>20</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mi>R</mi><mi>f</mi></mrow><mi>c</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub><mo>=</mo><mn>20</mn><mspace width=\"0.1667em\"></mspace><msub><mi>log</mi><mn>10</mn></msub><mo>⁡</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mn>4</mn><mi>π</mi><mi>R</mi><mi>f</mi></mrow><mi>c</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "L_other": {
+      "tex": "L_{\\mathrm{other}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>L</mi><mpadded lspace=\"0\"><mi>other</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>L</mi><mpadded lspace=\"0\"><mi>other</mi></mpadded></msub></math>"
+    },
+    "M_link": {
+      "tex": "M_{\\mathrm{link}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub></math>"
+    },
+    "M_link = (Eb/N0)_assumed − (Eb/N0)_req": {
+      "tex": "M_{\\mathrm{link}}=(E_b/N_0)_{\\mathrm{assumed}}-(E_b/N_0)_{\\mathrm{req}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><mo>=</mo><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>assumed</mi></mpadded></msub><mo>−</mo><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>req</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><mo>=</mo><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>assumed</mi></mpadded></msub><mo>−</mo><msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>b</mi></msub><mi>/</mi><msub><mi>N</mi><mn>0</mn></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mpadded lspace=\"0\"><mi>req</mi></mpadded></msub></mrow></math>"
+    },
+    "M_min": {
+      "tex": "M_{\\mathrm{min}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>min</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>min</mi></mpadded></msub></math>"
+    },
+    "M_reserve": {
+      "tex": "M_{\\mathrm{reserve}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>"
+    },
+    "M_reserve = min(E_B) − f_reserve C_B": {
+      "tex": "M_{\\mathrm{reserve}}=\\min(E_B)-f_{\\mathrm{reserve}}C_B",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub><mo>=</mo><mrow><mi>min</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>B</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><msub><mi>f</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub><msub><mi>C</mi><mi>B</mi></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub><mo>=</mo><mrow><mi>min</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>E</mi><mi>B</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>−</mo><msub><mi>f</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub><msub><mi>C</mi><mi>B</mi></msub></mrow></math>"
+    },
+    "N_contact": {
+      "tex": "N_{\\mathrm{contact}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>N</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>N</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>"
+    },
+    "N_total": {
+      "tex": "N_{\\mathrm{total}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>N</mi><mpadded lspace=\"0\"><mi>total</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>N</mi><mpadded lspace=\"0\"><mi>total</mi></mpadded></msub></math>"
+    },
+    "N₀": {
+      "tex": "N_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>N</mi><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>N</mi><mn>0</mn></msub></math>"
+    },
+    "N₀ = k_B T_noise": {
+      "tex": "N_0=k_B T_{\\mathrm{noise}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub></mrow></math>"
+    },
+    "P_active": {
+      "tex": "P_{\\mathrm{active}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>active</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>active</mi></mpadded></msub></math>"
+    },
+    "P_aux": {
+      "tex": "P_{\\mathrm{aux}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>aux</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>aux</mi></mpadded></msub></math>"
+    },
+    "P_base": {
+      "tex": "P_{\\mathrm{base}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>base</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>base</mi></mpadded></msub></math>"
+    },
+    "P_charge": {
+      "tex": "P_{\\mathrm{charge}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>charge</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>charge</mi></mpadded></msub></math>"
+    },
+    "P_delivered": {
+      "tex": "P_{\\mathrm{delivered}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>delivered</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>delivered</mi></mpadded></msub></math>"
+    },
+    "P_load": {
+      "tex": "P_{\\mathrm{load}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub></math>"
+    },
+    "P_load(t) = P_base + Σ P_active(t)": {
+      "tex": "P_{\\mathrm{load}}(t)=P_{\\mathrm{base}}+\\sum P_{\\mathrm{active}}(t)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>base</mi></mpadded></msub><mo>+</mo><mo movablelimits=\"false\">∑</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>active</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>base</mi></mpadded></msub><mo>+</mo><mo movablelimits=\"false\">∑</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>active</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "P_rad": {
+      "tex": "P_{\\mathrm{rad}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub></math>"
+    },
+    "P_rad = ε σ A_rad T⁴": {
+      "tex": "P_{\\mathrm{rad}}=\\varepsilon\\sigma A_{\\mathrm{rad}}T^4",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub><mo>=</mo><mi>ε</mi><mi>σ</mi><msub><mi>A</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub><msup><mi>T</mi><mn class=\"tml-med-pad\">4</mn></msup></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub><mo>=</mo><mi>ε</mi><mi>σ</mi><msub><mi>A</mi><mpadded lspace=\"0\"><mi>rad</mi></mpadded></msub><msup><mi>T</mi><mn class=\"tml-med-pad\">4</mn></msup></mrow></math>"
+    },
+    "P_rx": {
+      "tex": "P_{\\mathrm{rx}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub></math>"
+    },
+    "P_rx[dBW] = P_tx[dBW] + G_tx + G_rx − L_fs − L_other": {
+      "tex": "P_{\\mathrm{rx}}[\\mathrm{dBW}]=P_{\\mathrm{tx}}[\\mathrm{dBW}]+G_{\\mathrm{tx}}+G_{\\mathrm{rx}}-L_{\\mathrm{fs}}-L_{\\mathrm{other}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>+</mo><msub><mi>G</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub><mo>+</mo><msub><mi>G</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mo>−</mo><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub><mo>−</mo><msub><mi>L</mi><mpadded lspace=\"0\"><mi>other</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">[</mo><mpadded lspace=\"0\"><mi>dBW</mi></mpadded><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">]</mo></mrow><mo>+</mo><msub><mi>G</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub><mo>+</mo><msub><mi>G</mi><mpadded lspace=\"0\"><mi>rx</mi></mpadded></msub><mo>−</mo><msub><mi>L</mi><mpadded lspace=\"0\"><mi>fs</mi></mpadded></msub><mo>−</mo><msub><mi>L</mi><mpadded lspace=\"0\"><mi>other</mi></mpadded></msub></mrow></math>"
+    },
+    "P_tx": {
+      "tex": "P_{\\mathrm{tx}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>tx</mi></mpadded></msub></math>"
+    },
+    "Pgeneration": {
+      "tex": "P_{\\mathrm{generation}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>generation</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>generation</mi></mpadded></msub></math>"
+    },
+    "Pload": {
+      "tex": "P_{\\mathrm{load}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub></math>"
+    },
+    "Ploss": {
+      "tex": "P_{\\mathrm{loss}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>loss</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>loss</mi></mpadded></msub></math>"
+    },
+    "Pr": {
+      "tex": "P_r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mi>r</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mi>r</mi></msub></math>"
+    },
+    "Pr = Pt Gt Gr (λ/(4πR))² / L": {
+      "tex": "P_r=P_tG_tG_r\\frac{\\left(\\frac\\lambda{4\\pi R}\\right)^2}{L}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mi>r</mi></msub><mo>=</mo><msub><mi>P</mi><mi>t</mi></msub><msub><mi>G</mi><mi>t</mi></msub><msub><mi>G</mi><mi>r</mi></msub><mfrac><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi scriptlevel=\"2\" style=\"math-depth:2;\">λ</mi><mrow scriptlevel=\"2\" style=\"math-depth:2;\"><mn>4</mn><mi>π</mi><mi>R</mi></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mn>2</mn></msup><mi>L</mi></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mi>r</mi></msub><mo>=</mo><msub><mi>P</mi><mi>t</mi></msub><msub><mi>G</mi><mi>t</mi></msub><msub><mi>G</mi><mi>r</mi></msub><mfrac><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi>λ</mi><mrow><mn>4</mn><mi>π</mi><mi>R</mi></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mn>2</mn></msup><mi>L</mi></mfrac></mrow></math>"
+    },
+    "Pt": {
+      "tex": "P_t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mi>t</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mi>t</mi></msub></math>"
+    },
+    "Pzero": {
+      "tex": "P_{\\mathrm{zero}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>zero</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mpadded lspace=\"0\"><mi>zero</mi></mpadded></msub></math>"
+    },
+    "Pzero = exp(−λA)": {
+      "tex": "P_{\\mathrm{zero}}=\\exp(-\\lambda A)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>zero</mi></mpadded></msub><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mi>λ</mi><mi>A</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mpadded lspace=\"0\"><mi>zero</mi></mpadded></msub><mo>=</mo><mrow><mi>exp</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mi>λ</mi><mi>A</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "P☉": {
+      "tex": "P_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>P</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>P</mi><mi>☉</mi></msub></math>"
+    },
+    "P☉ = S A η (1 − ℓ) F☉ g": {
+      "tex": "P_{☉}=S A\\eta(1-\\ell)F_{☉}g",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>P</mi><mi>☉</mi></msub><mo>=</mo><mi>S</mi><mi>A</mi><mi>η</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>ℓ</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><msub><mi>F</mi><mi>☉</mi></msub><mi>g</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>P</mi><mi>☉</mi></msub><mo>=</mo><mi>S</mi><mi>A</mi><mi>η</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><mi>ℓ</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><msub><mi>F</mi><mi>☉</mi></msub><mi>g</mi></mrow></math>"
+    },
+    "Q̇IR": {
+      "tex": "\\dot Q_{\\mathrm{IR}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>IR</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>IR</mi></mpadded></msub></math>"
+    },
+    "Q̇conduction": {
+      "tex": "\\dot Q_{\\mathrm{conduction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>conduction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>conduction</mi></mpadded></msub></math>"
+    },
+    "Q̇cooling": {
+      "tex": "\\dot Q_{\\mathrm{cooling}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>cooling</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>cooling</mi></mpadded></msub></math>"
+    },
+    "Q̇internal": {
+      "tex": "\\dot Q_{\\mathrm{internal}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>internal</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>internal</mi></mpadded></msub></math>"
+    },
+    "Q̇plume": {
+      "tex": "\\dot Q_{\\mathrm{plume}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>plume</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>plume</mi></mpadded></msub></math>"
+    },
+    "Q̇plume = q″ A": {
+      "tex": "\\dot Q_{\\mathrm{plume}}=q^{\\prime\\prime}A",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>plume</mi></mpadded></msub><mo>=</mo><msup><mi>q</mi><mrow class=\"tml-med-pad\"><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo></mrow></msup><mi>A</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>plume</mi></mpadded></msub><mo>=</mo><msup><mi>q</mi><mrow class=\"tml-med-pad\"><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo></mrow></msup><mi>A</mi></mrow></math>"
+    },
+    "Q̇radiated": {
+      "tex": "\\dot Q_{\\mathrm{radiated}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub></math>"
+    },
+    "Q̇radiated = εσA(T⁴ − Tenv⁴)": {
+      "tex": "\\dot Q_{\\mathrm{radiated}}=\\varepsilon\\sigma A(T^4-T_{\\mathrm{env}}^4)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub><mo>=</mo><mi>ε</mi><mi>σ</mi><mi>A</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msup><mi>T</mi><mn class=\"tml-med-pad\">4</mn></msup><mo>−</mo><msubsup><mi>T</mi><mpadded lspace=\"0\"><mi>env</mi></mpadded><mn class=\"tml-med-pad\">4</mn></msubsup><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>radiated</mi></mpadded></msub><mo>=</mo><mi>ε</mi><mi>σ</mi><mi>A</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msup><mi>T</mi><mn class=\"tml-med-pad\">4</mn></msup><mo>−</mo><msubsup><mi>T</mi><mpadded lspace=\"0\"><mi>env</mi></mpadded><mn class=\"tml-med-pad\">4</mn></msubsup><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "Q̇solar": {
+      "tex": "\\dot Q_{\\mathrm{solar}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>solar</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>Q</mi><mo stretchy=\"false\" class=\"chr-med wbk-med-acc\" style=\"math-depth:0;\">˙</mo></mover><mpadded lspace=\"0\"><mi>solar</mi></mpadded></msub></math>"
+    },
+    "R": {
+      "tex": "R",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>R</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>R</mi></math>"
+    },
+    "R_bit": {
+      "tex": "R_{\\mathrm{bit}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>bit</mi></mpadded></msub></math>"
+    },
+    "R_body": {
+      "tex": "R_{\\mathrm{body}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>body</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>body</mi></mpadded></msub></math>"
+    },
+    "R_link": {
+      "tex": "R_{\\mathrm{link}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub></math>"
+    },
+    "R_site": {
+      "tex": "R_{\\mathrm{site}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>"
+    },
+    "S": {
+      "tex": "S",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>S</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>S</mi></math>"
+    },
+    "T": {
+      "tex": "T",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>T</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>T</mi></math>"
+    },
+    "T_noise": {
+      "tex": "T_{\\mathrm{noise}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>noise</mi></mpadded></msub></math>"
+    },
+    "Tenv": {
+      "tex": "T_{\\mathrm{env}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>env</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>env</mi></mpadded></msub></math>"
+    },
+    "Thover": {
+      "tex": "T_{\\mathrm{hover}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>T</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></math>"
+    },
+    "Thover = mg; Δvhover ≈ g thover": {
+      "tex": "T_{\\mathrm{hover}}=mg;\\quad\\Delta v_{\\mathrm{hover}}\\approx g\\,t_{\\mathrm{hover}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>T</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub><mo>=</mo><mi>m</mi><mi>g</mi><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub><mo>≈</mo><mi>g</mi><mspace width=\"0.1667em\"></mspace><msub><mi>t</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>T</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub><mo>=</mo><mi>m</mi><mi>g</mi><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub><mo>≈</mo><mi>g</mi><mspace width=\"0.1667em\"></mspace><msub><mi>t</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></mrow></math>"
+    },
+    "U": {
+      "tex": "U",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>U</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>U</mi></math>"
+    },
+    "U = Σ wi ui; wi ≥ 0; Σ wi = 1": {
+      "tex": "U=\\sum_i w_i u_i;\\quad w_i\\ge0;\\quad\\sum_i w_i=1",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>U</mi><mo>=</mo><msub><mo movablelimits=\"false\">∑</mo><mi>i</mi></msub><msub><mi>w</mi><mi>i</mi></msub><msub><mi>u</mi><mi>i</mi></msub><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><msub><mi>w</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><msub><mo movablelimits=\"false\">∑</mo><mi>i</mi></msub><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>U</mi><mo>=</mo><mrow><munder><mo movablelimits=\"false\">∑</mo><mi>i</mi></munder></mrow><msub><mi>w</mi><mi>i</mi></msub><msub><mi>u</mi><mi>i</mi></msub><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><msub><mi>w</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mrow><munder><mo movablelimits=\"false\">∑</mo><mi>i</mi></munder></mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow></math>"
+    },
+    "a": {
+      "tex": "a",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>a</mi></math>"
+    },
+    "a_stop": {
+      "tex": "a_{\\mathrm{stop}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>a</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></math>"
+    },
+    "a_stop = v_vertical² / (2 s_stop); E_k = ½ m v²": {
+      "tex": "a_{\\mathrm{stop}}=\\frac{v_{\\mathrm{vertical}}^2}{2s_{\\mathrm{stop}}};\\quad E_k=\\frac12 m v^2",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>a</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub><mo>=</mo><mfrac><msubsup><mi>v</mi><mpadded lspace=\"0\"><mi>vertical</mi></mpadded><mn class=\"tml-sml-pad\">2</mn></msubsup><mrow><mn>2</mn><msub><mi>s</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></mrow></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><msub><mi>E</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>v</mi><mn class=\"tml-sml-pad\">2</mn></msup></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>a</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub><mo>=</mo><mfrac><msubsup><mi>v</mi><mpadded lspace=\"0\"><mi>vertical</mi></mpadded><mn class=\"tml-sml-pad\">2</mn></msubsup><mrow><mn>2</mn><msub><mi>s</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></mrow></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><msub><mi>E</mi><mi>k</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>m</mi><msup><mi>v</mi><mn class=\"tml-sml-pad\">2</mn></msup></mrow></math>"
+    },
+    "a⃗": {
+      "tex": "\\vec a",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>a</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>a</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover></math>"
+    },
+    "a⃗ = (T / m) û_thrust − μ r⃗ / |r⃗|³": {
+      "tex": "\\vec a=\\frac{T}{m}\\hat u_{\\mathrm{thrust}}-\\frac{\\mu\\vec r}{|\\vec r|^3}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mi>a</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mo>=</mo><mfrac><mi>T</mi><mi>m</mi></mfrac><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub><mo>−</mo><mfrac><mrow><mi>μ</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></mrow><mrow><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><msup><mi>|</mi><mn>3</mn></msup></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mover><mi>a</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mo>=</mo><mfrac><mi>T</mi><mi>m</mi></mfrac><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub><mo>−</mo><mfrac><mrow><mi>μ</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></mrow><mrow><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><msup><mi>|</mi><mn>3</mn></msup></mrow></mfrac></mrow></math>"
+    },
+    "a☉": {
+      "tex": "a_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>a</mi><mi>☉</mi></msub></math>"
+    },
+    "c": {
+      "tex": "c",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>c</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>c</mi></math>"
+    },
+    "carrier-f0": {
+      "tex": "f_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>f</mi><mn>0</mn></msub></math>"
+    },
+    "contact": {
+      "tex": "\\operatorname{contact}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow></math>"
+    },
+    "contact = h⊕ > max(horizon_ant, mask_ant)": {
+      "tex": "\\operatorname{contact}=\\left[h_{⊕}>\\max(h_{\\mathrm{horizon,ant}},\\theta_{\\mathrm{ant}})\\right]",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub><mo>&gt;</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub><mo>&gt;</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></mrow></math>"
+    },
+    "contact = h⊕ > max(horizon_ant, θ_mask)": {
+      "tex": "\\operatorname{contact}=\\left[h_{⊕}>\\max(h_{\\mathrm{horizon,ant}},\\theta_{\\mathrm{mask}})\\right]",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub><mo>&gt;</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>mask</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>contact</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub><mo>&gt;</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub><mo separator=\"true\">,</mo><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>mask</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></mrow></math>"
+    },
+    "ċ": {
+      "tex": "\\dot c",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>c</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">˙</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>c</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">˙</mo></mover></math>"
+    },
+    "dE/dt = Pgeneration − Pload − Ploss": {
+      "tex": "\\frac{\\mathrm dE}{\\mathrm dt}=P_{\\mathrm{generation}}-P_{\\mathrm{load}}-P_{\\mathrm{loss}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>E</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>generation</mi></mpadded></msub><mo>−</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub><mo>−</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>loss</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>E</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>generation</mi></mpadded></msub><mo>−</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>load</mi></mpadded></msub><mo>−</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>loss</mi></mpadded></msub></mrow></math>"
+    },
+    "d_out": {
+      "tex": "d_{\\mathrm{out}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub></math>"
+    },
+    "d_return": {
+      "tex": "d_{\\mathrm{return}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></math>"
+    },
+    "declination": {
+      "tex": "δ",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>δ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>δ</mi></math>"
+    },
+    "e": {
+      "tex": "e",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>e</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>e</mi></math>"
+    },
+    "e_drive": {
+      "tex": "e_{\\mathrm{drive}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>e</mi><mpadded lspace=\"0\"><mi>drive</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>e</mi><mpadded lspace=\"0\"><mi>drive</mi></mpadded></msub></math>"
+    },
+    "electrical-E": {
+      "tex": "E",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>E</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>E</mi></math>"
+    },
+    "epoch-time": {
+      "tex": "t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>t</mi></math>"
+    },
+    "exposed-A": {
+      "tex": "A",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>A</mi></math>"
+    },
+    "f": {
+      "tex": "f",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>f</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>f</mi></math>"
+    },
+    "f_alloc": {
+      "tex": "f_{\\mathrm{alloc}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>alloc</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>alloc</mi></mpadded></msub></math>"
+    },
+    "f_contact": {
+      "tex": "f_{\\mathrm{contact}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></math>"
+    },
+    "f_contact = N_contact / N_total": {
+      "tex": "f_{\\mathrm{contact}}=\\frac{N_{\\mathrm{contact}}}{N_{\\mathrm{total}}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>f</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub><mo>=</mo><mfrac><msub><mi>N</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub><msub><mi>N</mi><mpadded lspace=\"0\"><mi>total</mi></mpadded></msub></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>f</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub><mo>=</mo><mfrac><msub><mi>N</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub><msub><mi>N</mi><mpadded lspace=\"0\"><mi>total</mi></mpadded></msub></mfrac></mrow></math>"
+    },
+    "f_reserve": {
+      "tex": "f_{\\mathrm{reserve}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>f</mi><mpadded lspace=\"0\"><mi>reserve</mi></mpadded></msub></math>"
+    },
+    "f₀": {
+      "tex": "f_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>f</mi><mn>0</mn></msub></math>"
+    },
+    "g": {
+      "tex": "g",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>g</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>g</mi></math>"
+    },
+    "g = max(0, sin h☉ cos β + cos h☉ sin β cos(a☉ − α))": {
+      "tex": "g=\\max\\left(0,\\sin h_{☉}\\cos\\beta+\\cos h_{☉}\\sin\\beta\\cos(a_{☉}-\\alpha)\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>g</mi><mo>=</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn>0</mn><mo separator=\"true\">,</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>β</mi><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>β</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>a</mi><mi>☉</mi></msub><mo>−</mo><mi>α</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>g</mi><mo>=</mo><mrow><mi>max</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn>0</mn><mo separator=\"true\">,</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>β</mi><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>β</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>a</mi><mi>☉</mi></msub><mo>−</mo><mi>α</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "g₀": {
+      "tex": "g_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>g</mi><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>g</mi><mn>0</mn></msub></math>"
+    },
+    "h": {
+      "tex": "h",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>h</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>h</mi></math>"
+    },
+    "h = r × v; n̂ = h / |h|; n̂ · r̂site(t) = 0": {
+      "tex": "\\vec h=\\vec r\\times\\vec v;\\quad\\hat n=\\frac{\\vec h}{|\\vec h|};\\quad\\hat n\\cdot\\hat r_{\\mathrm{site}}(t)=0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mo>=</mo><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo>×</mo><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mo>=</mo><mfrac><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mrow><mi>|</mi><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mi>|</mi></mrow></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mo>⋅</mo><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mo>=</mo><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo>×</mo><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mo>=</mo><mfrac><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mrow><mi>|</mi><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover><mi>|</mi></mrow></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mo>⋅</mo><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>t</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>"
+    },
+    "h = |r⃗| − R_body": {
+      "tex": "h=|\\vec r|-R_{\\mathrm{body}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>h</mi><mo>=</mo><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mi>|</mi><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>body</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>h</mi><mo>=</mo><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mi>|</mi><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>body</mi></mpadded></msub></mrow></math>"
+    },
+    "h_ant": {
+      "tex": "h_{\\mathrm{ant}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub></math>"
+    },
+    "h_array": {
+      "tex": "h_{\\mathrm{array}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>array</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>array</mi></mpadded></msub></math>"
+    },
+    "h_start": {
+      "tex": "h_{\\mathrm{start}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>start</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mpadded lspace=\"0\"><mi>start</mi></mpadded></msub></math>"
+    },
+    "h_start = r⃗₀·û_site − R_site (configured); |r⃗₀| − R_site (legacy)": {
+      "tex": "h_{\\mathrm{start}}=\\begin{cases}\\vec r_0\\cdot\\hat u_{\\mathrm{site}}-R_{\\mathrm{site}}&\\text{configured terminal}\\\\|\\vec r_0|-R_{\\mathrm{site}}&\\text{legacy manual}\\end{cases}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>h</mi><mpadded lspace=\"0\"><mi>start</mi></mpadded></msub><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mtable><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>⋅</mo><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mtext>configured terminal</mtext></mtd></mtr><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mi>|</mi><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mi>|</mi><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mtext>legacy manual</mtext></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\"></mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>h</mi><mpadded lspace=\"0\"><mi>start</mi></mpadded></msub><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">{</mo><mtable><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>⋅</mo><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mtext>configured terminal</mtext></mtd></mtr><mtr><mtd class=\"tml-left\" style=\"padding-left:0em;padding-right:0em;\"><mrow><mi>|</mi><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mi>|</mi><mo>−</mo><msub><mi>R</mi><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></mrow></mtd><mtd class=\"tml-left\" style=\"padding-left:1em;padding-right:0em;\"><mtext>legacy manual</mtext></mtd></mtr></mtable><mo fence=\"true\" form=\"postfix\" stretchy=\"true\"></mo></mrow></mrow></math>"
+    },
+    "hazard-A": {
+      "tex": "A",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>A</mi></math>"
+    },
+    "hazard-λ": {
+      "tex": "\\lambda",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>λ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>λ</mi></math>"
+    },
+    "horizon_ant": {
+      "tex": "h_{\\mathrm{horizon,ant}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">t</mi><mspace></mspace></mrow></mrow></msub></math>"
+    },
+    "horizon_array": {
+      "tex": "h_{\\mathrm{horizon,array}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">y</mi><mspace></mspace></mrow></mrow></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mrow><mrow><mi mathvariant=\"normal\">h</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">i</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">z</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">o</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">n</mi><mspace></mspace></mrow><mo separator=\"true\">,</mo><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">r</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">a</mi><mspace></mspace></mrow><mrow><mi mathvariant=\"normal\">y</mi><mspace></mspace></mrow></mrow></msub></math>"
+    },
+    "h⊕": {
+      "tex": "h_{⊕}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub></math>"
+    },
+    "h☉": {
+      "tex": "h_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>h</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>h</mi><mi>☉</mi></msub></math>"
+    },
+    "k": {
+      "tex": "k",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>k</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>k</mi></math>"
+    },
+    "k_B": {
+      "tex": "k_B",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>k</mi><mi>B</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>k</mi><mi>B</mi></msub></math>"
+    },
+    "local-g": {
+      "tex": "g",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>g</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>g</mi></math>"
+    },
+    "loss-factor": {
+      "tex": "L",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>L</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>L</mi></math>"
+    },
+    "m": {
+      "tex": "m",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>m</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>m</mi></math>"
+    },
+    "m_propellant": {
+      "tex": "m_{\\mathrm{propellant}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>m</mi><mpadded lspace=\"0\"><mi>propellant</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>m</mi><mpadded lspace=\"0\"><mi>propellant</mi></mpadded></msub></math>"
+    },
+    "m_propellant = ∫₀^τ_b T / (Isp g₀) dt": {
+      "tex": "m_{\\mathrm{propellant}}=\\int_0^{\\tau_b}\\frac{T}{I_{\\mathrm{sp}}g_0}\\,\\mathrm dt",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>m</mi><mpadded lspace=\"0\"><mi>propellant</mi></mpadded></msub><mo>=</mo><msubsup><mo movablelimits=\"false\">∫</mo><mn>0</mn><msub><mi>τ</mi><mi>b</mi></msub></msubsup><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>m</mi><mpadded lspace=\"0\"><mi>propellant</mi></mpadded></msub><mo>=</mo><msubsup><mo movablelimits=\"false\">∫</mo><mn>0</mn><msub><mi>τ</mi><mi>b</mi></msub></msubsup><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac><mspace width=\"0.1667em\"></mspace><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>"
+    },
+    "margin_q": {
+      "tex": "M_q",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>M</mi><mi>q</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>M</mi><mi>q</mi></msub></math>"
+    },
+    "margin_q = q_limit − q_measured": {
+      "tex": "M_q=q_{\\mathrm{limit}}-q_{\\mathrm{measured}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>M</mi><mi>q</mi></msub><mo>=</mo><msub><mi>q</mi><mpadded lspace=\"0\"><mi>limit</mi></mpadded></msub><mo>−</mo><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measured</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>M</mi><mi>q</mi></msub><mo>=</mo><msub><mi>q</mi><mpadded lspace=\"0\"><mi>limit</mi></mpadded></msub><mo>−</mo><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measured</mi></mpadded></msub></mrow></math>"
+    },
+    "margin_to_requirement": {
+      "tex": "M_{\\mathrm{requirement}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>requirement</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>M</mi><mpadded lspace=\"0\"><mi>requirement</mi></mpadded></msub></math>"
+    },
+    "margin_to_requirement = M_link − M_min": {
+      "tex": "M_{\\mathrm{requirement}}=M_{\\mathrm{link}}-M_{\\mathrm{min}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>requirement</mi></mpadded></msub><mo>=</mo><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><mo>−</mo><msub><mi>M</mi><mpadded lspace=\"0\"><mi>min</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>M</mi><mpadded lspace=\"0\"><mi>requirement</mi></mpadded></msub><mo>=</mo><msub><mi>M</mi><mpadded lspace=\"0\"><mi>link</mi></mpadded></msub><mo>−</mo><msub><mi>M</mi><mpadded lspace=\"0\"><mi>min</mi></mpadded></msub></mrow></math>"
+    },
+    "mask_ant": {
+      "tex": "\\theta_{\\mathrm{ant}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>ant</mi></mpadded></msub></math>"
+    },
+    "mf": {
+      "tex": "m_f",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>m</mi><mi>f</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>m</mi><mi>f</mi></msub></math>"
+    },
+    "mission-time": {
+      "tex": "t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>t</mi></math>"
+    },
+    "m₀": {
+      "tex": "m_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>m</mi><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>m</mi><mn>0</mn></msub></math>"
+    },
+    "n̂": {
+      "tex": "\\hat n",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>n</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">ˆ</mo></mover></math>"
+    },
+    "obstacle-h": {
+      "tex": "h",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>h</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>h</mi></math>"
+    },
+    "orbit-h": {
+      "tex": "\\vec h",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>h</mi><mo stretchy=\"false\" class=\"tml-vec wbk-vec\">→</mo></mover></math>"
+    },
+    "orbit-r": {
+      "tex": "\\vec r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>"
+    },
+    "orbit-v": {
+      "tex": "\\vec v",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>"
+    },
+    "p": {
+      "tex": "p",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>p</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>p</mi></math>"
+    },
+    "p = Fnormal / Acontact; |Ftangent| ≤ μs Fnormal": {
+      "tex": "p=\\frac{F_{\\mathrm{normal}}}{A_{\\mathrm{contact}}};\\quad|F_{\\mathrm{tangent}}|\\le\\mu_s F_{\\mathrm{normal}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>p</mi><mo>=</mo><mfrac><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub><msub><mi>A</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mi>|</mi><msub><mi>F</mi><mpadded lspace=\"0\"><mi>tangent</mi></mpadded></msub><mi>|</mi><mo>≤</mo><msub><mi>μ</mi><mi>s</mi></msub><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>p</mi><mo>=</mo><mfrac><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub><msub><mi>A</mi><mpadded lspace=\"0\"><mi>contact</mi></mpadded></msub></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mi>|</mi><msub><mi>F</mi><mpadded lspace=\"0\"><mi>tangent</mi></mpadded></msub><mi>|</mi><mo>≤</mo><msub><mi>μ</mi><mi>s</mi></msub><msub><mi>F</mi><mpadded lspace=\"0\"><mi>normal</mi></mpadded></msub></mrow></math>"
+    },
+    "q_absorptivity": {
+      "tex": "q_{\\mathrm{absorptivity}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>absorptivity</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>absorptivity</mi></mpadded></msub></math>"
+    },
+    "q_albedoFluxWm2": {
+      "tex": "q_{\\mathrm{albedoFluxWm2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>albedoFluxWm2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>albedoFluxWm2</mi></mpadded></msub></math>"
+    },
+    "q_assetAxialDistanceM": {
+      "tex": "q_{\\mathrm{assetAxialDistanceM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>assetAxialDistanceM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>assetAxialDistanceM</mi></mpadded></msub></math>"
+    },
+    "q_assetLateralDistanceM": {
+      "tex": "q_{\\mathrm{assetLateralDistanceM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>assetLateralDistanceM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>assetLateralDistanceM</mi></mpadded></msub></math>"
+    },
+    "q_auxLoadW": {
+      "tex": "q_{\\mathrm{auxLoadW}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>auxLoadW</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>auxLoadW</mi></mpadded></msub></math>"
+    },
+    "q_availableHours": {
+      "tex": "q_{\\mathrm{availableHours}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>availableHours</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>availableHours</mi></mpadded></msub></math>"
+    },
+    "q_availableOverlapHours": {
+      "tex": "q_{\\mathrm{availableOverlapHours}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>availableOverlapHours</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>availableOverlapHours</mi></mpadded></msub></math>"
+    },
+    "q_centerOfMassHeightM": {
+      "tex": "q_{\\mathrm{centerOfMassHeightM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>centerOfMassHeightM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>centerOfMassHeightM</mi></mpadded></msub></math>"
+    },
+    "q_coveredFraction": {
+      "tex": "q_{\\mathrm{coveredFraction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>coveredFraction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>coveredFraction</mi></mpadded></msub></math>"
+    },
+    "q_driveWhPerKm": {
+      "tex": "q_{\\mathrm{driveWhPerKm}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>driveWhPerKm</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>driveWhPerKm</mi></mpadded></msub></math>"
+    },
+    "q_dryMassKg": {
+      "tex": "q_{\\mathrm{dryMassKg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>dryMassKg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>dryMassKg</mi></mpadded></msub></math>"
+    },
+    "q_emissivity": {
+      "tex": "q_{\\mathrm{emissivity}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>emissivity</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>emissivity</mi></mpadded></msub></math>"
+    },
+    "q_empiricalRangeM": {
+      "tex": "q_{\\mathrm{empiricalRangeM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>empiricalRangeM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>empiricalRangeM</mi></mpadded></msub></math>"
+    },
+    "q_environmentTempK": {
+      "tex": "q_{\\mathrm{environmentTempK}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>environmentTempK</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>environmentTempK</mi></mpadded></msub></math>"
+    },
+    "q_gravityMps2": {
+      "tex": "q_{\\mathrm{gravityMps2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>gravityMps2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>gravityMps2</mi></mpadded></msub></math>"
+    },
+    "q_halfAngleDeg": {
+      "tex": "q_{\\mathrm{halfAngleDeg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>halfAngleDeg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>halfAngleDeg</mi></mpadded></msub></math>"
+    },
+    "q_halfSupportWidthM": {
+      "tex": "q_{\\mathrm{halfSupportWidthM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>halfSupportWidthM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>halfSupportWidthM</mi></mpadded></msub></math>"
+    },
+    "q_hazardFraction": {
+      "tex": "q_{\\mathrm{hazardFraction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>hazardFraction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>hazardFraction</mi></mpadded></msub></math>"
+    },
+    "q_heaterCapacityW": {
+      "tex": "q_{\\mathrm{heaterCapacityW}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>heaterCapacityW</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>heaterCapacityW</mi></mpadded></msub></math>"
+    },
+    "q_horizontalSpeedMps": {
+      "tex": "q_{\\mathrm{horizontalSpeedMps}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>horizontalSpeedMps</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>horizontalSpeedMps</mi></mpadded></msub></math>"
+    },
+    "q_infraredFluxWm2": {
+      "tex": "q_{\\mathrm{infraredFluxWm2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>infraredFluxWm2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>infraredFluxWm2</mi></mpadded></msub></math>"
+    },
+    "q_initialAltitudeM": {
+      "tex": "q_{\\mathrm{initialAltitudeM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>initialAltitudeM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>initialAltitudeM</mi></mpadded></msub></math>"
+    },
+    "q_internalPowerW": {
+      "tex": "q_{\\mathrm{internalPowerW}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>internalPowerW</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>internalPowerW</mi></mpadded></msub></math>"
+    },
+    "q_ispSeconds": {
+      "tex": "q_{\\mathrm{ispSeconds}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>ispSeconds</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>ispSeconds</mi></mpadded></msub></math>"
+    },
+    "q_limit": {
+      "tex": "q_{\\mathrm{limit}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>limit</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>limit</mi></mpadded></msub></math>"
+    },
+    "q_linkRateMbps": {
+      "tex": "q_{\\mathrm{linkRateMbps}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>linkRateMbps</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>linkRateMbps</mi></mpadded></msub></math>"
+    },
+    "q_massKg": {
+      "tex": "q_{\\mathrm{massKg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>massKg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>massKg</mi></mpadded></msub></math>"
+    },
+    "q_maxDecelerationMps2": {
+      "tex": "q_{\\mathrm{maxDecelerationMps2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxDecelerationMps2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxDecelerationMps2</mi></mpadded></msub></math>"
+    },
+    "q_maxHazardFraction": {
+      "tex": "q_{\\mathrm{maxHazardFraction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxHazardFraction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxHazardFraction</mi></mpadded></msub></math>"
+    },
+    "q_maxRoughnessM": {
+      "tex": "q_{\\mathrm{maxRoughnessM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxRoughnessM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxRoughnessM</mi></mpadded></msub></math>"
+    },
+    "q_maxSlopeDeg": {
+      "tex": "q_{\\mathrm{maxSlopeDeg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxSlopeDeg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxSlopeDeg</mi></mpadded></msub></math>"
+    },
+    "q_maxTempK": {
+      "tex": "q_{\\mathrm{maxTempK}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxTempK</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>maxTempK</mi></mpadded></msub></math>"
+    },
+    "q_measured": {
+      "tex": "q_{\\mathrm{measured}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measured</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measured</mi></mpadded></msub></math>"
+    },
+    "q_measuredSlopeDeg": {
+      "tex": "q_{\\mathrm{measuredSlopeDeg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measuredSlopeDeg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>measuredSlopeDeg</mi></mpadded></msub></math>"
+    },
+    "q_minTempK": {
+      "tex": "q_{\\mathrm{minTempK}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>minTempK</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>minTempK</mi></mpadded></msub></math>"
+    },
+    "q_muM3s2": {
+      "tex": "q_{\\mathrm{muM3s2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>muM3s2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>muM3s2</mi></mpadded></msub></math>"
+    },
+    "q_outboundDistanceKm": {
+      "tex": "q_{\\mathrm{outboundDistanceKm}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>outboundDistanceKm</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>outboundDistanceKm</mi></mpadded></msub></math>"
+    },
+    "q_planetViewFactor": {
+      "tex": "q_{\\mathrm{planetViewFactor}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>planetViewFactor</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>planetViewFactor</mi></mpadded></msub></math>"
+    },
+    "q_projectedAreaM2": {
+      "tex": "q_{\\mathrm{projectedAreaM2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>projectedAreaM2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>projectedAreaM2</mi></mpadded></msub></math>"
+    },
+    "q_radialClearanceM": {
+      "tex": "q_{\\mathrm{radialClearanceM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radialClearanceM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radialClearanceM</mi></mpadded></msub></math>"
+    },
+    "q_radiatingAreaM2": {
+      "tex": "q_{\\mathrm{radiatingAreaM2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radiatingAreaM2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radiatingAreaM2</mi></mpadded></msub></math>"
+    },
+    "q_radiusM": {
+      "tex": "q_{\\mathrm{radiusM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radiusM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>radiusM</mi></mpadded></msub></math>"
+    },
+    "q_requiredContactHours": {
+      "tex": "q_{\\mathrm{requiredContactHours}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredContactHours</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredContactHours</mi></mpadded></msub></math>"
+    },
+    "q_requiredDataMbit": {
+      "tex": "q_{\\mathrm{requiredDataMbit}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredDataMbit</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredDataMbit</mi></mpadded></msub></math>"
+    },
+    "q_requiredDeltaVMps": {
+      "tex": "q_{\\mathrm{requiredDeltaVMps}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredDeltaVMps</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredDeltaVMps</mi></mpadded></msub></math>"
+    },
+    "q_requiredSpacingM": {
+      "tex": "q_{\\mathrm{requiredSpacingM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredSpacingM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>requiredSpacingM</mi></mpadded></msub></math>"
+    },
+    "q_reserveFraction": {
+      "tex": "q_{\\mathrm{reserveFraction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>reserveFraction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>reserveFraction</mi></mpadded></msub></math>"
+    },
+    "q_returnDistanceKm": {
+      "tex": "q_{\\mathrm{returnDistanceKm}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>returnDistanceKm</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>returnDistanceKm</mi></mpadded></msub></math>"
+    },
+    "q_roughnessM": {
+      "tex": "q_{\\mathrm{roughnessM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>roughnessM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>roughnessM</mi></mpadded></msub></math>"
+    },
+    "q_sharedCapacityFraction": {
+      "tex": "q_{\\mathrm{sharedCapacityFraction}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>sharedCapacityFraction</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>sharedCapacityFraction</mi></mpadded></msub></math>"
+    },
+    "q_slopeDeg": {
+      "tex": "q_{\\mathrm{slopeDeg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>slopeDeg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>slopeDeg</mi></mpadded></msub></math>"
+    },
+    "q_solarFluxWm2": {
+      "tex": "q_{\\mathrm{solarFluxWm2}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>solarFluxWm2</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>solarFluxWm2</mi></mpadded></msub></math>"
+    },
+    "q_solarIncidenceFactor": {
+      "tex": "q_{\\mathrm{solarIncidenceFactor}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>solarIncidenceFactor</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>solarIncidenceFactor</mi></mpadded></msub></math>"
+    },
+    "q_sourceSpacingM": {
+      "tex": "q_{\\mathrm{sourceSpacingM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>sourceSpacingM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>sourceSpacingM</mi></mpadded></msub></math>"
+    },
+    "q_speedKph": {
+      "tex": "q_{\\mathrm{speedKph}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>speedKph</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>speedKph</mi></mpadded></msub></math>"
+    },
+    "q_stoppingDistanceM": {
+      "tex": "q_{\\mathrm{stoppingDistanceM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>stoppingDistanceM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>stoppingDistanceM</mi></mpadded></msub></math>"
+    },
+    "q_targetAltitudeM": {
+      "tex": "q_{\\mathrm{targetAltitudeM}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>targetAltitudeM</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>targetAltitudeM</mi></mpadded></msub></math>"
+    },
+    "q_usableEnergyWh": {
+      "tex": "q_{\\mathrm{usableEnergyWh}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>usableEnergyWh</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>usableEnergyWh</mi></mpadded></msub></math>"
+    },
+    "q_verticalSpeedMps": {
+      "tex": "q_{\\mathrm{verticalSpeedMps}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>verticalSpeedMps</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>verticalSpeedMps</mi></mpadded></msub></math>"
+    },
+    "q_wetMassKg": {
+      "tex": "q_{\\mathrm{wetMassKg}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>wetMassKg</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>q</mi><mpadded lspace=\"0\"><mi>wetMassKg</mi></mpadded></msub></math>"
+    },
+    "q″": {
+      "tex": "q^{\\prime\\prime}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>q</mi><mrow class=\"tml-med-pad\"><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo></mrow></msup></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msup><mi>q</mi><mrow class=\"tml-med-pad\"><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo><mo lspace=\"0em\" rspace=\"0em\" class=\"tml-prime\">′</mo></mrow></msup></math>"
+    },
+    "r_bound": {
+      "tex": "r_{\\mathrm{bound}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>r</mi><mpadded lspace=\"0\"><mi>bound</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>r</mi><mpadded lspace=\"0\"><mi>bound</mi></mpadded></msub></math>"
+    },
+    "r_bound(z) = r_clearance + z tan θ": {
+      "tex": "r_{\\mathrm{bound}}(z)=r_{\\mathrm{clearance}}+z\\tan\\theta",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>r</mi><mpadded lspace=\"0\"><mi>bound</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>z</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>r</mi><mpadded lspace=\"0\"><mi>clearance</mi></mpadded></msub><mo>+</mo><mi>z</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>tan</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>θ</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>r</mi><mpadded lspace=\"0\"><mi>bound</mi></mpadded></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>z</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>=</mo><msub><mi>r</mi><mpadded lspace=\"0\"><mi>clearance</mi></mpadded></msub><mo>+</mo><mi>z</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>tan</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>θ</mi></mrow></math>"
+    },
+    "r_clearance": {
+      "tex": "r_{\\mathrm{clearance}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>r</mi><mpadded lspace=\"0\"><mi>clearance</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>r</mi><mpadded lspace=\"0\"><mi>clearance</mi></mpadded></msub></math>"
+    },
+    "radius": {
+      "tex": "r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>r</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>r</mi></math>"
+    },
+    "route-speed": {
+      "tex": "v",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>v</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>v</mi></math>"
+    },
+    "route-time": {
+      "tex": "t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>t</mi></math>"
+    },
+    "route-v": {
+      "tex": "v",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>v</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>v</mi></math>"
+    },
+    "rp": {
+      "tex": "r_p",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>r</mi><mi>p</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>r</mi><mi>p</mi></msub></math>"
+    },
+    "r̂site": {
+      "tex": "\\hat r_{\\mathrm{site}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>"
+    },
+    "r̈": {
+      "tex": "\\ddot{\\vec r}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">¨</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">¨</mo></mover></math>"
+    },
+    "r̈ = −μr/|r|³ + (T/m)uₜ; ṁ = −T/(Iₛₚ g₀)": {
+      "tex": "\\ddot{\\vec r}=-\\frac{\\mu\\vec r}{|\\vec r|^3}+\\frac Tm\\hat u_T;\\quad\\dot m=-\\frac{T}{I_{\\mathrm{sp}}g_0}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">¨</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mrow><mi>μ</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></mrow><mrow><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><msup><mi>|</mi><mn>3</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mi>T</mi><mi>m</mi></mfrac><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mi>T</mi></msub><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mover><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">¨</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mrow><mi>μ</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></mrow><mrow><mi>|</mi><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><msup><mi>|</mi><mn>3</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mi>T</mi><mi>m</mi></mfrac><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mi>T</mi></msub><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac></mrow></math>"
+    },
+    "r⃗": {
+      "tex": "\\vec r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover></math>"
+    },
+    "r⃗₀": {
+      "tex": "\\vec r_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>r</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub></math>"
+    },
+    "s": {
+      "tex": "s",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>s</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>s</mi></math>"
+    },
+    "s_stop": {
+      "tex": "s_{\\mathrm{stop}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>s</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>s</mi><mpadded lspace=\"0\"><mi>stop</mi></mpadded></msub></math>"
+    },
+    "sin e = sin φ sin δ + cos φ cos δ cos H": {
+      "tex": "\\sin e=\\sin\\varphi\\sin\\delta+\\cos\\varphi\\cos\\delta\\cos H",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>e</mi><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>δ</mi><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>δ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>H</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>e</mi><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>δ</mi><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>δ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>H</mi></mrow></math>"
+    },
+    "sin h☉ = sin φ sin δ☉ + cos φ cos δ☉ cos(λ − λ☉)": {
+      "tex": "\\sin h_{☉}=\\sin\\varphi\\sin\\delta_{☉}+\\cos\\varphi\\cos\\delta_{☉}\\cos(\\lambda-\\lambda_{☉})",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>δ</mi><mi>☉</mi></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>δ</mi><mi>☉</mi></msub><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>λ</mi><mo>−</mo><msub><mi>λ</mi><mi>☉</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>h</mi><mi>☉</mi></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>δ</mi><mi>☉</mi></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>φ</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><msub><mi>δ</mi><mi>☉</mi></msub><mrow><mi>cos</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>λ</mi><mo>−</mo><msub><mi>λ</mi><mi>☉</mi></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></math>"
+    },
+    "sin(δ/2) = 1 / (1 + rp v∞²/μ)": {
+      "tex": "\\sin\\left(\\frac\\delta2\\right)=\\frac1{1+\\frac{r_p v_{\\infty}^2}{\\mu}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow scriptlevel=\"2\" style=\"math-depth:2;\"><msub><mi>r</mi><mi scriptlevel=\"2\">p</mi></msub><msubsup><mi>v</mi><mi scriptlevel=\"2\">∞</mi><mn scriptlevel=\"2\" class=\"tml-sml-pad\">2</mn></msubsup></mrow><mi scriptlevel=\"2\" style=\"math-depth:2;\">μ</mi></mfrac></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mi>δ</mi><mn>2</mn></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><msub><mi>r</mi><mi>p</mi></msub><msubsup><mi>v</mi><mi>∞</mi><mn class=\"tml-sml-pad\">2</mn></msubsup></mrow><mi>μ</mi></mfrac></mrow></mfrac></mrow></math>"
+    },
+    "t": {
+      "tex": "t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>t</mi></math>"
+    },
+    "t = (d_out + d_return) / v; E = (d_out + d_return) e_drive + P_aux t": {
+      "tex": "t=\\frac{d_{\\mathrm{out}}+d_{\\mathrm{return}}}{v};\\quad E=(d_{\\mathrm{out}}+d_{\\mathrm{return}})e_{\\mathrm{drive}}+P_{\\mathrm{aux}}t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub><mo>+</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></mrow><mi>v</mi></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mi>E</mi><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub><mo>+</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><msub><mi>e</mi><mpadded lspace=\"0\"><mi>drive</mi></mpadded></msub><mo>+</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>aux</mi></mpadded></msub><mi>t</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub><mo>+</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></mrow><mi>v</mi></mfrac><mo separator=\"true\">;</mo><mspace width=\"1em\"></mspace><mi>E</mi><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>out</mi></mpadded></msub><mo>+</mo><msub><mi>d</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><msub><mi>e</mi><mpadded lspace=\"0\"><mi>drive</mi></mpadded></msub><mo>+</mo><msub><mi>P</mi><mpadded lspace=\"0\"><mi>aux</mi></mpadded></msub><mi>t</mi></mrow></math>"
+    },
+    "t_UTC": {
+      "tex": "t_{\\mathrm{UTC}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>UTC</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>UTC</mi></mpadded></msub></math>"
+    },
+    "t_UTC = t_arrival + τ": {
+      "tex": "t_{\\mathrm{UTC}}=t_{\\mathrm{arrival}}+\\tau",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>t</mi><mpadded lspace=\"0\"><mi>UTC</mi></mpadded></msub><mo>=</mo><msub><mi>t</mi><mpadded lspace=\"0\"><mi>arrival</mi></mpadded></msub><mo>+</mo><mi>τ</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>t</mi><mpadded lspace=\"0\"><mi>UTC</mi></mpadded></msub><mo>=</mo><msub><mi>t</mi><mpadded lspace=\"0\"><mi>arrival</mi></mpadded></msub><mo>+</mo><mi>τ</mi></mrow></math>"
+    },
+    "t_arrival": {
+      "tex": "t_{\\mathrm{arrival}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>arrival</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>arrival</mi></mpadded></msub></math>"
+    },
+    "t_flight": {
+      "tex": "t_{\\mathrm{flight}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>flight</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>flight</mi></mpadded></msub></math>"
+    },
+    "temperature": {
+      "tex": "T",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>T</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>T</mi></math>"
+    },
+    "thermal-A": {
+      "tex": "A",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>A</mi></math>"
+    },
+    "thover": {
+      "tex": "t_{\\mathrm{hover}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></math>"
+    },
+    "time-s": {
+      "tex": "t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>t</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>t</mi></math>"
+    },
+    "treturn": {
+      "tex": "t_{\\mathrm{return}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>t</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub></math>"
+    },
+    "treturn = ∫route ds / v(s)": {
+      "tex": "t_{\\mathrm{return}}=\\int_{\\mathrm{route}}\\frac{\\mathrm ds}{v(s)}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi>t</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mo>=</mo><msub><mo movablelimits=\"false\">∫</mo><mpadded lspace=\"0\"><mi>route</mi></mpadded></msub><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>s</mi></mrow><mrow><mi>v</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>s</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mi>t</mi><mpadded lspace=\"0\"><mi>return</mi></mpadded></msub><mo>=</mo><msub><mo movablelimits=\"false\">∫</mo><mpadded lspace=\"0\"><mi>route</mi></mpadded></msub><mfrac><mrow><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow><mi>s</mi></mrow><mrow><mi>v</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mi>s</mi><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow></mrow></mfrac></mrow></math>"
+    },
+    "ui": {
+      "tex": "u_i",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>u</mi><mi>i</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>u</mi><mi>i</mi></msub></math>"
+    },
+    "uₜ": {
+      "tex": "\\hat u_{T}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mi>T</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mi>T</mi></msub></math>"
+    },
+    "v": {
+      "tex": "v",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>v</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>v</mi></math>"
+    },
+    "v_h": {
+      "tex": "v_{h}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>v</mi><mi>h</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>v</mi><mi>h</mi></msub></math>"
+    },
+    "v_u": {
+      "tex": "v_{u}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>v</mi><mi>u</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>v</mi><mi>u</mi></msub></math>"
+    },
+    "v_vertical": {
+      "tex": "v_{\\mathrm{vertical}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>v</mi><mpadded lspace=\"0\"><mi>vertical</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>v</mi><mpadded lspace=\"0\"><mi>vertical</mi></mpadded></msub></math>"
+    },
+    "vr": {
+      "tex": "v_r",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>v</mi><mi>r</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>v</mi><mi>r</mi></msub></math>"
+    },
+    "v² = μ(2/r − 1/a)": {
+      "tex": "v^2=\\mu\\left(\\frac2r-\\frac1a\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mi>v</mi><mn class=\"tml-sml-pad\">2</mn></msup><mo>=</mo><mi>μ</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mn>2</mn><mi>r</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>a</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msup><mi>v</mi><mn class=\"tml-sml-pad\">2</mn></msup><mo>=</mo><mi>μ</mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mn>2</mn><mi>r</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>a</mi></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "v⃗₀": {
+      "tex": "\\vec v_0",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub></math>"
+    },
+    "v⃗₀ = v_h (sin χ û_east + cos χ û_north) + v_u û_up": {
+      "tex": "\\vec v_0=v_h(\\sin\\chi\\,\\hat u_{\\mathrm{east}}+\\cos\\chi\\,\\hat u_{\\mathrm{north}})+v_u\\hat u_{\\mathrm{up}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>=</mo><msub><mi>v</mi><mi>h</mi></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>+</mo><msub><mi>v</mi><mi>u</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>=</mo><msub><mi>v</mi><mi>h</mi></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"false\">(</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"false\">)</mo></mrow><mo>+</mo><msub><mi>v</mi><mi>u</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>"
+    },
+    "v⃗₀ = v_h û_horizontal + v_u û_up": {
+      "tex": "\\vec v_0=v_h\\hat u_{\\mathrm{horizontal}}+v_u\\hat u_{\\mathrm{up}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>=</mo><msub><mi>v</mi><mi>h</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>+</mo><msub><mi>v</mi><mi>u</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>v</mi><mo stretchy=\"false\" class=\"tml-vec chr-sml wbk-sml-vec\">→</mo></mover><mn>0</mn></msub><mo>=</mo><msub><mi>v</mi><mi>h</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>+</mo><msub><mi>v</mi><mi>u</mi></msub><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>"
+    },
+    "v∞": {
+      "tex": "v_{\\infty}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>v</mi><mi>∞</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>v</mi><mi>∞</mi></msub></math>"
+    },
+    "wavelength": {
+      "tex": "λ",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>λ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>λ</mi></math>"
+    },
+    "wi": {
+      "tex": "w_i",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>w</mi><mi>i</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>w</mi><mi>i</mi></msub></math>"
+    },
+    "x": {
+      "tex": "x",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>x</mi></math>"
+    },
+    "x̄": {
+      "tex": "\\bar x",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>x</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">‾</mo></mover></math>"
+    },
+    "z": {
+      "tex": "z",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>z</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>z</mi></math>"
+    },
+    "û_east": {
+      "tex": "\\hat u_{\\mathrm{east}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub></math>"
+    },
+    "û_horizontal": {
+      "tex": "\\hat u_{\\mathrm{horizontal}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub></math>"
+    },
+    "û_horizontal = sin χ û_east + cos χ û_north": {
+      "tex": "\\hat u_{\\mathrm{horizontal}}=\\sin\\chi\\,\\hat u_{\\mathrm{east}}+\\cos\\chi\\,\\hat u_{\\mathrm{north}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>east</mi></mpadded></msub><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>χ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub></mrow></math>"
+    },
+    "û_north": {
+      "tex": "\\hat u_{\\mathrm{north}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>north</mi></mpadded></msub></math>"
+    },
+    "û_site": {
+      "tex": "\\hat u_{\\mathrm{site}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>site</mi></mpadded></msub></math>"
+    },
+    "û_thrust": {
+      "tex": "\\hat u_{\\mathrm{thrust}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub></math>"
+    },
+    "û_thrust = cos γ û_horizontal + sin γ û_up": {
+      "tex": "\\hat u_{\\mathrm{thrust}}=\\cos\\gamma\\,\\hat u_{\\mathrm{horizontal}}+\\sin\\gamma\\,\\hat u_{\\mathrm{up}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>γ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>+</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>γ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>thrust</mi></mpadded></msub><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>γ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>horizontal</mi></mpadded></msub><mo>+</mo><mrow><mi>sin</mi><mo>⁡</mo><mspace width=\"0.1667em\"></mspace></mrow><mi>γ</mi><mspace width=\"0.1667em\"></mspace><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></mrow></math>"
+    },
+    "û_up": {
+      "tex": "\\hat u_{\\mathrm{up}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mover><mi>u</mi><mo stretchy=\"false\" class=\"chr-sml wbk-sml-acc\" style=\"math-depth:0;\">ˆ</mo></mover><mpadded lspace=\"0\"><mi>up</mi></mpadded></msub></math>"
+    },
+    "ΔE_B": {
+      "tex": "\\Delta E_{B}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>E</mi><mi>B</mi></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>E</mi><mi>B</mi></msub></mrow></math>"
+    },
+    "ΔE_B = (η_c P_charge − P_delivered / η_d) Δt": {
+      "tex": "\\Delta E_B=\\left(\\eta_{\\mathrm c}P_{\\mathrm{charge}}-\\frac{P_{\\mathrm{delivered}}}{\\eta_{\\mathrm d}}\\right)\\Delta t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>E</mi><mi>B</mi></msub><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">c</mi><mspace></mspace></mrow></msub><msub><mi>P</mi><mpadded lspace=\"0\"><mi>charge</mi></mpadded></msub><mo>−</mo><mfrac><msub><mi>P</mi><mpadded lspace=\"0\"><mi>delivered</mi></mpadded></msub><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>E</mi><mi>B</mi></msub><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">c</mi><mspace></mspace></mrow></msub><msub><mi>P</mi><mpadded lspace=\"0\"><mi>charge</mi></mpadded></msub><mo>−</mo><mfrac><msub><mi>P</mi><mpadded lspace=\"0\"><mi>delivered</mi></mpadded></msub><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>"
+    },
+    "Δf": {
+      "tex": "\\Delta f",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>f</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>f</mi></mrow></math>"
+    },
+    "Δf ≈ −f₀ vr/c": {
+      "tex": "\\Delta f\\approx-\\frac{f_0 v_r}{c}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>f</mi><mo>≈</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mrow><msub><mi>f</mi><mn>0</mn></msub><msub><mi>v</mi><mi>r</mi></msub></mrow><mi>c</mi></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>f</mi><mo>≈</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mrow><msub><mi>f</mi><mn>0</mn></msub><msub><mi>v</mi><mi>r</mi></msub></mrow><mi>c</mi></mfrac></mrow></math>"
+    },
+    "Δt": {
+      "tex": "\\Delta t",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>t</mi></mrow></math>"
+    },
+    "Δv": {
+      "tex": "\\Delta v",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>v</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>v</mi></mrow></math>"
+    },
+    "Δv = Iₛₚ g₀ ln(m₀/mf)": {
+      "tex": "\\Delta v=I_{\\mathrm{sp}}g_0\\ln\\left(\\frac{m_0}{m_f}\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>v</mi><mo>=</mo><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub><mrow><mi>ln</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><msub><mi>m</mi><mn>0</mn></msub><msub><mi>m</mi><mi>f</mi></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>v</mi><mo>=</mo><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub><mrow><mi>ln</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><msub><mi>m</mi><mn>0</mn></msub><msub><mi>m</mi><mi>f</mi></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "Δv_ideal": {
+      "tex": "\\Delta v_{\\mathrm{ideal}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>ideal</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>ideal</mi></mpadded></msub></mrow></math>"
+    },
+    "Δv_ideal = Isp g₀ ln(m₀ / mf)": {
+      "tex": "\\Delta v_{\\mathrm{ideal}}=I_{\\mathrm{sp}}g_0\\ln\\left(\\frac{m_0}{m_f}\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>ideal</mi></mpadded></msub><mo>=</mo><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub><mrow><mi>ln</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><msub><mi>m</mi><mn>0</mn></msub><msub><mi>m</mi><mi>f</mi></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>ideal</mi></mpadded></msub><mo>=</mo><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub><mrow><mi>ln</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><msub><mi>m</mi><mn>0</mn></msub><msub><mi>m</mi><mi>f</mi></msub></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "Δvhover": {
+      "tex": "\\Delta v_{\\mathrm{hover}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>hover</mi></mpadded></msub></mrow></math>"
+    },
+    "Δvplane": {
+      "tex": "\\Delta v_{\\mathrm{plane}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>plane</mi></mpadded></msub></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>plane</mi></mpadded></msub></mrow></math>"
+    },
+    "Δvplane = 2v sin(Δψ/2)": {
+      "tex": "\\Delta v_{\\mathrm{plane}}=2v\\sin\\left(\\frac{\\Delta\\psi}{2}\\right)",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>plane</mi></mpadded></msub><mo>=</mo><mn>2</mn><mi>v</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>ψ</mi></mrow><mn>2</mn></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><msub><mi>v</mi><mpadded lspace=\"0\"><mi>plane</mi></mpadded></msub><mo>=</mo><mn>2</mn><mi>v</mi><mrow><mspace width=\"0.1667em\"></mspace><mi>sin</mi><mo>⁡</mo></mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>ψ</mi></mrow><mn>2</mn></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    "Δψ": {
+      "tex": "\\Delta\\psi",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>ψ</mi></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mrow><mi mathvariant=\"normal\">Δ</mi><mspace></mspace></mrow><mi>ψ</mi></mrow></math>"
+    },
+    "Σ": {
+      "tex": "\\Sigma",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi mathvariant=\"normal\">Σ</mi><mspace></mspace></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mi mathvariant=\"normal\">Σ</mi><mspace></mspace></mrow></math>"
+    },
+    "α": {
+      "tex": "\\alpha",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>α</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>α</mi></math>"
+    },
+    "β": {
+      "tex": "\\beta",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>β</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>β</mi></math>"
+    },
+    "γ": {
+      "tex": "\\gamma",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>γ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>γ</mi></math>"
+    },
+    "δ": {
+      "tex": "\\delta",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>δ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>δ</mi></math>"
+    },
+    "δ☉": {
+      "tex": "\\delta_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>δ</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>δ</mi><mi>☉</mi></msub></math>"
+    },
+    "ε": {
+      "tex": "\\varepsilon",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ε</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>ε</mi></math>"
+    },
+    "η": {
+      "tex": "\\eta",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>η</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>η</mi></math>"
+    },
+    "η_c": {
+      "tex": "\\eta_{\\mathrm c}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">c</mi><mspace></mspace></mrow></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">c</mi><mspace></mspace></mrow></msub></math>"
+    },
+    "η_d": {
+      "tex": "\\eta_{\\mathrm d}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>η</mi><mrow><mi mathvariant=\"normal\">d</mi><mspace></mspace></mrow></msub></math>"
+    },
+    "θ": {
+      "tex": "\\theta",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>θ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>θ</mi></math>"
+    },
+    "θ_mask": {
+      "tex": "\\theta_{\\mathrm{mask}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>mask</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>θ</mi><mpadded lspace=\"0\"><mi>mask</mi></mpadded></msub></math>"
+    },
+    "λ": {
+      "tex": "\\lambda",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>λ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>λ</mi></math>"
+    },
+    "λ☉": {
+      "tex": "\\lambda_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>λ</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>λ</mi><mi>☉</mi></msub></math>"
+    },
+    "μ": {
+      "tex": "\\mu",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>μ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>μ</mi></math>"
+    },
+    "μs": {
+      "tex": "\\mu_s",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>μ</mi><mi>s</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>μ</mi><mi>s</mi></msub></math>"
+    },
+    "ρ⊕": {
+      "tex": "\\rho_{⊕}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>ρ</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>ρ</mi><mo form=\"prefix\" stretchy=\"false\" lspace=\"0em\" rspace=\"0em\">⊕︎</mo></msub></math>"
+    },
+    "ρ☉": {
+      "tex": "\\rho_{☉}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>ρ</mi><mi>☉</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>ρ</mi><mi>☉</mi></msub></math>"
+    },
+    "σ": {
+      "tex": "\\sigma",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>σ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>σ</mi></math>"
+    },
+    "τ": {
+      "tex": "\\tau",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>τ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>τ</mi></math>"
+    },
+    "τ_b": {
+      "tex": "\\tau_b",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>τ</mi><mi>b</mi></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>τ</mi><mi>b</mi></msub></math>"
+    },
+    "τ_preview": {
+      "tex": "\\tau_{\\mathrm{preview}}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><msub><mi>τ</mi><mpadded lspace=\"0\"><mi>preview</mi></mpadded></msub></math>"
+    },
+    "φ": {
+      "tex": "\\varphi",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>φ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>φ</mi></math>"
+    },
+    "χ": {
+      "tex": "\\chi",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>χ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>χ</mi></math>"
+    },
+    "ṁ": {
+      "tex": "\\dot m",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover></math>"
+    },
+    "ṁ = −T / (Isp g₀)": {
+      "tex": "\\dot m=-\\frac{T}{I_{\\mathrm{sp}}g_0}",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac></mrow></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mrow><mover><mi>m</mi><mo stretchy=\"false\" class=\"wbk-acc\" style=\"math-depth:0;\">˙</mo></mover><mo>=</mo><mo form=\"prefix\" stretchy=\"false\">−</mo><mfrac><mi>T</mi><mrow><msub><mi>I</mi><mpadded lspace=\"0\"><mi>sp</mi></mpadded></msub><msub><mi>g</mi><mn>0</mn></msub></mrow></mfrac></mrow></math>"
+    },
+    "ℓ": {
+      "tex": "\\ell",
+      "inline": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ℓ</mi></math>",
+      "block": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\" class=\"tml-display\" style=\"display:block math;\"><mi>ℓ</mi></math>"
+    }
+  }
+}

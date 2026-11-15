@@ -1,0 +1,4 @@
+# Generated data and offline bundles are reviewed through their preparation scripts.
+public/solarreach-navigator.html -diff -whitespace linguist-generated=true
+public/data/terrain.json -diff linguist-generated=true
+public/solarreach-navigator.html -diff linguist-generated=true

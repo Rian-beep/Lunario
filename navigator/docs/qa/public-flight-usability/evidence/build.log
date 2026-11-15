@@ -1,0 +1,39 @@
+
+> solarreach-navigator@0.1.0 build
+> npm run math:check && next build
+
+
+> solarreach-navigator@0.1.0 math:check
+> tsx scripts/build-mathml.ts --check
+
+Native MathML checked: 314 expressions, SHA-256 a55b52f3bafbbc401531949e92479c49014ee0fb59afa60dc8451c22be992f7f
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 22.1s
+   Linting and checking validity of types ...
+
+   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+    - include was updated to add '.next-public-flight-responsive/types/**/*.ts'
+
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5)
+   Generating static pages (2/5)
+   Generating static pages (3/5)
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     281 kB         385 kB
+└ ○ /_not-found                            995 B         105 kB
++ First Load JS shared by all             104 kB
+  ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          2.92 kB
+
+
+○  (Static)  prerendered as static content

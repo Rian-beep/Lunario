@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "createdUtc": "2026-11-14T18:26:28.537Z",
+  "target": "file:///tmp/solarreach-landing-release-r4.html",
+  "offline": true,
+  "checks": [
+    {
+      "name": "real-browser-zoom-200",
+      "status": "pass",
+      "detail": {
+        "samples": [
+          {
+            "factor": 1,
+            "dpr": 1,
+            "innerWidth": 1600,
+            "innerHeight": 993,
+            "outerWidth": 1600,
+            "outerHeight": 1080,
+            "visualScale": 1,
+            "documentWidth": 1600,
+            "screenshotWidthPx": 1600,
+            "screenshotHeightPx": 993
+          },
+          {
+            "factor": 2,
+            "dpr": 2,
+            "innerWidth": 800,
+            "innerHeight": 496,
+            "outerWidth": 1600,
+            "outerHeight": 1080,
+            "visualScale": 1,
+            "documentWidth": 800,
+            "screenshotWidthPx": 1600,
+            "screenshotHeightPx": 993
+          }
+        ],
+        "keyboard": "Body Space toggles playback; unrelated button Space opens guide; Escape dismisses it.",
+        "scope": "Dedicated headless Chrome layout zoom at fixed physical window width; not complete zoom accessibility validation."
+      }
+    },
+    {
+      "name": "initial-guide-dismiss",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "document-overflow-1920",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "document-overflow-1600",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "document-overflow-1024",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "document-overflow-390",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "reduced-motion-media",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "guide-Escape",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "panel-close-Landing sites",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "panel-close-Scenario inspector",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "Minimize location card",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "Minimize timeline",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "Space-body-toggle",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "Space-input-guard",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "Space-button-guard",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "chart-captions",
+      "status": "pass",
+      "detail": "Observed in dedicated headless context."
+    },
+    {
+      "name": "chart-text-inventory",
+      "status": "observed",
+      "detail": [
+        {
+          "caption": "Solar output versus irradiance · illustrative, not mission assessment",
+          "text": "Solar output versus irradiance · illustrative, not mission assessmentHold A = 4 m², η = 0.30, ℓ = 0.15, F☉ = 1 and g = 1. These are explicit teaching inputs, not the current equipment or sunlight.Derivation and normalization: 4 × 0.30 × (1 − 0.15) × 1 × 1 = 1.02 m², so each 1 W/m² adds 1.02 W. At the reference S = 1000 W/m², P = 1020 W. Normalizing by this reference gives P / 1020 W = S / (1000 W/m²).Solar output versus irradianceIllustrative algebra with the other factors fixed. Horizontal axis: Solar irradiance S (W/m²). Vertical axis: Ideal solar generation (W). Values are also available in the table below.0637.51,27501,0001,250Solar irradiance S (W/m²)Response (W)Ideal solar generation (",
+          "canvas": false
+        },
+        {
+          "caption": "Solar output versus irradiance · illustrative, not mission assessment",
+          "text": "Solar output versus irradiance · illustrative, not mission assessmentHold A = 4 m², η = 0.30, ℓ = 0.15, F☉ = 1 and g = 1. These are explicit teaching inputs, not the current equipment or sunlight.Derivation and normalization: 4 × 0.30 × (1 − 0.15) × 1 × 1 = 1.02 m², so each 1 W/m² adds 1.02 W. At the reference S = 1000 W/m², P = 1020 W. Normalizing by this reference gives P / 1020 W = S / (1000 W/m²).Solar output versus irradianceIllustrative algebra with the other factors fixed. Horizontal axis: Solar irradiance S (W/m²). Vertical axis: Ideal solar generation (W). Values are also available in the table below.0637.51,27501,0001,250Solar irradiance S (W/m²)Response (W)Ideal solar generation (",
+          "canvas": false
+        },
+        {
+          "caption": "Where are the Sun and Earth?",
+          "text": "Where are the Sun and Earth?Vertical axis: Elevation above local horizontal (°)iAzimuth (° clockwise from north) on the horizontal axis. Elevation above local horizontal (°) on the vertical axis. North 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 1°; observer height: 2 m. Site horizon mask",
+          "canvas": false
+        },
+        {
+          "caption": "Elevation over the surface stay",
+          "text": "Elevation over the surface stayVertical axis: Elevation above local horizontal (°)iTime (UTC) on the horizontal axis. Elevation above local horizontal (°) on the vertical axis. UTC dates and hours, not elapsed flight seconds. Elevation 0° is the local horizontal. Compare each body's centre direction with its terrain horizon and the smooth-sphere 0° line. Sun is filled amber; Earth is a blue ring. When the terrain line rises above a body's centre, the centre is hidden. The Sun's finite disk can remain partly visible; Earth communication uses its centre plus the antenna mask, not this chart alone. Values are available as text below the graph.-8.569-4.628-0.68753.2537.1942027-06-2911:00 UTC2027",
+          "canvas": false
+        }
+      ]
+    },
+    {
+      "name": "chart-equivalence",
+      "status": "unverified",
+      "detail": "Text inventory cannot establish equivalent access to chart values; manual review required."
+    },
+    {
+      "name": "glass-computed-colors",
+      "status": "unverified",
+      "detail": {
+        "samples": [
+          {
+            "role": null,
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgba(255, 253, 247, 0.88)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          },
+          {
+            "role": "Landing sites",
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgba(255, 253, 247, 0.96)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          },
+          {
+            "role": "Scenario inspector",
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgba(255, 253, 247, 0.96)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          },
+          {
+            "role": null,
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgba(255, 253, 247, 0.88)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          },
+          {
+            "role": null,
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgba(255, 253, 247, 0.88)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          },
+          {
+            "role": null,
+            "color": "rgb(48, 52, 45)",
+            "backgroundColor": "rgb(250, 249, 243)",
+            "opacity": "1",
+            "backdropFilter": "none"
+          }
+        ],
+        "reason": "Backdrop includes rendered imagery/canvas; no safe pixel compositing performed, no contrast ratio asserted."
+      }
+    },
+    {
+      "name": "opaque-planning-text-contrast",
+      "status": "unverified",
+      "detail": {
+        "measured": [],
+        "skipped": [],
+        "scope": "Only visible text with a verified opaque solid pair and no ancestor blending; no glass/canvas or WCAG conformance claim."
+      }
+    },
+    {
+      "name": "new-planning-ui-presence",
+      "status": "unverified",
+      "detail": "Presence only; absent or hidden new controls are not an interaction pass. Rebuild the intended artifact before assessing the current source."
+    },
+    {
+      "name": "runtime-errors",
+      "status": "pass",
+      "detail": []
+    }
+  ],
+  "manualGates": [
+    "Actual screen-reader navigation and announcements remain unverified.",
+    "Glass contrast over imagery/canvas requires actual backdrop compositing and manual visual review; computed foreground/background alone cannot prove contrast.",
+    "Later planning UI, assessment/export/sensitivity flows and complete T17 coverage remain incomplete."
+  ],
+  "failed": 0,
+  "status": "incomplete"
+}

@@ -1,0 +1,231 @@
+Skip to lunar workspace
+Paused. Sunlit.
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.
+SolarReach
+Lunar navigator
+Public
+Educator
+Planner
+Hide panels
+Mode guide
+NASA data
+Share
+Export
+2D map
+3D terrain
+South pole
+Whole Moon
+Sites
+Inspector
+Moon
+Earth
+Lander
+Learn
+Lab
+Load online NAC
+LROC WAC imagery · NASA / ASU · Finest visible WAC source ≈100 m/px · output sampling 268 m/px · Historical image illumination
+Connecting Ridge
+89.5343°S   209.9477° E · 2 m observer
+Prepared site horizon
+⋮
+Planning context & decision margins
+Requirements · evidence · next action
+What can this scenario support?
+
+Connecting Ridge
+
+Fails an assessed requirement
+
+Required unknowns / known failures
+0 / 2
+Reserve margin (required)
+-2,000 Wh
+Longest geometric outage / allowed
+169 h / Not configured
+Independent array / antenna heights
+2 m / 2 m
+
+First known failure bracket: 14 Jul 2027, 18:00 UTC – 14 Jul 2027, 19:00 UTC. reserve-crossing.
+
+𝑀
+reserve
+=
+min
+⁡
+(
+𝐸
+𝐵
+)
+−
+𝑓
+reserve
+𝐶
+𝐵
+
+Use the signed Wh margin against the configured floor. Also inspect unmet load, outages, critical contacts, rate caps, deployment and scheduled loads; one good margin cannot cancel a failure elsewhere.
+
+Understand this relation: symbols, assumptions and behavior
+
+Next test: compare a controlled arrival change in the full-mission calendar; then test area, load, storage or deployment individually. Keep requirements fixed and inspect evidence scope before opening a saved candidate.
+
+Dataset solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748 · model planning-4. 1 source/model warnings; inspect the evidence ledger. Conditional analytical screens are not NASA approval or landing certification.
+
+Explore a symbol, unit and physical meaning
+Why this plan has this result
+This plan does not meet your selected checks
+
+2 required checks fail. Start with the reasons below.
+
+What stops this plan?
+The battery falls below your safety reserve
+
+The planned stay leaves less stored energy than the protected amount you chose.
+
+Why it matters: There may be too little backup energy to keep equipment running through the dark period or a delay.
+
+Try next: Compare a different arrival date or shorter stay, reduce power use, or test more storage. More solar-panel area helps only when useful sunlight is available.
+
+Actual
+0 Wh
+Requirement
+2,000 Wh
+Signed margin
+-2,000 Wh
+
+Required · fail · modeled-requirement-violation
+Evidence: ephemeris, array-horizon
+
+There is not enough power to run all the equipment
+
+At some point, the solar panels and battery cannot supply the power the equipment asks for.
+
+Why it matters: The model leaves some equipment demand unsupplied. This is a power shortfall, not a prediction of which component will shut down.
+
+Try next: Inspect when the shortfall begins. Compare lower demand, more storage, a different arrival date, and deployment or charge/discharge limits.
+
+Actual
+52,097.1 Wh
+Requirement
+0 Wh
+Signed margin
+-52,097.1 Wh
+
+Required · fail · modeled-requirement-violation
+Evidence: ephemeris, array-horizon
+
+First known problem
+14 Jul 2027, 18:00 UTC
+Located within the following 1 hours of source data; the exact time is uncertain.
+
+Why a nearby site or another date can change the answer
+Model identity and limitations
+Checks not required for this comparison (18)
+Data connections & live context
+Resource screening
+Mission assessment
+−×
+
+Violates an assessed requirement in this model.
+
+First known violation bracket
+
+Stored energy reserve
+
+reserve crossing · 2027-07-14T18:00:00.000Z to 2027-07-14T19:00:00.000Z
+
+UTC bracket reflects the forcing interval. Model-estimated offset: 31.18 h from arrival (approximate).
+
+Inspect interval
+
+Source frame equivalence or propagated uncertainty remains unquantified; otherwise passing terrain constraints are conditional.
+
+Requirements & independent instrument heights
+Deployment, load schedule & battery rate assumptions
+Assessed requirements & margins
+Engineering screens & evidence closure
+Evidence & unassessed landing considerations
+Explore a real delay contingencyFind whole-mission arrival windows
+Sensitivity & tested alternatives
+i
+Export, import & print evidence
+Replan a slipped mission
+
+Hold the stay length and hardware constant. Screen date slips and nearby sites against your own power, contact and terrain limits.
+
+Compare alternative dates & sites
+Mission resource budget
+
+Your vehicle assumptions, evaluated at this site across the selected stay.
+
+Generated energy
+i
+56.99kWh
+Smooth sphere
+41.36 kWh
+Minimum battery
+i
+0Wh
+Smooth sphere
+0 Wh
+Solar array
+
+Sizing assumptions, not vehicle specifications. Fixed flux is editable; no thermal or degradation model.
+
+Array orientation
+i
+Tracks the Sun
+Fixed orientation
+Array area
+i
+m²
+Cell efficiency
+i
+%
+System losses
+i
+%
+Incident flux
+i
+W/m²
+Load & storage
+Continuous load
+i
+W
+Usable capacity
+i
+Wh
+Initial charge
+i
+%
+Reserve threshold
+i
+%
+Charge efficiency
+i
+%
+Discharge efficiency
+i
+%
+52.10 kWh of demand cannot be supplied.
+
+Below reserve for 227 h. Fixed continuous load; no thermal, heater cycling or eclipse-transient model.
+
+Earth link
+Minimum antenna elevation
+i
+°
+
+Earth-centre visibility is a geometric screening result. It does not reserve a ground station or guarantee a radio link.
+
+Calculate a free-space link budget
+Power & storage plots
+Compare this configuration
+Hourly ephemeris · Terrain-aware horizons
+Layers
+Compare scenarios
+3
+13 Jul 2027, 11:00 UTC
+1 h/s
+6 h/s
+1 d/s
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.

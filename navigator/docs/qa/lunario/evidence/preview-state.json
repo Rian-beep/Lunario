@@ -1,0 +1,22 @@
+{
+  "url": "http://127.0.0.1:4317/",
+  "beforeStateSha256": "23fc24c307a15a27a318b335acf4128bfb7a87776290bcfd591160e96cf5029e",
+  "afterStateSha256": "23fc24c307a15a27a318b335acf4128bfb7a87776290bcfd591160e96cf5029e",
+  "stateBytes": 1265,
+  "beforeViewport": [
+    1200,
+    898
+  ],
+  "afterViewport": [
+    1200,
+    898
+  ],
+  "appAfter": [
+    0,
+    0,
+    1200,
+    898
+  ],
+  "titleAfter": "Lunario \u2014 Lunar Landing Site Navigator",
+  "inputInjection": false
+}

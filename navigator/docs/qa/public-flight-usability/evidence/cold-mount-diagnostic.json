@@ -1,0 +1,217 @@
+{
+  "file": "/tmp/lunario-public-flight-final.html",
+  "errors": [],
+  "before": {
+    "time": 22163.599999904633,
+    "zoom": [
+      800,
+      496,
+      2
+    ],
+    "diag": {
+      "events": [],
+      "tasks": [
+        {
+          "start": 574.5,
+          "duration": 88
+        },
+        {
+          "start": 15506.799999952316,
+          "duration": 238
+        },
+        {
+          "start": 16022.899999856949,
+          "duration": 608
+        },
+        {
+          "start": 16721.200000047684,
+          "duration": 210
+        },
+        {
+          "start": 16981.89999985695,
+          "duration": 319
+        },
+        {
+          "start": 17301.599999904633,
+          "duration": 769
+        },
+        {
+          "start": 18081.099999904633,
+          "duration": 222
+        },
+        {
+          "start": 18337.700000047684,
+          "duration": 548
+        },
+        {
+          "start": 18932.599999904633,
+          "duration": 91
+        },
+        {
+          "start": 20198,
+          "duration": 59
+        },
+        {
+          "start": 21914.599999904633,
+          "duration": 119
+        }
+      ]
+    }
+  },
+  "click": "resolved",
+  "clickMs": 7060,
+  "after": {
+    "time": 29267.700000047684,
+    "diag": {
+      "events": [],
+      "tasks": [
+        {
+          "start": 574.5,
+          "duration": 88
+        },
+        {
+          "start": 15506.799999952316,
+          "duration": 238
+        },
+        {
+          "start": 16022.899999856949,
+          "duration": 608
+        },
+        {
+          "start": 16721.200000047684,
+          "duration": 210
+        },
+        {
+          "start": 16981.89999985695,
+          "duration": 319
+        },
+        {
+          "start": 17301.599999904633,
+          "duration": 769
+        },
+        {
+          "start": 18081.099999904633,
+          "duration": 222
+        },
+        {
+          "start": 18337.700000047684,
+          "duration": 548
+        },
+        {
+          "start": 18932.599999904633,
+          "duration": 91
+        },
+        {
+          "start": 20198,
+          "duration": 59
+        },
+        {
+          "start": 21914.599999904633,
+          "duration": 119
+        },
+        {
+          "start": 22174.89999985695,
+          "duration": 78
+        },
+        {
+          "start": 22851.599999904633,
+          "duration": 1359
+        },
+        {
+          "start": 24290.299999952316,
+          "duration": 183
+        },
+        {
+          "start": 24588.099999904633,
+          "duration": 1957
+        },
+        {
+          "start": 26562.5,
+          "duration": 55
+        },
+        {
+          "start": 26618.299999952316,
+          "duration": 61
+        },
+        {
+          "start": 26681.799999952316,
+          "duration": 1708
+        },
+        {
+          "start": 28390.200000047684,
+          "duration": 318
+        },
+        {
+          "start": 28763.89999985695,
+          "duration": 399
+        },
+        {
+          "start": 29164.799999952316,
+          "duration": 94
+        }
+      ],
+      "landerSelected": 22981.099999904633,
+      "canvas": 24193.299999952316
+    },
+    "scene": {
+      "focusRequestId": "1",
+      "sceneInstance": "bf247844-2953-4629-b6f9-82d7b1ed3baa",
+      "flightRevision": "0",
+      "horizonRevision": "0",
+      "renderFrame": "5",
+      "vehicleWorldPosition": "",
+      "vehicleQuaternion": "",
+      "vehicleVisible": "false",
+      "landingContact": "{\"timeS\":50.48139816962106,\"eastM\":-8.425036257719135,\"northM\":-0.00000518225020076497,\"yM\":0.16407225420698524,\"velocityMps\":[0.7107326256015903,-0.5593293012008084,1.6886748080836615e-7],\"massKg\":4562.229294846625,\"terrainHeightM\":0.16407225403994793,\"terrainKnown\":true,\"slopeDeg\":1.4221188703828147,\"tiltDeg\":1.9372902810000852,\"headingDeg\":269.99617469401676,\"targetErrorM\":8.425035462788589}",
+      "landingDynamics": "",
+      "landingFragmentCount": "0",
+      "landingMassKg": "4700",
+      "terrainClearanceM": "",
+      "flightTimeS": "0",
+      "landingContactTimeS": "50.48139816962106",
+      "landingContactFrameIndex": "",
+      "landingContactFrameTimeS": "",
+      "sunModel": "loading",
+      "sunDraws": "0",
+      "earthModel": "loading",
+      "earthDraws": "0",
+      "earthRangeKm": "380159.34375",
+      "sunRangeKm": "151931103.42258206",
+      "starCount": "523",
+      "moonModel": "loading",
+      "contactReplay": "idle",
+      "contactFrames": "0",
+      "contactCacheBytes": "0",
+      "focusRange": "ready",
+      "assetFlight": "idle",
+      "globeMinimumRadiusKm": "1770.05",
+      "zoomEnabled": "true",
+      "panEnabled": "true",
+      "rotateEnabled": "true",
+      "vehicleScale": "1",
+      "cameraMode": "vehicle",
+      "lunarAppearance": "neutral-linear-rec709-v1",
+      "lightingMode": "atlas",
+      "stationInspection": "false",
+      "visibleStations": "[]",
+      "visiblePoiCount": "0",
+      "visiblePois": "[]",
+      "vehicleFraming": "unavailable",
+      "vehicleScreenBounds": "",
+      "unoccludedCanvas": "{\"left\":252,\"right\":308,\"top\":105.59375,\"bottom\":168}",
+      "cameraPosition": "-0.2850000000000007,0.31251499999972715,0.019999999999999997",
+      "cameraTarget": "-0.3000000000000007,0.30351499999972714,0",
+      "vehicleCameraDistanceKm": "0.026570660511172853",
+      "cameraBodyRadiusKm": "1739.3656186101882",
+      "cameraNearKm": "0.0001",
+      "cameraFarKm": "167889500.30715737",
+      "framingProjectionZoom": "1",
+      "viewLatitude": "-89.5348840585656",
+      "viewLongitude": "-151.20890095844874",
+      "screenNorthAngle": "64.77209632612667",
+      "stationTexture": "ready"
+    },
+    "dialogs": [],
+    "button": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-pressed=\"true\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50 h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2\">Lander</button>"
+  }
+}

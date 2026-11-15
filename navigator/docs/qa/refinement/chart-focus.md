@@ -1,0 +1,7 @@
+# Horizontal-axis keyboard focus clearance
+
+Independent C13 visual verification found the SVG focus ring crossing the horizontal-axis label. The existing negative5px margin pulled the label into the SVG outline. A new real-browser regression reproduced this on the exact C13 file: local-horizon SVG bottom781.359px, axis text top777.609px, visible native focus outline5px. The red log is `/tmp/lunar-window-chart-focus-red.log`.
+
+The correction gives the existing axis-label row an8px top margin. It preserves the focus indicator, graph scales, coordinates, data, typography and interaction. The regression focuses all six actual horizon/flight/resource plots at800px and checks actual text and visible-outline rectangles. The focused green run is `/tmp/lunar-window-chart-focus-green.log`:1passed,0failed/skipped. Source validation:763tests, nonincremental types, lint and math314pass. With the immutable-browser gate enabled there are now8viewport cases, including the native200% HTTP/file state matrix.
+
+C14 application JavaScript and embedded science/data/asset scripts are byte-identical to C13; the only product change is CSS spacing. `/tmp/lunar-window-c14-script-identity.json` records both script hashes. C13 physics verification remains separately identified; no historical result is renamed C14. Root's combined Next build, final targeted web/offline regression and independent visual acceptance must complete before release. Human assistive-technology and qualified mission evidence are not supplied by this test.

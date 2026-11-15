@@ -1,0 +1,35 @@
+{
+  "tests": {
+    "count": 763,
+    "failed": 0,
+    "skipped": 0,
+    "path": "/tmp/lunar-window-final-integrated-tests.log",
+    "sha256": "3f65ad2e330c46e88ed445f7c630520d87e3d3a836bb342c105274db9c780111",
+    "exitCode": 0
+  },
+  "types": {
+    "path": "/tmp/lunar-window-final-integrated-types.log",
+    "sha256": "94a8ee92c92b8111292ca2ee0e8af5252a3e1868cc10efafe8a9bc3228fad94e",
+    "exitCode": 0
+  },
+  "math": {
+    "expressions": 314,
+    "path": "/tmp/lunar-window-final-integrated-math.log",
+    "sha256": "927abb2f81d81d8f07f046043b4a9af3126b351839a999d6da9f4831464aa93c",
+    "exitCode": 0
+  },
+  "productSource": "f7ecd636f36955509e6e24f54c1fe85df2a25ab2",
+  "slopScan": {
+    "findings": 7,
+    "classification": "Five existing notices plus two readability notices on the verifier attempt\u2192check alias; inspected. NASA errors retain causes; scenario validation deliberately returns invalid. No application regression or metric-only refactor.",
+    "logSha256": "f7c8b3f393021feaeb25e97a4acdadc54fa98981cd4863025f4a8b813680e535",
+    "detailsSha256": "05b678be87ac18cc7c0213f0b2968540fa1d9a5735e0a698921dfd072a81bd2c"
+  },
+  "upstreamMain": "d7273fbd2835bcac9e1c51c9253ab5d2bce1aa3f",
+  "privateOrigin": "lukejazzdudley-hub/solarreach-lunar-navigator",
+  "lint": {
+    "exitCode": 0,
+    "log": "/tmp/lunar-window-final-integrated-lint.log",
+    "sha256": "8833bd6848daeacfca219ffc3f9cba53d34cc5d870885f5d48f47ff4ea1b5350"
+  }
+}
