@@ -1,6 +1,7 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
 import {MaterialBuilder} from '@/components/education-materials/material-builder';
+import {ResourceEvidencePanel} from '@/components/education-materials/resource-evidence';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
 import {Slider} from '@/components/ui/slider';
@@ -40,6 +41,9 @@ export function TeachingStudio({catalog,manifest,state,onChange,onCompare,onClos
  };
  return <div className={styles.studio} onKeyDown={e=>{if([' ','ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))e.stopPropagation();}}>
  <header className={styles.studioHeader}><div><p className={styles.kicker}>Lunario · Teaching studio</p><h1>Predict. Change one thing. Explain the evidence.</h1><p>Selected: {catalog.sites.find(s=>s.id===state.siteId)?.name??state.siteId}{state.custom?' · custom point':''} · {formatUtc(indexToMs(catalog,state.startIndex))} to {formatUtc(indexToMs(catalog,state.endIndex+1))}, end exclusive.</p></div><Button variant="outline" onClick={onClose}>Close teaching studio</Button></header>
+ <section className={styles.card}><details><summary>Lunar ice evidence and next steps</summary>
+   <ResourceEvidencePanel catalog={catalog} state={state} assessment={selectedAssessment} mode="teach" />
+ </details></section>
  <div className={styles.mainGrid}><section className={styles.card}><h2>1 · Set a controlled experiment</h2><label>Question<select value={id} onChange={e=>{const next=e.target.value as ExperimentId;setId(next);setRevealed(false);setValue(defaultCandidate(baseline?.state??state,next));}}>{EXPERIMENTS.map(e=><option key={e.id} value={e.id}>{e.question}</option>)}</select></label><p>{experiment.expected}</p>
  <label>Your prediction<textarea maxLength={2000} value={prediction} onChange={e=>setPrediction(e.target.value)} placeholder="What will change, and why?"/></label>
  <Button onClick={capture}>Capture current scenario as baseline</Button>

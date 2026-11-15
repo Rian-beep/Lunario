@@ -52,6 +52,7 @@ import type { EvidenceManifest } from "@/lib/planning-types";
 import bundledComparisonEvidence from "@/public/data/evidence-manifest.json";
 import { HorizonGraph, ElevationGraph } from "./science-charts";
 import { AudienceContext, Info } from "./info";
+import { ResourceEvidenceComparison } from "@/components/education-materials/resource-evidence";
 
 export function PlannerInputs({
   value,
@@ -1098,6 +1099,9 @@ export function Comparison({
           </Button>
         </div>
       </div>
+      {rows.length > 0 && <ResourceEvidenceComparison catalog={catalog} cases={ordered.map(({ item, assessment }) => ({
+        id: item.id, name: item.name, state: item.state, assessment,
+      }))} />}
       {configure && (
         <div className="column-config">
           <div className="column-choices">
