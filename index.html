@@ -140,6 +140,40 @@
     } catch (e) {}
   }
 
+  function openDemoSplit() {
+    // ?demo=1 opens the south-pole date comparison: Connecting Ridge in split view.
+    // The offline navigator already starts on that site and the 29 Jun 2027 stay.
+    if (!/[?&]demo=1(?:&|$)/.test(window.location.search)) return;
+    var tries = 0;
+    var delayLoaded = false;
+    var minimized = false;
+    var timer = window.setInterval(function () {
+      tries += 1;
+      try {
+        var doc = frame && frame.contentDocument;
+        if (!doc) return;
+        var dismiss = doc.querySelector('[aria-label="Dismiss introduction"]');
+        if (dismiss) dismiss.click();
+        var split = doc.querySelector('[aria-label="Split map and 3D"]');
+        if (split && split.getAttribute("aria-pressed") !== "true") split.click();
+        var delay = doc.querySelector('[aria-label="Show a delayed landing"]:not([disabled])');
+        if (delay && !delayLoaded) {
+          delay.click();
+          delayLoaded = true;
+        }
+        if (delayLoaded && !minimized) {
+          var minimize = doc.querySelector('[aria-label="Minimize comparisons"]');
+          if (minimize) {
+            minimize.click();
+            minimized = true;
+          }
+        }
+        if (split && split.getAttribute("aria-pressed") === "true" && minimized) window.clearInterval(timer);
+      } catch (e) {}
+      if (tries >= 80) window.clearInterval(timer);
+    }, 250);
+  }
+
   function reveal() {
     if (settled) return;
     settled = true;
@@ -150,6 +184,7 @@
     } catch (e) {}
     // Frame "load" often fires before React paints the cream header — keep retrying.
     ensureCreamSiteNav();
+    openDemoSplit();
     // Touchdown: altitude lands at 0, then the loader lifts to show the dashboard.
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
