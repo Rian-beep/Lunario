@@ -25,16 +25,8 @@
 <title>Lunario · Dashboard</title>
 <meta name="description" content="Compare lunar landing sites and dates: Sun and Earth against the real horizon for power and direct-to-Earth contact.">
 </head>
-<body>
-<header class="nav">
-  <a class="nav__brand" href="./" aria-label="Lunario home"><img src="assets/logo.svg" alt="Lunario" width="123" height="26"></a>
-  <nav aria-label="Main">
-    <ul class="nav__links">
-      <li><a href="./" aria-current="page">Dashboard</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
-</header>
+<body class="dash-page">
+<!-- Site Dashboard/About live in the cream navigator header (single bar). About keeps the shell nav. -->
 <main class="dash dash--live" id="dashboard">
   <div class="dash__mount" id="dashboard-root">
     <p class="dash__status" id="dashboard-status" role="status">
@@ -58,11 +50,50 @@
   var mount = document.getElementById("dashboard-root");
   var settled = false;
 
+  function injectCreamSiteNav() {
+    // Until the offline HTML is rebuilt with SiteShellNavLinks, stitch Dashboard/About
+    // into the cream navigator header (same-origin iframe).
+    try {
+      var doc = frame && frame.contentDocument;
+      if (!doc || !doc.body || doc.querySelector(".site-shell-nav")) return;
+      var row = doc.querySelector(".header-primary-row");
+      var brand = row && row.querySelector("a.brand, .brand");
+      if (!row || !brand) return;
+      if (!doc.getElementById("lunario-site-shell-nav-style")) {
+        var style = doc.createElement("style");
+        style.id = "lunario-site-shell-nav-style";
+        style.textContent =
+          ".header-brand-cluster{display:flex;align-items:center;gap:18px;min-width:0;flex-wrap:wrap}" +
+          ".site-shell-nav{display:flex;align-items:center;gap:2px}" +
+          ".site-shell-nav__link{display:inline-flex;align-items:center;min-height:34px;padding:6px 12px;border-radius:8px;" +
+          "text-decoration:none;color:#626a58;font-size:13px;font-weight:500;border:1px solid transparent}" +
+          ".site-shell-nav__link:hover{color:#303b29;background:#eaeae1}" +
+          ".site-shell-nav__link[aria-current=page]{color:#303b29;background:#fffef9;" +
+          "box-shadow:0 2px 6px #3c41201c,inset 0 0 0 1px #6d76512b}";
+        doc.head.appendChild(style);
+      }
+      var cluster = doc.createElement("div");
+      cluster.className = "header-brand-cluster";
+      brand.parentNode.insertBefore(cluster, brand);
+      cluster.appendChild(brand);
+      var nav = doc.createElement("nav");
+      nav.className = "site-shell-nav";
+      nav.setAttribute("aria-label", "Site");
+      nav.innerHTML =
+        '<a class="site-shell-nav__link" href="./" target="_top" aria-current="page">Dashboard</a>' +
+        '<a class="site-shell-nav__link" href="about.html" target="_top">About</a>';
+      cluster.appendChild(nav);
+    } catch (e) {
+      // Ignore if the frame document is not ready.
+    }
+  }
+
   function reveal() {
     if (settled) return;
     settled = true;
     if (mount) mount.classList.add("dash__mount--ready");
     if (status) status.hidden = true;
+    injectCreamSiteNav();
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
   }

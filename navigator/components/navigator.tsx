@@ -3,6 +3,7 @@ import {PublicSiteStory} from "@/components/workbench/public-exploration";
 import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
 import {LunarWindowLoader, LunarioStartup} from '@/components/branding/lunar-window-loader';
+import {SiteShellNavLinks} from '@/components/site-shell-nav';
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import {earthMoonContext} from "@/lib/dsn";
 import {nasaDirectionToBodyPoint,physicalAsset,type AssetFocus} from "@/lib/asset-focus";
@@ -678,9 +679,12 @@ export function Navigator() {
         )}
         <header className="app-header" hidden={focusMode}>
           <div className="header-primary-row">
-          <a href="#lunar-workspace" className="brand">
-            <LunarWindowBrand icon={<span className="brand-orbit"><Sun size={17} /></span>} />
-          </a>
+          <div className="header-brand-cluster">
+            <a href="#lunar-workspace" className="brand">
+              <LunarWindowBrand icon={<span className="brand-orbit"><Sun size={17} /></span>} />
+            </a>
+            <SiteShellNavLinks />
+          </div>
           <div
             className="audience-switch"
             role="group"
