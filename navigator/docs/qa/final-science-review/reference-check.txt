@@ -1,0 +1,22 @@
+{
+  "earthRange": {
+    "rows": 17521,
+    "responseSha256": "9881adff91067ec5384885c705dd2be65b1d525913b63b3e41adca11b29c6531",
+    "maxEncodingErrorM": 15.620000020135194
+  },
+  "summary": {
+    "siteRows": 112,
+    "maxDirectionDeg": 0.008216971609868479,
+    "maxEarthRangeErrorM": 252.0753902499564,
+    "maxEarthRadiusErrorDeg": 6.309642923696401e-07
+  },
+  "producer": {
+    "knownFinite": true,
+    "missingNorthRayUnknownAtAllThreeHeights": true,
+    "finiteCoarseFallbackPreserved": true
+  },
+  "radial": {
+    "timeS": 11.097203526181374,
+    "speedMps": 18.022904296123084
+  }
+}

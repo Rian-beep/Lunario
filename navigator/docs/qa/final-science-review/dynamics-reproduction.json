@@ -1,0 +1,845 @@
+{
+  "baseline": "96079ae",
+  "measuredUtc": "2026-11-15T15:23:09.195Z",
+  "runtime": {
+    "node": "v20.20.2",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "frame": "Moon-centred site east/up/north (left handed), synthetic elapsed SI seconds t=0; no UTC/TDB epoch or ephemeris targeting",
+  "constants": {
+    "muM3s2": 4902800118000,
+    "referenceRadiusM": 1737400,
+    "g0Mps2": 9.80665,
+    "centralSurfaceGravityMps2": 1.6242188765608128,
+    "rigidProxyGravityMps2": 1.62
+  },
+  "nonfinite": {
+    "before": [
+      {
+        "height": "NaN",
+        "status": "coasting",
+        "hasContact": false,
+        "finiteContact": false,
+        "timeS": null
+      },
+      {
+        "height": "Infinity",
+        "status": "terrain contact",
+        "hasContact": true,
+        "finiteContact": false,
+        "timeS": null
+      },
+      {
+        "height": "-Infinity",
+        "status": "coasting",
+        "hasContact": false,
+        "finiteContact": false,
+        "timeS": null
+      }
+    ],
+    "after": [
+      {
+        "height": "NaN",
+        "status": "reference contact",
+        "hasContact": true,
+        "finiteContact": true,
+        "timeS": 0.6533442755462602
+      },
+      {
+        "height": "Infinity",
+        "status": "reference contact",
+        "hasContact": true,
+        "finiteContact": true,
+        "timeS": 0.6533442755462602
+      },
+      {
+        "height": "-Infinity",
+        "status": "reference contact",
+        "hasContact": true,
+        "finiteContact": true,
+        "timeS": 0.6533442755462602
+      }
+    ]
+  },
+  "penetratingStart": {
+    "before": {
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 10,
+        "horizontalMps": 0,
+        "verticalMps": -1,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 35,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 5
+      },
+      "rejected": false,
+      "contact": {
+        "timeS": 0,
+        "eastM": 0,
+        "northM": 0,
+        "yM": 10,
+        "velocityMps": [
+          0,
+          -1,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 20,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      }
+    },
+    "after": {
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 10,
+        "horizontalMps": 0,
+        "verticalMps": -1,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 35,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 5
+      },
+      "rejected": true,
+      "error": "Flight starts below the numerical surface"
+    }
+  },
+  "radial": {
+    "beforeLegacy": {
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.096535953250337,
+        "eastM": 0,
+        "northM": 0,
+        "yM": 0,
+        "velocityMps": [
+          0,
+          -18.02182026160198,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": -0.0006675729310394729,
+      "speedErrorMps": -0.00108403452110295,
+      "heightResidualM": 0,
+      "energyErrorJ": -91.8232554520946
+    },
+    "afterLegacy": {
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.097203526238445,
+        "eastM": 0,
+        "northM": 0,
+        "yM": -2.3283064365386963e-10,
+        "velocityMps": [
+          0,
+          -18.022904296219366,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": 5.7069016179411847e-11,
+      "speedErrorMps": 9.628209340917238e-11,
+      "heightResidualM": -2.3283064365386963e-10,
+      "energyErrorJ": 0.000008155708201229572
+    },
+    "configured": {
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30,
+        "landing": {
+          "guidance": "manual",
+          "targetRadiusM": 20,
+          "maxVerticalMps": 2,
+          "maxHorizontalMps": 1,
+          "maxTiltDeg": 15,
+          "breakupEnergyJ": 100000,
+          "friction": 0.8,
+          "restitution": 0.1,
+          "contactPreviewSeconds": 12
+        }
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.097203526167869,
+        "eastM": 0,
+        "northM": 0,
+        "yM": 2.3283064365386963e-10,
+        "velocityMps": [
+          0,
+          -18.022904296104777,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": -1.3507417406799505e-11,
+      "speedErrorMps": -1.830713358685898e-11,
+      "heightResidualM": 2.3283064365386963e-10,
+      "energyErrorJ": -0.0000015508849173784256
+    }
+  },
+  "propulsion": [
+    {
+      "configured": false,
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 100000,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 1000,
+        "dryMassKg": 500,
+        "thrustN": 3000,
+        "ispSeconds": 300,
+        "burnSeconds": 1,
+        "durationSeconds": 0.001
+      },
+      "forceMassAccelerationErrorMps2": 0.0000015295761497391425,
+      "massErrorKg": 0,
+      "hoverVerticalMps": 3.5842784784634316e-10
+    },
+    {
+      "configured": true,
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 100000,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 1000,
+        "dryMassKg": 500,
+        "thrustN": 3000,
+        "ispSeconds": 300,
+        "burnSeconds": 1,
+        "durationSeconds": 0.001,
+        "landing": {
+          "guidance": "manual",
+          "targetRadiusM": 20,
+          "maxVerticalMps": 2,
+          "maxHorizontalMps": 1,
+          "maxTiltDeg": 15,
+          "breakupEnergyJ": 100000,
+          "friction": 0.8,
+          "restitution": 0.1,
+          "contactPreviewSeconds": 12
+        }
+      },
+      "forceMassAccelerationErrorMps2": 0.0000015295761497391425,
+      "massErrorKg": 0,
+      "hoverVerticalMps": 3.5842784784634316e-10
+    }
+  ],
+  "circular": [
+    {
+      "configured": false,
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 100000,
+        "horizontalMps": 1633.5041340503267,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 35,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 600
+      },
+      "positionErrorM": 6.61024692473175e-10,
+      "energyErrorJPerKg": 1.862645149230957e-9,
+      "angularMomentumErrorM2PerS": 0.0000019073486328125
+    },
+    {
+      "configured": true,
+      "input": {
+        "mode": "ascent",
+        "altitudeM": 100000,
+        "horizontalMps": 1633.5041340503267,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 35,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 600
+      },
+      "positionErrorM": 1.1109951802522048e-7,
+      "energyErrorJPerKg": -2.3283064365386963e-10,
+      "angularMomentumErrorM2PerS": 0
+    }
+  ],
+  "rotating": {
+    "input": {
+      "mode": "ascent",
+      "altitudeM": 100000,
+      "horizontalMps": 1628.6135283533608,
+      "verticalMps": 0,
+      "headingDeg": 90,
+      "pitchDeg": 90,
+      "finalPitchDeg": 35,
+      "wetMassKg": 4700,
+      "dryMassKg": 2200,
+      "thrustN": 0,
+      "ispSeconds": 311,
+      "burnSeconds": 0,
+      "durationSeconds": 120,
+      "landing": {
+        "guidance": "manual",
+        "targetRadiusM": 20,
+        "maxVerticalMps": 2,
+        "maxHorizontalMps": 1,
+        "maxTiltDeg": 15,
+        "breakupEnergyJ": 100000,
+        "friction": 0.8,
+        "restitution": 0.1,
+        "contactPreviewSeconds": 12
+      }
+    },
+    "environment": {
+      "latitudeDeg": 0,
+      "rotationRateRadS": 0.000002661698975163682
+    },
+    "positionErrorM": 3.027381567049939e-9
+  },
+  "targetArc": {
+    "input": {
+      "eastM": 69592.43855164477,
+      "northM": 0,
+      "yM": -1517.0343805665616,
+      "radiusM": 1740400
+    },
+    "arcErrorM": 0
+  },
+  "screens": {
+    "input": {
+      "trajectory": {
+        "wetMassKg": 5000,
+        "dryMassKg": 2500,
+        "ispSeconds": 300,
+        "requiredDeltaVMps": 0,
+        "radiusM": 1737400,
+        "muM3s2": 4902800118000,
+        "initialAltitudeM": 100000,
+        "targetAltitudeM": 200000
+      },
+      "touchdown": {
+        "massKg": 1000,
+        "verticalSpeedMps": 4,
+        "horizontalSpeedMps": 3,
+        "stoppingDistanceM": 2,
+        "maxDecelerationMps2": 4,
+        "halfSupportWidthM": 1,
+        "centerOfMassHeightM": 1,
+        "slopeDeg": 0,
+        "gravityMps2": 1.62
+      }
+    },
+    "results": [
+      {
+        "id": "touchdown",
+        "title": "Ideal touchdown and static support screening",
+        "state": "conditional",
+        "metrics": [
+          {
+            "label": "Vertical kinetic energy",
+            "value": 8000,
+            "unit": "J"
+          },
+          {
+            "label": "Horizontal kinetic energy",
+            "value": 4500,
+            "unit": "J"
+          },
+          {
+            "label": "Total contact kinetic energy",
+            "value": 12500,
+            "unit": "J"
+          },
+          {
+            "label": "Minimum ideal stopping stroke",
+            "value": 2,
+            "unit": "m"
+          },
+          {
+            "label": "Constant net vertical deceleration",
+            "value": 4,
+            "unit": "m/s²"
+          },
+          {
+            "label": "Deceleration margin",
+            "value": 0,
+            "unit": "m/s²"
+          },
+          {
+            "label": "Ideal normal support load factor",
+            "value": 3.4691358024691357,
+            "unit": "local g"
+          },
+          {
+            "label": "Static tipping boundary",
+            "value": 45,
+            "unit": "deg"
+          },
+          {
+            "label": "Static slope margin",
+            "value": 45,
+            "unit": "deg"
+          }
+        ],
+        "assumptions": [
+          "User-supplied engineering inputs; no measured site values or universal safety thresholds are generated.",
+          "Rigid support plane; minimum support half-width in the slope direction; zero margin at the tipping boundary is not stable."
+        ],
+        "gaps": [
+          "No dynamic landing-gear, soil/sinkage, rebound, lateral stopping, attitude or structural-load simulation.",
+          "Static support geometry and constant vertical deceleration do not establish touchdown safety."
+        ],
+        "sources": [
+          {
+            "label": "NASA lunar landing-gear dynamic and static stability tests",
+            "url": "https://ntrs.nasa.gov/citations/19640005067"
+          }
+        ]
+      },
+      {
+        "id": "trajectory",
+        "title": "Ideal propulsion and two-body orbit screening",
+        "state": "conditional",
+        "metrics": [
+          {
+            "label": "Ideal rocket delta-v",
+            "value": 2039.2355394714561,
+            "unit": "m/s"
+          },
+          {
+            "label": "Mission delta-v margin",
+            "value": 2039.2355394714561,
+            "unit": "m/s"
+          },
+          {
+            "label": "Initial circular speed",
+            "value": 1633.5041340503267,
+            "unit": "m/s"
+          },
+          {
+            "label": "Initial escape speed",
+            "value": 2310.1237005664902,
+            "unit": "m/s"
+          },
+          {
+            "label": "Hohmann first-burn magnitude",
+            "value": 21.49553118004977,
+            "unit": "m/s"
+          },
+          {
+            "label": "Hohmann second-burn magnitude",
+            "value": 21.212594044722138,
+            "unit": "m/s"
+          },
+          {
+            "label": "Ideal Hohmann total delta-v",
+            "value": 42.708125224771905,
+            "unit": "m/s"
+          },
+          {
+            "label": "Half-ellipse transfer time",
+            "value": 3678.9484699250747,
+            "unit": "s"
+          },
+          {
+            "label": "Hohmann budget margin",
+            "value": 1996.5274142466842,
+            "unit": "m/s"
+          }
+        ],
+        "assumptions": [
+          "User-supplied engineering inputs; no measured site values or universal safety thresholds are generated.",
+          "User supplied R=1737400m and GM=4902800118000m³/s²; r1=1837400m, r2=1937400m.",
+          "Ideal impulsive coplanar circular transfers; g0=9.80665m/s² converts Isp and is not lunar surface gravity."
+        ],
+        "gaps": [
+          "No finite-thrust guidance, gravity/steering losses, plane changes, ephemeris targeting, terrain collision, navigation dispersion or complete ascent/descent solution.",
+          "Supplied radius/GM and ideal circular coplanar endpoints require mission/frame validation."
+        ],
+        "sources": [
+          {
+            "label": "NASA Glenn ideal rocket equation",
+            "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/"
+          },
+          {
+            "label": "NASA Basics of Space Flight: trajectories",
+            "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+          },
+          {
+            "label": "NIST standard constants (g0)",
+            "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+          }
+        ]
+      }
+    ],
+    "hohmannErrorMps": -4.263256414560601e-14,
+    "rocketBudgetErrorMps": 0
+  },
+  "assistedConvergence": {
+    "input": {
+      "mode": "descent",
+      "altitudeM": 300,
+      "horizontalMps": 10,
+      "verticalMps": -8,
+      "headingDeg": 90,
+      "pitchDeg": 90,
+      "finalPitchDeg": 90,
+      "wetMassKg": 4700,
+      "dryMassKg": 2200,
+      "thrustN": 16000,
+      "ispSeconds": 311,
+      "burnSeconds": 240,
+      "durationSeconds": 300,
+      "eastOffsetM": -300,
+      "northOffsetM": 0,
+      "landing": {
+        "guidance": "target-landing",
+        "targetRadiusM": 20,
+        "maxVerticalMps": 2,
+        "maxHorizontalMps": 1,
+        "maxTiltDeg": 15,
+        "breakupEnergyJ": 100000,
+        "friction": 0.8,
+        "restitution": 0.1,
+        "contactPreviewSeconds": 12
+      }
+    },
+    "terrain": "synthetic local y=0 m",
+    "referenceStepS": 0.0125,
+    "rows": [
+      {
+        "stepS": 0.1,
+        "timeS": 50.499768491328325,
+        "positionM": [
+          -8.411990587887123,
+          2.3283064365386963e-10,
+          1.9491761964809167e-16
+        ],
+        "velocityMps": [
+          0.7096622612368124,
+          -0.5593924190210684,
+          -1.561316127178475e-17
+        ],
+        "massKg": 4561.955487948457,
+        "timeDifferenceS": 0.003199561574369625,
+        "positionDifferenceM": 0.011375348220356685,
+        "velocityDifferenceMps": 0.006022144219243935,
+        "massDifferenceKg": -0.0404454862464263
+      },
+      {
+        "stepS": 0.05,
+        "timeS": 50.49790026080829,
+        "positionM": [
+          -8.40551399359386,
+          2.3283064365386963e-10,
+          1.96580719213418e-16
+        ],
+        "velocityMps": [
+          0.7106614495826308,
+          -0.5627626797921206,
+          -1.5755869250961995e-17
+        ],
+        "massKg": 4561.978869138979,
+        "timeDifferenceS": 0.0013313310543310308,
+        "positionDifferenceM": 0.004898753927093935,
+        "velocityDifferenceMps": 0.0025070625514079198,
+        "massDifferenceKg": -0.017064295724594558
+      },
+      {
+        "stepS": 0.025,
+        "timeS": 50.49700627122296,
+        "positionM": [
+          -8.4022519240012,
+          2.3283064365386963e-10,
+          1.974156789096871e-16
+        ],
+        "velocityMps": [
+          0.711161257468884,
+          -0.5643697538099696,
+          -1.582745343531903e-17
+        ],
+        "massKg": 4561.990288604617,
+        "timeDifferenceS": 0.00043734146900220594,
+        "positionDifferenceM": 0.0016366843344339799,
+        "velocityDifferenceMps": 0.0008240731572922204,
+        "massDifferenceKg": -0.005644830086566799
+      },
+      {
+        "stepS": 0.0125,
+        "timeS": 50.496568929753956,
+        "positionM": [
+          -8.400615239666767,
+          2.3283064365386963e-10,
+          1.9783401727804424e-16
+        ],
+        "velocityMps": [
+          0.7114112353036021,
+          -0.565154997498718,
+          -1.586330323478868e-17
+        ],
+        "massKg": 4561.995933434703,
+        "timeDifferenceS": 0,
+        "positionDifferenceM": 0,
+        "velocityDifferenceMps": 0,
+        "massDifferenceKg": 0
+      }
+    ]
+  },
+  "legacyContactConvergence": [
+    {
+      "stepS": 0.25,
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.097203526238445,
+        "eastM": 0,
+        "northM": 0,
+        "yM": -2.3283064365386963e-10,
+        "velocityMps": [
+          0,
+          -18.022904296219366,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": 5.7069016179411847e-11,
+      "speedErrorMps": 9.628209340917238e-11,
+      "heightResidualM": -2.3283064365386963e-10,
+      "energyErrorJ": 0.000008155708201229572
+    },
+    {
+      "stepS": 0.125,
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.097203526238445,
+        "eastM": 0,
+        "northM": 0,
+        "yM": -6.984919309616089e-10,
+        "velocityMps": [
+          0,
+          -18.022904296219373,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": 5.7069016179411847e-11,
+      "speedErrorMps": 9.628919883652998e-11,
+      "heightResidualM": -6.984919309616089e-10,
+      "energyErrorJ": 0.000008156406693160534
+    },
+    {
+      "stepS": 0.0625,
+      "input": {
+        "mode": "descent",
+        "altitudeM": 100,
+        "horizontalMps": 0,
+        "verticalMps": 0,
+        "headingDeg": 90,
+        "pitchDeg": 90,
+        "finalPitchDeg": 90,
+        "wetMassKg": 4700,
+        "dryMassKg": 2200,
+        "thrustN": 0,
+        "ispSeconds": 311,
+        "burnSeconds": 0,
+        "durationSeconds": 30
+      },
+      "expectedTimeS": 11.097203526181376,
+      "expectedSpeedMps": 18.022904296123084,
+      "contact": {
+        "timeS": 11.097203526180238,
+        "eastM": 0,
+        "northM": 0,
+        "yM": -2.3283064365386963e-10,
+        "velocityMps": [
+          0,
+          -18.02290429612484,
+          0
+        ],
+        "massKg": 4700,
+        "terrainHeightM": 0,
+        "terrainKnown": true,
+        "slopeDeg": 0,
+        "tiltDeg": 0,
+        "headingDeg": 90,
+        "targetErrorM": 0
+      },
+      "timeErrorS": -1.1386447340555605e-12,
+      "speedErrorMps": 1.7550405573274475e-12,
+      "heightResidualM": -2.3283064365386963e-10,
+      "energyErrorJ": 1.4854595065116882e-7
+    }
+  ],
+  "rigidBallistic": {
+    "input": {
+      "massKg": 10000,
+      "heightM": 100,
+      "verticalSpeedMps": 2,
+      "horizontalSpeedMps": 3,
+      "tiltDeg": 0,
+      "slopeDeg": 0,
+      "friction": 0.8,
+      "restitution": 0.1,
+      "failureEnergyJ": 100000
+    },
+    "frame": {
+      "timeS": 1,
+      "position": [
+        2.999972105026245,
+        98.98914337158203,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "velocity": [
+        3,
+        -3.620025634765625,
+        0
+      ],
+      "contact": false,
+      "broken": false,
+      "fragments": []
+    },
+    "verticalVelocityErrorMps": -0.00002563476562489342,
+    "heightErrorM": -0.0008566284179636341,
+    "horizontalPositionErrorM": -0.000027894973754882812
+  }
+}

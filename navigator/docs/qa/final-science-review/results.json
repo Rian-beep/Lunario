@@ -1,0 +1,340 @@
+{
+  "reviewedCommit": "97dd985610cdceff0188cf52aabd2cd45b00bb4a",
+  "base": "97dd985610cdceff0188cf52aabd2cd45b00bb4a",
+  "dateUtc": "2026-11-15",
+  "scope": "Read-only bounded scientific implementation/evidence review; all deliverables under docs/qa/final-science-review",
+  "operationalQualification": false,
+  "conclusion": "No failing current-input scientific comparison reproduced; two P2 verification/traceability findings and one P3 documentation finding remain",
+  "registerAssessment": {
+    "recordedCounts": {
+      "verified": 41,
+      "uncertain": 21,
+      "failing": 0
+    },
+    "arithmeticCorrect": true,
+    "freshnessGateSound": false,
+    "perClaimProvenanceConsistent": false,
+    "all62ClaimsReclassified": false
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "status": "failing",
+      "severity": "P2",
+      "kind": "verification-gate",
+      "path": "scripts/compile-scientific-verification.py",
+      "line": 18,
+      "relatedLines": [
+        14,
+        19,
+        22,
+        29
+      ],
+      "claim": "Compiler refuses stale inputs and failing correction receipts",
+      "observed": "Disposable changed-input and failed-receipt probes still publish verified 41/21/0",
+      "evidence": "register-freshness.json",
+      "action": "Bind receipts to current inputs/engine identity, enforce numeric/status predicates and reject stale or incomplete evidence"
+    },
+    {
+      "id": "F02",
+      "status": "failing",
+      "severity": "P2",
+      "kind": "traceability",
+      "path": "docs/qa/scientific-audit/VERIFICATION.json",
+      "line": 551,
+      "relatedLines": [
+        391,
+        571,
+        576,
+        595,
+        613,
+        616
+      ],
+      "claim": "Current register rows consistently identify corrected inputs/results",
+      "observed": "Old catalog hashes, old residuals, expected failure exits and S14 hash mismatch count remain",
+      "evidence": [
+        "reference.json",
+        "production-check.json"
+      ],
+      "action": "Separate archived baseline metadata; refresh current identities, residuals, exits and inventory count in both generated copies"
+    },
+    {
+      "id": "F03",
+      "status": "failing",
+      "severity": "P3",
+      "kind": "documentation",
+      "path": "docs/MODELS.md",
+      "line": 3,
+      "relatedPaths": [
+        {
+          "path": "docs/decisions/0005-planning-evidence-contract.md",
+          "line": 15
+        },
+        {
+          "path": "docs/decisions/0006-shared-planning-assessment.md",
+          "line": 13
+        }
+      ],
+      "claim": "Authoritative current model documentation describes planning-5",
+      "observed": "Current descriptions retain planning-4/planning-3 and old range/request conventions",
+      "action": "Add dated planning-5 changes; preserve historical provenance and scope tolerance semantics"
+    }
+  ],
+  "verified": [
+    {
+      "id": "V01",
+      "scope": "17521 archived Moon-observed Earth hourly range rows",
+      "result": {
+        "rows": 17521,
+        "responseSha256": "9881adff91067ec5384885c705dd2be65b1d525913b63b3e41adca11b29c6531",
+        "maxEncodingErrorM": 15.620000020135194
+      }
+    },
+    {
+      "id": "V02",
+      "scope": "112 primary observer site/body/epoch rows; implementation only",
+      "result": {
+        "siteRows": 112,
+        "maxDirectionDeg": 0.008216971609868479,
+        "maxEarthRangeErrorM": 252.0753902499564,
+        "maxEarthRadiusErrorDeg": 6.309642923696401e-07
+      }
+    },
+    {
+      "id": "V03",
+      "scope": "14 supported original COG stencils, two requests excluded",
+      "result": {
+        "stencils": 14,
+        "correctedEdgeResidualM": 0.0019691672628141532
+      }
+    },
+    {
+      "id": "V04",
+      "scope": "Synthetic NaN producer policy, no old-mask regeneration",
+      "result": {
+        "knownFinite": true,
+        "missingNorthRayUnknownAtAllThreeHeights": true,
+        "finiteCoarseFallbackPreserved": true
+      }
+    },
+    {
+      "id": "V05",
+      "scope": "Power/RF arithmetic, station and atmospheric reference comparisons",
+      "result": {
+        "resourceComparisons": 288,
+        "failed": 0,
+        "sourceResponses": 11,
+        "newEnergyChecks": {
+          "generatedWh": 200,
+          "unmetWh": 60,
+          "onsetH": 1.4,
+          "twoSecondWh": 0.2
+        },
+        "newRfChecks": [
+          {
+            "frequencyGHz": 2.3,
+            "errorDb": 7.105427357601002e-15
+          },
+          {
+            "frequencyGHz": 8.4,
+            "errorDb": 7.105427357601002e-15
+          },
+          {
+            "frequencyGHz": 32,
+            "errorDb": 8.881784197001252e-15
+          }
+        ]
+      }
+    },
+    {
+      "id": "V06",
+      "scope": "Exact 100 m central-force radial contact reference",
+      "result": [
+        {
+          "configured": false,
+          "terrain": "reference-sphere",
+          "error": {
+            "timeS": 5.707079253625125e-11,
+            "speedMps": 9.628209340917238e-11,
+            "energyJ": 8.155851105584588e-06
+          }
+        },
+        {
+          "configured": false,
+          "terrain": "flat",
+          "error": {
+            "timeS": 5.707079253625125e-11,
+            "speedMps": 9.628209340917238e-11,
+            "energyJ": 8.155851105584588e-06
+          }
+        },
+        {
+          "configured": true,
+          "terrain": "reference-sphere",
+          "error": {
+            "timeS": -1.3505641049960104e-11,
+            "speedMps": -1.830713358685898e-11,
+            "energyJ": -1.5507538364545326e-06
+          }
+        },
+        {
+          "configured": true,
+          "terrain": "flat",
+          "error": {
+            "timeS": -1.3505641049960104e-11,
+            "speedMps": -1.830713358685898e-11,
+            "energyJ": -1.5507538364545326e-06
+          }
+        }
+      ]
+    },
+    {
+      "id": "V07",
+      "scope": "Four smooth-horizon hourly event brackets only",
+      "result": [
+        {
+          "target": "10",
+          "meaning": "centre",
+          "modelUtc": [
+            "2027-06-26T15:00:00.000Z",
+            "2027-06-26T16:00:00.000Z"
+          ],
+          "referenceUtc": [
+            "2027-06-26T15:35:00.000Z",
+            "2027-06-26T15:40:00.000Z"
+          ]
+        },
+        {
+          "target": "10",
+          "meaning": "upper-limb",
+          "modelUtc": [
+            "2027-06-26T16:00:00.000Z",
+            "2027-06-26T17:00:00.000Z"
+          ],
+          "referenceUtc": [
+            "2027-06-26T16:05:00.000Z",
+            "2027-06-26T16:10:00.000Z"
+          ]
+        },
+        {
+          "target": "399",
+          "meaning": "centre",
+          "modelUtc": [
+            "2027-06-22T15:00:00.000Z",
+            "2027-06-22T16:00:00.000Z"
+          ],
+          "referenceUtc": [
+            "2027-06-22T15:20:00.000Z",
+            "2027-06-22T15:25:00.000Z"
+          ]
+        },
+        {
+          "target": "399",
+          "meaning": "upper-limb",
+          "modelUtc": [
+            "2027-06-23T06:00:00.000Z",
+            "2027-06-23T07:00:00.000Z"
+          ],
+          "referenceUtc": [
+            "2027-06-23T06:55:00.000Z",
+            "2027-06-23T07:00:00.000Z"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V08",
+      "scope": "Model/dataset keys and four canonical demo outcomes",
+      "result": [
+        {
+          "role": "baseline",
+          "scenarioKey": "planning-5-127ae241-310c465b-1088",
+          "outcome": "conditional",
+          "oldModelReport": "not-assessed"
+        },
+        {
+          "role": "delayed",
+          "scenarioKey": "planning-5-1117d0cb-160f1af7-1088",
+          "outcome": "fails-assessed",
+          "oldModelReport": "not-assessed"
+        },
+        {
+          "role": "alternative",
+          "scenarioKey": "planning-5-6c3bfefa-36f1ebc8-1093",
+          "outcome": "conditional",
+          "oldModelReport": "not-assessed"
+        },
+        {
+          "role": "unknown-historical",
+          "scenarioKey": "planning-5-bb3a005-16c6fc49-1081",
+          "outcome": "incomplete",
+          "oldModelReport": "not-assessed"
+        }
+      ]
+    }
+  ],
+  "uncertain": [
+    {
+      "id": "U01",
+      "scope": "Independent observed astrometry and propagated terrain/frame/site-height registration"
+    },
+    {
+      "id": "U02",
+      "scope": "Full original terrain/horizon regeneration, physical skyline accuracy, missing-data prevalence and effective resolution/error"
+    },
+    {
+      "id": "U03",
+      "scope": "Arbitrary continuous-time events, future time/EOP and date-specific irradiance"
+    },
+    {
+      "id": "U04",
+      "scope": "Qualified electrical hardware, station rays, weather/noise/pointing/rates and allocation"
+    },
+    {
+      "id": "U05",
+      "scope": "Vehicle/GNC, structural/soil/plume/contact and thermal qualification"
+    }
+  ],
+  "execution": {
+    "focusedAuditTests": {
+      "command": "npx tsx --test tests/audit*.test.ts",
+      "passed": 345,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "exit": 0
+    },
+    "additionalTests": {
+      "passed": 59,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "exit": 0
+    },
+    "typecheck": {
+      "command": "npm run typecheck -- --incremental false",
+      "exit": 0
+    },
+    "independentReferenceScriptExit": 0,
+    "productionCheckScriptExit": 0,
+    "registerProbeScriptExit": 0,
+    "registerProbeInterpretation": "Exit zero reproduces the failing verification gate; not a pass for that gate",
+    "dynamicsScriptExit": 0,
+    "dynamicsPrimaryResponseHashCheck": {
+      "count": 12,
+      "exit": 0
+    },
+    "fullSuiteRun": false,
+    "lintRun": false,
+    "freshNumericalNetworkQueries": false,
+    "fullTerrainPipelineRun": false,
+    "buildOrBrowserRun": false
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.0",
+    "node": "v20.20.2",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "uvTemporaryVenvNeeded": false
+  }
+}

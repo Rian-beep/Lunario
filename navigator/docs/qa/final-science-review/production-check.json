@@ -1,0 +1,196 @@
+{
+  "maxIndependentAngleDifferenceDeg": 1.1368683772161603e-13,
+  "inputErrors": [
+    {
+      "kind": "centre-range-m",
+      "error": 14.32999997632578
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 14.399999985471368
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 3.1300000264309347
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 15.100000018719584
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 7.3800000245682895
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 1.8699999782256782
+    },
+    {
+      "kind": "centre-range-m",
+      "error": 14.099999971222132
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.03799999999978354
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.008000000000265572
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.22499999999990905
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.22299999999972897
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.24199999999973443
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.27199999999970714
+    },
+    {
+      "kind": "solar-full-diameter-arcsec",
+      "error": 0.29999999999972715
+    }
+  ],
+  "events": [
+    {
+      "target": "10",
+      "meaning": "centre",
+      "modelUtc": [
+        "2027-06-26T15:00:00.000Z",
+        "2027-06-26T16:00:00.000Z"
+      ],
+      "referenceUtc": [
+        "2027-06-26T15:35:00.000Z",
+        "2027-06-26T15:40:00.000Z"
+      ]
+    },
+    {
+      "target": "10",
+      "meaning": "upper-limb",
+      "modelUtc": [
+        "2027-06-26T16:00:00.000Z",
+        "2027-06-26T17:00:00.000Z"
+      ],
+      "referenceUtc": [
+        "2027-06-26T16:05:00.000Z",
+        "2027-06-26T16:10:00.000Z"
+      ]
+    },
+    {
+      "target": "399",
+      "meaning": "centre",
+      "modelUtc": [
+        "2027-06-22T15:00:00.000Z",
+        "2027-06-22T16:00:00.000Z"
+      ],
+      "referenceUtc": [
+        "2027-06-22T15:20:00.000Z",
+        "2027-06-22T15:25:00.000Z"
+      ]
+    },
+    {
+      "target": "399",
+      "meaning": "upper-limb",
+      "modelUtc": [
+        "2027-06-23T06:00:00.000Z",
+        "2027-06-23T07:00:00.000Z"
+      ],
+      "referenceUtc": [
+        "2027-06-23T06:55:00.000Z",
+        "2027-06-23T07:00:00.000Z"
+      ]
+    }
+  ],
+  "radial": [
+    {
+      "configured": false,
+      "terrain": "reference-sphere",
+      "error": {
+        "timeS": 5.707079253625125e-11,
+        "speedMps": 9.628209340917238e-11,
+        "energyJ": 0.000008155851105584588
+      }
+    },
+    {
+      "configured": false,
+      "terrain": "flat",
+      "error": {
+        "timeS": 5.707079253625125e-11,
+        "speedMps": 9.628209340917238e-11,
+        "energyJ": 0.000008155851105584588
+      }
+    },
+    {
+      "configured": true,
+      "terrain": "reference-sphere",
+      "error": {
+        "timeS": -1.3505641049960104e-11,
+        "speedMps": -1.830713358685898e-11,
+        "energyJ": -0.0000015507538364545326
+      }
+    },
+    {
+      "configured": true,
+      "terrain": "flat",
+      "error": {
+        "timeS": -1.3505641049960104e-11,
+        "speedMps": -1.830713358685898e-11,
+        "energyJ": -0.0000015507538364545326
+      }
+    }
+  ],
+  "energy": {
+    "generatedWh": 200,
+    "unmetWh": 60,
+    "onsetH": 1.4,
+    "twoSecondWh": 0.2
+  },
+  "budgets": [
+    {
+      "frequencyGHz": 2.3,
+      "errorDb": 7.105427357601002e-15
+    },
+    {
+      "frequencyGHz": 8.4,
+      "errorDb": 7.105427357601002e-15
+    },
+    {
+      "frequencyGHz": 32,
+      "errorDb": 8.881784197001252e-15
+    }
+  ],
+  "resourceComparisons": 288,
+  "identity": [
+    {
+      "role": "baseline",
+      "scenarioKey": "planning-5-127ae241-310c465b-1088",
+      "outcome": "conditional",
+      "oldModelReport": "not-assessed"
+    },
+    {
+      "role": "delayed",
+      "scenarioKey": "planning-5-1117d0cb-160f1af7-1088",
+      "outcome": "fails-assessed",
+      "oldModelReport": "not-assessed"
+    },
+    {
+      "role": "alternative",
+      "scenarioKey": "planning-5-6c3bfefa-36f1ebc8-1093",
+      "outcome": "conditional",
+      "oldModelReport": "not-assessed"
+    },
+    {
+      "role": "unknown-historical",
+      "scenarioKey": "planning-5-bb3a005-16c6fc49-1081",
+      "outcome": "incomplete",
+      "oldModelReport": "not-assessed"
+    }
+  ]
+}
