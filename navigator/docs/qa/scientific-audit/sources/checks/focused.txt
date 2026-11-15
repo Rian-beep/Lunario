@@ -1,0 +1,72 @@
+TAP version 13
+# Subtest: audit source HTTP captures reproduce byte identities offline and respect the bounded budget
+ok 1 - audit source HTTP captures reproduce byte identities offline and respect the bounded budget
+  ---
+  duration_ms: 46.307034
+  ...
+# Subtest: audit original COG windows and metadata replay from exact HTTP responses with networking forbidden
+ok 2 - audit original COG windows and metadata replay from exact HTTP responses with networking forbidden
+  ---
+  duration_ms: 213.148566
+  ...
+# Subtest: audit polar interior heights match original COG interpolation within fixed encoding tolerances
+ok 3 - audit polar interior heights match original COG interpolation within fixed encoding tolerances
+  ---
+  duration_ms: 0.452194
+  ...
+# Subtest: audit retains the demonstrated edge registration failure rather than relaxing its tolerance
+ok 4 - audit retains the demonstrated edge registration failure rather than relaxing its tolerance
+  ---
+  duration_ms: 0.081767
+  ...
+# Subtest: audit fresh PDS label agrees byte-for-byte and preserves radius versus height calibration
+ok 5 - audit fresh PDS label agrees byte-for-byte and preserves radius versus height calibration
+  ---
+  duration_ms: 47.368505
+  ...
+# {"audit":"source-slope","lat":-85.99985841143967,"lon":359.99670036862335,"expectedDeg":11.253694481043707,"actualDeg":11.204527366666207,"errorDeg":-0.0491671143775001,"toleranceDeg":0.1864364403885588,"stencilSpacingM":23.94740321429714}
+# Subtest: audit independent quarter-pixel overlap weights reproduce five global cells from bounded PDS DN rows
+ok 6 - audit independent quarter-pixel overlap weights reproduce five global cells from bounded PDS DN rows
+  ---
+  duration_ms: 37.483473
+  ...
+# Subtest: audit source-measured Malapert slope stencil agrees within propagated encoding error only
+ok 7 - audit source-measured Malapert slope stencil agrees within propagated encoding error only
+  ---
+  duration_ms: 0.959355
+  ...
+# {"audit":"sphere-dip","heightM":2,"expectedDeg":-0.08693657193373108,"maxErrorDeg":0.00004481753885275663,"toleranceDeg":0.001}
+# Subtest: audit global unknown support remains unknown and analytic-sphere rays have explicit discretization error
+ok 8 - audit global unknown support remains unknown and analytic-sphere rays have explicit discretization error
+  ---
+  duration_ms: 56.511865
+  ...
+# Subtest: audit darkness duration keeps stay censoring and unknowns distinct
+ok 9 - audit darkness duration keeps stay censoring and unknowns distinct
+  ---
+  duration_ms: 0.325418
+  ...
+# Subtest: audit ice evidence retains association counts and missing abundance; LCROSS facts match fresh NASA PDF
+ok 10 - audit ice evidence retains association counts and missing abundance; LCROSS facts match fresh NASA PDF
+  ---
+  duration_ms: 37.401207
+  ...
+# Subtest: audit unchanged Python pipeline missing-ray discrepancy remains reproducible
+ok 11 - audit unchanged Python pipeline missing-ray discrepancy remains reproducible
+  ---
+  duration_ms: 64.408809
+  ...
+# Subtest: audit angular horizon interpolation wraps at north and preserves unknown sectors
+ok 12 - audit angular horizon interpolation wraps at north and preserves unknown sectors
+  ---
+  duration_ms: 0.287
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 862.88733

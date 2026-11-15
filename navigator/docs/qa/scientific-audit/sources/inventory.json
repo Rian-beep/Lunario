@@ -1,0 +1,1017 @@
+{
+  "baseline": "96079ae",
+  "assets": [
+    {
+      "path": "public/data/catalog.json",
+      "bytes": 1004402,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "embeddedProvenance": {
+        "meta": {
+          "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
+          "generatedUtc": "2026-11-13T20:08:39Z",
+          "demFine": "LDEM_80S_40MPP_ADJ.TIF",
+          "demCoarse": "LDEM_60S_240MPP_ADJ.TIF",
+          "t0": "2026-01-01T00:00:00Z",
+          "t1": "2028-01-01T00:00:00Z"
+        }
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/celestial-models/assets/earth.glb",
+      "bytes": 12916400,
+      "sha256": "05a5aea99db8ab472487a06debc3b5d0b2cae7636a1a6b9ecfa40b7d1722ba23",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/assets/sun.glb",
+      "bytes": 4343656,
+      "sha256": "a178f5c43c2c9a6ee6c011c315149a7ab5a2594fd5aa9119ee219625a18da1dd",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/inventory.json",
+      "bytes": 69285,
+      "sha256": "5ad9b0d47a503be444f1c5bca594780169793e55ffb26ce581589bfc3879a96f",
+      "embeddedProvenance": {
+        "schemaVersion": 1,
+        "retrievedUtc": "2026-11-14T13:50:42.986124+00:00"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/provenance.json",
+      "bytes": 3451,
+      "sha256": "c4bb603a98c691f059b33f72d8250c5579862ef0b93db3811a90c80d871add53",
+      "embeddedProvenance": {
+        "schemaVersion": 1
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/source-git/NASA-3D-Resources-README.md",
+      "bytes": 2396,
+      "sha256": "2e86b56d48a27803fa32f6fe66d252746c92a875865af162b3a0941435199a12",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/source-git/nasa-tree.json",
+      "bytes": 511217,
+      "sha256": "655e3b0b8229001c6d05343bd07a6f428d64cb5df496adaeefaabb884dbebbb0",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/celestial-models/source-git/original-branches.json",
+      "bytes": 439399,
+      "sha256": "2a1ffd139ff13ad4cbfaa121b5c493134c872741266e413913c4f00d1cad1469",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/dsn/earth-blue-marble-2048.jpg",
+      "bytes": 238676,
+      "sha256": "5b54cc586c6cbf2b28762ef4d4011f6cf4227a8b93a637b818a0c54090ce6c2c",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/dsn/provenance.json",
+      "bytes": 1092,
+      "sha256": "e27360dd1cd9f7a5b40ea4de8b34c24957fc802e68f6c3ef714b8a717467e563",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/README.md",
+      "bytes": 5729,
+      "sha256": "5820117cec6624264ae63044152102dac5b0e04472a0505ec189e11703255156",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/canberra-horizons.json",
+      "bytes": 9533,
+      "sha256": "36300598255984a575a989f0a970f952b9cff1c877b5e93312094a7493cd99bb",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/goldstone-horizons.json",
+      "bytes": 9531,
+      "sha256": "dc1cfe438067448ba89b9515ba3678cf5b421caef6735a6cabf6cc0f9b65a200",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/jpl-105-example.json",
+      "bytes": 745,
+      "sha256": "365664e44531c58b18905c777d85b552d692a337e3b6b32142b6e137784da6be",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/madrid-horizons.json",
+      "bytes": 9521,
+      "sha256": "32c57ad26bfac6d34d15a372de02381a6cd34a8db348fe48f31ea6beb858c53c",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/reproduce-reference.py",
+      "bytes": 2969,
+      "sha256": "4d0423323c9378d8343acc1a0f12b8b163d61dd830a1597d7de72800c905a8b6",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/engineering-evidence/spice-reference.json",
+      "bytes": 15968,
+      "sha256": "8ce06e103b8c07e9bcf4e046a0a1a9aaba3dcd44b41243de11e8c18cb98169aa",
+      "embeddedProvenance": {
+        "generatedUtc": "2026-11-14T20:07:05.408246+00:00"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/equipment/apollo-lunar-module.glb",
+      "bytes": 716840,
+      "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/equipment/draco/LICENSE",
+      "bytes": 13898,
+      "sha256": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/equipment/draco/draco_decoder.js",
+      "bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/equipment/provenance.json",
+      "bytes": 1761,
+      "sha256": "5e6ef969ba8236067503225e504f8ef971cd47b3e9d6c4ae468a97660cf8c0dd",
+      "embeddedProvenance": {
+        "id": "apollo-lunar-module"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/evidence-manifest.json",
+      "bytes": 29484,
+      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9",
+      "embeddedProvenance": {
+        "schemaVersion": 1,
+        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/global-terrain.bin.gz",
+      "bytes": 6025781,
+      "sha256": "296296decb091b8d7075d70de1fc6acbb341b89f343a55de67855bb823a30350",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/global-terrain.json",
+      "bytes": 7992,
+      "sha256": "c50ca151194e12cbc244c66eeea473d888a39df00a3112162156894cd168912c",
+      "embeddedProvenance": {
+        "schemaVersion": 1,
+        "id": "lola-ldem16-coarse-6f07f0b8edf12748",
+        "source": {
+          "productId": "LDEM_16",
+          "version": "V3.1",
+          "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.img",
+          "labelUrl": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+          "sha256": "a511e40d7a3ea3275945b4da2a1df377133264fab0be94b7434b1cf8907254cb",
+          "labelSha256": "9aef29463ccc6ed3a3fbe0df3ecd830a99c69e16b564f455507dee2697096579",
+          "frame": "MEAN EARTH/POLAR AXIS OF DE421"
+        }
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/ice/catalog.json",
+      "bytes": 79461,
+      "sha256": "cd1d58e8f99e94cdb5c87dde1d97113c7c74bdcf0024d1c8f0da3dab5a1717c8",
+      "embeddedProvenance": {
+        "schemaVersion": 1
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/ice/sources.json",
+      "bytes": 4329,
+      "sha256": "661a4e9be0ef1be186c3a1e5c69cd4633de68c342f552b8dc126f194011c463e",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/athena.jpg",
+      "bytes": 85646,
+      "sha256": "116a6621fa34c665b6a32b6c6243d74ce82c8b98d78dc935d3928cfb0c29ed98",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "116a6621fa34c665b6a32b6c6243d74ce82c8b98d78dc935d3928cfb0c29ed98",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge-nac-surface.jpg",
+      "bytes": 181038,
+      "sha256": "5efc025f460cc19c8203aa4d75a3585ab7de62870669e125c12c9f675deaab96",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge-nac.jpg",
+      "bytes": 463001,
+      "sha256": "ab968c13f1af2d7a3f1bce213d3e7c685a8fe8253ad643d5c790c7ac03a3edc4",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "ab968c13f1af2d7a3f1bce213d3e7c685a8fe8253ad643d5c790c7ac03a3edc4",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge.jpg",
+      "bytes": 53521,
+      "sha256": "3fdd7e7d7bfe5851b6ee38f768a4b082d8e4ead993cfa6efe4a5abd0a7e04a19",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "3fdd7e7d7bfe5851b6ee38f768a4b082d8e4ead993cfa6efe4a5abd0a7e04a19",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton-nac-surface.jpg",
+      "bytes": 85396,
+      "sha256": "abe247c34f41be87cb457ac20747da05c0aa4dc8fbed17bd3074916f1cc490b0",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton-nac.jpg",
+      "bytes": 290424,
+      "sha256": "47b195692c9295589af9589c3e9ffd1ae13a6ea4cb035403d0c904f9628a0392",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "47b195692c9295589af9589c3e9ffd1ae13a6ea4cb035403d0c904f9628a0392",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton.jpg",
+      "bytes": 53510,
+      "sha256": "07a33b13b1b853202926c58adbc82580927a60592879302b4282b4f6290b7b8e",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "07a33b13b1b853202926c58adbc82580927a60592879302b4282b4f6290b7b8e",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/global.jpg",
+      "bytes": 871716,
+      "sha256": "d00b31d34a8356307c89dea6bf5735fec21953973418fa73ee1d3f97e2b5bfb9",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "d00b31d34a8356307c89dea6bf5735fec21953973418fa73ee1d3f97e2b5bfb9",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/lcross-cabeus.jpg",
+      "bytes": 32976,
+      "sha256": "8645ca33db5d033c0b664ba6cb603401ca1292b447d10906360731be5733b7e0",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "8645ca33db5d033c0b664ba6cb603401ca1292b447d10906360731be5733b7e0",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/malapert-massif-nac-surface.jpg",
+      "bytes": 48580,
+      "sha256": "21a6883970916e4199759bc8f1f19de4e1aba3f21f4ac5891005a4209d477e60",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/malapert-massif-nac.jpg",
+      "bytes": 320947,
+      "sha256": "bd410efc90e95c553f72cd2f6158a0b06bd63dba832bb5fec3a8e6b88f13fc64",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "bd410efc90e95c553f72cd2f6158a0b06bd63dba832bb5fec3a8e6b88f13fc64",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/malapert-massif.jpg",
+      "bytes": 49821,
+      "sha256": "efa1150cbb54e9a2c9ccab753f445060383315413b4cf7ddb7c182c38a1e5fbd",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "efa1150cbb54e9a2c9ccab753f445060383315413b4cf7ddb7c182c38a1e5fbd",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/nasa-moon-8k.jpg",
+      "bytes": 4631745,
+      "sha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/odysseus.jpg",
+      "bytes": 95979,
+      "sha256": "631ddafd5bafa648d131c3868e6fdb8d76113287e285c4b58e8d13f112f012e7",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "631ddafd5bafa648d131c3868e6fdb8d76113287e285c4b58e8d13f112f012e7",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton-nac-surface.jpg",
+      "bytes": 22868,
+      "sha256": "84861e480c8895eeff1992a330713ca18e6573f15c2d359b294e22676e81f1ef",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton-nac.jpg",
+      "bytes": 118805,
+      "sha256": "0b1ee513c8bd2358cdd70767a5066a446cf7b16c1e601a3034c41f1d27babd29",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "0b1ee513c8bd2358cdd70767a5066a446cf7b16c1e601a3034c41f1d27babd29",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton.jpg",
+      "bytes": 54959,
+      "sha256": "5fcd29477242acf8ecd2ac9071318aaf165d9d7fdd3f6dbc6a64d462a388a6fc",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "5fcd29477242acf8ecd2ac9071318aaf165d9d7fdd3f6dbc6a64d462a388a6fc",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/polar.jpg",
+      "bytes": 1796481,
+      "sha256": "699f2faef42d65543adfbcfe0eac959c9705c82b6469cc12f4c607fbff7599eb",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "699f2faef42d65543adfbcfe0eac959c9705c82b6469cc12f4c607fbff7599eb",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest-nac-surface.jpg",
+      "bytes": 127061,
+      "sha256": "b794cb82edb944a925667e3630b7053d12c9a4652b98fdddefc4764deef754eb",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest-nac.jpg",
+      "bytes": 124868,
+      "sha256": "6509414413b44cfda45ff9f00e7c72017b3d6906affc7869171376d1d8a8ef3b",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "6509414413b44cfda45ff9f00e7c72017b3d6906affc7869171376d1d8a8ef3b",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest.jpg",
+      "bytes": 58825,
+      "sha256": "dc40bd8ff896c6e231472f5559381cd2c16ea1e66c1c54e08660bf92c7ab68e6",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "dc40bd8ff896c6e231472f5559381cd2c16ea1e66c1c54e08660bf92c7ab68e6",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/south-pole-nac-surface.jpg",
+      "bytes": 161612,
+      "sha256": "a34576c418818c0a01ae67bae741566c6d2eeeb08f5398eb6de3785875747792",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/imagery/south-pole-nac.jpg",
+      "bytes": 406586,
+      "sha256": "338bdbe2accd7efb967f1609f145404cad0d397f28a18e6d995831d97fe75934",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "338bdbe2accd7efb967f1609f145404cad0d397f28a18e6d995831d97fe75934",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery/south-pole.jpg",
+      "bytes": 55370,
+      "sha256": "496142b863d390e5774227b2b62197a01ec1fecddc4a27a7ac4f9c4ad066c20b",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "496142b863d390e5774227b2b62197a01ec1fecddc4a27a7ac4f9c4ad066c20b",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/imagery.json",
+      "bytes": 9517,
+      "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
+      "embeddedProvenance": {
+        "retrievedUtc": "2026-11-14T11:30:36.818Z",
+        "frame": "South polar stereographic, Moon radius 1737400 m; global texture equirectangular lon -180..180, lat 90..-90."
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+      "manifestMatches": false
+    },
+    {
+      "path": "public/data/map.png",
+      "bytes": 1363407,
+      "sha256": "4f17664655cffbce577b9affedbb768727ba80f83c5bb1cab747778452ba88a2",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "4f17664655cffbce577b9affedbb768727ba80f83c5bb1cab747778452ba88a2",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/nasa-model.json",
+      "bytes": 6034,
+      "sha256": "aeac27f823f27a86efc03543dacdc8ef9c5e9fcb1d58121a78746b6d9d3c5b41",
+      "embeddedProvenance": {
+        "version": 1,
+        "source": {
+          "url": "https://svs.gsfc.nasa.gov/vis/a010000/a014900/a014959/Moon_NASA_LRO_8k_Topo_Small.glb",
+          "sha256": "c4b65fb4df622a37fd75366c2ed9bf9e163e41c0fde178b3b27e31b0173e6953"
+        }
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "aeac27f823f27a86efc03543dacdc8ef9c5e9fcb1d58121a78746b6d9d3c5b41",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/nasa-moon-mesh.bin.gz",
+      "bytes": 9587461,
+      "sha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+      "manifestMatches": true
+    },
+    {
+      "path": "public/data/orbits/catalog.json",
+      "bytes": 3507,
+      "sha256": "f4cf0b24c196acfa0155714978090af4eb6656fd51b0f10eec64206d11edffc5",
+      "embeddedProvenance": {},
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/planning-demo.json",
+      "bytes": 2375452,
+      "sha256": "832662fc0ea4468f82d6a89e7d9cd85cf9e214b805a5718cdaf54e51cdfa82c6",
+      "embeddedProvenance": {
+        "schemaVersion": 1,
+        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/stars.json",
+      "bytes": 75006,
+      "sha256": "786f6e2c31474d509def6eb487df953fc5f416c1939539f9e532041aa5dcb1b7",
+      "embeddedProvenance": {
+        "meta": {}
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": null,
+      "manifestMatches": null
+    },
+    {
+      "path": "public/data/terrain.json",
+      "bytes": 12119158,
+      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "embeddedProvenance": {
+        "version": 1,
+        "retrievedUtc": "2026-11-14T11:01:57.141Z",
+        "frame": "MOON_ME / DE421, south polar stereographic, R=1737400m"
+      },
+      "manifestVersion": null,
+      "manifestSourceUrl": null,
+      "manifestFrame": null,
+      "manifestSha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "manifestMatches": true
+    }
+  ],
+  "terrainGrids": [
+    {
+      "id": "overview",
+      "lod": null,
+      "samples": 263169,
+      "unknown": 0,
+      "minM": -7024.5,
+      "maxM": 6946.8,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 1280,
+      "stepXM": 1185.1851851851852,
+      "stepYM": 1185.1851851851852,
+      "encodingScaleM": 0.3
+    },
+    {
+      "id": "connecting-ridge",
+      "lod": "fine5",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 1208.0,
+      "maxM": 1806.0,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "sourcePixelM": 5,
+      "stepXM": 7.992202729044834,
+      "stepYM": 7.992202729044834,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "peak-near-shackleton",
+      "lod": "fine5",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 963.7,
+      "maxM": 1213.5,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "sourcePixelM": 5,
+      "stepXM": 7.992202729044834,
+      "stepYM": 7.992202729044834,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "degerlache-shackleton",
+      "lod": "fine5",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 1139.9,
+      "maxM": 1959.2,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "sourcePixelM": 5,
+      "stepXM": 7.992202729044834,
+      "stepYM": 7.992202729044834,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "south-pole",
+      "lod": "fine5",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": -113.80000000000007,
+      "maxM": 1455.9,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "sourcePixelM": 5,
+      "stepXM": 7.992202729044834,
+      "stepYM": 7.992202729044834,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "shackleton-crest",
+      "lod": "fine5",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 629.6,
+      "maxM": 1738.4,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "sourcePixelM": 5,
+      "stepXM": 7.992202729044834,
+      "stepYM": 7.992202729044834,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "malapert-massif",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 2654.3999999999996,
+      "maxM": 5173.4,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "connecting-ridge",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 327.0999999999999,
+      "maxM": 1959.0,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.957115009746587,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "peak-near-shackleton",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 170.19999999999993,
+      "maxM": 1648.6,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.957115009746587,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "degerlache-shackleton",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 316.9,
+      "maxM": 1958.9,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.957115009746587,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "athena",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": 4874.2,
+      "maxM": 5422.2,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "lcross-cabeus",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": -3993.4,
+      "maxM": -2772.8,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "south-pole",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": -2752.0,
+      "maxM": 1729.1,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "shackleton-crest",
+      "lod": "fine10",
+      "samples": 263169,
+      "unknown": 0,
+      "minM": -1889.5,
+      "maxM": 1804.0,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "sourcePixelM": 10,
+      "stepXM": 23.976608187134502,
+      "stepYM": 23.976608187134502,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "odysseus",
+      "lod": "fine40",
+      "samples": 263169,
+      "unknown": 66690,
+      "minM": 2011.3,
+      "maxM": 2935.0,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF",
+      "sourcePixelM": 40,
+      "stepXM": 32.046783625730995,
+      "stepYM": 32.046783625730995,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "malapert-massif",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -466.10000000000036,
+      "maxM": 5170.6,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "connecting-ridge",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -2831.2000000000003,
+      "maxM": 1955.6,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 127.62645914396887,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "peak-near-shackleton",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -2851.3,
+      "maxM": 1646.3000000000002,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "degerlache-shackleton",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -2738.5,
+      "maxM": 1955.5,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 127.62645914396887,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "odysseus",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 24929,
+      "minM": 1493.4,
+      "maxM": 2961.0,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "athena",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": 4110.4,
+      "maxM": 6673.3,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 127.62645914396887,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "lcross-cabeus",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -4161.700000000001,
+      "maxM": 15.099999999999909,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "south-pole",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -2854.7000000000003,
+      "maxM": 1955.6,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    },
+    {
+      "id": "shackleton-crest",
+      "lod": null,
+      "samples": 66049,
+      "unknown": 0,
+      "minM": -2857.8,
+      "maxM": 1955.8000000000002,
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourcePixelM": 160,
+      "stepXM": 128.24902723735408,
+      "stepYM": 128.24902723735408,
+      "encodingScaleM": 0.1
+    }
+  ],
+  "missingSourceIdentity": [
+    "Original polar COG complete hashes and immutable version IDs",
+    "Original 40/240 m horizon DEM bytes",
+    "Pixelwise EFFRES and ERR products",
+    "Original catalog Horizons response headers/requests"
+  ],
+  "scope": "Asset integrity and encoding inventory only; no physical accuracy implication."
+}

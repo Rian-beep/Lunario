@@ -1,0 +1,275 @@
+TAP version 13
+# Subtest: committed calibrated numerical asset hashes and source label fixtures agree
+ok 1 - committed calibrated numerical asset hashes and source label fixtures agree
+  ---
+  duration_ms: 345.902331
+  ...
+# Subtest: flat spherical skyline agrees with analytic tangent dip within explicit radial discretization bound
+ok 2 - flat spherical skyline agrees with analytic tangent dip within explicit radial discretization bound
+  ---
+  duration_ms: 29.170744
+  ...
+# Subtest: known synthetic height bump raises the corresponding eastern ENU horizon
+ok 3 - known synthetic height bump raises the corresponding eastern ENU horizon
+  ---
+  duration_ms: 47.102276
+  ...
+# Subtest: longitude wrap and poles are stable without silently rounding input coordinates
+ok 4 - longitude wrap and poles are stable without silently rounding input coordinates
+  ---
+  duration_ms: 104.200498
+  ...
+# Subtest: missing observer/ray support remains unknown, cache cannot be poisoned by returned masks
+ok 5 - missing observer/ray support remains unknown, cache cannot be poisoned by returned masks
+  ---
+  duration_ms: 32.423897
+  ...
+# Subtest: published M3 PSR totals and named counts agree with independent paper sections 4.1 and 4.6.1
+ok 6 - published M3 PSR totals and named counts agree with independent paper sections 4.1 and 4.6.1
+  ---
+  duration_ms: 2.436092
+  ...
+# Subtest: LCROSS longitude/latitude and UTC match independent NASA NSSDCA / Marshall coordinates
+ok 7 - LCROSS longitude/latitude and UTC match independent NASA NSSDCA / Marshall coordinates
+  ---
+  duration_ms: 0.934776
+  ...
+# Subtest: every feature binds to licensed, versioned and hashed source evidence without a proxy relabel
+ok 8 - every feature binds to licensed, versioned and hashed source evidence without a proxy relabel
+  ---
+  duration_ms: 2.051336
+  ...
+# Subtest: parsing clones inputs, reports source values unchanged, and preserves nulls
+ok 9 - parsing clones inputs, reports source values unchanged, and preserves nulls
+  ---
+  duration_ms: 3.095628
+  ...
+# Subtest: invalid schema, duplicate IDs and missing or mismatched sources fail explicitly
+ok 10 - invalid schema, duplicate IDs and missing or mismatched sources fail explicitly
+  ---
+  duration_ms: 2.816568
+  ...
+# Subtest: geographic ranges, coordinate order, no-data sentinels and malformed shapes cannot become ice locations
+ok 11 - geographic ranges, coordinate order, no-data sentinels and malformed shapes cannot become ice locations
+  ---
+  duration_ms: 4.929072
+  ...
+# Subtest: M3 missing values, nodata, counts, units, dates and resolution are never coerced or inferred
+ok 12 - M3 missing values, nodata, counts, units, dates and resolution are never coerced or inferred
+  ---
+  duration_ms: 6.210715
+  ...
+# Subtest: LCROSS unknown quantity/extent cannot be replaced by a concentration or footprint; UTC is strict
+ok 13 - LCROSS unknown quantity/extent cannot be replaced by a concentration or footprint; UTC is strict
+  ---
+  duration_ms: 0.408076
+  ...
+# Subtest: offline decoded/string inputs require no HTTP; loader forwards abort and propagates HTTP/parse failures
+ok 14 - offline decoded/string inputs require no HTTP; loader forwards abort and propagates HTTP/parse failures
+  ---
+  duration_ms: 12.516607
+  ...
+# Subtest: stdlib source parser rejects corrupt DBF and missing/no-data fields
+ok 15 - stdlib source parser rejects corrupt DBF and missing/no-data fields
+  ---
+  duration_ms: 55.8129
+  ...
+# Subtest: regional plane slope derives measured rectangular spacing, corrects polar projection and ignores named slope metadata
+ok 16 - regional plane slope derives measured rectangular spacing, corrects polar projection and ignores named slope metadata
+  ---
+  duration_ms: 2.319586
+  ...
+# Subtest: slope ranking uses its declared scale with saturation and monotonic preference changes
+ok 17 - slope ranking uses its declared scale with saturation and monotonic preference changes
+  ---
+  duration_ms: 0.321538
+  ...
+# Subtest: missing fine stencil uses explicitly coarse global elevations, never imagery or the overview
+ok 18 - missing fine stencil uses explicitly coarse global elevations, never imagery or the overview
+  ---
+  duration_ms: 5.463202
+  ...
+# Subtest: coarse global slope matches independent north-south ramp, and is stable at poles and seam
+ok 19 - coarse global slope matches independent north-south ramp, and is stable at poles and seam
+  ---
+  duration_ms: 16.02285
+  ...
+# Subtest: cooperative coarse horizons retain existing numerical horizon policy, including poles, seam, bump and missing rays
+ok 20 - cooperative coarse horizons retain existing numerical horizon policy, including poles, seam, bump and missing rays
+  ---
+  duration_ms: 175.467239
+  ...
+# Subtest: coarse horizon geometry is reused across date/weight changes, with an LRU bound of 576 masks
+ok 21 - coarse horizon geometry is reused across date/weight changes, with an LRU bound of 576 masks
+  ---
+  duration_ms: 1930.54087
+  ...
+# Subtest: real prepared polar cell uses its own mask and coordinates exactly; nearby off-cell locations remain unknown without coarse input
+ok 22 - real prepared polar cell uses its own mask and coordinates exactly; nearby off-cell locations remain unknown without coarse input
+  ---
+  duration_ms: 14.332931
+  ...
+# Subtest: explicit coarse fallback at an arbitrary coordinate is labelled and keeps height/coverage unknowns
+ok 23 - explicit coarse fallback at an arbitrary coordinate is labelled and keeps height/coverage unknowns
+  ---
+  duration_ms: 27.696678
+  ...
+# Subtest: changing dates and weights reuses only geometry, while physical metrics are recomputed
+ok 24 - changing dates and weights reuses only geometry, while physical metrics are recomputed
+  ---
+  duration_ms: 32.522973
+  ...
+# Subtest: locked async API and global 15° lattice has exactly 288 unique centres without invented filled support
+ok 25 - locked async API and global 15° lattice has exactly 288 unique centres without invented filled support
+  ---
+  duration_ms: 316.042542
+  ...
+# Subtest: real polar sample job retains all 1980 actual cell coordinates and matches point inspection
+ok 26 - real polar sample job retains all 1980 actual cell coordinates and matches point inspection
+  ---
+  duration_ms: 2439.334436
+  ...
+# Subtest: completed global coarse job reports physical metrics and exactly matches synchronous inspection
+ok 27 - completed global coarse job reports physical metrics and exactly matches synchronous inspection
+  ---
+  duration_ms: 6761.198227
+  ...
+# Subtest: abort before work or in initial yield publishes nothing and rejects AbortError
+ok 28 - abort before work or in initial yield publishes nothing and rejects AbortError
+  ---
+  duration_ms: 2.143912
+  ...
+# Subtest: abort at progress stops stale completion; each completed point yields to timer tasks
+ok 29 - abort at progress stops stale completion; each completed point yields to timer tasks
+  ---
+  duration_ms: 2.631175
+  ...
+# Subtest: coarse geometry yields within the first point and cancellation prevents publication or partial-cache reuse
+ok 30 - coarse geometry yields within the first point and cancellation prevents publication or partial-cache reuse
+  ---
+  duration_ms: 26.401405
+  ...
+# Subtest: long ephemeris stays yield inside a point, not just between completed points
+ok 31 - long ephemeris stays yield inside a point, not just between completed points
+  ---
+  duration_ms: 4.024354
+  ...
+# Subtest: progress errors propagate and cancelled concurrent jobs cannot overwrite a fresh job
+ok 32 - progress errors propagate and cancelled concurrent jobs cannot overwrite a fresh job
+  ---
+  duration_ms: 3.836891
+  ...
+# Subtest: locked function API, explicit defaults and independently calculated weighted normalization
+ok 33 - locked function API, explicit defaults and independently calculated weighted normalization
+  ---
+  duration_ms: 6.513704
+  ...
+# Subtest: disk exposure uses fractional solar disk; any visible limb ends darkness
+ok 34 - disk exposure uses fractional solar disk; any visible limb ends darkness
+  ---
+  duration_ms: 0.281429
+  ...
+# Subtest: observed darkness crosses 64-sample chunks and preserves complete versus censored runs
+ok 35 - observed darkness crosses 64-sample chunks and preserves complete versus censored runs
+  ---
+  duration_ms: 3.834871
+  ...
+# Subtest: absolute antenna zero cutoff is active over a depressed terrain horizon and equality fails
+ok 36 - absolute antenna zero cutoff is active over a depressed terrain horizon and equality fails
+  ---
+  duration_ms: 0.564409
+  ...
+# Subtest: independent array and antenna heights use exact masks without nearest-height borrowing
+ok 37 - independent array and antenna heights use exact masks without nearest-height borrowing
+  ---
+  duration_ms: 0.397546
+  ...
+# Subtest: partial rays and missing epochs remain unknown, independent solar and Earth support stay independent
+ok 38 - partial rays and missing epochs remain unknown, independent solar and Earth support stay independent
+  ---
+  duration_ms: 0.27334
+  ...
+# Subtest: unknown positive-weight components invalidate score; zero weight does not invent measurements
+ok 39 - unknown positive-weight components invalidate score; zero weight does not invent measurements
+  ---
+  duration_ms: 0.161464
+  ...
+# Subtest: rank weights are scale invariant, robust to large finite inputs and reject invalid settings
+ok 40 - rank weights are scale invariant, robust to large finite inputs and reject invalid settings
+  ---
+  duration_ms: 5.057467
+  ...
+# Subtest: stay indices include forcing intervals only; final epoch cannot add an hour
+ok 41 - stay indices include forcing intervals only; final epoch cannot add an hour
+  ---
+  duration_ms: 0.416935
+  ...
+# Subtest: date changes recompute metrics, no stale scores or input mutations
+ok 42 - date changes recompute metrics, no stale scores or input mutations
+  ---
+  duration_ms: 0.589289
+  ...
+# Subtest: real prepared named horizons match canonical reference across subsystem heights and current 336-hour stay
+ok 43 - real prepared named horizons match canonical reference across subsystem heights and current 336-hour stay
+  ---
+  duration_ms: 11.60852
+  ...
+# Subtest: weight edits recolour unchanged physical quantities using the shared score
+ok 44 - weight edits recolour unchanged physical quantities using the shared score
+  ---
+  duration_ms: 1.215066
+  ...
+# Subtest: viewport refinement is bounded, cancellable and preserves exact sampled coordinates
+ok 45 - viewport refinement is bounded, cancellable and preserves exact sampled coordinates
+  ---
+  duration_ms: 6.64784
+  ...
+# Subtest: close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+ok 46 - close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+  ---
+  duration_ms: 0.909227
+  ...
+# Subtest: missing/coarse fine coverage never receives a synthetic high-resolution label
+ok 47 - missing/coarse fine coverage never receives a synthetic high-resolution label
+  ---
+  duration_ms: 0.194423
+  ...
+# Subtest: numerical terrain bilinear interpolation respects raster axis directions
+ok 48 - numerical terrain bilinear interpolation respects raster axis directions
+  ---
+  duration_ms: 0.565669
+  ...
+# Subtest: outside or nodata terrain cannot become invented height
+ok 49 - outside or nodata terrain cannot become invented height
+  ---
+  duration_ms: 0.102266
+  ...
+# Subtest: local coordinates roundtrip at a polar landing site
+ok 50 - local coordinates roundtrip at a polar landing site
+  ---
+  duration_ms: 0.207712
+  ...
+# Subtest: rectangular source windows retain their separate north-south spacing
+ok 51 - rectangular source windows retain their separate north-south spacing
+  ---
+  duration_ms: 0.094907
+  ...
+# Subtest: height lookup uses the finest available measured patch before coarse context
+ok 52 - height lookup uses the finest available measured patch before coarse context
+  ---
+  duration_ms: 5.223611
+  ...
+# Subtest: packed height decoding preserves missing samples and physical scale
+ok 53 - packed height decoding preserves missing samples and physical scale
+  ---
+  duration_ms: 1.527025
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9711.465351

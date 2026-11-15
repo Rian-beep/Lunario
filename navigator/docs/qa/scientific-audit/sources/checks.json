@@ -1,0 +1,54 @@
+{
+  "verifiedUtc": "2026-11-15T14:41:51.764094+00:00",
+  "baseline": "96079ae",
+  "checks": [
+    {
+      "name": "focused",
+      "command": "npx tsx --test tests/audit-sources.test.ts",
+      "exitCode": 0,
+      "log": "checks/focused.txt",
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "name": "regression",
+      "command": "npx tsx --test tests/terrain.test.ts tests/terrain-lod.test.ts tests/global-horizon.test.ts tests/suitability/*.test.ts tests/ice/*.test.ts",
+      "exitCode": 0,
+      "log": "checks/regression.txt",
+      "tests": 53,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "name": "typecheck",
+      "command": "npm run typecheck -- --incremental false",
+      "exitCode": 0,
+      "log": "checks/typecheck.txt"
+    },
+    {
+      "name": "lint",
+      "command": "npm run lint",
+      "exitCode": 0,
+      "log": "checks/lint.txt"
+    }
+  ],
+  "totalNodeTests": 65,
+  "failed": 0,
+  "skipped": 0,
+  "embeddedPythonParserTests": 7,
+  "auditPipelineProbe": "PASS (reproduces unresolved failing unknown-ray behavior)",
+  "syntax": "Four Python audit scripts compile; node --check source fetcher passed; results schema complete",
+  "initialAuthoringErrors": {
+    "typecheck": 3,
+    "cause": "New audit test GeoTIFF option excess-property typing and nullable GeoKeys",
+    "resolved": true,
+    "productionFilesChanged": false
+  },
+  "slopScan": "Unavailable/unconfigured; not installed",
+  "scienceAcceptance": "9 verified scoped claims; 6 uncertain; 3 failing. Test pass is not scientific acceptance."
+}
