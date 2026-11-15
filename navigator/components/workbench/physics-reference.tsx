@@ -13,8 +13,12 @@ import type { ScenarioState } from '../../lib/scenario';
 
 type LearningScenario = { catalog: Catalog; state: ScenarioState; assessment: AssessmentResult | null };
 
-export function PhysicsReference({ mode, scenario }: { mode: PhysicsReferenceMode; scenario?: LearningScenario }) {
-  const [topicId, setTopicId] = useState<string>(PHYSICS_TOPICS[0].id);
+export function PhysicsReference({ mode, scenario, initialTopic }: {
+  mode: PhysicsReferenceMode;
+  scenario?: LearningScenario;
+  initialTopic?: 'lunar-ice';
+}) {
+  const [topicId, setTopicId] = useState<string>(initialTopic ?? PHYSICS_TOPICS[0].id);
   const id = useId();
   const topic = PHYSICS_TOPICS.find(item => item.id === topicId) ?? PHYSICS_TOPICS[0];
   const showResources = topicId === 'lunar-ice' && scenario;
@@ -48,14 +52,19 @@ export function PhysicsReference({ mode, scenario }: { mode: PhysicsReferenceMod
   </div>;
 }
 
-export function LearningDialog({ mode, scenario, onClose }: { mode: PhysicsReferenceMode; scenario?: LearningScenario; onClose: () => void }) {
+export function LearningDialog({ mode, scenario, initialTopic, onClose }: {
+  mode: PhysicsReferenceMode;
+  scenario?: LearningScenario;
+  initialTopic?: 'lunar-ice';
+  onClose: () => void;
+}) {
   const titleId = useId();
   return <dialog className="learning-dialog" aria-labelledby={titleId}
     onCancel={event => { event.preventDefault(); onClose(); }}
     ref={node => { if (node && !node.open) node.showModal(); }}>
     <div className="learn-heading"><div><h2 id={titleId}>Learn the models</h2><p>Ideas, native equations and the evidence each model needs.</p></div>
       <Button variant="ghost" size="icon" aria-label="Close learning dialog" onClick={onClose} autoFocus><X size={20} /></Button></div>
-    <PhysicsReference mode={mode} scenario={scenario} />
+    <PhysicsReference mode={mode} scenario={scenario} initialTopic={initialTopic} />
   </dialog>;
 }
 
