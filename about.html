@@ -19,7 +19,7 @@
 <link rel="preload" href="fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
 <title>Lunario · About</title>
-<meta name="description" content="About Lunario, a lunar south pole landing dashboard, and the team behind it.">
+<meta name="description" content="Lunario, our NASA Space Apps 2026 entry for Lunar Landing Site Navigator, uses JPL Horizons and LOLA terrain to compare sunlight and Earth visibility at the Moon’s south pole.">
 </head>
 <body>
 <header class="nav">
@@ -34,140 +34,64 @@
 <main>
   <article class="about">
     <header class="about__hero">
-      <p class="mono">Lunar south pole landing dashboard</p>
-      <h1>A landing dashboard for the Moon’s south pole.</h1>
-      <p class="about__lede">Lunario compares sites and dates by sunlight, Earth visibility and communications, and space weather. Those windows are read against the real horizon, so mission planners, educators and the public can judge power and contact at a glance. Open the <a href="./">Dashboard</a> for the live landing-site navigator.</p>
+      <p class="mono">NASA Space Apps 2026: Lunar Landing Site Navigator</p>
+      <h1>Will this landing site and date still work if the launch slips?</h1>
+      <p class="about__lede">Lunario is our entry for the NASA Space Apps challenge Lunar Landing Site Navigator. It uses JPL Horizons and LOLA terrain data to compare sunlight and Earth visibility at the Moon’s south pole, so you can see straight away whether a site and date still work, and what to change if they don’t. Open the <a href="./">Dashboard</a> to try it.</p>
     </header>
-
-    <section class="block" aria-labelledby="does-h">
-      <h2 class="mono" id="does-h">What Lunario does</h2>
-      <dl class="rows">
-        <div class="row"><dt>Pick a site and date</dt><dd>Choose a spot near the south pole, an arrival time and a length of stay, and set how long a gap in sunlight or in the view of Earth the mission can accept.</dd></div>
-        <div class="row"><dt>Read the real horizon</dt><dd>Sun and Earth positions come from JPL Horizons and are checked against a horizon built from LOLA terrain, so crater rims and ridges block the view exactly where they rise.</dd></div>
-        <div class="row"><dt>See the windows</dt><dd>Hours of sunlight, hours of Earth in view, the longest gap in each, and the time when both are up together, across a timeline, a horizon chart and a south pole map.</dd></div>
-        <div class="row"><dt>Shift the plan</dt><dd>Move the arrival date and watch the windows change, then compare nearby sites and date shifts side by side, ranked by which ones meet the mission’s limits.</dd></div>
-      </dl>
-    </section>
-
-    <section class="factors" aria-labelledby="factors-h">
-      <h2 class="mono" id="factors-h">What Lunario takes into account</h2>
-      <p class="factors__lede">Lunario is designed to bring together the Moon’s terrain, Earth’s ground stations and the Sun’s behaviour, so a landing date can be judged on more than a single window.</p>
-
-      <article class="factor">
-        <div class="factor__intro">
-          <h3 class="factor__name">The Moon</h3>
-        </div>
-        <div class="factor__body">
-          <p class="factor__lead">At the south pole the skyline is the terrain itself. A ridge a few kilometres away can hide the Sun or Earth for days, so the landscape has to be read together with the Moon’s motion.</p>
-          <dl class="factor__list">
-            <div>
-              <dt>South-pole topography</dt>
-              <dd>The horizon is built from LOLA elevation data, so crater rims and ridges block the sky where they actually rise.</dd>
-            </div>
-            <div>
-              <dt>No atmosphere</dt>
-              <dd>With no air, there is no refraction to lift the Sun or Earth above the limb.</dd>
-            </div>
-            <div>
-              <dt>Libration, orbit and phase</dt>
-              <dd>The Moon’s slight wobble, its place in orbit and its phase all change how the Sun and Earth sit against that horizon.</dd>
-            </div>
-            <div>
-              <dt>Slopes and shadowed craters</dt>
-              <dd>Steep ground and permanently shadowed crater floors matter for landing safety and for the ice those missions hope to find.</dd>
-            </div>
-            <div>
-              <dt>Solar elevation and sunset</dt>
-              <dd>How high the Sun stands, and how long until it drops behind the terrain, sets the power and thermal window.</dd>
-            </div>
-            <div>
-              <dt>Surface temperature</dt>
-              <dd>With nothing to hold heat, the surface swings from extreme cold in shadow to harsh heat in sunlight.</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="factor">
-        <div class="factor__intro">
-          <h3 class="factor__name">Earth</h3>
-        </div>
-        <div class="factor__body">
-          <p class="factor__lead">A direct-to-Earth link only works when Earth is above the local horizon, and when a Deep Space Network antenna can see the Moon.</p>
-          <dl class="factor__list">
-            <div>
-              <dt>Earth in the sky</dt>
-              <dd>Earth’s position, and when it sets behind the terrain, decides whether a lander can talk to Earth without a relay.</dd>
-            </div>
-            <div>
-              <dt>Deep Space Network</dt>
-              <dd>NASA’s DSN complexes at Goldstone in California, Madrid in Spain and Canberra in Australia take turns seeing the Moon as the Earth turns.</dd>
-            </div>
-            <div>
-              <dt>Which station is in view</dt>
-              <dd>At a given time, one or more of those complexes can see the Moon, and which antenna is available.</dd>
-            </div>
-            <div>
-              <dt>Weather on the day</dt>
-              <dd>Rain and other local weather can fade higher-frequency Ka-band links. For near dates, forecasts at each complex are taken into account.</dd>
-            </div>
-            <div>
-              <dt>Future dates</dt>
-              <dd>Further ahead, weather is a seasonal or climatological estimate, not a day-by-day forecast.</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="factor">
-        <div class="factor__intro">
-          <h3 class="factor__name">The Sun</h3>
-        </div>
-        <div class="factor__body">
-          <p class="factor__lead">The Sun supplies the power, and when it is active it also brings radio and radiation risk.</p>
-          <dl class="factor__list">
-            <div>
-              <dt>Position and elevation</dt>
-              <dd>Where the Sun sits above the terrain sets how much power solar arrays can generate and how hard the thermal environment is.</dd>
-            </div>
-            <div>
-              <dt>Live flare alerts</dt>
-              <dd>Lunario is designed to pull flare alerts from NOAA’s Space Weather Prediction Center and NASA’s DONKI, including the flare class (C, M or X), and to show flare-ups as a live feed.</dd>
-            </div>
-            <div>
-              <dt>Effect on radio</dt>
-              <dd>X-ray flares can cause high-frequency radio blackouts on the sunlit side of Earth, rated on NOAA’s R1 to R5 scale, and can interrupt links through the DSN.</dd>
-            </div>
-            <div>
-              <dt>Radiation storms</dt>
-              <dd>Solar radiation storms and energetic particles matter for crew and for electronics, both in transit and on the surface.</dd>
-            </div>
-          </dl>
-        </div>
-      </article>
-    </section>
 
     <section class="block" aria-labelledby="why-h">
       <h2 class="mono" id="why-h">Why it matters</h2>
       <div class="block__body">
-        <p class="block__statement">One week can decide a landing.</p>
-        <p>On the rim of Shackleton crater, a week-long stay from 5 December 2026 loses the Sun for almost four days and has Earth in view for less than an hour. Arrive on 12 December instead and the Sun and Earth stay above the horizon for the whole week.</p>
+        <p class="block__statement">Two weeks late can turn a good site into a dark one.</p>
+        <p>At Connecting Ridge, a 14-day stay from 29 June 2027 has sunlight 97.6% of the time, and the longest dark gap is 8 hours. On a smooth Moon with no terrain, the same stay would get none. Arrive on 13 July instead and sunlight drops to 16.1%, with a dark gap of 9 days, and the energy check fails. Keep the new date, change only the site to de Gerlache–Shackleton, and sunlight is back to 95.5%.</p>
         <table class="compare">
-          <thead><tr><th scope="col">Arrival</th><th scope="col">Longest time without Sun</th><th scope="col">Earth in view</th></tr></thead>
+          <thead><tr><th scope="col">Site and arrival</th><th scope="col">Sunlight, 14 days</th><th scope="col">Longest dark gap</th><th scope="col">Energy</th></tr></thead>
           <tbody>
-            <tr><td>5 Dec 2026</td><td>Almost 4 days</td><td>Under 1 hour</td></tr>
-            <tr><td>12 Dec 2026</td><td class="ok">None</td><td class="ok">All week</td></tr>
+            <tr><td>Connecting Ridge<br>29 Jun 2027</td><td class="ok">97.6%</td><td class="ok">8 hours</td><td class="ok">Power OK</td></tr>
+            <tr><td>Connecting Ridge<br>13 Jul 2027</td><td class="bad">16.1%</td><td class="bad">9 days</td><td class="bad">Fails</td></tr>
+            <tr><td>de Gerlache–Shackleton<br>13 Jul 2027</td><td class="ok">95.5%</td><td>&nbsp;</td><td class="ok">Power OK</td></tr>
           </tbody>
         </table>
-        <p>When a schedule slips, Lunario shows straight away whether the new date still works, or which nearby option does.</p>
+        <p>That’s the comparison Lunario is built for: move the date or the site, and see whether the mission still has power and a view of Earth.</p>
       </div>
+    </section>
+
+    <section class="block" aria-labelledby="does-h">
+      <h2 class="mono" id="does-h">What Lunario does</h2>
+      <dl class="rows">
+        <div class="row"><dt>Pick a site and date</dt><dd>Choose one of the prepared south pole sites, an arrival date and a length of stay.</dd></div>
+        <div class="row"><dt>Read the real horizon</dt><dd>Sun and Earth positions come from JPL Horizons and are set against a horizon traced from LOLA terrain, so crater rims and ridges block the view where they actually rise.</dd></div>
+        <div class="row"><dt>See the windows</dt><dd>How much of the stay has sunlight, how much has Earth in view, and the longest gap in each, on a timeline, a horizon chart and a south pole map. Every result sits next to the smooth-Moon figure, so you can see what the terrain changes.</dd></div>
+        <div class="row"><dt>Compare a slip</dt><dd>Move the arrival date or switch to a nearby site, and compare the options side by side against a simple energy check.</dd></div>
+        <div class="row"><dt>Three modes</dt><dd>Public for a quick comparison, Educator for classroom use, and Planner for the full detail.</dd></div>
+      </dl>
+    </section>
+
+    <section class="block" aria-labelledby="data-h">
+      <h2 class="mono" id="data-h">The NASA data behind it</h2>
+      <dl class="rows">
+        <div class="row"><dt>JPL Horizons</dt><dd>Sun and Earth positions for each hour of the stay. Lunario’s calculations are checked against Horizons to within 0.005°.</dd></div>
+        <div class="row"><dt>LOLA terrain</dt><dd>Elevation data from the Lunar Orbiter Laser Altimeter, used to trace the local horizon at each prepared site.</dd></div>
+        <div class="row"><dt>Why not the illumination maps</dt><dd>NASA’s published illumination maps are long-term averages. Lunario recalculates sunlight from the terrain and the ephemeris for the specific stay instead, so a slipped date can be judged on its own.</dd></div>
+      </dl>
+    </section>
+
+    <section class="block" aria-labelledby="limits-h">
+      <h2 class="mono" id="limits-h">Limits</h2>
+      <dl class="rows">
+        <div class="row"><dt>Educational, not certified</dt><dd>Lunario is a screening and teaching tool, not an operational planning system. The best result it gives is “conditional”, never a full pass.</dd></div>
+        <div class="row"><dt>Nine prepared sites</dt><dd>Precise LOLA horizons are prepared for 9 sites. A custom point borrows the horizon of the nearest one, and the app shows how far away that is.</dd></div>
+        <div class="row"><dt>Terrain detail</dt><dd>The terrain grid is 40 metres, which smooths out the sharpest ridges.</dd></div>
+        <div class="row"><dt>Hourly steps</dt><dd>Sunrise and sunset can be out by up to an hour, so they are shown as ranges.</dd></div>
+        <div class="row"><dt>A generic lander</dt><dd>The energy check uses a generic lander (a 4&nbsp;m² solar array, a 250&nbsp;W load and a 10&nbsp;kWh battery), not a named vehicle.</dd></div>
+      </dl>
     </section>
 
     <section class="block" aria-labelledby="challenge-h">
       <h2 class="mono" id="challenge-h">The challenge</h2>
       <div class="block__body">
-        <p>Lunario is our entry for the 2026 NASA Space Apps challenge <a href="https://www.spaceappschallenge.org/2026/challenges/lunar-landing-site-navigator/" target="_blank" rel="noopener">Lunar Landing Site Navigator</a>. Missions to the Moon’s south pole face sharp swings in sunlight and Earth visibility: the Sun decides power and heat, and Earth’s place in the sky decides whether a lander can talk to Earth without a relay. NASA’s Commercial Lunar Payload Services (CLPS) program and other missions headed for water ice need to compare sites and dates quickly, especially when a launch slips.</p>
-        <p>The data already exists in tools such as NASA’s Quickmap, Moon Trek and the JPL Horizons System, but those are built for detailed analysis rather than side-by-side comparison. The brief asked for an intuitive tool that shows the Sun and Earth against the real horizon, so planners, educators and the public can judge power and communication windows at a glance.</p>
+        <p>Missions to the Moon’s south pole face sharp swings in sunlight and Earth visibility. The Sun decides power, and Earth’s place in the sky decides whether a lander can talk home without a relay. NASA’s Commercial Lunar Payload Services (CLPS) program and other missions need to compare sites and dates quickly, especially when a launch slips.</p>
+        <p>The data already exists in tools such as NASA’s Quickmap, Moon Trek and JPL Horizons, but they are built for detailed analysis rather than quick side-by-side comparison. The <a href="https://www.spaceappschallenge.org/2026/challenges/lunar-landing-site-navigator/" target="_blank" rel="noopener">Lunar Landing Site Navigator</a> brief asked for an intuitive tool to do that.</p>
       </div>
     </section>
 
@@ -186,6 +110,13 @@
           <div>
             <p class="person__name">Rian Banting</p>
             <a class="person__link" href="https://www.linkedin.com/in/rian-banting/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </li>
+        <li class="person">
+          <img class="person__photo" src="assets/team/ted.jpg" alt="Ted Turner" width="72" height="72">
+          <div>
+            <p class="person__name">Ted Turner</p>
+            <a class="person__link" href="https://www.linkedin.com/in/ted-turner-a5a219214/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </li>
       </ul>

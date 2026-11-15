@@ -67,20 +67,28 @@
   function injectCreamSiteNav() {
     // Until the offline HTML is rebuilt, stitch a clean About button + orange-accent logo
     // into the cream navigator header (same-origin iframe). Logo is home.
+    // Returns true when the About control is present (or already injected).
     try {
       var doc = frame && frame.contentDocument;
-      if (!doc || !doc.body) return;
+      if (!doc || !doc.body) return false;
       preferDarkInFrame(doc);
       if (doc.querySelector(".site-shell-nav")) return;
       // Prefer the orange-arc wordmark on dark (logo.svg), not flat logo-white.
       var wordmark = doc.querySelector("img.lunario-wordmark");
-      if (wordmark) {
+      if (wordmark && wordmark.getAttribute("src") !== "branding/lunario/assets/logo.svg") {
         wordmark.setAttribute("src", "branding/lunario/assets/logo.svg");
       }
-      if (doc.querySelector(".site-shell-nav")) return;
+      var existing = doc.querySelector(".site-shell-nav");
+      if (existing) {
+        if (!existing.querySelector(".site-shell-nav__about")) {
+          existing.innerHTML =
+            '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
+        }
+        return true;
+      }
       var row = doc.querySelector(".header-primary-row");
       var brand = row && row.querySelector("a.brand, .brand");
-      if (!row || !brand) return;
+      if (!row || !brand) return false;
       if (!doc.getElementById("lunario-site-shell-nav-style")) {
         var style = doc.createElement("style");
         style.id = "lunario-site-shell-nav-style";
@@ -108,9 +116,63 @@
       nav.innerHTML =
         '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
       cluster.appendChild(nav);
+      return true;
     } catch (e) {
       // Ignore if the frame document is not ready.
+      return false;
     }
+  }
+
+  function ensureCreamSiteNav() {
+    if (injectCreamSiteNav()) return;
+    var tries = 0;
+    var timer = window.setInterval(function () {
+      tries += 1;
+      if (injectCreamSiteNav() || tries >= 80) window.clearInterval(timer);
+    }, 250);
+    try {
+      var doc = frame && frame.contentDocument;
+      if (!doc || !doc.body || typeof MutationObserver !== "function") return;
+      var observer = new MutationObserver(function () {
+        if (injectCreamSiteNav()) observer.disconnect();
+      });
+      observer.observe(doc.body, { childList: true, subtree: true });
+      window.setTimeout(function () { observer.disconnect(); }, 20000);
+    } catch (e) {}
+  }
+
+  function openDemoSplit() {
+    // ?demo=1 opens the south-pole date comparison: Connecting Ridge in split view.
+    // The offline navigator already starts on that site and the 29 Jun 2027 stay.
+    if (!/[?&]demo=1(?:&|$)/.test(window.location.search)) return;
+    var tries = 0;
+    var delayLoaded = false;
+    var minimized = false;
+    var timer = window.setInterval(function () {
+      tries += 1;
+      try {
+        var doc = frame && frame.contentDocument;
+        if (!doc) return;
+        var dismiss = doc.querySelector('[aria-label="Dismiss introduction"]');
+        if (dismiss) dismiss.click();
+        var split = doc.querySelector('[aria-label="Split map and 3D"]');
+        if (split && split.getAttribute("aria-pressed") !== "true") split.click();
+        var delay = doc.querySelector('[aria-label="Show a delayed landing"]:not([disabled])');
+        if (delay && !delayLoaded) {
+          delay.click();
+          delayLoaded = true;
+        }
+        if (delayLoaded && !minimized) {
+          var minimize = doc.querySelector('[aria-label="Minimize comparisons"]');
+          if (minimize) {
+            minimize.click();
+            minimized = true;
+          }
+        }
+        if (split && split.getAttribute("aria-pressed") === "true" && minimized) window.clearInterval(timer);
+      } catch (e) {}
+      if (tries >= 80) window.clearInterval(timer);
+    }, 250);
   }
 
   function reveal() {
@@ -121,7 +183,9 @@
     try {
       if (frame && frame.contentDocument) preferDarkInFrame(frame.contentDocument);
     } catch (e) {}
-    injectCreamSiteNav();
+    // Frame "load" often fires before React paints the cream header — keep retrying.
+    ensureCreamSiteNav();
+    openDemoSplit();
     // Touchdown: altitude lands at 0, then the loader lifts to show the dashboard.
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
