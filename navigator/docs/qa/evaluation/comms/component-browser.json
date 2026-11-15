@@ -1,0 +1,73 @@
+{
+  "browser": "149.0.7827.155",
+  "context": "Isolated file fixture with baseline embedded styles; no shared profile/server or production app wiring",
+  "checks": [
+    {
+      "dark": false,
+      "width": 390,
+      "sizes": {
+        "viewport": 390,
+        "body": 390,
+        "root": 390
+      },
+      "colors": {
+        "background": "rgb(252, 227, 212)",
+        "foreground": "rgb(37, 36, 31)"
+      },
+      "defaultCollapsed": true,
+      "keyboardDisclosure": true,
+      "criticalDisclosure": true
+    },
+    {
+      "dark": false,
+      "width": 800,
+      "sizes": {
+        "viewport": 800,
+        "body": 800,
+        "root": 800
+      },
+      "colors": {
+        "background": "rgb(252, 227, 212)",
+        "foreground": "rgb(37, 36, 31)"
+      },
+      "defaultCollapsed": true,
+      "keyboardDisclosure": true,
+      "criticalDisclosure": true
+    },
+    {
+      "dark": true,
+      "width": 390,
+      "sizes": {
+        "viewport": 390,
+        "body": 390,
+        "root": 390
+      },
+      "colors": {
+        "background": "rgb(27, 29, 32)",
+        "foreground": "rgb(245, 238, 226)"
+      },
+      "defaultCollapsed": true,
+      "keyboardDisclosure": true,
+      "criticalDisclosure": true
+    },
+    {
+      "dark": true,
+      "width": 800,
+      "sizes": {
+        "viewport": 800,
+        "body": 800,
+        "root": 800
+      },
+      "colors": {
+        "background": "rgb(27, 29, 32)",
+        "foreground": "rgb(245, 238, 226)"
+      },
+      "defaultCollapsed": true,
+      "keyboardDisclosure": true,
+      "criticalDisclosure": true
+    }
+  ],
+  "errors": [],
+  "httpRequests": [],
+  "limitations": "Not a full app, native 200% zoom, touch-device, contrast or screen-reader acceptance check."
+}

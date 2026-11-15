@@ -1,0 +1,232 @@
+TAP version 13
+# Subtest: a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+not ok 1 - a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+  ---
+  duration_ms: 2.391902
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:7:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:9:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: provider numeric fields reject JavaScript hexadecimal notation
+not ok 2 - provider numeric fields reject JavaScript hexadecimal notation
+  ---
+  duration_ms: 0.461193
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:11:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:13:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: strict import rejects geometry columns that do not reproduce archived source bytes
+not ok 3 - strict import rejects geometry columns that do not reproduce archived source bytes
+  ---
+  duration_ms: 0.980124
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:15:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:17:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: future-issued stationHorizon cannot grant modeled capacity
+not ok 4 - future-issued stationHorizon cannot grant modeled capacity
+  ---
+  duration_ms: 3.388506
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:20:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:22:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: future-issued lunarMask cannot grant modeled capacity
+not ok 5 - future-issued lunarMask cannot grant modeled capacity
+  ---
+  duration_ms: 1.271264
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:20:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:22:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: future-issued hardware cannot grant modeled capacity
+not ok 6 - future-issued hardware cannot grant modeled capacity
+  ---
+  duration_ms: 0.814061
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:20:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:22:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: future-issued allocations cannot grant modeled capacity
+not ok 7 - future-issued allocations cannot grant modeled capacity
+  ---
+  duration_ms: 0.829809
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:20:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:22:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: missing Earth-orientation coverage stays unknown
+not ok 8 - missing Earth-orientation coverage stays unknown
+  ---
+  duration_ms: 0.918036
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:26:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:28:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+not ok 9 - epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+  ---
+  duration_ms: 1.017952
+  location: '/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'conditional-meets'
+    - 'incomplete'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'incomplete'
+  actual: 'conditional-meets'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-comms-baseline-qa/navigator/tests/comms-evaluation/regressions.test.ts:33:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: a fully covered conditional chain retains existing capacity and has no overall authority
+ok 10 - a fully covered conditional chain retains existing capacity and has no overall authority
+  ---
+  duration_ms: 0.755803
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 1
+# fail 9
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 313.314796
