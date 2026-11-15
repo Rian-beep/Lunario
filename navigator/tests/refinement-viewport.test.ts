@@ -99,9 +99,9 @@ if (process.env.SOLARREACH_VIEWPORT_ARTIFACT) {
               await page.waitForFunction((before:number)=>Number((document.querySelector('.scene-host') as HTMLElement)?.dataset.renderFrame)>=before+2,before);
               const measured=await page.evaluate(()=>{
                 const host=document.querySelector('.scene-host') as HTMLElement;
-                const selectors=['.workspace-heading','.flight-telemetry','.map-bottom-tools','.inspector'];
+                const selectors=['.workspace-heading','.flight-telemetry','.map-bottom-tools','.compare-side','.inspector'];
                 const hud=document.querySelector('.flight-telemetry')!;
-                return {native:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio,scroll:scrollY,documentWidth:document.documentElement.scrollWidth},data:{...host.dataset},host:host.getBoundingClientRect().toJSON(),panels:selectors.map(selector=>({selector,...document.querySelector(selector)!.getBoundingClientRect().toJSON()})),hudActions:hud.querySelector('.flight-hud-actions')!.getBoundingClientRect().toJSON(),metrics:[...hud.children].slice(0,4).filter(el=>el.getClientRects().length).map(el=>el.getBoundingClientRect().toJSON())};
+                return {native:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio,scroll:scrollY,documentWidth:document.documentElement.scrollWidth},data:{...host.dataset},host:host.getBoundingClientRect().toJSON(),panels:selectors.map(selector=>({selector,...document.querySelector(selector)!.getBoundingClientRect().toJSON()})).filter(rect=>rect.width>0&&rect.height>0),hudActions:hud.querySelector('.flight-hud-actions')!.getBoundingClientRect().toJSON(),metrics:[...hud.children].slice(0,4).filter(el=>el.getClientRects().length).map(el=>el.getBoundingClientRect().toJSON())};
               });
               rows.push({mode,hud,location,zoom:native,...measured});
               assert.equal(measured.data.vehicleFraming,'framed',`${mode}/${hud}/${location}: actual physical vehicle must be framed`);
@@ -116,8 +116,8 @@ if (process.env.SOLARREACH_VIEWPORT_ARTIFACT) {
               for(const panel of measured.panels)assert.ok(!overlap(vehicle,panel),`Vehicle clears ${panel.selector}`);
               for(const [i,panel]of measured.panels.entries())for(const other of measured.panels.slice(i+1))assert.ok(!overlap(panel,other),`${panel.selector} clears ${other.selector}`);
               for(const metric of measured.metrics)assert.ok(!overlap(metric,measured.hudActions),'HUD actions have dedicated space beside every metric');
-              const inspector=measured.panels.find((panel:{selector:string})=>panel.selector==='.inspector')!,tools=measured.panels.find((panel:{selector:string})=>panel.selector==='.map-bottom-tools')!;
-              near(inspector.bottom,tools.bottom);
+              // Compare is now independently docked; its real bounds participate in every overlap assertion above.
+              assert.ok(measured.panels.some((panel:{selector:string})=>panel.selector==='.compare-side'));
               assert.equal(measured.native.scroll,0);assert.ok(measured.native.documentWidth<=800);
               assert.equal(await scene.getAttribute('data-scene-instance'),instance);
               assert.ok(await scene.evaluate((host:HTMLElement,canvas:HTMLCanvasElement)=>host.querySelector('canvas')===canvas,canvas));

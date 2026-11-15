@@ -82,3 +82,11 @@ Six south-polar site centres now include finer NASA NAC imagery at approximately
 Local terrain and the globe now share the original NASA 8K global atlas. Close-up global context has four times the previous linear image resolution, while a shared texture lease and offline embedding avoid duplicate GPU textures and duplicate atlas payloads. Arbitrary points still retain their actual source-resolution limits.
 
 Public guidance now explains why sunlight, battery storage and a clear Earth view matter, with plain-language antenna-view descriptions and a distinction between the displayed moment and the whole stay.
+
+## 15 November 2026 — More room for the mission
+
+- Keep the map clear of the wide guidance banner: open mission context in the right inspector when needed.
+- Use the inspector’s full available workspace height in both compact and widened desktop views.
+- Open Compare from the side, clear of flight telemetry. Earth station selection is grouped under Ground stations to keep its toolbar compact.
+- In Planner, use Var for docked native formulae, symbol explanations and assumptions relevant to Moon, Earth or lander focus.
+- Read calmer panel frames and disclosure surfaces while retaining the light/dark palette and original branding.

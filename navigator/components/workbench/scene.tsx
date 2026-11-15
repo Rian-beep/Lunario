@@ -185,8 +185,9 @@ export function LunarScene(props: SceneProps) {
     .map((grid) => grid.inputPixelM ?? props.terrain!.sourcePixelM) : [];
   const sceneControls = <>
       {focus === 'earth' && <div className="header-dsn-context">
+
+        <HeaderLeanDropdown label="Ground stations" className="header-station-details" openRequest={props.audienceMode==='public'?stationDetailsRequest:undefined}>
         <div role="group" aria-label="DSN ground complexes" className="header-station-buttons">{DSN_STATIONS.map(station => <Button key={station.id} variant="ghost" aria-pressed={stationId === station.id} onClick={() => {selectStation(station.id);setMode('earth');runtime.current?.inspectStation(station.id);}}>{station.name}</Button>)}</div>
-        <HeaderLeanDropdown label="Ground complex details" className="header-station-details" openRequest={props.audienceMode==='public'?stationDetailsRequest:undefined}>
           {!stationId && <p>Select Goldstone, Madrid or Canberra for its sourced antenna and dated weather context.</p>}
           {DSN_STATIONS.filter(station => station.id === stationId).map(station => <div key={station.id}>
             <strong>{station.name} · {station.antenna}</strong><p>{station.description}</p>

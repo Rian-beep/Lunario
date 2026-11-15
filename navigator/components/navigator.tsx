@@ -50,7 +50,7 @@ import { PolarMap } from "@/components/polar-map";
 import {GlobalMap} from "@/components/global-map";
 import {DataConnections} from "@/components/workbench/data-connections";
 import {AssessmentExplanation} from "@/components/workbench/assessment-explanation";
-import {LearningDialog} from "@/components/workbench/physics-reference";
+import {LearningDialog, VariableReference} from "@/components/workbench/physics-reference";
 import dynamic from 'next/dynamic';
 const TouchdownLab=dynamic(()=>import('@/components/workbench/touchdown-lab').then(m=>m.TouchdownLab),{ssr:false});
 const SolarSystemView=dynamic(()=>import('@/components/workbench/solar-system-view').then(m=>m.SolarSystemView),{ssr:false});
@@ -130,7 +130,7 @@ import type {EvidenceManifest} from "@/lib/planning-types";
 
 type View = "map" | "terrain" | "split";
 type Panel =
-  "overview" | "teach" | "plan" | "flight" | "analysis" | "dates" | "sources";
+  "overview" | "teach" | "plan" | "flight" | "analysis" | "dates" | "sources" | "variables";
 const STORAGE = "solarreach-workbench-v1",
   SAVED = "solarreach-comparisons-v1";
 export function Navigator() {
@@ -764,10 +764,10 @@ export function Navigator() {
             <Button variant="outline" aria-label="Replan mission" disabled={!evidenceManifest} onClick={openReplanning}><Columns3 size={15}/>Replan mission</Button>
             {mode==='teach'&&<Button variant="outline" onClick={openTeachingStudio} disabled={!evidenceManifest}>Teaching studio</Button>}
             {mode==='plan'&&<Button variant="outline" onClick={openEngineeringEvidence} disabled={!evidenceManifest||!planning.result}>Engineering evidence</Button>}
-            <Button className="header-learn" variant="ghost" onClick={()=>setLearnOpen(true)}><BookOpen size={15}/>Learn</Button>
+            <Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':learnOpen} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen(true)}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>
             <Button variant="ghost" onClick={()=>{setPlaying(false);setFlightPlaying(false);setTouchdownOpen(true);}}>Lab</Button>
           </div>
-          {panel!=="flight"&&evidenceManifest&&planning.result&&<div aria-label="Audience task context" role="region"><AudienceTaskStrip key={mode} mode={mode} catalog={catalog} manifest={evidenceManifest} state={state} assessment={planning.result} playhead={playhead} siteName={name} onInspect={()=>openPanel(mode==='plan'?'plan':mode==='teach'?'teach':'overview')} onReplan={openReplanning} onTeach={openTeachingStudio}/></div>}
+
         </header>
         {focusMode&&<Button className="focus-restore glass" variant="outline" onClick={()=>setFocusMode(false)}><Maximize2 size={15}/> Show controls</Button>}
         {learnOpen&&!focusMode&&<LearningDialog mode={mode} onClose={()=>setLearnOpen(false)}/>}
@@ -1006,7 +1006,9 @@ export function Navigator() {
                 </Button>
               </div>
               <div className="inspector-scroll" key={panel}>
-                <details className="audience-mode-context" open={!audienceContextCollapsed} onToggle={e=>setAudienceContextCollapsed(!e.currentTarget.open)}><summary>{mode==='public'?'How to read this site':mode==='teach'?'Equations & guided investigation':'Planning context & decision margins'}</summary><AudienceContextPanel mode={mode} state={state} assessment={planning.result} siteName={name}/></details>
+          {evidenceManifest&&planning.result&&<details className="mission-task-context"><summary>Mission context & next steps</summary><div aria-label="Audience task context" role="region"><AudienceTaskStrip key={mode} mode={mode} catalog={catalog} manifest={evidenceManifest} state={state} assessment={planning.result} playhead={playhead} siteName={name} onInspect={()=>openPanel(mode==='plan'?'plan':mode==='teach'?'teach':'overview')} onReplan={openReplanning} onTeach={openTeachingStudio}/></div></details>}
+                {panel==='variables'&&<VariableReference key={assetFocus} topicId={assetFocus==='earth'?'communications':assetFocus==='lander'?'descent':'light'}/>}
+                <details hidden={panel==='variables'} className="audience-mode-context" open={!audienceContextCollapsed} onToggle={e=>setAudienceContextCollapsed(!e.currentTarget.open)}><summary>{mode==='public'?'How to read this site':mode==='teach'?'Equations & guided investigation':'Planning context & decision margins'}</summary><AudienceContextPanel mode={mode} state={state} assessment={planning.result} siteName={name}/></details>
                 {panel === "overview" && (
                   <>
                     <Section title="At this moment">
@@ -1327,21 +1329,22 @@ export function Navigator() {
                 <Maximize2 size={15} />
               </Button>
             </div>}
+
+          </div>
             <Button
-              className="glass compare-toggle"
+              className="glass compare-toggle compare-side" data-scene-occluder aria-label="Compare scenarios" title="Compare scenarios"
               variant="ghost"
               aria-expanded={compareOpen}
               onClick={() => {setCompareMinimized(false);setCompareOpen(!compareOpen);}}
             >
               <Columns3 size={15} />
-              Compare scenarios <span>{saved.length}</span>
+              <span className="compare-label">Compare</span> <span>{saved.length}</span>
               {compareOpen ? (
                 <ChevronRight size={13} />
               ) : (
                 <ChevronLeft size={13} />
               )}
             </Button>
-          </div>
           {layers && view!=="terrain" && mapArea==="polar" && (
             <div className="layer-popover glass">
               <h3>Map layers</h3><Button className="layer-close" size="icon" variant="ghost" aria-label="Dismiss map layers" onClick={()=>setLayers(false)}><X size={15}/></Button>

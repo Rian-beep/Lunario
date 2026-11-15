@@ -657,3 +657,18 @@ html:root[data-ui-theme="dark"] .lunar-app .inspector .audience-context header s
 html:root[data-ui-theme="dark"] .lunar-app .inspector .audience-source { color: var(--muted-foreground); }
 html:root[data-ui-theme="dark"] .scene-legend > span:not(.sun-dot):not(.earth-dot) { color: var(--mission-on-space-muted); }
 html:root[data-ui-theme="dark"] .map-imagery-tools [data-slot="button"] { color: var(--foreground); }
+
+/* Retain the reference palette with quieter, continuous panel edges. */
+html:root { --mission-panel-shadow: 0 4px 18px rgb(0 0 0 / 14%); }
+html:root .lunar-app :is(.inspector.glass, .site-drawer.glass, .workspace-heading, .header-dropdown-content, .variable-tooltip, .workspace-dialog, .learning-dialog, .flight-telemetry) {
+ border: 1px solid var(--border); box-shadow: var(--mission-panel-shadow);
+}
+html:root .lunar-app :is(.inspector-nav, .drawer-heading, .comparison-header, .comparison-tabs, .learn-heading) {
+ background: var(--secondary); color: var(--foreground); border-bottom: 1px solid var(--border); --muted-foreground: var(--foreground);
+}
+html:root .lunar-app :is(.inspector-nav [data-slot="button"], .drawer-heading h2 span, .learn-heading p, .comparison-header p) { color: var(--foreground); }
+html:root .header-context-toolbar { background: var(--secondary); color: var(--foreground); --muted-foreground: var(--foreground); box-shadow: none; border-color: var(--border); }
+html:root[data-ui-theme] .lunar-app .inspector details > summary { background: var(--secondary); color: var(--foreground); box-shadow: none; }
+html:root .compare-side { background: var(--card); color: var(--foreground); border: 1px solid var(--border); box-shadow: 0 2px 10px rgb(0 0 0 / 10%); }
+
+html:root .lunar-app .inspector-nav [aria-pressed="true"] { background: var(--mission-selected); color: var(--mission-ink); }

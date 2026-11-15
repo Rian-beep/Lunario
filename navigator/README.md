@@ -125,3 +125,7 @@ The original loader holds for at least three seconds before its lift-away on fir
 Use the header’s Dark/Light button to switch between the light mint/cream reference and near-black/orange. The preference persists in this browser and affects UI surfaces, not NASA imagery or mission calculations. Original Lunario dark/white wordmarks are used on their corresponding surfaces.
 
 Public site selections expand a dismissible location story: historical mission context, source links and nearby published touchdown pins. In Earth focus, selecting a DSN complex opens its role and communication explanation. These are ground antennas, not satellites. Weather is requested explicitly and dated; a separate current forecast never fills an unsupported future mission instant.
+
+### More workspace, supporting context on demand
+
+Mission context is a collapsed section in the right inspector. The inspector uses the available desktop workspace height, including when widened. Compare is docked at the side and Earth ground stations share a single disclosure. Planner’s Var button opens a docked native-equation reference with topic, symbols and assumptions; it does not change mission inputs.
