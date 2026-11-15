@@ -1,0 +1,24 @@
+{
+  "baselineCommit": "65ed8a59fdee2273da37f853dbb6be08bd655a96",
+  "scope": "Exclude only scheduler imports/local yielder creation and replace the old zero-delay await with the new preparation await; ignore whitespace. All remaining contact/fragment/engine source is equal. Runtime physics/terrain/clearance tests are required separately.",
+  "files": [
+    {
+      "path": "lib/touchdown-fragments.ts",
+      "baselineSha256": "57b70ca777cb95589595717d303cdfb983c3613a6c8c6eb394803464b060ba03",
+      "candidateSha256": "8e80e013ac86a39800b0618e02e386aa50a46891c95787ee115450c7b41a1e56",
+      "sameAfterSchedulingOnlyNormalization": true
+    },
+    {
+      "path": "lib/touchdown-physics.ts",
+      "baselineSha256": "1fa7810f654676a7a0d2a3cd0ca8c1ee543cf99ff4e9c2b176edd128741caad8",
+      "candidateSha256": "ac9919690028cb6ab3b86bdeeb1872df7b66e916ace7a1b7a650e915db419d0d",
+      "sameAfterSchedulingOnlyNormalization": true
+    },
+    {
+      "path": "components/workbench/scene/contact-dynamics.ts",
+      "baselineSha256": "48d34f0279487a6debd9b0f08a48842fd5b985fe254bbb033154edb048ef398f",
+      "candidateSha256": "6cf1fc9ca24716b976cf8d816e36dfb9c0febee0816fc8c03c6968224805b88c",
+      "sameAfterSchedulingOnlyNormalization": true
+    }
+  ]
+}

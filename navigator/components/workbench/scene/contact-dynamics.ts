@@ -1,3 +1,4 @@
+import {createPreparationYield} from '@/lib/yield-main-thread';
 import * as T from 'three';
 import type {FlightResult} from '@/lib/flight';
 import type {LandingConfiguration, LandingContact, LandingDynamicsReadout, LandingOutcome} from '@/lib/landing-contract';
@@ -10,7 +11,6 @@ export type ContactFlight = FlightResult & {contact?: LandingContact; landingOut
 export const CONTACT_STEP_S = 1 / 120;
 export const MAX_CONTACT_SECONDS = 12;
 const HEADER = 10, PIECE = 13;
-const yieldTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
 export const CONTACT_MODEL_NOTE = 'Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.';
 
 /** Tangent +X east, +Y up, +Z south. This is a numerical height, never image relief.
@@ -49,6 +49,7 @@ export function contactTerrainHeight(field: TouchdownTerrain, x: number, z: numb
 
 export async function prepareContactTerrain(data: TerrainData | null, frame: SiteFrame, contact: LandingContact,
   seconds: number, signal: AbortSignal): Promise<{field: TouchdownTerrain; note: string}> {
+  const yieldTask = createPreparationYield();
   // Fixed vertex budget. Fine sampling of coarse source cells never upgrades evidence.
   // Normal impact energy can redirect into sliding or fragment motion. Sizing
   // from horizontal speed alone prematurely truncated otherwise valid crashes.
@@ -221,6 +222,7 @@ export function contactUnsupported(contact: LandingContact, configuration?: Land
 
 export async function prepareContactReplay(contact: LandingContact, configuration: LandingConfiguration, data: TerrainData | null,
   frame: SiteFrame, parts: readonly TouchdownFragment[], signal: AbortSignal): Promise<PreparedContact> {
+  const yieldTask = createPreparationYield();
   const unsupported = contactUnsupported(contact, configuration);
   if (unsupported) throw new Error(unsupported);
   const seconds = Math.min(MAX_CONTACT_SECONDS, configuration.contactPreviewSeconds);

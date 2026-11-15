@@ -1,3 +1,4 @@
+import {createPreparationYield} from './yield-main-thread';
 import * as T from 'three';
 import {MAX_TOUCHDOWN_FRAGMENTS, type TouchdownFragment} from './touchdown-physics';
 
@@ -24,7 +25,8 @@ export type PreparedTouchdownFragments = {
  */
 export async function prepareTouchdownFragments(model: T.Object3D, signal?: AbortSignal): Promise<PreparedTouchdownFragments> {
   const check = () => { signal?.throwIfAborted(); };
-  const yieldTask = async () => { await new Promise<void>(resolve => setTimeout(resolve, 0)); check(); };
+  const yieldPreparation = createPreparationYield();
+  const yieldTask = async () => { await yieldPreparation(); check(); };
   check();
   await yieldTask();
   model.updateWorldMatrix(true, true);

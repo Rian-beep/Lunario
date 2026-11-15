@@ -156,3 +156,10 @@ The LCROSS original-PDF replay also requires Poppler's `pdftotext` on PATH (`pop
 The standard `npm test` suite also includes the evaluation harness `.test.mjs` checks. Browser audience acceptance is separate: see `scripts/evaluation-audience/README.md` for hosted and disconnected journeys, native desktop zoom, touch emulation and keyboard checks. These are automated agent checks, not a human or assistive-technology study.
 
 The evidence wiring regression launches isolated Chrome. macOS and Clevo/Linux standard Chrome paths are detected; set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` (or `CHROME_PATH`) for a different installation. A missing browser is a failed check, not a silent skip. No personal Chrome profile is used.
+
+
+### Software-rendered flight acceptance
+
+`LUNARIO_SOFTWARE=default node scripts/verify-public-flight.mjs --url URL --file public/solarreach-navigator.html --out OUTPUT --mode both` asserts an actual software renderer using the browser's default configuration. `LUNARIO_SOFTWARE=1` explicitly requests SwiftShader; `LUNARIO_CPU_THROTTLE=4` adds a four-times CPU slowdown. `LUNARIO_NO_SCHEDULER=1` exercises the MessageChannel preparation fallback. Reports record renderer, flags, CPU slowdown, preparation latency and the unchanged 90-second readiness gate. Each complete transport must pass all eight public-flight groups; the offline context disables networking. These are controlled browser simulations, not acceptance on every physical low-end device.
+
+Contact preparation uses prioritized `scheduler.yield()` when available. Older browsers post MessageChannel tasks, batching only within an eight millisecond CPU slice; both message ports close on completion. Cancellation checks and physics step counts remain intact. Server-side execution retains timer yields. The numerical replay is unchanged; display throughput still depends on device capabilities.
