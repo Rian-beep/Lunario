@@ -2,18 +2,21 @@
 
 Static site, no build step. Two pages share one top bar (logo, Dashboard, About):
 
-- `index.html`: Dashboard. The "Prepare for landing" loader plays first (once per browser tab session), then reveals the dashboard. The dashboard is a **placeholder layout**: mount the real dashboard inside `<div id="dashboard-root">`.
+- `index.html`: Dashboard. The "Prepare for landing" loader plays first (once per browser tab session), then embeds Luke's full lunar landing site navigator from `navigator/public/solarreach-navigator.html` inside `#dashboard-root`.
 - `about.html`: project summary, team (Luke Dudley, Rian Banting, with LinkedIn links) and the Lunario banner as the footer (HTML + SVG, so it stays crisp at any width).
 
 ```
 index.html  about.html  .nojekyll
-css/site.css             shared styles
+    css/site.css             shared styles
 fonts/                   Geist + Geist Mono (SIL OFL), self-hosted
 loader/                  loader.css, loader.js, font
 assets/                  logos, favicons, manifest, og-image, hero-bg.svg, footer-bg.svg
+navigator/               Next.js workbench + offline HTML bundle used by Dashboard
 ```
 
 All paths are relative, so it works on a project site (`https://<user>.github.io/<repo>/`) as well as a custom domain.
+
+The Dashboard tab loads the verified offline navigator (~78 MB). First visit can take a while on slow links; a direct open link is shown while it loads. For a host that can run Next.js, you can still serve `navigator/` with `npm run dev` / `npm run build` instead of the embedded file.
 
 ## Deploy
 
@@ -49,7 +52,9 @@ python3 -m http.server 8000
 
 ## Integrated lunar navigator workbench
 
-The tested map-first Public / Educator / Planner application is in [`navigator/`](navigator/README.md). The existing static shell, branding and About page remain unchanged.
+The tested map-first Public / Educator / Planner application lives in [`navigator/`](navigator/README.md). The site **Dashboard** tab embeds the verified offline build at [`navigator/public/solarreach-navigator.html`](navigator/public/solarreach-navigator.html) so GitHub Pages can serve the full workbench without a Node host. Branding and the About page stay in the static shell.
+
+For local Next.js development:
 
 ```bash
 cd navigator
@@ -57,6 +62,6 @@ npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:4317/. For a host that runs Next.js, choose **`navigator` as the project root**, then use `npm run build` and `npm run start -- --port 4317`. Hosting remains the teammate's responsibility; this change does not change Pages or deployment settings.
+Open http://127.0.0.1:4317/. On a host that runs Next.js, set **`navigator` as the project root**, then `npm run build` and `npm run start -- --port 4317`.
 
-A prebuilt disconnected version is [`navigator/public/solarreach-navigator.html`](navigator/public/solarreach-navigator.html). Download the actual HTML file and open it locally; GitHub's file preview is not the application. See [the team handoff](NAVIGATOR-HANDOFF.md) for exact release identity, validation and remaining work.
+GitHub’s file preview is not the application — open the HTML via the Dashboard tab, a local static server, or download the file. See [the team handoff](NAVIGATOR-HANDOFF.md) for release identity and validation, and [SPACE-APPS-JUDGING-REVIEW.md](SPACE-APPS-JUDGING-REVIEW.md) for the challenge/rubric self-assessment.
