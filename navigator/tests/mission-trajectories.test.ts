@@ -115,3 +115,11 @@ test('untrusted file byte integrity is checked before import', async () => {
   await verifyTrajectoryBytes(artifactBytes, artifactHash);
   await assert.rejects(verifyTrajectoryBytes(new TextEncoder().encode(artifactBytes.toString()+'x'), artifactHash));
 });
+
+test('Horizons rejects conflicting headers and non-decimal JavaScript numeric literals', () => {
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace('Reference frame : ICRF', 'Reference frame : ICRF\nReference frame : Ecliptic of J2000.0'), -158));
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace('Output units    : KM-S', 'Output units    : KM-SPOOF'), -158));
+  const first = sourceVectors.rows[0].positionKm[0];
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace(String(first), '0x10'), -158));
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace(String(first), '0b10'), -158));
+});

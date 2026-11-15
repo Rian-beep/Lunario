@@ -101,16 +101,32 @@ export const trajectorySceneKm = ([x, y, z]: Vector3): Vector3 => [x, z, -y];
 export function parseMissionHorizonsVectors(text: string, targetId: number): { julianDateTdb: number; positionKm: Vector3; velocityKmS: Vector3 }[] {
   if (text.length > 10_000_000 || !Number.isSafeInteger(targetId)) fail('invalid bounded source');
   const head = text.split('$$SOE')[0];
-  for (const required of [`(${targetId})`, 'Center body name: Moon (301)', 'Center-site name: BODY CENTER', 'Output units    : KM-S', 'Output type     : GEOMETRIC cartesian states', 'Reference frame : ICRF', 'Calendar Date (TDB)']) {
-    if (!head.includes(required)) fail('Horizons source identity/frame/time/units mismatch');
+  const lines = head.split(/\r?\n/).map(line => line.trim());
+  const header = (prefix: string): string => {
+    const matching = lines.filter(line => line.startsWith(prefix));
+    if (matching.length !== 1) fail('missing or conflicting Horizons header');
+    return matching[0];
+  };
+  for (const [prefix, required] of [
+    ['Center body name:', 'Center body name: Moon (301)'],
+    ['Center-site name:', 'Center-site name: BODY CENTER'],
+    ['Output units', 'Output units : KM-S'],
+    ['Output type', 'Output type : GEOMETRIC cartesian states'],
+    ['Reference frame', 'Reference frame : ICRF'],
+  ]) {
+    if (header(prefix).replace(/\s+\{source: [^{}]+\}$/, '').replace(/\s+/g, ' ') !== required) fail('Horizons source identity/frame/time/units mismatch');
   }
-  if (!head.split('\n').some(line => line.startsWith('Target body name:') && line.includes(`(${targetId})`))) fail('wrong Horizons target');
+  if (!header('Target body name:').includes(`(${targetId})`)) fail('wrong Horizons target');
+  const columns = header('JDTDB,').split(',').map(field => field.trim());
+  if (columns.join(',') !== 'JDTDB,Calendar Date (TDB),X,Y,Z,VX,VY,VZ,') fail('Horizons column/time scale mismatch');
   const parts = text.split('$$SOE');
   if (parts.length !== 2 || parts[1].split('$$EOE').length !== 2) fail('missing/duplicate Horizons bounds');
   const rows = parts[1].split('$$EOE')[0].trim().split(/\r?\n/).map(line => {
     const fields = line.split(',').map(field => field.trim());
     if (fields.length !== 9 || fields[8] !== '' || !fields[1].startsWith('A.D.') || [fields[0], ...fields.slice(2, 8)].some(field => !field)) fail('invalid Horizons vector record');
-    const numbers = [fields[0], ...fields.slice(2, 8)].map(field => finite(Number(field)));
+    const numeric = [fields[0], ...fields.slice(2, 8)];
+    if (numeric.some(field => !/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?$/.test(field))) fail('invalid Horizons decimal number');
+    const numbers = numeric.map(field => finite(Number(field)));
     return { julianDateTdb: numbers[0], positionKm: vector(numbers.slice(1, 4)), velocityKmS: vector(numbers.slice(4, 7)) };
   });
   if (rows.length < 2 || rows.length > 100000) fail('invalid Horizons sample count');

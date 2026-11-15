@@ -1,0 +1,27 @@
+{
+  "base": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "rawSha256": "6e99902c1d1610391b81671fb7f90d58316c31d4b3b44a8502b28f96693b8426",
+  "unmodifiedSamples": 109,
+  "cases": [
+    {
+      "id": "conflicting-frame-headers",
+      "baselineAccepted": true,
+      "currentAccepted": false
+    },
+    {
+      "id": "unit-prefix-spoof",
+      "baselineAccepted": true,
+      "currentAccepted": false
+    },
+    {
+      "id": "hexadecimal-position",
+      "baselineAccepted": true,
+      "currentAccepted": false
+    },
+    {
+      "id": "binary-position",
+      "baselineAccepted": true,
+      "currentAccepted": false
+    }
+  ]
+}
