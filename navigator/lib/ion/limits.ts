@@ -35,5 +35,10 @@ export function configureIonLimits(tiles: TilesRenderer, onFailure: () => void):
   tiles.processNodeQueue = nodes;
   tiles.lruCache = cache;
   tiles.errorTarget = ION_TILE_LIMITS.errorTarget;
+  // Refine the camera footprint and its neighbours, retaining ancestor fallback.
+  // No region/depth override or whole-Moon prefetch is installed.
+  tiles.loadSiblings = true;
+  tiles.loadAncestors = true;
+  tiles.accelerateRaycast = true;
   tiles.maxTilesProcessed = 100;
 }
