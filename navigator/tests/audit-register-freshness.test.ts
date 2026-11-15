@@ -19,6 +19,12 @@ test('scientific register refuses stale input, numerical implementation, invento
  ['docs/qa/scientific-audit/sources/inventory.json',text=>text+' '],
  ];
  for(const [file,mutate] of cases){const path=join(dir,file),original=readFileSync(path,'utf8');writeFileSync(path,mutate(original));const failed=run();assert.notEqual(failed.status,0,file);assert.match(failed.stderr,/Stale scientific evidence/);assert.equal(readFileSync(output,'utf8'),originalOutput,'Failed audit must not replace published findings');writeFileSync(path,original);}
+ // Rebinding a failed CLPS comparison cannot turn it into a passing published claim.
+ const clps='docs/qa/evaluation/integration/clps-source-comparison.json',clpsPath=join(dir,clps),clpsOriginal=readFileSync(clpsPath,'utf8'),bindingsOriginal=readFileSync(join(dir,binding),'utf8');
+ const badClps=JSON.parse(clpsOriginal);badClps.datasets[0].maximumPositionComponentResidualKm=1;writeFileSync(clpsPath,JSON.stringify(badClps));
+ const clpsBindings=JSON.parse(bindingsOriginal);clpsBindings.sha256[clps]=createHash('sha256').update(readFileSync(clpsPath)).digest('hex');writeFileSync(join(dir,binding),JSON.stringify(clpsBindings));
+ const rejectedClps=run();assert.notEqual(rejectedClps.status,0);assert.match(rejectedClps.stderr,/CLPS source residual failed/);assert.equal(readFileSync(output,'utf8'),originalOutput);
+ writeFileSync(clpsPath,clpsOriginal);writeFileSync(join(dir,binding),bindingsOriginal);
  // Even an explicitly rebound bad result cannot pass the outcome gate.
  const terrain='docs/qa/scientific-audit/integration/terrain-registration-after.json',path=join(dir,terrain);writeFileSync(path,JSON.stringify({...JSON.parse(readFileSync(path,'utf8')),errorM:1}));
  const binds=JSON.parse(readFileSync(join(dir,binding),'utf8'));binds.sha256[terrain]=createHash('sha256').update(readFileSync(path)).digest('hex');writeFileSync(join(dir,binding),JSON.stringify(binds));const failed=run();assert.notEqual(failed.status,0);assert.match(failed.stderr,/Terrain comparison failed/);

@@ -1,0 +1,167 @@
+{
+  "request": {
+    "stationId": "madrid",
+    "startUtc": "2026-11-14T00:00:00Z",
+    "endUtc": "2026-11-15T00:00:00Z"
+  },
+  "geometry": {
+    "stationId": "madrid",
+    "target": "Moon center",
+    "frame": "ITRF93 / airless apparent AZ-EL",
+    "requestUrl": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27355.7519914555556%2C40.43120975%2C0.864816%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+    "fetchedUtc": "2026-11-15T19:10:26.000Z",
+    "rawResponse": "\n\n*******************************************************************************\nEphemeris / API_USER Sun Nov 15 11:10:25 2026 Pasadena, USA      / Horizons    \n*******************************************************************************\nTarget body name: Moon (301)                      {source: DE441}\nCenter body name: Earth (399)                     {source: DE441}\nCenter-site name: (user defined site below)\n*******************************************************************************\nStart time      : A.D. 2026-Nov-14 00:00:00.0000 UT      \nStop  time      : A.D. 2026-Nov-15 00:00:00.0000 UT      \nStep-size       : 60 minutes\n*******************************************************************************\nTarget pole/equ : MOON_ME                         {East-longitude positive}\nTarget radii    : 1737.4, 1737.4, 1737.4 km       {Equator_a, b, pole_c}       \nCenter geodetic : 355.7519915,40.4312098,.864816  {E-lon(deg),Lat(deg),Alt(km)}\nCenter cylindric: 355.7519915,4862.45083,4115.10925 {E-lon(deg),Dxy(km),Dz(km)}\nCenter pole/equ : ITRF93                          {East-longitude positive}\nCenter radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}       \nTarget primary  : Earth\nVis. interferer : MOON (R_eq= 1737.400) km        {source: DE441}\nRel. light bend : Sun                             {source: DE441}\nRel. lght bnd GM: 1.3271E+11 km^3/s^2                                          \nAtmos refraction: NO (AIRLESS)\nRA format       : DEG\nTime format     : JD  \nCalendar mode   : Mixed Julian/Gregorian\nEOP file        : eop.261113.p270209                                           \nEOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-NOV-13. PREDICTS-> 2027-FEB-08\nUnits conversion: 1 au= 149597870.700 km, c= 299792.458 km/s, 1 day= 86400.0 s \nTable cut-offs 1: Elevation (-90.0deg=NO ),Airmass (>38.000=NO), Daylight (NO )\nTable cut-offs 2: Solar elongation (  0.0,180.0=NO ),Local Hour Angle( 0.0=NO )\nTable cut-offs 3: RA/DEC angular rate (     0.0=NO )                           \nTable format    : Comma Separated Values (spreadsheet)\n****************************************************************************************\nDate_________JDUT, , ,Azimuth_(a-app), Elevation_(a-app),             delta,     deldot,\n****************************************************************************************\n$$SOE\n2461358.500000000, , ,  269.162404830,     -42.334951117,  4.0987834671E+05,  0.2485835,\n2461358.541666667, , ,  279.612765438,     -53.158006093,  4.1068594619E+05,  0.1976367,\n2461358.583333333, , ,  294.319497903,     -63.528684738,  4.1128615782E+05,  0.1339789,\n2461358.625000000, , ,  320.148998821,     -72.215433756,  4.1164012692E+05,  0.0615528,\n2461358.666666667, , ,    6.210414775,     -75.445030030,  4.1172417899E+05, -0.0151928,\n2461358.708333333, , ,   47.408496570,     -70.250149716,  4.1153118827E+05, -0.0915570,\n2461358.750000000,N, ,   69.269728142,     -60.867096519,  4.1107101144E+05, -0.1628509,\n2461358.791666667,*, ,   82.439487041,     -50.246084521,  4.1036996918E+05, -0.2246612,\n2461358.833333333,*, ,   92.259005875,     -39.295416132,  4.0946938942E+05, -0.2731059,\n2461358.875000000,*, ,  100.779035320,     -28.375600542,  4.0842325937E+05, -0.3050723,\n2461358.916666667,*, ,  108.968204686,     -17.716976641,  4.0729507299E+05, -0.3184233,\n2461358.958333333,*, ,  117.419150586,      -7.540129655,  4.0615400848E+05, -0.3121609,\n2461359.000000000,*,m,  126.586702466,       1.891119785,  4.0507062468E+05, -0.2865274,\n2461359.041666667,*,m,  136.858556642,      10.235633272,  4.0411232144E+05, -0.2430328,\n2461359.083333333,*,m,  148.522991758,      17.057768480,  4.0333885922E+05, -0.1843930,\n2461359.125000000,*,m,  161.638032415,      21.851012929,  4.0279826461E+05, -0.1143771,\n2461359.166666667,*,m,  175.856111908,      24.138802184,  4.0252345063E+05, -0.0375648,\n2461359.208333333,*,m,  190.395234653,      23.646583808,  4.0252984480E+05,  0.0409676,\n2461359.250000000,N,m,  204.330391046,      20.435398500,  4.0281424271E+05,  0.1160085,\n2461359.291666667, ,m,  217.016909318,      14.870214894,  4.0335499667E+05,  0.1825858,\n2461359.333333333, ,m,  228.269627980,       7.455775294,  4.0411352407E+05,  0.2363194,\n2461359.375000000, ,m,  238.256336503,      -1.317130913,  4.0503699728E+05,  0.2737200,\n2461359.416666667, , ,  247.326143484,     -11.041820897,  4.0606197600E+05,  0.2924112,\n2461359.458333333, , ,  255.916626745,     -21.399724867,  4.0711867659E+05,  0.2912598,\n2461359.500000000, , ,  264.565711882,     -32.132743344,  4.0813554679E+05,  0.2704154,\n$$EOE\n****************************************************************************************\nColumn meaning:\n \nTIME\n\n  Times PRIOR to 1962 are UT1, a mean-solar time closely related to the\nprior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current\ncivil or \"wall-clock\" time-scale. UTC is kept within 0.9 seconds of UT1\nusing integer leap-seconds for 1972 and later years.\n\n  Conversion from the internal Barycentric Dynamical Time (TDB) of solar\nsystem dynamics to the non-uniform civil UT time-scale requested for output\nhas not been determined for UTC times after the next July or January 1st.\nTherefore, the last known leap-second is used as a constant over future\nintervals.\n\n  Time tags refer to the UT time-scale conversion from TDB on Earth\nregardless of observer location within the solar system, although clock\nrates may differ due to the local gravity field and no analog to \"UT\"\nmay be defined for that location.\n\n  Any 'b' symbol in the 1st-column denotes a B.C. date. First-column blank\n(\" \") denotes an A.D. date.\n \nCALENDAR SYSTEM\n\n  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15\n(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)\nare in the Julian calendar system, which is automatically extended for dates\nprior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for\nmatching historical dates. The Gregorian calendar more accurately corresponds\nto the Earth's orbital motion and seasons. A \"Gregorian-only\" calendar mode is\navailable if such physical events are the primary interest.\n\n  NOTE: \"n.a.\" in output means quantity \"not available\" at the print-time.\n \nSOLAR PRESENCE (OBSERVING SITE)\n  Time tag is followed by a blank, then a solar-presence symbol:\n\n       '*'  Daylight (refracted solar upper-limb on or above apparent horizon)\n       'C'  Civil twilight/dawn\n       'N'  Nautical twilight/dawn\n       'A'  Astronomical twilight/dawn\n       ' '  Night OR geocentric ephemeris\n\nLUNAR PRESENCE (OBSERVING SITE)\n  The solar-presence symbol is immediately followed by a lunar-presence symbol:\n\n       'm'  Refracted upper-limb of Moon on or above apparent horizon\n       ' '  Refracted upper-limb of Moon below apparent horizon OR geocentric\n            ephemeris\n \n 'Azimuth_(a-app), Elevation_(a-app),' =\n  Airless apparent azimuth and elevation of target center. Compensated\nfor light-time, the gravitational deflection of light, stellar aberration,\nprecession and nutation. Azimuth is measured clockwise from north:\n\n  North(0) -> East(90) -> South(180) -> West(270) -> North (360)\n\nElevation angle is with respect to a plane perpendicular to the reference\nsurface local zenith direction. TOPOCENTRIC ONLY.  Units: DEGREES\n \n 'delta,     deldot,' =\n   Apparent range (\"delta\", light-time aberrated) and range-rate (\"delta-dot\")\nof the target center relative to the observer. A positive \"deldot\" means the\ntarget center is moving away from the observer, negative indicates movement\ntoward the observer.  Units: KM and KM/S\n\nComputations by ...\n\n    Solar System Dynamics Group, Horizons On-Line Ephemeris System\n    4800 Oak Grove Drive, Jet Propulsion Laboratory\n    Pasadena, CA  91109   USA\n\n    General site: https://ssd.jpl.nasa.gov/\n    Mailing list: https://ssd.jpl.nasa.gov/email_list.html\n    System news : https://ssd.jpl.nasa.gov/horizons/news.html\n    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html\n    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x\n                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html\n                  command-line   telnet ssd.jpl.nasa.gov 6775\n                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt\n                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS\n    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov\n\n****************************************************************************************\n",
+    "samples": [
+      {
+        "utc": "2026-11-14T00:00:00.000Z",
+        "azimuthDeg": 269.16240483,
+        "elevationDeg": -42.334951117,
+        "rangeKm": 409878.34671
+      },
+      {
+        "utc": "2026-11-14T01:00:00.000Z",
+        "azimuthDeg": 279.612765438,
+        "elevationDeg": -53.158006093,
+        "rangeKm": 410685.94619
+      },
+      {
+        "utc": "2026-11-14T02:00:00.000Z",
+        "azimuthDeg": 294.319497903,
+        "elevationDeg": -63.528684738,
+        "rangeKm": 411286.15782
+      },
+      {
+        "utc": "2026-11-14T03:00:00.000Z",
+        "azimuthDeg": 320.148998821,
+        "elevationDeg": -72.215433756,
+        "rangeKm": 411640.12692
+      },
+      {
+        "utc": "2026-11-14T04:00:00.000Z",
+        "azimuthDeg": 6.210414775,
+        "elevationDeg": -75.44503003,
+        "rangeKm": 411724.17899
+      },
+      {
+        "utc": "2026-11-14T05:00:00.000Z",
+        "azimuthDeg": 47.40849657,
+        "elevationDeg": -70.250149716,
+        "rangeKm": 411531.18827
+      },
+      {
+        "utc": "2026-11-14T06:00:00.000Z",
+        "azimuthDeg": 69.269728142,
+        "elevationDeg": -60.867096519,
+        "rangeKm": 411071.01144
+      },
+      {
+        "utc": "2026-11-14T07:00:00.000Z",
+        "azimuthDeg": 82.439487041,
+        "elevationDeg": -50.246084521,
+        "rangeKm": 410369.96918
+      },
+      {
+        "utc": "2026-11-14T08:00:00.000Z",
+        "azimuthDeg": 92.259005875,
+        "elevationDeg": -39.295416132,
+        "rangeKm": 409469.38942
+      },
+      {
+        "utc": "2026-11-14T09:00:00.000Z",
+        "azimuthDeg": 100.77903532,
+        "elevationDeg": -28.375600542,
+        "rangeKm": 408423.25937
+      },
+      {
+        "utc": "2026-11-14T10:00:00.000Z",
+        "azimuthDeg": 108.968204686,
+        "elevationDeg": -17.716976641,
+        "rangeKm": 407295.07299
+      },
+      {
+        "utc": "2026-11-14T11:00:00.000Z",
+        "azimuthDeg": 117.419150586,
+        "elevationDeg": -7.540129655,
+        "rangeKm": 406154.00848
+      },
+      {
+        "utc": "2026-11-14T12:00:00.000Z",
+        "azimuthDeg": 126.586702466,
+        "elevationDeg": 1.891119785,
+        "rangeKm": 405070.62468
+      },
+      {
+        "utc": "2026-11-14T13:00:00.000Z",
+        "azimuthDeg": 136.858556642,
+        "elevationDeg": 10.235633272,
+        "rangeKm": 404112.32144
+      },
+      {
+        "utc": "2026-11-14T14:00:00.000Z",
+        "azimuthDeg": 148.522991758,
+        "elevationDeg": 17.05776848,
+        "rangeKm": 403338.85922
+      },
+      {
+        "utc": "2026-11-14T15:00:00.000Z",
+        "azimuthDeg": 161.638032415,
+        "elevationDeg": 21.851012929,
+        "rangeKm": 402798.26461
+      },
+      {
+        "utc": "2026-11-14T16:00:00.000Z",
+        "azimuthDeg": 175.856111908,
+        "elevationDeg": 24.138802184,
+        "rangeKm": 402523.45063
+      },
+      {
+        "utc": "2026-11-14T17:00:00.000Z",
+        "azimuthDeg": 190.395234653,
+        "elevationDeg": 23.646583808,
+        "rangeKm": 402529.8448
+      },
+      {
+        "utc": "2026-11-14T18:00:00.000Z",
+        "azimuthDeg": 204.330391046,
+        "elevationDeg": 20.4353985,
+        "rangeKm": 402814.24271
+      },
+      {
+        "utc": "2026-11-14T19:00:00.000Z",
+        "azimuthDeg": 217.016909318,
+        "elevationDeg": 14.870214894,
+        "rangeKm": 403354.99667
+      },
+      {
+        "utc": "2026-11-14T20:00:00.000Z",
+        "azimuthDeg": 228.26962798,
+        "elevationDeg": 7.455775294,
+        "rangeKm": 404113.52407
+      },
+      {
+        "utc": "2026-11-14T21:00:00.000Z",
+        "azimuthDeg": 238.256336503,
+        "elevationDeg": -1.317130913,
+        "rangeKm": 405036.99728
+      },
+      {
+        "utc": "2026-11-14T22:00:00.000Z",
+        "azimuthDeg": 247.326143484,
+        "elevationDeg": -11.041820897,
+        "rangeKm": 406061.976
+      },
+      {
+        "utc": "2026-11-14T23:00:00.000Z",
+        "azimuthDeg": 255.916626745,
+        "elevationDeg": -21.399724867,
+        "rangeKm": 407118.67659
+      },
+      {
+        "utc": "2026-11-15T00:00:00.000Z",
+        "azimuthDeg": 264.565711882,
+        "elevationDeg": -32.132743344,
+        "rangeKm": 408135.54679
+      }
+    ]
+  }
+}
