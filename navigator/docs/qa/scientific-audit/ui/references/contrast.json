@@ -1,0 +1,55 @@
+{
+  "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+  "responseUrl": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+  "retrievedUtc": "2026-11-15T14:40:50.788785+00:00",
+  "responseSha256": "6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057",
+  "responseBytes": 512457,
+  "headers": {
+    "Date": "Sun, 15 Nov 2026 14:40:50 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "last-modified": "Thu, 12 Dec 2024 10:36:22 GMT"
+  },
+  "extractMethod": "stdlib HTMLParser visible text; up to 3 bounded contexts per term",
+  "excerpts": [
+    {
+      "needle": "Contrast (Minimum)",
+      "textOffset": 5544,
+      "text": "ngful Sequence\n1.3.3\nSensory Characteristics\n1.3.4\nOrientation\n1.3.5\nIdentify Input Purpose\n1.3.6\nIdentify Purpose\n1.4\nDistinguishable\n1.4.1\nUse of Color\n1.4.2\nAudio Control\n1.4.3\nContrast (Minimum)\n1.4.4\nResize Text\n1.4.5\nImages of Text\n1.4.6\nContrast (Enhanced)\n1.4.7\nLow or No Background Audio\n1.4.8\nVisual Presentation\n1.4.9\nImages of Text (No Exception)\n1.4.10\nReflow\n1.4.11\nNon-text Contrast\n1.4.12\nText Spacing\n1.4.13\nContent on Hover or Focus\n2.\nOperable\n2.1\nKeyboard Accessible\n2.1.1\nKeyboard\n2.1.2\nNo Keyboard Trap\n2.1.3\nKeyboard (No Exception)\n2.1.4\nCharacter Key Shortcuts\n2.2\nEnough Time\n2.2.1\nTiming Adjustable\n2.2.2\nPause, Stop, Hide\n2.2.3\nNo Timing\n2.2.4\nInterruptions\n2.2.5\nRe-authenticating\n2.2.6\nTimeouts\n2.3\nSeizures and Physical Reactions\n2.3.1\nThree Flashes or Below Threshold\n2.3.2\nThree Flashes\n2.3.3\nAnima"
+    },
+    {
+      "needle": "Contrast (Minimum)",
+      "textOffset": 29860,
+      "text": "b page (whether or not it is used\n      to meet other success criteria) must meet this success criterion. See\nConformance Requirement 5: Non-Interference\n.\nSuccess Criterion 1.4.3\nContrast (Minimum)\nUnderstanding Contrast (Minimum)\n|\nHow to Meet Contrast (Minimum)\n(Level AA)\nThe visual presentation of\ntext\nand\nimages of text\nhas a\ncontrast ratio\nof at least 4.5:1, except for the following:\nLarge Text\nLarge-scale\ntext and images of large-scale text have a contrast ratio of at least 3:1;\nIncidental\nText or images of text that are part of an inactive\nuser interface component\n, that are\npure decoration\n, that are not visible to anyone, or that are part of a picture that contains significant\n            other visual content, have no contrast requirement.\nLogotypes\nText that is part of a logo or brand name has no contrast re"
+    },
+    {
+      "needle": "Contrast (Minimum)",
+      "textOffset": 29893,
+      "text": "\n      to meet other success criteria) must meet this success criterion. See\nConformance Requirement 5: Non-Interference\n.\nSuccess Criterion 1.4.3\nContrast (Minimum)\nUnderstanding Contrast (Minimum)\n|\nHow to Meet Contrast (Minimum)\n(Level AA)\nThe visual presentation of\ntext\nand\nimages of text\nhas a\ncontrast ratio\nof at least 4.5:1, except for the following:\nLarge Text\nLarge-scale\ntext and images of large-scale text have a contrast ratio of at least 3:1;\nIncidental\nText or images of text that are part of an inactive\nuser interface component\n, that are\npure decoration\n, that are not visible to anyone, or that are part of a picture that contains significant\n            other visual content, have no contrast requirement.\nLogotypes\nText that is part of a logo or brand name has no contrast requirement.\nSuccess Criterion 1.4."
+    },
+    {
+      "needle": "4.5:1",
+      "textOffset": 30040,
+      "text": "Contrast (Minimum)\nUnderstanding Contrast (Minimum)\n|\nHow to Meet Contrast (Minimum)\n(Level AA)\nThe visual presentation of\ntext\nand\nimages of text\nhas a\ncontrast ratio\nof at least 4.5:1, except for the following:\nLarge Text\nLarge-scale\ntext and images of large-scale text have a contrast ratio of at least 3:1;\nIncidental\nText or images of text that are part of an inactive\nuser interface component\n, that are\npure decoration\n, that are not visible to anyone, or that are part of a picture that contains significant\n            other visual content, have no contrast requirement.\nLogotypes\nText that is part of a logo or brand name has no contrast requirement.\nSuccess Criterion 1.4.4\nResize Text\nUnderstanding Resize Text\n|\nHow to Meet Resize Text\n(Level AA)\nExcept for\ncaptions\nand\nimages of text\n,\ntext\ncan be resized without\na"
+    },
+    {
+      "needle": "4.5:1",
+      "textOffset": 31629,
+      "text": "ext\nand\nimages of text\nhas a\ncontrast ratio\nof at least 7:1, except for the following:\nLarge Text\nLarge-scale\ntext and images of large-scale text have a contrast ratio of at least 4.5:1;\nIncidental\nText or images of text that are part of an inactive\nuser interface component\n, that are\npure decoration\n, that are not visible to anyone, or that are part of a picture that contains significant\n            other visual content, have no contrast requirement.\nLogotypes\nText that is part of a logo or brand name has no contrast requirement.\nSuccess Criterion 1.4.7\nLow or No Background Audio\nUnderstanding Low or No Background Audio\n|\nHow to Meet Low or No Background Audio\n(Level AAA)\nFor\nprerecorded\naudio-only\ncontent that (1) contains primarily speech in the foreground, (2) is not an audio\nCAPTCHA\nor audio logo, and (3) is not v"
+    },
+    {
+      "needle": "relative luminance",
+      "textOffset": 95624,
+      "text": "ovides information related to the function currently being performed\nNote\nClear labels can act as context-sensitive help.\ncontrast ratio\n(L1 + 0.05) / (L2 + 0.05), where\nL1 is the\nrelative luminance\nof the lighter of the colors, and\nL2 is the\nrelative luminance\nof the darker of the colors.\nNote 1\nContrast ratios can range from 1 to 21 (commonly written 1:1 to 21:1).\nNote 2\nBecause authors do not have control over user settings as to how text is rendered\n      (for example font smoothing or anti-aliasing), the contrast ratio for text can be\n      evaluated with anti-aliasing turned off.\nNote 3\nFor the purpose of Success Criteria 1.4.3 and 1.4.6, contrast is measured with respect\n      to the specified background over which the text is rendered in normal usage. If no\n      background color is specified, then white is ass"
+    },
+    {
+      "needle": "relative luminance",
+      "textOffset": 95687,
+      "text": "ormed\nNote\nClear labels can act as context-sensitive help.\ncontrast ratio\n(L1 + 0.05) / (L2 + 0.05), where\nL1 is the\nrelative luminance\nof the lighter of the colors, and\nL2 is the\nrelative luminance\nof the darker of the colors.\nNote 1\nContrast ratios can range from 1 to 21 (commonly written 1:1 to 21:1).\nNote 2\nBecause authors do not have control over user settings as to how text is rendered\n      (for example font smoothing or anti-aliasing), the contrast ratio for text can be\n      evaluated with anti-aliasing turned off.\nNote 3\nFor the purpose of Success Criteria 1.4.3 and 1.4.6, contrast is measured with respect\n      to the specified background over which the text is rendered in normal usage. If no\n      background color is specified, then white is assumed.\nNote 4\nBackground color is the specified color of content"
+    },
+    {
+      "needle": "relative luminance",
+      "textOffset": 99267,
+      "text": "sed when the sense of the\nvideo\nwould be lost without the additional\naudio description\nand the pauses between dialogue/narration are too short.\nflash\na pair of opposing changes in\nrelative luminance\nthat can cause seizures in some people if it is large enough and in the right frequency\n      range\nNote 1\nSee\ngeneral flash and red flash thresholds\nfor information about types of flash that are not allowed.\nNote 2\nSee also\nblinking\n.\nfocus indicator\nNew\npixels that are changed to visually indicate when a\nuser interface component\nis in a focused\nstate\nfunctionality\nprocesses\nand outcomes achievable through user action\ngeneral flash and red flash thresholds\na\nflash\nor rapidly changing image sequence is below the threshold (i.e., content\npasses\n) if any of the following are true:\nthere are no more than three\ngeneral flashes\n"
+    }
+  ]
+}

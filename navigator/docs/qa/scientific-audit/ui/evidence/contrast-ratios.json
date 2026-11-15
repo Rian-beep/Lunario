@@ -1,0 +1,12 @@
+{
+  "criterion": 4.5,
+  "unit": "contrast ratio : 1",
+  "before": {
+    "notes": 1.7276469512559378,
+    "sampleValues": 1.03513930251839
+  },
+  "after": {
+    "notes": 17.51085437562116,
+    "sampleValues": 17.51085437562116
+  }
+}

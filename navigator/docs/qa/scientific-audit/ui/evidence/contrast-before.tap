@@ -1,0 +1,59 @@
+TAP version 13
+# Subtest: audit-ui: native clipboard, exact PNG geometry, metadata and offline charts
+    # Subtest: six actual components: native clipboard PNG pixels equal their downloaded PNGs
+    ok 1 - six actual components: native clipboard PNG pixels equal their downloaded PNGs
+      ---
+      duration_ms: 16985.396926
+      ...
+    # Subtest: native denied permission gives fallback; download still succeeds
+    ok 2 - native denied permission gives fallback; download still succeeds
+      ---
+      duration_ms: 1092.700305
+      ...
+    # Subtest: dark/light labels and white surfaces, responsive uniform transforms and keyboard sample control
+    ok 3 - dark/light labels and white surfaces, responsive uniform transforms and keyboard sample control
+      ---
+      duration_ms: 450.167963
+      ...
+    # Subtest: UTC export extent and source caveats survive serialization
+    ok 4 - UTC export extent and source caveats survive serialization
+      ---
+      duration_ms: 0.207853
+      ...
+    # Subtest: chart notes, gradient explanations and exact sample readouts stay legible on white in dark mode
+    not ok 5 - chart notes, gradient explanations and exact sample readouts stay legible on white in dark mode
+      ---
+      duration_ms: 13.922785
+      location: '/tmp/lunario-audit-ui/navigator/tests/audit-ui.browser.mjs:142:11'
+      failureType: 'testCodeFailure'
+      error: '{"notes":[{"text":"Hover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 sam","color":"rgb(208, 195, 181)"},{"text":"LOLA terrain horizon: 1 ° · azimuth 0 °","color":"rgb(28, 25, 21)"},{"text":"Smooth-sphere horizon (0°): 0 ° (constant reference)","color":"rgb(28, 25, 21)"},{"text":"Sun centre track: 2 ° · azimuth 5 ° · stay sample 1 (hourly)","color":"rgb(28, 25, 21)"},{"text":"Earth centre track: 3 ° · azimuth 60 ° · stay sample 1 (hourly)","color":"rgb(28, 25, 21)"},{"text":"A line rising to the right has a positive slope; a falling line has a negative s","color":"rgb(28, 25, 21)"},{"text":"m=ΔyΔx. Here m is the finite slope, Δ means “change”, y is Elevation above local","color":"rgb(28, 25, 21)"},{"text":"This is elevation change per degree of compass direction (°/°). It describes the","color":"rgb(28, 25, 21)"},{"text":"Use the graph’s arrow keys or Previous/Next sample controls to update these valu","color":"rgb(28, 25, 21)"},{"text":"LOLA terrain horizon: Finite sample slope ≈ 0.011111 °/° (rises as x increases).","color":"rgb(28, 25, 21)"},{"text":"Smooth-sphere horizon (0°) (constant reference): Unavailable: The azimuth seam i","color":"rgb(28, 25, 21)"},{"text":"Sun centre track: Unavailable: Outside the sampled source bounds; no extrapolati","color":"rgb(28, 25, 21)"},{"text":"Earth centre track: Unavailable: Outside the sampled source bounds; no extrapola","color":"rgb(28, 25, 21)"},{"text":"North 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal,","color":"rgb(208, 195, 181)"}],"readout":"rgb(20, 22, 25)"}'
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: true
+      actual: false
+      operator: '=='
+      stack: |-
+        TestContext.<anonymous> (file:///tmp/lunario-audit-ui/navigator/tests/audit-ui.browser.mjs:149:12)
+        async Test.run (node:internal/test_runner/test:797:9)
+        async TestContext.<anonymous> (file:///tmp/lunario-audit-ui/navigator/tests/audit-ui.browser.mjs:142:3)
+        async Test.run (node:internal/test_runner/test:797:9)
+        async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+      ...
+    1..5
+not ok 1 - audit-ui: native clipboard, exact PNG geometry, metadata and offline charts
+  ---
+  duration_ms: 18961.390626
+  location: '/tmp/lunario-audit-ui/navigator/tests/audit-ui.browser.mjs:15:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 6
+# suites 0
+# pass 4
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19259.871694

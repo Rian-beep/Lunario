@@ -1,0 +1,60 @@
+{
+  "url": "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/",
+  "responseUrl": "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/",
+  "retrievedUtc": "2026-11-15T14:40:49.311978+00:00",
+  "responseSha256": "64ff9e279103212d7287137569bf593e73c0501fe6ccb6db824d0b1295bd65da",
+  "responseBytes": 541824,
+  "headers": {
+    "Date": "Sun, 15 Nov 2026 14:40:49 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "last-modified": "Wed, 24 Jun 2026 08:52:28 GMT"
+  },
+  "extractMethod": "stdlib HTMLParser visible text; up to 3 bounded contexts per term",
+  "excerpts": [
+    {
+      "needle": "image/png",
+      "textOffset": 17679,
+      "text": "t data types are available on the clipboard\n  const hasText = e.types.includes('text/plain');\n  const hasHTML = e.types.includes('text/html');\n  const hasImage = e.types.includes('image/png');\n\n  // Update UI based on available formats\n  document.getElementById('paste-text-btn').disabled = !hasText;\n  document.getElementById('paste-html-btn').disabled = !hasHTML;\n  document.getElementById('paste-image-btn').disabled = !hasImage;\n\n  // For remote desktop apps, sync clipboard to remote only once per change\n  if (hasText || hasHTML || hasImage) {\n    syncClipboardToRemote(e.changeId);\n  }\n});\n\n// Alternatively, you can use the onclipboardchange property\n// navigator.clipboard.onclipboardchange = (e) => { ... };\nThis event-driven approach is more efficient than polling the clipboard with methods like\nread()\nor\nreadText()\na"
+    },
+    {
+      "needle": "image/png",
+      "textOffset": 29317,
+      "text": " and cut events.\n6.4.1.\nReading from the clipboard\nThese data types must be exposed by\npaste\nevents if a\n\t\t\tcorresponding native type exists on the clipboard:\ntext/plain\ntext/html\nimage/png\n6.4.2.\nWriting to the clipboard\nThese data types must be placed on the clipboard with a corresponding\n\t\t\tnative type description if added to a\nDataTransfer\nobject during\ncopy\nand\ncut\nevents.\ntext/plain\ntext/html\nimage/png\nWarning! The data types that untrusted scripts are allowed to write to the\n\t\t\tclipboard are limited as a security precaution. Untrusted scripts can\n\t\t\tattempt to exploit security vulnerabilities in local software by placing\n\t\t\tdata known to trigger those vulnerabilities on the clipboard.\n6.5.\nOptional data types\nThe implementation MAY recognize the native OS clipboard format description\n\t\tfor the following data typ"
+    },
+    {
+      "needle": "image/png",
+      "textOffset": 29539,
+      "text": "These data types must be placed on the clipboard with a corresponding\n\t\t\tnative type description if added to a\nDataTransfer\nobject during\ncopy\nand\ncut\nevents.\ntext/plain\ntext/html\nimage/png\nWarning! The data types that untrusted scripts are allowed to write to the\n\t\t\tclipboard are limited as a security precaution. Untrusted scripts can\n\t\t\tattempt to exploit security vulnerabilities in local software by placing\n\t\t\tdata known to trigger those vulnerabilities on the clipboard.\n6.5.\nOptional data types\nThe implementation MAY recognize the native OS clipboard format description\n\t\tfor the following data types, to be able to populate the\nClipboardItem\nwith the correct description for paste events, and\n\t\tset the correct data format on the OS clipboard in response to copy and cut\n\t\tevents.\nThese data types MAY be exposed by UAs"
+    },
+    {
+      "needle": "NotAllowedError",
+      "textOffset": 46816,
+      "text": "ew promise\nin\nrealm\n.\nIf\nformats\nis not empty, then:\nFor each\nformat\nin\nformats\n[\"\nunsanitized\n\"]:\nIf\nformat\nis not in\noptional unsanitized data types\n, then\nreject\np\nwith\nformat\n\"NotAllowedError\"\nDOMException\nin\nrealm\n.\nRun the following steps\nin parallel\n:\nLet\nr\nbe the result of running\ncheck clipboard read permission\n.\nIf\nr\nis false, then:\nQueue a global task\non the\npermission task source\n, given\nrealm\n\u2019s\nglobal object\n, to\nreject\np\nwith\n\"NotAllowedError\"\nDOMException\nin\nrealm\n.\nAbort these steps.\nLet\ndata\nbe the\nsystem clipboard data\n.\nLet\nsnapshotChangeCount\nbe the current\nclipboard change count\n.\nNote:\nOnly the\nname\ns (format identifiers) from\ndata\nare enumerated at this point. The underlying payload bytes for each\nrepresentation\nare not read until\ngetType()\nis called.\nLet\nitems\nbe a\nsequence\nof\nordered maps\n, ea"
+    },
+    {
+      "needle": "NotAllowedError",
+      "textOffset": 47082,
+      "text": "e the result of running\ncheck clipboard read permission\n.\nIf\nr\nis false, then:\nQueue a global task\non the\npermission task source\n, given\nrealm\n\u2019s\nglobal object\n, to\nreject\np\nwith\n\"NotAllowedError\"\nDOMException\nin\nrealm\n.\nAbort these steps.\nLet\ndata\nbe the\nsystem clipboard data\n.\nLet\nsnapshotChangeCount\nbe the current\nclipboard change count\n.\nNote:\nOnly the\nname\ns (format identifiers) from\ndata\nare enumerated at this point. The underlying payload bytes for each\nrepresentation\nare not read until\ngetType()\nis called.\nLet\nitems\nbe a\nsequence\nof\nordered maps\n, each entry having keys \"item\" (a\nclipboard item\n) and \"originating\" (a\nsystem clipboard item\nor null).\nFor each\nsystemClipboardItem\nin\ndata\n:\nLet\nitem\nbe a new\nclipboard item\n.\nFor each\nsystemClipboardRepresentation\nin\nsystemClipboardItem\n:\nLet\nmimeType\nbe the result "
+    },
+    {
+      "needle": "NotAllowedError",
+      "textOffset": 50148,
+      "text": "e the result of running\ncheck clipboard read permission\n.\nIf\nr\nis false, then:\nQueue a global task\non the\npermission task source\n, given\nrealm\n\u2019s\nglobal object\n, to\nreject\np\nwith\n\"NotAllowedError\"\nDOMException\nin\nrealm\n.\nAbort these steps.\nLet\ndata\nbe a copy of the\nsystem clipboard data\n.\nSome OSs contain multiple clipboard (e.g. Linux, \"primary\", \"secondary\", \"selection\"). Define from which of those data is read.\nAdd definition of sanitized copy.\nQueue a global task\non the\nclipboard task source\n, given\nrealm\n\u2019s\nglobal object\n, to perform the below steps:\nFor each\nsystemClipboardItem\nin\ndata\n:\nFor each\nsystemClipboardRepresentation\nin\nsystemClipboardItem\n:\nLet\nmimeType\nbe the result of running the\nwell-known mime type from os specific format\nalgorithm given\nsystemClipboardRepresentation\n\u2019s\nname\n.\nIf\nmimeType\nis null, c"
+    },
+    {
+      "needle": "SecureContext",
+      "textOffset": 31013,
+      "text": "nitized data types\nmay not be supported by a user agent due to their privacy requirements.\n7.\nAsynchronous Clipboard API\n7.1.\nNavigator Interface\npartial\ninterface\nNavigator\n{\n  [\nSecureContext\n,\nSameObject\n]\nreadonly\nattribute\nClipboard\nclipboard\n;\n};\n7.1.1.\nclipboard\nIt is used to execute read/write operations from/to the\nsystem clipboard\n.\n\t\tThe\nclipboard\ngetter steps are to return\nthis\n\u2019s\nclipboard\nobject.\n7.2.\nClipboardItem Interface\ntypedef\nPromise\n<(\nDOMString\nor\nBlob\n)>\nClipboardItemData\n;\n\n[\nSecureContext\n,\nExposed\n=\nWindow\n]\ninterface\nClipboardItem\n{\nconstructor\n(\nrecord\n<\nDOMString\n,\nClipboardItemData\n>\nitems\n,\noptional\nClipboardItemOptions\noptions\n= {});\nreadonly\nattribute\nPresentationStyle\npresentationStyle\n;\nreadonly\nattribute\nFrozenArray\n<\nDOMString\n>\ntypes\n;\nPromise\n<\nBlob\n>\ngetType\n(\nDOMString\ntype\n);\n"
+    },
+    {
+      "needle": "SecureContext",
+      "textOffset": 31339,
+      "text": "system clipboard\n.\n\t\tThe\nclipboard\ngetter steps are to return\nthis\n\u2019s\nclipboard\nobject.\n7.2.\nClipboardItem Interface\ntypedef\nPromise\n<(\nDOMString\nor\nBlob\n)>\nClipboardItemData\n;\n\n[\nSecureContext\n,\nExposed\n=\nWindow\n]\ninterface\nClipboardItem\n{\nconstructor\n(\nrecord\n<\nDOMString\n,\nClipboardItemData\n>\nitems\n,\noptional\nClipboardItemOptions\noptions\n= {});\nreadonly\nattribute\nPresentationStyle\npresentationStyle\n;\nreadonly\nattribute\nFrozenArray\n<\nDOMString\n>\ntypes\n;\nPromise\n<\nBlob\n>\ngetType\n(\nDOMString\ntype\n);\nstatic\nboolean\nsupports\n(\nDOMString\ntype\n);\n};\nenum\nPresentationStyle\n{\n\"unspecified\"\n,\n\"inline\"\n,\n\"attachment\"\n};\ndictionary\nClipboardItemOptions\n{\nPresentationStyle\npresentationStyle\n= \"unspecified\";\n};\nclipboardItem\n= new ClipboardItem([\nitems\n,\noptions\n])\nCreates a new\nClipboardItem\nobject.\nitems\ndenote\nlist of represent"
+    },
+    {
+      "needle": "SecureContext",
+      "textOffset": 44985,
+      "text": "pe\nis in\nmandatory data types\nor\noptional data types\n, then return true.\nIf not, then return false.\n7.3.\nClipboard Interface\ntypedef\nsequence\n<\nClipboardItem\n>\nClipboardItems\n;\n\n[\nSecureContext\n,\nExposed\n=\nWindow\n]\ninterface\nClipboard\n:\nEventTarget\n{\nPromise\n<\nClipboardItems\n>\nread\n(\noptional\nClipboardUnsanitizedFormats\nformats\n= {});\nPromise\n<\nDOMString\n>\nreadText\n();\nPromise\n<\nundefined\n>\nwrite\n(\nClipboardItems\ndata\n);\nPromise\n<\nundefined\n>\nwriteText\n(\nDOMString\ndata\n);\n};\ndictionary\nClipboardUnsanitizedFormats\n{\nsequence\n<\nDOMString\n>\nunsanitized\n;\n};\nSome methods of the\nClipboard\ninterface take or return multiple\nClipboardItem\nobjects. However, not all platforms support more than one\nclipboard item\n; on such platforms, the algorithms below will ignore any\nClipboardItem\nobjects beyond the first one that are passed t"
+    }
+  ]
+}

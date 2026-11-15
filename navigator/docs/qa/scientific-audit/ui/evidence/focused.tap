@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: Public explains known power failure before missing evidence without technical row dumps
+ok 1 - Public explains known power failure before missing evidence without technical row dumps
+  ---
+  duration_ms: 0.715284
+  ...
+# Subtest: unknown sites are neither rejected nor promoted as successful candidates
+ok 2 - unknown sites are neither rejected nor promoted as successful candidates
+  ---
+  duration_ms: 0.212712
+  ...
+# Subtest: communications failure suggests timing and separate operations rather than more batteries
+ok 3 - communications failure suggests timing and separate operations rather than more batteries
+  ---
+  duration_ms: 0.116076
+  ...
+# Subtest: optional failures do not override the authority outcome and conditional never becomes approval
+ok 4 - optional failures do not override the authority outcome and conditional never becomes approval
+  ---
+  duration_ms: 0.104826
+  ...
+# Subtest: explicit additional unmet-demand failure is described as unserved demand, not a fabricated reserve crossing
+ok 5 - explicit additional unmet-demand failure is described as unserved demand, not a fabricated reserve crossing
+  ---
+  duration_ms: 0.078847
+  ...
+# Subtest: task guidance separates sampled instant from whole-stay failures and counts actual required rows
+ok 6 - task guidance separates sampled instant from whole-stay failures and counts actual required rows
+  ---
+  duration_ms: 0.997704
+  ...
+# Subtest: nearest transition keeps absolute adjacent-sample UTC bounds at fractional playhead; unknown blocks prediction
+ok 7 - nearest transition keeps absolute adjacent-sample UTC bounds at fractional playhead; unknown blocks prediction
+  ---
+  duration_ms: 0.216292
+  ...
+# Subtest: timed required failures compete with visibility events without narrowing bounds or inventing untimed failures
+ok 8 - timed required failures compete with visibility events without narrowing bounds or inventing untimed failures
+  ---
+  duration_ms: 0.233001
+  ...
+# Subtest: all six controlled experiments preserve current inputs except the named variable and use full assessment authority
+ok 9 - all six controlled experiments preserve current inputs except the named variable and use full assessment authority
+  ---
+  duration_ms: 28.866825
+  ...
+# Subtest: controlled curve retains separate smooth sphere metrics and endpoint range is bounded
+ok 10 - controlled curve retains separate smooth sphere metrics and endpoint range is bounded
+  ---
+  duration_ms: 5.767711
+  ...
+# Subtest: controlled finite response has named units and missing radio assumptions never acquire invented baseline power
+ok 11 - controlled finite response has named units and missing radio assumptions never acquire invented baseline power
+  ---
+  duration_ms: 7.660942
+  ...
+# Subtest: illustrative derivative has correct values and units; selected derivative includes deployment and current constants
+ok 12 - illustrative derivative has correct values and units; selected derivative includes deployment and current constants
+  ---
+  duration_ms: 6.538133
+  ...
+# Subtest: selected partial derivative agrees with numerical perturbation of authority for fixed orientation and losses
+ok 13 - selected partial derivative agrees with numerical perturbation of authority for fixed orientation and losses
+  ---
+  duration_ms: 3.687177
+  ...
+# Subtest: unavailable terrain stays unknown in derivative and plotted values while sphere remains independent
+ok 14 - unavailable terrain stays unknown in derivative and plotted values while sphere remains independent
+  ---
+  duration_ms: 5.270139
+  ...
+# Subtest: legacy notebook and draft restore with exact baseline inputs and shared storage key; mode/control resets keep records
+ok 15 - legacy notebook and draft restore with exact baseline inputs and shared storage key; mode/control resets keep records
+  ---
+  duration_ms: 2.600716
+  ...
+# Subtest: storage corruption, stale baseline and quota failures are explicit and do not silently discard records
+ok 16 - storage corruption, stale baseline and quota failures are explicit and do not silently discard records
+  ---
+  duration_ms: 0.223092
+  ...
+# Subtest: study starts empty; human, agent and self-reported evidence remain distinct on local export/restore
+ok 17 - study starts empty; human, agent and self-reported evidence remain distinct on local export/restore
+  ---
+  duration_ms: 0.55799
+  ...
+# Subtest: objective comprehension scores track actual outcome and incorrect choices; completion requires observed evidence
+ok 18 - objective comprehension scores track actual outcome and incorrect choices; completion requires observed evidence
+  ---
+  duration_ms: 0.307559
+  ...
+# Subtest: malformed or forged study scores/evidence types do not become accepted audience evidence; bounded capture
+ok 19 - malformed or forged study scores/evidence types do not become accepted audience evidence; bounded capture
+  ---
+  duration_ms: 0.251831
+  ...
+# Subtest: frozen audience exports render task scope, explicit controls, local study and native semantic equation without changing state
+ok 20 - frozen audience exports render task scope, explicit controls, local study and native semantic equation without changing state
+  ---
+  duration_ms: 107.152832
+  ...
+# Subtest: Public instant labels use plain hill language without antenna or cutoff jargon
+ok 21 - Public instant labels use plain hill language without antenna or cutoff jargon
+  ---
+  duration_ms: 0.449564
+  ...
+# Subtest: positive, negative and flat finite slopes use actual adjacent coordinates
+ok 22 - positive, negative and flat finite slopes use actual adjacent coordinates
+  ---
+  duration_ms: 0.696564
+  ...
+# Subtest: UTC milliseconds become hours, Wh/h equals mean storage W, flight km/s and m/s² retain native units
+ok 23 - UTC milliseconds become hours, Wh/h equals mean storage W, flight km/s and m/s² retain native units
+  ---
+  duration_ms: 0.186634
+  ...
+# Subtest: source endpoints use one-sided pairs and never extrapolate
+ok 24 - source endpoints use one-sided pairs and never extrapolate
+  ---
+  duration_ms: 0.134695
+  ...
+# Subtest: unknown, infinite, duplicate and missing-x samples cannot be bridged
+ok 25 - unknown, infinite, duplicate and missing-x samples cannot be bridged
+  ---
+  duration_ms: 0.181744
+  ...
+# Subtest: azimuth source order survives indexed lookup, descending tracks, unknowns and seam boundaries
+ok 26 - azimuth source order survives indexed lookup, descending tracks, unknowns and seam boundaries
+  ---
+  duration_ms: 0.434834
+  ...
+# Subtest: held intervals report finite intersample changes and mark jump derivatives undefined
+ok 27 - held intervals report finite intersample changes and mark jump derivatives undefined
+  ---
+  duration_ms: 0.173463
+  ...
+# Subtest: cursor lookup reads logarithmically many coordinates after building its reusable index
+ok 28 - cursor lookup reads logarithmically many coordinates after building its reusable index
+  ---
+  duration_ms: 63.030809
+  ...
+# Subtest: help is collapsed by default, keyboard-native, sourced and uses native MathML with named axes and units
+ok 29 - help is collapsed by default, keyboard-native, sourced and uses native MathML with named axes and units
+  ---
+  duration_ms: 13.151724
+  ...
+# Subtest: rendered horizon, flight and power help retain their distinct meanings and limits
+ok 30 - rendered horizon, flight and power help retain their distinct meanings and limits
+  ---
+  duration_ms: 1.682249
+  ...
+# Subtest: every shared Plot includes collapsed gradient help through the actual chart panels in every audience
+ok 31 - every shared Plot includes collapsed gradient help through the actual chart panels in every audience
+  ---
+  duration_ms: 62.826156
+  ...
+# Subtest: PNG dimensions use 2× without changing the chart aspect ratio
+ok 32 - PNG dimensions use 2× without changing the chart aspect ratio
+  ---
+  duration_ms: 1.028163
+  ...
+# Subtest: export metadata is XML text, including user titles, units, and invalid control characters
+ok 33 - export metadata is XML text, including user titles, units, and invalid control characters
+  ---
+  duration_ms: 0.141775
+  ...
+# Subtest: insecure, missing and unsupported PNG clipboard capabilities give actionable fallback errors
+ok 34 - insecure, missing and unsupported PNG clipboard capabilities give actionable fallback errors
+  ---
+  duration_ms: 0.385376
+  ...
+# Subtest: clipboard write starts in the click gesture with a PNG promise and resolves only after success
+ok 35 - clipboard write starts in the click gesture with a PNG promise and resolves only after success
+  ---
+  duration_ms: 0.333898
+  ...
+# Subtest: clipboard denial and encoding errors reject instead of reporting copy success
+ok 36 - clipboard denial and encoding errors reject instead of reporting copy success
+  ---
+  duration_ms: 0.230111
+  ...
+# Subtest: all five chart families name axes, units and clock/frame for every audience
+ok 37 - all five chart families name axes, units and clock/frame for every audience
+  ---
+  duration_ms: 0.723444
+  ...
+# Subtest: planner notes state model limits and distinguish centre tracks from visibility
+ok 38 - planner notes state model limits and distinguish centre tracks from visibility
+  ---
+  duration_ms: 0.153485
+  ...
+# Subtest: constant and wholly missing values produce finite, nonzero domains
+ok 39 - constant and wholly missing values produce finite, nonzero domains
+  ---
+  duration_ms: 0.428104
+  ...
+# Subtest: missing ordinate or abscissa breaks paths instead of crossing unknown data
+ok 40 - missing ordinate or abscissa breaks paths instead of crossing unknown data
+  ---
+  duration_ms: 0.147714
+  ...
+# Subtest: readout keeps an unknown nearest sample and its real coordinate
+ok 41 - readout keeps an unknown nearest sample and its real coordinate
+  ---
+  duration_ms: 0.147224
+  ...
+# Subtest: keyboard traversal follows irregular real samples, including final contact time
+ok 42 - keyboard traversal follows irregular real samples, including final contact time
+  ---
+  duration_ms: 0.099386
+  ...
+# Subtest: display rounds without manufacturing trailing precision and always includes units
+ok 43 - display rounds without manufacturing trailing precision and always includes units
+  ---
+  duration_ms: 7.362483
+  ...
+# Subtest: real battery state is plotted after its integration interval, never as initial charge
+ok 44 - real battery state is plotted after its integration interval, never as initial charge
+  ---
+  duration_ms: 1.035312
+  ...
+# Subtest: interval readouts use the containing power sample and do not join unknowns
+ok 45 - interval readouts use the containing power sample and do not join unknowns
+  ---
+  duration_ms: 0.170334
+  ...
+# Subtest: unknown generation cannot produce a later recovered battery curve
+ok 46 - unknown generation cannot produce a later recovered battery curve
+  ---
+  duration_ms: 0.234151
+  ...
+# Subtest: rendered chart exports retain visible axes, adjacent help and keyboard/text equivalents in every mode
+ok 47 - rendered chart exports retain visible axes, adjacent help and keyboard/text equivalents in every mode
+  ---
+  duration_ms: 69.606871
+  ...
+# Subtest: resource plots preserve operation split boundaries and the initial storage state
+ok 48 - resource plots preserve operation split boundaries and the initial storage state
+  ---
+  duration_ms: 0.175883
+  ...
+1..48
+# tests 48
+# suites 0
+# pass 48
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 438.673094
