@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "774956fb63f9b6aa38f057c0a6090bf39007834c",
+  "sourceCommit": "be088b6f6b5a50f7fa9c6e372c31233487471a5a",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -729,8 +729,8 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 18905,
-      "sha256": "cbefa8f9d0d4b512e7168cc4549cb2175c761ac9f67c6f3f5e7282c0c38e4b9c"
+      "bytes": 19306,
+      "sha256": "2935a432fb9dfa0f47a0daafa7b3c5d4657cfec00c2999ab591f4c0c424fc566"
     },
     {
       "path": "docs/IN-FLIGHT.md",
@@ -944,8 +944,8 @@
     },
     {
       "path": "docs/qa/final-science-review/RESOLUTION.md",
-      "bytes": 2099,
-      "sha256": "0df5fa29bc0bf789aa2025f5f73049fff1955368eec3733361b78c9dcbd4b542"
+      "bytes": 2503,
+      "sha256": "428d7d66ce594f831c35fa628effc254959fcb095d2760ad282d4e9aa940f6ad"
     },
     {
       "path": "docs/qa/final-science-review/check-production.mts",
@@ -2424,8 +2424,8 @@
     },
     {
       "path": "docs/qa/scientific-audit/integration/receipt-bindings.json",
-      "bytes": 3398,
-      "sha256": "503cbc7066f8b5190d24176bd4f2e06625d177e8e6cab4582840172baee62986"
+      "bytes": 5878,
+      "sha256": "411cc76a5303abd561963e41521c537cee3577731058b8abf7fa61054490ec4c"
     },
     {
       "path": "docs/qa/scientific-audit/integration/source-capture-before.json",
@@ -4069,8 +4069,8 @@
     },
     {
       "path": "scripts/compile-scientific-verification.py",
-      "bytes": 12544,
-      "sha256": "51af531e4dd2db89e6a719e6bbae362c7e06e1a1c15e04488e923b985e3d2954"
+      "bytes": 12978,
+      "sha256": "a55433bbdcdd63d26716365d85f4b9463db9bc65459761938e0964371e7b93cf"
     },
     {
       "path": "scripts/prepare-celestial-models.mjs",
@@ -4414,8 +4414,8 @@
     },
     {
       "path": "tests/audit-register-freshness.test.ts",
-      "bytes": 3584,
-      "sha256": "bc2514cf99ee035ac8b087a9ef3de28455ea7dd658ccc5a4cc03ffcc37bd2246"
+      "bytes": 3895,
+      "sha256": "45da91a6796c87ed35b385181ac0487ee4411edfb36fe10f856e5c3602bff4a2"
     },
     {
       "path": "tests/audit-resources.test.ts",
