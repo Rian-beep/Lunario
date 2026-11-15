@@ -1,0 +1,112 @@
+{
+  "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+  "environment": {
+    "node": "v20.20.2",
+    "python": "3.12.13",
+    "spiceypy": "8.4.0",
+    "cspice": "N0067",
+    "typescript": "5.9.3",
+    "chromium": "149.0.7827.155",
+    "platform": "Linux Clevo"
+  },
+  "commands": [
+    {
+      "command": "npx tsx --test tests/mission-trajectories.test.ts",
+      "exitCode": 0,
+      "output": "  ...\n1..12\n# tests 12\n# suites 0\n# pass 12\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 232.239686\n"
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "output": "  ...\n1..1362\n# tests 1365\n# suites 0\n# pass 1365\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 21890.867197\n"
+    },
+    {
+      "command": "npm run typecheck -- --incremental false",
+      "exitCode": 0,
+      "output": "\n> solarreach-navigator@0.1.0 typecheck\n> tsc --noEmit --incremental false\n\n"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 1,
+      "output": "\n> solarreach-navigator@0.1.0 lint\n> eslint\n\n\n/tmp/lunario-eval-trajectories/navigator/components/workbench/scene/lunar-terrain.js\n  1:1  error  Do not use \"@ts-nocheck\" because it alters compilation errors  @typescript-eslint/ban-ts-comment\n\n\u2716 1 problem (1 error, 0 warnings)\n\n"
+    },
+    {
+      "command": "npm run lint [isolated exact base 3c82b5a before parser verification modifications]",
+      "exitCode": 1,
+      "output": "\n> solarreach-navigator@0.1.0 lint\n> eslint\n\n\n/tmp/lunario-eval-trajectory-base/navigator/components/workbench/scene/lunar-terrain.js\n  1:1  error  Do not use \"@ts-nocheck\" because it alters compilation errors  @typescript-eslint/ban-ts-comment\n\n\u2716 1 problem (1 error, 0 warnings)\n\n"
+    },
+    {
+      "command": "uv run --python 3.12 --with spiceypy==8.4.0 scripts/prepare-mission-trajectories-clps.py --check",
+      "exitCode": 0,
+      "output": "Verified 3 reconstructed descents; 740 samples; 737 source midpoint comparisons\nodysseus-descent-reconstructed 361 samples; maximum midpoint position discrepancy (km): 0.00997985079058392\nblue-ghost-1-descent-reconstructed 220 samples; maximum midpoint position discrepancy (km): 0.013705340021541557\nathena-descent-reconstructed 159 samples; maximum midpoint position discrepancy (km): 0.008489371222033543\n"
+    },
+    {
+      "command": "node scripts/prepare-mission-trajectories-browser.mjs",
+      "exitCode": 0,
+      "output": "{\n  \"baseline\": false,\n  \"browser\": \"149.0.7827.155\",\n  \"networkRequests\": [],\n  \"errors\": [],\n  \"checks\": [\n    \"Unavailable published selection explains recovery and does not highlight a path\",\n    \"Controlled published selection, source details and rationale citations\",\n    \"Site change does not retain stale selected state; Apollo 11 offers simulation; Apollo 15 CSM remains orbital context\",\n    \"All three CLPS paths select as reconstructed descents, with independent historical-clock explanation\",\n    \"Unknown and no-data sites provide the educational callback without inventing a historic path\",\n    \"390px width and 200% CSS zoom reflow; no horizontal page overflow\",\n    \"Keyboard simulation selection and dismiss callback\"\n  ]\n}\n"
+    },
+    {
+      "command": "node scripts/prepare-mission-trajectories-browser.mjs --baseline",
+      "exitCode": 1,
+      "output": "node:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: false == true\n    at file:///tmp/lunario-eval-trajectories/navigator/scripts/prepare-mission-trajectories-browser.mjs:32:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '=='\n}\n\nNode.js v20.20.2\n"
+    },
+    {
+      "command": "node scripts/prepare-mission-trajectories-replay-review.mjs",
+      "exitCode": 0,
+      "output": "{\n  \"cameraRadius\": 6200,\n  \"gapSeconds\": \"10\",\n  \"gapLineVertexCount\": 108,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": "npx tsx --test tests/mission-trajectories.test.ts [parser-only change on base two-dataset catalog]",
+      "exitCode": 0,
+      "output": "  ...\n1..11\n# tests 11\n# suites 0\n# pass 11\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 193.730136\n"
+    },
+    {
+      "command": "python3 scripts/compile-scientific-verification.py --check",
+      "exitCode": 0,
+      "output": "{\"publicationCheck\": \"pass\", \"counts\": {\"verified\": 41, \"uncertain\": 21, \"failing\": 0}}\n"
+    }
+  ],
+  "counts": {
+    "focused": {
+      "tests": 12,
+      "passCount": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "full": {
+      "tests": 1365,
+      "passCount": 1365,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "browserChecks": 7,
+    "parentDefectsReproduced": 2,
+    "sourceAttempts": 25
+  },
+  "additionalChecks": [
+    {
+      "command": "node scripts/prepare-mission-trajectories-parser-review.mjs",
+      "exitCode": 0,
+      "evidence": "parser-before-after.json"
+    },
+    {
+      "command": "Targeted ESLint over all changed TS/JS paths",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": "python3 -m py_compile scripts/prepare-mission-trajectories-clps.py scripts/prepare-mission-trajectories-evaluation.py",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "output": ""
+    }
+  ]
+}
