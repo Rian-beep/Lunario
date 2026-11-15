@@ -72,7 +72,7 @@
       var doc = frame && frame.contentDocument;
       if (!doc || !doc.body) return false;
       preferDarkInFrame(doc);
-      if (doc.querySelector(".site-shell-nav")) return;
+      if (doc.querySelector(".site-shell-nav")) return true;
       // Prefer the orange-arc wordmark on dark (logo.svg), not flat logo-white.
       var wordmark = doc.querySelector("img.lunario-wordmark");
       if (wordmark && wordmark.getAttribute("src") !== "branding/lunario/assets/logo.svg") {
@@ -82,7 +82,7 @@
       if (existing) {
         if (!existing.querySelector(".site-shell-nav__about")) {
           existing.innerHTML =
-            '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
+            '<a class="site-shell-nav__about" href="' + new URL("about.html", window.location.href).href + '" target="_top" aria-label="About the project">About the project</a>';
         }
         return true;
       }
@@ -106,7 +106,7 @@
       var cluster = doc.createElement("div");
       cluster.className = "header-brand-cluster";
       brand.parentNode.insertBefore(cluster, brand);
-      brand.setAttribute("href", "../../");
+      brand.setAttribute("href", new URL("./", window.location.href).href);
       brand.setAttribute("target", "_top");
       brand.setAttribute("aria-label", "Lunario home");
       cluster.appendChild(brand);
@@ -114,7 +114,7 @@
       nav.className = "site-shell-nav";
       nav.setAttribute("aria-label", "Site");
       nav.innerHTML =
-        '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
+        '<a class="site-shell-nav__about" href="' + new URL("about.html", window.location.href).href + '" target="_top" aria-label="About the project">About the project</a>';
       cluster.appendChild(nav);
       return true;
     } catch (e) {
