@@ -11,7 +11,8 @@ await mkdir(options.out,{recursive:true});
 const report={startedUtc:new Date().toISOString(),options,cases:[]};
 const hash=x=>createHash('sha256').update(x).digest('hex');
 report.scriptSha256=hash(await readFile(new URL(import.meta.url)));report.artifactSha256=existsSync(options.file)?hash(await readFile(options.file)):null;await writeFile(resolve(options.out,'verifier.mjs'),await readFile(new URL(import.meta.url)));
-const browser=await chromium.launch({headless:true,executablePath:options.executable});report.browser=browser.version();
+const gpuArgs=process.env.LUNARIO_NATIVE_GPU?['--no-sandbox','--enable-gpu','--use-gl=angle','--use-angle=vulkan']:[];
+const browser=await chromium.launch({headless:true,executablePath:options.executable,args:gpuArgs});report.browser=browser.version();report.gpuArgs=gpuArgs;
 async function save(){await writeFile(resolve(options.out,'report.json'),JSON.stringify(report,null,2));}
 try{for(const transport of options.mode==='both'?['web','file']:[options.mode]){
  const c={transport,checks:[],errors:[],consoleErrors:[],failedRequests:[],httpRequests:[]};report.cases.push(c);
@@ -37,7 +38,7 @@ try{for(const transport of options.mode==='both'?['web','file']:[options.mode]){
   });
   await check('local-follow-transfer-no-celestial-excursion',async()=>{
    if(await b('Show inspector').isVisible())await b('Show inspector').click();await b('Flight preview').click();await select('assisted');await b('Follow vehicle').click();await page.waitForFunction(()=>{const d=document.querySelector('.scene-host')?.dataset;return d?.vehicleFraming==='framed'&&d.assetFlight==='idle'&&d.contactReplay==='ready';},null,{timeout:90000});
-   c.sceneInstance=(await scene()).sceneInstance;const startControls=await page.getByRole('button',{name:'Play experiment',exact:true}).boundingBox();const pane=await page.locator('.inspector-scroll').boundingBox();assert.ok(startControls&&pane&&startControls.y>=pane.y&&startControls.y+startControls.height<=pane.y+pane.height,'First public Play is visible without scrolling');assert.equal(await page.getByRole('region',{name:'Audience task context',exact:true}).count(),0,'Stay banner does not compete with the flight task');
+   c.renderer=await page.locator('.scene-host canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2'),debug=gl.getExtension('WEBGL_debug_renderer_info');return debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER);});if(process.env.LUNARIO_NATIVE_GPU)assert.ok(!/swiftshader|llvmpipe|software/i.test(c.renderer),'Native GPU verification must use a hardware renderer');c.sceneInstance=(await scene()).sceneInstance;const startControls=await page.getByRole('button',{name:'Play experiment',exact:true}).boundingBox();const pane=await page.locator('.inspector-scroll').boundingBox();assert.ok(startControls&&pane&&startControls.y>=pane.y&&startControls.y+startControls.height<=pane.y+pane.height,'First public Play is visible without scrolling');assert.equal(await page.getByRole('region',{name:'Audience task context',exact:true}).count(),0,'Stay banner does not compete with the flight task');
    await b('Follow vehicle').click();await page.waitForFunction(()=>document.querySelector('.scene-host')?.dataset.cameraMode==='follow');
    const samples=[];for(let i=0;i<12;i++){await page.waitForTimeout(60);const d=await scene();samples.push({distanceKm:Number(d.vehicleCameraDistanceKm),flight:d.assetFlight,visible:d.vehicleVisible,framing:d.vehicleFraming});}
    assert.ok(samples.every(s=>s.distanceKm<.2&&s.flight==='idle'&&s.visible==='true'&&s.framing==='framed'),'Local tracking never takes the celestial zoom-out path');return samples;

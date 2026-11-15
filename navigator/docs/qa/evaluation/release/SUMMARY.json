@@ -1,0 +1,66 @@
+{
+  "testedApplicationSource": "1e14f08",
+  "currentReviewedNumericalBindings": 155,
+  "tests": {
+    "passed": 1470,
+    "failed": 0,
+    "skipped": 0
+  },
+  "webJourneys": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "offlineJourneys": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "webSurfaces": {
+    "total": 15,
+    "passed": 15,
+    "failed": 0
+  },
+  "offlineSurfaces": {
+    "total": 15,
+    "passed": 15,
+    "failed": 0
+  },
+  "sourcePanelCases": 18,
+  "softwareFlightCheck": "Default headless flight check timed out during contact preparation. A separate same-configuration probe reports SwiftShader; the timed-out instance did not record its renderer before waiting.",
+  "performance": {
+    "before": {
+      "firstMoonMs": 1320.3964319999995,
+      "maxFrameGapMs": 400,
+      "thrustFeedbackMs": 58.61314399999901
+    },
+    "after": {
+      "firstMoonMs": 1319.2672129999992,
+      "maxFrameGapMs": 66.59999999999991,
+      "thrustFeedbackMs": 53.96497400000044
+    },
+    "sameHarnessSha256": "6de1f1451ca0c1cd0a3f93fcb436d1983f8983f851f9d68a1d7ae2ee7fde2dc5",
+    "renderer": "ANGLE (AMD, Vulkan 1.4.335 (Radeon 8060S Graphics (RADV STRIX_HALO) (0x00001586)), radv)",
+    "qualification": "Three private contexts per artifact, local transport, warm OS files and quiet sequential runs. Intentional intro separate; first-Moon time is measured after clicking preview. Not cold internet, mobile or universal frame-rate evidence."
+  },
+  "web": {
+    "entry": "assets/main-ZTHMZWB3.js",
+    "initialJSBytes": 1310611,
+    "initialJSGzip6EstimateBytes": 393964,
+    "files": 76
+  },
+  "offline": {
+    "bytes": 97806361,
+    "sha256": "93f1cfdf0b502d402d2a65a1c58d9cd2d4b825b051f4c8453f02152e255a6a46",
+    "publicationLimitBytes": 104857600
+  },
+  "science": {
+    "verifiedBounded": 42,
+    "uncertain": 22,
+    "failingRecordedComparisons": 0,
+    "operationalQualification": false
+  },
+  "macFlightGroups": 16,
+  "macRenderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Unspecified Version)",
+  "nativeFlightGroupsClevo": 16
+}

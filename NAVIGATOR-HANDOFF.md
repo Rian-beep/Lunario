@@ -1,10 +1,12 @@
-# Current audited release — 15 November 2026
+# Current evaluation release — 15 November 2026
 
-Planning-5, source-to-output Data & math framework, per-location mission histories and cited Mission paths & reasons are integrated. Two bounded source paths replay independently of planning time; no confirmed as-flown lander/launch/ascent series for all missions is claimed. NASA2025 colour and calibrated1× LOLA visual relief reach8K on supported high-memory web devices and4K offline. Scientific comparisons and final-review findings are documented with their limits; this is not operational qualification.
+The latest release fixes interrupted Lander focus, false camera readiness and dark Data & math readability. It also adds scenario evidence exports, validated station imports, three reconstructed NASA/PDS descents, lazy measured terrain and unchanged-pixel NASA texture decoding. Original Lunario branding and the three-second introduction are preserved.
 
-Current validation:1361 tests, nonincremental types/lint, Next production build, web/offline builds, and actual browser web/file workflows. Final artifact identities and exact test scope are in navigator/docs/qa/audit-replay-release/VERIFICATION.md. Hosting remains teammate-owned. Use repository-root index.html (`?demo=1` for Rian's selected demo); final TODOs and qualification/acceptance gaps are in navigator/docs/IN-FLIGHT.md.
+Current validation: **1,470 tests pass**, nonincremental types/lint and production Next/web/offline builds pass. Actual generated web and disconnected offline journeys, native 200%/touch-emulation/keyboard checks, and native Radeon plus Mac Metal flight groups pass. Exact scope, measurements, retained failures and qualification limits are in [the final report](navigator/docs/qa/evaluation/release/REPORT.md). The scientific register records 42 bounded verified findings, 22 uncertain and no failing recorded comparisons; it does not qualify an operational mission.
 
-The earlier chronology below preserves historical counts and hashes; use the current release receipt above for deployment.
+Hosting remains teammate-owned. Root `index.html` opens the split web build (`?demo=1` selects Rian's demo); the separate offline download is 97,806,361 bytes, SHA-256 `93f1cfdf0b502d402d2a65a1c58d9cd2d4b825b051f4c8453f02152e255a6a46`. Remaining work and evidence requirements are in [IN-FLIGHT.md](navigator/docs/IN-FLIGHT.md). Default Linux software-rendered contact preparation timed out; fresh JPL retrieval is incomplete due to an upstream HTTP 503. Both are retained explicitly.
+
+The chronology below preserves historical counts and hashes; use the current release report above.
 
 ---
 
