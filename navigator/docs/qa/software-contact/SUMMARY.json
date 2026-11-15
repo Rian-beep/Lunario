@@ -1,0 +1,64 @@
+{
+  "runtimeSource": "cbca4c1",
+  "unitTests": 1474,
+  "offline": {
+    "bytes": 97806793,
+    "sha256": "5ca73925e68fae85654748189a51020db6830d2963c419785b86785040e2d76c"
+  },
+  "runs": [
+    {
+      "report": "software-default.json",
+      "transport": "web",
+      "checks": 8,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 1848.3233179999988,
+      "cpuThrottle": 1,
+      "schedulerDisabled": false
+    },
+    {
+      "report": "software-default.json",
+      "transport": "file",
+      "checks": 8,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 358.86751000001095,
+      "cpuThrottle": 1,
+      "schedulerDisabled": false
+    },
+    {
+      "report": "software-fallback-cpu4.json",
+      "transport": "web",
+      "checks": 8,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 7371.089565000002,
+      "cpuThrottle": 4,
+      "schedulerDisabled": true
+    },
+    {
+      "report": "software-fallback-cpu4.json",
+      "transport": "file",
+      "checks": 8,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 4930.006565999996,
+      "cpuThrottle": 4,
+      "schedulerDisabled": true
+    },
+    {
+      "report": "mac-web-offline.json",
+      "transport": "web",
+      "checks": 8,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Unspecified Version)",
+      "preparationMs": 662.6215000000011,
+      "cpuThrottle": 1,
+      "schedulerDisabled": false
+    },
+    {
+      "report": "mac-web-offline.json",
+      "transport": "file",
+      "checks": 8,
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Unspecified Version)",
+      "preparationMs": 28.749750000002678,
+      "cpuThrottle": 1,
+      "schedulerDisabled": false
+    }
+  ]
+}

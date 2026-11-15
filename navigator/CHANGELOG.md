@@ -1,3 +1,7 @@
+## Lower-powered flight preparation
+
+- Prepare landing contact without starving behind repeated software-rendered frames. Browser task scheduling and a bounded older-browser fallback preserve the existing 120 Hz contact physics, original geometry and offline operation.
+
 ## Evidence checks and usable mission replay
 
 - Keep the selected lander destination through ordinary clicks, interrupted travel and site changes. Follow and flight playback wait for a genuinely visible, settled target.

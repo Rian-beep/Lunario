@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "9e3f8b579220e1a3e9d5cc9d0fd77460552813a7",
+  "sourceCommit": "eabd2b83d63c3969e3a9662e48788e23864f8c19",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 16252,
-      "sha256": "f62a4515171e507a8801f0e3fa07ffc4ff3d8615b7d6ae05eade9cc2b3b3158e"
+      "bytes": 16523,
+      "sha256": "62bab327c2233c22748292034b6fbea38a1031bcdd64fea22dbb74369ee11680"
     },
     {
       "path": "CODEX_PROMPT.md",
@@ -559,8 +559,8 @@
     },
     {
       "path": "components/workbench/scene/contact-dynamics.ts",
-      "bytes": 20125,
-      "sha256": "48d34f0279487a6debd9b0f08a48842fd5b985fe254bbb033154edb048ef398f"
+      "bytes": 20203,
+      "sha256": "6cf1fc9ca24716b976cf8d816e36dfb9c0febee0816fc8c03c6968224805b88c"
     },
     {
       "path": "components/workbench/scene/flight-visuals.test.ts",
@@ -764,13 +764,13 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 20275,
-      "sha256": "ddad757c6d4452d6821504d0a55b40007d324c10cddc57ea9f36232b91187ae0"
+      "bytes": 21558,
+      "sha256": "09c9bf1aabb4d077dab054d089acffe2d9f44527cb89f615e19fe7c9554a5573"
     },
     {
       "path": "docs/IN-FLIGHT.md",
-      "bytes": 20990,
-      "sha256": "1b60687591daff1ea5102ef6f8dd4d3360076839a5eca94c1ff7735210bdcb01"
+      "bytes": 21221,
+      "sha256": "c62dbc800361fd2e6953f15b6de1e7d1a6b1c49cb38758c70f8f9f265007c22c"
     },
     {
       "path": "docs/LANDING-CONTRACTS.md",
@@ -2985,7 +2985,7 @@
     {
       "path": "docs/qa/scientific-audit/VERIFICATION.json",
       "bytes": 233669,
-      "sha256": "5a20be2c6eef3b698f8e5a40a7acffcab14cf55fa3b943adfd08c07458dd2de5"
+      "sha256": "8899bf9c8be6e20d7748b258aef318ffdb4ca15a6e1c6a40e0ac60f973f1ff2f"
     },
     {
       "path": "docs/qa/scientific-audit/VERIFICATION.md",
@@ -3319,8 +3319,8 @@
     },
     {
       "path": "docs/qa/scientific-audit/integration/receipt-bindings.json",
-      "bytes": 19039,
-      "sha256": "1b61b3c0c4fb9102c2c0905104110c7b5f11b2811b6c9b8097adee34d9254070"
+      "bytes": 19261,
+      "sha256": "cde983e323d245a2fa80d62b61ac15f2be08b3a949cac78a377a46841fb66668"
     },
     {
       "path": "docs/qa/scientific-audit/integration/source-capture-before.json",
@@ -3576,6 +3576,46 @@
       "path": "docs/qa/site-transition.md",
       "bytes": 3837,
       "sha256": "f223158546055f50f0d28eb28f9d8f5ee5a60c15d9fe3bf45a3af2a3aa9f1f27"
+    },
+    {
+      "path": "docs/qa/software-contact/REPORT.md",
+      "bytes": 4802,
+      "sha256": "43b64900ee86e913cbba7018cad3376aa0f4ebf3992b1fe6a6c32605453543dc"
+    },
+    {
+      "path": "docs/qa/software-contact/REVIEW.md",
+      "bytes": 744,
+      "sha256": "15081e55c027b8d279bd176dd74dbcf073576a58738f9b1208c7293e5c952da4"
+    },
+    {
+      "path": "docs/qa/software-contact/SUMMARY.json",
+      "bytes": 2036,
+      "sha256": "d4f16481681d1a214ab5683a41c9ecb6264483bdf30864792b20c58041952552"
+    },
+    {
+      "path": "docs/qa/software-contact/diagnosis.json",
+      "bytes": 10718,
+      "sha256": "605142a90258c6bf7514a262d67cd21c09b3e5ea7a49914ed38a6fef8121871b"
+    },
+    {
+      "path": "docs/qa/software-contact/mac-web-offline.json",
+      "bytes": 455063,
+      "sha256": "8605a17d481bc56d67f05f784bce310853f26e5a15307b3a546bb211facd76bb"
+    },
+    {
+      "path": "docs/qa/software-contact/numerical-source-review.json",
+      "bytes": 1257,
+      "sha256": "ea01527363ac88936876026bae16551790831ee860863a4252627d5a495f79cf"
+    },
+    {
+      "path": "docs/qa/software-contact/software-default.json",
+      "bytes": 147587,
+      "sha256": "ed47cd7b88cb9a8b50a503df22f0a910fa39d6f38a06d5eb711bd027d898ad22"
+    },
+    {
+      "path": "docs/qa/software-contact/software-fallback-cpu4.json",
+      "bytes": 136356,
+      "sha256": "b306e95302f95944d80055891bcacdce903964039d90709485d939cd1d22c5a6"
     },
     {
       "path": "docs/qa/startup-profile/README.md",
@@ -4020,7 +4060,7 @@
     {
       "path": "lib/generated/scientific-verification.json",
       "bytes": 233669,
-      "sha256": "5a20be2c6eef3b698f8e5a40a7acffcab14cf55fa3b943adfd08c07458dd2de5"
+      "sha256": "8899bf9c8be6e20d7748b258aef318ffdb4ca15a6e1c6a40e0ac60f973f1ff2f"
     },
     {
       "path": "lib/global-horizon.ts",
@@ -4389,13 +4429,13 @@
     },
     {
       "path": "lib/touchdown-fragments.ts",
-      "bytes": 5985,
-      "sha256": "57b70ca777cb95589595717d303cdfb983c3613a6c8c6eb394803464b060ba03"
+      "bytes": 6064,
+      "sha256": "8e80e013ac86a39800b0618e02e386aa50a46891c95787ee115450c7b41a1e56"
     },
     {
       "path": "lib/touchdown-physics.ts",
-      "bytes": 19826,
-      "sha256": "1fa7810f654676a7a0d2a3cd0ca8c1ee543cf99ff4e9c2b176edd128741caad8"
+      "bytes": 19853,
+      "sha256": "ac9919690028cb6ab3b86bdeeb1872df7b66e916ace7a1b7a650e915db419d0d"
     },
     {
       "path": "lib/ui-theme.ts",
@@ -4426,6 +4466,11 @@
       "path": "lib/windows.ts",
       "bytes": 4179,
       "sha256": "69eea88addd9d54474d72589830d08db424e7611138a7e826832f9b9253c18f5"
+    },
+    {
+      "path": "lib/yield-main-thread.ts",
+      "bytes": 1709,
+      "sha256": "1aa4259b84d570c70d1d719b27b62454d4013a8afdb62b5cef8f5ad8ed7a21e4"
     },
     {
       "path": "next.config.ts",
@@ -4949,8 +4994,8 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 97806361,
-      "sha256": "93f1cfdf0b502d402d2a65a1c58d9cd2d4b825b051f4c8453f02152e255a6a46"
+      "bytes": 97806793,
+      "sha256": "5ca73925e68fae85654748189a51020db6830d2963c419785b86785040e2d76c"
     },
     {
       "path": "scripts/audit-dynamics-fetch.py",
@@ -5429,8 +5474,8 @@
     },
     {
       "path": "scripts/verify-public-flight.mjs",
-      "bytes": 17911,
-      "sha256": "6eeabbd9e725c325fa4c2536fbf7cadfc87f73add4c21e4b75beb730ef43b2af"
+      "bytes": 19296,
+      "sha256": "d4ff8f07d9204583cff74ef2972a9e061aa853cb4272dd839f06fad4f192f57c"
     },
     {
       "path": "scripts/verify-refinement-framing.mjs",
@@ -5631,6 +5676,11 @@
       "path": "tests/contact-penetration.test.ts",
       "bytes": 11284,
       "sha256": "2d89ef54e189ee6d64cb4bb0203cb4175b5884861dfe171ddabb85348a4d40e5"
+    },
+    {
+      "path": "tests/contact-scheduling.test.ts",
+      "bytes": 3106,
+      "sha256": "a4c2e887e88d6d8c66806de92f33ad03f70eff9352b9f74313ddd3bef97720ab"
     },
     {
       "path": "tests/custom-marker.test.ts",
@@ -6357,5 +6407,6 @@
       "bytes": 729,
       "sha256": "6b5a2f6ee2ff8cbc6e8339cf972a29f6f2237f8a9f3b99a0d3d541df5570078a"
     }
-  ]
+  ],
+  "testedRuntimeSourceCommit": "cbca4c1ffe2dd5c7dede0e1c74ef6a8a9cfefc82"
 }

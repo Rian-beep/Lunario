@@ -1,3 +1,4 @@
+import {createPreparationYield} from './yield-main-thread';
 import type { Collider, ColliderDesc, EventQueue, RigidBody, Rotation, Vector } from "@dimforge/rapier3d-compat";
 
 /**
@@ -174,8 +175,6 @@ export function touchdownReleaseHeight(inputs: TouchdownInputs, fragments: reado
   return inputs.heightM - minSupport / Math.cos(slope);
 }
 
-const yieldTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
-
 let initialization: Promise<typeof import("@dimforge/rapier3d-compat")> | undefined;
 
 function initializeRapier() {
@@ -238,6 +237,7 @@ export async function createTouchdownSimulation(inputs: TouchdownInputs, fragmen
   step(): TouchdownFrame;
   dispose(): void;
 }> {
+  const yieldTask = createPreparationYield();
   const values = validateInputs(inputs);
   const parts = snapshotFragments(fragments === undefined ? DEFAULT_FRAGMENTS : fragments);
   const field = terrain === undefined ? undefined : snapshotTerrain(terrain);

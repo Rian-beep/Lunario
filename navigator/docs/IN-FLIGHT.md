@@ -1,4 +1,4 @@
-# Current evaluation release — 15 November 2026
+# Current verified software-rendering fix — 15 November 2026
 
 All scoped implementation work is integrated: the five isolated evaluation lanes, terrain/lifecycle corrections, responsive site selection, confidence and station evidence integration, source replay/framing, asynchronous NASA color decode, dark-panel readability and camera interruption/readiness repairs. The current scientific register has **42 verified bounded claims, 22 uncertain, zero failing recorded comparisons**. Canonical planning-5 and supplementary station-comms-2 are separate authorities; neither is operational certification.
 
@@ -7,7 +7,7 @@ Available source-position replays: Chandrayaan-3 reference descent, Apollo 15 co
 ## Remaining work and teammate priorities
 
 1. **Hosting — teammate owned.** Publish the checked repository root and split web bundle. Keep the single-file offline download separate. No Vercel configuration or deployment was performed in this task.
-2. **Actual users and devices.** Conduct the public/educator/planner study in the retained task sheets; test real touch hardware, assistive technology and slower networks. Automated agent journeys and touch emulation are not a human study. Native GPU flight acceptance is separate from software-rendered 3D: the software flight check timed out during contact preparation and remains a performance limitation.
+2. **Actual users and devices.** Conduct the public/educator/planner study in the retained task sheets; test real touch hardware, assistive technology and slower networks. Automated agent journeys and touch emulation are not a human study. Native and software-rendered web/offline flight checks now pass, including the older-browser fallback with a four-times CPU slowdown. The prior contact-preparation timeout is fixed; software rasterization still paints slowly and emulation is not acceptance on every physical low-end device.
 3. **Authenticated terrain streaming.** Verify the actual configured Cesium payload at close range and adjacent tiles on target devices. Geometry readiness alone does not establish high-resolution photographic texture or source registration. Bundled measured inspection terrain and offline fallback are implemented.
 4. **Qualified terrain and uncertainty.** Obtain applicable frame/datum registration, effective resolution, error characterization and footprint hazards. The finer visual terrain intentionally does not replace numerical contact terrain. Declared finite sensitivity is not a calibrated probability or continuous physical interval.
 5. **Station support and weather.** Obtain dated station-specific lunar rays/masks, calibrated compatible RF hardware and acquisition assumptions, applicable atmospheric evidence and authenticated allocations/bookings. Refresh the incomplete live JPL comparison: one parent attempt retrieved 50 epochs and received a Canberra HTTP 503; archived 75-epoch checks pass. Earth-centre visibility alone cannot establish a selected station service.
@@ -15,7 +15,7 @@ Available source-position replays: Chandrayaan-3 reference descent, Apollo 15 co
 7. **Additional historical data.** Add qualified source trajectories and route rationale when mission agencies publish them; retain exact source, vehicle, phase, frame, timescale, coverage and uncertainty. Do not fill missing telemetry with an invented historical route.
 8. **Maintenance.** Keep data/model identities and reviewed input/engine/reference bindings current. Rerun numerical comparisons and fail-closed publication checks before approving changed evidence. Preserve original retrieval timestamps and API metadata when refreshing/importing observer data.
 
-Final test/artifact evidence is in `qa/evaluation/release/REPORT.md`. Previous release chronology below is archived context; older counts, model IDs and outstanding implementation labels do not describe the current release.
+Current software-rendering test/artifact evidence is in `qa/software-contact/REPORT.md`; the broader earlier evaluation remains in `qa/evaluation/release/REPORT.md`. Previous release chronology below is archived context; older counts, model IDs and outstanding implementation labels do not describe the current release.
 
 ---
 
