@@ -5,12 +5,13 @@ import ch3 from '../public/data/trajectories/chandrayaan-3-descent-reference.jso
 import a15 from '../public/data/trajectories/apollo-15-csm-orbit-reconstructed.json';
 import sourceVectors from '../public/data/trajectories/ch3-source-vectors.json';
 import conversion from '../docs/qa/trajectories/conversion.json';
+import clps from '../docs/qa/evaluation/trajectories/clps-conversion.json';
 import { LANDING_SITES } from '../lib/landing-sites';
 import { MISSION_TRAJECTORIES, MISSION_TRAJECTORY_COVERAGE, MISSION_TRAJECTORY_IDENTITIES, MISSION_TRAJECTORY_REASONS, missionTrajectoriesForSite, validateTrajectoryReasons } from '../lib/mission-trajectories-catalog';
 import { parseMissionTrajectory, missionTrajectoryState, missionReplayClock, trajectorySceneKm, parseMissionHorizonsVectors, verifyTrajectoryBytes } from '../lib/mission-trajectories';
 // Rebuild a minimal CSV envelope around archived original numeric vectors. Full raw downloads stay in /tmp.
 const sourceText = `Target body name: Chandrayaan-3 (LANDER spacecraft) (-158)
-Center body name: Moon (301)
+Center body name: Moon (301) {source: DE441}
 Center-site name: BODY CENTER
 Output units    : KM-S
 Output type     : GEOMETRIC cartesian states
@@ -23,7 +24,7 @@ const artifactBytes = readFileSync(new URL('../public/data/trajectories/chandray
 const artifactHash = conversion.artifacts.find(row => row.path.endsWith('chandrayaan-3-descent-reference.json'))!.sha256;
 
 test('published descent reference is never promoted to flown; CSM orbit never becomes landing/ascent', () => {
-  assert.deepEqual(MISSION_TRAJECTORIES.map(t => [t.kind, t.phase]), [['reference', 'descent'], ['reconstructed', 'orbit']]);
+  assert.deepEqual(MISSION_TRAJECTORIES.map(t => [t.kind, t.phase]), [['reference', 'descent'], ['reconstructed', 'orbit'], ['reconstructed', 'descent'], ['reconstructed', 'descent'], ['reconstructed', 'descent']]);
   assert.equal(missionTrajectoriesForSite('apollo-11').length, 0);
   assert.match(MISSION_TRAJECTORIES[0].uncertainty, /prediction.*unresolved/);
   assert.match(MISSION_TRAJECTORIES[1].missing.join(' '), /Not the lunar module/);
@@ -114,4 +115,48 @@ test('source-derived reasons require citations and locators; model choices and a
 test('untrusted file byte integrity is checked before import', async () => {
   await verifyTrajectoryBytes(artifactBytes, artifactHash);
   await assert.rejects(verifyTrajectoryBytes(new TextEncoder().encode(artifactBytes.toString()+'x'), artifactHash));
+});
+
+test('Horizons rejects conflicting headers and non-decimal JavaScript numeric literals', () => {
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace('Reference frame : ICRF', 'Reference frame : ICRF\nReference frame : Ecliptic of J2000.0'), -158));
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace('Output units    : KM-S', 'Output units    : KM-SPOOF'), -158));
+  const first = sourceVectors.rows[0].positionKm[0];
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace(String(first), '0x10'), -158));
+  assert.throws(() => parseMissionHorizonsVectors(sourceText.replace(String(first), '0b10'), -158));
+});
+
+test('CLPS extracts bind postflight lander pedigree, source bytes, bounded TDB and rotating state fixtures', async () => {
+  for (const receipt of clps.datasets) {
+    const data = MISSION_TRAJECTORIES.find(row => row.id === receipt.id)!;
+    assert.equal(data.kind, 'reconstructed');
+    assert.equal(data.phase, 'descent');
+    assert.equal(data.frame.name, 'IAU_MOON');
+    assert.equal(data.epoch.scale, 'TDB');
+    assert.equal(data.sources[0].sha256, receipt.source.sha256);
+    assert.equal(receipt.pdsLabel.matchesKernel, true);
+    assert.match(receipt.pdsLabel.sha256, /^[a-f0-9]{64}$/);
+    assert.equal(data.samples.length, receipt.sampleCount);
+    assert.equal(missionTrajectoriesForSite(data.siteId!).length, 1);
+    assert.ok(receipt.extractCoverageEt[0] >= receipt.sourceCoverageEt[0]);
+    assert.ok(receipt.extractCoverageEt[1] <= receipt.sourceCoverageEt[1]);
+    assert.ok(receipt.extractCoverageEt[0]-receipt.sourceCoverageEt[0] < 1);
+    assert.ok(receipt.sourceCoverageEt[1]-receipt.extractCoverageEt[1] < 1);
+    assert.equal(data.coverage.end, receipt.extractCoverageEt[1]-receipt.extractCoverageEt[0]);
+    for (const fixture of receipt.fixtures) {
+      const state = missionTrajectoryState(data, fixture.t)!;
+      for (let i=0; i<3; i++) {
+        assert.ok(Math.abs(state.positionKm[i]-fixture.fixedState[i]) < 1e-9);
+        assert.ok(Math.abs(state.velocityKmS[i]-fixture.fixedState[i+3]) < 1e-9);
+      }
+      assert.ok(Math.abs(Math.hypot(...state.positionKm)-Math.hypot(...fixture.inertialState.slice(0,3))) < 1e-8);
+    }
+    assert.match(data.missing.join(' '), /No attitude/);
+    assert.match(data.missing.join(' '), /registration is unqualified/);
+    const bytes = readFileSync(new URL('../public/data/trajectories/'+data.id+'.json', import.meta.url));
+    await verifyTrajectoryBytes(bytes, receipt.artifactSha256);
+    for (let i=1; i<data.samples.length; i++) assert.ok(data.samples[i].t-data.samples[i-1].t <= 5);
+    assert.equal(missionTrajectoryState(data, data.coverage.end+.001), null);
+  }
+  assert.match(MISSION_TRAJECTORIES.find(d=>d.siteId==='athena')!.missing.join(' '), /no EDL states between first contact/);
+  assert.match(MISSION_TRAJECTORIES.find(d=>d.siteId==='blue-ghost-1')!.uncertainty, /not physical uncertainty/);
 });

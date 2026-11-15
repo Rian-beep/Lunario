@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+  "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "scope": "Bounded worker implementation and agent evaluation; no certification or human acceptance.",
+  "findings": [
+    {
+      "id": "T01",
+      "status": "fixed",
+      "observedBehavior": "Horizons importer accepted conflicting frame headers, a unit-prefix spoof, hexadecimal and binary position literals.",
+      "reproductionSteps": [
+        "node scripts/prepare-mission-trajectories-parser-review.mjs",
+        "npx tsx --test tests/mission-trajectories.test.ts"
+      ],
+      "rootCause": "Substring header matching and unrestricted Number() conversion accepted malformed records.",
+      "changeEvidence": [
+        "1eed657: unique complete header checks, explicit columns/TDB and decimal CSV syntax; API unchanged."
+      ],
+      "testEvidence": [
+        "parser-before-after.json: 4/4 malformed cases accepted on base, rejected after; original 109 source rows retained.",
+        "Regression initially failed with Missing expected exception; parser-only isolated-base tests 11/11 pass."
+      ],
+      "limitations": [
+        "Structural parsing does not authenticate provenance; trusted byte/source hashes remain required."
+      ],
+      "owner": "trajectories",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T02",
+      "status": "fixed",
+      "observedBehavior": "Catalog omitted three available PDS postflight lander descent reconstructions.",
+      "reproductionSteps": [
+        "uv run --python 3.12 --with spiceypy==8.4.0 scripts/prepare-mission-trajectories-clps.py --check",
+        "npx tsx --test tests/mission-trajectories.test.ts"
+      ],
+      "rootCause": "Earlier bounded investigation did not cover CLPS EDL archive products.",
+      "changeEvidence": [
+        "33d0587: Odysseus, Blue Ghost 1, Athena reconstructed descents, source identity pins and cited phase rationale."
+      ],
+      "testEvidence": [
+        "clps-conversion.json: 3 official label MD5s match SHA256-pinned binaries; 740 samples and 737 source midpoint comparisons.",
+        "12/12 focused tests; source fixtures, identities, digests, no extrapolation and coverage trim checked."
+      ],
+      "limitations": [
+        "Reconstructed estimates, not raw telemetry; no launch/ascent, attitude, thrust or qualified terrain contact.",
+        "Midpoint discrepancies are finite source comparisons, not physical uncertainty or all-time bounds."
+      ],
+      "owner": "trajectories",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T03",
+      "status": "fixed",
+      "observedBehavior": "Unavailable current-site path selections provided no recovery explanation; selector assumed non-reference data meant CSM orbit.",
+      "reproductionSteps": [
+        "node scripts/prepare-mission-trajectories-browser.mjs --baseline",
+        "node scripts/prepare-mission-trajectories-browser.mjs"
+      ],
+      "rootCause": "Selector did not validate selected ID against site datasets and had only reference/orbit copy.",
+      "changeEvidence": [
+        "33d0587: recovery status, accurate reconstructed-descent label, clock guidance, nominal cadence and interpolation-mode disclosure."
+      ],
+      "testEvidence": [
+        "before-browser.json: baseline assertion fails; browser.json: 7 checks pass with zero page errors/requests.",
+        "Unknown/no-data simulation callback, keyboard, dismissal, stale-site highlighting, 390 px and 200% CSS zoom checked."
+      ],
+      "limitations": [
+        "Isolated selector, not integrated workspace/flight acceptance; native zoom and screen reader not tested."
+      ],
+      "owner": "trajectories",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T04",
+      "status": "open",
+      "observedBehavior": "Reduced-motion replay keeps initial 6200 km overview camera instead of selected-path destination.",
+      "reproductionSteps": [
+        "node scripts/prepare-mission-trajectories-replay-review.mjs",
+        "Inspect parent-replay-probes.json reducedMotion; enable prefers-reduced-motion and mount PublishedTrajectoryReplay."
+      ],
+      "rootCause": "Parent replay sets p=1 in reduced mode and only applies destination inside if(p<1).",
+      "changeEvidence": [
+        "No parent replay edits; parent should apply destination/target immediately under reduced motion and retain controls."
+      ],
+      "testEvidence": [
+        "parent-replay-probes.json binds replay hash and records radius 6200 in actual instrumented render loop."
+      ],
+      "limitations": [
+        "Private Chromium/SwiftShader fixture; NASA globe unavailable in about:blank harness; integrated/hardware acceptance pending."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T05",
+      "status": "open",
+      "observedBehavior": "Replay path line bridges a prohibited data gap although state lookup hides the beacon there.",
+      "reproductionSteps": [
+        "node scripts/prepare-mission-trajectories-replay-review.mjs",
+        "Remove t=10 from reference samples, scrub to 10; first line vertices correspond to t=0 and t=20."
+      ],
+      "rootCause": "Parent renderer creates one THREE.Line from all samples without segmenting by maxGapSeconds or exact-only interpolation.",
+      "changeEvidence": [
+        "No parent edits; split geometry at missing intervals and disclose gap; avoid continuous paths for exact-only data."
+      ],
+      "testEvidence": [
+        "parent-replay-probes.json: 108 line vertices, source times [0,20,...], hidden marker at t=10.",
+        "Existing library gap regression correctly returns null."
+      ],
+      "limitations": [
+        "Synthetic gap in real-source fixture; all five shipped datasets have continuous supported sampling."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T06",
+      "status": "not-reproduced",
+      "observedBehavior": "Historical selection did not mutate the planning epoch in isolated tests or reviewed workspace callback.",
+      "reproductionSteps": [
+        "Inspect components/mission-trajectories/workspace.tsx and components/navigator.tsx MissionPathsWorkspace callback.",
+        "Run selector browser harness and clock regression."
+      ],
+      "rootCause": "No accidental clock coupling found: published selection is local state; historical clock uses declared elapsed TDB seconds.",
+      "changeEvidence": [
+        "Historical-clock guidance added; no shared planning state changed."
+      ],
+      "testEvidence": [
+        "browser.json and 1x/invalid-clock unit tests."
+      ],
+      "limitations": [
+        "No integrated app transition test; parent must check play/scrub/site changes and return to planning.",
+        "1971/2023/2024/2025 source epochs remain outside main 2026-2028 planning catalog."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T07",
+      "status": "needs-external-evidence",
+      "observedBehavior": "No Apollo LM, SLIM or newly qualified Chandrayaan-3 as-flown fit; no numeric Earth-launch/lunar-ascent extract qualified.",
+      "reproductionSteps": [
+        "python3 scripts/prepare-mission-trajectories-evaluation.py",
+        "Read per-site source table in docs/TRAJECTORY-COVERAGE.md."
+      ],
+      "rootCause": "Apollo archive entries cover CSM/subsatellite/camera support; no Volume II numeric listing obtained; JAXA preparation page/catalog shell and ISRO payload pages do not qualify lander states.",
+      "changeEvidence": [
+        "Preserved reference/reconstruction distinctions and explicit site-specific gaps; unsearched sites stay not-reviewed."
+      ],
+      "testEvidence": [
+        "source-attempts.json: 25 exact URL outcomes; source hashes and siteIds; 20 HTTP 200, 3 HTTP 404, 1 HTTP 403, 1 redirect-loop 302."
+      ],
+      "limitations": [
+        "Bounded public-source search, not a proof of worldwide absence; no authentication bypass or agency contact."
+      ],
+      "owner": "trajectories",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T08",
+      "status": "needs-external-evidence",
+      "observedBehavior": "No new trajectory is registered to planning-map ME terrain or qualified for historical contact/lighting.",
+      "reproductionSteps": [
+        "Inspect frame/missing metadata in each new dataset.",
+        "Read frame limitations in docs/TRAJECTORY-COVERAGE.md."
+      ],
+      "rootCause": "Native J2000 to IAU_MOON display conversion is established, but precise map-frame equivalence/contact and historic lighting are not.",
+      "changeEvidence": [
+        "All new paths explicitly disclose unqualified registration; no snapping or contact/lighting claims."
+      ],
+      "testEvidence": [
+        "clps-conversion.json: full-state direct/inverse transforms and rotating-frame velocity checks."
+      ],
+      "limitations": [
+        "No independent terrain-frame/height error budget, contact model or attitude data; inertial external imports need a renderer guard/conversion."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T09",
+      "status": "open",
+      "observedBehavior": "Repository lint has one parent-owned lunar-terrain.js @ts-nocheck error.",
+      "reproductionSteps": [
+        "npm run lint",
+        "Run same npm run lint in exact base 3c82b5a isolated worktree."
+      ],
+      "rootCause": "Base components/workbench/scene/lunar-terrain.js:1:1 violates @typescript-eslint/ban-ts-comment.",
+      "changeEvidence": [
+        "No out-of-scope edit; all changed TS/JS paths pass targeted ESLint."
+      ],
+      "testEvidence": [
+        "verification.json: identical one-error/zero-warning lint on worktree and base."
+      ],
+      "limitations": [
+        "Confirmed base failure; repository-wide lint is not reported green."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T10",
+      "status": "needs-external-evidence",
+      "observedBehavior": "Existing publication gate passes but does not bind the new trajectory assets/modules.",
+      "reproductionSteps": [
+        "python3 scripts/compile-scientific-verification.py --check",
+        "Inspect docs/qa/scientific-audit/integration/receipt-bindings.json for trajectory paths."
+      ],
+      "rootCause": "New scientific assets are outside existing parent-managed publication bindings.",
+      "changeEvidence": [
+        "No bindings/manifests/model versions changed; new source comparison artifacts handed to parent."
+      ],
+      "testEvidence": [
+        "verification.json: actual current gate exit 0, pass, 41 verified / 21 uncertain / 0 failing."
+      ],
+      "limitations": [
+        "This passing existing scope is not independent approval of new trajectories; parent must validate, bind and rebuild hosted/offline artifacts."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "T11",
+      "status": "needs-external-evidence",
+      "observedBehavior": "Three CLPS labels/comments lack a standalone SPDX/CC license or explicit restrictive notice; no universal vendor CC0 claim established.",
+      "reproductionSteps": [
+        "Read official three PDS product labels and binary comments.",
+        "Review NASA science-data license policy and NAIF rules/credit URLs in source-attempts.json."
+      ],
+      "rootCause": "NASA policy distinguishes NASA-led mission defaults from other sources; commercial vendor authorship does not prove a blanket license for all associated material.",
+      "changeEvidence": [
+        "Only numeric extracts are bundled, retaining hashes/citations; no raw kernels, vendor prose, logos or imagery republished."
+      ],
+      "testEvidence": [
+        "source-attempts.json hashes official labels and policy pages; clps-conversion.json verifies official label/binary correspondence."
+      ],
+      "limitations": [
+        "Public numeric-data source availability confirmed; blanket commercial/non-US material relicensing is not claimed.",
+        "Any future raw-kernel/prose redistribution needs a separate rights review."
+      ],
+      "owner": "parent",
+      "sourceCommit": "33d05874d02c745a93f8320f1c20ad148dadb352",
+      "evaluatedBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    }
+  ]
+}
