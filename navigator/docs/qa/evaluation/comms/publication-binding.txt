@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/lunario-eval-comms/navigator/scripts/compile-scientific-verification.py", line 10, in <module>
+    require(Path(name).is_file() and hashlib.sha256(Path(name).read_bytes()).hexdigest()==expected,'Stale scientific evidence: '+name)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/lunario-eval-comms/navigator/scripts/compile-scientific-verification.py", line 6, in require
+    if not condition:raise ValueError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Stale scientific evidence: lib/engineering-evidence/communications.ts

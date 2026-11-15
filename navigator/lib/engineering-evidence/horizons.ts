@@ -1,6 +1,6 @@
 import { DSN_STATIONS } from '../dsn';
 import { EVIDENCE_LIMITS, type StationGeometry } from './types';
-import { utc } from './import';
+import { utc } from './validation';
 export type GeometryRequest = {
     stationId: StationGeometry['stationId'];
     startUtc: string;
@@ -82,18 +82,53 @@ export function parseHorizonsResponse(payload: unknown, request: GeometryRequest
     if (!/Units: KM and KM\/S/.test(raw))
         throw Error('Horizons range units not recognized');
     const body = endSections[0];
+    const decimal = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?$/;
     const samples = body.trim().split('\n').map(line => {
         const f = line.split(',').map(s => s.trim());
         // CSV: JDUT, solar-presence, lunar-presence, AZ, EL, delta, delta-dot.
         const [jd, az, el, range] = [Number(f[0]), Number(f[3]), Number(f[4]), Number(f[5])];
-        if (f.length !== 8 || [0, 3, 4, 5, 6].some(i => !f[i] || !Number.isFinite(Number(f[i]))) || f[7] !== '' || ![jd, az, el, range].every(Number.isFinite) || az < 0 || az > 360 || el < -90 || el > 90 || range < 300000 || range > 500000)
+        if (f.length !== 8 || [0, 3, 4, 5, 6].some(i => !decimal.test(f[i]) || !Number.isFinite(Number(f[i]))) || f[7] !== '' || ![jd, az, el, range].every(Number.isFinite) || az < 0 || az > 360 || el < -90 || el > 90 || range < 300000 || range > 500000)
             throw Error('Unexpected Horizons CSV fields or units');
-        return { utc: new Date(Math.round(((jd - 2440587.5) * 86400000) / 1000) * 1000).toISOString(), azimuthDeg: az, elevationDeg: el, rangeKm: range };
+        const epochMs = (jd - 2440587.5) * 86400000, secondMs = Math.round(epochMs / 1000) * 1000;
+        // Nine-decimal JD output rounds by ~0.0432 ms. Allow 1 ms for encoding and arithmetic,
+        // not half a second of undeclared time shift. This is not a physical timing error bound.
+        if (!Number.isFinite(epochMs) || Math.abs(epochMs - secondMs) > 1)
+            throw Error('Horizons epoch is not on the requested whole-second hourly grid');
+        return { utc: new Date(secondMs).toISOString(), azimuthDeg: az, elevationDeg: el, rangeKm: range };
     });
     const expected = (Date.parse(request.endUtc) - Date.parse(request.startUtc)) / 3600000 + 1;
     if (samples.length !== expected || samples.length > EVIDENCE_LIMITS.samples || samples.some((s, i) => Date.parse(s.utc) !== Date.parse(request.startUtc) + i * 3600000))
         throw Error('Horizons response does not cover every requested hourly epoch');
     return { stationId: request.stationId, target: 'Moon center', frame: 'ITRF93 / airless apparent AZ-EL', requestUrl: url, fetchedUtc, rawResponse: raw, samples };
+}
+export type HorizonsSourceContext = {
+    ephemeris: string | null;
+    eopFile: string | null;
+    eopCoverage: { dataStartUtc: string; dataEndUtc: string; predictionEndUtc: string } | null;
+};
+/** Archived header metadata; dates are conservative midnight boundaries, not error estimates. */
+export function horizonsSourceContext(rawResponse: string): HorizonsSourceContext {
+    const header = rawResponse.split('$$SOE')[0];
+    const ephemeris = header.match(/^Target body name:.*\{source:\s*([^}]+)\}/m)?.[1].trim() ?? null;
+    const eopFile = header.match(/^EOP file\s*:\s*(\S+)\s*$/m)?.[1] ?? null;
+    const coverage = header.match(/^EOP coverage\s*:\s*DATA-BASED (\d{4}-[A-Z]{3}-\d{2}) TO (\d{4}-[A-Z]{3}-\d{2})\. PREDICTS-> (\d{4}-[A-Z]{3}-\d{2})\s*$/m);
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const date = (s: string) => {
+        const [year, month, day] = s.split('-'), index = months.indexOf(month);
+        if (index < 0) throw Error('Invalid EOP month');
+        return utc(`${year}-${String(index + 1).padStart(2, '0')}-${day}T00:00:00Z`);
+    };
+    let eopCoverage: HorizonsSourceContext['eopCoverage'] = null;
+    if (eopFile && coverage) {
+        try {
+            const [dataStartUtc, dataEndUtc, predictionEndUtc] = coverage.slice(1).map(date);
+            if (Date.parse(dataStartUtc) <= Date.parse(dataEndUtc) && Date.parse(dataEndUtc) <= Date.parse(predictionEndUtc))
+                eopCoverage = { dataStartUtc, dataEndUtc, predictionEndUtc };
+        } catch {
+            return { ephemeris, eopFile, eopCoverage: null };
+        }
+    }
+    return { ephemeris, eopFile, eopCoverage };
 }
 export async function fetchStationGeometry(request: GeometryRequest, signal: AbortSignal, fetcher: typeof fetch = fetch): Promise<StationGeometry> {
     signal.throwIfAborted();

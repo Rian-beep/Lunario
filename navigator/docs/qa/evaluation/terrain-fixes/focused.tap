@@ -1,0 +1,424 @@
+TAP version 13
+# Subtest: globe approach limit is mesh radius plus clearance, not 2.5 lunar radii
+ok 1 - globe approach limit is mesh radius plus clearance, not 2.5 lunar radii
+  ---
+  duration_ms: 0.989494
+  ...
+# Subtest: physical sphere clamp allows an off-centre pan target without imposing orbit-target distance
+ok 2 - physical sphere clamp allows an off-centre pan target without imposing orbit-target distance
+  ---
+  duration_ms: 0.679196
+  ...
+# Subtest: real OrbitControls vertical rotation reaches both geographic poles with unchanged safe radius
+ok 3 - real OrbitControls vertical rotation reaches both geographic poles with unchanged safe radius
+  ---
+  duration_ms: 54.987571
+  ...
+# (node:1315609) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: reference-radius edits shift flight origin without changing mounted ENU basis
+ok 4 - reference-radius edits shift flight origin without changing mounted ENU basis
+  ---
+  duration_ms: 1.126279
+  ...
+# Subtest: horizon updates preserve azimuth convention and break unknown sectors
+ok 5 - horizon updates preserve azimuth convention and break unknown sectors
+  ---
+  duration_ms: 0.26819
+  ...
+# Subtest: live physics, date, visibility and observer edits do not invalidate mounted resources
+ok 6 - live physics, date, visibility and observer edits do not invalidate mounted resources
+  ---
+  duration_ms: 0.157765
+  ...
+# (node:1315610) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: follow translates edited trajectories and preserves the user's orbit and pan offset
+ok 7 - follow translates edited trajectories and preserves the user's orbit and pan offset
+  ---
+  duration_ms: 1.07965
+  ...
+# Subtest: vehicle translates edited trajectories and preserves the user's orbit and pan offset
+ok 8 - vehicle translates edited trajectories and preserves the user's orbit and pan offset
+  ---
+  duration_ms: 0.158484
+  ...
+# Subtest: breakup follows the physical mass centre independently of first-fragment position and descriptor shares
+ok 9 - breakup follows the physical mass centre independently of first-fragment position and descriptor shares
+  ---
+  duration_ms: 0.391796
+  ...
+# Subtest: runtime descriptor preparation detaches NASA metre normalization from animated kilometre parents
+ok 10 - runtime descriptor preparation detaches NASA metre normalization from animated kilometre parents
+  ---
+  duration_ms: 6.166035
+  ...
+# Subtest: clearance finds terrain under proxy faces, including peaks missed by corner-only sampling
+ok 11 - clearance finds terrain under proxy faces, including peaks missed by corner-only sampling
+  ---
+  duration_ms: 4.019893
+  ...
+# Subtest: minimum clearance agrees with analytic support of rotated boxes over a sloped negative-height plane
+ok 12 - minimum clearance agrees with analytic support of rotated boxes over a sloped negative-height plane
+  ---
+  duration_ms: 1.725407
+  ...
+# Subtest: cached playback retains the solver fragment masses instead of reconstructing them from descriptor shares
+ok 13 - cached playback retains the solver fragment masses instead of reconstructing them from descriptor shares
+  ---
+  duration_ms: 0.501852
+  ...
+# Subtest: local numerical terrain is clickable with the NASA globe hidden; missed paths and Earth cannot become Moon picks
+ok 14 - local numerical terrain is clickable with the NASA globe hidden; missed paths and Earth cannot become Moon picks
+  ---
+  duration_ms: 6.978145
+  ...
+# Subtest: render telemetry uses current COM/sample state, leaves collective breakup attitude blank, and does not modify physics
+ok 15 - render telemetry uses current COM/sample state, leaves collective breakup attitude blank, and does not modify physics
+  ---
+  duration_ms: 0.54129
+  ...
+# Subtest: Follow preserves only settled local camera offsets
+ok 16 - Follow preserves only settled local camera offsets
+  ---
+  duration_ms: 0.223112
+  ...
+# (node:1315616) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: Moon atlas shader uses shared linear grayscale and bypasses view-dependent lighting/exposure by default
+ok 17 - Moon atlas shader uses shared linear grayscale and bypasses view-dependent lighting/exposure by default
+  ---
+  duration_ms: 1.36193
+  ...
+# Subtest: patch cache retains three LRU entries and reloads an evicted patch
+ok 18 - patch cache retains three LRU entries and reloads an evicted patch
+  ---
+  duration_ms: 3.864049
+  ...
+# Subtest: bound slots and both preparing patches survive cache pressure until atomic handoff
+ok 19 - bound slots and both preparing patches survive cache pressure until atomic handoff
+  ---
+  duration_ms: 1.306533
+  ...
+# Subtest: leaving patch coverage replaces disabled sampler slots with the blank texture
+ok 20 - leaving patch coverage replaces disabled sampler slots with the blank texture
+  ---
+  duration_ms: 0.746073
+  ...
+# Subtest: rapid destinations keep two patch loads active and only the latest queued pair
+ok 21 - rapid destinations keep two patch loads active and only the latest queued pair
+  ---
+  duration_ms: 0.694165
+  ...
+# Subtest: retargeting an in-flight patch deduplicates it and protects prepared images before apply
+ok 22 - retargeting an in-flight patch deduplicates it and protects prepared images before apply
+  ---
+  duration_ms: 0.579058
+  ...
+# Subtest: failed patch promises are removed for retry without dropping the bound pair
+ok 23 - failed patch promises are removed for retry without dropping the bound pair
+  ---
+  duration_ms: 1.034162
+  ...
+# Subtest: dispose is idempotent, settles preparations and retires late loads without rebinding
+ok 24 - dispose is idempotent, settles preparations and retires late loads without rebinding
+  ---
+  duration_ms: 0.773611
+  ...
+# Subtest: metre-scale surface detail blends into the next finest real NAC patch instead of a coarse WAC jump
+ok 25 - metre-scale surface detail blends into the next finest real NAC patch instead of a coarse WAC jump
+  ---
+  duration_ms: 0.804571
+  ...
+# (node:1315627) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 1280px
+ok 26 - runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 1280px
+  ---
+  duration_ms: 199.142494
+  ...
+# Subtest: runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 1728px
+ok 27 - runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 1728px
+  ---
+  duration_ms: 5.633614
+  ...
+# Subtest: runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 800px
+ok 28 - runtime frames the actual 7 m NASA lander with inspector, site card and expanded HUD at 800px
+  ---
+  duration_ms: 5.307986
+  ...
+# Subtest: projection preserves user orbit/pan through moving COM, rewinds, contact and separated fragments
+ok 29 - projection preserves user orbit/pan through moving COM, rewinds, contact and separated fragments
+  ---
+  duration_ms: 2.256417
+  ...
+# Subtest: empty-space selection clips offscreen panels, handles full obstruction and follows vehicle aspect
+ok 30 - empty-space selection clips offscreen panels, handles full obstruction and follows vehicle aspect
+  ---
+  duration_ms: 0.302789
+  ...
+# Subtest: DOM measurements follow panel open, hidden, CSS movement, resize and canvas offsets without hiding panels
+ok 31 - DOM measurements follow panel open, hidden, CSS movement, resize and canvas offsets without hiding panels
+  ---
+  duration_ms: 0.689895
+  ...
+# Subtest: asset flight camera/target samples stay continuous and unmodified by panel framing
+ok 32 - asset flight camera/target samples stay continuous and unmodified by panel framing
+  ---
+  duration_ms: 7.312163
+  ...
+# Subtest: runtime Follow frames all actual NASA parts at 2 m spread with COM and original scale
+ok 33 - runtime Follow frames all actual NASA parts at 2 m spread with COM and original scale
+  ---
+  duration_ms: 99.06467
+  ...
+# Subtest: runtime Follow frames all actual NASA parts at 100 m spread with COM and original scale
+ok 34 - runtime Follow frames all actual NASA parts at 100 m spread with COM and original scale
+  ---
+  duration_ms: 93.963077
+  ...
+# Subtest: intentional renderer release detaches context-loss handlers before freeing the context
+ok 35 - intentional renderer release detaches context-loss handlers before freeing the context
+  ---
+  duration_ms: 0.893437
+  ...
+# Subtest: renderer cleanup still completes if explicit context release fails
+ok 36 - renderer cleanup still completes if explicit context release fails
+  ---
+  duration_ms: 0.387526
+  ...
+# (node:1315634) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: render frame preserves east/north/tangent-up metres with no radial-altitude substitution
+ok 37 - render frame preserves east/north/tangent-up metres with no radial-altitude substitution
+  ---
+  duration_ms: 1.161478
+  ...
+# Subtest: missing DEM samples stay unknown and use the flight's site-radius sphere
+ok 38 - missing DEM samples stay unknown and use the flight's site-radius sphere
+  ---
+  duration_ms: 0.365486
+  ...
+# Subtest: fine measured heights take precedence and blend only at numerical grid edges
+ok 39 - fine measured heights take precedence and blend only at numerical grid edges
+  ---
+  duration_ms: 0.253031
+  ...
+# Subtest: image metadata maps polar extent with north at the top, for non-square images
+ok 40 - image metadata maps polar extent with north at the top, for non-square images
+  ---
+  duration_ms: 0.163064
+  ...
+# Subtest: continuous sphere provides finite outward-facing surface beyond a 100 km footprint
+ok 41 - continuous sphere provides finite outward-facing surface beyond a 100 km footprint
+  ---
+  duration_ms: 68.809706
+  ...
+# Subtest: Sun and Earth compass directions use north zero and clockwise azimuth
+ok 42 - Sun and Earth compass directions use north zero and clockwise azimuth
+  ---
+  duration_ms: 0.144565
+  ...
+# Subtest: global calibrated numerical heights support display context without becoming fine terrain
+ok 43 - global calibrated numerical heights support display context without becoming fine terrain
+  ---
+  duration_ms: 52.868138
+  ...
+# Subtest: cooperative destination preparation preserves body location in a fixed render frame
+ok 44 - cooperative destination preparation preserves body location in a fixed render frame
+  ---
+  duration_ms: 72.161674
+  ...
+# Subtest: cooperative destination work can be canceled at a yield before publishing geometry
+ok 45 - cooperative destination work can be canceled at a yield before publishing geometry
+  ---
+  duration_ms: 7.10602
+  ...
+# (node:1315644) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: contact patch includes motion redirected from vertical impact, with a fixed vertex budget
+ok 46 - contact patch includes motion redirected from vertical impact, with a fixed vertex budget
+  ---
+  duration_ms: 29.8272
+  ...
+# Subtest: negative-height terrain catches the rigid body on the numerical surface, not reference y=0
+ok 47 - negative-height terrain catches the rigid body on the numerical surface, not reference y=0
+  ---
+  duration_ms: 141.179702
+  ...
+# Subtest: signed X/Z velocity and SI position are handed to Rapier without heading loss or release-height replacement
+ok 48 - signed X/Z velocity and SI position are handed to Rapier without heading loss or release-height replacement
+  ---
+  duration_ms: 5.687483
+  ...
+# Subtest: both signs of slope collide and friction resists motion on the heightfield
+ok 49 - both signs of slope collide and friction resists motion on the heightfield
+  ---
+  duration_ms: 42.13103
+  ...
+# Subtest: fast breakup retains mass and no proxy tunnels through a negative terrain patch
+ok 50 - fast breakup retains mass and no proxy tunnels through a negative terrain patch
+  ---
+  duration_ms: 14.319057
+  ...
+# Subtest: curved Moon surface heights match the radial display sampler at displaced sites and negative DEM elevations
+ok 51 - curved Moon surface heights match the radial display sampler at displaced sites and negative DEM elevations
+  ---
+  duration_ms: 0.356447
+  ...
+# Subtest: terrain preparation is finite, cooperative, curved and preserves the contact frame signs
+ok 52 - terrain preparation is finite, cooperative, curved and preserves the contact frame signs
+  ---
+  duration_ms: 25.937122
+  ...
+# Subtest: unknown terrain is explicit and cannot become a qualified reference-plane collider
+ok 53 - unknown terrain is explicit and cannot become a qualified reference-plane collider
+  ---
+  duration_ms: 0.636967
+  ...
+# Subtest: coarse global coverage stays explicitly coarse when sampled more densely for contact
+ok 54 - coarse global coverage stays explicitly coarse when sampled more densely for contact
+  ---
+  duration_ms: 30.526205
+  ...
+# Subtest: heightfield validation rejects holes, bad bounds and unsupported velocities, and snapshots caller data
+ok 55 - heightfield validation rejects holes, bad bounds and unsupported velocities, and snapshots caller data
+  ---
+  duration_ms: 6.320209
+  ...
+# Subtest: aborting after terrain/world allocation cancels body preparation without leaving a stale simulation
+ok 56 - aborting after terrain/world allocation cancels body preparation without leaving a stale simulation
+  ---
+  duration_ms: 22.354033
+  ...
+# (node:1315652) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: south-pole close-up covers the landing sites and not the equator
+ok 57 - south-pole close-up covers the landing sites and not the equator
+  ---
+  duration_ms: 0.55429
+  ...
+# Subtest: terrain frame is identity at the south pole and places the pole on the sphere elsewhere
+ok 58 - terrain frame is identity at the south pole and places the pole on the sphere elsewhere
+  ---
+  duration_ms: 0.418994
+  ...
+# (node:1315655) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: HTTP detail resolves the configured public base; offline never asks for external grids
+ok 59 - HTTP detail resolves the configured public base; offline never asks for external grids
+  ---
+  duration_ms: 0.817681
+  ...
+# Subtest: dispose during manifest decoding leaves no metadata, requests, allocation or callbacks
+ok 60 - dispose during manifest decoding leaves no metadata, requests, allocation or callbacks
+  ---
+  duration_ms: 3.217213
+  ...
+# Subtest: dispose during grid completion cannot recreate DEM values/textures or emit status
+ok 61 - dispose during grid completion cannot recreate DEM values/textures or emit status
+  ---
+  duration_ms: 10.919621
+  ...
+# Subtest: dispose during mask completion cannot recreate DEM values/textures or emit status
+ok 62 - dispose during mask completion cannot recreate DEM values/textures or emit status
+  ---
+  duration_ms: 1.12037
+  ...
+# Subtest: dispose during stream completion cannot recreate DEM values/textures or emit status
+ok 63 - dispose during stream completion cannot recreate DEM values/textures or emit status
+  ---
+  duration_ms: 0.805061
+  ...
+# Subtest: unchanged lighting does not invalidate shadow field; changed scene Sun is rotated into terrain space
+ok 64 - unchanged lighting does not invalidate shadow field; changed scene Sun is rotated into terrain space
+  ---
+  duration_ms: 0.602348
+  ...
+# Subtest: recursive feather provenance weights match actual rendered height, including unavailable fine source fallback
+ok 65 - recursive feather provenance weights match actual rendered height, including unavailable fine source fallback
+  ---
+  duration_ms: 1.061341
+  ...
+# Subtest: detail demand excludes all active flights, offline, distant and unrelated inspection
+ok 66 - detail demand excludes all active flights, offline, distant and unrelated inspection
+  ---
+  duration_ms: 0.211832
+  ...
+# Subtest: imagery manifest and texture completions are inert after disposal
+ok 67 - imagery manifest and texture completions are inert after disposal
+  ---
+  duration_ms: 1.813984
+  ...
+# Subtest: failed optional grids report fallback while a failed overview never becomes ready
+ok 68 - failed optional grids report fallback while a failed overview never becomes ready
+  ---
+  duration_ms: 16.068993
+  ...
+# Subtest: dispose while native grid gzip decompression finishes cannot publish resources
+ok 69 - dispose while native grid gzip decompression finishes cannot publish resources
+  ---
+  duration_ms: 7.179858
+  ...
+# Subtest: dispose while native mask gzip decompression finishes cannot publish resources
+ok 70 - dispose while native mask gzip decompression finishes cannot publish resources
+  ---
+  duration_ms: 1.92098
+  ...
+# Subtest: close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+ok 71 - close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+  ---
+  duration_ms: 1.08474
+  ...
+# Subtest: missing/coarse fine coverage never receives a synthetic high-resolution label
+ok 72 - missing/coarse fine coverage never receives a synthetic high-resolution label
+  ---
+  duration_ms: 0.191673
+  ...
+# Subtest: numerical terrain bilinear interpolation respects raster axis directions
+ok 73 - numerical terrain bilinear interpolation respects raster axis directions
+  ---
+  duration_ms: 0.569909
+  ...
+# Subtest: outside or nodata terrain cannot become invented height
+ok 74 - outside or nodata terrain cannot become invented height
+  ---
+  duration_ms: 0.105246
+  ...
+# Subtest: local coordinates roundtrip at a polar landing site
+ok 75 - local coordinates roundtrip at a polar landing site
+  ---
+  duration_ms: 0.223662
+  ...
+# Subtest: rectangular source windows retain their separate north-south spacing
+ok 76 - rectangular source windows retain their separate north-south spacing
+  ---
+  duration_ms: 0.100417
+  ...
+# Subtest: height lookup uses the finest available measured patch before coarse context
+ok 77 - height lookup uses the finest available measured patch before coarse context
+  ---
+  duration_ms: 4.470156
+  ...
+# Subtest: packed height decoding preserves missing samples and physical scale
+ok 78 - packed height decoding preserves missing samples and physical scale
+  ---
+  duration_ms: 2.141482
+  ...
+1..78
+# tests 78
+# suites 0
+# pass 78
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 947.172712

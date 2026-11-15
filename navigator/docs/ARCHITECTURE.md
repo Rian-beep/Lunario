@@ -81,3 +81,13 @@ Measured close-view tessellation uses `lib/terrain-lod.ts`; existing source spac
 Planning-5 binds corrected Moon-observed Earth range and registered terrain to new dataset identities. The verification compiler requires explicit reviewed hash bindings for numerical code, inputs and receipts, plus outcome/coverage gates; it never creates new observations. The Sources panel renders native equations and pipeline dependencies alongside scoped findings. Historical baseline evidence is labelled separately.
 
 The lazy mission-path workspace owns a separate monotonic seconds clock and bounded source-frame positions. Its NASA visual Moon is an IAU_MOON display with unqualified map registration; no replay position enters evaluateScenario or the contact solver. Ordinary editable landing previews retain the canonical flight engine. Progressive NASA colour/visual-only radial samples never enter scientific height or horizon calculations. Offline embeds1K/2K/4K tiers and calibrated radii; high-memory web clients may upgrade to8K. Texture leases, cancellation and disposal are per-renderer and bounded independently of date-variable changes.
+
+## Evaluation evidence boundaries
+
+`evaluateScenario` remains the overall mission assessment authority. `evaluateEvidenceConfidence` interprets that exact scenario and analysis context for audience-specific disclosure; it creates no success probability. Finite cases export the full held scenario and refuse stale result downloads. Data & math is loaded on demand.
+
+The separate `station-comms-2` evaluator reparses archived observer bytes, request settings, UTC sampling, EOP coverage and input chronology before computing conditional capacity. Its evidence summary separates station geometry, lunar rays, local horizons, compatible radio hardware, dated weather and allocation assumptions from authenticated service support. Imports retain original retrieval provenance and API JSON metadata when supplied.
+
+Historical CLPS extracts use hash-pinned source kernels and an independent historical clock. Moon-fixed IAU_MOON display is kept separate from mean-Earth planning terrain and educational contact dynamics. Renderer paths split at missing intervals; unsupported inertial frames cannot be drawn as Moon fixed.
+
+The scientific publication compiler checks reviewed source identities and outcome receipts, including current station comparisons and 740 CLPS source states. It refuses stale evidence or failed residual gates. Live HTTP failures remain explicitly incomplete; they are not converted into comparison passes.

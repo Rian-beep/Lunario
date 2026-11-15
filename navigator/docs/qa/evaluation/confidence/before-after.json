@@ -1,0 +1,66 @@
+{
+  "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0",
+  "baseline": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "scope": "Actual committed catalog and selected coordinates/stay; synthetic declared loads, not observations or hardware qualification",
+  "existingModule": {
+    "path": "lib/engineering-evidence/uncertainty.ts",
+    "baseSha256": "0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b",
+    "currentSha256": "0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b",
+    "identicalToBase": true
+  },
+  "before": {
+    "exportedKeys": [
+      "schema",
+      "baselineKey",
+      "heldRequirements",
+      "heldOperations",
+      "declaredBounds",
+      "cases",
+      "sampledBatteryRangeWh",
+      "allCasesHaveBattery",
+      "outcomeStable",
+      "interpretation",
+      "unquantified"
+    ],
+    "hasFullNominalScenario": false,
+    "hasDatasetId": false,
+    "hasExplicitModelVersion": false,
+    "interpretation": "Finite declared cases only; no probability, continuous enclosure or qualified uncertainty"
+  },
+  "after": {
+    "schema": "solarreach-evidence-confidence-1",
+    "scenarioKey": "planning-5-74f60ca8-8bcd0312-1179",
+    "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+    "modelVersion": "planning-5",
+    "selected": {
+      "name": "Connecting Ridge",
+      "lat": -89.53432,
+      "lon": 209.94767,
+      "locationBasis": "LPSC 2024 abstract 1695. Candidate point at −89.53432°, 209.94767°E inside the Artemis Connecting Ridge region, beside a permanently shadowed crater.",
+      "locationSource": "https://www.hou.usra.edu/meetings/lpsc2024/pdf/1695.pdf",
+      "startUtc": "2026-01-01T00:00:00.000Z",
+      "endUtcExclusive": "2026-01-01T04:00:00.000Z",
+      "stepHours": 1,
+      "heightsM": {
+        "display": 2,
+        "array": 2,
+        "antenna": 10
+      }
+    },
+    "fullNominalScenarioRetained": true,
+    "replayKey": "planning-5-74f60ca8-8bcd0312-1179",
+    "calibratedPhysicalUncertainty": "not-supplied",
+    "physicalOutcomeInterval": null,
+    "finiteCases": 3,
+    "finiteStatus": "current",
+    "scenarioByteCount": 1042,
+    "exportByteCount": 17376
+  },
+  "limitations": [
+    "New export is useful only once parent wires it into the existing workspace",
+    "Manifest declarations are retained, not authenticated or rehashed",
+    "No raw catalog is embedded; same catalog/model is needed to replay",
+    "Existing finite-case export remains unchanged",
+    "No physical calibration, probability or operational acceptance inferred"
+  ]
+}

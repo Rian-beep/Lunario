@@ -152,3 +152,7 @@ CI creates that environment before tests. Do not treat a missing dependency as a
 CI runs `python3 scripts/compile-scientific-verification.py --check` before tests: this validates reviewed input/subsystem-engine/receipt bindings and committed findings without restamping compilation time. Ordinary compilation remains explicit after reviewed source comparisons. The freshness regression includes a communications-subsystem mutation, failed outcome and non-writing check-mode cases.
 
 The LCROSS original-PDF replay also requires Poppler's `pdftotext` on PATH (`poppler-utils` on the Ubuntu CI runner; Poppler on macOS). CI installs it explicitly. An absent executable is a failed source check, never a skipped pass; the test retains the original coordinate/time assertions and now reports spawn errors directly.
+
+The standard `npm test` suite also includes the evaluation harness `.test.mjs` checks. Browser audience acceptance is separate: see `scripts/evaluation-audience/README.md` for hosted and disconnected journeys, native desktop zoom, touch emulation and keyboard checks. These are automated agent checks, not a human or assistive-technology study.
+
+The evidence wiring regression launches isolated Chrome. macOS and Clevo/Linux standard Chrome paths are detected; set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` (or `CHROME_PATH`) for a different installation. A missing browser is a failed check, not a silent skip. No personal Chrome profile is used.

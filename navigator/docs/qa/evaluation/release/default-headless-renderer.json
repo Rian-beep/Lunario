@@ -1,0 +1,6 @@
+{
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "browser": "149.0.7827.155",
+  "args": [],
+  "scope": "Fresh probe of the same default headless configuration; timed-out instance did not record renderer before its wait"
+}

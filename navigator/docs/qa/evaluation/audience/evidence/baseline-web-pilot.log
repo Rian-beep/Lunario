@@ -1,0 +1,21 @@
+START web first-load
+PASS web first-load 
+START web public-pick-site
+PASS web public-pick-site 
+START web public-open-lander
+PASS web public-open-lander 
+START web public-play-edit-explain-retry
+FAIL web public-play-edit-explain-retry AssertionError [ERR_ASSERTION]: false == true
+START web educator-site-date-native-formula
+PASS web educator-site-date-native-formula 
+START web educator-predict-result
+FAIL web educator-predict-result locator.waitFor: Timeout 15000ms exceeded.
+START web educator-export-material
+PASS web educator-export-material 
+START web planner-delay-alternatives-why
+PASS web planner-delay-alternatives-why 
+START web planner-save-export-import
+PASS web planner-save-export-import 
+START web errors-and-artifact-identity
+PASS web errors-and-artifact-identity 
+{"summary":{"total":10,"passed":8,"failed":2}}

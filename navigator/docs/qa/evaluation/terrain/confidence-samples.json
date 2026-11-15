@@ -1,0 +1,102 @@
+{
+  "retrievedUtc": "2026-11-15T18:42:56.086Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "recordBytes": 2500,
+  "imageRecord": 4,
+  "receipts": [
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=0-7499",
+      "status": 206,
+      "bytes": 7500,
+      "sha256": "c558f2e633c3fb921c227589b1c6d2b401b9e687d950f339a8183b54ede63de2",
+      "file": "range-0.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=3133750-3133750",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "4d7b3ef7300acf70c892d8327db8272f54434adbc61a4e130a563cb59a0d0f47",
+      "file": "range-1.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=2090833-2090833",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "4d7b3ef7300acf70c892d8327db8272f54434adbc61a4e130a563cb59a0d0f47",
+      "file": "range-2.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=4174166-4174166",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "4d7b3ef7300acf70c892d8327db8272f54434adbc61a4e130a563cb59a0d0f47",
+      "file": "range-3.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=7500-7500",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "file": "range-4.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=9494-9494",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "file": "range-5.bin"
+    },
+    {
+      "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12_CONF.IMG",
+      "range": "bytes=12485-12485",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "file": "range-6.bin"
+    }
+  ],
+  "samples": [
+    {
+      "row": 1250,
+      "col": 1250,
+      "confidence": 14,
+      "retained": true
+    },
+    {
+      "row": 833,
+      "col": 833,
+      "confidence": 14,
+      "retained": true
+    },
+    {
+      "row": 1666,
+      "col": 1666,
+      "confidence": 14,
+      "retained": true
+    },
+    {
+      "row": 0,
+      "col": 0,
+      "confidence": 0,
+      "retained": false
+    },
+    {
+      "row": 0,
+      "col": 1994,
+      "confidence": 0,
+      "retained": false
+    },
+    {
+      "row": 1,
+      "col": 2485,
+      "confidence": 0,
+      "retained": false
+    }
+  ]
+}

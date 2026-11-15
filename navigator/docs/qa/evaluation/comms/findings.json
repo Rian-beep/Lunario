@@ -1,0 +1,307 @@
+{
+  "lane": "comms",
+  "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+  "numericalMeaningChanged": true,
+  "overallMissionAuthority": "lib/assessment.ts::evaluateScenario",
+  "operationalApproval": false,
+  "verification": {
+    "focusedTests": {
+      "total": 371,
+      "passed": 371,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "beforeRegressions": {
+      "total": 10,
+      "passed": 1,
+      "failed": 9
+    },
+    "afterRegressions": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "lint": {
+      "exitCode": 1,
+      "errors": 1,
+      "warnings": 0,
+      "reproducedAtBase": true
+    },
+    "ownedLint": {
+      "exitCode": 0
+    },
+    "publicationBinding": {
+      "exitCode": 1,
+      "status": "stale-requires-parent-validation"
+    },
+    "archivedSource": {
+      "status": "passed",
+      "samples": 75,
+      "components": 225
+    },
+    "liveSource": {
+      "status": "incomplete",
+      "samples": 50,
+      "components": 150,
+      "unavailableStations": [
+        "madrid"
+      ]
+    },
+    "isolatedBrowser": {
+      "cases": 4,
+      "passed": 4,
+      "pageErrors": 0,
+      "httpRequests": 0,
+      "productionIntegrationVerified": false
+    }
+  },
+  "findings": [
+    {
+      "id": "COMMS-001",
+      "observedBehavior": "A provider JD row shifted by 0.25 seconds was accepted as the requested hourly epoch.",
+      "reproducibleSteps": [
+        "Run tests/comms-evaluation/regressions.test.ts on the exact base with its fixtures.ts helper.",
+        "First case replaces JD 2461358.500000000 by JD plus 0.25/86400."
+      ],
+      "rootCause": "Parser rounded JD-derived epochs to a whole second before checking coverage.",
+      "changeTestEvidence": [
+        "before-regressions.txt: missing expected exception",
+        "after-regressions.txt: off-grid case passes",
+        "horizons.ts now permits at most 1 ms serialization/arithmetic discrepancy before hourly coverage validation"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "1 ms is a format tolerance, not physical timing uncertainty; hourly geometry and UTC/POSIX leap-second limitations remain."
+      ],
+      "sourceCommit": "67740a5d29a0e8a4ec617e5ace534c45306e6339",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-002",
+      "observedBehavior": "JavaScript hexadecimal numeric notation in a purported Horizons CSV azimuth was accepted.",
+      "reproducibleSteps": [
+        "Replace 191.256257377 with 0x10 in the archived fixture.",
+        "Run provider numeric fields regression."
+      ],
+      "rootCause": "Number() accepted non-provider numeric grammar.",
+      "changeTestEvidence": [
+        "before-regressions.txt: accepted malformed field",
+        "after-regressions.txt: malformed field rejected",
+        "Decimal/exponent-only regex applies to JD, AZ, EL, delta and delta-dot"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Strict format validation does not authenticate source truth."
+      ],
+      "sourceCommit": "67740a5d29a0e8a4ec617e5ace534c45306e6339",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-003",
+      "observedBehavior": "Strict envelope import accepted a forged elevation until later evaluation; object-size check also counted characters rather than UTF-8 bytes.",
+      "reproducibleSteps": [
+        "Change the first imported elevation to 80 without changing archived provider bytes; call parseEnvelope.",
+        "Set rawResponse to one million \u00e9 characters in an object input; compare utf8-before.txt and utf8-after.txt."
+      ],
+      "rootCause": "Source reproduction was deferred to evaluation; object input limit used JSON string length.",
+      "changeTestEvidence": [
+        "Geometry tamper regression is red at base and green after repair",
+        "utf8-before.txt: accepted",
+        "utf8-after.txt: Evidence object exceeds limit",
+        "summary.test.ts checks UTF-8 object bound",
+        "Shared validation helpers retain existing import.ts exports and remove a provider/import cycle"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Existing archived-response and envelope schema remain compatible for valid evidence; exports now also reject inconsistent geometry earlier."
+      ],
+      "sourceCommit": "67740a5d29a0e8a4ec617e5ace534c45306e6339",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-004",
+      "observedBehavior": "Future-issued horizon, lunar mask, hardware and allocations could yield conditional-meets with 1800000 modeled bits.",
+      "reproducibleSteps": [
+        "For each of the four supplied inputs set issuedUtc=2027-01-01T00:00:00Z.",
+        "Evaluate with nowUtc=2026-11-16T00:00:00Z and the pinned one-hour stay."
+      ],
+      "rootCause": "Chronology checks existed for geometry/weather but were absent for the other supplied inputs.",
+      "changeTestEvidence": [
+        "Four failing base cases in before-regressions.txt",
+        "Four green delivery cases in after-regressions.txt",
+        "Status is now incomplete; deliveredBits is null"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Chronology is compared to source-review clock, not mission time; no arbitrary evidence expiry policy or source authentication was added."
+      ],
+      "sourceCommit": "67740a5d29a0e8a4ec617e5ace534c45306e6339",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-005",
+      "observedBehavior": "Missing EOP metadata or contact outside its prediction boundary still allowed conditional delivered capacity.",
+      "reproducibleSteps": [
+        "Remove EOP coverage header or set PREDICTS-> 2026-NOV-14 in the pinned fixture.",
+        "Evaluate the 2026-11-14T00:00Z to 01:00Z stay."
+      ],
+      "rootCause": "EOP coverage and the Horizons constant-hold behavior outside that coverage were ignored.",
+      "changeTestEvidence": [
+        "Two red base / green delivery regressions",
+        "horizonsSourceContext exposes ephemeris/EOP file/data/prediction dates",
+        "Unknown/out-of-coverage EOP now censors capacity; predicted coverage is disclosed",
+        "75 archived samples / 225 components remain within existing tolerances",
+        "50 fresh samples / 150 components pass; fresh Madrid unavailable"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Supplementary screening meaning changed; parent must independently validate, review version identity and update bindings.",
+        "Advertised dates use conservative midnight boundaries; final advertised day can be censored.",
+        "EOP predictions, fixed 2003.0 station positions, terrain/frame accuracy and intrahour events are not qualified."
+      ],
+      "sourceCommit": "67740a5d29a0e8a4ec617e5ace534c45306e6339",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-006",
+      "observedBehavior": "Users lacked a compact, explicit evidence/state/next-action view adjacent to conditional station and critical-window results.",
+      "reproducibleSteps": [
+        "Run summary.test.ts and the isolated render-fixture.tsx / preview.browser.mjs harness.",
+        "Inspect component-light-390.png and component-dark-800.png."
+      ],
+      "rootCause": "Existing numerical result was separate from the full chain of source applicability, service and critical-window evidence.",
+      "changeTestEvidence": [
+        "New summarizeStationEvidence and StationEvidenceSummary",
+        "20 new tests total across regressions and summary files",
+        "371 focused tests pass",
+        "4/4 isolated cases: 390/800, light/dark, keyboard disclosure, no overflow, 0 page errors/HTTP requests"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Component is deliberately unmounted because shared engineering workspace wiring is parent-owned.",
+        "Isolated fixture and SSR checks are not full app, native 200% zoom, touch-device, contrast, screen-reader or user acceptance."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-007",
+      "observedBehavior": "Summary is available as an optional module but not yet visible in the running engineering workspace.",
+      "reproducibleSteps": [
+        "Inspect components/engineering/evidence-workspace.tsx; it has no StationEvidenceSummary mount."
+      ],
+      "rootCause": "Locked ownership reserves existing inspector/workspace wiring for parent.",
+      "changeTestEvidence": [
+        "REPORT.md provides exact import/props contract",
+        "Component has no fetch, navigation, persistent state or independent mission verdict"
+      ],
+      "status": "open",
+      "limitations": [
+        "Parent must mount inside existing communications workspace and verify actual production inspector behavior."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-008",
+      "observedBehavior": "Actual acquisition, compatible radio service, booked support, station-specific lunar masks and mission weather attenuation remain unverified.",
+      "reproducibleSteps": [
+        "Evaluate the synthetic full chain and inspect service row: unknown despite conditional-meets capacity.",
+        "Inspect Earth-center proxy label, band/rate inputs, weather provenance and allocation row."
+      ],
+      "rootCause": "Schema contains supplied scalar hardware and rate/loss/mask intervals, not authenticated support or measured acquisition/terrain/physical radio behavior.",
+      "changeTestEvidence": [
+        "summary.test.ts asserts proxy/station distinction, unknown actual support, rate-zero vs missing, partial windows and weather incompatibility",
+        "Summary lists concrete provider/hardware/mask/weather next actions"
+      ],
+      "status": "needs-external-evidence",
+      "limitations": [
+        "DSN pins/globes, GP satellite positions, solar readings/cloud cover and a handbook are not booking or RF strength evidence.",
+        "No actual operations, human studies or qualification data fabricated; evaluateScenario remains authoritative."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-009",
+      "observedBehavior": "Fresh Madrid Horizons comparison is unavailable: HTTP 503 in both bounded attempts.",
+      "reproducibleSteps": [
+        "Run node_modules/.bin/tsx tests/comms-evaluation/compare-sources.mts --live."
+      ],
+      "rootCause": "Current primary provider returned HTTP 503 for Madrid; the two other station responses succeeded.",
+      "changeTestEvidence": [
+        "live-source-comparison.json status=incomplete with Madrid error",
+        "50 samples / 150 components compared successfully",
+        "Archived three-station 75-sample check passes separately"
+      ],
+      "status": "needs-external-evidence",
+      "limitations": [
+        "Parent must retry Madrid when primary source is available; no complete fresh three-station pass is claimed."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-010",
+      "observedBehavior": "Full repository lint fails on parent-owned lunar-terrain.js @ts-nocheck.",
+      "reproducibleSteps": [
+        "Run npm run lint at delivery and at detached base /tmp/lunario-eval-comms-baseline-qa/navigator."
+      ],
+      "rootCause": "Base source contains a ts-nocheck directive disallowed by the configured ban-ts-comment rule.",
+      "changeTestEvidence": [
+        "lint.txt and base-lint.txt each report 1 error / 0 warnings at lunar-terrain.js:1:1",
+        "Owned-file ESLint exits 0"
+      ],
+      "status": "open",
+      "limitations": [
+        "Parent-owned file was not edited or suppressed."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-011",
+      "observedBehavior": "Scientific publication-binding check correctly rejects changed audited communications source.",
+      "reproducibleSteps": [
+        "Run python3 scripts/compile-scientific-verification.py --check."
+      ],
+      "rootCause": "Source hashes no longer match independently reviewed receipts after authorized numerical screening changes.",
+      "changeTestEvidence": [
+        "publication-binding.txt: Stale scientific evidence: lib/engineering-evidence/communications.ts",
+        "Bindings, model IDs, manifests and generated outputs unchanged"
+      ],
+      "status": "open",
+      "limitations": [
+        "Parent must independently validate and refresh source receipts/version decisions.",
+        "Add new transitive lib/engineering-evidence/validation.ts to reviewed numerical bindings; do not merely refresh hashes."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    },
+    {
+      "id": "COMMS-012",
+      "observedBehavior": "Raw observer-file import labels the import clock as fetchedUtc; schema 1 does not retain API signature version.",
+      "reproducibleSteps": [
+        "Read raw observer import handler in components/engineering/evidence-workspace.tsx: parseHorizonsResponse(..., new Date().toISOString()).",
+        "Inspect StationGeometry schema and parser return value; JSON payload signature is not retained."
+      ],
+      "rootCause": "Current shared import handler conflates import and original source retrieval; archived geometry schema stores raw result only.",
+      "changeTestEvidence": [
+        "Summary explicitly reports API version unavailable instead of inventing it",
+        "REPORT.md requests distinguishing import time from documented source retrieval and retaining applicable signature metadata"
+      ],
+      "status": "open",
+      "limitations": [
+        "Shared handler is parent-owned.",
+        "Existing EOP header remains visible, but it does not establish original retrieval time or authenticate a file."
+      ],
+      "sourceCommit": "b8c166f67ec7e49198ecc16f552f6e5276640cc7",
+      "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e"
+    }
+  ]
+}

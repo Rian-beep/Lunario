@@ -1,0 +1,362 @@
+{
+  "checkedUtc": "2026-11-15T18:40:32.578Z",
+  "status": "incomplete",
+  "errors": [
+    {
+      "stationId": "madrid",
+      "error": "Horizons HTTP 503"
+    }
+  ],
+  "mode": "live",
+  "samples": 50,
+  "comparisons": 150,
+  "maxAzResidualDeg": 0.0002686886904257335,
+  "maxElevationResidualDeg": 0.00007336623912124196,
+  "maxRangeResidualKm": 0.00324417429510504,
+  "tolerances": {
+    "azimuthDeg": 0.002,
+    "elevationDeg": 0.002,
+    "rangeKm": 0.1
+  },
+  "qualification": "Current provider vs retained CSPICE DE440s LT+S/ITRF93 reference; different computation, not independent physical observation or acquisition qualification.",
+  "sources": [
+    {
+      "stationId": "goldstone",
+      "sourcePath": "docs/qa/evaluation/comms/sources/goldstone-live.json",
+      "requestUrl": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27243.11046178888887%2C35.425900866666666%2C1.00139%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+      "fetchedUtc": "2026-11-15T18:40:33.146Z",
+      "bytes": 13800,
+      "sha256": "281f1203690e88b30054fab92075af26a4d39cdcd721a42f7ac1c96c0dd5e8be",
+      "metadata": {
+        "ephemeris": "DE441",
+        "eopFile": "eop.261113.p270209",
+        "eopCoverage": {
+          "dataStartUtc": "1962-01-20T00:00:00Z",
+          "dataEndUtc": "2026-11-13T00:00:00Z",
+          "predictionEndUtc": "2027-02-08T00:00:00Z"
+        }
+      },
+      "comparisons": [
+        {
+          "utc": "2026-11-14T00:00:00.000Z",
+          "azResidualDeg": 0.00007889868300026137,
+          "elevationResidualDeg": 0.00006362047702168638,
+          "rangeResidualKm": 0.00241110404022038
+        },
+        {
+          "utc": "2026-11-14T01:00:00.000Z",
+          "azResidualDeg": 0.00007342739661453379,
+          "elevationResidualDeg": 0.00005884148639623277,
+          "rangeResidualKm": 0.0024147380026988685
+        },
+        {
+          "utc": "2026-11-14T02:00:00.000Z",
+          "azResidualDeg": 0.00007301805601400702,
+          "elevationResidualDeg": 0.0000516862641788407,
+          "rangeResidualKm": 0.0024268923443742096
+        },
+        {
+          "utc": "2026-11-14T03:00:00.000Z",
+          "azResidualDeg": 0.00007733982602076139,
+          "elevationResidualDeg": 0.000043583674106173476,
+          "rangeResidualKm": 0.002443209697958082
+        },
+        {
+          "utc": "2026-11-14T04:00:00.000Z",
+          "azResidualDeg": 0.00008524514100827218,
+          "elevationResidualDeg": 0.00003539397922536214,
+          "rangeResidualKm": 0.0024710955331102014
+        },
+        {
+          "utc": "2026-11-14T05:00:00.000Z",
+          "azResidualDeg": 0.0000959259991759609,
+          "elevationResidualDeg": 0.000027437857655243647,
+          "rangeResidualKm": 0.002499267808161676
+        },
+        {
+          "utc": "2026-11-14T06:00:00.000Z",
+          "azResidualDeg": 0.0001092854042781255,
+          "elevationResidualDeg": 0.000019679723205712207,
+          "rangeResidualKm": 0.002539062756113708
+        },
+        {
+          "utc": "2026-11-14T07:00:00.000Z",
+          "azResidualDeg": 0.0001260971993133353,
+          "elevationResidualDeg": 0.000011849699092181254,
+          "rangeResidualKm": 0.0025841715396381915
+        },
+        {
+          "utc": "2026-11-14T08:00:00.000Z",
+          "azResidualDeg": 0.00014841708343737992,
+          "elevationResidualDeg": 0.000003397778264968565,
+          "rangeResidualKm": 0.0026345073711127043
+        },
+        {
+          "utc": "2026-11-14T09:00:00.000Z",
+          "azResidualDeg": 0.00018075546904583462,
+          "elevationResidualDeg": 0.000006832760412578409,
+          "rangeResidualKm": 0.0026929149171337485
+        },
+        {
+          "utc": "2026-11-14T10:00:00.000Z",
+          "azResidualDeg": 0.00023148654531723878,
+          "elevationResidualDeg": 0.000021805341376079923,
+          "rangeResidualKm": 0.002751927066128701
+        },
+        {
+          "utc": "2026-11-14T11:00:00.000Z",
+          "azResidualDeg": 0.0002686886904257335,
+          "elevationResidualDeg": 0.00004912216012087356,
+          "rangeResidualKm": 0.002808507939334959
+        },
+        {
+          "utc": "2026-11-14T12:00:00.000Z",
+          "azResidualDeg": 0.00004825698010790802,
+          "elevationResidualDeg": 0.000059142120377941865,
+          "rangeResidualKm": 0.0028658134979195893
+        },
+        {
+          "utc": "2026-11-14T13:00:00.000Z",
+          "azResidualDeg": 0.00007643445610483468,
+          "elevationResidualDeg": 0.000029387812304548788,
+          "rangeResidualKm": 0.0029127401649020612
+        },
+        {
+          "utc": "2026-11-14T14:00:00.000Z",
+          "azResidualDeg": 0.000021787746845802758,
+          "elevationResidualDeg": 0.000012215001717663654,
+          "rangeResidualKm": 0.00296385632827878
+        },
+        {
+          "utc": "2026-11-14T15:00:00.000Z",
+          "azResidualDeg": 0.000014110493111729738,
+          "elevationResidualDeg": 0.000001182995141846277,
+          "rangeResidualKm": 0.0030070000793784857
+        },
+        {
+          "utc": "2026-11-14T16:00:00.000Z",
+          "azResidualDeg": 0.00003844793070584274,
+          "elevationResidualDeg": 0.000007573730904653075,
+          "rangeResidualKm": 0.0030388214509002864
+        },
+        {
+          "utc": "2026-11-14T17:00:00.000Z",
+          "azResidualDeg": 0.00005655585073327529,
+          "elevationResidualDeg": 0.00001550593053067928,
+          "rangeResidualKm": 0.003062829957343638
+        },
+        {
+          "utc": "2026-11-14T18:00:00.000Z",
+          "azResidualDeg": 0.0000709514874870365,
+          "elevationResidualDeg": 0.000023285508312653747,
+          "rangeResidualKm": 0.0030760286026634276
+        },
+        {
+          "utc": "2026-11-14T19:00:00.000Z",
+          "azResidualDeg": 0.00008268967269486893,
+          "elevationResidualDeg": 0.000031275793252572015,
+          "rangeResidualKm": 0.003089770791120827
+        },
+        {
+          "utc": "2026-11-14T20:00:00.000Z",
+          "azResidualDeg": 0.00009188486194489087,
+          "elevationResidualDeg": 0.0000396245995375466,
+          "rangeResidualKm": 0.0030996090499684215
+        },
+        {
+          "utc": "2026-11-14T21:00:00.000Z",
+          "azResidualDeg": 0.0000978260169404166,
+          "elevationResidualDeg": 0.000048182760497894606,
+          "rangeResidualKm": 0.0031002999166958034
+        },
+        {
+          "utc": "2026-11-14T22:00:00.000Z",
+          "azResidualDeg": 0.00009912954010360409,
+          "elevationResidualDeg": 0.00005628019773595838,
+          "rangeResidualKm": 0.0030957304406911135
+        },
+        {
+          "utc": "2026-11-14T23:00:00.000Z",
+          "azResidualDeg": 0.00009463371395668219,
+          "elevationResidualDeg": 0.0000625305249855046,
+          "rangeResidualKm": 0.0030953483656048775
+        },
+        {
+          "utc": "2026-11-15T00:00:00.000Z",
+          "azResidualDeg": 0.00008541418731056183,
+          "elevationResidualDeg": 0.00006515039636667552,
+          "rangeResidualKm": 0.003088310535531491
+        }
+      ]
+    },
+    {
+      "stationId": "canberra",
+      "sourcePath": "docs/qa/evaluation/comms/sources/canberra-live.json",
+      "requestUrl": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27148.98126730833334%2C-35.402424233333335%2C0.688867%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+      "fetchedUtc": "2026-11-15T18:40:33.175Z",
+      "bytes": 13793,
+      "sha256": "3419c6616a19c9985179f4b764e0f8409f81860ed15374a8a3bc59844320bc74",
+      "metadata": {
+        "ephemeris": "DE441",
+        "eopFile": "eop.261113.p270209",
+        "eopCoverage": {
+          "dataStartUtc": "1962-01-20T00:00:00Z",
+          "dataEndUtc": "2026-11-13T00:00:00Z",
+          "predictionEndUtc": "2027-02-08T00:00:00Z"
+        }
+      },
+      "comparisons": [
+        {
+          "utc": "2026-11-14T00:00:00.000Z",
+          "azResidualDeg": 0.00004820452193143865,
+          "elevationResidualDeg": 0.000024056853799692135,
+          "rangeResidualKm": 0.002560058725066483
+        },
+        {
+          "utc": "2026-11-14T01:00:00.000Z",
+          "azResidualDeg": 0.000029797428169331397,
+          "elevationResidualDeg": 0.000015339578585127356,
+          "rangeResidualKm": 0.0025785561883822083
+        },
+        {
+          "utc": "2026-11-14T02:00:00.000Z",
+          "azResidualDeg": 0.000005443581130748498,
+          "elevationResidualDeg": 0.000006032144177936516,
+          "rangeResidualKm": 0.002586199378129095
+        },
+        {
+          "utc": "2026-11-14T03:00:00.000Z",
+          "azResidualDeg": 0.000029809910415679042,
+          "elevationResidualDeg": 0.0000050511289160226625,
+          "rangeResidualKm": 0.0025959565537050366
+        },
+        {
+          "utc": "2026-11-14T04:00:00.000Z",
+          "azResidualDeg": 0.00008636290579033812,
+          "elevationResidualDeg": 0.00002096320925204509,
+          "rangeResidualKm": 0.002594211313407868
+        },
+        {
+          "utc": "2026-11-14T05:00:00.000Z",
+          "azResidualDeg": 0.00014868598168504832,
+          "elevationResidualDeg": 0.00005062236868980108,
+          "rangeResidualKm": 0.002592224336694926
+        },
+        {
+          "utc": "2026-11-14T06:00:00.000Z",
+          "azResidualDeg": 0.0002036363528077345,
+          "elevationResidualDeg": 0.00006915191934808718,
+          "rangeResidualKm": 0.0025957749458029866
+        },
+        {
+          "utc": "2026-11-14T07:00:00.000Z",
+          "azResidualDeg": 0.0002606243598393121,
+          "elevationResidualDeg": 0.000034120599238463,
+          "rangeResidualKm": 0.00260435655945912
+        },
+        {
+          "utc": "2026-11-14T08:00:00.000Z",
+          "azResidualDeg": 0.00019478836190955917,
+          "elevationResidualDeg": 0.000014115031554240431,
+          "rangeResidualKm": 0.0026088965823873878
+        },
+        {
+          "utc": "2026-11-14T09:00:00.000Z",
+          "azResidualDeg": 0.00015271146003215108,
+          "elevationResidualDeg": 0.000001595124629716338,
+          "rangeResidualKm": 0.002619794220663607
+        },
+        {
+          "utc": "2026-11-14T10:00:00.000Z",
+          "azResidualDeg": 0.00012469633634282218,
+          "elevationResidualDeg": 0.000008247136527472776,
+          "rangeResidualKm": 0.0026407100376673043
+        },
+        {
+          "utc": "2026-11-14T11:00:00.000Z",
+          "azResidualDeg": 0.00010405597754470364,
+          "elevationResidualDeg": 0.0000171283083396645,
+          "rangeResidualKm": 0.0026772042619995773
+        },
+        {
+          "utc": "2026-11-14T12:00:00.000Z",
+          "azResidualDeg": 0.00008773659010330448,
+          "elevationResidualDeg": 0.000025823104801148133,
+          "rangeResidualKm": 0.002711816458031535
+        },
+        {
+          "utc": "2026-11-14T13:00:00.000Z",
+          "azResidualDeg": 0.00007445962501151371,
+          "elevationResidualDeg": 0.000034744291497634805,
+          "rangeResidualKm": 0.002754846296738833
+        },
+        {
+          "utc": "2026-11-14T14:00:00.000Z",
+          "azResidualDeg": 0.00006404380724234215,
+          "elevationResidualDeg": 0.00004406194186579171,
+          "rangeResidualKm": 0.0028019186574965715
+        },
+        {
+          "utc": "2026-11-14T15:00:00.000Z",
+          "azResidualDeg": 0.000057237208466176526,
+          "elevationResidualDeg": 0.00005363147255010858,
+          "rangeResidualKm": 0.002852395933587104
+        },
+        {
+          "utc": "2026-11-14T16:00:00.000Z",
+          "azResidualDeg": 0.000055550155593664385,
+          "elevationResidualDeg": 0.00006276179420439121,
+          "rangeResidualKm": 0.00291221629595384
+        },
+        {
+          "utc": "2026-11-14T17:00:00.000Z",
+          "azResidualDeg": 0.000060341438370414835,
+          "elevationResidualDeg": 0.0000699877135517113,
+          "rangeResidualKm": 0.0029603224247694016
+        },
+        {
+          "utc": "2026-11-14T18:00:00.000Z",
+          "azResidualDeg": 0.00007066869761729322,
+          "elevationResidualDeg": 0.00007336623912124196,
+          "rangeResidualKm": 0.0030252255382947624
+        },
+        {
+          "utc": "2026-11-14T19:00:00.000Z",
+          "azResidualDeg": 0.00008198599243769422,
+          "elevationResidualDeg": 0.00007169371473025876,
+          "rangeResidualKm": 0.0030684851808473468
+        },
+        {
+          "utc": "2026-11-14T20:00:00.000Z",
+          "azResidualDeg": 0.00008896313966033631,
+          "elevationResidualDeg": 0.00006558478197504769,
+          "rangeResidualKm": 0.0031142205698415637
+        },
+        {
+          "utc": "2026-11-14T21:00:00.000Z",
+          "azResidualDeg": 0.00008940047996475187,
+          "elevationResidualDeg": 0.00005688120677405095,
+          "rangeResidualKm": 0.0031558910268358886
+        },
+        {
+          "utc": "2026-11-14T22:00:00.000Z",
+          "azResidualDeg": 0.00008414070282469766,
+          "elevationResidualDeg": 0.000047271831638440176,
+          "rangeResidualKm": 0.0031883350457064807
+        },
+        {
+          "utc": "2026-11-14T23:00:00.000Z",
+          "azResidualDeg": 0.00007480205613319413,
+          "elevationResidualDeg": 0.00003768313158336589,
+          "rangeResidualKm": 0.0032225532340817153
+        },
+        {
+          "utc": "2026-11-15T00:00:00.000Z",
+          "azResidualDeg": 0.00006242203539841285,
+          "elevationResidualDeg": 0.00002838992771181381,
+          "rangeResidualKm": 0.00324417429510504
+        }
+      ]
+    }
+  ]
+}

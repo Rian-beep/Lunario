@@ -39,7 +39,7 @@ export async function createNasaGlobe(lat:number,lon:number,referenceRadiusKm:nu
   let progressive:Awaited<ReturnType<typeof loadVisualMoonTexture>>|undefined;
   let texture:T.Texture|null=null;
   if(visual){
-    try {progressive=await loadVisualMoonTexture(visual,signal,visualStatus);texture=progressive.texture;}
+    try {progressive=await loadVisualMoonTexture({bitmapDecode:true,...visual},signal,visualStatus);texture=progressive.texture;}
     catch(error){
       if(signal.aborted){geometry.dispose();throw error;}
       // A failed small tier must not trigger an unbounded legacy 8K upload.

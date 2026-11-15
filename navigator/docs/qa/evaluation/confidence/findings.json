@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "lane": "confidence",
+  "baselineCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0",
+  "date": "2026-11-15",
+  "findings": [
+    {
+      "id": "confidence-01",
+      "observedBehavior": "Existing coverage tables and finite-case notices do not consolidate the actual selected location, independent heights, assumptions, physical gaps and actionable evidence requests into one scoped summary.",
+      "reproducibleSteps": ["Read components/workbench/evidence-panel.tsx and components/engineering/evidence-workspace.tsx at the nominated base.", "Run node_modules/.bin/tsx --test tests/evidence-confidence/*.test.ts.", "Run the isolated browser verifier and change live summary props to a custom point with unavailable array terrain."],
+      "rootCause": "Coverage and calculation notices are separate from an audience-aware evidence account of the complete canonical selection.",
+      "changeTestEvidence": ["New evaluateEvidenceConfidence reuses evaluateScenario and resolved analysis context, preserving canonical outcome and terrain/sphere values.", "Reported footprint measurements remain unverified and stale scope remains not-assessed.", "19 focused tests pass; isolated audience/live-selection/browser checks pass."],
+      "status": "fixed",
+      "limitations": "Fixed within the delivered module/component. Existing product UI is unchanged and requires confidence-04 parent wiring; physical calibration is not supplied.",
+      "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0"
+    },
+    {
+      "id": "confidence-02",
+      "observedBehavior": "The existing finite-case export retains requirements/operations/case deltas but no full nominal scenario, explicit dataset ID or explicit model version; it cannot alone reconstruct all held inputs.",
+      "reproducibleSteps": ["Run node_modules/.bin/tsx tests/evidence-confidence/reproduce.mts.", "Inspect before-after.json: old exported fields lack heldScenario/datasetId/modelVersion; new exported heldScenario replays to planning-5-74f60ca8-8bcd0312-1179."],
+      "rootCause": "StabilityResult is a finite-case result, not a complete nominal input/evidence package. Its scenario key is an identity, not a reversible serialization.",
+      "changeTestEvidence": ["New export retains all parsed nominal inputs, operations/requirements, selected source declarations, model/dataset IDs, nulls and recomputed finite cases.", "Base/current uncertainty.ts SHA256 both 0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b.", "Export regression covers Unicode schedule, zero cap, null interval, source identity, full replay and invalid timestamps."],
+      "status": "fixed",
+      "limitations": "New snapshot exporter fixes the gap for its own output. Existing finite-case download is unchanged; parent must expose/attach this snapshot. Same catalog/model is required for replay; reports/assets are not authenticated.",
+      "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0"
+    },
+    {
+      "id": "confidence-03",
+      "observedBehavior": "Available source comparisons, pixel spacing, quantization and finite endpoint cases do not calibrate physical mission uncertainty for the selected scenario.",
+      "reproducibleSteps": ["Read scientific VERIFICATION.md, independent final-science-review REPORT.md/RESOLUTION.md, MODELS.md and current evidence schemas.", "Run tests that supply complete tiny-spacing metadata or observation-labeled bounds; physicalOutcomeInterval remains null."],
+      "rootCause": "No supported, scenario-applicable calibrated error/correlation model for physical terrain, frame/height registration, hardware/environment and event timing is supplied.",
+      "changeTestEvidence": ["Summary explicitly reports not-supplied physical calibration and null outcome interval.", "Finite cases are canonically recomputed, with domains/held inputs checked and extrema derived; stale/invalid results cannot support current claims.", "Independent constant-dark fixture checks sample extrema; all-unknown cases preserve null."],
+      "status": "needs-external-evidence",
+      "limitations": "Requires traceable physical measurement/error characterization and independent propagation validation; no new interval, probability, safety margin or operational acceptance was invented.",
+      "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0"
+    },
+    {
+      "id": "confidence-04",
+      "observedBehavior": "The new component is verified in isolation but not mounted in the parent-owned Data & math / Planner workspace.",
+      "reproducibleSteps": ["Follow the exact evaluateEvidenceConfidence and EvidenceConfidence props example in REPORT.md.", "Mount inside the existing workspace with live full ScenarioState, Catalog, EvidenceManifest, optional bounds/stability and host dismissal.", "Run integrated keyboard/offline/export/scroll checks on parent-built artifacts."],
+      "rootCause": "Locked ownership assigns existing UI wiring, runtime and generated builds to parent.",
+      "changeTestEvidence": ["Isolated file fixture passes eleven scoped agent checks with zero HTTP/page errors.", "Parent interface, memoization dependencies, synchronous finite-case recomputation limit and export schema boundaries are documented."],
+      "status": "open",
+      "limitations": "No integrated workspace acceptance, native 200% browser reflow, screen-reader/human study, target-device acceptance or performance guarantee is claimed.",
+      "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0"
+    },
+    {
+      "id": "confidence-05",
+      "observedBehavior": "Full npm run lint exits 1 with one ban-ts-comment error and zero warnings at components/workbench/scene/lunar-terrain.js:1:1.",
+      "reproducibleSteps": ["Run npm run lint in this worktree.", "Create a detached worktree at 3c82b5a under /tmp, symlink existing node_modules in its navigator directory, and run npm run lint there."],
+      "rootCause": "The parent-owned incoming lunar-terrain.js starts with @ts-nocheck; the nominated base reproduces the same diagnostic.",
+      "changeTestEvidence": ["lint.txt and base-lint.txt record the identical one-error result.", "Explicit owned-path ESLint exits zero with no diagnostics; nonincremental typecheck passes."],
+      "status": "open",
+      "limitations": "Read-only shared file; parent must fix/review it. Full lint is not reported as passing.",
+      "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0"
+    }
+  ],
+  "checks": {
+    "focused": { "exitCode": 0, "passed": 19, "failed": 0, "skipped": 0, "cancelled": 0 },
+    "relatedRegressionIncludingFocused": { "exitCode": 0, "passed": 70, "failed": 0, "skipped": 0, "cancelled": 0 },
+    "typecheck": { "exitCode": 0, "diagnostics": 0 },
+    "lint": { "exitCode": 1, "errors": 1, "warnings": 0, "sameErrorReproducedOnBase": true },
+    "ownedLint": { "exitCode": 0, "diagnostics": 0 },
+    "publicationCheck": { "exitCode": 0, "verifiedBoundedClaims": 41, "uncertainClaims": 21, "failingRecordedComparisons": 0, "scope": "Unchanged audited modules/bindings; no new physical qualification" },
+    "isolatedBrowser": { "exitCode": 0, "checks": 11, "pageErrors": 0, "httpRequests": 0, "native200PercentBrowserReflow": "not-tested; page-scale emulation only", "humanAcceptance": "not-tested" }
+  }
+}

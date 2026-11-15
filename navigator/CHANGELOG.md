@@ -1,3 +1,17 @@
+## Evidence checks and usable mission replay
+
+- Keep the selected lander destination through ordinary clicks, interrupted travel and site changes. Follow and flight playback wait for a genuinely visible, settled target.
+- Read the science framework and its controls in both themes; dark cards now use light reading text while orange headers keep dark text.
+
+- Keep site search and selection usable on touch screens and at 200% browser zoom, with the inspector open.
+- Load measured close-up terrain only when needed for inspection; retain the numerical contact terrain during flight and embedded terrain offline. Lighting follows the selected epoch, and source blends disclose their contributors.
+- Decode unchanged NASA colour maps before GPU upload to reduce progressive texture stalls on tested devices. Offline textures and device memory budgets remain unchanged.
+
+- Replay the reconstructed Athena, Blue Ghost 1 and Odysseus descents from cited NASA/PDS source extracts, alongside the existing Chandrayaan-3 reference descent and Apollo 15 command-module orbit. Missing intervals remain gaps, unsupported frames explain their limits, and Fit path restores the complete path on narrow screens.
+- Inspect what supports the selected scenario, what is assumed and what evidence is still missing in Data & math. Export finite sensitivity cases with the complete held scenario; stale cases cannot be downloaded as current results.
+- Inspect station-specific communications evidence and critical windows. Altered tables, off-grid times, future-issued evidence and unsupported Earth-orientation coverage cannot produce an apparently complete capacity result. Observer imports preserve original retrieval provenance.
+- Audit the current source comparisons separately from archived findings. New source or numerical changes invalidate publication evidence; passing software does not qualify an operational landing.
+
 ## Mission paths and NASA Moon detail
 
 - Open Mission paths & reasons from an expanded Location card: inspect cited phase/route explanations, reference-data coverage and source limitations. Replay the bounded Chandrayaan-3 reference descent or Apollo15 command-module orbit at1×, seek, pause, restart and follow position; the editable educational landing remains separate.

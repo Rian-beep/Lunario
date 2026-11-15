@@ -1,0 +1,39 @@
+{
+  "threeVersion": "0.187.0",
+  "readLocalSources": [
+    {
+      "path": "node_modules/three/src/loaders/TextureLoader.js",
+      "sha256": "2698456a49f04153aeecfce53d4ab48feb69b729800f96a44e2908b107242c1d"
+    },
+    {
+      "path": "node_modules/three/src/loaders/ImageLoader.js",
+      "sha256": "216fa2d2d24b3c08e16357b1c75e765cb130bd15e65a02bbea6918556467eb27"
+    },
+    {
+      "path": "node_modules/three/src/loaders/ImageBitmapLoader.js",
+      "sha256": "8efb8bbc44e8531a95f82afb7c66f16dc9baf7f1cda060f7baa2613ac8c596f0"
+    },
+    {
+      "path": "node_modules/three/src/renderers/webgl/WebGLTextures.js",
+      "sha256": "954bb7dcbc2f508f6d995a649787d1a147b5a0692bb1f0b38362b9a906fe6ab4"
+    },
+    {
+      "path": "node_modules/three/examples/jsm/loaders/KTX2Loader.js",
+      "sha256": "468143c5e5e6a3103eb262963c80a19c0e1a6490df4b6cdf383420b59c450942"
+    }
+  ],
+  "primaryReferences": [
+    "https://threejs.org/docs/pages/ImageBitmapLoader.html",
+    "https://threejs.org/docs/pages/KTX2Loader.html",
+    "https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decode",
+    "https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2",
+    "https://github.com/KhronosGroup/3D-Formats-Guidelines/blob/main/KTXDeveloperGuide.md"
+  ],
+  "ktxExperiment": {
+    "shipped": false,
+    "encodingPerformed": false,
+    "toolDownloadedOnly": "KTX-Software-4.4.2-Linux-x86_64.tar.bz2",
+    "archiveSha256": "a8781bad05f9624edbf910b7f258cd0a4ba7d3e63b49ecc0a0ab440bf6a0a245",
+    "reason": "The direct-Blob bitmap path reduced the demonstrated stall without altering pixels or adding a codec/transcoder."
+  }
+}

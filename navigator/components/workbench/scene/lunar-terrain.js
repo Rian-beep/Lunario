@@ -1,4 +1,3 @@
-// @ts-nocheck
 import * as THREE from 'three';
 
 /*
@@ -398,10 +397,14 @@ export class LunarTerrain {
   }
 
   async init() {
+    if (this._disposed) return this;
     try {
       const response = await fetch(this.manifestUrl, {signal: this._abort.signal});
+      this._assertActive();
       if (!response.ok) throw new Error(`Terrain manifest could not be loaded (HTTP ${response.status}).`);
-      this.manifest = await response.json();
+      const manifest = await response.json();
+      this._assertActive();
+      this.manifest = manifest;
       this.radius = this.manifest.radius || this.manifest.referenceRadius || this.manifest.referenceRadiusM || this.radius;
       this.uniforms.moonRadius.value=this.radius;
       const list = this.manifest.datasets;
@@ -449,6 +452,7 @@ export class LunarTerrain {
   }
 
   _emit(patch = {}, force = false) {
+    if (this._disposed) return;
     this.status = {...this.status, ...patch,
       loadedDatasets: this.datasets.filter(d => d.loaded).map(d => d.id),
       loadingDatasets: [...this._loading],
@@ -457,6 +461,10 @@ export class LunarTerrain {
       this._lastStatus = now();
       this.options.onStatus?.({...this.status});
     }
+  }
+
+  _assertActive() {
+    if (this._disposed) throw new DOMException('Terrain disposed', 'AbortError');
   }
 
   async _loadDataset(dataset) {
@@ -476,10 +484,12 @@ export class LunarTerrain {
         const underlay=this.datasets.filter(d=>d.spacing>dataset.spacing && !d.failed && this._contains(d,centreX,centreY))
           .sort((a,b)=>a.spacing-b.spacing)[0];
         if(underlay && !underlay.loaded)await this._loadDataset(underlay);
+        this._assertActive();
       }
       const base = new URL(this.manifestUrl, location.href);
       const url = new URL(dataset.file, base).href;
       const response = await fetch(url, {signal: this._abort.signal});
+      this._assertActive();
       if (!response.ok) throw new Error(`${dataset.name} could not be loaded (HTTP ${response.status}).`);
       let buffer;
       const length = Number(response.headers.get('content-length') || dataset.compressedBytes || 0);
@@ -489,6 +499,7 @@ export class LunarTerrain {
         let bytes = 0;
         for (;;) {
           const {value, done} = await reader.read();
+          if (this._disposed) { await reader.cancel?.(); this._assertActive(); }
           if (done) break;
           chunks.push(value); bytes += value.byteLength;
           this._emit({progress: length ? Math.min(bytes / length, 0.98) : 0,
@@ -499,25 +510,32 @@ export class LunarTerrain {
         for (const chunk of chunks) {merged.set(chunk, offset); offset += chunk.byteLength;}
         buffer = merged.buffer;
       } else buffer = await response.arrayBuffer();
+      this._assertActive();
       const magic = new Uint8Array(buffer, 0, Math.min(2, buffer.byteLength));
       if (magic[0] === 0x1f && magic[1] === 0x8b) {
         if (!('DecompressionStream' in globalThis)) throw new Error('This browser cannot decompress the elevation grids. Please use an up-to-date browser.');
         buffer = await new Response(new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+        this._assertActive();
       }
       const expected = dataset.width * dataset.height * 2;
       if (buffer.byteLength !== expected) throw new Error(`The ${dataset.name} grid is incomplete: expected ${expected} bytes, received ${buffer.byteLength}.`);
-      dataset.values = new Int16Array(buffer);
+      let values = new Int16Array(buffer);
       // All supported browser platforms are little-endian; retain a portable
       // path for the raw, explicitly little-endian scientific data format.
       if (new Uint8Array(new Uint16Array([1]).buffer)[0] !== 1) {
         const view = new DataView(buffer), decoded = new Int16Array(dataset.width * dataset.height);
         for (let i = 0; i < decoded.length; i++) decoded[i] = view.getInt16(i * 2, true);
-        dataset.values = decoded;
+        values = decoded;
       }
+      let blendWeights;
       if(dataset.blendMaskFile){
         const maskBuffer=await this._readCompressed(new URL(dataset.blendMaskFile,base).href,dataset.width*dataset.height);
-        dataset.blendWeights=new Uint8Array(maskBuffer);
+        this._assertActive();
+        blendWeights=new Uint8Array(maskBuffer);
       }
+      this._assertActive();
+      dataset.values=values;
+      if (blendWeights) dataset.blendWeights=blendWeights;
       this._createHeightTexture(dataset);
       dataset.loaded = true;
       this._loaded = this.datasets.filter(d => d.loaded).sort((a, b) => a.spacing - b.spacing);
@@ -529,6 +547,7 @@ export class LunarTerrain {
       this._emit({progress: 1, error: null}, true);
     } catch (error) {
       if (this._disposed) return;
+      delete dataset.values;delete dataset.blendWeights;
       dataset.failed = true;
       dataset.error = error.message;
       this._emit({error: error.message}, true);
@@ -540,13 +559,17 @@ export class LunarTerrain {
   }
 
   async _readCompressed(url,expectedBytes){
+    this._assertActive();
     const response=await fetch(url,{signal:this._abort.signal});
+    this._assertActive();
     if(!response.ok)throw new Error(`Terrain detail file could not be loaded (HTTP ${response.status}).`);
     let buffer=await response.arrayBuffer();
+    this._assertActive();
     const header=new Uint8Array(buffer,0,Math.min(2,buffer.byteLength));
     if(header[0]===0x1f && header[1]===0x8b){
       if(!('DecompressionStream' in globalThis))throw new Error('This browser cannot decompress the elevation detail.');
       buffer=await new Response(new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+      this._assertActive();
     }
     if(buffer.byteLength!==expectedBytes)throw new Error('A terrain detail file has an unexpected sample count.');
     return buffer;
@@ -605,7 +628,7 @@ export class LunarTerrain {
     return ((a * (1 - tx) + b * tx) * (1 - ty) + (c * (1 - tx) + d * tx) * ty) * data.scale + data.offset;
   }
 
-  _sample(x, y, start=0) {
+  _sample(x, y, start=0, report=false) {
     for (let i=start;i<this._loaded.length;i++) {
       const data=this._loaded[i];
       if (!this._contains(data, x, y, 0.0001)) continue;
@@ -614,10 +637,11 @@ export class LunarTerrain {
         const weight=this._blendWeight(data,x,y);
         if(weight<0.0001)continue;
         if(weight<0.9999){
-          const lower=this._sample(x,y,i+1);
-          if(lower)return {elevation:lower.elevation*(1-weight)+elevation*weight,data,blendWeight:weight,underlyingData:lower.data};
+          const lower=this._sample(x,y,i+1,report);
+          if(lower)return {elevation:lower.elevation*(1-weight)+elevation*weight,data,blendWeight:weight,underlyingData:lower.data,
+            ...(report?{contributors:[{data,weight,elevation},...lower.contributors.map(c=>({...c,weight:c.weight*(1-weight)}))]}:{})};
         }
-        return {elevation,data,blendWeight:1};
+        return {elevation,data,blendWeight:1,...(report?{contributors:[{data,weight:1,elevation}]}:{})};
       }
     }
     return null;
@@ -636,12 +660,17 @@ export class LunarTerrain {
   }
 
   getElevation(x, y) {
-    const sample = this._sample(x, y);
+    if (this._disposed) return null;
+    const sample = this._sample(x, y, 0, true);
     if (!sample) return null;
     const {data, elevation} = sample;
     const gradient = this._gradient(data, x, y);
     const q = 1 / (1 + (x * x + y * y) / (4 * this.radius * this.radius));
+    const contributors=sample.contributors.map(({data,weight,elevation})=>({dataset:data.id,datasetName:data.name,
+      weight,elevation,spacing:data.spacing,nativeSpacing:data.nativeSpacing,sourceUrl:data.sourceUrl,sourcePage:data.sourcePage}));
     return {x, y, elevation, height: elevation, spacing: data.spacing,
+      contributors, effectiveSource:contributors.map(c=>c.datasetName).join(' + '),
+      effectiveSpacing:Math.max(...contributors.map(c=>c.spacing)),
       nativeSpacing: data.nativeSpacing, dataset: data.id, datasetName: data.name,
       slope: Math.atan(Math.hypot(gradient.dx, gradient.dy) / q) / DEG,
       sourceUrl: data.sourceUrl, sourcePage: data.sourcePage};
@@ -922,6 +951,7 @@ export class LunarTerrain {
       const info = this.getElevation(this.fromWorld(target).x, this.fromWorld(target).y);
       const imageInfo=this.getImageryInfo(this.fromWorld(target).x,this.fromWorld(target).y);
       this._emit({spacing: info?.spacing, nativeSpacing: info?.nativeSpacing, dataset: info?.dataset, datasetName: info?.datasetName,
+        contributors:info?.contributors,effectiveSource:info?.effectiveSource,effectiveSpacing:info?.effectiveSpacing,
         imageryAvailableAtFocus:imageInfo.available,imagerySpacing:imageInfo.spacing});
       this._lastPlan = time;
     }
@@ -953,7 +983,9 @@ export class LunarTerrain {
   }
 
   setStyle(style) {
-    this.style=style==='lunar'?'lunar':'studio';
+    const next=style==='lunar'?'lunar':'studio';
+    if (this._disposed || next===this.style) return;
+    this.style=next;
     this.uniforms.studioStyle.value=this.style==='studio'?1:0;
     this.uniforms.shadowSoftness.value=this.style==='studio'?0.018:0.00465;
     this._shadowDirty=true;
@@ -963,7 +995,14 @@ export class LunarTerrain {
   setSun(azimuthDeg, elevationDeg) {
     const az = Number(azimuthDeg) * DEG, el = Number(elevationDeg) * DEG;
     if (!Number.isFinite(az) || !Number.isFinite(el)) return;
-    this.uniforms.sunDirection.value.set(Math.sin(az) * Math.cos(el), Math.sin(el), -Math.cos(az) * Math.cos(el));
+    this.setSunDirection(new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), -Math.cos(az) * Math.cos(el)));
+  }
+
+  setSunDirection(direction) {
+    if (this._disposed || ![direction.x,direction.y,direction.z].every(Number.isFinite) || direction.lengthSq()===0) return;
+    const normalized=direction.clone().normalize();
+    if (this.uniforms.sunDirection.value.distanceToSquared(normalized)<1e-18) return;
+    this.uniforms.sunDirection.value.copy(normalized);
     this._shadowDirty=true;
   }
 
@@ -1032,13 +1071,16 @@ export class LunarTerrain {
   }
 
   async loadImagery(manifestUrl='./data/imagery/manifest.json'){
+    if(this._disposed)return null;
     if(this._imageryPromise)return this._imageryPromise;
     this._imageryPromise=(async()=>{
       this._emit({imageryLoading:true,imageryLoaded:false,imageryError:null},true);
       try{
         const response=await fetch(manifestUrl,{signal:this._abort.signal});
+        this._assertActive();
         if(!response.ok)throw new Error(`Orbital imagery manifest could not be loaded (HTTP ${response.status}).`);
         const manifest=await response.json();
+        this._assertActive();
         this.imagery=manifest.imagery||manifest;
         const tiles=this.imagery.tiles;
         if(!Array.isArray(tiles)||!tiles.length||tiles.length>MAX_IMAGE_TILES)throw new Error('Orbital imagery tile metadata is invalid.');
@@ -1067,9 +1109,11 @@ export class LunarTerrain {
           this.uniforms.imageSizes.value[tile.index].set(tile.width,tile.height,tile.spacing,1);
           this._emit({imageryLoaded:this.imageTiles.every(t=>t.loaded),imageryTilesLoaded:this.imageTiles.filter(t=>t.loaded).length},true);
         }));
+        this._assertActive();
         this._emit({imageryLoading:false,imageryLoaded:true,imageryError:null},true);
         return this.imagery;
       }catch(error){
+        if(this._disposed)return null;
         this._emit({imageryLoading:false,imageryLoaded:false,imageryError:error.message},true);
         throw error;
       }
@@ -1135,13 +1179,18 @@ export class LunarTerrain {
   }
 
   dispose() {
+    if(this._disposed)return;
     this._disposed = true; this._abort.abort();
     for (const item of this._cache.values()) item.mesh.geometry.dispose();
     this._cache.clear(); this.material.dispose(); this.scene.remove(this.group);
-    this.datasets.forEach(data => {data.heightTexture?.dispose();delete data.values;delete data.blendWeights;});
-    this.imageTiles.forEach(tile=>tile.texture?.dispose());
+    this.datasets.forEach(data => {data.heightTexture?.dispose();delete data.heightTexture;delete data.values;delete data.blendWeights;data.loaded=false;});
+    this.imageTiles.forEach(tile=>{tile.texture?.dispose();delete tile.texture;tile.loaded=false;});
+    for(let i=0;i<MAX_DEM_LAYERS;i++)this.uniforms[`dem${i}`].value=this._emptyDEM;
+    for(let i=0;i<MAX_IMAGE_TILES;i++)this.uniforms[`image${i}`].value=this._emptyImage;
     this.shadowQuad?.geometry.dispose();this.shadowMaterial?.dispose();this.shadowTarget?.dispose();
     this._emptyDEM.dispose();this._emptyImage.dispose();
-    this.meshes = []; this.ready = false;
+    this.group.clear();this.meshes = []; this.ready = false;
+    this._queue=[];this._pending=null;this._loaded=[];this._loading.clear();this._activeKeys.clear();this._lodBranches.clear();
+    this.status={...this.status,ready:false,loading:false,loadedDatasets:[],loadingDatasets:[]};
   }
 }

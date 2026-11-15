@@ -21,7 +21,7 @@ import {allowFullPolarOrbit,globeMinimumRadiusKm,outsideSphere} from "./camera-l
 import { horizonSegments } from "./flight-visuals";
 import { createSurfaceMaterial } from "./material";
 import { LunarTerrain } from "./lunar-terrain.js";
-import { insideSouthPoleDetail, sceneToTerrainRotation, southPoleManifestUrl, southPoleTerrainMatrix } from "./south-pole-detail";
+import { wantsSouthPoleDetail, sceneToTerrainRotation, southPoleManifestUrl, southPoleTerrainMatrix } from "./south-pole-detail";
 import { createLander } from "./vehicle";
 import {prepareTouchdownFragments, type PreparedTouchdownFragments} from "@/lib/touchdown-fragments";
 import type {LandingConfiguration, LandingDynamicsReadout} from "@/lib/landing-contract";
@@ -71,11 +71,12 @@ export function mountScene(
   onNavigationHandoff: (value:SceneCameraHandoff)=>boolean = () => false,
   onNavigationStatus: (value:string)=>void = () => {},
   onCelestialStatus:(kind:CelestialAssetKind,status:string)=>void=()=>{},
-  onSiteMode:()=>void=()=>{},
+  onSiteMode:(request:CameraSettings)=>void=()=>{},
   onSurfaceStatus:(status:string)=>void=()=>{},
   onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>})=>void=()=>{},
   onStation:(id:string|null)=>void=()=>{},
   onVehicleFocus:()=>void=()=>{},
+  onDetailStatus:(status:string)=>void=()=>{},
 ) {
   host.dataset.sceneInstance = crypto.randomUUID();
   host.dataset.flightRevision = "0";
@@ -127,6 +128,7 @@ export function mountScene(
     transferredGlobe=null;
     cancelAnimationFrame(animationFrame);
     disposeObserver?.(); disposeControls?.();
+    disposeSouthPole?.();
     const geometries = new Set<T.BufferGeometry>(), materials = new Set<T.Material>(), textures = new Set<T.Texture>();
     scene.traverse((object) => {
       if (object instanceof T.Mesh || object instanceof T.Line || object instanceof T.Sprite || object instanceof T.Points) {
@@ -142,7 +144,6 @@ export function mountScene(
     textures.forEach((texture) => texture.dispose());
     materials.forEach((material) => material.dispose());
     disposeSurfaceMaterial?.();
-    disposeSouthPole?.();
     releaseRenderer(renderer,disposeListeners);
     renderer.domElement.remove();
   };
@@ -178,33 +179,48 @@ export function mountScene(
   const southPoleMatrix = southPoleTerrainMatrix(frame);
   const southPoleProxy = new T.PerspectiveCamera(43, 1, 0.0005, 18000);
   let southPoleTerrain: InstanceType<typeof LunarTerrain> | null = null;
-  try {
-    southPoleTerrain = new LunarTerrain(scene, {
-      renderer,
-      quality: "balanced",
-      manifestUrl: southPoleManifestUrl(),
-      viewportHeight: () => renderer.domElement.height,
-    });
-    southPoleTerrain.setMode("surface");
-    southPoleTerrain.setStyle("studio");
-    southPoleTerrain.setSun(225, 28);
-    southPoleTerrain.setExaggeration(1);
-    southPoleTerrain.group.matrixAutoUpdate = false;
-    southPoleTerrain.group.matrix.copy(southPoleMatrix);
-    southPoleTerrain.group.updateMatrixWorld(true);
-    southPoleTerrain.uniforms.sceneToTerrain.value.copy(sceneToTerrainRotation(southPoleMatrix));
-    southPoleTerrain.group.visible = false;
-    disposeSouthPole = () => southPoleTerrain?.dispose();
-    void southPoleTerrain.init().catch((error) => {
-      if (!disposed) {
-        host.dataset.southPoleDetail = "unavailable";
+  let southPoleRequested = false;
+  let southPoleFailure = false;
+  let previousDetailStatus = '';
+  let lastDetailReport = -Infinity;
+  const detailStatus = (message:string) => {
+    if (disposed || message === previousDetailStatus) return;
+    previousDetailStatus=message;onDetailStatus(message);
+  };
+  const requestSouthPole = () => {
+    const manifestUrl=southPoleManifestUrl(!!getLive().offline);
+    if (disposed || southPoleRequested || !manifestUrl) return;
+    southPoleRequested=true;
+    host.dataset.southPoleDetail='loading';
+    detailStatus('Loading measured visual relief; canonical terrain remains visible.');
+    try {
+      southPoleTerrain = new LunarTerrain(scene, {
+        renderer, quality: "balanced", manifestUrl,
+        viewportHeight: () => renderer.domElement.height,
+      });
+      southPoleTerrain.setMode("surface");
+      southPoleTerrain.group.matrixAutoUpdate = false;
+      southPoleTerrain.group.matrix.copy(southPoleMatrix);
+      southPoleTerrain.group.updateMatrixWorld(true);
+      southPoleTerrain.uniforms.sceneToTerrain.value.copy(sceneToTerrainRotation(southPoleMatrix));
+      southPoleTerrain.group.visible = false;
+      disposeSouthPole = () => southPoleTerrain?.dispose();
+      void southPoleTerrain.init().catch((error) => {
+        if (disposed) return;
+        southPoleFailure=true;
+        // Release partial loads too; retrying 3D creates a fresh demand loader.
+        southPoleTerrain?.dispose();
+        host.dataset.southPoleDetail="unavailable";
+        detailStatus('Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.');
         console.error("South pole detail terrain failed", error);
-      }
-    });
-  } catch (error) {
-    host.dataset.southPoleDetail = "unavailable";
-    console.error("South pole detail terrain failed", error);
-  }
+      });
+    } catch (error) {
+      southPoleFailure=true;southPoleTerrain?.dispose();
+      host.dataset.southPoleDetail="unavailable";
+      detailStatus('Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.');
+      console.error("South pole detail terrain failed", error);
+    }
+  };
   // The small fill makes the educational view usable on the night side.
   // It is disclosed as display fill and never changes computed visibility.
   const fill = new T.AmbientLight(0xe2e7ee, 0.18);
@@ -532,7 +548,8 @@ export function mountScene(
       host.dataset.surfaceRevision=String(Number(host.dataset.surfaceRevision??0)+1);
     }).catch(error=>{if(replaceMaterial)nextMaterial.dispose();if(!abort.signal.aborted&&!disposed){console.error('Destination surface preparation failed',error);host.dataset.surfaceStatus='error';onSurfaceStatus('Destination terrain could not load; previous surface context remains visible.');onTextureFailure();}});
   };
-  let assetMotion:{plan:AssetFlight;fromUp:T.Vector3;toUp:T.Vector3;anchor:T.Vector3;mode:CameraMode}|null=null;
+  type AssetMotion={plan:AssetFlight;fromUp:T.Vector3;toUp:T.Vector3;anchor:T.Vector3;mode:CameraMode};
+  let assetMotion:AssetMotion|null=null;
   let focusedAnchor:T.Vector3|null=null;
   let missingFocusRange=false;
   const moonCentre=new T.Vector3(0,-frame.referenceRadiusM/1000,0);
@@ -553,7 +570,7 @@ export function mountScene(
   let geographicMotion:{start:number;from:T.Vector3;to:T.Vector3;fromUp:T.Vector3;toUp:T.Vector3;fromTarget:T.Vector3}|null=null;
   const navigateGeography=(latDeg:number,lonDeg:number,overview=false)=>{
     const physical=sceneToBody(camera.position),radius=Math.max(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770),overview?framingDistanceKm(1770,camera.aspect,camera.fov):physical.length());
-    assetMotion=null;focusedAnchor=null;poleMeridian=lonDeg;hoveredId=undefined;navigation.cancel();awaitingHandoff=false;
+    assetMotion=null;interruptedFocus=null;focusedAnchor=null;poleMeridian=lonDeg;hoveredId=undefined;navigation.cancel();awaitingHandoff=false;
     geographicMotion={start:performance.now(),from:physical,to:new T.Vector3(...geographicBodyVector(latDeg,lonDeg,radius)),fromUp:sceneToBody(camera.up,true).normalize(),toUp:new T.Vector3(...geographicNorthVector(latDeg,lonDeg)),fromTarget:sceneToBody(controls.target)};
     lastMode='globe';lastReset=getSettings().reset;controls.minDistance=.006;controls.maxDistance=Math.max(3e9,radius*1.01);controls.maxPolarAngle=Math.PI;
   };
@@ -620,7 +637,9 @@ export function mountScene(
         const started=performance.now(),rect=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,viewCamera);
         raycaster.params.Line2={threshold:6};raycaster.params.Line={threshold:Math.max(.01,viewCamera.position.distanceTo(currentPoint)*.008)};
         const vehicleHit=getLive().showFlight && raycaster.intersectObjects([path,currentRing,lander,contactPieces].filter(object=>object.visible),true).length>0;
-        if(vehicleHit) onVehicleFocus();
+        if(vehicleHit){
+          if(!['vehicle','follow'].includes(getSettings().mode))onVehicleFocus();
+        }
         else if(!['earth','sun','vehicle','follow'].includes(getSettings().mode)&&getLive().onPlace){
           const surfaces:T.Object3D[]=[];
           if(nasaGlobe?.mesh.visible) surfaces.push(nasaGlobe.mesh);
@@ -638,7 +657,7 @@ export function mountScene(
   let navigationCamera = {mode:getSettings().mode, reset:getSettings().reset};
   const configureNavigation=(live:SceneProps,now:number,overview:boolean)=>{
     navigationCamera = {mode:getSettings().mode, reset:getSettings().reset};
-    assetMotion=null;focusedAnchor=null;geographicMotion=null;hoveredId=undefined;
+    assetMotion=null;interruptedFocus=null;focusedAnchor=null;geographicMotion=null;hoveredId=undefined;
     const reference=live.referenceHeightM??(live.terrain?heightAt(live.terrain,live.lat,live.lon)?.heightM:null)??0;
     const destination=siteFrame(live.lat,live.lon,reference);
     const height=displayHeight(live.terrain,live.lat,live.lon,reference).heightM;
@@ -654,15 +673,58 @@ export function mountScene(
     navigation.begin({key:requestedKey,now,fromCamera:tuple(physicalCamera),fromTarget:tuple(sceneToBody(controls.target)),toCamera:tuple(endpoint),toTarget:tuple(target),overviewRadiusKm:Math.max(6200,(nasaGlobe?.maxRadiusKm??1770)*3.5),alreadyOverview:overview,reducedMotion:reducedMotion.matches});
     controls.minDistance=0.006;controls.maxPolarAngle=Math.PI;followPosition=null;awaitingHandoff=false;
   };
-  const userStart=()=>{if(tileMotion||pendingTileCloseup){tileMotion=null;pendingTileCloseup=0;status('Close terrain approach canceled. Camera control is yours.');}if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();rebuildControls();status('Asset focus travel canceled. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
+  const userStart=()=>{if(tileMotion||pendingTileCloseup){tileMotion=null;pendingTileCloseup=0;status('Close terrain approach canceled. Camera control is yours.');}if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();status('Asset focus travel interrupted. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
+  let interruptedFocus:{motion:AssetMotion;reset:number}|null=null;
+  let cameraGesture:{x:number;y:number;moved:boolean}|null=null;
   const userEnd=()=>{
-    if(!canceledGesture)return;canceledGesture=false;
-    onSiteMode();lastMode='orbit';lastReset=getSettings().reset;rebuildControls();
+    if(canceledGesture){
+      canceledGesture=false;
+      const settings=getSettings(),retain=retainCameraAfterSiteArrival(navigationCamera,settings);
+      if(!retain)onSiteMode(settings);
+      lastMode='orbit';lastReset=retain?-1:settings.reset;
+      rebuildControls();
+    }
+    const pending=interruptedFocus;interruptedFocus=null;
+    if(pending&&getSettings().mode===pending.motion.mode&&getSettings().reset===pending.reset){
+      const motion=pending.motion;
+      const anchor=motion.mode==='earth'?earth.position:motion.mode==='sun'?sun.position:motion.mode==='vehicle'||motion.mode==='follow'?currentPoint:motion.anchor;
+      const drift=anchor.clone().sub(motion.anchor);
+      const source=earth.visible&&camera.position.distanceTo(earth.position)<camera.position.distanceTo(moonCentre)?earth.position:sun.visible&&camera.position.distanceTo(sun.position)<camera.position.distanceTo(moonCentre)?sun.position:moonCentre;
+      assetMotion={...motion,fromUp:camera.up.clone(),anchor:anchor.clone(),plan:{...motion.plan,startMs:performance.now(),
+        fromCamera:tuple(camera.position),fromTarget:tuple(controls.target),fromCentre:tuple(source),
+        toCamera:tuple(new T.Vector3(...motion.plan.toCamera).add(drift)),toTarget:tuple(new T.Vector3(...motion.plan.toTarget).add(drift)),
+        toCentre:motion.mode==='earth'||motion.mode==='sun'?tuple(anchor):motion.plan.toCentre}};
+      rebuildControls();
+      status('Continuing to the selected camera destination.');
+    }
   };
-  const cancelFocusGesture=()=>{if(assetMotion)userStart();};
-  renderer.domElement.addEventListener('pointerdown',cancelFocusGesture,true);
-  renderer.domElement.addEventListener('wheel',cancelFocusGesture,true);
-  const bindGestures=()=>{controls.addEventListener('start',userStart);controls.addEventListener('end',userEnd);};
+  const interruptCameraGesture=()=>{
+    if(assetMotion)interruptedFocus={motion:assetMotion,reset:getSettings().reset};
+    userStart();
+  };
+  const cameraDown=(event:PointerEvent)=>{
+    if(cameraGesture)return;
+    cameraGesture={x:event.clientX,y:event.clientY,moved:false};
+    // Refresh OrbitControls' cached up axis before it captures the pointer,
+    // never while it owns an active drag. A pointer-down alone is not a drag.
+    if(assetMotion||navigation.sample(performance.now())||geographicMotion)rebuildControls();
+  };
+  const cameraMove=(event:PointerEvent)=>{
+    if(!cameraGesture||cameraGesture.moved)return;
+    if(Math.hypot(event.clientX-cameraGesture.x,event.clientY-cameraGesture.y)<5){
+      if(assetMotion||navigation.sample(performance.now())||geographicMotion)event.stopImmediatePropagation();
+      return;
+    }
+    cameraGesture.moved=true;pointerDown=null;interruptCameraGesture();
+  };
+  const cameraUp=()=>{cameraGesture=null;};
+  const cameraWheel=()=>{interruptCameraGesture();};
+  renderer.domElement.addEventListener('pointerdown',cameraDown,true);
+  renderer.domElement.addEventListener('pointermove',cameraMove,true);
+  renderer.domElement.addEventListener('pointerup',cameraUp);
+  renderer.domElement.addEventListener('pointercancel',cameraUp);
+  renderer.domElement.addEventListener('wheel',cameraWheel,true);
+  const bindGestures=()=>{controls.addEventListener('end',userEnd);};
   function rebuildControls(){
     const target=controls.target.clone(),old={minDistance:controls.minDistance,maxDistance:controls.maxDistance,maxPolarAngle:controls.maxPolarAngle,enablePan:controls.enablePan};
     const position=camera.position.clone(),rotation=camera.quaternion.clone();
@@ -699,7 +761,7 @@ export function mountScene(
   // OrbitControls handles pointer/touch; explicit keys keep camera use possible
   // without stealing the root's left/right time-scrubbing shortcuts.
   const key = (event: KeyboardEvent) => {
-    if(event.key==='Escape'){userStart();userEnd();return;}
+    if(event.key==='Escape'){interruptedFocus=null;userStart();userEnd();rebuildControls();return;}
     const step = camera.position.distanceTo(controls.target) * 0.08;
     const offset = new T.Vector3();
     if (event.key === "+" || event.key === "=") camera.position.lerp(controls.target, 0.15);
@@ -709,15 +771,18 @@ export function mountScene(
     else if (event.key.toLowerCase() === "w") offset.z = -step;
     else if (event.key.toLowerCase() === "s") offset.z = step;
     else return;
-    userStart();camera.position.add(offset); controls.target.add(offset);userEnd();
+    userStart();camera.position.add(offset); controls.target.add(offset);userEnd();rebuildControls();
     event.preventDefault();
   };
   renderer.domElement.addEventListener("keydown", key);
   disposeListeners = () => {
     renderer.domElement.removeEventListener("webglcontextlost", lost);
     renderer.domElement.removeEventListener("keydown", key);
-    renderer.domElement.removeEventListener('pointerdown',cancelFocusGesture,true);
-    renderer.domElement.removeEventListener('wheel',cancelFocusGesture,true);
+    renderer.domElement.removeEventListener('pointerdown',cameraDown,true);
+    renderer.domElement.removeEventListener('pointermove',cameraMove,true);
+    renderer.domElement.removeEventListener('pointerup',cameraUp);
+    renderer.domElement.removeEventListener('pointercancel',cameraUp);
+    renderer.domElement.removeEventListener('wheel',cameraWheel,true);
     renderer.domElement.removeEventListener('pointerleave',poiLeave);
     renderer.domElement.removeEventListener('pointerdown',poiDown);renderer.domElement.removeEventListener('pointermove',poiMove);renderer.domElement.removeEventListener('pointerup',poiUp);
     clearPois();poiGeometry.dispose();
@@ -827,10 +892,10 @@ export function mountScene(
     const navigating=sample!==null||awaitingHandoff;
     if(!nasaRequested){
       nasaRequested=true;host.dataset.moonModel='loading';onModelStatus('Loading NASA’s original topographic Moon…');
-      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal,{device:visualMoonDevice(renderer.capabilities.maxTextureSize,renderer.capabilities.getMaxAnisotropy(),(navigator as Navigator&{deviceMemory?:number}).deviceMemory,!!initial.offline),prepareTexture:texture=>renderer.initTexture(texture)}).then(result=>{
+      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal,{device:visualMoonDevice(renderer.capabilities.maxTextureSize,renderer.capabilities.getMaxAnisotropy(),(navigator as Navigator&{deviceMemory?:number}).deviceMemory,!!initial.offline),prepareTexture:texture=>{if(!disposed&&!globeAbort.signal.aborted)renderer.initTexture(texture);}}).then(result=>{
         if(disposed){result.dispose();return;}
         nasaGlobe=result;scene.add(result.mesh);if(result.mesh.material.map)renderer.initTexture(result.mesh.material.map);host.dataset.moonModel='ready';onModelStatus(`NASA LRO · ${result.visualStatus.colour} colour · ${result.visualStatus.relief} relief · progressive device-bounded texture${result.visualStatus.warnings.length?' · '+result.visualStatus.warnings.join('; '):''}`);
-      }).catch(error=>{if(!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
+      }).catch(error=>{if(!disposed&&!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
     }
     if(nasaGlobe?.visualStatus){host.dataset.moonColour=nasaGlobe.visualStatus.colour;host.dataset.moonTextureWidth=String(nasaGlobe.visualStatus.width);host.dataset.moonRelief=nasaGlobe.visualStatus.relief;host.dataset.moonVisualWarnings=nasaGlobe.visualStatus.warnings.join("; ");}
     if(poiSites!==live.sites)updatePois(live);
@@ -861,9 +926,10 @@ export function mountScene(
     const globalSurface=(settings.mode==='globe'&&!detail.measuredCloseView)||sceneToBody(camera.position).length()>1850;
     const targetGeography=cameraBodyGeography(tuple(sceneToBody(controls.target)));
     const targetDistanceKm=camera.position.distanceTo(controls.target);
-    const southClose=!globalSurface&&!navigating&&!!targetGeography&&insideSouthPoleDetail(targetGeography.latDeg,targetGeography.lonDeg)&&targetDistanceKm<80&&settings.mode!=='earth'&&settings.mode!=='sun';
+    const southClose=settings.mode===lastMode&&settings.reset===lastReset&&!assetMotion&&wantsSouthPoleDetail({offline:!!live.offline,showFlight:!!live.showFlight,globalSurface,navigating,geography:targetGeography,distanceKm:targetDistanceKm,mode:settings.mode});
+    if(southClose)requestSouthPole();
     const showSouthPoleDetail=southClose&&!!southPoleTerrain?.ready;
-    const showIon=useIon&&!showSouthPoleDetail;
+    const showIon=useIon&&!live.showFlight&&!showSouthPoleDetail;
     if(ionMoon){ionMoon.group.visible=showIon;if(showIon)ionMoon.update();}
     const streamedSurface=showIon&&ionMoon?.ready===true;
     ground.visible=!streamedSurface&&!showSouthPoleDetail&&(!globalSurface||!nasaGlobe);
@@ -879,12 +945,35 @@ export function mountScene(
         southPoleProxy.matrix.copy(inverse).multiply(camera.matrixWorld);
         southPoleProxy.matrix.decompose(southPoleProxy.position,southPoleProxy.quaternion,southPoleProxy.scale);
         southPoleProxy.updateMatrixWorld(true);
-        southPoleTerrain.update(southPoleProxy,controls.target.clone().applyMatrix4(inverse));
-        const detailStatus=southPoleTerrain.status as {datasetName?: string};
-        host.dataset.southPoleDetail=detailStatus.datasetName??'measured';
-      }else host.dataset.southPoleDetail=southClose?'loading':'hidden';
+        southPoleTerrain.setStyle(settings.inspection?'studio':'lunar');
+        // liveSky already rotates the live site's ENU direction into this mounted scene.
+        const terrainSun=liveSky(live,live.pose.sunAz,live.pose.sunEl).applyMatrix3(sceneToTerrainRotation(southPoleMatrix));
+        if(settings.inspection)southPoleTerrain.setSun(225,28);
+        else southPoleTerrain.setSunDirection(terrainSun);
+        const terrainTarget=controls.target.clone().applyMatrix4(inverse);
+        southPoleTerrain.update(southPoleProxy,terrainTarget);
+        host.dataset.southPoleLighting=settings.inspection?'studio':'epoch';
+        host.dataset.southPoleSunDirection=southPoleTerrain.uniforms.sunDirection.value.toArray().join(',');
+        if(now-lastDetailReport>300){
+          lastDetailReport=now;
+          const point=southPoleTerrain.fromWorld(terrainTarget),sample=southPoleTerrain.getElevation(point.x,point.y);
+          const failures=southPoleTerrain.datasets.filter(d=>d.failed).map(d=>d.name);
+          const loading=southPoleTerrain.datasets.filter(d=>!d.loaded&&!d.failed).length;
+          const source=sample?`Effective source: ${sample.effectiveSource}. Display elevation ${sample.elevation.toFixed(3)} m at polar x ${point.x.toFixed(0)}, y ${point.y.toFixed(0)} m. Contributors: ${sample.contributors.map((c:{datasetName:string;weight:number;elevation:number;spacing:number;nativeSpacing:number})=>`${c.datasetName}: ${(100*c.weight).toFixed(2)}%, ${c.elevation.toFixed(3)} m; grid ${c.spacing} m, native ${c.nativeSpacing} m`).join(' / ')}.`:'No measured sample at the camera target; reference geometry only.';
+          detailStatus(`${source} ${failures.length?`Unavailable layers: ${failures.join(', ')}; showing available source fallback. `:''}${loading?'Finer coverage loads only where demanded. ':''}${settings.inspection?'Studio inspection light (fixed illustrative direction).':'Illustrative epoch light follows the live Sun.'}`);
+        }
+        const terrainStatus=southPoleTerrain.status as {datasetName?: string};
+        host.dataset.southPoleDetail=terrainStatus.datasetName??'measured';
+      }else host.dataset.southPoleDetail=southPoleFailure?'unavailable':southClose?'loading':'hidden';
     }
-    ground.receiveShadow=!southClose;
+    if(!showSouthPoleDetail){
+      if(live.offline || !southPoleManifestUrl(!!live.offline))detailStatus('Offline: embedded canonical terrain retained; visual detail grids are not embedded and are not requested.');
+      else if(live.showFlight)detailStatus('Flight/contact view: canonical numerical terrain retained; visual detail is not registered to this ground.');
+      else if(southClose)detailStatus(southPoleFailure?'Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.':'Loading measured visual relief; canonical terrain remains visible.');
+      else detailStatus('Canonical terrain context. Measured visual detail loads only during close south-polar inspection.');
+    }
+    host.dataset.groundSurface=showSouthPoleDetail?'visual-detail':streamedSurface?'streamed':globalSurface&&nasaGlobe?'nasa-globe':'canonical';
+    ground.receiveShadow=!showSouthPoleDetail;
     path.visible=travelled.visible=groundTrack.visible=pathVectors.length>1&&!['globe','earth','sun'].includes(settings.mode)&&!navigating;
     let vehicleMassKg: number | null = null;
     if (flightPoints.length) {
@@ -1041,7 +1130,7 @@ export function mountScene(
       status(sample.phase==='zoom-out'?"Zooming out from the current lunar site.":sample.phase==='rotate'?"Moving around the Moon to the selected site.":sample.phase==='zoom-in'?"Approaching the selected lunar site.":"Selected lunar site reached.");
       if(sample.phase==='complete'){
         const retain = retainCameraAfterSiteArrival(navigationCamera, settings);
-        if (!retain) onSiteMode();
+        if (!retain) onSiteMode(settings);
         navigation.cancel();allowFullPolarOrbit(controls);controls.minDistance=.006;rebuildControls();lastMode="orbit";lastReset=retain?-1:settings.reset;
       }
     }
@@ -1061,7 +1150,7 @@ export function mountScene(
       if(object.visible){if(focusedAnchor){camera.position.add(object.position.clone().sub(focusedAnchor));controls.target.add(object.position.clone().sub(focusedAnchor));}focusedAnchor=object.position.clone();}
     }
     host.dataset.focusRange=missingRange?'unavailable':'ready';
-    host.dataset.assetFlight=assetMotion?'traveling':'idle';
+    host.dataset.assetFlight=assetMotion?'traveling':interruptedFocus?'interrupted':'idle';
     if(pendingTileCloseup&&!geographicMotion&&!assetMotion&&ionMoon&&streamedSurface){
       const direction=bodyToLocal(new T.Vector3(...geographicBodyVector(live.lat,live.lon)),true).normalize();
       const point=ionMoon.surfacePoint(direction);
@@ -1096,7 +1185,7 @@ export function mountScene(
     if (radial.length()<2500 && radial.length() < minRadius) camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));
     if(!navigating&&!geographicMotion&&!assetMotion&&!tileMotion)controls.update();
     // Wheel/pinch control updates must also respect the actual physical sphere.
-    if(!navigating&&!assetMotion&&settings.mode==='globe') { camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));camera.lookAt(controls.target); }
+    if(!navigating&&!assetMotion&&settings.mode==='globe'&&minRadius>0) { camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));camera.lookAt(controls.target); }
     host.dataset.globeMinimumRadiusKm=String(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770));
     host.dataset.zoomEnabled=String(controls.enableZoom);host.dataset.panEnabled=String(controls.enablePan);host.dataset.rotateEnabled=String(controls.enableRotate);
     lander.position.copy(modelOrigin);
@@ -1143,7 +1232,7 @@ export function mountScene(
     horizon.visible = settings.horizon && settings.mode === "surface"&&!navigating;
     const liveFrame=siteFrame(live.lat,live.lon,0);
     const sunDir = liveSky(live,live.pose.sunAz, live.pose.sunEl);
-    fill.intensity = settings.inspection || southClose ? 1.15 : 0.18;
+    fill.intensity = settings.inspection ? 1.15 : 0.18;
     host.dataset.lunarAppearance='neutral-linear-rec709-v1';
     host.dataset.lightingMode=settings.inspection?'atlas':'epoch';
     surfaceMaterial.setAtlasAppearance(settings.inspection);

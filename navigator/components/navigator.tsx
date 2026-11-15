@@ -54,7 +54,6 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { PolarMap } from "@/components/polar-map";
 import {GlobalMap} from "@/components/global-map";
-import {DataConnections} from "@/components/workbench/data-connections";
 import {AssessmentExplanation} from "@/components/workbench/assessment-explanation";
 import {LearningDialog, VariableReference} from "@/components/workbench/physics-reference";
 import dynamic from 'next/dynamic';
@@ -63,6 +62,8 @@ const SolarSystemView=dynamic(()=>import('@/components/workbench/solar-system-vi
 const LunarScene=dynamic(()=>import('@/components/workbench/scene').then(m=>m.LunarScene),{ssr:false});
 const ReplanningWorkspace=dynamic(()=>import('@/components/replanning/workspace').then(m=>m.ReplanningWorkspace));
 const TeachingStudio=dynamic(()=>import('@/components/audience/teaching-studio').then(m=>m.TeachingStudio));
+const DataConnections=dynamic(()=>import('@/components/workbench/data-connections').then(m=>m.DataConnections));
+const DataMathPanel=dynamic(()=>import('@/components/workbench/data-math-panel').then(m=>m.DataMathPanel));
 const EngineeringEvidenceWorkspace=dynamic(()=>import('@/components/engineering/evidence-workspace').then(m=>m.EngineeringEvidenceWorkspace));
 import {LANDING_SITES} from "@/lib/landing-sites";
 import {withLandingSites} from "@/lib/landing-catalog";
@@ -81,7 +82,6 @@ import {
   PlannerInputs,
   FlightPanel,
   TeachPanel,
-  ResourcesPanel,
   AnalysisPanel,
   Comparison,
   DateSearch,
@@ -136,10 +136,6 @@ import {DecisionPanel} from "./workbench/decision-panel";
 import {createDecisionPackage,stringifyDecisionPackage} from "@/lib/decision-export";
 import {loadEvidenceManifest} from "@/lib/provenance";
 import {evaluateScenario,PLANNING_MODEL_VERSION} from "@/lib/assessment";
-import {ScienceFramework} from "@/components/science-framework";
-import type {ScienceFinding} from "@/lib/science-framework";
-import scientificVerification from "@/lib/generated/scientific-verification.json";
-const scientificFindings=scientificVerification.findings as readonly ScienceFinding[];
 import type {EvidenceManifest} from "@/lib/planning-types";
 
 type View = "map" | "terrain" | "split";
@@ -1380,7 +1376,7 @@ export function Navigator() {
                     onOpen={range}
                   />
                 ) : <Section title="Landing-date search"><p>There is no numerical terrain horizon for this location. A terrain-based date ranking is unavailable. Horizon analysis still shows Sun/Earth geometry and the smooth-sphere reference.</p></Section>)}
-                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={typeof location!=='undefined'&&globalThis.location?.protocol==='file:'}/><ScienceFramework mode={mode} context={{lat:location.lat,lon:location.lon,observerHeightM:state.heightM,arrayHeightM:state.arrayHeightM,antennaHeightM:state.antennaHeightM,terrainMode:state.terrainMode??"prepared",terrainLabel:isGlobalTerrainChoice(terrain)?"Coarse global LOLA context":terrain.mask.some(Number.isFinite)?terrain.exact?"Prepared site horizon":"Borrowed polar-grid horizon":"Unknown terrain horizon",epochUtc:new Date(indexToMs(catalog,playhead)).toISOString(),datasetId:evidenceManifest?.datasetId??"Pending evidence manifest",modelVersion:PLANNING_MODEL_VERSION}} findings={scientificFindings}/><ResourcesPanel catalog={catalog} /></>}
+                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataMathPanel catalog={catalog} state={state} manifest={evidenceManifest} missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={globalThis.location?.protocol==='file:'} context={{lat:location.lat,lon:location.lon,observerHeightM:state.heightM,arrayHeightM:state.arrayHeightM,antennaHeightM:state.antennaHeightM,terrainMode:state.terrainMode??"prepared",terrainLabel:isGlobalTerrainChoice(terrain)?"Coarse global LOLA context":terrain.mask.some(Number.isFinite)?terrain.exact?"Prepared site horizon":"Borrowed polar-grid horizon":"Unknown terrain horizon",epochUtc:new Date(indexToMs(catalog,playhead)).toISOString(),datasetId:evidenceManifest?.datasetId??"Pending evidence manifest",modelVersion:PLANNING_MODEL_VERSION}}/></>}
               </div>
               <div className="inspector-footer">
                 <span className="data-status-dot" />

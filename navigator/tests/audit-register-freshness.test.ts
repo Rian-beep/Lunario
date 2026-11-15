@@ -12,6 +12,14 @@ test('scientific register refuses stale input, numerical implementation, invento
  const compiled=JSON.parse(originalOutput);assert.ok(compiled.compiledUtc&&!compiled.checkedUtc);for(const id of ['E01','E02','E06','E07']){const row=compiled.findings.find((r:{id:string})=>r.id===id);assert.equal(row.inputIdentity.catalogSha256,compiled.assetHashes['public/data/catalog.json']);assert.ok(row.historicalBaseline);assert.match(JSON.stringify(row.reproduce),/expected exit 0/);assert.doesNotMatch(JSON.stringify(row.reproduce),/expected exit 1/);}assert.match(compiled.findings.find((r:{id:string})=>r.id==='S14').scope,/all matching/);
  const cases:[string,(text:string)=>string][]=[
  ['public/data/catalog.json',text=>text+' '],
+ ['public/data/engineering-evidence/spice-reference.json',text=>{const data=JSON.parse(text);data.samples[0].azimuthDeg+=10;return JSON.stringify(data);}],
+ ['docs/qa/scientific-audit/resources/reference.json',text=>text+' '],
+ ['scripts/audit-resources-compare.ts',text=>text+'\n// comparison producer mutation probe\n'],
+ ['scripts/terrain-codec.mjs',text=>{assert.ok(text.includes('Math.max(0.1,'));return text.replace('Math.max(0.1,','Math.max(1000,');}],
+ ['package-lock.json',text=>text+' '],
+ ['lib/planning-types.ts',text=>text+'\n// default policy dependency mutation probe\n'],
+ ['public/data/global-terrain.json',text=>text+' '],
+
  ['lib/astro.ts',text=>text+'\n// numerical input mutation probe\n'],
  ['lib/engineering-evidence/communications.ts',text=>text+'\n// subsystem mutation probe\n'],
  ['docs/qa/scientific-audit/integration/terrain-registration-after.json',text=>JSON.stringify({...JSON.parse(text),errorM:1})],
@@ -19,6 +27,12 @@ test('scientific register refuses stale input, numerical implementation, invento
  ['docs/qa/scientific-audit/sources/inventory.json',text=>text+' '],
  ];
  for(const [file,mutate] of cases){const path=join(dir,file),original=readFileSync(path,'utf8');writeFileSync(path,mutate(original));const failed=run();assert.notEqual(failed.status,0,file);assert.match(failed.stderr,/Stale scientific evidence/);assert.equal(readFileSync(output,'utf8'),originalOutput,'Failed audit must not replace published findings');writeFileSync(path,original);}
+ // Rebinding a failed CLPS comparison cannot turn it into a passing published claim.
+ const clps='docs/qa/evaluation/integration/clps-source-comparison.json',clpsPath=join(dir,clps),clpsOriginal=readFileSync(clpsPath,'utf8'),bindingsOriginal=readFileSync(join(dir,binding),'utf8');
+ const badClps=JSON.parse(clpsOriginal);badClps.datasets[0].maximumPositionComponentResidualKm=1;writeFileSync(clpsPath,JSON.stringify(badClps));
+ const clpsBindings=JSON.parse(bindingsOriginal);clpsBindings.sha256[clps]=createHash('sha256').update(readFileSync(clpsPath)).digest('hex');writeFileSync(join(dir,binding),JSON.stringify(clpsBindings));
+ const rejectedClps=run();assert.notEqual(rejectedClps.status,0);assert.match(rejectedClps.stderr,/CLPS source residual failed/);assert.equal(readFileSync(output,'utf8'),originalOutput);
+ writeFileSync(clpsPath,clpsOriginal);writeFileSync(join(dir,binding),bindingsOriginal);
  // Even an explicitly rebound bad result cannot pass the outcome gate.
  const terrain='docs/qa/scientific-audit/integration/terrain-registration-after.json',path=join(dir,terrain);writeFileSync(path,JSON.stringify({...JSON.parse(readFileSync(path,'utf8')),errorM:1}));
  const binds=JSON.parse(readFileSync(join(dir,binding),'utf8'));binds.sha256[terrain]=createHash('sha256').update(readFileSync(path)).digest('hex');writeFileSync(join(dir,binding),JSON.stringify(binds));const failed=run();assert.notEqual(failed.status,0);assert.match(failed.stderr,/Terrain comparison failed/);

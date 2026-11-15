@@ -1,0 +1,15 @@
+{
+  "baseline": false,
+  "browser": "149.0.7827.155",
+  "networkRequests": [],
+  "errors": [],
+  "checks": [
+    "Unavailable published selection explains recovery and does not highlight a path",
+    "Controlled published selection, source details and rationale citations",
+    "Site change does not retain stale selected state; Apollo 11 offers simulation; Apollo 15 CSM remains orbital context",
+    "All three CLPS paths select as reconstructed descents, with independent historical-clock explanation",
+    "Unknown and no-data sites provide the educational callback without inventing a historic path",
+    "390px width and 200% CSS zoom reflow; no horizontal page overflow",
+    "Keyboard simulation selection and dismiss callback"
+  ]
+}

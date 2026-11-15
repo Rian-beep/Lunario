@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "compiledUtc": "2026-11-15T15:32:08.010745+00:00",
+  "compiledUtc": "2026-11-15T19:15:03.358110+00:00",
   "comparisonEvidenceUtc": {
     "ephemeris": "2026-11-15T14:52:47.083Z",
     "dynamics": "2026-11-15T14:55:40.872Z"
@@ -8,8 +8,8 @@
   "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
   "modelVersion": "planning-5",
   "counts": {
-    "verified": 41,
-    "uncertain": 21,
+    "verified": 42,
+    "uncertain": 22,
     "failing": 0
   },
   "operationalQualification": false,
@@ -2949,7 +2949,7 @@
       "id": "resources-05",
       "claim": "Fresh station Horizons results agree with separately computed retained CSPICE station reference.",
       "status": "verified",
-      "scope": "75 samples: three stations, hourly inclusive 2026-11-14T00:00:00Z..2026-11-15T00:00:00Z; Moon 301 / Earth coord@399; ITRF93 airless apparent AZ/EL degrees, range km.",
+      "scope": "Current strict station parser: all 75 archived epochs / 225 components against retained CSPICE reference; fresh provider retrieval is reported separately.",
       "sourceUrls": [
         "https://ssd.jpl.nasa.gov/horizons/manual.html",
         "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf"
@@ -2959,9 +2959,9 @@
       "method": "Parse fresh provider bytes at 25 hourly epochs/station, wrapped azimuth differences and direct elevation/range differences against retained CSPICE ENU results.",
       "tolerance": "0.002 deg AZ/EL, 0.1 km range; original cross-kernel implementation check thresholds; neither temporal nor physical truth bounds.",
       "observedError": {
-        "azimuth": 0.0002686886904257335,
-        "elevation": 7.336623912124196e-05,
-        "range": 0.00324417429510504
+        "maxAzResidualDeg": 0.0002686886904257335,
+        "maxElevationResidualDeg": 7.336623912124196e-05,
+        "maxRangeResidualKm": 0.00324417429510504
       },
       "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
       "limitations": "Different calculations of JPL ephemeris are not independent observations. No fresh CSPICE/kernel run. EOP is predicted; station velocities are not applied. No operational acquisition guarantee.",
@@ -2979,7 +2979,8 @@
           "Different calculations of JPL ephemeris are not independent observations. No fresh CSPICE/kernel run. EOP is predicted; station velocities are not applied. No operational acquisition guarantee."
         ]
       },
-      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md",
+      "correctionReceipt": "docs/qa/evaluation/integration/stations-archived.json"
     },
     {
       "id": "resources-06",
@@ -3108,7 +3109,7 @@
         "beforeEqualsAfter": true
       },
       "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
-      "limitations": "Contract and boundary verification does not validate supplied evidence authenticity, actual contact capacity or all possible malformed numeric inputs.",
+      "limitations": "Contract and boundary verification does not validate supplied evidence authenticity, actual contact capacity or all possible malformed numeric inputs. Supplementary station evidence is evaluated under station-comms-2: future-issued evidence, missing EOP coverage, altered computed tables and off-grid epochs are rejected. Its result does not change the canonical planning-5 scenario authority.",
       "lane": "resources",
       "baselineStatus": "verified",
       "historicalBaseline": {
@@ -4694,6 +4695,118 @@
         "limitations": "Only metadata/abstracts for the historical NTRS reports were archived. No flight telemetry, force/stroke test series or dated Apollo reconstruction was validated. The supplied cone and traverse/support budgets are arithmetic over assumptions, not environmental predictions."
       },
       "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D-EVAL-01",
+      "lane": "dynamics",
+      "status": "verified",
+      "claim": "Three reconstructed CLPS descents reproduce hash-pinned NASA/PDS source positions and velocities",
+      "scope": "740 sampled source states: Athena, Blue Ghost 1 and Odysseus, IAU_MOON geometric positions only",
+      "sourceUrls": [
+        "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/"
+      ],
+      "method": "CSPICE spkezr IAU_MOON NONE from hash-pinned PDS sources; independent API from producer sxform path",
+      "observedError": [
+        {
+          "id": "athena-descent-reconstructed",
+          "samples": 159,
+          "artifactSha256": "6265db235ee414bd82fc5b2ef07b02b70472c9df8fdfc9c99ae10a4cf4f0acbe",
+          "sources": [
+            {
+              "file": "clps_prime1_im2_edl_rec_250306_v01.bsp",
+              "sha256": "d8c8540bdbceb895b2ac04945791127e7a5846113f974e988701971a9c254ba9"
+            },
+            {
+              "file": "naif0012.tls",
+              "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+            },
+            {
+              "file": "pck00011.tpc",
+              "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+            }
+          ],
+          "maximumPositionComponentResidualKm": 4.997957603336545e-11,
+          "maximumVelocityComponentResidualKmS": 4.9707127303122434e-11,
+          "maximumMidpointDisplayDiscrepancyKm": 0.008489371222033542,
+          "utcAnnotationResidualSeconds": 0.0004652738571166992
+        },
+        {
+          "id": "blue-ghost-1-descent-reconstructed",
+          "samples": 220,
+          "artifactSha256": "cd8aa49aa363904f3b7ed582a2d22a0e4c298b77548e60ded00969f130637a53",
+          "sources": [
+            {
+              "file": "clps_to19d_bgm1_edl_rec_250302_v01.bsp",
+              "sha256": "234b0b92328cc1c8aca169bdec990203bd3c37e6a276bcdaf826d8642233bf29"
+            },
+            {
+              "file": "naif0012.tls",
+              "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+            },
+            {
+              "file": "pck00011.tpc",
+              "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+            }
+          ],
+          "maximumPositionComponentResidualKm": 5.002220859751105e-11,
+          "maximumVelocityComponentResidualKmS": 4.9991370418278613e-11,
+          "maximumMidpointDisplayDiscrepancyKm": 0.013705340021541557,
+          "utcAnnotationResidualSeconds": 0.0004024505615234375
+        },
+        {
+          "id": "odysseus-descent-reconstructed",
+          "samples": 361,
+          "artifactSha256": "d67775edd0b279748469a11dba9eb73457b14f1e51d747fd806de78239559460",
+          "sources": [
+            {
+              "file": "clps_to2im_im1_edl_rec_240222_v01.bsp",
+              "sha256": "f8bac55717f7f9c3f782429b61abf742bd846f72ccd26b9cf11ade640ff8e557"
+            },
+            {
+              "file": "naif0012.tls",
+              "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+            },
+            {
+              "file": "pck00011.tpc",
+              "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+            }
+          ],
+          "maximumPositionComponentResidualKm": 5.002220859751105e-11,
+          "maximumVelocityComponentResidualKmS": 4.991174140656085e-11,
+          "maximumMidpointDisplayDiscrepancyKm": 0.00997985079058392,
+          "utcAnnotationResidualSeconds": 0.00026416778564453125
+        }
+      ],
+      "tolerance": "Position and velocity components <1e-8 km and km/s; UTC annotation <1 ms. These are encoding/transfer checks.",
+      "inputIdentity": {
+        "receipt": "docs/qa/evaluation/integration/clps-source-comparison.json"
+      },
+      "reproduce": "python scripts/evaluation-integration/verify-clps.py SOURCE_KERNEL_DIRECTORY OUTPUT_JSON",
+      "limitations": "Source transfer and bounded interpolation checks only; shared CSPICE/source models, no independent tracking observations, surface registration or contact qualification. Midpoint display discrepancies are measured samples, not continuous error bounds. No attitude, burn, landing-contact or map-frame qualification.",
+      "reportPath": "docs/qa/evaluation/integration/REPORT.md"
+    },
+    {
+      "id": "R-EVAL-01",
+      "lane": "resources",
+      "status": "uncertain",
+      "claim": "Current live three-station provider comparison",
+      "scope": "50 retrieved epochs; 1 station retrieval failures in this attempt",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/"
+      ],
+      "method": "Bounded live HTTP retrieval using declared station/time/settings; unchanged CSPICE comparison tolerances",
+      "observedError": [
+        {
+          "stationId": "canberra",
+          "error": "Horizons HTTP 503"
+        }
+      ],
+      "inputIdentity": {
+        "receipt": "docs/qa/evaluation/integration/stations-live.json"
+      },
+      "reproduce": "npx tsx tests/comms-evaluation/compare-sources.mts --live",
+      "limitations": "A failed provider request is not a passing comparison. Dated predicted EOP and station reference comparisons do not establish operational support, RF calibration, weather or bookings.",
+      "reportPath": "docs/qa/evaluation/integration/REPORT.md"
     }
   ]
 }

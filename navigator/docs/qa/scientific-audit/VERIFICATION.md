@@ -4,7 +4,7 @@ Model `planning-5`; dataset `solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d42
 
 Verified means the stated bounded implementation/input check passed. It does not mean an arbitrary selected scenario, landing site, vehicle or operational mission is qualified. Baseline reports remain archived; this register supersedes only the listed corrected findings.
 
-**41 verified bounded claims; 21 uncertain; 0 currently failing recorded comparisons. No operational qualification.**
+**42 verified bounded claims; 22 uncertain; 0 currently failing recorded comparisons. No operational qualification.**
 
 | ID | Status | Claim | Scope |
 |---|---|---|---|
@@ -42,7 +42,7 @@ Verified means the stated bounded implementation/input check passed. It does not
 | resources-02 | verified | Fixed-array cosine incidence and uniform local disk fraction match independent vector/area integration. | Local ENU east/north/up, azimuth clockwise from north, tilt from upward normal; degrees, W, W/m², m²; stationary analytic forcing. |
 | resources-03 | verified | One-way free-space RF budget uses consistent SI, dBW, dBi, power dB and Eb/N0 conventions. | GHz→Hz, km→m, W, K, bit/s; received dBW and Eb/N0/margin dB. Far-field vacuum scalar link, epoch/frame independent. |
 | resources-04 | verified | All three representative ground-antenna coordinates match JPL published Cartesian data at source epoch. | DSS-14 Goldstone, DSS-63 Madrid, DSS-43 Canberra; ITRF93 epoch 2003.0; Earth-fixed XYZ m; WGS84 ellipsoid geodetic heights, east longitude. |
-| resources-05 | verified | Fresh station Horizons results agree with separately computed retained CSPICE station reference. | 75 samples: three stations, hourly inclusive 2026-11-14T00:00:00Z..2026-11-15T00:00:00Z; Moon 301 / Earth coord@399; ITRF93 airless apparent AZ/EL degrees, range km. |
+| resources-05 | verified | Fresh station Horizons results agree with separately computed retained CSPICE station reference. | Current strict station parser: all 75 archived epochs / 225 components against retained CSPICE reference; fresh provider retrieval is reported separately. |
 | resources-06 | verified | Plane-parallel slant attenuation and atmospheric emission noise reproduce JPL published example. | DSS-34 Canberra climatological 90% year-average Ka32GHz, elevation20deg, Azen0.384dB, TM277.5K; approximate mapping valid here10..90deg. |
 | resources-07 | verified | Missing forcing and missing communication evidence remain unknown, with exact allocation-time integration and explicit inference boundaries. | Implementation/status behavior only; UTC half-open spans, h for resources, bit/s × s for data; no new physical claim. |
 | resources-08 | uncertain | Date-specific irradiance and real photovoltaic generation remain unqualified. | W/m², W, m²; selected mission epochs; local ENU incidence. |
@@ -70,6 +70,8 @@ Verified means the stated bounded implementation/input check passed. It does not
 | D16 | verified | Engineering screen success is conditional and missing/known-failing inputs retain their gates | evaluateEngineeringScreens only; parent-owned evaluateScenario is unchanged |
 | D17 | uncertain | Steady-state thermal arithmetic predicts real component survival | Single-node balance and supplied optical/environment values |
 | D18 | uncertain | NASA history and empirical literature qualify this generic landing/GNC/soil/plume model | Applicability boundary; no claim that editable defaults represent Apollo telemetry |
+| D-EVAL-01 | verified | Three reconstructed CLPS descents reproduce hash-pinned NASA/PDS source positions and velocities | 740 sampled source states: Athena, Blue Ghost 1 and Odysseus, IAU_MOON geometric positions only |
+| R-EVAL-01 | uncertain | Current live three-station provider comparison | 50 retrieved epochs; 1 station retrieval failures in this attempt |
 
 ## Important remaining limits
 

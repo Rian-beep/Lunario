@@ -1,0 +1,126 @@
+not ok 173 - scientific register refuses stale input, numerical implementation, inventory and failed receipts before writing outputs
+  ---
+  duration_ms: 301.955347
+  location: '/tmp/lunario-eval-terrain/navigator/tests/audit-register-freshness.test.ts:3:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Traceback (most recent call last):
+      File "/tmp/lunario-audit-register-pOR20P/scripts/compile-scientific-verification.py", line 10, in <module>
+        require(Path(name).is_file() and hashlib.sha256(Path(name).read_bytes()).hexdigest()==expected,'Stale scientific evidence: '+name)
+        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/tmp/lunario-audit-register-pOR20P/scripts/compile-scientific-verification.py", line 6, in require
+        if not condition:raise ValueError(message)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ValueError: Stale scientific evidence: lib/engineering-evidence/communications.ts
+
+
+    1 !== 0
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-terrain/navigator/tests/audit-register-freshness.test.ts:10:27)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: audit resources: dark-depletion/generatedWh
+ok 174 - audit resources: dark-depletion/generatedWh
+  ---
+  duration_ms: 6.435545
+  ...
+not ok 1349 - incoming URL reproducer: hosted subpath escapes its base and file mode needs external files
+  ---
+  duration_ms: 2.213729
+  location: '/tmp/lunario-eval-terrain/navigator/tests/terrain-evaluation/incoming.test.ts:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+
+    + ''
+    - 'file:///tmp/data/south-pole-detail/manifest.json'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'file:///tmp/data/south-pole-detail/manifest.json'
+  actual: ''
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-terrain/navigator/tests/terrain-evaluation/incoming.test.ts:17:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: incoming late-completion reproducer: disposed terrain reacquires a height texture
+not ok 1350 - incoming late-completion reproducer: disposed terrain reacquires a height texture
+  ---
+  duration_ms: 23.643186
+  location: '/tmp/lunario-eval-terrain/navigator/tests/terrain-evaluation/incoming.test.ts:21:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    observed defect: load continuation marks disposed data loaded
+
+    false !== true
+
+  code: 'ERR_ASSERTION'
+not ok 1350 - incoming late-completion reproducer: disposed terrain reacquires a height texture
+  ---
+  duration_ms: 23.643186
+  location: '/tmp/lunario-eval-terrain/navigator/tests/terrain-evaluation/incoming.test.ts:21:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    observed defect: load continuation marks disposed data loaded
+
+    false !== true
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/lunario-eval-terrain/navigator/tests/terrain-evaluation/incoming.test.ts:32:10)
+    async Test.run (node:internal/test_runner/test:797:9)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: incoming manifest advertises an imagery manifest absent from this checkout
+ok 1351 - incoming manifest advertises an imagery manifest absent from this checkout
+  ---
+  duration_ms: 0.560759
+  ...
+# Subtest: close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+ok 1352 - close-up LOD uses actual covering DEM sampling with hysteresis, never invented heights
+  ---
+  duration_ms: 1.044612
+  ...
+# Subtest: missing/coarse fine coverage never receives a synthetic high-resolution label
+ok 1353 - missing/coarse fine coverage never receives a synthetic high-resolution label
+  ---
+  duration_ms: 0.212873
+  ...
+# Subtest: numerical terrain bilinear interpolation respects raster axis directions
+ok 1354 - numerical terrain bilinear interpolation respects raster axis directions
+  ---
+  ---
+  duration_ms: 34.708062
+  ...
+1..1421
+# tests 1424
+# suites 0
+# pass 1421
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 26024.616915

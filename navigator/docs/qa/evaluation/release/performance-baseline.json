@@ -1,0 +1,411 @@
+{
+  "checkedUtc": "2026-11-15T20:24:51.238Z",
+  "url": "http://127.0.0.1:4357/web/index.html",
+  "scriptSha256": "6de1f1451ca0c1cd0a3f93fcb436d1983f8983f851f9d68a1d7ae2ee7fde2dc5",
+  "flags": [
+    "--no-sandbox",
+    "--enable-gpu",
+    "--use-gl=angle",
+    "--use-angle=vulkan"
+  ],
+  "runs": [
+    {
+      "run": 0,
+      "initialMs": 1435.8011259999998,
+      "firstMoonMs": 1426.294763,
+      "frames": {
+        "renderer": "ANGLE (AMD, Vulkan 1.4.335 (Radeon 8060S Graphics (RADV STRIX_HALO) (0x00001586)), radv)",
+        "frames": 211,
+        "maxGapMs": 400,
+        "p95GapMs": 16.799999999999272,
+        "medianGapMs": 16.699999999999818,
+        "contextLost": false,
+        "scene": {
+          "focusRequestId": "1",
+          "sceneInstance": "c74bf86a-243a-48b5-a85d-85c21c29ea38",
+          "flightRevision": "1",
+          "horizonRevision": "1",
+          "renderFrame": "236",
+          "vehicleWorldPosition": "-0.2999157460404775,0.30286144089409456,-0.0000032487599581810384",
+          "vehicleQuaternion": "0.011349987665278484,-0.7070443185735751,-0.011350907068560047,-0.7069870340123274",
+          "vehicleVisible": "true",
+          "landingContact": "{\"timeS\":51.86559887975901,\"eastM\":-7.494965380112218,\"northM\":-0.000004936567636865205,\"yM\":-0.7155397799797356,\"velocityMps\":[0.6344815870297769,-0.5064463891164185,1.7123434326339218e-7],\"massKg\":4559.238899003943,\"terrainHeightM\":-0.7155397799798879,\"terrainKnown\":true,\"slopeDeg\":11.69085181866704,\"tiltDeg\":1.8392512484714845,\"headingDeg\":269.9953577219371,\"targetErrorM\":7.494968458331939}",
+          "landingDynamics": "",
+          "landingFragmentCount": "0",
+          "landingMassKg": "4700",
+          "terrainClearanceM": "",
+          "flightTimeS": "0",
+          "landingContactTimeS": "51.86559887975901",
+          "landingContactFrameIndex": "",
+          "landingContactFrameTimeS": "",
+          "sunModel": "ready",
+          "sunDraws": "0",
+          "earthModel": "ready",
+          "earthDraws": "195",
+          "earthRangeKm": "378164.28125",
+          "sunRangeKm": "151931103.42258206",
+          "orbitCount": "0",
+          "orbitPositions": "[]",
+          "starCount": "523",
+          "moonModel": "ready",
+          "terrainSourceSpacingM": "23.976608187134502",
+          "terrainDetail": "Measured DEM sampling 24.0 m; mesh 640 angular segments",
+          "southPoleDetail": "loading",
+          "contactReplay": "ready",
+          "contactFrames": "1441",
+          "contactCacheBytes": "23645369",
+          "focusRange": "ready",
+          "assetFlight": "idle",
+          "ionVisibleTiles": "0",
+          "ionHeightAboveSurfaceM": "",
+          "globeMinimumRadiusKm": "1747.880528431719",
+          "zoomEnabled": "true",
+          "panEnabled": "true",
+          "rotateEnabled": "true",
+          "vehicleScale": "1",
+          "cameraMode": "vehicle",
+          "lunarAppearance": "neutral-linear-rec709-v1",
+          "lightingMode": "atlas",
+          "stationInspection": "false",
+          "visibleStations": "[]",
+          "visiblePoiCount": "0",
+          "visiblePois": "[]",
+          "vehicleFraming": "framed",
+          "vehicleScreenBounds": "{\"left\":176.67578460132896,\"top\":303.125,\"right\":537.5349706301388,\"bottom\":587.3366857338995}",
+          "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":303.125,\"bottom\":625}",
+          "cameraPosition": "-0.2849157460404775,0.31186144089409457,0.019996751240041816",
+          "cameraTarget": "-0.2999157460404775,0.30286144089409456,-0.000003248759958181044",
+          "vehicleCameraDistanceKm": "0.026570660511172853",
+          "cameraBodyRadiusKm": "1742.5105738693644",
+          "cameraNearKm": "0.0001",
+          "cameraFarKm": "167889596.64665702",
+          "framingProjectionZoom": "0.6946713789420855",
+          "viewLatitude": "-86.00064656176848",
+          "viewLongitude": "-0.1343227678232779",
+          "screenNorthAngle": "65.58904340548393",
+          "globeLabels": "[]",
+          "stationTexture": "ready",
+          "surfacePreparationStarted": "2565.2000000476837",
+          "surfaceStatus": "ready",
+          "moonColour": "NASA 2025",
+          "moonTextureWidth": "8192",
+          "moonRelief": "LOLA 1x",
+          "moonVisualWarnings": "",
+          "surfaceAngularSegments": "640",
+          "surfacePreparationMs": "1162.7999999523163",
+          "surfaceSite": "-86:0",
+          "surfaceRevision": "1",
+          "flightPointCount": "105",
+          "flightEndpoint": "-0.007494965380112218,-0.0007155397800033825,4.936580921821587e-9"
+        },
+        "resources": [
+          {
+            "name": "/data/south-pole-detail/manifest.json",
+            "durationMs": 2.799999952316284,
+            "transferBytes": 760
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/radii-1x.bin.gz",
+            "durationMs": 4,
+            "transferBytes": 1393558
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-1024.webp",
+            "durationMs": 3.299999952316284,
+            "transferBytes": 511724
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-2048.webp",
+            "durationMs": 3.5999999046325684,
+            "transferBytes": 1970872
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-4096.webp",
+            "durationMs": 12.200000047683716,
+            "transferBytes": 7873646
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-8192.webp",
+            "durationMs": 21,
+            "transferBytes": 31038218
+          }
+        ]
+      },
+      "edits": [
+        {
+          "name": "Thrust",
+          "feedbackMs": 61.54280699999981
+        }
+      ],
+      "errors": [],
+      "failed": []
+    },
+    {
+      "run": 1,
+      "initialMs": 1505.7335090000006,
+      "firstMoonMs": 1320.3964319999995,
+      "frames": {
+        "renderer": "ANGLE (AMD, Vulkan 1.4.335 (Radeon 8060S Graphics (RADV STRIX_HALO) (0x00001586)), radv)",
+        "frames": 213,
+        "maxGapMs": 383.3000000000002,
+        "p95GapMs": 16.800000000000182,
+        "medianGapMs": 16.699999999999818,
+        "contextLost": false,
+        "scene": {
+          "focusRequestId": "1",
+          "sceneInstance": "2aef916d-b7a5-4d0d-9ad0-0466d4ebfaa0",
+          "flightRevision": "1",
+          "horizonRevision": "1",
+          "renderFrame": "241",
+          "vehicleWorldPosition": "-0.2999157460404775,0.30286144089409456,-0.0000032487599581810384",
+          "vehicleQuaternion": "0.011349987665278484,-0.7070443185735751,-0.011350907068560047,-0.7069870340123274",
+          "vehicleVisible": "true",
+          "landingContact": "{\"timeS\":51.86559887975901,\"eastM\":-7.494965380112218,\"northM\":-0.000004936567636865205,\"yM\":-0.7155397799797356,\"velocityMps\":[0.6344815870297769,-0.5064463891164185,1.7123434326339218e-7],\"massKg\":4559.238899003943,\"terrainHeightM\":-0.7155397799798879,\"terrainKnown\":true,\"slopeDeg\":11.69085181866704,\"tiltDeg\":1.8392512484714845,\"headingDeg\":269.9953577219371,\"targetErrorM\":7.494968458331939}",
+          "landingDynamics": "",
+          "landingFragmentCount": "0",
+          "landingMassKg": "4700",
+          "terrainClearanceM": "",
+          "flightTimeS": "0",
+          "landingContactTimeS": "51.86559887975901",
+          "landingContactFrameIndex": "",
+          "landingContactFrameTimeS": "",
+          "sunModel": "ready",
+          "sunDraws": "0",
+          "earthModel": "ready",
+          "earthDraws": "196",
+          "earthRangeKm": "378164.28125",
+          "sunRangeKm": "151931103.42258206",
+          "orbitCount": "0",
+          "orbitPositions": "[]",
+          "starCount": "523",
+          "moonModel": "ready",
+          "terrainSourceSpacingM": "23.976608187134502",
+          "terrainDetail": "Measured DEM sampling 24.0 m; mesh 640 angular segments",
+          "southPoleDetail": "loading",
+          "contactReplay": "ready",
+          "contactFrames": "1441",
+          "contactCacheBytes": "23645369",
+          "focusRange": "ready",
+          "assetFlight": "idle",
+          "ionVisibleTiles": "0",
+          "ionHeightAboveSurfaceM": "",
+          "globeMinimumRadiusKm": "1747.880528431719",
+          "zoomEnabled": "true",
+          "panEnabled": "true",
+          "rotateEnabled": "true",
+          "vehicleScale": "1",
+          "cameraMode": "vehicle",
+          "lunarAppearance": "neutral-linear-rec709-v1",
+          "lightingMode": "atlas",
+          "stationInspection": "false",
+          "visibleStations": "[]",
+          "visiblePoiCount": "0",
+          "visiblePois": "[]",
+          "vehicleFraming": "framed",
+          "vehicleScreenBounds": "{\"left\":176.67578460132896,\"top\":303.125,\"right\":537.5349706301388,\"bottom\":587.3366857338995}",
+          "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":303.125,\"bottom\":625}",
+          "cameraPosition": "-0.2849157460404775,0.31186144089409457,0.019996751240041816",
+          "cameraTarget": "-0.2999157460404775,0.30286144089409456,-0.000003248759958181044",
+          "vehicleCameraDistanceKm": "0.026570660511172853",
+          "cameraBodyRadiusKm": "1742.5105738693644",
+          "cameraNearKm": "0.0001",
+          "cameraFarKm": "167889596.64665702",
+          "framingProjectionZoom": "0.6946713789420855",
+          "viewLatitude": "-86.00064656176848",
+          "viewLongitude": "-0.1343227678232779",
+          "screenNorthAngle": "65.58904340548393",
+          "globeLabels": "[]",
+          "stationTexture": "ready",
+          "surfacePreparationStarted": "2567.7000000476837",
+          "surfaceStatus": "ready",
+          "moonColour": "NASA 2025",
+          "moonTextureWidth": "8192",
+          "moonRelief": "LOLA 1x",
+          "moonVisualWarnings": "",
+          "surfaceAngularSegments": "640",
+          "surfacePreparationMs": "1082.2999999523163",
+          "surfaceSite": "-86:0",
+          "surfaceRevision": "1",
+          "flightPointCount": "105",
+          "flightEndpoint": "-0.007494965380112218,-0.0007155397800033825,4.936580921821587e-9"
+        },
+        "resources": [
+          {
+            "name": "/data/south-pole-detail/manifest.json",
+            "durationMs": 3,
+            "transferBytes": 760
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/radii-1x.bin.gz",
+            "durationMs": 5,
+            "transferBytes": 1393558
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-1024.webp",
+            "durationMs": 3.200000047683716,
+            "transferBytes": 511724
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-2048.webp",
+            "durationMs": 3.799999952316284,
+            "transferBytes": 1970872
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-4096.webp",
+            "durationMs": 14.900000095367432,
+            "transferBytes": 7873646
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-8192.webp",
+            "durationMs": 17.09999990463257,
+            "transferBytes": 31038218
+          }
+        ]
+      },
+      "edits": [
+        {
+          "name": "Thrust",
+          "feedbackMs": 54.180905999999595
+        }
+      ],
+      "errors": [],
+      "failed": []
+    },
+    {
+      "run": 2,
+      "initialMs": 1509.9957030000005,
+      "firstMoonMs": 1283.324641000001,
+      "frames": {
+        "renderer": "ANGLE (AMD, Vulkan 1.4.335 (Radeon 8060S Graphics (RADV STRIX_HALO) (0x00001586)), radv)",
+        "frames": 211,
+        "maxGapMs": 416.6999999999998,
+        "p95GapMs": 16.799999999999272,
+        "medianGapMs": 16.699999999999818,
+        "contextLost": false,
+        "scene": {
+          "focusRequestId": "1",
+          "sceneInstance": "c1faa64c-aa66-4e1f-b315-0b0b9949d6d7",
+          "flightRevision": "1",
+          "horizonRevision": "1",
+          "renderFrame": "239",
+          "vehicleWorldPosition": "-0.2999157460404775,0.30286144089409456,-0.0000032487599581810384",
+          "vehicleQuaternion": "0.011349987665278484,-0.7070443185735751,-0.011350907068560047,-0.7069870340123274",
+          "vehicleVisible": "true",
+          "landingContact": "{\"timeS\":51.86559887975901,\"eastM\":-7.494965380112218,\"northM\":-0.000004936567636865205,\"yM\":-0.7155397799797356,\"velocityMps\":[0.6344815870297769,-0.5064463891164185,1.7123434326339218e-7],\"massKg\":4559.238899003943,\"terrainHeightM\":-0.7155397799798879,\"terrainKnown\":true,\"slopeDeg\":11.69085181866704,\"tiltDeg\":1.8392512484714845,\"headingDeg\":269.9953577219371,\"targetErrorM\":7.494968458331939}",
+          "landingDynamics": "",
+          "landingFragmentCount": "0",
+          "landingMassKg": "4700",
+          "terrainClearanceM": "",
+          "flightTimeS": "0",
+          "landingContactTimeS": "51.86559887975901",
+          "landingContactFrameIndex": "",
+          "landingContactFrameTimeS": "",
+          "sunModel": "ready",
+          "sunDraws": "0",
+          "earthModel": "ready",
+          "earthDraws": "194",
+          "earthRangeKm": "378164.28125",
+          "sunRangeKm": "151931103.42258206",
+          "orbitCount": "0",
+          "orbitPositions": "[]",
+          "starCount": "523",
+          "moonModel": "ready",
+          "terrainSourceSpacingM": "23.976608187134502",
+          "terrainDetail": "Measured DEM sampling 24.0 m; mesh 640 angular segments",
+          "southPoleDetail": "loading",
+          "contactReplay": "ready",
+          "contactFrames": "1441",
+          "contactCacheBytes": "23645369",
+          "focusRange": "ready",
+          "assetFlight": "idle",
+          "ionVisibleTiles": "0",
+          "ionHeightAboveSurfaceM": "",
+          "globeMinimumRadiusKm": "1747.880528431719",
+          "zoomEnabled": "true",
+          "panEnabled": "true",
+          "rotateEnabled": "true",
+          "vehicleScale": "1",
+          "cameraMode": "vehicle",
+          "lunarAppearance": "neutral-linear-rec709-v1",
+          "lightingMode": "atlas",
+          "stationInspection": "false",
+          "visibleStations": "[]",
+          "visiblePoiCount": "0",
+          "visiblePois": "[]",
+          "vehicleFraming": "framed",
+          "vehicleScreenBounds": "{\"left\":176.67578460132896,\"top\":303.125,\"right\":537.5349706301388,\"bottom\":587.3366857338995}",
+          "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":303.125,\"bottom\":625}",
+          "cameraPosition": "-0.2849157460404775,0.31186144089409457,0.019996751240041816",
+          "cameraTarget": "-0.2999157460404775,0.30286144089409456,-0.000003248759958181044",
+          "vehicleCameraDistanceKm": "0.026570660511172853",
+          "cameraBodyRadiusKm": "1742.5105738693644",
+          "cameraNearKm": "0.0001",
+          "cameraFarKm": "167889596.64665702",
+          "framingProjectionZoom": "0.6946713789420855",
+          "viewLatitude": "-86.00064656176848",
+          "viewLongitude": "-0.1343227678232779",
+          "screenNorthAngle": "65.58904340548393",
+          "globeLabels": "[]",
+          "stationTexture": "ready",
+          "surfacePreparationStarted": "2555.399999856949",
+          "surfaceStatus": "ready",
+          "moonColour": "NASA 2025",
+          "moonTextureWidth": "8192",
+          "moonRelief": "LOLA 1x",
+          "moonVisualWarnings": "",
+          "surfaceAngularSegments": "640",
+          "surfacePreparationMs": "1110.1000001430511",
+          "surfaceSite": "-86:0",
+          "surfaceRevision": "1",
+          "flightPointCount": "105",
+          "flightEndpoint": "-0.007494965380112218,-0.0007155397800033825,4.936580921821587e-9"
+        },
+        "resources": [
+          {
+            "name": "/data/south-pole-detail/manifest.json",
+            "durationMs": 2.3999998569488525,
+            "transferBytes": 760
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/radii-1x.bin.gz",
+            "durationMs": 4.699999809265137,
+            "transferBytes": 1393558
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-1024.webp",
+            "durationMs": 2.8999998569488525,
+            "transferBytes": 511724
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-2048.webp",
+            "durationMs": 3.799999952316284,
+            "transferBytes": 1970872
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-4096.webp",
+            "durationMs": 15.099999904632568,
+            "transferBytes": 7873646
+          },
+          {
+            "name": "/navigator/public/data/visual-moon/colour-2025-8192.webp",
+            "durationMs": 17.59999990463257,
+            "transferBytes": 31038218
+          }
+        ]
+      },
+      "edits": [
+        {
+          "name": "Thrust",
+          "feedbackMs": 58.61314399999901
+        }
+      ],
+      "errors": [],
+      "failed": []
+    }
+  ],
+  "limits": [
+    "Isolated browser contexts, local static transport and warm OS files; not cold internet or mobile hardware.",
+    "The intentional original three-second intro is reported in initial time, not represented as a rendering stall.",
+    "Frame gaps measure the actual app after its first usable Moon image, including progressive refinement. No universal latency target is inferred."
+  ]
+}

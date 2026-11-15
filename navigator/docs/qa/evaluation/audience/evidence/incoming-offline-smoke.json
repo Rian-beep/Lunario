@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "startedUtc": "2026-11-15T18:39:49.660Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "hostname": "CLEVO-X2",
+  "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+  "options": {
+    "url": "http://127.0.0.1:4357/web/index.html",
+    "file": "public/solarreach-navigator.html",
+    "out": "/tmp/lunario-audience-baseline-offline",
+    "section": "offline",
+    "chrome": "/opt/google/chrome/chrome"
+  },
+  "offlineSha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256": "8e92e028e7adc59ae11892ed54b821ea90e08a3357edcb3c99b6d6114adca8ab",
+  "sessions": [
+    {
+      "id": "offline",
+      "http": [],
+      "errors": [],
+      "consoleErrors": [
+        "Access to fetch at 'file:///tmp/lunario-eval-audience/navigator/public/data/south-pole-detail/manifest.json' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+        "Failed to load resource: net::ERR_FAILED",
+        "South pole detail terrain failed TypeError: Failed to fetch\n    at wJ.init (file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5212:2576)\n    at AaA (file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5227:23695)\n    at file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5227:77923\n    at file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:4470:4439360"
+      ],
+      "failedRequests": [
+        {
+          "url": "file:///tmp/lunario-eval-audience/navigator/public/data/south-pole-detail/manifest.json",
+          "error": "net::ERR_FAILED"
+        }
+      ],
+      "responses": [],
+      "loader": [
+        {
+          "visible": false,
+          "ms": 27.700000047683716
+        },
+        {
+          "visible": true,
+          "ms": 1042
+        },
+        {
+          "visible": false,
+          "ms": 4560.100000143051
+        }
+      ],
+      "offline": true,
+      "mobile": false,
+      "url": "file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html",
+      "initialTheme": "dark"
+    }
+  ],
+  "checks": [
+    {
+      "session": "offline",
+      "name": "first-load",
+      "actions": "Fresh storage/cache context; navigate; wait for original loader and guide; no seed or loader skip.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:39:50.001Z",
+      "evidence": {
+        "loaderObservedMs": 3518.100000143051,
+        "pausedOnLoad": true,
+        "initialTheme": "dark"
+      },
+      "snapshot": "offline-first-load"
+    },
+    {
+      "session": "offline",
+      "name": "offline-agent-tasks",
+      "actions": "Disconnected incoming HTML: select Malapert, Public 3D/lander; Educator native formula, teaching studio; keep separate from rebuilt web.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:39:55.274Z",
+      "evidence": {
+        "renderer": {
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "vendor": "Google Inc. (Google)"
+        },
+        "httpRequests": 0
+      },
+      "snapshot": "offline-offline-agent-tasks"
+    },
+    {
+      "session": "offline",
+      "name": "offline-no-network-errors",
+      "actions": "Check HTTP attempts and uncaught errors; record missing optional data without suppressing warnings.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:40:15.055Z",
+      "evidence": {
+        "errors": [],
+        "consoleErrors": [
+          "Access to fetch at 'file:///tmp/lunario-eval-audience/navigator/public/data/south-pole-detail/manifest.json' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.",
+          "Failed to load resource: net::ERR_FAILED",
+          "South pole detail terrain failed TypeError: Failed to fetch\n    at wJ.init (file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5212:2576)\n    at AaA (file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5227:23695)\n    at file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:5227:77923\n    at file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html:4470:4439360"
+        ],
+        "http": []
+      },
+      "snapshot": "offline-offline-no-network-errors"
+    }
+  ],
+  "limits": [
+    "Agent browser tasks, no human participant or real screen reader.",
+    "Mobile is touch/viewport emulation, not real hardware.",
+    "SwiftShader is software rendering; reverse tunnel timings do not establish target-device performance.",
+    "Selected opaque DOM text contrast only; no global accessibility or imagery-overlay contrast pass."
+  ],
+  "browser": "149.0.7827.155",
+  "offlineSha256After": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "finishedUtc": "2026-11-15T18:40:17.812Z",
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  }
+}
