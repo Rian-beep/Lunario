@@ -96,6 +96,9 @@ export function mountScene(
   let nasaGlobe:Awaited<ReturnType<typeof createNasaGlobe>>|null=null;
   let ionMoon:IonMoon|null=null;
   let ionToken="",ionGeneration=0;
+  let pendingTileCloseup=0;
+  let tileMotion:{started:number;from:T.Vector3;to:T.Vector3;fromTarget:T.Vector3;target:T.Vector3;fromUp:T.Vector3;up:T.Vector3}|null=null;
+  let streamedFloor:{direction:T.Vector3;point:T.Vector3;at:number}|null=null;
   let nasaRequested=false;
   let transferredGlobe:GlobeAsset|null=null;
   let animationFrame = 0, disposed = false;
@@ -519,6 +522,12 @@ export function mountScene(
     geographicMotion={start:performance.now(),from:physical,to:new T.Vector3(...geographicBodyVector(latDeg,lonDeg,radius)),fromUp:sceneToBody(camera.up,true).normalize(),toUp:new T.Vector3(...geographicNorthVector(latDeg,lonDeg)),fromTarget:sceneToBody(controls.target)};
     lastMode='globe';lastReset=getSettings().reset;controls.minDistance=.006;controls.maxDistance=Math.max(3e9,radius*1.01);controls.maxPolarAngle=Math.PI;
   };
+  const inspectTerrain=()=>{
+    const live=getLive();
+    if(!live.ionAccessToken){status('Connect Cesium Moon tiles before inspecting streamed terrain.');return;}
+    navigateGeography(live.lat,live.lon,true);pendingTileCloseup=performance.now();
+    status('Moving above the selected site; waiting for measured streamed surface.');
+  };
   const stepLongitude=(delta:number)=>{const current=cameraBodyGeography(tuple(sceneToBody(camera.position)),poleMeridian);if(current){const next=stepViewLongitude(current.latDeg,current.lonDeg,delta);navigateGeography(next.latDeg,next.lonDeg);}};
   const poiGroup=new T.Group();scene.add(poiGroup);
   const poiGeometry=new T.SphereGeometry(1,10,8);
@@ -536,6 +545,8 @@ export function mountScene(
   const updatePois=(live:SceneProps)=>{
     clearPois();poiSites=live.sites;
     for(const site of live.sites??[]){
+      // The legacy 89.99°S interpolation sample is not the geographic pole.
+      if(site.id==='south-pole')continue;
       const direction=new T.Vector3(...geographicBodyVector(site.lat,site.lon));
       const height=displayHeight(live.terrain,site.lat,site.lon,0).heightM;
       const mesh=new T.Mesh(poiGeometry,new T.MeshBasicMaterial({color:0xffefbe,depthTest:false,depthWrite:false,toneMapped:false}));
@@ -608,7 +619,7 @@ export function mountScene(
     navigation.begin({key:requestedKey,now,fromCamera:tuple(physicalCamera),fromTarget:tuple(sceneToBody(controls.target)),toCamera:tuple(endpoint),toTarget:tuple(target),overviewRadiusKm:Math.max(6200,(nasaGlobe?.maxRadiusKm??1770)*3.5),alreadyOverview:overview,reducedMotion:reducedMotion.matches});
     controls.minDistance=0.006;controls.maxPolarAngle=Math.PI;followPosition=null;awaitingHandoff=false;
   };
-  const userStart=()=>{if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();rebuildControls();status('Asset focus travel canceled. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
+  const userStart=()=>{if(tileMotion||pendingTileCloseup){tileMotion=null;pendingTileCloseup=0;status('Close terrain approach canceled. Camera control is yours.');}if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();rebuildControls();status('Asset focus travel canceled. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
   const userEnd=()=>{
     if(!canceledGesture)return;canceledGesture=false;
     onSiteMode();lastMode='orbit';lastReset=getSettings().reset;rebuildControls();
@@ -991,18 +1002,39 @@ export function mountScene(
     }
     host.dataset.focusRange=missingRange?'unavailable':'ready';
     host.dataset.assetFlight=assetMotion?'traveling':'idle';
+    if(pendingTileCloseup&&!geographicMotion&&!assetMotion&&ionMoon&&streamedSurface){
+      const direction=bodyToLocal(new T.Vector3(...geographicBodyVector(live.lat,live.lon)),true).normalize();
+      const point=ionMoon.surfacePoint(direction);
+      if(point){
+        tileMotion={started:now,from:camera.position.clone(),to:point.clone().addScaledVector(direction,1),fromTarget:controls.target.clone(),target:point,fromUp:camera.up.clone(),up:bodyToLocal(new T.Vector3(...geographicNorthVector(live.lat,live.lon)),true)};
+        pendingTileCloseup=0;streamedFloor={direction,point,at:now};status('Approaching 1 km above the selected streamed surface.');
+      }else if(now-pendingTileCloseup>20000){pendingTileCloseup=0;status('Surface tiles are not ready at this site. Stay in overview, then retry the close view.');}
+    }
+    if(tileMotion){
+      const t=Math.min(1,(now-tileMotion.started)/2400),f=t*t*t*(10+t*(-15+6*t));
+      camera.position.lerpVectors(tileMotion.from,tileMotion.to,f);controls.target.lerpVectors(tileMotion.fromTarget,tileMotion.target,f);
+      camera.up.fromArray(shortestArcDirection(tuple(tileMotion.fromUp),tuple(tileMotion.up),f));camera.lookAt(controls.target);
+      if(t===1){tileMotion=null;rebuildControls();status('Camera 1 km above selected streamed surface. Scroll or pinch to explore adjacent terrain.');}
+    }
     // Keep the camera above the displayed terrain/reference surface, including
     // after pointer pan/orbit and when a close follow passes a mountain.
     const centre = moonCentre;
     const radial = camera.position.clone().sub(centre);
     const cameraGround = radial.length()<2500?toGround(camera.position).point:null;
-    const minRadius = !navigating&&!assetMotion&&settings.mode==='globe'&&globalSurface ? globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm ?? 1770) : cameraGround?cameraGround.distanceTo(centre) + 0.002:0;
+    if(streamedSurface&&ionMoon&&(!streamedFloor||now-streamedFloor.at>250||streamedFloor.direction.dot(radial.clone().normalize())<.99999)){
+      const direction=radial.clone().normalize(),point=ionMoon.surfacePoint(direction);
+      streamedFloor=point?{direction,point,at:now}:null;
+    }
+    const streamRadius=streamedSurface&&streamedFloor?streamedFloor.point.distanceTo(centre):null;
+    host.dataset.ionVisibleTiles=ionMoon?String(ionMoon.stats.visibleTiles):'0';
+    host.dataset.ionHeightAboveSurfaceM=streamRadius===null?'':String((radial.length()-streamRadius)*1000);
+    const minRadius = streamRadius!==null?streamRadius+.002:!navigating&&!assetMotion&&settings.mode==='globe'&&globalSurface ? globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm ?? 1770) : cameraGround?cameraGround.distanceTo(centre) + 0.002:0;
     controls.enablePan = !['sun','earth'].includes(settings.mode);
     if(!navigating&&!assetMotion&&(settings.mode==='sun'||settings.mode==='earth')){const object=settings.mode==='earth'?earth:sun;controls.minDistance=object.visible&&controls.target.distanceTo(object.position)<1?ASSET_RADII_KM[settings.mode]*1.02:.006;}
     // Orbit target may be panned off-centre: target-distance is not body radius.
     if(!navigating&&settings.mode==='globe') controls.minDistance=.006;
     if (radial.length()<2500 && radial.length() < minRadius) camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));
-    if(!navigating&&!geographicMotion&&!assetMotion)controls.update();
+    if(!navigating&&!geographicMotion&&!assetMotion&&!tileMotion)controls.update();
     // Wheel/pinch control updates must also respect the actual physical sphere.
     if(!navigating&&!assetMotion&&settings.mode==='globe') { camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));camera.lookAt(controls.target); }
     host.dataset.globeMinimumRadiusKm=String(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770));
@@ -1093,6 +1125,8 @@ export function mountScene(
     const edgeScreen=moonCentre.clone().addScaledVector(new T.Vector3(1,0,0).applyQuaternion(camera.quaternion),1737.4).project(camera);
     const globeRadiusPx=Math.abs(edgeScreen.x-centreScreen.x)*host.clientWidth/2;
     const poleLabels=poleRecords.flatMap(p=>{
+      const height=displayHeight(live.terrain,p.lat,0,0).heightM;
+      p.mesh.position.copy(bodyToLocal(new T.Vector3(...geographicBodyVector(p.lat,0)).multiplyScalar((1737400+height)/1000+.002)));
       p.mesh.visible=showPois&&poleFacesCamera(p.pole,tuple(physicalCamera));
       const pixelKm=2*camera.position.distanceTo(p.mesh.position)*Math.tan(T.MathUtils.degToRad(camera.fov/2))/Math.max(1,host.clientHeight);
       p.mesh.scale.setScalar(pixelKm*6);
@@ -1237,6 +1271,6 @@ export function mountScene(
     animationFrame = requestAnimationFrame(render);
   };
   animationFrame = requestAnimationFrame(render);
-  return Object.assign(dispose,{capture:()=>capture(),navigateGeography,stepLongitude,inspectStation,inspectSatellite,isNavigating:()=>navigation.sample(performance.now())!==null||awaitingHandoff||geographicMotion!==null||assetMotion!==null});
+  return Object.assign(dispose,{capture:()=>capture(),navigateGeography,stepLongitude,inspectTerrain,inspectStation,inspectSatellite,isNavigating:()=>navigation.sample(performance.now())!==null||awaitingHandoff||geographicMotion!==null||assetMotion!==null||tileMotion!==null||pendingTileCloseup!==0});
   } catch (error) { dispose(); throw error; }
 }

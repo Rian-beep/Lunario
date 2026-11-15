@@ -19,5 +19,5 @@ export function placePoleLabel(input:{pole:Pole;cameraBody:readonly[number,numbe
  }
  const mx=Math.min(92,width/2),my=Math.min(30,height/2);
  const offscreen=projected.z<=-1||projected.z>=1||x<mx||x>width-mx||y<my||y>height-my;
- return {x:Math.max(mx,Math.min(width-mx,x)),y:Math.max(my,Math.min(height-my,y)),farSide,offscreen};
+ return {x:Math.round(Math.max(mx,Math.min(width-mx,x))),y:Math.round(Math.max(my,Math.min(height-my,y))),farSide,offscreen};
 }

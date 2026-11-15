@@ -143,7 +143,10 @@ const STORAGE = "solarreach-workbench-v1",
 export function Navigator() {
   const [guideOpen, setGuideOpen] = useState(true);
   const [brandIntroReady,setBrandIntroReady]=useState(false);
-  const completeBrandIntro=useCallback(()=>setBrandIntroReady(true),[]);
+  const completeBrandIntro=useCallback(()=>{
+    setBrandIntroReady(true);
+    if(window.parent!==window)window.parent.postMessage({type:'lunario:navigator-ready'},window.location.origin==='null'?'*':window.location.origin);
+  },[]);
   const [focusMode,setFocusMode]=useState(false);
   const [assetFocus,setAssetFocus]=useState<AssetFocus>('moon');
   const [focusRequestId,setFocusRequestId]=useState(0);

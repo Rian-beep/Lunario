@@ -20,3 +20,10 @@ test('far side indicators lie outside the limb and remain legible from a distant
  assert.equal(near.offscreen,true);assert.equal(near.x,92);
  assert.equal(placePoleLabel({pole:'south',cameraBody:[NaN,0,0],projected:{x:0,y:0,z:0},centre:{x:0,y:0},radiusPx:1,width:800,height:600}),null);
 });
+
+
+test('subpixel camera noise cannot keep pole controls moving between animation frames',()=>{
+ const input={pole:'north' as const,cameraBody:[0,0,6200] as const,projected:{x:400.123456,y:240.345678,z:.8},centre:{x:400,y:300},radiusPx:200,width:800,height:600};
+ const a=placePoleLabel(input),b=placePoleLabel({...input,projected:{...input.projected,x:input.projected.x+1e-9,y:input.projected.y-1e-9}});
+ assert.deepEqual(a,b);assert.equal(a!.x,400);assert.equal(a!.y,240);
+});

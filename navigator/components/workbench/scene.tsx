@@ -240,6 +240,7 @@ export function LunarScene(props: SceneProps) {
             <p>Load NASA / USGS lunar tiles around the camera. The existing Moon stays visible while tiles arrive. This needs internet access and a read-only token for Cesium Moon (asset 2684829). The token is held only in this view’s memory, never saved or included in exports.</p>
             <label>Cesium asset-read token<input type="password" autoComplete="off" value={ionDraft} onChange={e=>setIonDraft(e.target.value)} placeholder="Paste your restricted ion token"/></label>
             <Button variant="outline" disabled={!ionDraft.trim()} onClick={()=>{setIonToken(ionDraft.trim());setIonDraft('');}}>Connect lunar tiles</Button>
+            {ionToken&&<Button variant="outline" onClick={()=>{setMode('globe');runtime.current?.inspectTerrain();}}>Inspect selected site · 1 km above surface</Button>}
             {ionToken&&<Button variant="ghost" onClick={()=>{setIonToken('');setIonCredits([]);}}>Disconnect tiles</Button>}
             <p role="status">{ionToken?'Streaming requested. '+modelStatus:'Bundled NASA terrain is active.'}</p>
             <p>Provider source resolution reaches approximately 1 m imagery and 5 m terrain near the poles; mid-latitude source imagery is approximately 100 m and terrain 59 m. Visible detail loads progressively with camera scale and available coverage. <a href="https://cesium.com/platform/cesium-ion/content/cesium-moon/" target="_blank" rel="noreferrer">Source coverage and resolution</a>.</p>
