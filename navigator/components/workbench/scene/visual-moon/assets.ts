@@ -1,4 +1,5 @@
 import * as T from 'three';
+import {acquireVisualMoonBitmap} from './bitmap-atlas';
 import {acquireMoonAtlas,waitForMoonAtlas} from '@/lib/moon-atlas-texture';
 import {publicAssetURL} from '@/lib/public-assets';
 import {decodeVisualMoonRadii,VISUAL_MOON,visualMoonTiers,type VisualMoonDevice} from '@/lib/visual-moon';
@@ -10,6 +11,9 @@ declare global {
 }
 export type VisualMoonOptions = {
   device:VisualMoonDevice;
+  /** Web-only opt-in: decode the unchanged WebP Blob asynchronously before upload.
+   * Unsupported browsers retain HTML images through 4K; embedded offline stays unchanged. */
+  bitmapDecode?:boolean;
   /** Optional pre-upload on the owning renderer, before a progressive map swap. */
   prepareTexture?:(texture:T.Texture)=>void;
 };
@@ -43,7 +47,7 @@ export async function loadVisualMoonRadii(vertexCount:number,signal:AbortSignal)
 
 /** Owns every progressive lease; no date/camera operation starts a request. */
 export async function loadVisualMoonTexture(options:VisualMoonOptions,signal:AbortSignal,status:VisualMoonStatus) {
-  const tiers=visualMoonTiers(options.device);
+  let tiers=visualMoonTiers(options.device);
   if(!tiers.length)throw new Error('No NASA 2025 texture fits the device budget');
   const urlFor=(url:string)=>{
     const embedded=typeof window!=='undefined'?window.__LUNARIO_VISUAL_MOON__:undefined;
@@ -52,7 +56,15 @@ export async function loadVisualMoonTexture(options:VisualMoonOptions,signal:Abo
     if(!data?.startsWith('data:image/webp;base64,'))throw new Error('Embedded visual Moon tier unavailable');
     return data;
   };
-  const acquire=(tier:typeof tiers[number])=>acquireMoonAtlas(urlFor(tier.url),Math.min(8,options.device.maxAnisotropy));
+  const embedded=typeof window!=='undefined'&&window.__LUNARIO_VISUAL_MOON__;
+  let useBitmap=options.bitmapDecode&&typeof createImageBitmap==='function'&&!embedded;
+  if(options.bitmapDecode&&!useBitmap){
+    tiers=tiers.filter(tier=>tier.width<=4096);
+    if(!embedded)status.warnings.push('Asynchronous colour decode unsupported; using HTML images through 4096px');
+  }
+  const acquire=(tier:typeof tiers[number])=>useBitmap
+    ?acquireVisualMoonBitmap(tier,options.device.maxAnisotropy)
+    :acquireMoonAtlas(urlFor(tier.url),Math.min(8,options.device.maxAnisotropy));
   const verify=(texture:T.Texture,tier:typeof tiers[number])=>{
     const image=texture.image as {width:number;height:number}|undefined;
     if(image?.width!==tier.width||image?.height!==tier.height)throw new Error('Visual Moon primary texture dimensions mismatch');
@@ -62,7 +74,14 @@ export async function loadVisualMoonTexture(options:VisualMoonOptions,signal:Abo
   };
   let current=acquire(tiers[0]);
   try {await waitForMoonAtlas(current,signal);signal.throwIfAborted();verify(current.texture,tiers[0]);}
-  catch(error){current.release();throw error;}
+  catch(error){
+    current.release();signal.throwIfAborted();
+    if(!useBitmap)throw error;
+    status.warnings.push('Asynchronous colour decode unavailable; using HTML images through 4096px');
+    useBitmap=false;tiers=tiers.filter(tier=>tier.width<=4096);current=acquire(tiers[0]);
+    try{await waitForMoonAtlas(current,signal);signal.throwIfAborted();verify(current.texture,tiers[0]);}
+    catch(fallbackError){current.release();throw fallbackError;}
+  }
   status.colour='NASA 2025';status.width=tiers[0].width;
   const lifetime=new AbortController();
   let pending:ReturnType<typeof acquire>|undefined,disposed=false,started=false;
