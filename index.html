@@ -144,6 +144,7 @@
     var tries = 0;
     var delayLoaded = false;
     var minimized = false;
+    var contrastDismissed = false;
     var timer = window.setInterval(function () {
       tries += 1;
       try {
@@ -165,7 +166,14 @@
             minimized = true;
           }
         }
-        if (split && split.getAttribute("aria-pressed") === "true" && minimized) window.clearInterval(timer);
+        if (delayLoaded && !contrastDismissed) {
+          var contrast = doc.querySelector('[aria-label="Dismiss terrain contrast"]');
+          if (contrast) {
+            contrast.click();
+            contrastDismissed = true;
+          }
+        }
+        if (split && split.getAttribute("aria-pressed") === "true" && minimized && contrastDismissed) window.clearInterval(timer);
       } catch (e) {}
       if (tries >= 80) window.clearInterval(timer);
     }, 250);
