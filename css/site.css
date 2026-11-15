@@ -137,6 +137,9 @@ main { flex: 1; width: 100%; }
 .compare td { padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); color: #B9BCC2; }
 .compare td:first-child { font-family: var(--mono); font-size: 14px; color: var(--regolith); white-space: nowrap; }
 .compare td.ok { color: var(--amber); }
+.compare td.bad { color: #E2735A; }
+.compare td:first-child { line-height: 1.5; }
+.compare td:not(:first-child) { white-space: nowrap; }
 @media (max-width: 760px) {
   .block { grid-template-columns: 1fr; }
   .row { grid-template-columns: 1fr; gap: 4px; }
@@ -183,4 +186,10 @@ main { flex: 1; width: 100%; }
   .factor { grid-template-columns: 1fr; gap: 16px; }
   .factor__name::after { margin-top: 12px; margin-bottom: 4px; }
   .factor__list div { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+}
+@media (max-width: 600px) {
+  .compare td:not(:first-child) { white-space: normal; }
+  .compare td:first-child { font-size: 12px; }
+  .compare th, .compare td { padding-right: 8px; font-size: 13px; }
+  .compare th { font-size: 9px; letter-spacing: 0.08em; }
 }
