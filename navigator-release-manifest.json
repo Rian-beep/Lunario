@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "9b19f2616d73e25434dc2fae269af7fce612cbb2",
+  "sourceCommit": "4a8dec71fa63992f0daf8beb698ec998cc5e9b5e",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -979,8 +979,8 @@
     },
     {
       "path": "docs/qa/map-integration-final.md",
-      "bytes": 2223,
-      "sha256": "300c3f17298b7385fc3af7bd730d4109f84d27de68ea1487563354799c4808f5"
+      "bytes": 2801,
+      "sha256": "b7ef216503d5f2f4182e7979cb1bd010d85902f4b1e6c14cea7024a43a817496"
     },
     {
       "path": "docs/qa/map-screening-worker/README.md",
@@ -2504,8 +2504,8 @@
     },
     {
       "path": "lib/suitability/index.ts",
-      "bytes": 10862,
-      "sha256": "111e3ae732e1ccb9b0d9280314e1cb5e14831b77e83b8658bebce02d847ba335"
+      "bytes": 10891,
+      "sha256": "c9e2a8551380e55fb7f49b1f378c4c2659664277efa162f8464dc94fd3ff1552"
     },
     {
       "path": "lib/teaching.ts",
@@ -2969,8 +2969,8 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 81624126,
-      "sha256": "c6110a491b71695dd5ece5fa31e51b3be1d1f78d3c8f3d8f2dc0a1908a756bf1"
+      "bytes": 81624145,
+      "sha256": "500ecca4774b7adead4a5268f3ad9b22bc970510a05c6b4d69b074ee77680828"
     },
     {
       "path": "scripts/build-mathml.ts",
@@ -2986,6 +2986,11 @@
       "path": "scripts/build-web.mjs",
       "bytes": 8382,
       "sha256": "d401fe3d4cd8b26602cf3f35d415030e34cdb639ac8e0796ede07e2262665b89"
+    },
+    {
+      "path": "scripts/check-demo-final.mjs",
+      "bytes": 812,
+      "sha256": "efa6f423eb09ddbfae94b1b81a174f992191863b44433768600c13c227d091b9"
     },
     {
       "path": "scripts/prepare-celestial-models.mjs",

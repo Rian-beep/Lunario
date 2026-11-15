@@ -4614,7 +4614,7 @@
       "format": "esm"
     },
     "lib/suitability/index.ts": {
-      "bytes": 10862,
+      "bytes": 10891,
       "imports": [
         {
           "path": "lib/astro.ts",
@@ -53871,7 +53871,7 @@
       },
       "bytes": 16627
     },
-    "assets/chunks/suitability-JPCZX5RS.js": {
+    "assets/chunks/suitability-ZNWHTLID.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-AX4KF55O.js",
@@ -53917,10 +53917,10 @@
           "bytesInOutput": 3650
         },
         "lib/suitability/index.ts": {
-          "bytesInOutput": 5312
+          "bytesInOutput": 5331
         }
       },
-      "bytes": 9446
+      "bytes": 9465
     },
     "assets/chunks/teaching-studio-3AF4IFKL.js": {
       "imports": [
@@ -54283,69 +54283,7 @@
       },
       "bytes": 23280
     },
-    "assets/main-DXBTEAL3.css": {
-      "imports": [
-        {
-          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
-          "kind": "url-token"
-        }
-      ],
-      "inputs": {
-        "components/map-screening/styles.css": {
-          "bytesInOutput": 2896
-        },
-        "components/branding/branding.css": {
-          "bytesInOutput": 515
-        },
-        "components/audience/audience.module.css": {
-          "bytesInOutput": 4123
-        },
-        "components/global-map.module.css": {
-          "bytesInOutput": 2814
-        },
-        "components/workbench/data-connections.module.css": {
-          "bytesInOutput": 1016
-        },
-        "components/workbench/audience-guide.module.css": {
-          "bytesInOutput": 1888
-        },
-        "components/workbench/alternatives.module.css": {
-          "bytesInOutput": 7058
-        },
-        "components/workbench/visibility-windows.module.css": {
-          "bytesInOutput": 2242
-        },
-        "components/workbench/teaching-workbench.module.css": {
-          "bytesInOutput": 1310
-        },
-        "components/workbench/touchdown-lab.module.css": {
-          "bytesInOutput": 8932
-        },
-        "components/workbench/solar-system-view.module.css": {
-          "bytesInOutput": 4477
-        },
-        "components/workbench/globe-navigation.module.css": {
-          "bytesInOutput": 1210
-        },
-        "components/replanning/workspace.module.css": {
-          "bytesInOutput": 6050
-        },
-        "components/education-materials/materials.module.css": {
-          "bytesInOutput": 742
-        },
-        "app/mission-theme.css": {
-          "bytesInOutput": 26608
-        },
-        "app/lunario-fonts.css": {
-          "bytesInOutput": 70
-        },
-        "web-source/fonts.css": {
-          "bytesInOutput": 235
-        }
-      },
-      "bytes": 72187
-    },
-    "assets/main-YYH3EL27.js": {
+    "assets/main-7QC2BFEN.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-Z5OIDHRQ.js",
@@ -54436,7 +54374,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/suitability-JPCZX5RS.js",
+          "path": "assets/chunks/suitability-ZNWHTLID.js",
           "kind": "dynamic-import"
         },
         {
@@ -54747,6 +54685,68 @@
         }
       },
       "bytes": 606910
+    },
+    "assets/main-DXBTEAL3.css": {
+      "imports": [
+        {
+          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
+          "kind": "url-token"
+        }
+      ],
+      "inputs": {
+        "components/map-screening/styles.css": {
+          "bytesInOutput": 2896
+        },
+        "components/branding/branding.css": {
+          "bytesInOutput": 515
+        },
+        "components/audience/audience.module.css": {
+          "bytesInOutput": 4123
+        },
+        "components/global-map.module.css": {
+          "bytesInOutput": 2814
+        },
+        "components/workbench/data-connections.module.css": {
+          "bytesInOutput": 1016
+        },
+        "components/workbench/audience-guide.module.css": {
+          "bytesInOutput": 1888
+        },
+        "components/workbench/alternatives.module.css": {
+          "bytesInOutput": 7058
+        },
+        "components/workbench/visibility-windows.module.css": {
+          "bytesInOutput": 2242
+        },
+        "components/workbench/teaching-workbench.module.css": {
+          "bytesInOutput": 1310
+        },
+        "components/workbench/touchdown-lab.module.css": {
+          "bytesInOutput": 8932
+        },
+        "components/workbench/solar-system-view.module.css": {
+          "bytesInOutput": 4477
+        },
+        "components/workbench/globe-navigation.module.css": {
+          "bytesInOutput": 1210
+        },
+        "components/replanning/workspace.module.css": {
+          "bytesInOutput": 6050
+        },
+        "components/education-materials/materials.module.css": {
+          "bytesInOutput": 742
+        },
+        "app/mission-theme.css": {
+          "bytesInOutput": 26608
+        },
+        "app/lunario-fonts.css": {
+          "bytesInOutput": 70
+        },
+        "web-source/fonts.css": {
+          "bytesInOutput": 235
+        }
+      },
+      "bytes": 72187
     }
   }
 }

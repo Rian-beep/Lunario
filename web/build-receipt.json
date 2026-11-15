@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "publicBase": "../navigator/public/",
-  "entry": "assets/main-YYH3EL27.js",
+  "entry": "assets/main-7QC2BFEN.js",
   "initialJS": [
     "assets/chunks/chunk-2DMNQ476.js",
     "assets/chunks/chunk-2MUIZFOA.js",
@@ -25,11 +25,11 @@
     "assets/chunks/chunk-VEP72JGX.js",
     "assets/chunks/chunk-YOLCIZJX.js",
     "assets/chunks/chunk-Z5OIDHRQ.js",
-    "assets/main-YYH3EL27.js"
+    "assets/main-7QC2BFEN.js"
   ],
   "initialJSBytes": 1310512,
   "initialJSGzip6EstimateBytes": 390597,
-  "totalJSBytes": 7025545,
+  "totalJSBytes": 7025564,
   "initialInputs": [
     "app/lunario-fonts.css",
     "app/mission-theme.css",
@@ -597,10 +597,10 @@
       "gzip6EstimateBytes": 6822
     },
     {
-      "path": "assets/chunks/suitability-JPCZX5RS.js",
-      "bytes": 9446,
-      "sha256": "19d20d45af45552e4dee611d21be8707b21eaa8c735e3beaceffe7c62d653774",
-      "gzip6EstimateBytes": 4102
+      "path": "assets/chunks/suitability-ZNWHTLID.js",
+      "bytes": 9465,
+      "sha256": "a9bd403e027606a883a95b9157b7a1f75e7cfdf5123ceae01f70f3d3238cc450",
+      "gzip6EstimateBytes": 4116
     },
     {
       "path": "assets/chunks/teaching-studio-3AF4IFKL.js",
@@ -681,16 +681,16 @@
       "gzip6EstimateBytes": 678
     },
     {
+      "path": "assets/main-7QC2BFEN.js",
+      "bytes": 606910,
+      "sha256": "7803b106f3dfd178d2f2aa3e51ca18ba0f7766b6d888456f5c4967a6f66c8efb",
+      "gzip6EstimateBytes": 190876
+    },
+    {
       "path": "assets/main-DXBTEAL3.css",
       "bytes": 72187,
       "sha256": "a79d7ca0e9f8789a8b3de83703f47d831b44a64d483235ede4d1fa9c558dc2fd",
       "gzip6EstimateBytes": 14459
-    },
-    {
-      "path": "assets/main-YYH3EL27.js",
-      "bytes": 606910,
-      "sha256": "99aa6caa39f480b3fca1926bc69af9505933ba796985ba732d6e75eb414aab63",
-      "gzip6EstimateBytes": 190876
     },
     {
       "path": "assets/tailwind-c9bd677ad739.css",
@@ -701,14 +701,14 @@
     {
       "path": "index.html",
       "bytes": 1222,
-      "sha256": "f2e156f12b8606c19108a3dae4362d3085405caae496e651b22baeaaee47c600",
+      "sha256": "fe6a5bc728bb1b5840e87612f712dc8f71f756ec151188955aa817afd203fde9",
       "gzip6EstimateBytes": 658
     },
     {
       "path": "metafile.json",
       "bytes": 1762004,
-      "sha256": "3cc18bb1919737fa15186251b7259014c5f73e488f1189b22f3f329063e3e2dc",
-      "gzip6EstimateBytes": 80149
+      "sha256": "df717996b7a1b2cb077cfebc7b8d4b575a1d7787bb76f6230fc673f5e320450b",
+      "gzip6EstimateBytes": 80124
     }
   ],
   "limits": "Static transitive import closure; render-triggered imports may add requests. Gzip6 estimates, not browser timings or CDN wire bytes."
