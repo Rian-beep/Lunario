@@ -1,3 +1,5 @@
+import {placePoleLabel,poleFacesCamera} from "./pole-labels";
+import {publicAssetURL} from "@/lib/public-assets";
 import {terrainDetailPolicy} from '@/lib/terrain-lod';
 import {orbitState,orbitTrack,orbitTime} from '@/lib/orbits';
 import {boxCorners, frameVehicle, observeSceneOcclusion, projectedBounds, pullBackForDebris, type ScreenRect} from "@/lib/camera-framing";
@@ -26,6 +28,7 @@ import type { SceneProps } from "../scene";
 import {createSiteTransition,shortestArcDirection,siteNavigationKey,siteCameraOffset,retainCameraAfterSiteArrival,type Point3} from "@/lib/site-transition";
 import {createNasaGlobe} from "./nasa-globe";
 
+type IonMoon=import("./ion/create-ion-moon").IonMoon;
 type GlobeAsset=Awaited<ReturnType<typeof createNasaGlobe>>;
 export type SceneCameraHandoff = {key:string;camera:Point3;target:Point3;up:Point3;resume:boolean;mode?:CameraMode;
   globe?:{asset:GlobeAsset;lat:number;lon:number;referenceHeightM:number}};
@@ -67,7 +70,7 @@ export function mountScene(
   onCelestialStatus:(kind:CelestialAssetKind,status:string)=>void=()=>{},
   onSiteMode:()=>void=()=>{},
   onSurfaceStatus:(status:string)=>void=()=>{},
-  onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>})=>void=()=>{},
+  onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>})=>void=()=>{},
   onStation:(id:string|null)=>void=()=>{},
   onVehicleFocus:()=>void=()=>{},
 ) {
@@ -91,6 +94,8 @@ export function mountScene(
   const celestialAbort=new AbortController();
   const celestialAssets:Partial<Record<CelestialAssetKind,Awaited<ReturnType<typeof loadCelestialAsset>>>>={};
   let nasaGlobe:Awaited<ReturnType<typeof createNasaGlobe>>|null=null;
+  let ionMoon:IonMoon|null=null;
+  let ionToken="",ionGeneration=0;
   let nasaRequested=false;
   let transferredGlobe:GlobeAsset|null=null;
   let animationFrame = 0, disposed = false;
@@ -105,6 +110,7 @@ export function mountScene(
   const dispose = () => {
     if (disposed) return;
     disposed = true;
+    ++ionGeneration;ionMoon?.dispose();ionMoon=null;
     globeAbort.abort();celestialAbort.abort();surfaceAbort?.abort();cancelNavigation();
     for(const asset of Object.values(celestialAssets)){asset.group.removeFromParent();asset.dispose();}
 
@@ -205,7 +211,7 @@ export function mountScene(
   const registeredMaterial=new T.MeshBasicMaterial({color:0xffffff});
   const registeredEarth=new T.Mesh(registeredGeometry,registeredMaterial);stationRoot.add(registeredEarth);
   let registeredReady=false;
-  try{new T.TextureLoader().load(dsnEarthTextureUrl(),texture=>{
+  try{new T.TextureLoader().load(publicAssetURL(dsnEarthTextureUrl()),texture=>{
     if(disposed){texture.dispose();return;}texture.colorSpace=T.SRGBColorSpace;registeredMaterial.map=texture;registeredMaterial.needsUpdate=true;registeredReady=true;host.dataset.stationTexture='ready';
   },undefined,()=>{if(!disposed){host.dataset.stationTexture='error';onCelestialStatus('earth','station imagery unavailable');}});}catch{host.dataset.stationTexture='error';}
   const stationGeometry=new T.SphereGeometry(1,12,8);
@@ -516,6 +522,13 @@ export function mountScene(
   const stepLongitude=(delta:number)=>{const current=cameraBodyGeography(tuple(sceneToBody(camera.position)),poleMeridian);if(current){const next=stepViewLongitude(current.latDeg,current.lonDeg,delta);navigateGeography(next.latDeg,next.lonDeg);}};
   const poiGroup=new T.Group();scene.add(poiGroup);
   const poiGeometry=new T.SphereGeometry(1,10,8);
+  const poleRecords=([{pole:'north',lat:90,id:'nav-north-pole',name:'North pole · 90°N'},{pole:'south',lat:-90,id:'nav-south-pole',name:'South pole · 90°S'}] as const).map(p=>{
+    const direction=new T.Vector3(...geographicBodyVector(p.lat,0));
+    const height=displayHeight(initial.terrain,p.lat,0,0).heightM;
+    const mesh=new T.Mesh(poiGeometry,new T.MeshBasicMaterial({color:0xfff7df,depthTest:false,depthWrite:false,toneMapped:false}));
+    mesh.position.copy(bodyToLocal(direction.multiplyScalar((1737400+height)/1000+.1)));mesh.renderOrder=22;poiGroup.add(mesh);
+    return {...p,mesh};
+  });
   let poiSites=initial.sites;
   const poiRecords:{site:NonNullable<SceneProps['sites']>[number];mesh:T.Mesh<T.SphereGeometry,T.MeshBasicMaterial>;direction:T.Vector3}[]=[];
   let hoveredId:string|undefined,poiLabel:T.Sprite|null=null;
@@ -778,9 +791,31 @@ export function mountScene(
     if(detail.segments!==requestedSurfaceSegments&&!navigating){if(!lodChangedAt)lodChangedAt=now;if(now-lodChangedAt>500){lodChangedAt=0;prepareSurface(live,detail.segments);}}else lodChangedAt=0;
     host.dataset.terrainSourceSpacingM=detail.spacingM===null?'unavailable':String(detail.spacingM);
     host.dataset.terrainDetail=detail.spacingM===null?'No fine measured DEM at selected point':`Measured DEM sampling ${detail.spacingM.toFixed(1)} m; mesh ${surfaceSegments} angular segments`;
+    const nextIonToken=live.offline?'':(live.ionAccessToken??'');
+    if(nextIonToken!==ionToken){
+      ionToken=nextIonToken;const generation=++ionGeneration;
+      ionMoon?.dispose();ionMoon=null;host.dataset.ionMoon=ionToken?'initializing':'off';
+      if(ionToken){
+        void import('./ion/create-ion-moon').then(({createIonMoon})=>{
+          if(disposed||generation!==ionGeneration)return;
+          ionMoon=createIonMoon({camera,renderer,lat:initial.lat,lon:initial.lon,referenceRadiusKm:frame.referenceRadiusM/1000,accessToken:nextIonToken,decoderUrl:new URL(publicAssetURL('/data/equipment/draco/'),document.documentURI).pathname,onStatus:status=>{
+            if(disposed||generation!==ionGeneration)return;
+            host.dataset.ionMoon=status.phase;
+            if(status.phase==='ready'){onModelStatus('Cesium Moon · NASA / USGS · streamed visual terrain');getLive().onIonCredits?.(ionMoon?.attribution.map(credit=>credit.value.replace(/<[^>]*>/g,''))??[]);}
+            else if(status.phase==='loading')onModelStatus('Loading camera-local Cesium Moon tiles…');
+            else if(status.phase==='error')onModelStatus(status.error??'Online tiles unavailable; bundled terrain remains active.');
+          }});
+          scene.add(ionMoon.group);
+        }).catch(()=>{if(!disposed&&generation===ionGeneration){host.dataset.ionMoon='error';onModelStatus('Online tiles renderer unavailable; bundled terrain remains active.');}});
+      }
+    }
+    // Keep flight/collision tied to the numerical DEM. Provider geometry is visual context.
+    const useIon=!!ionMoon&&!live.offline&&!['flight','follow','vehicle','earth','sun'].includes(settings.mode);
+    if(ionMoon){ionMoon.group.visible=useIon;if(useIon)ionMoon.update();}
+    const streamedSurface=useIon&&ionMoon?.ready===true;
     const globalSurface=(settings.mode==='globe'&&!detail.measuredCloseView)||sceneToBody(camera.position).length()>1850;
-    ground.visible=!globalSurface||!nasaGlobe;
-    if(nasaGlobe)nasaGlobe.mesh.visible=globalSurface;
+    ground.visible=!streamedSurface&&(!globalSurface||!nasaGlobe);
+    if(nasaGlobe)nasaGlobe.mesh.visible=!streamedSurface&&globalSurface;
     path.visible=travelled.visible=groundTrack.visible=pathVectors.length>1&&!['globe','earth','sun'].includes(settings.mode)&&!navigating;
     let vehicleMassKg: number | null = null;
     if (flightPoints.length) {
@@ -1054,6 +1089,17 @@ export function mountScene(
     sunlight.shadow.normalBias = shadowHalfSpanKm * 0.00008;
     const physicalCamera=sceneToBody(camera.position),bodyDirection=physicalCamera.clone().normalize();
     const showPois=!navigating&&['globe','orbit'].includes(settings.mode);
+    const centreScreen=moonCentre.clone().project(camera),centrePixels={x:(centreScreen.x+1)*host.clientWidth/2,y:(1-centreScreen.y)*host.clientHeight/2};
+    const edgeScreen=moonCentre.clone().addScaledVector(new T.Vector3(1,0,0).applyQuaternion(camera.quaternion),1737.4).project(camera);
+    const globeRadiusPx=Math.abs(edgeScreen.x-centreScreen.x)*host.clientWidth/2;
+    const poleLabels=poleRecords.flatMap(p=>{
+      p.mesh.visible=showPois&&poleFacesCamera(p.pole,tuple(physicalCamera));
+      const pixelKm=2*camera.position.distanceTo(p.mesh.position)*Math.tan(T.MathUtils.degToRad(camera.fov/2))/Math.max(1,host.clientHeight);
+      p.mesh.scale.setScalar(pixelKm*6);
+      const screen=p.mesh.position.clone().project(camera);
+      const placement=placePoleLabel({pole:p.pole,cameraBody:tuple(physicalCamera),projected:{x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2,z:screen.z},centre:centrePixels,radiusPx:globeRadiusPx,width:host.clientWidth,height:host.clientHeight});
+      return placement?[{id:p.id,name:p.name,lat:p.lat,lon:0,pole:true,...placement}]:[];
+    });
     for(const item of poiRecords){
       item.mesh.visible=showPois&&item.direction.dot(bodyDirection)>Math.min(.9999,1737.4/physicalCamera.length());
       const pixelKm=2*camera.position.distanceTo(item.mesh.position)*Math.tan(T.MathUtils.degToRad(camera.fov/2))/Math.max(1,host.clientHeight);
@@ -1063,7 +1109,12 @@ export function mountScene(
     const poiText=poi?.site.name??'';
     if(poiText!==lastPoiLabel){if(poiLabel){scene.remove(poiLabel);poiLabel.material.map?.dispose();poiLabel.material.dispose();}poiLabel=poi?label(poiText):null;if(poiLabel){poiLabel.material.depthTest=false;poiLabel.renderOrder=21;scene.add(poiLabel);}lastPoiLabel=poiText;}
     if(poiLabel&&poi){poiLabel.position.copy(poi.mesh.position).addScaledVector(camera.up,poi.mesh.scale.x*3);poiLabel.visible=showPois;}
-    for(const node of host.parentElement?.querySelectorAll<HTMLButtonElement>('[data-globe-label]')??[]){const id=node.dataset.globeLabel,poi=poiRecords.find(p=>p.site.id===id);const point=poi?.mesh.position??((id==='nav-north-pole'||id==='nav-south-pole')?bodyToLocal(new T.Vector3(...geographicBodyVector(id==='nav-north-pole'?90:-90,0)).multiplyScalar(1740)):null);if(point){const screen=point.clone().project(camera),translate=`${(screen.x+1)*host.clientWidth/2}px ${(1-screen.y)*host.clientHeight/2}px`;if(node.style.translate!==translate)node.style.translate=translate;}}
+    for(const node of host.parentElement?.querySelectorAll<HTMLButtonElement>('[data-globe-label]')??[]){
+      const id=node.dataset.globeLabel,pole=poleLabels.find(p=>p.id===id),poi=poiRecords.find(p=>p.site.id===id);
+      const screen=poi?.mesh.position.clone().project(camera);
+      const point=pole??(screen?{x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2}:null);
+      if(point){const translate=`${point.x}px ${point.y}px`;if(node.style.translate!==translate)node.style.translate=translate;}
+    }
     host.dataset.visiblePoiCount=String(poiRecords.filter(item=>item.mesh.visible).length);
     host.dataset.visiblePois=JSON.stringify(poiRecords.filter(item=>item.mesh.visible).map(item=>{const screen=item.mesh.position.clone().project(camera);return {id:item.site.id,name:item.site.name,lat:item.site.lat,lon:item.site.lon,x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2};}));
     cameraOffset.copy(camera.position).sub(controls.target);
@@ -1129,9 +1180,9 @@ export function mountScene(
       const nx=north.dot(right),ny=north.dot(screenUp);
       const angle=Math.hypot(nx,ny)>1e-6?Math.atan2(nx,ny)*180/Math.PI:undefined;
       host.dataset.viewLatitude=String(geographic.latDeg);host.dataset.viewLongitude=String(geographic.lonDeg);host.dataset.screenNorthAngle=angle===undefined?'':String(angle);
-      const labels:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>=[];
+      const labels:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>=[];
       if(showPois){
-        for(const pole of [{id:'nav-north-pole',name:'North pole · 90°N',lat:90},{id:'nav-south-pole',name:'South pole · 90°S',lat:-90}]){const direction=new T.Vector3(...geographicBodyVector(pole.lat,0));if(direction.dot(bodyDirection)>Math.min(.9999,1737.4/physicalCamera.length())){const screen=bodyToLocal(direction.multiplyScalar(1740)).project(camera);if(screen.z>-1&&screen.z<1)labels.push({...pole,lon:0,pole:true,x:(screen.x+1)*host.clientWidth/2,y:(1-screen.y)*host.clientHeight/2});}}
+        labels.push(...poleLabels);
         for(const item of [...poiRecords].sort((a,b)=>Number(b.site.id===live.selectedSiteId)-Number(a.site.id===live.selectedSiteId))){if(!item.mesh.visible)continue;const screen=item.mesh.position.clone().project(camera),x=(screen.x+1)*host.clientWidth/2,y=(1-screen.y)*host.clientHeight/2;if(screen.z<=-1||screen.z>=1||x<16||x>host.clientWidth-16||y<16||y>host.clientHeight-16||labels.some(l=>Math.abs(l.x-x)<145&&Math.abs(l.y-y)<36))continue;labels.push({id:item.site.id,name:item.site.name,x,y,lat:item.site.lat,lon:item.site.lon});if(labels.length>=8)break;}
       }
       host.dataset.globeLabels=JSON.stringify(labels);

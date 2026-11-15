@@ -27,6 +27,8 @@ import { mountScene, type SceneCameraHandoff, type CameraMode, type CameraSettin
 
 type Pose = { sunAz: number; sunEl: number; earthAz: number; earthEl: number };
 export type SceneProps = {
+  ionAccessToken?:string;
+  onIonCredits?:(credits:string[])=>void;
   assetFocus?: AssetFocus;
   controlsTarget?: HTMLElement | null;
   /** Scope containing the actual floating panels; defaults to the closest app. */
@@ -84,8 +86,11 @@ export function LunarScene(props: SceneProps) {
   const transfer = useRef<SceneCameraHandoff | null>(null);
   const [revision, setRevision] = useState(0);
   const [navigationStatus, setNavigationStatus] = useState("");
+  const [ionToken,setIonToken]=useState("");
+  const [ionCredits,setIonCredits]=useState<string[]>([]);
+  const [ionDraft,setIonDraft]=useState("");
   const live = useRef(props);
-  live.current = {...props,orbits,onSelectOrbital:id=>{setOrbits(v=>({...v,selectedId:id}));setOrbitRequest(v=>v+1);}};
+  live.current = {...props,ionAccessToken:ionToken,onIonCredits:setIonCredits,orbits,onSelectOrbital:id=>{setOrbits(v=>({...v,selectedId:id}));setOrbitRequest(v=>v+1);}};
   const descriptionId = useId();
   const [error, setError] = useState<string | null>(null);
   const [textureFailed, setTextureFailed] = useState(false);
@@ -104,7 +109,7 @@ export function LunarScene(props: SceneProps) {
   const [showReadout,setShowReadout]=useState(false);
   const [reset, setReset] = useState(0);
   const [retry, setRetry] = useState(0);
-  const [geography,setGeography]=useState<{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean}>}>({latDeg:props.lat,lonDeg:props.lon});
+  const [geography,setGeography]=useState<{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>}>({latDeg:props.lat,lonDeg:props.lon});
   const [surfaceStatus,setSurfaceStatus]=useState('');
   const [modelStatus,setModelStatus]=useState('');
   const [equipmentStatus,setEquipmentStatus]=useState('loading');
@@ -231,6 +236,15 @@ export function LunarScene(props: SceneProps) {
       <details className="sq-notes" id={descriptionId}>
         <summary>Surface & scale</summary>
         <div className="sq-notes-body">
+          {!props.offline&&<details className="ion-settings"><summary>Stream detailed Moon terrain · Cesium ion</summary>
+            <p>Load NASA / USGS lunar tiles around the camera. The existing Moon stays visible while tiles arrive. This needs internet access and a read-only token for Cesium Moon (asset 2684829). The token is held only in this view’s memory, never saved or included in exports.</p>
+            <label>Cesium asset-read token<input type="password" autoComplete="off" value={ionDraft} onChange={e=>setIonDraft(e.target.value)} placeholder="Paste your restricted ion token"/></label>
+            <Button variant="outline" disabled={!ionDraft.trim()} onClick={()=>{setIonToken(ionDraft.trim());setIonDraft('');}}>Connect lunar tiles</Button>
+            {ionToken&&<Button variant="ghost" onClick={()=>{setIonToken('');setIonCredits([]);}}>Disconnect tiles</Button>}
+            <p role="status">{ionToken?'Streaming requested. '+modelStatus:'Bundled NASA terrain is active.'}</p>
+            <p>Provider source resolution reaches approximately 1 m imagery and 5 m terrain near the poles; mid-latitude source imagery is approximately 100 m and terrain 59 m. Visible detail loads progressively with camera scale and available coverage. <a href="https://cesium.com/platform/cesium-ion/content/cesium-moon/" target="_blank" rel="noreferrer">Source coverage and resolution</a>.</p>
+            <p>Credits: NASA, USGS Astrogeology Science Center, Cesium. Streamed imagery shows historical illumination. Flight collision and planning calculations continue to use the documented numerical DEM; streamed tiles do not certify landing hazards.</p>
+          </details>}
           <strong>Surface, lighting & scale <Info label="Sun direction" extra="3D lighting follows this direction. A small display fill reveals shadowed terrain; it does not change computed sunlight or Earth visibility." /></strong>
           <p>Original NASA Sun model: {celestialStatus.sun}. Original NASA Earth model: {celestialStatus.earth}. {CELESTIAL_ASSETS.sun.scope} Physical body radii and supplied JPL centre ranges are used; bodies with unavailable ranges are hidden. Directions retain the existing local pose and source-frame caveats. Inspection cameras change the viewpoint. Labels are enlarged. Earth credit: {CELESTIAL_ASSETS.earth.credit}.</p>
           <p>{LANDER_ASSET.scope} Vehicle scale is fixed at nominal 1× (7 m height); camera zoom never resizes the spacecraft. Asset credit: {LANDER_ASSET.credit}. Equipment status: {equipmentStatus}. {equipmentStatus==='error' ? 'NASA equipment could not load; no replacement geometry is shown.' : ''}</p>
@@ -267,7 +281,8 @@ export function LunarScene(props: SceneProps) {
         <span>{readout.currentCoverage === "fine" ? "Fine numerical terrain coverage" : readout.currentCoverage === "global-coarse" ? "Coarse global LOLA terrain · approximately 4.3 km spacing · fine clearance unknown" : readout.currentCoverage === "regional" ? "Regional DEM only · flight terrain clearance unknown" : "Reference-sphere context · terrain clearance unknown"}</span>
       </output>}
       {props.controlsTarget ? createPortal(sceneControls, props.controlsTarget) : <div className="scene-inline-controls">{sceneControls}</div>}
-      {mapLabels&&focus==='moon'&&['globe','orbit'].includes(activeMode)&&<div className="globe-map-labels" aria-label="Visible lunar landmarks">{geography.labels?.map(point=><button key={point.id} data-globe-label={point.id} className={point.pole?'pole-label':''} style={{left:0,top:0,translate:`${point.x}px ${point.y}px`}} onClick={()=>point.pole?runtime.current?.navigateGeography(point.lat,geography.lonDeg):props.onSelectSite?.(point.id)}>{point.name}</button>)}</div>}
+      {ionToken&&ionCredits.length>0&&focus==='moon'&&<p className="ion-credit" aria-label="Streamed lunar terrain attribution">{ionCredits.join(' · ')} · <a href="https://cesium.com/platform/cesium-ion/content/cesium-moon/" target="_blank" rel="noreferrer">Cesium Moon</a></p>}
+      {mapLabels&&focus==='moon'&&['globe','orbit'].includes(activeMode)&&<div className="globe-map-labels" aria-label="Visible lunar landmarks">{geography.labels?.map(point=><button key={point.id} data-globe-label={point.id} className={point.pole?`pole-label ${point.farSide?'pole-far-side':''}`:''} style={{left:0,top:0,translate:`${point.x}px ${point.y}px`}} onClick={()=>{if(point.pole){setMode('globe');runtime.current?.navigateGeography(point.lat,geography.lonDeg,true);}else props.onSelectSite?.(point.id);}}>{point.name}{point.farSide?' · far side':point.offscreen?' · off-screen':''}</button>)}</div>}
       {focus==='moon'&&['globe','orbit','surface'].includes(activeMode)&&<output className="globe-location-readout" aria-label="Current globe orientation">{Math.abs(geography.latDeg).toFixed(1)}°{geography.latDeg<0?'S':'N'} · {Math.abs(geography.lonDeg).toFixed(1)}°{geography.lonDeg<0?'W':'E'} <span aria-hidden="true" style={{display:'inline-block',transform:`rotate(${geography.screenNorthAngleDeg??0}deg)`}}>↑ N</span></output>}
       <div className="scene-legend sq-legend">
         <span className="sun-dot" /> Sun <span className="earth-dot" /> Earth

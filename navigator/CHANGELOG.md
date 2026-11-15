@@ -1,5 +1,13 @@
 # Changelog
 
+## 15 November 2026 — Regional screening and lighter web loading
+
+- Compare sampled lunar locations through sunlight, observed darkness, regional slope and Earth-view map layers, with editable ranking weights and explicit unknowns.
+- Inspect published ice-associated regional locations and the separate LCROSS water observation without treating unsurveyed ground as ice-free.
+- Keep both poles identifiable from distant Moon views; far-side indicators are distinguished from surface markers.
+- Load the hosted app separately from the large offline download; fetch numerical terrain and 3D assets when needed.
+- Connect optional Cesium Moon visual tiles with bounded streaming and a runtime-only token while retaining the numerical terrain used for flight and assessment.
+
 ## 15 November 2026 — Themes and Public exploration
 
 - Switch between the existing light reference theme and near-black/orange dark mode. Your choice persists across reloads without restarting the scene or resetting mission settings.
