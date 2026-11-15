@@ -1,0 +1,500 @@
+[
+  {
+    "transport": "web",
+    "width": 1600,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  },
+  {
+    "transport": "web",
+    "width": 1280,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  },
+  {
+    "transport": "web",
+    "width": 800,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1.0091947115384616,
+        "sy": 1.0091947115384616,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1.0091947115384616,
+        "sy": 1.0091947115384616,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  },
+  {
+    "transport": "file",
+    "width": 1600,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  },
+  {
+    "transport": "file",
+    "width": 1280,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  },
+  {
+    "transport": "file",
+    "width": 800,
+    "info": [
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      },
+      {
+        "width": 24,
+        "height": 24
+      }
+    ],
+    "svg": [
+      {
+        "sx": 1.0091947115384616,
+        "sy": 1.0091947115384616,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1.0091947115384616,
+        "sy": 1.0091947115384616,
+        "preserve": "xMidYMid meet"
+      },
+      {
+        "sx": 1,
+        "sy": 1,
+        "preserve": "xMidYMid meet"
+      }
+    ]
+  }
+]
