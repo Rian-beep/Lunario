@@ -1,0 +1,2074 @@
+{
+  "schemaVersion": 1,
+  "startedUtc": "2026-11-15T18:50:20.833Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "hostname": "CLEVO-X2",
+  "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+  "options": {
+    "url": "http://127.0.0.1:4357/web/index.html",
+    "file": "public/solarreach-navigator.html",
+    "out": "/tmp/lunario-audience-final-offline-surfaces-small",
+    "section": "surfaces",
+    "transport": "file",
+    "chrome": "/opt/google/chrome/chrome"
+  },
+  "offlineSha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256": "3b9472c956ac93cac9e4470f0777f8ab376a246e391b4a0fa9eb3b049ece657c",
+  "sessions": [
+    {
+      "id": "mobile",
+      "http": [],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "responses": [],
+      "assetHashes": [],
+      "pendingHashes": [],
+      "loader": [
+        {
+          "visible": false,
+          "ms": 14.399999856948853
+        },
+        {
+          "visible": true,
+          "ms": 765.7999999523163
+        },
+        {
+          "visible": false,
+          "ms": 4283.099999904633
+        }
+      ],
+      "offline": true,
+      "mobile": true,
+      "url": "file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html",
+      "initialTheme": "dark"
+    },
+    {
+      "id": "native100",
+      "http": [],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "responses": [],
+      "assetHashes": [],
+      "pendingHashes": [],
+      "loader": [
+        {
+          "visible": false,
+          "ms": 15.200000047683716
+        },
+        {
+          "visible": true,
+          "ms": 793.7000000476837
+        },
+        {
+          "visible": false,
+          "ms": 4312.099999904633
+        }
+      ],
+      "offline": true,
+      "mobile": false,
+      "url": "file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html",
+      "initialTheme": "dark"
+    },
+    {
+      "id": "native200",
+      "http": [],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "responses": [],
+      "assetHashes": [],
+      "pendingHashes": [],
+      "loader": [
+        {
+          "visible": false,
+          "ms": 14.400000095367432
+        },
+        {
+          "visible": true,
+          "ms": 767.2999999523163
+        },
+        {
+          "visible": false,
+          "ms": 4293.799999952316
+        }
+      ],
+      "offline": true,
+      "mobile": false,
+      "url": "file:///tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html",
+      "initialTheme": "dark"
+    }
+  ],
+  "checks": [
+    {
+      "session": "mobile",
+      "name": "first-load",
+      "actions": "Fresh storage/cache context; navigate; wait for original loader and guide; no seed or loader skip.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:21.053Z",
+      "evidence": {
+        "loaderObservedMs": 3517.2999999523163,
+        "pausedOnLoad": true,
+        "initialTheme": "dark"
+      },
+      "snapshot": "mobile-first-load"
+    },
+    {
+      "session": "mobile",
+      "name": "dark-keyboard-guide-focus",
+      "actions": "Focus Mode guide → Enter → Tab/Shift+Tab loop → Escape → check opener focus. Body Space toggles environmental playback twice.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:25.719Z",
+      "evidence": {
+        "restored": true,
+        "focus": [
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Skip to lunar workspacePaused. Sunlit.About the projectPublicEducatorPlannerLightHide panelsMode guideData & mathShareExport2D map3D terrainSouth poleWhole Moon",
+            "tag": "BODY",
+            "inDialog": false
+          },
+          {
+            "text": "Public workspaceLunar Landing Site NavigatorLunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south po",
+            "tag": "DIALOG",
+            "inDialog": true
+          },
+          {
+            "text": "",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          }
+        ],
+        "space": true
+      },
+      "snapshot": "mobile-dark-keyboard-guide-focus"
+    },
+    {
+      "session": "mobile",
+      "name": "dark-site-controls-reflow",
+      "actions": "Tap Pick a site; search; select; open inspector; record bounds and document overflow.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:50:25.961Z",
+      "evidence": {
+        "ok": false,
+        "geometry": {
+          "dpr": 2,
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "outerWidth": 390,
+          "visualScale": 1,
+          "documentWidth": 390
+        },
+        "controls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 18,
+              "y": 114,
+              "width": 116.65625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 136.65625,
+              "y": 114,
+              "width": 116.671875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 255.328125,
+              "y": 114,
+              "width": 116.671875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Switch to light mode",
+            "rect": {
+              "x": 200,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide panels for unobstructed view",
+            "rect": {
+              "x": 236,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Open current mode guide",
+            "rect": {
+              "x": 272,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Share current scenario",
+            "rect": {
+              "x": 308,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Export current scenario",
+            "rect": {
+              "x": 344,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "2D map",
+            "rect": {
+              "x": 12,
+              "y": 171,
+              "width": 87.046875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "3D terrain",
+            "rect": {
+              "x": 102.046875,
+              "y": 171,
+              "width": 100.5,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Split map and 3D",
+            "rect": {
+              "x": 319.546875,
+              "y": 171,
+              "width": 36,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Pick a site",
+            "rect": {
+              "x": 12,
+              "y": 214,
+              "width": 102.578125,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide inspector",
+            "rect": {
+              "x": 117.578125,
+              "y": 214,
+              "width": 97.9375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Moon",
+            "rect": {
+              "x": 224.515625,
+              "y": 214,
+              "width": 50.15625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Earth",
+            "rect": {
+              "x": 276.671875,
+              "y": 214,
+              "width": 48.484375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Compare sites and dates",
+            "rect": {
+              "x": 12,
+              "y": 257,
+              "width": 93.265625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Show a delayed landing",
+            "rect": {
+              "x": 110.265625,
+              "y": 257,
+              "width": 159.984375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          }
+        ],
+        "listBefore": [
+          {
+            "name": "",
+            "rect": {
+              "x": 31,
+              "y": 547.265625,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Filter landing sites",
+            "rect": {
+              "x": 31,
+              "y": 599.265625,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 17,
+              "y": 649.265625,
+              "width": 254,
+              "height": 0
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 27,
+              "y": 652.265625,
+              "width": 234,
+              "height": 70.890625
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Use custom coordinates Latitude iLongitude iUse coordinates",
+            "rect": {
+              "x": 17,
+              "y": 649.265625,
+              "width": 254,
+              "height": 48.5
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "47 sites · sourced coordinatesSource details",
+            "rect": {
+              "x": 17,
+              "y": 697.765625,
+              "width": 254,
+              "height": 69.5
+            },
+            "inViewport": true,
+            "centerHit": false
+          }
+        ],
+        "pointerError": "locator.tap: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Malapert Massif/ })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"site-item \">…</button>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  3 × retrying tap action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+        "keyboardWorkaround": true,
+        "smallTargets": [],
+        "offscreenControls": []
+      },
+      "snapshot": "mobile-dark-site-controls-reflow"
+    },
+    {
+      "session": "mobile",
+      "name": "dark-charts-copy-contrast",
+      "actions": "Open horizon; inspect axes/units and keyboard sample controls; export PNG; sample opaque text paint; no canvas-wide contrast inference.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:29.335Z",
+      "evidence": {
+        "axes": "Where are the Sun and Earth?\nVertical axis: Elevation above local horizontal (°)\ni\n-6.019\n-1.597\n2.825\n7.247\n11.67\n0\n90\n180\n270\n360\nSun now\nEarth now\nHorizontal axis: Azimuth (° clockwise from north)\ni\nLOLA terrain horizon\ni\nSmooth-sphere horizon (0°)\ni\n●\nSun centre track\ni\n○\nEarth centre track\ni\nCopy chart image\n: Where are the Sun and Earth?\nDownload PNG\n: Where are the Sun and Earth?\n\nHover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.\n\nPrevious sample\nin Where are the Sun and Earth?\nNext sample\nin Where are the Sun and Earth?\nSample values\nLOLA terrain horizon: 6.48 ° · azimuth 0 °\nSmooth-sphere horizon (0°): 0 ° (constant reference)\nSun centre track: 1.12 ° · azimuth 64.82 ° · stay sample 336 (hourly)\nEarth centre track: 5.82 ° · azimuth 0.06 ° · stay sample 132 (hourly)\n\nCurrent display directions: Sun now · azimuth 231.67 ° · elevation -3.38 °; Earth now · azimuth 352.63 ° · elevation 10.44 °. Playback may interpolate these markers.\n\nHow fast does this graph change? · Gradient and symbols\n\nNorth 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 1°; observer height: 2 m. Site horizon mask. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time.",
+        "image": {
+          "file": "/tmp/lunario-audience-final-offline-surfaces-small/mobile-Where-are-the-Sun-and-Earth.png",
+          "sha256": "aaa49e9fa8dee62b1e1daa480e6e7b23de7809f9fdc2c670509dffd627455157",
+          "bytes": 249832
+        },
+        "clipboard": [
+          {
+            "types": [
+              "image/png"
+            ],
+            "pngBytes": 227385
+          }
+        ],
+        "selectedOpaqueContrast": [
+          {
+            "text": "Where are the Sun and Earth?",
+            "fg": "rgb(28, 25, 21)",
+            "fill": null,
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-6.019",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-1.597",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "2.825",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "7.247",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "11.67",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "0",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "90",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "180",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "270",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "360",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Sun now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Earth now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          }
+        ]
+      },
+      "snapshot": "mobile-dark-charts-copy-contrast"
+    },
+    {
+      "session": "mobile",
+      "name": "light-keyboard-guide-focus",
+      "actions": "Focus Mode guide → Enter → Tab/Shift+Tab loop → Escape → check opener focus. Body Space toggles environmental playback twice.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:30.315Z",
+      "evidence": {
+        "restored": true,
+        "focus": [
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Skip to lunar workspacePaused. Sunlit.About the projectPublicEducatorPlannerDarkHide panelsMode guideData & mathShareExport2D map3D terrainSouth poleWhole MoonP",
+            "tag": "BODY",
+            "inDialog": false
+          },
+          {
+            "text": "Public workspaceLunar Landing Site NavigatorLunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south po",
+            "tag": "DIALOG",
+            "inDialog": true
+          },
+          {
+            "text": "",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          }
+        ],
+        "space": true
+      },
+      "snapshot": "mobile-light-keyboard-guide-focus"
+    },
+    {
+      "session": "mobile",
+      "name": "light-site-controls-reflow",
+      "actions": "Tap Pick a site; search; select; open inspector; record bounds and document overflow.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:50:30.563Z",
+      "evidence": {
+        "ok": false,
+        "geometry": {
+          "dpr": 2,
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "outerWidth": 390,
+          "visualScale": 1,
+          "documentWidth": 390
+        },
+        "controls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 18,
+              "y": 114,
+              "width": 116.65625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 136.65625,
+              "y": 114,
+              "width": 116.671875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 255.328125,
+              "y": 114,
+              "width": 116.671875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Switch to dark mode",
+            "rect": {
+              "x": 200,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide panels for unobstructed view",
+            "rect": {
+              "x": 236,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Open current mode guide",
+            "rect": {
+              "x": 272,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Share current scenario",
+            "rect": {
+              "x": 308,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Export current scenario",
+            "rect": {
+              "x": 344,
+              "y": 58,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "2D map",
+            "rect": {
+              "x": 12,
+              "y": 171,
+              "width": 87.046875,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "3D terrain",
+            "rect": {
+              "x": 102.046875,
+              "y": 171,
+              "width": 100.5,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Split map and 3D",
+            "rect": {
+              "x": 319.546875,
+              "y": 171,
+              "width": 36,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Pick a site",
+            "rect": {
+              "x": 12,
+              "y": 214,
+              "width": 102.578125,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide inspector",
+            "rect": {
+              "x": 117.578125,
+              "y": 214,
+              "width": 97.9375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Moon",
+            "rect": {
+              "x": 224.515625,
+              "y": 214,
+              "width": 50.15625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Earth",
+            "rect": {
+              "x": 276.671875,
+              "y": 214,
+              "width": 48.484375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Compare sites and dates",
+            "rect": {
+              "x": 12,
+              "y": 257,
+              "width": 93.265625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Show a delayed landing",
+            "rect": {
+              "x": 110.265625,
+              "y": 257,
+              "width": 159.984375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          }
+        ],
+        "listBefore": [
+          {
+            "name": "",
+            "rect": {
+              "x": 31,
+              "y": 547.265625,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Filter landing sites",
+            "rect": {
+              "x": 31,
+              "y": 599.265625,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 17,
+              "y": 649.265625,
+              "width": 254,
+              "height": 0
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 27,
+              "y": 652.265625,
+              "width": 234,
+              "height": 70.890625
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Use custom coordinates Latitude iLongitude iUse coordinates",
+            "rect": {
+              "x": 17,
+              "y": 649.265625,
+              "width": 254,
+              "height": 48.5
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "47 sites · sourced coordinatesSource details",
+            "rect": {
+              "x": 17,
+              "y": 697.765625,
+              "width": 254,
+              "height": 69.5
+            },
+            "inViewport": true,
+            "centerHit": false
+          }
+        ],
+        "pointerError": "locator.tap: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Malapert Massif/ })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"site-item selected\">…</button>\u001b[22m\n\u001b[2m  - attempting tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying tap action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  3 × retrying tap action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <details class=\"coordinate-form\">…</details> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <select class=\"site-filter\" aria-label=\"Filter landing sites\">…</select> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying tap action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+        "keyboardWorkaround": true,
+        "smallTargets": [],
+        "offscreenControls": []
+      },
+      "snapshot": "mobile-light-site-controls-reflow"
+    },
+    {
+      "session": "mobile",
+      "name": "light-charts-copy-contrast",
+      "actions": "Open horizon; inspect axes/units and keyboard sample controls; export PNG; sample opaque text paint; no canvas-wide contrast inference.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:33.819Z",
+      "evidence": {
+        "axes": "Where are the Sun and Earth?\nVertical axis: Elevation above local horizontal (°)\ni\n-6.019\n-1.597\n2.825\n7.247\n11.67\n0\n90\n180\n270\n360\nSun now\nEarth now\nHorizontal axis: Azimuth (° clockwise from north)\ni\nLOLA terrain horizon\ni\nSmooth-sphere horizon (0°)\ni\n●\nSun centre track\ni\n○\nEarth centre track\ni\nCopy chart image\n: Where are the Sun and Earth?\nDownload PNG\n: Where are the Sun and Earth?\n\nHover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.\n\nPrevious sample\nin Where are the Sun and Earth?\nNext sample\nin Where are the Sun and Earth?\nSample values\nLOLA terrain horizon: 6.48 ° · azimuth 0 °\nSmooth-sphere horizon (0°): 0 ° (constant reference)\nSun centre track: 1.12 ° · azimuth 64.82 ° · stay sample 336 (hourly)\nEarth centre track: 5.82 ° · azimuth 0.06 ° · stay sample 132 (hourly)\n\nCurrent display directions: Sun now · azimuth 231.66 ° · elevation -3.38 °; Earth now · azimuth 352.63 ° · elevation 10.44 °. Playback may interpolate these markers.\n\nHow fast does this graph change? · Gradient and symbols\n\nNorth 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 1°; observer height: 2 m. Site horizon mask. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time.",
+        "image": {
+          "file": "/tmp/lunario-audience-final-offline-surfaces-small/mobile-Where-are-the-Sun-and-Earth.png",
+          "sha256": "90ede6144b07923bfe1e8656cc8c1387d9a04f555a42b13b205775d75a7e5228",
+          "bytes": 249815
+        },
+        "clipboard": [
+          {
+            "types": [
+              "image/png"
+            ],
+            "pngBytes": 227435
+          }
+        ],
+        "selectedOpaqueContrast": [
+          {
+            "text": "Where are the Sun and Earth?",
+            "fg": "rgb(28, 25, 21)",
+            "fill": null,
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-6.019",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-1.597",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "2.825",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "7.247",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "11.67",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "0",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "90",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "180",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "270",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "360",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Sun now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Earth now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          }
+        ]
+      },
+      "snapshot": "mobile-light-charts-copy-contrast"
+    },
+    {
+      "session": "native100",
+      "name": "first-load",
+      "actions": "Fresh storage/cache context; navigate; wait for original loader and guide; no seed or loader skip.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:34.792Z",
+      "evidence": {
+        "loaderObservedMs": 3518.399999856949,
+        "pausedOnLoad": true,
+        "initialTheme": "dark"
+      },
+      "snapshot": "native100-first-load"
+    },
+    {
+      "session": "native200",
+      "name": "first-load",
+      "actions": "Fresh storage/cache context; navigate; wait for original loader and guide; no seed or loader skip.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:39.993Z",
+      "evidence": {
+        "loaderObservedMs": 3526.5,
+        "pausedOnLoad": true,
+        "initialTheme": "dark"
+      },
+      "snapshot": "native200-first-load"
+    },
+    {
+      "session": "native200",
+      "name": "dark-keyboard-guide-focus",
+      "actions": "Focus Mode guide → Enter → Tab/Shift+Tab loop → Escape → check opener focus. Body Space toggles environmental playback twice.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:44.901Z",
+      "evidence": {
+        "restored": true,
+        "focus": [
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Skip to lunar workspacePaused. Sunlit.About the projectPublicEducatorPlannerLightHide panelsMode guideData & mathShareExport2D map3D terrainSouth poleWhole Moon",
+            "tag": "BODY",
+            "inDialog": false
+          },
+          {
+            "text": "Public workspaceLunar Landing Site NavigatorLunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south po",
+            "tag": "DIALOG",
+            "inDialog": true
+          },
+          {
+            "text": "",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          }
+        ],
+        "space": true
+      },
+      "snapshot": "native200-dark-keyboard-guide-focus"
+    },
+    {
+      "session": "native200",
+      "name": "dark-site-controls-reflow",
+      "actions": "Click Pick a site; search; select; open inspector; record bounds and document overflow.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:50:45.262Z",
+      "evidence": {
+        "ok": false,
+        "geometry": {
+          "dpr": 2,
+          "innerWidth": 800,
+          "innerHeight": 496,
+          "outerWidth": 1600,
+          "visualScale": 1,
+          "documentWidth": 800
+        },
+        "controls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 473.140625,
+              "y": -71.5,
+              "width": 89.4375,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 564.578125,
+              "y": -71.5,
+              "width": 107.8515625,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 674.4296875,
+              "y": -71.5,
+              "width": 99.5703125,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Switch to light mode",
+            "rect": {
+              "x": 578,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Hide panels for unobstructed view",
+            "rect": {
+              "x": 620,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Open current mode guide",
+            "rect": {
+              "x": 662,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Share current scenario",
+            "rect": {
+              "x": 704,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Export current scenario",
+            "rect": {
+              "x": 746,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "2D map",
+            "rect": {
+              "x": 20,
+              "y": 45.5,
+              "width": 91.0390625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "3D terrain",
+            "rect": {
+              "x": 114.0390625,
+              "y": 45.5,
+              "width": 104.5,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Split map and 3D",
+            "rect": {
+              "x": 337.0390625,
+              "y": 45.5,
+              "width": 36,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Pick a site",
+            "rect": {
+              "x": 381.0390625,
+              "y": 45.5,
+              "width": 106.578125,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide inspector",
+            "rect": {
+              "x": 490.6171875,
+              "y": 45.5,
+              "width": 101.9375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Moon",
+            "rect": {
+              "x": 604.5546875,
+              "y": 45.5,
+              "width": 54.15625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Earth",
+            "rect": {
+              "x": 660.7109375,
+              "y": 45.5,
+              "width": 52.484375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Compare sites and dates",
+            "rect": {
+              "x": 20,
+              "y": 88.5,
+              "width": 97.265625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Show a delayed landing",
+            "rect": {
+              "x": 125.265625,
+              "y": 88.5,
+              "width": 163.984375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          }
+        ],
+        "listBefore": [
+          {
+            "name": "",
+            "rect": {
+              "x": 31,
+              "y": 404.5,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Filter landing sites",
+            "rect": {
+              "x": 31,
+              "y": 456.5,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 17,
+              "y": 506.5,
+              "width": 254,
+              "height": 0
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 27,
+              "y": 509.5,
+              "width": 234,
+              "height": 70.8984375
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Use custom coordinates Latitude iLongitude iUse coordinates",
+            "rect": {
+              "x": 17,
+              "y": 506.5,
+              "width": 254,
+              "height": 48.5
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "47 sites · sourced coordinatesSource details",
+            "rect": {
+              "x": 17,
+              "y": 555,
+              "width": 254,
+              "height": 69.5
+            },
+            "inViewport": false,
+            "centerHit": false
+          }
+        ],
+        "pointerError": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Malapert Massif/ })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"site-item \">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Show full map\" title=\"Hide panels and controls; use Show controls to restore them\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opa…>…</button> from <div class=\"map-bottom-tools\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <footer class=\"timeline glass timeline-compact\">…</footer> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Show full map\" title=\"Hide panels and controls; use Show controls to restore them\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opa…>…</button> from <div class=\"map-bottom-tools\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <footer class=\"timeline glass timeline-compact\">…</footer> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n",
+        "keyboardWorkaround": true,
+        "smallTargets": [],
+        "offscreenControls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 473.140625,
+              "y": -71.5,
+              "width": 89.4375,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 564.578125,
+              "y": -71.5,
+              "width": 107.8515625,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 674.4296875,
+              "y": -71.5,
+              "width": 99.5703125,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Switch to light mode",
+            "rect": {
+              "x": 578,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Hide panels for unobstructed view",
+            "rect": {
+              "x": 620,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Open current mode guide",
+            "rect": {
+              "x": 662,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Share current scenario",
+            "rect": {
+              "x": 704,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          },
+          {
+            "name": "Export current scenario",
+            "rect": {
+              "x": 746,
+              "y": -15.5,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": true
+          }
+        ]
+      },
+      "snapshot": "native200-dark-site-controls-reflow"
+    },
+    {
+      "session": "native200",
+      "name": "dark-charts-copy-contrast",
+      "actions": "Open horizon; inspect axes/units and keyboard sample controls; export PNG; sample opaque text paint; no canvas-wide contrast inference.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:48.788Z",
+      "evidence": {
+        "axes": "Where are the Sun and Earth?\nVertical axis: Elevation above local horizontal (°)\ni\n-6.019\n-1.597\n2.825\n7.247\n11.67\n0\n90\n180\n270\n360\nSun now\nEarth now\nHorizontal axis: Azimuth (° clockwise from north)\ni\nLOLA terrain horizon\ni\nSmooth-sphere horizon (0°)\ni\n●\nSun centre track\ni\n○\nEarth centre track\ni\nCopy chart image\n: Where are the Sun and Earth?\nDownload PNG\n: Where are the Sun and Earth?\n\nHover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.\n\nPrevious sample\nin Where are the Sun and Earth?\nNext sample\nin Where are the Sun and Earth?\nSample values\nLOLA terrain horizon: 6.48 ° · azimuth 0 °\nSmooth-sphere horizon (0°): 0 ° (constant reference)\nSun centre track: 1.12 ° · azimuth 64.82 ° · stay sample 336 (hourly)\nEarth centre track: 5.82 ° · azimuth 0.06 ° · stay sample 132 (hourly)\n\nCurrent display directions: Sun now · azimuth 231.67 ° · elevation -3.38 °; Earth now · azimuth 352.63 ° · elevation 10.44 °. Playback may interpolate these markers.\n\nHow fast does this graph change? · Gradient and symbols\n\nNorth 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 1°; observer height: 2 m. Site horizon mask. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time.",
+        "image": {
+          "file": "/tmp/lunario-audience-final-offline-surfaces-small/native200-Where-are-the-Sun-and-Earth.png",
+          "sha256": "91b627e897a5399a07f3c96c5484eee4b3d78540ed7e88434642aa8deba939e6",
+          "bytes": 252563
+        },
+        "clipboard": [
+          {
+            "types": [
+              "image/png"
+            ],
+            "pngBytes": 229805
+          }
+        ],
+        "selectedOpaqueContrast": [
+          {
+            "text": "Where are the Sun and Earth?",
+            "fg": "rgb(28, 25, 21)",
+            "fill": null,
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-6.019",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-1.597",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "2.825",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "7.247",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "11.67",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "0",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "90",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "180",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "270",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "360",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Sun now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Earth now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          }
+        ]
+      },
+      "snapshot": "native200-dark-charts-copy-contrast"
+    },
+    {
+      "session": "native200",
+      "name": "light-keyboard-guide-focus",
+      "actions": "Focus Mode guide → Enter → Tab/Shift+Tab loop → Escape → check opener focus. Body Space toggles environmental playback twice.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:49.866Z",
+      "evidence": {
+        "restored": true,
+        "focus": [
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Public workspaceLunar Landing Site NavigatorLunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south po",
+            "tag": "DIALOG",
+            "inDialog": true
+          },
+          {
+            "text": "",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Pick a site",
+            "tag": "BUTTON",
+            "inDialog": true
+          },
+          {
+            "text": "Skip to lunar workspacePaused. Sunlit.About the projectPublicEducatorPlannerDarkHide panelsMode guideData & mathShareExport2D map3D terrainSouth poleWhole MoonP",
+            "tag": "BODY",
+            "inDialog": false
+          }
+        ],
+        "space": true
+      },
+      "snapshot": "native200-light-keyboard-guide-focus"
+    },
+    {
+      "session": "native200",
+      "name": "light-site-controls-reflow",
+      "actions": "Click Pick a site; search; select; open inspector; record bounds and document overflow.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:50:50.276Z",
+      "evidence": {
+        "ok": false,
+        "geometry": {
+          "dpr": 2,
+          "innerWidth": 800,
+          "innerHeight": 496,
+          "outerWidth": 1600,
+          "visualScale": 1,
+          "documentWidth": 800
+        },
+        "controls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 473.140625,
+              "y": -53,
+              "width": 89.4375,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 564.578125,
+              "y": -53,
+              "width": 107.8515625,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 674.4296875,
+              "y": -53,
+              "width": 99.5703125,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Switch to dark mode",
+            "rect": {
+              "x": 578,
+              "y": 3,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide panels for unobstructed view",
+            "rect": {
+              "x": 620,
+              "y": 3,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Open current mode guide",
+            "rect": {
+              "x": 662,
+              "y": 3,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Share current scenario",
+            "rect": {
+              "x": 704,
+              "y": 3,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Export current scenario",
+            "rect": {
+              "x": 746,
+              "y": 3,
+              "width": 34,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "2D map",
+            "rect": {
+              "x": 20,
+              "y": 64,
+              "width": 91.0390625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "3D terrain",
+            "rect": {
+              "x": 114.0390625,
+              "y": 64,
+              "width": 104.5,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Split map and 3D",
+            "rect": {
+              "x": 337.0390625,
+              "y": 64,
+              "width": 36,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Pick a site",
+            "rect": {
+              "x": 381.0390625,
+              "y": 64,
+              "width": 106.578125,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Hide inspector",
+            "rect": {
+              "x": 490.6171875,
+              "y": 64,
+              "width": 101.9375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Moon",
+            "rect": {
+              "x": 604.5546875,
+              "y": 64,
+              "width": 54.15625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Earth",
+            "rect": {
+              "x": 660.7109375,
+              "y": 64,
+              "width": 52.484375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": true
+          },
+          {
+            "name": "Compare sites and dates",
+            "rect": {
+              "x": 20,
+              "y": 107,
+              "width": 97.265625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Show a delayed landing",
+            "rect": {
+              "x": 125.265625,
+              "y": 107,
+              "width": 163.984375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": false
+          }
+        ],
+        "listBefore": [
+          {
+            "name": "",
+            "rect": {
+              "x": 31,
+              "y": 404.5,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Filter landing sites",
+            "rect": {
+              "x": 31,
+              "y": 456.5,
+              "width": 226,
+              "height": 40
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 17,
+              "y": 506.5,
+              "width": 254,
+              "height": 0
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Malapert MassifPublished polar study site",
+            "rect": {
+              "x": 27,
+              "y": 509.5,
+              "width": 234,
+              "height": 70.8984375
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Use custom coordinates Latitude iLongitude iUse coordinates",
+            "rect": {
+              "x": 17,
+              "y": 506.5,
+              "width": 254,
+              "height": 48.5
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "47 sites · sourced coordinatesSource details",
+            "rect": {
+              "x": 17,
+              "y": 555,
+              "width": 254,
+              "height": 69.5
+            },
+            "inViewport": false,
+            "centerHit": false
+          }
+        ],
+        "pointerError": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /^Malapert Massif/ })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"site-item selected\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Show full map\" title=\"Hide panels and controls; use Show controls to restore them\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opa…>…</button> from <div class=\"map-bottom-tools\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <footer class=\"timeline glass timeline-compact\">…</footer> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Show full map\" title=\"Hide panels and controls; use Show controls to restore them\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opa…>…</button> from <div class=\"map-bottom-tools\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <aside class=\"site-drawer glass\" aria-label=\"Landing sites\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m  2 × retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m      - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <footer class=\"timeline glass timeline-compact\">…</footer> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Show full map\" title=\"Hide panels and controls; use Show controls to restore them\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opa…>…</button> from <div class=\"map-bottom-tools\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+        "keyboardWorkaround": true,
+        "smallTargets": [],
+        "offscreenControls": [
+          {
+            "name": "Public",
+            "rect": {
+              "x": 473.140625,
+              "y": -53,
+              "width": 89.4375,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Educator",
+            "rect": {
+              "x": 564.578125,
+              "y": -53,
+              "width": 107.8515625,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Planner",
+            "rect": {
+              "x": 674.4296875,
+              "y": -53,
+              "width": 99.5703125,
+              "height": 40
+            },
+            "inViewport": false,
+            "centerHit": false
+          },
+          {
+            "name": "Compare sites and dates",
+            "rect": {
+              "x": 20,
+              "y": 107,
+              "width": 97.265625,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": false
+          },
+          {
+            "name": "Show a delayed landing",
+            "rect": {
+              "x": 125.265625,
+              "y": 107,
+              "width": 163.984375,
+              "height": 34
+            },
+            "inViewport": true,
+            "centerHit": false
+          }
+        ]
+      },
+      "snapshot": "native200-light-site-controls-reflow"
+    },
+    {
+      "session": "native200",
+      "name": "light-charts-copy-contrast",
+      "actions": "Open horizon; inspect axes/units and keyboard sample controls; export PNG; sample opaque text paint; no canvas-wide contrast inference.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:50:53.642Z",
+      "evidence": {
+        "axes": "Where are the Sun and Earth?\nVertical axis: Elevation above local horizontal (°)\ni\n-6.019\n-1.597\n2.825\n7.247\n11.67\n0\n90\n180\n270\n360\nSun now\nEarth now\nHorizontal axis: Azimuth (° clockwise from north)\ni\nLOLA terrain horizon\ni\nSmooth-sphere horizon (0°)\ni\n●\nSun centre track\ni\n○\nEarth centre track\ni\nCopy chart image\n: Where are the Sun and Earth?\nDownload PNG\n: Where are the Sun and Earth?\n\nHover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.\n\nPrevious sample\nin Where are the Sun and Earth?\nNext sample\nin Where are the Sun and Earth?\nSample values\nLOLA terrain horizon: 6.48 ° · azimuth 0 °\nSmooth-sphere horizon (0°): 0 ° (constant reference)\nSun centre track: 1.12 ° · azimuth 64.82 ° · stay sample 336 (hourly)\nEarth centre track: 5.82 ° · azimuth 0.06 ° · stay sample 132 (hourly)\n\nCurrent display directions: Sun now · azimuth 231.66 ° · elevation -3.38 °; Earth now · azimuth 352.63 ° · elevation 10.44 °. Playback may interpolate these markers.\n\nHow fast does this graph change? · Gradient and symbols\n\nNorth 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 1°; observer height: 2 m. Site horizon mask. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time.",
+        "image": {
+          "file": "/tmp/lunario-audience-final-offline-surfaces-small/native200-Where-are-the-Sun-and-Earth.png",
+          "sha256": "31e7c83cc8eec4648e661ce6413481cec79fb2bc831cece601df06862a8bf3e9",
+          "bytes": 252569
+        },
+        "clipboard": [
+          {
+            "types": [
+              "image/png"
+            ],
+            "pngBytes": 229808
+          }
+        ],
+        "selectedOpaqueContrast": [
+          {
+            "text": "Where are the Sun and Earth?",
+            "fg": "rgb(28, 25, 21)",
+            "fill": null,
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-6.019",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "-1.597",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "2.825",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "7.247",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "11.67",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "0",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "90",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "180",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "270",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "360",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Sun now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          },
+          {
+            "text": "Earth now",
+            "fg": "rgb(28, 25, 21)",
+            "fill": "rgb(28, 25, 21)",
+            "bg": "rgb(255, 255, 255)",
+            "ratio": 17.51085437562116
+          }
+        ]
+      },
+      "snapshot": "native200-light-charts-copy-contrast"
+    }
+  ],
+  "limits": [
+    "Agent browser tasks, no human participant or real screen reader.",
+    "Mobile is touch/viewport emulation, not real hardware.",
+    "SwiftShader is software rendering; reverse tunnel timings do not establish target-device performance.",
+    "Selected opaque DOM text contrast only; no global accessibility or imagery-overlay contrast pass."
+  ],
+  "browser": "149.0.7827.155",
+  "nativeZoom": {
+    "measurements": [
+      {
+        "dpr": 1,
+        "innerWidth": 1600,
+        "innerHeight": 993,
+        "outerWidth": 1600,
+        "visualScale": 1,
+        "documentWidth": 1600,
+        "factor": 1,
+        "screenshotWidth": 1600
+      },
+      {
+        "dpr": 2,
+        "innerWidth": 800,
+        "innerHeight": 496,
+        "outerWidth": 1600,
+        "visualScale": 1,
+        "documentWidth": 800,
+        "factor": 2,
+        "screenshotWidth": 1600
+      }
+    ],
+    "established": true
+  },
+  "offlineSha256After": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256After": "3b9472c956ac93cac9e4470f0777f8ab376a246e391b4a0fa9eb3b049ece657c",
+  "finishedUtc": "2026-11-15T18:50:54.635Z",
+  "summary": {
+    "total": 15,
+    "passed": 11,
+    "failed": 4
+  }
+}

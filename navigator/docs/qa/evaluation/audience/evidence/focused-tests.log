@@ -1,0 +1,35 @@
+TAP version 13
+# Subtest: native zoom evidence distinguishes page/pinch scale from layout zoom
+ok 1 - native zoom evidence distinguishes page/pinch scale from layout zoom
+  ---
+  duration_ms: 0.611048
+  ...
+# Subtest: contrast oracle preserves endpoints and validates inputs
+ok 2 - contrast oracle preserves endpoints and validates inputs
+  ---
+  duration_ms: 0.214652
+  ...
+# Subtest: held-input audit catches nested hardware drift, additions and removals
+ok 3 - held-input audit catches nested hardware drift, additions and removals
+  ---
+  duration_ms: 0.54354
+  ...
+# Subtest: failed journeys cannot silently count as completed
+ok 4 - failed journeys cannot silently count as completed
+  ---
+  duration_ms: 0.141905
+  ...
+# Subtest: actual UI notebook export changes only array height and preserves unknown radio evidence
+ok 5 - actual UI notebook export changes only array height and preserves unknown radio evidence
+  ---
+  duration_ms: 3.662126
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 35.292738

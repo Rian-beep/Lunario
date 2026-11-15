@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "state": "template-not-a-recorded-session",
+  "evidenceType": null,
+  "anonymousSessionCode": null,
+  "audience": null,
+  "artifact": {
+    "urlOrFile": null,
+    "sourceCommit": null,
+    "buildReceiptSha256": null,
+    "htmlSha256": null,
+    "datasetId": null,
+    "modelVersion": null
+  },
+  "environment": {
+    "dateUtc": null,
+    "device": null,
+    "os": null,
+    "browserVersion": null,
+    "viewportCssPixels": null,
+    "nativeZoomPercent": null,
+    "themeOrder": [],
+    "inputMethod": null,
+    "assistiveTechnologyVersion": null,
+    "network": null,
+    "coldOrWarm": null,
+    "renderer": null
+  },
+  "consentRecordedByStudyOwner": null,
+  "confidenceBeforeSelfReport": null,
+  "confidenceAfterSelfReport": null,
+  "tasks": [],
+  "exports": [],
+  "limitations": [],
+  "humanAcceptance": "not-assessed"
+}

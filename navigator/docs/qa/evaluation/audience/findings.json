@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "evaluatedSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "statusesAllowed": [
+    "open",
+    "fixed",
+    "not-reproduced",
+    "needs-external-evidence"
+  ],
+  "findings": [
+    {
+      "id": "AUD-01",
+      "severity": "P1",
+      "status": "open",
+      "observedBehavior": "Site drawer collapses search-result hit area to zero height at 390\u00d7844 touch emulation and native 200% (800\u00d7496 CSS pixels), in both themes. Search succeeds but ordinary tap/click cannot choose Malapert.",
+      "reproducibleSteps": [
+        "Fresh context; dismiss Public guide.",
+        "Pick a site \u2192 Search landing sites: Malapert.",
+        "Tap/click Malapert Massif result without forcing events.",
+        "Observe pointer interception by filter/coordinate form/map controls and result height 0."
+      ],
+      "rootCause": "app/globals.css responsive site-drawer max-height:55%, site-list min-height:0 and flex shrinking let fixed drawer chrome consume all available list height. At native200 some controls are also below the visible CSS viewport.",
+      "requiredParentFix": "Reserve a usable list area or make the complete drawer scroll within the available viewport. Preserve map-first layout, dismiss control and focus. Re-run ordinary touch/pointer selection in both themes at 390\u00d7844 and true200%; do not replace with force click.",
+      "testEvidence": [
+        "evidence/incoming-offline-surfaces.json: four site-controls-reflow checks fail with list/result bounds.",
+        "evidence/baseline-web-reflow-pilot.json: actual served baseline dark mobile/native pointer interception.",
+        "evidence/offline-mobile-dark-blocker.png",
+        "evidence/offline-native200-light-blocker.png"
+      ],
+      "beforeAfter": "Before: zero-height result and failed pointer task. After: pending parent-owned CSS fix; keyboard programmatic-focus workaround only allowed later chart checks to continue.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Production source is read-only in audience lane; no production fix applied.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    },
+    {
+      "id": "AUD-02",
+      "severity": "P2",
+      "status": "open",
+      "observedBehavior": "Incoming south-pole detail manifest fails to load in both hosted-subpath and disconnected-file deliveries; existing fallback terrain remains usable.",
+      "reproducibleSteps": [
+        "Served baseline: Public \u2192 Malapert Massif \u2192 inspector \u2192 Preview a lunar flight.",
+        "Observe GET /data/south-pole-detail/manifest.json 404 rather than /navigator/public/data/.",
+        "Disconnected incoming HTML: same route; observe file: manifest fetch blocked by CORS/net::ERR_FAILED."
+      ],
+      "rootCause": "components/workbench/scene/south-pole-detail.ts::southPoleManifestUrl hardcodes root /data for hosted delivery and performs a local file fetch for offline delivery. It bypasses publicAssetURL and inline offline transport.",
+      "requiredParentFix": "Route hosted manifest and subordinate assets through the existing public asset boundary; provide supported inline offline transport or an explicit unavailable-detail state. Preserve numerical/local fallback and real warnings. Verify detail ready separately from overall scene ready.",
+      "testEvidence": [
+        "evidence/baseline-web-pilot.json: /data/south-pole-detail/manifest.json 404 and console failure.",
+        "evidence/incoming-offline-journeys.json: local manifest request failure, zero HTTP requests, fallback scene/task completion."
+      ],
+      "beforeAfter": "Before: actual404/CORS failures. After: parent transport/build wiring pending.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Production source is read-only in audience lane; no production fix applied.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    },
+    {
+      "id": "AUD-03",
+      "severity": "P2",
+      "status": "open",
+      "observedBehavior": "The deferred 3D view initially presents an empty pane without an explanation of pending scene resources. It eventually mounts; this is loading feedback friction, not proof of a rendering deadlock.",
+      "reproducibleSteps": [
+        "Fresh served context; dismiss guide, select Malapert and switch to3D.",
+        "Observe empty pane after5s in exploratory run; await lazy scene and resources.",
+        "In scripted cold flight entry, record visible pane text at5s and actual model-ready transition."
+      ],
+      "rootCause": "web-source/lazy-dynamic.mjs defaults Suspense fallback to null. Mounted scene also exposes legend-only content while model resources are pending.",
+      "requiredParentFix": "Add a concise accessible pending-state message within the existing pane and retain its real error/retry state. Keep the original3sloader; do not cover optional-data failures with a generic success.",
+      "testEvidence": [
+        "evidence/web-pending-3d.png",
+        "evidence/baseline-web-pilot.json: at5s terrain text only Sun/Earth/scale legend; moon model ready after45,843ms in this run."
+      ],
+      "beforeAfter": "Before: blank/legend-only loading feedback. After: pending parent UI change. Timing is reverse-tunnel/software evidence, not device throughput.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Production source is read-only in audience lane; no production fix applied.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    },
+    {
+      "id": "AUD-04",
+      "severity": "P2",
+      "status": "open",
+      "observedBehavior": "Required npm run lint exits1: one ban-ts-comment error on incoming lunar-terrain.js line1;0warnings.",
+      "reproducibleSteps": [
+        "Run npm run lint in worker.",
+        "Extract untouched3c82b5a with git archive into /tmp/lunario-audience-base-check; link installed node_modules.",
+        "Run npm --prefix /tmp/lunario-audience-base-check run lint."
+      ],
+      "rootCause": "Incoming production JS starts with @ts-nocheck, rejected by configured @typescript-eslint/ban-ts-comment. The same full lint command fails on untouched base.",
+      "requiredParentFix": "Resolve incoming-file typing/lint policy in its owned integration lane without weakening unrelated checks. Audience does not edit this parent-owned source.",
+      "testEvidence": [
+        "evidence/lint.log",
+        "evidence/base-lint.log"
+      ],
+      "beforeAfter": "Same1error/0warnings on untouchedbase and audience changes. This lane introduces no additional lint diagnostics.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Production source is read-only in audience lane; no production fix applied.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    },
+    {
+      "id": "AUD-05",
+      "severity": "evidence-gap",
+      "status": "needs-external-evidence",
+      "observedBehavior": "No actual human participant, screen reader, real mobile hardware, OS paste target or hardware GPU was evaluated. No learning/engagement/accessibility/operational acceptance claim is available.",
+      "reproducibleSteps": [
+        "Use HUMAN-TASK-SHEET.md with intended audiences and study-owner consent.",
+        "Record exact artifact/environment, separate action completion from explanation and preserve real observations."
+      ],
+      "rootCause": "This work is bounded agent task evaluation. Browser DOM/emulation/clipboard checks cannot supply missing human or device evidence.",
+      "requiredParentFix": "Arrange real audience, target-device and assistive-technology sessions if acceptance is required; use provided empty templates and keep evidence labels explicit.",
+      "testEvidence": [
+        "HUMAN-TASK-SHEET.md",
+        "OBSERVATION-TEMPLATE.csv",
+        "SESSION-TEMPLATE.json"
+      ],
+      "beforeAfter": "No participants enrolled or observations invented. Protocol and templates are ready.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Owned task sheet and empty templates added; no human session fabricated.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    },
+    {
+      "id": "AUD-06",
+      "severity": "evidence-gap",
+      "status": "needs-external-evidence",
+      "observedBehavior": "Hosted and incoming offline bytes are bound separately; source-equivalent generated artifacts and a final integrated candidate have not been independently established. Hosted endpoint later stopped responding; final rerun timed out before any tasks.",
+      "reproducibleSteps": [
+        "Inspect evidence/artifact-binding.json, served index and build receipt.",
+        "Parent records final source/build identities, exposes final candidate and reruns current runner."
+      ],
+      "rootCause": "Hosted build receipt has output hashes but no independently verified source revision; incoming offline file is a separately tracked generated artifact. Parent owns builds, bindings and runtime integration.",
+      "requiredParentFix": "Bind final hosted/offline deliveries to validated parent source; rerun journeys/surfaces after fixes. Do not treat final0checks timeout as a pass or replace incoming baseline with a rebuilt file during comparison.",
+      "testEvidence": [
+        "evidence/artifact-binding.json",
+        "evidence/served-build-receipt.json",
+        "evidence/web-final-retry.json"
+      ],
+      "beforeAfter": "Baseline expected production6b10ee8 plus lock3c82b5a; actual byte hashes recorded. No finalcandidate acceptance.",
+      "exactSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "changeEvidence": "Owned artifact hashes and timed-out final retry retained; no production binding modified.",
+      "limitations": [
+        "Agent/browser evidence is not a human study, real-device acceptance or operational qualification."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "title": "Lunario: a landing-site investigation",
+  "createdUtc": "2026-11-15T18:45:13.884Z",
+  "site": "Malapert Massif",
+  "arrivalUtc": "2027-06-29T11:00:00.000Z",
+  "endExclusiveUtc": "2027-07-13T11:00:00.000Z",
+  "stepHours": 1,
+  "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+  "modelVersion": "planning-5",
+  "scenarioKey": "planning-5-df6196bd-880ad867-1358",
+  "scenario": {
+    "siteId": "malapert-massif",
+    "custom": null,
+    "startIndex": 13067,
+    "endIndex": 13402,
+    "heightM": 2,
+    "mission": {
+      "areaM2": 4,
+      "efficiency": 0.3,
+      "lossFraction": 0.15,
+      "solarFlux": 1361,
+      "arrayMode": "tracking",
+      "tiltDeg": 90,
+      "azimuthDeg": 0,
+      "loadW": 250,
+      "batteryWh": 10000,
+      "initialSoc": 1,
+      "reserveSoc": 0.2,
+      "chargeEfficiency": 0.95,
+      "dischargeEfficiency": 0.95,
+      "antennaMaskDeg": 0
+    },
+    "flight": {
+      "mode": "descent",
+      "altitudeM": 300,
+      "horizontalMps": 10,
+      "verticalMps": -8,
+      "headingDeg": 90,
+      "pitchDeg": 90,
+      "finalPitchDeg": 90,
+      "wetMassKg": 4700,
+      "dryMassKg": 2200,
+      "thrustN": 16000,
+      "ispSeconds": 311,
+      "burnSeconds": 150,
+      "durationSeconds": 180,
+      "eastOffsetM": -300,
+      "northOffsetM": 0,
+      "landing": {
+        "guidance": "target-landing",
+        "targetRadiusM": 20,
+        "maxVerticalMps": 2,
+        "maxHorizontalMps": 1,
+        "maxTiltDeg": 15,
+        "breakupEnergyJ": 100000,
+        "friction": 0.8,
+        "restitution": 0.1,
+        "contactPreviewSeconds": 12
+      }
+    },
+    "schemaVersion": 2,
+    "terrainMode": "global-context",
+    "arrayHeightM": 2,
+    "antennaHeightM": 2,
+    "requirements": {
+      "scope": "resource-screening",
+      "requireZeroUnmetWh": true,
+      "requireReserve": true,
+      "maxGeometricOutageHours": null,
+      "minAssumedRadioMarginDb": null,
+      "criticalContacts": [],
+      "requiredExternal": [],
+      "extraScreens": {}
+    },
+    "operations": {
+      "deploymentDelayHours": 0,
+      "maxChargeW": null,
+      "maxDischargeW": null,
+      "loadSegments": []
+    }
+  },
+  "options": {
+    "audience": "guided",
+    "includeHints": true
+  },
+  "questions": [
+    {
+      "topic": "solar",
+      "title": "What does the graph gradient mean?",
+      "prompt": "For the first captured source interval, check whether the supplied factors are known, then predict how interval-mean solar electrical power changes when irradiance increases by 100 W/m². Hold geometry, deployment and hardware fixed. Give the gradient with units, then explain a zero or unavailable result. Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "A gradient is output change divided by input change. A partial interval of deployment also scales interval-mean power.",
+      "equation": "P☉ = S A η (1 − ℓ) F☉ g",
+      "symbols": "S: irradiance (W/m²); A: collecting area (m²); η: conversion efficiency; ℓ: loss fraction; F☉: visible disk fraction; g: incidence factor. Fractions are dimensionless. For interval means include the fraction deployed.",
+      "values": [
+        {
+          "label": "Collecting area",
+          "symbol": "A",
+          "value": 4,
+          "unit": "m²"
+        },
+        {
+          "label": "Conversion efficiency",
+          "symbol": "η",
+          "value": 0.3,
+          "unit": "1"
+        },
+        {
+          "label": "Loss fraction",
+          "symbol": "ℓ",
+          "value": 0.15,
+          "unit": "1"
+        },
+        {
+          "label": "Captured irradiance",
+          "symbol": "S",
+          "value": 1361,
+          "unit": "W/m²"
+        },
+        {
+          "label": "Combined visible-disk × incidence × active-deployment fraction",
+          "value": 1,
+          "unit": "1"
+        }
+      ],
+      "context": [
+        "Generation evidence for this interval is available. If collecting area, conversion efficiency or retained fraction is zero, the power response is zero even when a normalized collecting factor is undefined.",
+        "Use the combined fraction once: it already includes the share of this interval with deployed panels. Multiply it by area, conversion efficiency and retained fraction to obtain the gradient. If a required source factor is unavailable, state that limitation instead of inventing it."
+      ],
+      "answer": "The captured interval gradient ∂P̄☉/∂S is 1.02 m²; smooth sphere 0 m². A 100 W/m² increment produces 102 W. Units W ÷ (W/m²) = m². This is an irradiance response, not a time derivative. A zero can mean shadow, zero collecting efficiency or no active deployment; unavailable means the required evidence is missing."
+    },
+    {
+      "topic": "reserve",
+      "title": "Will storage stay above the protected reserve?",
+      "prompt": "Calculate the protected energy floor, then the minimum margin above that floor during this stay. Does this one calculation establish landing readiness? Explain. Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Multiply battery capacity by the reserve fraction. Subtract this floor from the full-stay minimum energy, including initial charge.",
+      "equation": "M_reserve = min(E_B) − f_reserve C_B",
+      "symbols": "The minimum margin is the lowest stored energy minus the protected fraction of battery capacity.",
+      "notation": [
+        {
+          "symbol": "M_reserve",
+          "meaning": "Minimum reserve margin",
+          "unit": "Wh"
+        },
+        {
+          "symbol": "E_B",
+          "meaning": "Stored energy",
+          "unit": "Wh"
+        },
+        {
+          "symbol": "C_B",
+          "meaning": "Battery capacity",
+          "unit": "Wh"
+        },
+        {
+          "symbol": "f_reserve",
+          "meaning": "Protected reserve fraction",
+          "unit": "1"
+        }
+      ],
+      "values": [
+        {
+          "label": "Battery capacity",
+          "symbol": "C_B",
+          "value": 10000,
+          "unit": "Wh"
+        },
+        {
+          "label": "Protected reserve fraction",
+          "symbol": "f_reserve",
+          "value": 0.2,
+          "unit": "1"
+        },
+        {
+          "label": "Modeled minimum energy",
+          "value": 0,
+          "unit": "Wh"
+        }
+      ],
+      "answer": "Protected floor = 2,000 Wh. Minimum margin = -2,000 Wh. A negative margin violates this reserve requirement. Zero is the boundary, not a safety allowance. This does not establish terrain safety, guidance, thermal survival, station allocation or mission approval."
+    },
+    {
+      "topic": "terrain",
+      "title": "Why does a smooth Moon give a different answer?",
+      "prompt": "Compare generated energy with the measured-terrain horizon and the smooth sphere. Calculate their difference. Explain why moving a short distance can change the result without changing the solar panels. Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Subtract sphere energy from terrain energy. A ridge can cover part or all of the low solar disk; effects depend on azimuth and date.",
+      "symbols": "Generated energy in the terrain and smooth-sphere cases is integrated over the same requested stay (Wh). The difference is a model comparison, not a new measurement.",
+      "values": [
+        {
+          "label": "Terrain generated energy",
+          "value": 109686.19116778225,
+          "unit": "Wh"
+        },
+        {
+          "label": "Sphere generated energy",
+          "value": 45727.645545735875,
+          "unit": "Wh"
+        }
+      ],
+      "answer": "Terrain minus sphere = 63,958.545622 Wh. Local ridges change the horizon along the Sun’s path. Source cadence, prepared observer heights and terrain resolution limit what can be concluded. Do not infer unresolved boulders or touchdown hazards from this comparison."
+    },
+    {
+      "topic": "contact",
+      "title": "Can a visible Earth guarantee communications?",
+      "prompt": "Express geometric antenna contact as a percentage and compare the terrain result with the smooth sphere. Explain why a ground station may still be unusable during an interval with Earth visibility. Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Multiply a known fraction by 100. Distinguish the lunar terrain/antenna mask from station visibility, radio margin, weather and booking.",
+      "symbols": "Contact fraction: share of the requested equal-duration source intervals clearing the stated lunar antenna cutoff (dimensionless). This is not delivered data volume or reserved station time.",
+      "values": [
+        {
+          "label": "Terrain contact fraction",
+          "value": 0.37797619047619047,
+          "unit": "1"
+        },
+        {
+          "label": "Smooth sphere contact fraction",
+          "value": 0.6369047619047619,
+          "unit": "1"
+        }
+      ],
+      "answer": "Terrain 37.797619 %; sphere 63.690476 %. Geometric Earth visibility alone does not establish a complete link. Check dated station geometry, elevation/skyline, hardware and band, atmospheric attenuation, operating schedule, allocation, rates and critical windows. Unknown values remain unknown."
+    },
+    {
+      "topic": "evidence",
+      "title": "What evidence would change your decision?",
+      "prompt": "Identify whether an assessed requirement fails or remains conditional, and name one missing evidence item. If none is recorded, explain what remains unverified despite that result. Propose a controlled site-only or date-only comparison while holding hardware and requirements fixed. State what would still prevent an operational approval. Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Use the exact captured assessment. A model pass is scoped to evidence and requirements; a missing result is not a failure or an approval.",
+      "symbols": "Assessment outcomes describe the configured model and evidence scope; they are not a flight-readiness certification.",
+      "context": [
+        "Captured assessment scope: resource-screening; outcome: fails-assessed.",
+        "Stored energy reserve: required; fail. The model violates this configured requirement. This does not establish physical failure beyond the model assumptions.",
+        "Unserved electrical demand: required; fail. The model violates this configured requirement. This does not establish physical failure beyond the model assumptions.",
+        "Maximum geometric Earth outage: optional; not-assessed. A limit or required metric is unavailable.",
+        "Assumed free-space radio margin: optional; not-assessed. A limit or required metric is unavailable.",
+        "terrain footprint: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "touchdown dynamics: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "trajectory access: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "ground support: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "thermal survival: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "plume ejecta: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "traverse return: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "science access: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "radiation contingency: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "heritage coordination: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "navigation guidance: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "surface infrastructure: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "power architecture: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "isru resource: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "robotics autonomy: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "habitat life support: optional; not-assessed. No assessment supplied. Regional terrain, preview trajectories and imagery do not certify this consideration.",
+        "Hourly Sun and Earth geometry: computed; complete coverage; version unspecified; time step 1 h; effective resolution unspecified m. Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval. DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005. Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference.",
+        "array horizon at 2 m: computed; partial coverage; version unspecified; time step unspecified h; effective resolution unspecified m. 40 m fine and 240 m fallback source rasters; not effective resolution. Heights 0, 2 and 10 m. Ray steps 40/160/400 m to 250 km. Uniform disk fraction above the local sampled horizon, not full terrain-disk integration. Frame equivalence and propagated uncertainty remain unquantified. Requested and effective subsystem height: 2 m.",
+        "antenna horizon at 2 m: computed; partial coverage; version unspecified; time step unspecified h; effective resolution unspecified m. 40 m fine and 240 m fallback source rasters; not effective resolution. Heights 0, 2 and 10 m. Ray steps 40/160/400 m to 250 km. Uniform disk fraction above the local sampled horizon, not full terrain-disk integration. Frame equivalence and propagated uncertainty remain unquantified. Requested and effective subsystem height: 2 m.",
+        "Published mission and study locations: external-report; partial coverage; version unspecified; time step unspecified h; effective resolution unspecified m. NASA release 24-136, 2024-10-28, describes potential regions, not approval of individual catalogue pins or current mission assignment. Original study designations, dates where supplied, URLs and mission approximation flags are retained in catalog.json; IDs and coordinates unchanged.",
+        "Scenario engineering assumptions: user-assumption; partial coverage; version unspecified; time step unspecified h; effective resolution unspecified m. User-supplied loads, efficiencies, reserves and radio assumptions are not measured NASA evidence. Scenario values must accompany exported results.",
+        "Operational landing readiness: unavailable; unavailable coverage; version unspecified; time step unspecified h; effective resolution unspecified m. No certified slope/roughness, navigation, thermal, plume, structural, RF/link budget or operational landing approval evidence. Resource screening cannot establish readiness."
+      ],
+      "values": [],
+      "answer": "Captured outcome: fails-assessed. Required constraints: reserve: fail; unmet-demand: fail. Warnings: Source frame equivalence or propagated uncertainty remains unquantified; otherwise passing terrain constraints are conditional.. Accept a proposed controlled comparison only if the named inputs are the only changes and the learner identifies remaining source/qualification gaps."
+    },
+    {
+      "topic": "ice-evidence",
+      "title": "Is there enough recoverable ice?",
+      "prompt": "What measurements would you collect to tell whether a cold patch contains enough recoverable ice? Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Cold lunar ground can preserve ice, but cold or shadow alone does not confirm ice. How much water you can recover depends on how much ice the ground contains, how deep it sits and whether it is spread through the soil or concentrated in layers.",
+      "symbols": "",
+      "values": [],
+      "context": [
+        "Shadow, cold ground and hydrogen signals are clues, not confirmation of water ice. This assessment does not measure local ice or water yield and does not approve a landing or mining operation.",
+        "Local ice concentration, depth and form are unknown in this assessment."
+      ],
+      "sources": [
+        {
+          "title": "Colaprete et al. (2010) · LCROSS water detection in Cabeus",
+          "url": "https://doi.org/10.1126/science.1186986"
+        },
+        {
+          "title": "NASA · VIPER prospecting objectives",
+          "url": "https://science.nasa.gov/mission/viper/"
+        },
+        {
+          "title": "NASA SMD-LUN-102 (2025) · Volatile observations and limits",
+          "url": "https://ntrs.nasa.gov/api/citations/20250006445/downloads/SMD-LUN-102_RevA_authors.pdf"
+        }
+      ],
+      "answer": "LCROSS estimated 5.6 ± 2.9% water ice by mass at its impact site in Cabeus. That estimate applies to the excavated material observed there, not to every shadowed region or the selected site. At a new target, sample across depths and locations. With recovery held constant, a tenfold decrease in ice concentration requires processing ten times as much material per kilogram of water. Measure ice concentration and form at several depths and locations before comparing deposits. Mark for distinguishing a preservation clue from an ice detection, proposing measurements of concentration, depth and physical form at multiple locations, and explaining why the Cabeus estimate cannot be assigned to this site. Accept different sampling plans if their limitations are stated; no local water mass can be calculated from these givens."
+    },
+    {
+      "topic": "resource-access",
+      "title": "Can we reach and support the deposit?",
+      "prompt": "Sketch a landing point, a power source and a shadowed target. What would you measure before choosing the shortest route? Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "A landing area, a power source and a permanently shadowed region (PSR) can be close on a map. A rover still needs a route it can drive and a way to get power and communicate along it.",
+      "symbols": "",
+      "values": [
+        {
+          "label": "Terrain model geometric Earth contact",
+          "value": 37.797619047619044,
+          "unit": "%"
+        },
+        {
+          "label": "Smooth sphere geometric Earth contact",
+          "value": 63.69047619047619,
+          "unit": "%"
+        }
+      ],
+      "context": [
+        "Shadow, cold ground and hydrogen signals are clues, not confirmation of water ice. This assessment does not measure local ice or water yield and does not approve a landing or mining operation.",
+        "Landing-to-target traverse and power delivery are unassessed.",
+        "Can a high site support communications and power for a separate shadowed target along a practical route?"
+      ],
+      "sources": [
+        {
+          "title": "NASA LOLA · Polar terrain and shadow products",
+          "url": "https://pgda.gsfc.nasa.gov/products/90"
+        },
+        {
+          "title": "NASA · Lunar south pole terrain and operations",
+          "url": "https://www.nasa.gov/reference/moonbase-environment/"
+        }
+      ],
+      "answer": "Screen slope and roughness at rover scale, check traction and return energy, and verify communication along the route. Geometric contact is the share of sampled intervals when Earth clears the lunar antenna cutoff. Check station availability and radio performance separately. Choose a candidate shadowed target and check a route for slopes, obstacles, thermal exposure and communications. Mark for a route connecting landing, power and sampling locations, with rover-scale slope/obstacle, thermal, return-energy and communication checks. The captured contact percentages describe the stationary scenario, not contact along a route. Shortest distance alone is insufficient; do not award a claim of landing safety or route approval."
+    },
+    {
+      "topic": "extraction-power",
+      "title": "Can we power water production?",
+      "prompt": "If more heating releases more vapour but water output stays flat, which part of the system would you test? Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.",
+      "hint": "Solar panels generate power where they receive sunlight. Equipment working in permanent shadow needs energy from elsewhere to stay warm, excavate, and extract and capture water.",
+      "symbols": "",
+      "values": [
+        {
+          "label": "Terrain model generated energy",
+          "value": 109.68619116778225,
+          "unit": "kWh"
+        },
+        {
+          "label": "Terrain model minimum stored energy",
+          "value": 0,
+          "unit": "kWh"
+        },
+        {
+          "label": "Smooth sphere generated energy",
+          "value": 45.727645545735875,
+          "unit": "kWh"
+        },
+        {
+          "label": "Smooth sphere minimum stored energy",
+          "value": 0,
+          "unit": "kWh"
+        }
+      ],
+      "context": [
+        "Shadow, cold ground and hydrogen signals are clues, not confirmation of water ice. This assessment does not measure local ice or water yield and does not approve a landing or mining operation.",
+        "Extraction load, capture throughput and water yield are unassessed."
+      ],
+      "sources": [
+        {
+          "title": "JPL Horizons · Sun and Earth positions",
+          "url": "https://ssd.jpl.nasa.gov/horizons/"
+        },
+        {
+          "title": "NASA LOLA · Polar terrain and shadow products",
+          "url": "https://pgda.gsfc.nasa.gov/products/90"
+        },
+        {
+          "title": "Kiewiet et al. (2026) · LUWEX extraction and capture experiments",
+          "url": "https://elib.dlr.de/215814/"
+        }
+      ],
+      "answer": "Compare delivered power (W) and storage (Wh) with the load schedule. Include heating, excavation, transport and capture. LUWEX thermal-vacuum tests with icy soil simulants found that the cold trap limited vapour capture in their setup. Measure recovered water per unit energy and per hour in an integrated test. Compare measured extraction and capture loads with delivered power over time, including losses and battery reserve. Mark for testing capture capacity as a possible bottleneck, comparing timed loads with delivered power and storage including losses/reserve, and identifying the need for measured recovered water per unit energy. Generated energy is not energy available for extraction after existing loads. No conversion from kWh to local water yield is supported; LUWEX is a laboratory example, not a prediction for this site."
+    }
+  ]
+}
