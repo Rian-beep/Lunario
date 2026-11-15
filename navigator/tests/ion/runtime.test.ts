@@ -173,6 +173,9 @@ test("surface probe rejects absent, hidden and invalid geometry without requests
   idle.dispose();
   const { moon, tiles, radial, requests } = await parsedSurface();
   const before = requests(), stats = moon.stats;
+  assert.equal(moon.appearance.meshes,2,'cached hidden tile is excluded from appearance evidence');
+  assert.equal(moon.appearance.unlit,2);
+  assert.equal(moon.appearance.withBaseColorMap,0,'synthetic geometry does not establish photographic content');
   tiles.update = () => assert.fail("probe must not update tile selection");
   for (const direction of [new Vector3(), new Vector3(NaN, 1, 0), new Vector3(0, Infinity, 0), null, {}, undefined]) {
     assert.equal(moon.surfacePoint(direction as Vector3), null);
@@ -184,6 +187,7 @@ test("surface probe rejects absent, hidden and invalid geometry without requests
   assert.equal(moon.surfacePoint(direction), null, "active cached geometry is not visible");
   tiles.setTileVisible(tiles.root!.children![0], true);
   moon.group.visible = false;
+  assert.equal(moon.appearance.meshes,0);
   assert.equal(moon.surfacePoint(direction), null);
   moon.group.visible = true;
   (tiles.root!.children![0] as RuntimeTile).engineData.scene!.visible = false;
@@ -466,6 +470,8 @@ test("terminal tile/parse failures hide streamed output and clear pending work w
   await setImmediate(); await Promise.all([cancelledParse, cancelledDownload]);
   assert.equal(moon.status.phase, "error"); assert.equal(moon.group.visible, false); assert.equal(moon.ready, false);
   assert.equal(tiles.parseQueue.has(parseItem), false); assert.equal(tiles.downloadQueue.has(downloadItem), false);
+  const listeners=(tiles as unknown as {_listeners:Record<string,unknown[]>})._listeners;
+  assert.equal(listeners['load-error']?.length??0,0,'teardown removes the registered failure callback');
   assert.equal(JSON.stringify(moon.status).includes("provider detail"), false);
   const status = moon.status;
   tiles.dispatchEvent({ type: "load-error", tile: null, url: "", error: new Error("stale") });

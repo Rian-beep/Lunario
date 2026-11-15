@@ -1,5 +1,6 @@
 import {useStreamedAtlasMaterials} from "./atlas-material";
 import {ionFailureLabel,type IonFailure} from "@/lib/ion/diagnostics";
+import {inspectIonAppearance, type IonAppearanceEvidence} from "@/lib/ion/appearance";
 import { Box3, Group, PerspectiveCamera, Raycaster, Vector2, Vector3, WebGLRenderer, type Object3D } from "three";
 import { GLTFExtensionsPlugin } from "3d-tiles-renderer/plugins";
 import { validateIonConfiguration } from "../../../../lib/ion/config";
@@ -36,6 +37,8 @@ export type IonMoon = {
   readonly status: IonMoonStatus;
   readonly attribution: readonly IonAttribution[];
   readonly stats: IonMoonStats;
+  /** Selected visible tile payload observations; no provider URLs, credentials, or scientific qualification. */
+  readonly appearance: IonAppearanceEvidence;
   /** Measured visible geometry in scene km, along a body-centred scene direction. No loading. */
   surfacePoint(radialSceneDirection: Vector3): Vector3 | null;
   update(): void;
@@ -80,7 +83,7 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
     draco = null;
     auth = null;
     if (current) {
-      current.removeEventListener("load-error", fail);
+      current.removeEventListener("load-error", tileFailure);
       current.processNodeQueue.autoUpdate = false;
       current.processNodeQueue.removeByFilter(() => true);
       current.parseQueue.autoUpdate = false;
@@ -119,6 +122,11 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
     group,
     get ready() { return status.ready; },
     get status() { return status; },
+    get appearance() {
+      const models: Object3D[]=[];
+      if(tiles&&!stopped&&group.visible)tiles.forEachLoadedModel((scene,tile)=>{if(tiles!.visibleTiles.has(tile))models.push(scene);});
+      return inspectIonAppearance(models);
+    },
     get stats() {
       if (!tiles || stopped) return EMPTY_STATS;
       // These two fields exist in 0.5.4 but are omitted from its declarations.
