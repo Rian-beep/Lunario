@@ -1,97 +1,80 @@
-# Space Apps criteria review — Lunario
+# Space Apps judging review — Lunario (Grok-critical pass)
 
-Review date: 15 November 2026 (Europe/London). Scope: the integrated product (static site shell + `navigator/` workbench delivered by Luke), scored against the **Lunar Landing Site Navigator** challenge objectives and the shared local/global judging rubric (1–5, equally weighted).
+Review date: 15 November 2026 (Europe/London). Working scores below follow the **Grok critical pass** (harsher, demo-path focused). Prior internal deep judges averaged ~4.0; Grok’s average is **3.2**. Use Grok as the improvement bar for hitting 5s.
 
-This is an internal team assessment for presentation planning, not an official judge score.
+Official rubric: https://www.spaceappschallenge.org/resources/judging-awards-guide/#judging-criteria
 
-## Executive verdict
+## Scorecard
 
-| Rubric | Score (1–5) | One-line read |
-| --- | ---: | --- |
-| Impact | **4** | Strong mission-planning + education reach; not yet proven at population scale. |
-| Creativity | **5** | Multi-audience workbench + flight/replan loop goes well beyond a static horizon plot. |
-| Validity | **4** | Scientifically grounded and heavily tested; still educational / not flight-qualified. |
-| Relevance | **5** | Directly hits site×date comparison, Sun/Earth vs horizon, NASA data as the core engine. |
-| Presentation | **3** | Product and About story are strong; live demo polish and judge narrative still decide this. |
-| **Rubric average** | **4.2** | Competitive Advanced/Intermediate entry if the demo tells one clear story. |
-
----
-
-## Challenge objectives checklist
-
-| Objective | Status | Evidence in Lunario |
-| --- | --- | --- |
-| Interactive site selection & comparison | **Met** | ~40 sourced landing records (incl. all six Apollo landings), polar candidates, custom lunar coordinates, saved scenario comparison tray with export. |
-| Date and time flexibility | **Met** | UTC landing epoch + stay; timeline scrub/play; ±1/±7 day replan; mission calendar / arrival-window search in Planner. |
-| Sun and Earth position vs horizon | **Met** | Horizon analysis with azimuth/elevation vs UTC, numerical table, terrain vs smooth-sphere comparison. |
-| Power and communication assessment | **Met** | Solar elevation / sunlight windows, storage and load screening, Earth visibility / DSN complexes (Goldstone, Madrid, Canberra), Planner hardware assumptions. |
-| Multiple visualization approaches | **Met** | Whole-Moon and south-pole 2D maps, measured LOLA 3D surface, NASA topographic globe, charts, comparison workspaces. |
-| Temporal dynamics | **Met** | Environmental timeline strips; epoch lighting; flight Follow playback; replan contingency timelines. |
-| Accessibility across skill levels | **Met** | Public / Educator / Planner modes, Learn panel, variable **i** help, teaching studio exports. |
-| NASA / challenge data integration | **Met (core)** | JPL Horizons (DE441), LOLA / PGDA horizons & terrain, NASA SVS Moon globe + imagery path via Moon Trek; QuickMap/CSA attributed as exploration context. |
-
-Gaps called out honestly in product docs (do not over-claim in the demo):
-
-- Not an operational NASA landing-approval tool; fine landing-ellipse / structural / DSN-allocation evidence remains open.
-- Catalog span is bounded (documented 2026–2027 hourly samples); darkness/blackout at stay edges are lower bounds.
-- Hosted performance and cold-user studies are still teammate-owned acceptance gates.
-- Dashboard on GitHub Pages embeds the ~78 MB offline bundle; first load can be slow.
+| Criterion | Grok | Prior deep | Working target |
+| --- | ---: | ---: | --- |
+| Impact | **3** | 4 | 5 via unburying the delay story |
+| Creativity | **3** | 4 | 5 via Public plain-language + focused loop |
+| Validity | **4** | 4 | 5 via limits honesty + illumination check |
+| Relevance | **4** | 5 | 5 via default path = compare sites/dates |
+| Presentation | **2** | 3 | 5 via Public-first demo path |
+| **Average** | **3.2** | 4.0 | — |
 
 ---
 
-## Global judging criteria (detail)
+## Impact — **3/5** → path to 5
 
-### Impact — **4 / 5**
+**Why 3:** Best result is excellent (Connecting Ridge 29 Jun 2027: **97.6% sun vs 0% smooth Moon**; slip to 13 Jul → **16.1%** with 9-day dark gap; site-only swap to de Gerlache–Shackleton → **95.5%**) — but it is buried. Public opens in shadow; delay story lives under Planner; power model is a generic lander; only 9 sites have real horizons.
 
-**Why not lower:** Addresses a real CLPS / south-pole planning pain (rapid site×date trade when schedules slip). Serves planners, educators, and the public in one product. Replan / contingency workflows match the challenge’s “hardware delays force replanning” narrative.
-
-**Why not 5:** “Changes the world / extensive reach” needs evidence of use beyond the team (studies, classroom packs in the wild, planner adoption). Until those exist, outstanding impact is aspirational.
-
-**Raise the score:** Run 3–5 cold Public/Educator sessions; ship one printable classroom pack from Teaching studio; name one concrete reference mission the demo optimizes for.
-
-### Creativity — **5 / 5**
-
-Novel combination relative to QuickMap / Moon Trek / raw Horizons: map-first workbench, audience modes, teaching exports, editable flight contact experiments, mission replan with held hardware, engineering-evidence envelopes that refuse to silently rewrite the verdict. Distinct visual identity (cream/peach/orange Lunario language) without abandoning NASA asset fidelity.
-
-### Validity — **4 / 5**
-
-**Strengths:** Airless horizon from LOLA products; Horizons ephemerides; smooth-sphere vs terrain honesty; large automated suite (source release ~790 tests) plus documented web/offline journey checks; explicit unknown/missing-evidence states.
-
-**Limits to state aloud:** Educational / preliminary engineering workbench; illustrative contact/breakup ≠ structural qualification; station weather/model context ≠ reserved DSN pass; coarse global terrain ≠ fine hazard map.
-
-**Why not 5:** Rubric’s “fully developed and ready for real-world implementation” implies operational readiness Lunario correctly refuses to claim.
-
-### Relevance — **5 / 5**
-
-Maps almost 1:1 onto the challenge statement. NASA data is not decoration: Horizons + LOLA drive assessments; NASA globe/lander assets and Moon Trek imagery path are integrated with provenance. South-pole geometry, power, and direct-to-Earth windows are the product spine.
-
-### Presentation — **3 / 5** (today) → target **5** with demo craft
-
-Judges score the **demo and full project**, not only the code.
-
-**Already in place:** About page narrative, clear problem framing, mode guides, provenance/export language, Dashboard now mounts the full navigator in-site.
-
-**Still needed for a 5:**
-
-1. **90-second spine:** Problem (south-pole light/comms) → pick site+date → show Sun/Earth vs ridge → flip date by +7 days → show power/contact change → one educator/public beat.
-2. **Preload the Dashboard** before judges arrive (78 MB offline file).
-3. **One slide** mapping each rubric column to a live click.
-4. **Honest limits slide** (builds Validity trust).
-5. Practice with a non-author timing the story.
+**To hit 5:**
+- **Today:** One-click **“Show a delayed landing”** that loads all three cases.
+- **Today:** Start the clock in sunlight, not at 11:00 UTC when it says “in shadow”.
+- **Today:** One contrast line: *97.6% with real terrain vs 0% on a smooth Moon*.
+- **Later:** Real published lander spec; horizons for more sites; non-expert test.
 
 ---
 
-## Demo script (suggested)
+## Creativity — **3/5** → path to 5
 
-1. Open **Dashboard** (already loaded). Stay in **Public**.
-2. Select a south-pole candidate; show polar map + horizon Sun/Earth.
-3. Scrub timeline: sunlight strip vs Earth-view strip; call out time-to-sunset / Earthset if shown.
-4. **Replan mission**: +7 days, same stay/hardware — compare stored energy / contact.
-5. Switch **Educator** → open Learn / one equation intuition; or **Planner** → Mission assessment.
-6. Close on: “When launch slips, teams need this comparison in minutes, not a Horizons scavenger hunt.”
+**Why 3:** Three modes + date-slip energy check improve on Horizons/Moon Trek, but the concept isn’t new. Public still talks like an engineer (“antenna viewing limit”, “assessed requirements”). Lander in the main header steals attention from the idea.
+
+**To hit 5:**
+- **Today:** Remove Lander, Lab, and engineering controls from Public.
+- **Today:** Plain Public wording (“Earth is above the hills”).
+- **Today:** Educator = one loop: predict → change one thing → see the result (not a research form).
+- **Later:** “What if we slip a week?” strip across the whole year.
 
 ---
 
-## Integration note (this delivery)
+## Validity — **4/5** → path to 5
 
-The website **Dashboard** tab embeds `navigator/public/solarreach-navigator.html` (verified offline release, SHA256 `30994eb901aec5d6e593d2b01364fd96f2bd6e07bfdfb41208a0b2d919a01fc9`) under the shared Lunario nav. About remains the story page. Prefer a Next.js host for `navigator/` when available; Pages keeps working via the offline bundle.
+**Why 4 (strongest):** Horizons residuals ~0.005°; LOLA horizons; smooth-Moon baseline on every result; tests back it up.
+
+**Why not 5:** Custom pins borrow nearest grid cell; 40 m data smooths ridges; sunlight = single horizon cut; no thermal / real lander; “Conditional” as best outcome can sound like “never passes.”
+
+**To hit 5:**
+- **Today:** State limits in one breath in the demo.
+- **Today:** Borrowed-horizon warning at the **top** of the screen.
+- **Today:** Do not quote flare, DSN weather, or temperature results.
+- **Later:** Check sunlight vs NASA official illumination maps (PGDA 69); exact custom-coordinate horizons.
+
+---
+
+## Relevance — **4/5** → path to 5
+
+**Why 4:** Right challenge; NASA data really drives it. Brief asked for an *intuitive* quick site×date comparer — product is shaped like an engineering workbench. The comparison that answers the brief isn’t the default path; lander isn’t in the brief.
+
+**To hit 5:**
+- **Today:** Open with: *“Lunar Landing Site Navigator, using JPL Horizons and LOLA terrain to compare sunlight and Earth view at the south pole.”*
+- **Today:** Public main actions = **Pick a site**, **Move the date**, **Compare**; horizon chart one click away.
+- **Later:** Optional official illumination-map layer for shortlisting.
+
+---
+
+## Presentation — **2/5** → path to 5
+
+**Why 2 (weakest):** Polished look, weak first minute. Public opens with a big “in shadow” jargon banner; ~16 header controls before the map; Compare starts empty; delay demo hidden in Planner; 3s loader + popup on every reload.
+
+**To hit 5:**
+- **Today:** Fix Public first paint (sunlight start, plain banner, fewer header controls).
+- **Today:** Surface delay demo + pre-filled Compare (three cases).
+- **Today:** Soften every-reload loader/popup friction for demos (or preload + skip once staged).
+- **Must:** Live Pages Dashboard embed (not placeholder) + rehearsed 90s spine.
+
+### Demo one-breath limits (Validity)
+“Positions match JPL Horizons closely; horizons come from LOLA. Custom pins borrow the nearest prepared cell. We use a single horizon cut, not full disk–terrain integration. Best assessed outcome can stay Conditional when evidence is incomplete — that means honest, not approved to land.”
