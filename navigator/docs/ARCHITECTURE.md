@@ -72,6 +72,6 @@ Scene initialization yields through an animation-frame opportunity and a subsequ
 
 ## Optional Earth orbital context
 
-`lib/orbits.ts` validates dated GP elements and predicts positions with satellite.js SGP4. `earth-orbits.tsx` owns explicit catalogue controls; the persistent scene updates markers without rebuilding lunar assets. `app/api/orbits/route.ts` caches a fixed, bounded set of CelesTrak identities and retains prior dated data on failure. Offline imports use the same validator and no HTTP. Orbital time never modifies the lunar scenario or evaluator. See ADR 0010 for frame, cache and validity boundaries.
+`lib/orbits.ts` validates dated GP elements and predicts positions with satellite.js SGP4. `earth-orbits.tsx` owns explicit catalogue controls; the persistent scene updates markers without rebuilding lunar assets. `app/api/orbits/route.ts` caches a fixed, bounded set of CelesTrak identities and retains prior dated data on failure. Offline imports use the same validator and no HTTP. Orbital time never modifies the lunar scenario or evaluator. See ADR 0011 for frame, cache and validity boundaries.
 
 Measured close-view tessellation uses `lib/terrain-lod.ts`; existing source spacing and coverage determine detail. Cooperative geometry replacement retains the prior mesh until ready. `lib/lunar-projection.ts` avoids polar floating-point cancellation in texture lookup. Chart SVG viewboxes and circular variable controls preserve proportions across layouts.
