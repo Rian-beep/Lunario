@@ -443,7 +443,10 @@ html:root .selected .site-symbol { border-color: var(--primary); }
 html:root .planning-calendar-grid button[aria-pressed="true"] { outline-color: var(--ring); }
 html:root .landing-outcome.within-assumed-limits { border-color: var(--mission-success); background: var(--mission-success-bg); }
 html:root .landing-outcome.outside-assumed-limits { border-color: var(--destructive); }
-html:root :is(.constraint.warning, .planning-first-failure, .comparison-coverage-notice, .assessment-timing) { border-color: var(--mission-warning); }
+html:root :is(.constraint.warning, .planning-first-failure, .comparison-coverage-notice, .assessment-timing, .borrowed-horizon-banner) { border-color: var(--mission-warning); }
+html:root .borrowed-horizon-banner { background: color-mix(in oklab, var(--mission-warning) 14%, transparent); color: var(--mission-ink); }
+html:root .demo-contrast-banner,
+html:root .demo-contrast-notice { border-color: var(--mission-selected); background: color-mix(in oklab, var(--mission-selected) 55%, transparent); color: var(--mission-ink); }
 
 /* Native and shadcn controls share states, including fields in expanded cards. */
 html:root :is(input, select, textarea):not(:where([type="checkbox"], [type="radio"], [type="range"])) {
@@ -640,6 +643,18 @@ html:root[data-ui-theme="dark"] {
   --sun: #ffc66d;
   --earth: #a3d8f8;
   --chart-4: #d8b5ef;
+}
+html:root[data-ui-theme="dark"] .site-shell-nav__link {
+  color: var(--muted-foreground);
+}
+html:root[data-ui-theme="dark"] .site-shell-nav__link:hover {
+  color: var(--foreground);
+  background: var(--secondary);
+}
+html:root[data-ui-theme="dark"] .site-shell-nav__link[aria-current="page"] {
+  color: var(--foreground);
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--border);
 }
 html:root[data-ui-theme="dark"] .header-context-toolbar {
   background: var(--secondary);

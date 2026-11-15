@@ -9,6 +9,10 @@
  *   data-text="Prepare for landing"
  *   data-once="session"        play only once per browser tab session (sessionStorage)
  *   data-altitude="15000"      starting altitude for the telemetry line (metres); "0" hides the line
+ *
+ * Altitude stays above zero while waiting for Lunario.loader.hide() (or auto-hide).
+ * The final descent reaches ALT 00000 M, then the loader lifts away so the dashboard
+ * opens on touchdown — not while the counter is still falling.
  */
 (function () {
   "use strict";
@@ -68,6 +72,11 @@
       hideRequested = false, leaveAt = 0, landAt = 0, readyResolve;
   var ready = new Promise(function (res) { readyResolve = res; });
   var now = function () { return (window.performance && performance.now) ? performance.now() : Date.now(); };
+  // Hold floor while the dashboard is still loading; final land-to-zero opens the UI.
+  var HOLD_FLOOR = Math.max(80, Math.round(cfg.alt * 0.012));
+  var LAND_MS = reduce ? 280 : 720;
+  var TOUCHDOWN_HOLD_MS = reduce ? 60 : 180;
+  var displayedAlt = cfg.alt > 0 ? cfg.alt : 0;
 
   // typing schedule: start after 380ms, ~68ms per character, a short beat on spaces
   var schedule = [], acc = 250;
@@ -104,6 +113,22 @@
   function pad(n) { var s = String(Math.max(0, Math.round(n))); while (s.length < 5) s = "0" + s; return s; }
   var easeOut = function (x) { return 1 - Math.pow(1 - x, 3); };
 
+  function altitudeForElapsed(t) {
+    if (landAt) {
+      var q = Math.min(1, (now() - landAt) / LAND_MS);
+      return Math.max(0, landAt_alt * (1 - easeOut(q)));
+    }
+    if (cfg.alt <= 0) return 0;
+    // Primary descent during the minimum duration → hold floor (never zero yet).
+    var p = Math.min(1, t / Math.max(1, cfg.min));
+    var primary = cfg.alt + (HOLD_FLOOR - cfg.alt) * easeOut(p);
+    if (t <= cfg.min) return primary;
+    // Still waiting for the dashboard: creep slowly toward a soft floor, never touch 0.
+    var wait = t - cfg.min;
+    var creep = HOLD_FLOOR * Math.exp(-wait / 28000);
+    return Math.max(48, creep);
+  }
+
   function frame() {
     var t = now() - t0;
     // ring sweep: slow, constant, mechanical
@@ -115,14 +140,18 @@
     }
     var typing = !reduce && t < typeEnd;
     cursor.style.opacity = typing || reduce ? 1 : (Math.floor((t - typeEnd) / 530) % 2 === 0 ? 0 : 1);
-    // altitude: decelerating descent; holds just above zero until the page is ready
+    // altitude: descend while loading; only reaches 0 when the dashboard is ready to open
     if (tele) {
-      var p = Math.min(1, t / cfg.min), alt;
-      if (!landAt) alt = cfg.alt * Math.pow(1 - Math.min(p, 0.985), 2.2);
-      else { var q = Math.min(1, (now() - landAt) / 300); alt = landAt_alt * (1 - q); }
-      tele.textContent = "ALT " + pad(alt) + " M";
+      displayedAlt = altitudeForElapsed(t);
+      tele.textContent = "ALT " + pad(displayedAlt) + " M";
+      if (landAt && displayedAlt <= 0.5 && !leaveAt) {
+        displayedAlt = 0;
+        tele.textContent = "ALT 00000 M";
+        if (!touchdownAt) touchdownAt = now();
+        else if (now() - touchdownAt >= TOUCHDOWN_HOLD_MS) leaveAt = now();
+      }
     }
-    // leave
+    // leave (after ALT 00000)
     if (leaveAt) {
       var d = Math.min(1, (now() - leaveAt) / (reduce ? 300 : 520)), e = easeOut(d);
       el.style.opacity = String(1 - e);
@@ -131,17 +160,16 @@
     }
     raf = requestAnimationFrame(frame);
   }
-  var landAt_alt = 0;
+  var landAt_alt = 0, touchdownAt = 0;
   function maybeLeave() {
     if (leaveAt || landAt || !el) return;
     if (!(minDone && (hideRequested || (cfg.auto && loaded)))) return;
     var wait = Math.max(0, typeEnd + 150 - (now() - t0)); // never cut the typing short
     setTimeout(function () {
       if (tele) {
-        var p = Math.min(1, (now() - t0) / cfg.min);
-        landAt_alt = cfg.alt * Math.pow(1 - Math.min(p, 0.985), 2.2);
+        landAt_alt = Math.max(displayedAlt, HOLD_FLOOR * 0.5);
         landAt = now();
-        setTimeout(function () { leaveAt = now(); }, 300 + 120);
+        touchdownAt = 0;
       } else leaveAt = now();
     }, reduce ? 0 : wait);
   }

@@ -10,8 +10,8 @@ function tokens(theme:'light'|'dark'){
 }
 function lum(hex:string){const c=hex.slice(1).match(/../g)!.map(v=>parseInt(v,16)/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722;}
 function contrast(a:string,b:string){const [lo,hi]=[lum(a),lum(b)].sort((a,b)=>a-b);return(hi+.05)/(lo+.05);}
-test('light remains the default; dark preferences are explicit and affect only the root theme',()=>{
- for(const value of [null,undefined,'','system','invalid'])assert.equal(parseUiTheme(value),'light');assert.equal(parseUiTheme('dark'),'dark');
+test('dark is the default; light preferences are explicit and affect only the root theme',()=>{
+ for(const value of [null,undefined,'','system','invalid'])assert.equal(parseUiTheme(value),'dark');assert.equal(parseUiTheme('light'),'light');assert.equal(parseUiTheme('dark'),'dark');
  const calls:unknown[]=[];const root={dataset:{},classList:{toggle:(...args:unknown[])=>calls.push(args)}};applyUiTheme(root as unknown as HTMLElement,'dark');assert.deepEqual(root.dataset,{uiTheme:'dark'});assert.deepEqual(calls,[['dark',true]]);
 });
 test('dark mode is near-black with orange accents and readable ink across interface states',()=>{
