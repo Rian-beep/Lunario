@@ -24,8 +24,11 @@ for(const name of ['texImage2D','texSubImage2D','texStorage2D','generateMipmap']
 }
 const frames:{t:number;gap:number;renderMs:number;width:number}[]=[],uploads:unknown[]=[],decodes:unknown[]=[];
 installDiagnosticControls((record:unknown)=>decodes.push(record));
+let orbiting=new URL(location.href).searchParams.has('orbit'),motionStart=performance.now();
 let last=performance.now(),running=true,globe:Awaited<ReturnType<typeof createNasaGlobe>>|undefined;
-function frame(){if(!running)return;const t=performance.now(),start=t;renderer.render(scene,camera);
+function frame(){if(!running)return;const t=performance.now(),start=t;
+ if(orbiting){const angle=(t-motionStart)*.00005;camera.position.set(Math.sin(angle)*6900,Math.cos(angle)*6900,0);camera.lookAt(0,0,0);}
+ renderer.render(scene,camera);
  frames.push({t,gap:t-last,renderMs:performance.now()-start,width:globe?.visualStatus.width??0});last=t;requestAnimationFrame(frame);}
 requestAnimationFrame(frame);
 window.fixture={
@@ -36,12 +39,13 @@ window.fixture={
    bitmapDecode,device:{maxTextureSize:8192,textureBudgetMiB:512,maxAnisotropy:renderer.capabilities.getMaxAnisotropy()},
    prepareTexture(texture){const image=texture.image as {width:number;height:number};const start=performance.now(),callStart=textureCalls.length;renderer.initTexture(texture);
     uploads.push({width:image.width,height:image.height,start,end:performance.now(),ms:performance.now()-start,compressed:!!(texture as T.CompressedTexture).isCompressedTexture,calls:textureCalls.slice(callStart)});}
-  });globe.mesh.visible=true;scene.add(globe.mesh);
+  });globe.mesh.visible=true;scene.add(globe.mesh);motionStart=performance.now();
   return {start,ready:performance.now(),triangles:globe.mesh.geometry.index!.count/3,status:globe.visualStatus};
  },
  state(){return globe?.visualStatus;},
  report(){return {frames,uploads,decodes,memory:{...renderer.info.memory}};},
  async view(lat:number,lon:number,atlas=true){
+  orbiting=false;
   const p=lat*Math.PI/180,l=lon*Math.PI/180;
   camera.position.set(Math.cos(p)*Math.sin(l)*6900,Math.cos(p)*Math.cos(l)*6900,-Math.sin(p)*6900);
   camera.up.set(0,0,-1);if(Math.abs(lat)>89.5)camera.up.set(0,1,0);
