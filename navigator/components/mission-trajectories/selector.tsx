@@ -37,22 +37,26 @@ export function MissionTrajectorySelector({ site, selection, onSelect, onClose }
   const datasets = missionTrajectoriesForSite(site.id);
   const coverage = MISSION_TRAJECTORY_COVERAGE.find(row => row.siteId === site.id);
   const reasons = missionReasonsForSite(site.id);
-  const active = selection?.siteId === site.id ? selection : null;
+  const local = selection?.siteId === site.id ? selection : null;
+  const invalid = local?.mode === 'published' && !datasets.some(data => data.id === local.trajectoryId);
+  const active = invalid ? null : local;
   return <section className="mission-trajectories" aria-label={`Trajectory evidence for ${site.name}`}>
     <style>{styles}</style>
     <header><div><p>Mission paths</p><h2>{site.name}</h2></div>{onClose && <Button variant="outline" onClick={onClose} aria-label="Close mission paths">Close</Button>}</header>
     <div className="mt-body">
+      <p>Choose a published path to open its paused replay, or open the educational flight controls. Historical replay uses its own clock; planning dates stay unchanged.</p>
+      {invalid && <p role="status">The selected path is unavailable for this site. Choose an available path or the educational simulation.</p>}
       <p>{coverage?.missing ?? 'No validated historic trajectory is bundled for this site.'}</p>
       {coverage?.status === 'not-reviewed' && <p>This site’s trajectory sources have not been individually reviewed in this catalogue.</p>}
       {datasets.map(data => <article className="mt-option" key={data.id}>
-        <p className="mt-kind">{data.kind === 'reference' ? 'Published reference · flown accuracy unresolved' : 'Reconstructed orbit · orbital context only'}</p>
+        <p className="mt-kind">{data.kind === 'reference' ? 'Published reference · flown accuracy unresolved' : data.phase === 'descent' && data.kind === 'reconstructed' ? 'Reconstructed descent · postflight estimate' : 'Reconstructed orbit · orbital context only'}</p>
         <h3>{data.vehicle}</h3>
         <p>{data.uncertainty}</p>
         <Button variant="outline" aria-pressed={active?.mode === 'published' && active.trajectoryId === data.id} onClick={() => onSelect({ mode: 'published', siteId: site.id, trajectoryId: data.id })}>
-          {data.phase === 'orbit' ? 'Select command-module orbit' : 'Select reference descent'}
+          {data.phase === 'orbit' ? 'Select command-module orbit' : data.kind === 'reconstructed' ? 'Select reconstructed descent' : 'Select reference descent'}
         </Button>
         <details><summary>Coverage and sources</summary>
-          <dl><dt>Starts</dt><dd>{data.epoch.calendar} {data.epoch.scale} ({data.epoch.utc} UTC)</dd><dt>Duration</dt><dd>{data.coverage.end} seconds</dd><dt>Samples</dt><dd>{data.coverage.cadenceSeconds} seconds apart; linear display interpolation</dd><dt>Frame</dt><dd>Moon-centered {data.frame.name}; km and km/s</dd></dl>
+          <dl><dt>Starts</dt><dd>{data.epoch.calendar} {data.epoch.scale} ({data.epoch.utc} UTC)</dd><dt>Duration</dt><dd>{data.coverage.end} seconds</dd><dt>Samples</dt><dd>{data.coverage.cadenceSeconds} seconds nominal spacing; {data.coverage.interpolation === 'linear' ? `linear display interpolation only across gaps up to ${data.coverage.maxGapSeconds} seconds` : 'exact samples only'}</dd><dt>Frame</dt><dd>Moon-centered {data.frame.name}; km and km/s</dd></dl>
           <ul>{data.missing.map(item => <li key={item}>{item}</li>)}</ul>
           <ul>{data.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.version}</a></li>)}</ul>
         </details>
@@ -63,7 +67,7 @@ export function MissionTrajectorySelector({ site, selection, onSelect, onClose }
       {reasons.length > 0 && <details><summary>Why these paths and maneuvers?</summary>
         {reasons.map(reason => <article className="mt-option" key={reason.id}><p className="mt-kind">{reason.basis === 'source-derived' ? 'Documented rationale' : reason.basis === 'model-design' ? 'Display design choice' : 'Unresolved evidence'}</p><h3>{reason.goal}</h3><p>{reason.explanation}</p><p>What matters: {reason.variables.join('; ')}.</p><ul>{reason.citations.map(citation => <li key={citation.url}><a href={citation.url} target="_blank" rel="noreferrer">{citation.locator}</a></li>)}</ul></article>)}
       </details>}
-      <p>At 1×, one wall-clock second advances one mission second. This is a replay of published samples. Position data supplies no spacecraft attitude.</p>
+      <p>Published paths play at 1×: one wall-clock second advances one mission second. Position data supplies no spacecraft attitude, thrust or landing qualification.</p>
     </div>
   </section>;
 }

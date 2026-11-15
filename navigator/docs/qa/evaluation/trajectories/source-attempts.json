@@ -1,0 +1,338 @@
+[
+  {
+    "id": "apollo-index",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/",
+    "siteIds": [
+      "apollo-11",
+      "apollo-12",
+      "apollo-14",
+      "apollo-15",
+      "apollo-16",
+      "apollo-17"
+    ],
+    "finding": "Only Apollo 15 CSM and Apollo 16 subsatellite SPKs listed. No LM descent or ascent kernel.",
+    "retrievedUtc": "2026-11-15T18:47:30.973263+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/",
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 12403,
+    "sha256": "55a8934410642258ab5a325d327450dd6952baeb561fee4378bd406f41f15cf0"
+  },
+  {
+    "id": "apollo15-comment",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/apollo15-1.cmt",
+    "siteIds": [
+      "apollo-15"
+    ],
+    "finding": "CSM reconstruction, not LM. Existing extract retained unchanged.",
+    "retrievedUtc": "2026-11-15T18:47:30.973635+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/apollo15-1.cmt",
+    "contentType": null,
+    "bytes": 2816,
+    "sha256": "47b96d7df1e6655c2f7adbdfefbc550ff6cdc3bc911bf84ecad4d9063c229dcd"
+  },
+  {
+    "id": "apollo16-comment",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/a16_subsat_ssd_lp150q.cmt",
+    "siteIds": [
+      "apollo-16"
+    ],
+    "finding": "Subsatellite orbit, not lunar module. Not imported as a landing.",
+    "retrievedUtc": "2026-11-15T18:47:30.973967+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/a16_subsat_ssd_lp150q.cmt",
+    "contentType": "text/plain; charset=UTF-8",
+    "bytes": 5877,
+    "sha256": "76375c8b5110dc975c331893962494a6a44fee17989bd9eadb85d39f9efd4e53"
+  },
+  {
+    "id": "apollo-pds",
+    "url": "https://pds-geosciences.wustl.edu/missions/apollo/",
+    "siteIds": [
+      "apollo-15",
+      "apollo-16",
+      "apollo-17"
+    ],
+    "finding": "Photographic camera-support ephemerides are orbital context, not LM ascent/descent.",
+    "retrievedUtc": "2026-11-15T18:47:30.974279+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://pds-geosciences.wustl.edu/missions/apollo/",
+    "contentType": "text/html",
+    "bytes": 50333,
+    "sha256": "9f63f04d8aae50ca5d68ab0df3988a0bfdc6bd3e319785a4549c79600df64972"
+  },
+  {
+    "id": "apollo11-ntrs",
+    "url": "https://ntrs.nasa.gov/citations/19700014995",
+    "siteIds": [
+      "apollo-11"
+    ],
+    "finding": "Trajectory reconstruction Volume I; prior reviewed foreword places numeric NAT/BET listing in Volume II. No new Volume II numeric attachment obtained.",
+    "retrievedUtc": "2026-11-15T18:47:31.686706+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ntrs.nasa.gov/citations/19700014995",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 81964,
+    "sha256": "fc8d233518c95e89ef35a1d84279c1ebf1afb6a3c5fa816a6e526d6d9f17ff4d"
+  },
+  {
+    "id": "apollo11-final",
+    "url": "https://ntrs.nasa.gov/citations/20220007267",
+    "siteIds": [
+      "apollo-11"
+    ],
+    "finding": "Final-descent reconstruction from sparse graphics; no global time-tagged 3D state table obtained. No digitized plot points imported.",
+    "retrievedUtc": "2026-11-15T18:47:31.696998+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ntrs.nasa.gov/citations/20220007267",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 95542,
+    "sha256": "077942008e4e5bbbe696f0d9cac05faa4a1d5b54aca505128ad75a2b4dc7fd15"
+  },
+  {
+    "id": "clps-index",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/",
+    "siteIds": [
+      "odysseus",
+      "blue-ghost-1",
+      "athena"
+    ],
+    "finding": "Separate reconstructed EDL kernels for IM-1, BGM-1, IM-2. Cruise, predicted, landing-site and offset kernels are distinct products.",
+    "retrievedUtc": "2026-11-15T18:47:31.778960+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/",
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 19627,
+    "sha256": "83cdb0f1a0eaa4be191e64afbc9862e06cc4ed6aab274d987eb442b120be8bf7"
+  },
+  {
+    "id": "clps-wrong-data-path",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/data/spk/",
+    "siteIds": [
+      "odysseus",
+      "blue-ghost-1",
+      "athena"
+    ],
+    "finding": "Initial guessed data/spk path returned 404; resolved from bundle index to spice_kernels/spk. This failed URL is not evidence of absent EDL products.",
+    "retrievedUtc": "2026-11-15T18:47:31.867221+00:00",
+    "httpStatus": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "clps-document",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/document/spiceds_v004.html",
+    "siteIds": [
+      "odysseus",
+      "blue-ghost-1",
+      "athena"
+    ],
+    "finding": "Archive version 4 documents reconstructed and predicted SPKs separately. Dates describe kernel coverage, not complete flight.",
+    "retrievedUtc": "2026-11-15T18:47:32.475089+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/document/spiceds_v004.html",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 57282,
+    "sha256": "c6c1b99cdb2c59e3f884dd31d1c81e42605cbf7352c5290fd7d841221f139105"
+  },
+  {
+    "id": "im1-label",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to2im_im1_edl_rec_240222_v01.xml",
+    "siteIds": [
+      "odysseus"
+    ],
+    "finding": "PDS EDL product identity; binary comments establish postflight reconstruction and provider 100 m (3-sigma) position estimate.",
+    "retrievedUtc": "2026-11-15T18:47:32.548526+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to2im_im1_edl_rec_240222_v01.xml",
+    "contentType": "text/xml",
+    "bytes": 3971,
+    "sha256": "e4c0124ba1c7ead51e311e98298de0821b9b2d402df0309ad05a3c05ac72a5f3"
+  },
+  {
+    "id": "bg1-label",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to19d_bgm1_edl_rec_250302_v01.xml",
+    "siteIds": [
+      "blue-ghost-1"
+    ],
+    "finding": "PDS reconstructed EDL product; source-versus-repackaging differences are not measurement errors.",
+    "retrievedUtc": "2026-11-15T18:47:32.948731+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to19d_bgm1_edl_rec_250302_v01.xml",
+    "contentType": "text/xml",
+    "bytes": 3981,
+    "sha256": "158c74649bf2ff5f8a23dc22523277e3e4a330643c634c01a50ad4fc688bef54"
+  },
+  {
+    "id": "im2-label",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_prime1_im2_edl_rec_250306_v01.xml",
+    "siteIds": [
+      "athena"
+    ],
+    "finding": "PDS reconstructed EDL product; no states from first contact to final landed orientation. No descent uncertainty borrowed from LLO.",
+    "retrievedUtc": "2026-11-15T18:47:33.132923+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_prime1_im2_edl_rec_250306_v01.xml",
+    "contentType": "text/xml",
+    "bytes": 3994,
+    "sha256": "7bc0e86c6d4bb25a985ae58dbe364fc2dcff6a027f5c770939ce87062818e009"
+  },
+  {
+    "id": "lro-geosciences",
+    "url": "https://pds-geosciences.wustl.edu/missions/lro/",
+    "siteIds": [],
+    "finding": "LRO orbital ephemerides available from FDT and LOLA precision orbit solutions. They describe LRO, not landers seen in LROC images; no duplicate orbital extract added.",
+    "retrievedUtc": "2026-11-15T18:47:33.133774+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://pds-geosciences.wustl.edu/missions/lro/",
+    "contentType": "text/html",
+    "bytes": 51571,
+    "sha256": "56abffacf69d6090862324c06270f3cb38ca9aedd6d9ba9850cbeabc1d3648b5"
+  },
+  {
+    "id": "lro-wrong-pds4-path",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/lro/",
+    "siteIds": [],
+    "finding": "Attempted PDS4 location; HTTP failure recorded. Correct mission entry point is the PDS Geosciences page.",
+    "retrievedUtc": "2026-11-15T18:47:33.383840+00:00",
+    "httpStatus": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "lro-wrong-operational-path",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/LRO/kernels/spk/",
+    "siteIds": [],
+    "finding": "Attempted operational location; HTTP failure recorded, not interpreted as absence of LRO ephemerides.",
+    "retrievedUtc": "2026-11-15T18:47:33.540367+00:00",
+    "httpStatus": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "id": "slim-mission",
+    "url": "https://darts.isas.jaxa.jp/en/missions/slim",
+    "siteIds": [
+      "slim"
+    ],
+    "finding": "Mission page says dataset list in preparation. No downloadable descent samples obtained.",
+    "retrievedUtc": "2026-11-15T18:47:33.689433+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://darts.isas.jaxa.jp/en/missions/slim",
+    "contentType": "text/html",
+    "bytes": 86758,
+    "sha256": "a810d4f22e05b32eff8db1e4a8a0f0a73a9ecceef7beaa24ef9e5f8f6bfffe72"
+  },
+  {
+    "id": "slim-catalog",
+    "url": "https://darts.isas.jaxa.jp/app/catalog/?q=slim",
+    "siteIds": [
+      "slim"
+    ],
+    "finding": "Client-rendered catalogue shell is not evidence of no datasets. No numeric state product obtained from this response.",
+    "retrievedUtc": "2026-11-15T18:47:33.734295+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://darts.isas.jaxa.jp/app/catalog/?q=slim",
+    "contentType": "text/html",
+    "bytes": 2554,
+    "sha256": "9d47909e4a32932a0967dc6ae187c9cda382a0a043ccf2eea3a48f14a88673f5"
+  },
+  {
+    "id": "slim-old-path",
+    "url": "https://darts.isas.jaxa.jp/planet/project/slim/",
+    "siteIds": [
+      "slim"
+    ],
+    "finding": "Attempted legacy path; retrieval outcome recorded without inferring data absence.",
+    "retrievedUtc": "2026-11-15T18:47:33.993420+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://darts.isas.jaxa.jp/planet/project/slim/",
+    "contentType": "text/html",
+    "bytes": 104684,
+    "sha256": "daaac1ed7f12ca44cab23c0a041f7677f106b772b91d09b68c8ce53b0ce87520"
+  },
+  {
+    "id": "ch3-release",
+    "url": "https://www.isro.gov.in/Release_of_Chandrayaan-3_science_data_to_the_Scientific_Community.html",
+    "siteIds": [
+      "chandrayaan-3"
+    ],
+    "finding": "Science data release announces lander/rover payload archive, not a documented final descent tracking-fit table.",
+    "retrievedUtc": "2026-11-15T18:47:34.154523+00:00",
+    "httpStatus": 403,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "ch3-archive",
+    "url": "https://pradan.issdc.gov.in/ch3/",
+    "siteIds": [
+      "chandrayaan-3"
+    ],
+    "finding": "Public archive entry point checked. No authenticated data requested or bypassed; no new descent reconstruction qualified.",
+    "retrievedUtc": "2026-11-15T18:47:34.248137+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://pradan.issdc.gov.in/ch3/",
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 45437,
+    "sha256": "95e7596b4ea9ec25de263f6df8023000c108095f556c10b712e318a5ede85c20"
+  },
+  {
+    "id": "bg1-rationale",
+    "url": "https://www.nasa.gov/blogs/missions/2025/03/02/blue-ghost-begins-9-minute-braking-burn/",
+    "siteIds": [
+      "blue-ghost-1"
+    ],
+    "finding": "NASA describes braking, final descent and visual hazard selection. Does not identify commands for every state sample.",
+    "retrievedUtc": "2026-11-15T18:47:34.973467+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://www.nasa.gov/blogs/missions/2025/03/02/blue-ghost-begins-9-minute-braking-burn/",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 265813,
+    "sha256": "346b40680403cdf488955eff16ce6576a7e167301aa0aa5627b92bf823e86d9e"
+  },
+  {
+    "id": "im2-mission",
+    "url": "https://www.intuitivemachines.com/im-2",
+    "siteIds": [
+      "athena"
+    ],
+    "finding": "Mission-country operator narrative for orbit lowering and descent targeting; phase rationale, not independent numeric tracking.",
+    "retrievedUtc": "2026-11-15T18:47:35.138041+00:00",
+    "httpStatus": 302,
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+  },
+  {
+    "id": "naif-rules",
+    "url": "https://naif.jpl.nasa.gov/naif/rules.html",
+    "siteIds": [],
+    "finding": "SPICE distribution and software-use rules reviewed; numeric facts extracted, no Toolkit mirrored or redistributed.",
+    "retrievedUtc": "2026-11-15T18:47:35.370030+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/naif/rules.html",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 23487,
+    "sha256": "ae85f851646e7c4f0a762db852907bc090a2ab50c815eb2a6cd8639e96b7e047"
+  },
+  {
+    "id": "naif-credit",
+    "url": "https://naif.jpl.nasa.gov/naif/credit.html",
+    "siteIds": [],
+    "finding": "Credit source producers as well as NAIF/PDS, following kernel comments.",
+    "retrievedUtc": "2026-11-15T18:47:35.877226+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/naif/credit.html",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 13037,
+    "sha256": "e2b501b7a7ede59328784ab1f34c7e3158d1717e4d0594a75ce2a9e2dfed6645"
+  },
+  {
+    "id": "nasa-data-license",
+    "url": "https://science.data.nasa.gov/about/license",
+    "siteIds": [],
+    "finding": "NASA-led mission science/engineering/auxiliary data default CC0 absent restrictive notice; commercial provider copyrights are not assumed waived for prose, logos or imagery.",
+    "retrievedUtc": "2026-11-15T18:47:35.887106+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://science.data.nasa.gov/about/license",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 72405,
+    "sha256": "38e81cd4e65301221bec2eaab54d7b6078b73e9bd7f422380bc1d357a889c299"
+  }
+]

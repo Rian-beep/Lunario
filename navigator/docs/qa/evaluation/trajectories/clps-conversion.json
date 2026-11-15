@@ -1,0 +1,322 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "spiceypy": "8.4.0",
+  "models": [
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+      "version": "naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+      "version": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    }
+  ],
+  "scope": "Independent evaluations against the same hash-pinned source, not independent tracking observations or physical accuracy. Midpoint checks are finite comparisons, not bounds at every time. Source SPKs already use Moon centre 301; no planetary SPK translation required. No attitude kernels loaded.",
+  "datasets": [
+    {
+      "id": "odysseus-descent-reconstructed",
+      "source": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to2im_im1_edl_rec_240222_v01.bsp",
+        "version": "clps_to2im_im1_edl_rec_240222_v01.bsp",
+        "sha256": "f8bac55717f7f9c3f782429b61abf742bd846f72ccd26b9cf11ade640ff8e557"
+      },
+      "pdsLabel": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to2im_im1_edl_rec_240222_v01.xml",
+        "version": "clps_to2im_im1_edl_rec_240222_v01.xml",
+        "sha256": "e4c0124ba1c7ead51e311e98298de0821b9b2d402df0309ad05a3c05ac72a5f3",
+        "kernelMd5": "b1fd94ce96648323157e3e969f1fec21",
+        "matchesKernel": true
+      },
+      "segments": [
+        {
+          "startEt": 761914496.1852641,
+          "endEt": 761916293.1852645,
+          "spkType": 1
+        }
+      ],
+      "sourceCoverageEt": [
+        761914496.1852641,
+        761916293.1852645
+      ],
+      "sourceCoverageUtc": [
+        "2024-02-22T22:53:47.000000Z",
+        "2024-02-22T23:23:44.000000Z"
+      ],
+      "extractCoverageEt": [
+        761914497,
+        761916293
+      ],
+      "sampleCount": 361,
+      "midpointCount": 360,
+      "maximumMidpointPositionDiscrepancyKm": 0.00997985079058392,
+      "maximumMidpointVelocityDiscrepancyKmS": 9.838183610512287e-06,
+      "maximumDirectTransformComponentDiscrepancy": 0,
+      "maximumInverseTransformComponentDiscrepancy": 9.094947017729282e-13,
+      "maximumSourceVelocityFiniteDifferenceDiscrepancyKmS": 8.934594194817308e-06,
+      "fixtures": [
+        {
+          "t": 0,
+          "inertialState": [
+            1682.6548483187878,
+            552.720520460067,
+            -54.32105442683718,
+            -0.210196014625465,
+            0.29640084697962776,
+            -1.6623427512629176
+          ],
+          "fixedState": [
+            798.2301103035494,
+            1558.617915037124,
+            -270.7710752508934,
+            0.10146947282058144,
+            -0.40264993683021383,
+            -1.6509190078884444
+          ]
+        },
+        {
+          "t": 900,
+          "inertialState": [
+            939.8839789051973,
+            598.8190151306745,
+            -1355.6755192033304,
+            -1.3443716104064125,
+            -0.20275311308505045,
+            -1.0488574613347057
+          ],
+          "fixedState": [
+            604.0721936807457,
+            705.6678198986137,
+            -1488.943226867037,
+            -0.5100434265586851,
+            -1.3805352289479171,
+            -0.8860290565218766
+          ]
+        },
+        {
+          "t": 1796,
+          "inertialState": [
+            225.82001894370867,
+            444.64797526322826,
+            -1666.9992280139854,
+            -0.004778319259255718,
+            -0.0024014891512918525,
+            0.004718488840575545
+          ],
+          "fixedState": [
+            298.3001160357293,
+            7.5878590702136535,
+            -1714.220637557619,
+            -0.0029173517230892637,
+            -0.004538328128360978,
+            0.005313138774378857
+          ]
+        }
+      ],
+      "artifactSha256": "d67775edd0b279748469a11dba9eb73457b14f1e51d747fd806de78239559460"
+    },
+    {
+      "id": "blue-ghost-1-descent-reconstructed",
+      "source": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to19d_bgm1_edl_rec_250302_v01.bsp",
+        "version": "clps_to19d_bgm1_edl_rec_250302_v01.bsp",
+        "sha256": "234b0b92328cc1c8aca169bdec990203bd3c37e6a276bcdaf826d8642233bf29"
+      },
+      "pdsLabel": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_to19d_bgm1_edl_rec_250302_v01.xml",
+        "version": "clps_to19d_bgm1_edl_rec_250302_v01.xml",
+        "sha256": "158c74649bf2ff5f8a23dc22523277e3e4a330643c634c01a50ad4fc688bef54",
+        "kernelMd5": "e502d7bca5ee07bd34ed60076a5cac5a",
+        "matchesKernel": true
+      },
+      "segments": [
+        {
+          "startEt": 794175471.077402,
+          "endEt": 794176563.677402,
+          "spkType": 13
+        }
+      ],
+      "sourceCoverageEt": [
+        794175471.077402,
+        794176563.677402
+      ],
+      "sourceCoverageUtc": [
+        "2025-03-02T08:16:41.892000Z",
+        "2025-03-02T08:34:54.492000Z"
+      ],
+      "extractCoverageEt": [
+        794175472,
+        794176563
+      ],
+      "sampleCount": 220,
+      "midpointCount": 219,
+      "maximumMidpointPositionDiscrepancyKm": 0.013705340021541557,
+      "maximumMidpointVelocityDiscrepancyKmS": 0.0012716907312232848,
+      "maximumDirectTransformComponentDiscrepancy": 0,
+      "maximumInverseTransformComponentDiscrepancy": 9.094947017729282e-13,
+      "maximumSourceVelocityFiniteDifferenceDiscrepancyKmS": 1.6162780053382514e-06,
+      "fixtures": [
+        {
+          "t": 0,
+          "inertialState": [
+            -252.98658431596434,
+            -1321.346642987351,
+            -1135.3721443015922,
+            -0.3463535596886747,
+            -1.0173789903447383,
+            1.297638753674571
+          ],
+          "fixedState": [
+            627.587937665576,
+            1546.3531411881843,
+            -560.3163499915929,
+            0.44859106588727493,
+            0.3649030814711014,
+            1.583336172306847
+          ]
+        },
+        {
+          "t": 550,
+          "inertialState": [
+            -395.03050059205674,
+            -1669.459362783788,
+            -353.1587034451403,
+            -0.12938760786340975,
+            -0.19162471735230946,
+            1.1707583320395256
+          ],
+          "fixedState": [
+            775.8318630913387,
+            1542.3392898556199,
+            295.1934372295555,
+            0.0704053518044449,
+            -0.2844853942745976,
+            1.1575749256601362
+          ]
+        },
+        {
+          "t": 1091,
+          "inertialState": [
+            -414.92737496009556,
+            -1681.4065725518249,
+            -81.23933536537173,
+            0.004239886821719456,
+            -0.0010253049476414192,
+            -0.00041599378441171904
+          ],
+          "fixedState": [
+            776.3978905535622,
+            1448.6197104861853,
+            551.9056697092873,
+            -6.247687195365753e-06,
+            2.307050382269134e-06,
+            2.369940220274796e-08
+          ]
+        }
+      ],
+      "artifactSha256": "cd8aa49aa363904f3b7ed582a2d22a0e4c298b77548e60ded00969f130637a53"
+    },
+    {
+      "id": "athena-descent-reconstructed",
+      "source": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_prime1_im2_edl_rec_250306_v01.bsp",
+        "version": "clps_prime1_im2_edl_rec_250306_v01.bsp",
+        "sha256": "d8c8540bdbceb895b2ac04945791127e7a5846113f974e988701971a9c254ba9"
+      },
+      "pdsLabel": {
+        "url": "https://naif.jpl.nasa.gov/pub/naif/pds/pds4/clps/clps_spice/spice_kernels/spk/clps_prime1_im2_edl_rec_250306_v01.xml",
+        "version": "clps_prime1_im2_edl_rec_250306_v01.xml",
+        "sha256": "7bc0e86c6d4bb25a985ae58dbe364fc2dcff6a027f5c770939ce87062818e009",
+        "kernelMd5": "0bf0f05404d87b755cb2ca250fe5f2af",
+        "matchesKernel": true
+      },
+      "segments": [
+        {
+          "startEt": 794553400.2954652,
+          "endEt": 794554191.971,
+          "spkType": 1
+        }
+      ],
+      "sourceCoverageEt": [
+        794553400.2954652,
+        794554191.971
+      ],
+      "sourceCoverageUtc": [
+        "2025-03-06T17:15:31.110000Z",
+        "2025-03-06T17:28:42.785535Z"
+      ],
+      "extractCoverageEt": [
+        794553401,
+        794554191
+      ],
+      "sampleCount": 159,
+      "midpointCount": 158,
+      "maximumMidpointPositionDiscrepancyKm": 0.008489371222033543,
+      "maximumMidpointVelocityDiscrepancyKmS": 0.0018580729145661467,
+      "maximumDirectTransformComponentDiscrepancy": 0,
+      "maximumInverseTransformComponentDiscrepancy": 4.547473508864641e-13,
+      "maximumSourceVelocityFiniteDifferenceDiscrepancyKmS": 5.597216883811985e-06,
+      "fixtures": [
+        {
+          "t": 0,
+          "inertialState": [
+            372.0143501498679,
+            -78.75757590085558,
+            -1710.274563717522,
+            -0.8082107710260484,
+            1.4638402639439616,
+            -0.24700434380384761
+          ],
+          "fixedState": [
+            550.975340100887,
+            585.0395952791017,
+            -1556.853031706829,
+            -0.9329488695811553,
+            -1.176554931071842,
+            -0.7764726327189635
+          ]
+        },
+        {
+          "t": 395,
+          "inertialState": [
+            113.53421532679425,
+            365.0499538813126,
+            -1711.2507248121472,
+            -0.46410397589483954,
+            0.7514281293987761,
+            0.14851146608006563
+          ],
+          "fixedState": [
+            246.18896592549038,
+            206.74733756823986,
+            -1723.7102603145636,
+            -0.5609088630578837,
+            -0.6835469490558026,
+            -0.14323048354207715
+          ]
+        },
+        {
+          "t": 790,
+          "inertialState": [
+            26.194172439142218,
+            503.20676499943454,
+            -1668.2867949960807,
+            -0.0036256368034273618,
+            0.006216804621138233,
+            0.001997486614202383
+          ],
+          "fixedState": [
+            138.1707322402367,
+            77.23238618242954,
+            -1735.519524708964,
+            -0.00478761306566317,
+            -0.005902304542276416,
+            -0.0004715268827809921
+          ]
+        }
+      ],
+      "artifactSha256": "6265db235ee414bd82fc5b2ef07b02b70472c9df8fdfc9c99ae10a4cf4f0acbe"
+    }
+  ]
+}

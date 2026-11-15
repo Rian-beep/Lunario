@@ -1,22 +1,25 @@
 import { build } from 'esbuild';
+import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright-core';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const out = new URL('../docs/qa/trajectories/', import.meta.url);
+const baseline = process.argv.includes('--baseline');
+const out = new URL('../docs/qa/evaluation/trajectories/', import.meta.url);
 await mkdir(out, { recursive: true });
 const compiled = await build({ stdin: { contents: `
 import React, {useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {MissionTrajectorySelector} from './components/mission-trajectories/selector';
-function Harness(){const [site,setSite]=useState({id:'chandrayaan-3',name:'Chandrayaan 3'});const [selection,setSelection]=useState(null);const [closed,setClosed]=useState(false);return <main><nav><button onClick={()=>setSite({id:'apollo-11',name:'Apollo 11'})}>Show Apollo 11</button><button onClick={()=>setSite({id:'apollo-15',name:'Apollo 15'})}>Show Apollo 15</button><button onClick={()=>setSite({id:'slim',name:'SLIM'})}>Show SLIM</button></nav><output>{JSON.stringify(selection)}</output>{!closed&&<MissionTrajectorySelector site={site} selection={selection} onSelect={setSelection} onClose={()=>setClosed(true)}/>}</main>};
-createRoot(document.getElementById('root')).render(<Harness/>);`, resolveDir: root, loader: 'tsx' }, bundle: true, write: false, platform: 'browser', jsx: 'automatic', minify: true });
+function Harness(){const [site,setSite]=useState({id:'chandrayaan-3',name:'Chandrayaan 3'});const [selection,setSelection]=useState(null);const [closed,setClosed]=useState(false);return <main><nav><button onClick={()=>setSite({id:'apollo-11',name:'Apollo 11'})}>Show Apollo 11</button><button onClick={()=>setSite({id:'apollo-15',name:'Apollo 15'})}>Show Apollo 15</button><button onClick={()=>setSite({id:'slim',name:'SLIM'})}>Show SLIM</button>{[['odysseus','Odysseus'],['blue-ghost-1','Blue Ghost 1'],['athena','Athena'],['unknown','Unknown site']].map(([id,name])=><button key={id} onClick={()=>setSite({id,name})}>Show {name}</button>)}<button onClick={()=>setSelection({mode:'published',siteId:site.id,trajectoryId:'missing-path'})}>Inject unavailable selection</button></nav><output>{JSON.stringify(selection)}</output>{!closed&&<MissionTrajectorySelector site={site} selection={selection} onSelect={setSelection} onClose={()=>setClosed(true)}/>}</main>};
+createRoot(document.getElementById('root')).render(<Harness/>);`, resolveDir: root, loader: 'tsx' }, bundle: true, write: false, platform: 'browser', jsx: 'automatic', minify: true,
+  plugins: baseline ? [{name:'baseline-selector',setup(build){build.onLoad({filter:/components\/mission-trajectories\/selector\.tsx$/},()=>({contents:execFileSync('git',['show','3c82b5a:./components/mission-trajectories/selector.tsx'],{cwd:root,encoding:'utf8'}),loader:'tsx'}));}}] : [] });
 const executablePath = [process.env.CHROME_PATH, '/usr/bin/google-chrome', '/usr/bin/chromium'].find(p => p && existsSync(p));
 assert.ok(executablePath, 'Provide CHROME_PATH for an installed local browser');
 const browser = await chromium.launch({ executablePath, headless: true, args: ['--no-sandbox'] });
-const report = { browser: browser.version(), networkRequests: [], errors: [], checks: [] };
+const report = { baseline, browser: browser.version(), networkRequests: [], errors: [], checks: [] };
 try {
   const page = await browser.newPage({ viewport: { width: 900, height: 1100 }, reducedMotion: 'reduce' });
   page.on('pageerror', error => report.errors.push(error.message));
@@ -25,6 +28,10 @@ try {
   await page.addScriptTag({ content: compiled.outputFiles[0].text });
   await page.getByRole('heading', { name: 'Chandrayaan 3', exact: true }).waitFor();
   assert.equal(await page.getByRole('button', { pressed: true }).count(), 0);
+  await page.getByRole('button', { name: 'Inject unavailable selection', exact: true }).click();
+  assert.ok(await page.getByRole('status').filter({hasText:'The selected path is unavailable'}).isVisible());
+  assert.equal(await page.getByRole('button', { pressed: true }).count(), 0);
+  report.checks.push('Unavailable published selection explains recovery and does not highlight a path');
   await page.getByRole('button', { name: 'Select reference descent', exact: true }).click();
   assert.match(await page.locator('output').innerText(), /"mode":"published"/);
   assert.equal(await page.getByRole('button', { name: 'Select reference descent', exact: true }).getAttribute('aria-pressed'), 'true');
@@ -44,6 +51,22 @@ try {
   await page.getByRole('button', { name: 'Show Apollo 15', exact: true }).click();
   assert.ok(await page.getByRole('button', { name: 'Select command-module orbit', exact: true }).isVisible());
   report.checks.push('Site change does not retain stale selected state; Apollo 11 offers simulation; Apollo 15 CSM remains orbital context');
+  for (const name of ['Odysseus','Blue Ghost 1','Athena']) {
+    await page.getByRole('button', { name: 'Show '+name, exact: true }).click();
+    assert.ok(await page.getByText('Reconstructed descent · postflight estimate', {exact:true}).isVisible());
+    await page.getByRole('button', {name:'Select reconstructed descent',exact:true}).click();
+    assert.equal(await page.getByRole('button', {name:'Select reconstructed descent',exact:true}).getAttribute('aria-pressed'),'true');
+    assert.ok(await page.getByText('Historical replay uses its own clock', {exact:false}).isVisible());
+  }
+  report.checks.push('All three CLPS paths select as reconstructed descents, with independent historical-clock explanation');
+  await page.getByText('Coverage and sources',{exact:true}).click();
+  assert.ok(await page.getByText('Source warns of no EDL states between first contact', {exact:false}).isVisible());
+  await page.getByRole('button', {name:'Show Unknown site',exact:true}).click();
+  assert.equal(await page.getByRole('button', {name:'Select reconstructed descent',exact:true}).count(),0);
+  await page.getByRole('button', {name:'Select educational simulation',exact:true}).click();
+  assert.match(await page.locator('output').innerText(), /"siteId":"unknown"/);
+  report.checks.push('Unknown and no-data sites provide the educational callback without inventing a historic path');
+  await page.getByRole('button', {name:'Show Athena',exact:true}).click();
   await page.setViewportSize({ width: 390, height: 844 });
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   await page.screenshot({ path: fileURLToPath(new URL('selector-mobile.png', out)), fullPage: true });
@@ -57,8 +80,11 @@ try {
   assert.equal(await page.locator('.mission-trajectories').count(), 0);
   report.checks.push('Keyboard simulation selection and dismiss callback');
   assert.deepEqual(report.errors, []); assert.deepEqual(report.networkRequests, []);
+} catch (error) {
+  report.failure = error instanceof Error ? error.message : String(error);
+  throw error;
 } finally {
   await browser.close();
-  await writeFile(new URL('browser.json', out), JSON.stringify(report, null, 2)+'\n');
+  await writeFile(new URL(baseline ? 'before-browser.json' : 'browser.json', out), JSON.stringify(report, null, 2)+'\n');
 }
 console.log(JSON.stringify(report, null, 2));
