@@ -4,6 +4,7 @@ import {missionHistoryForSite} from "@/lib/mission-history";
 import {mapAreaForLocation} from "@/lib/map-coverage";
 import {DEFAULT_MAP_LAYERS,MapLayerControls,MapLayerLegend,useMapLayers,type MapLayerSettings,type ScreeningViewport} from '@/components/map-screening';
 import {PublicSiteStory} from "@/components/workbench/public-exploration";
+const MissionPathsWorkspace=dynamic(()=>import("@/components/mission-trajectories/workspace").then(module=>module.MissionPathsWorkspace),{ssr:false});
 import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
 import {LunarWindowLoader, LunarioStartup} from '@/components/branding/lunar-window-loader';
@@ -158,6 +159,7 @@ export function Navigator() {
   const [focusRequestId,setFocusRequestId]=useState(0);
   const [followRequest,setFollowRequest]=useState<{id:number;focusRequestId:number}>();
   const [flightPlaybackRevision,setFlightPlaybackRevision]=useState(0);
+  const [missionPathsOpen,setMissionPathsOpen]=useState(false);
   const [flightTrackingReady,setFlightTrackingReady]=useState(false);
   const [pendingFlightPlay,setPendingFlightPlay]=useState(false);
   const [controlsTarget,setControlsTarget]=useState<HTMLDivElement|null>(null);
@@ -840,6 +842,7 @@ export function Navigator() {
         {learnOpen&&!focusMode&&<LearningDialog mode={mode} scenario={{catalog,state,assessment:planning.result}} onClose={()=>setLearnOpen(false)}/>}
         {touchdownOpen&&<dialog aria-label="Touchdown experiment" onCancel={e=>{e.preventDefault();setTouchdownOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><TouchdownLab onClose={()=>setTouchdownOpen(false)}/></dialog>}
         {solarOverviewOpen&&<dialog aria-label="Sun Earth Moon scale explorer" onCancel={e=>{e.preventDefault();setSolarOverviewOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><SolarSystemView catalog={catalog} timeIndex={playhead} onClose={()=>setSolarOverviewOpen(false)}/></dialog>}
+        {missionPathsOpen&&<WorkspaceDialog label="Mission paths and documented reasons" onClose={()=>setMissionPathsOpen(false)}><MissionPathsWorkspace site={{id:state.custom?"custom":site.id,name}} onClose={()=>setMissionPathsOpen(false)} onSimulation={()=>{setMissionPathsOpen(false);landingConfigured.current=true;setFlightPlaying(false);setFlightTime(0);setFlightSpeed(1);update({flight:createLandingFlight(state.flight,true)});requestAssetFocus("lander");setNotice("Educational terminal descent at the selected point. This 300 m approach is an editable model, not a historical mission path.");}}/></WorkspaceDialog>}
         {teachingStudioOpen&&evidenceManifest&&<WorkspaceDialog label="Teaching studio" onClose={()=>setTeachingStudioOpen(false)}><TeachingStudio catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={(base,candidate)=>{setTeachingStudioOpen(false);comparePair(base,candidate);}} onClose={()=>setTeachingStudioOpen(false)}/></WorkspaceDialog>}
         {engineeringVisited&&evidenceManifest&&planning.result&&<WorkspaceDialog label="Engineering evidence workspace" open={engineeringOpen} onClose={()=>setEngineeringOpen(false)}><EngineeringEvidenceWorkspace catalog={catalog} manifest={evidenceManifest} state={state} assessment={planning.result} onInspect={index=>{setEngineeringOpen(false);setPlaying(false);setFlightPlaying(false);setPlayhead(Math.max(state.startIndex,Math.min(state.endIndex,index)));openPanel('analysis');}} onClose={()=>setEngineeringOpen(false)}/></WorkspaceDialog>}
         <AudienceGuide mode={mode} open={guideOpen&&brandIntroReady} onClose={() => setGuideOpen(false)}/>
@@ -927,6 +930,7 @@ export function Navigator() {
                 {(((location.lon % 360) + 360) % 360).toFixed(4)}° E ·{" "}
                 {terrain.heightM} m observer
               </span><small className="terrain-source-caption">{isGlobalTerrainChoice(terrain)?'≈4.3 km coarse terrain context':terrain.mask.some(Number.isFinite)?terrain.exact?'Prepared site horizon':`Borrowed horizon · ${number(terrain.distanceKm,2)} km away`:'Terrain horizon unavailable'}</small>{!terrain.mask.some(Number.isFinite)&&catalog.globalTerrain&&state.terrainMode!=='global-context'&&<Button className="terrain-context-action" variant="ghost" onClick={()=>update({terrainMode:'global-context'})} title="Uses calibrated coarse LOLA elevations at approximately4.3km spacing; fine obstacles remain unassessed">Calculate coarse global context</Button>}
+              {!headingMinimized&&<Button variant="outline" style={{pointerEvents:"auto"}} onClick={()=>setMissionPathsOpen(true)}>Mission paths &amp; reasons</Button>}
               {!headingMinimized&&<PublicSiteStory mode={mode} site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
             </div>
           </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>{setHeadingVisible(true);setHeadingMinimized(false);}}><Navigation size={14}/> Location</Button>}
