@@ -4,13 +4,14 @@ import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type 
 import { ChevronDown } from "lucide-react";
 
 /** A small disclosure with ordinary keyboard-focusable controls, not an OS menu. */
-export function HeaderLeanDropdown({ label, children, className = "" }: {
-  label: string; children: ReactNode; className?: string;
+export function HeaderLeanDropdown({ label, children, className = "", openRequest }: {
+  label: string; children: ReactNode; className?: string; openRequest?: number;
 }) {
   const ref = useRef<HTMLDetailsElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState<CSSProperties>({});
+  useEffect(() => { if(openRequest&&ref.current)ref.current.open=true; }, [openRequest]);
   useLayoutEffect(() => {
     if (!open) return;
     const place = () => {

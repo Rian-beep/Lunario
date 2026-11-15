@@ -2,7 +2,7 @@
 
 Static site, no build step. Two pages share one top bar (logo, Dashboard, About):
 
-- `index.html`: Dashboard. The "Prepare for landing" loader plays first (once per browser tab session), then reveals the dashboard. The dashboard is a **placeholder layout**: mount the real dashboard inside `<div id="dashboard-root">`.
+- `index.html`: Dashboard. The "Prepare for landing" loader plays first (at least three seconds, on each document load or reload), then reveals the dashboard. The dashboard is a **placeholder layout**: mount the real dashboard inside `<div id="dashboard-root">`.
 - `about.html`: project summary, team (Luke Dudley, Rian Banting, with LinkedIn links) and the Lunario banner as the footer (HTML + SVG, so it stays crisp at any width).
 
 ```
@@ -28,10 +28,10 @@ All paths are relative, so it works on a project site (`https://<user>.github.io
 In `index.html`:
 
 ```html
-<script src="loader/loader.js" data-min-duration="1800" data-once="session"></script>
+<script src="loader/loader.js" data-min-duration="3000"></script>
 ```
 
-- Remove `data-once="session"` to play the loader on every visit.
+- The entry omits `data-once="session"`, so every document load/reload plays the original animation. The vendor still supports that option for other consumers.
 - To wait for your dashboard data, add `data-auto-hide="false"` and call `Lunario.loader.hide()` once the data is in. (When the loader is skipped for the session, `hide()` does nothing, so it is always safe to call.)
 - Visitors with "reduce motion" turned on see a short, still version.
 

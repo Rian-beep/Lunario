@@ -6,7 +6,7 @@ export { LunarioStartup, type LunarioStartupProps } from "./lunario-startup";
 
 export type LunarWindowLoaderProps = { icon?: ReactNode };
 
-/** Static loading fallback, including when the session's original overlay was skipped. */
+/** Static shell behind the document-owned original overlay while the catalog loads. */
 export function LunarWindowLoader({ icon }: LunarWindowLoaderProps) {
   return <main className="startup lunar-window-startup" aria-busy="true">
     <div className="lunario-loading-fallback">

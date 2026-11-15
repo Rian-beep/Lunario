@@ -9,6 +9,8 @@ import {
   stationWeatherOffline,
 } from "../../lib/station-weather-context";
 
+import {publicRadioWeather} from "@/lib/public-exploration";
+
 const HOUR_MS = 3_600_000;
 const utc = (epochMs: number) => Number.isFinite(epochMs) && Math.abs(epochMs) <= 8.64e15
   ? new Date(epochMs).toISOString().replace("T", " ").replace(".000Z", " UTC").replace("Z", " UTC")
@@ -24,6 +26,7 @@ function WeatherValues({ hour }: { hour: WeatherHour }) {
       <div><dt>Precipitation, preceding hour</dt><dd>{value(hour.precipitationMm, "mm")}</dd></div>
       <div><dt>Cloud cover</dt><dd>{value(hour.cloudPercent, "%")}</dd></div>
     </dl>
+    <p className="station-radio-intuition">{publicRadioWeather(hour)}</p>
     <p>Forecast sample: <time>{utc(hour.epochMs)}</time>. Hourly values are held within this hour, not measured at the exact selected instant. Precipitation totals the hour ending at this sample time.</p>
   </>;
 }

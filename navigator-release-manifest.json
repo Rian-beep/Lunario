@@ -1,5 +1,6 @@
 {
-  "sourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
+  "sourceCommit": "e4b28459a317076e2e62d8f3733ed71741adb851",
+  "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
       "path": ".gitattributes",
@@ -18,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 8183,
-      "sha256": "231f073256a0aa66c39635a8bfed57b3414fc6eabe636ad092653305d58cae32"
+      "bytes": 9097,
+      "sha256": "fa5505afd8b0a7ba408fde67da19423315e43bdd916f48289c01426439c885ed"
     },
     {
       "path": "CODEX_PROMPT.md",
@@ -33,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 14526,
-      "sha256": "a29953211de86ceb718db0ea7f6623c85093c20af2e3adaac72e69448d0566a6"
+      "bytes": 15561,
+      "sha256": "5c972f319ea8418e737e560c25dbf0908b3209e08c4b572c41bc9367018fd6aa"
     },
     {
       "path": "app/favicon.ico",
@@ -43,8 +44,8 @@
     },
     {
       "path": "app/globals.css",
-      "bytes": 78215,
-      "sha256": "ec4706758904a225f01a21654e52b4394442433e386dcd492a8708b74eed3ed3"
+      "bytes": 79159,
+      "sha256": "85541359df39e5309cfd7aeb0498319e2af3b86fef9eb7d6a35a5bb656e965c1"
     },
     {
       "path": "app/layout.tsx",
@@ -58,8 +59,8 @@
     },
     {
       "path": "app/mission-theme.css",
-      "bytes": 25786,
-      "sha256": "24800a321b6b5c306487fea35375a0afe8588c5d9635c62c47c8434961d45ae1"
+      "bytes": 28049,
+      "sha256": "b9c0c1bcda66e879b27549a4e9db34f0ff76eb6168af94834c6f14d0452efb59"
     },
     {
       "path": "app/page.tsx",
@@ -118,23 +119,23 @@
     },
     {
       "path": "components/branding/generate-lunario.mjs",
-      "bytes": 1810,
-      "sha256": "4df401bbd0791760afd1036538fd3e4bdf598f209eec52b1d7ac6a931d6aa2a6"
+      "bytes": 1888,
+      "sha256": "6a6a144a484b0bb2680c9224e751402d77a157b267bed8b60fd4d78c2189b07b"
     },
     {
       "path": "components/branding/lunar-window-brand.tsx",
-      "bytes": 602,
-      "sha256": "9e8831655f317b5e5e16979902b6a6e8519948be7cee2eb1b083b96012a6759c"
+      "bytes": 767,
+      "sha256": "646e8ac092754335ae0127d079d67c0a2415deea65ad7f395570ba9b95a5a7ee"
     },
     {
       "path": "components/branding/lunar-window-loader.tsx",
-      "bytes": 663,
-      "sha256": "13448ea35c053a188422d4cfb8c851e14dbae54d1be1cbc1806adfb653c82d99"
+      "bytes": 660,
+      "sha256": "d8aef684ad6c38c914126c76eb0a66de61d3d10f87554ff0505cc81986d51283"
     },
     {
       "path": "components/branding/lunario-loader-runtime.ts",
-      "bytes": 1617,
-      "sha256": "5d658855c2823c6c854ca927fbebe83951c585316cf5e29137c4fd2daae6352b"
+      "bytes": 1621,
+      "sha256": "f2224df51f8a1b7050ea3f15ea4bb62e0d21359d575cc1d6021b021ffa7ca75b"
     },
     {
       "path": "components/branding/lunario-startup.tsx",
@@ -143,8 +144,8 @@
     },
     {
       "path": "components/branding/lunario-vendor.generated.ts",
-      "bytes": 26407,
-      "sha256": "55f6f43e020fe585206a2c04407d27bd921670b6ad50f2b267eda68496130089"
+      "bytes": 34209,
+      "sha256": "e1c93f019338a475a390be93ffe92a4210b6293b84a9cb296e836c64408608ca"
     },
     {
       "path": "components/education-materials/material-builder.tsx",
@@ -173,8 +174,8 @@
     },
     {
       "path": "components/navigator.tsx",
-      "bytes": 97347,
-      "sha256": "07022398feba8b67e3b2e1b9b07f5d240c4be63a0abc7e4df3b3725be1ac7aa2"
+      "bytes": 98064,
+      "sha256": "0f332d8c05b2327e731046488d92ef70e3a2bf7da1903f2d4000c9ea6af8b152"
     },
     {
       "path": "components/polar-map.tsx",
@@ -225,6 +226,11 @@
       "path": "components/sky-views.tsx",
       "bytes": 14028,
       "sha256": "055ce3851a697678d005e07273389ef634a741e20799db235f2a2bb2081b9f06"
+    },
+    {
+      "path": "components/ui-theme-toggle.tsx",
+      "bytes": 638,
+      "sha256": "a092f78e211708f6349182aa41ca140662e13a7c968f0caaecaf9b99decc86fd"
     },
     {
       "path": "components/ui/badge.tsx",
@@ -373,8 +379,8 @@
     },
     {
       "path": "components/workbench/header-lean-dropdown.tsx",
-      "bytes": 2656,
-      "sha256": "baef634b3725bd877856fb73014e05c12f42b1f6a1d6d613ea69120725ac558c"
+      "bytes": 2781,
+      "sha256": "3b583a31cda7bc714adb672c51414b8d4d7a26baa7c1b5f0e696322f32aca25a"
     },
     {
       "path": "components/workbench/info.tsx",
@@ -407,9 +413,14 @@
       "sha256": "e44c0a8b05cfce4bef90967706c2efc482da271069d569f60bfc43f0e300cea9"
     },
     {
+      "path": "components/workbench/public-exploration.tsx",
+      "bytes": 3478,
+      "sha256": "282e25fd506d9deccbe4ec3babc248e29e2b30fc41c0e460a97c785dcc4aba79"
+    },
+    {
       "path": "components/workbench/scene.tsx",
-      "bytes": 23755,
-      "sha256": "60cc2782fd4fed0089cb675c6723623c74b552440886977c0a292b46260da34b"
+      "bytes": 24221,
+      "sha256": "c1c582b7dd36b3d37e04a2719827fd1d27624b36a14a1d214f0873a06adf5858"
     },
     {
       "path": "components/workbench/scene/camera-limits.test.ts",
@@ -518,8 +529,8 @@
     },
     {
       "path": "components/workbench/station-weather.tsx",
-      "bytes": 11481,
-      "sha256": "bbc1cc19d7023f3b1f0589a6366e03a3fdf4e8b538766262f775d8d5932ec785"
+      "bytes": 11617,
+      "sha256": "286f821143b3911c2c0c73e6b2087da3992e9b85d6df41d5343e3b0d293a85df"
     },
     {
       "path": "components/workbench/teaching-workbench.module.css",
@@ -558,8 +569,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 13020,
-      "sha256": "04c1f02b96aa00991996c70178012059f9d159dc5d85562812fae98864c4e1ce"
+      "bytes": 13213,
+      "sha256": "87d50b2a1f3adb67929ebb9382e413439b47b9852b9dce2c158f7b348a127c38"
     },
     {
       "path": "docs/CONTRACTS.md",
@@ -573,13 +584,13 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 10882,
-      "sha256": "8d8696bf8c75a7301fbb7f0455878e7c351246cae1fa208ea579c9718f68ef4f"
+      "bytes": 11792,
+      "sha256": "2e1f194d56909a5d9b6dee3f3fdfb9081b2a20c4cf512dd537a6113589a6d29c"
     },
     {
       "path": "docs/IN-FLIGHT.md",
-      "bytes": 13910,
-      "sha256": "13f3d1bfc40dd7febcbfd42aa0d0f1bd2b04493d7a2160a7d4b37b80c9b57fc1"
+      "bytes": 14633,
+      "sha256": "745c0803fdb2dab9ae1edb3f54287a1417821f01e74aa39d160dcf02c43c661c"
     },
     {
       "path": "docs/LANDING-CONTRACTS.md",
@@ -1210,6 +1221,36 @@
       "path": "docs/qa/planning/teaching.md",
       "bytes": 4327,
       "sha256": "e7c1d82fda76cdbe293958d8f155bb8127cdfa110f3998bfeccef94f5c9690c1"
+    },
+    {
+      "path": "docs/qa/public-context-theme/VERIFICATION.md",
+      "bytes": 5810,
+      "sha256": "e728f3997c415fcce1c70836d7ece1fe821e3b4c56115daa118eefe66e5cd081"
+    },
+    {
+      "path": "docs/qa/public-context-theme/browser.json",
+      "bytes": 722,
+      "sha256": "10d869cf44bb1285e9b83de750e7af1719bc06bd1784a4cc546d2cb8918c444b"
+    },
+    {
+      "path": "docs/qa/public-context-theme/checks.json",
+      "bytes": 633,
+      "sha256": "e90f5549d8730580cf605cd59c118fb2acf6b8ad979654cd29f2353f0fcfaa04"
+    },
+    {
+      "path": "docs/qa/public-context-theme/flight-summary.json",
+      "bytes": 2452,
+      "sha256": "0173f80abd0975689b12b57d3c9f3a27903f8efd45f6934eaa6c76a2144a3e47"
+    },
+    {
+      "path": "docs/qa/public-context-theme/native-200.json",
+      "bytes": 64871,
+      "sha256": "a207d01a68f949a0e4f174800d2744ad7927c40352e186ef19ba75ff7750981b"
+    },
+    {
+      "path": "docs/qa/public-context-theme/startup.json",
+      "bytes": 270,
+      "sha256": "076c5babd82c9419b2d9aacc69fc8947c6905cf56dc4454c1f2bad9c4359bfde"
     },
     {
       "path": "docs/qa/public-flight-usability/VERIFICATION.md",
@@ -2082,6 +2123,11 @@
       "sha256": "84e06118d11666a6c0166b61e3f4458fa9e076e867765ce9f03ea6344b03af02"
     },
     {
+      "path": "lib/public-exploration.ts",
+      "bytes": 3090,
+      "sha256": "716465227f8135ddeff38b27073b011e98192714291a3fe6bb236625684de032"
+    },
+    {
       "path": "lib/replanning/curves.ts",
       "bytes": 3814,
       "sha256": "22bdac6903a41b0c27e53e8315d08c526184b0476698d699995ca10b7582ed75"
@@ -2170,6 +2216,11 @@
       "path": "lib/touchdown-physics.ts",
       "bytes": 19826,
       "sha256": "1fa7810f654676a7a0d2a3cd0ca8c1ee543cf99ff4e9c2b176edd128741caad8"
+    },
+    {
+      "path": "lib/ui-theme.ts",
+      "bytes": 1611,
+      "sha256": "51c851c50693a8f834e6bf225be8d78f2c6ee2b592bc64ea6345c286ccb0fb7d"
     },
     {
       "path": "lib/utils.ts",
@@ -2563,8 +2614,8 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 81145681,
-      "sha256": "30994eb901aec5d6e593d2b01364fd96f2bd6e07bfdfb41208a0b2d919a01fc9"
+      "bytes": 81164024,
+      "sha256": "a7270fc95067acfacb422a368eb8f24c72a3d54c2ba0418b45e881cbbeea5342"
     },
     {
       "path": "scripts/build-mathml.ts",
@@ -2683,8 +2734,8 @@
     },
     {
       "path": "scripts/verify-lunario-flight.mjs",
-      "bytes": 11860,
-      "sha256": "b12f4e2f566086f517787f65ef5816492d965ce2ad1ee04a67ca974e11849f7e"
+      "bytes": 12050,
+      "sha256": "75226bd6cc59db10413c4b43e48acccaf869fd48a42a08da8e4f652f308d49df"
     },
     {
       "path": "scripts/verify-lunario-startup.mjs",
@@ -2722,9 +2773,14 @@
       "sha256": "a713efa1965415ff9e0afe956a09b247c5af0d4b489f690c246db504d72a5aaa"
     },
     {
+      "path": "scripts/verify-public-context-theme.mjs",
+      "bytes": 8594,
+      "sha256": "b14491a7d9baa62e5f899bf1656e0da2b5fc3cb293d397056e35d243a4a22cb9"
+    },
+    {
       "path": "scripts/verify-public-flight.mjs",
-      "bytes": 17008,
-      "sha256": "c2b318611ea16cdaf936706938b4903cd11fc1727ad8da0109e859aab9b02b9e"
+      "bytes": 17198,
+      "sha256": "893ac34a939464dba00019a1f4e4be61a80e5bc1a2d477b0dae0a7326733bef5"
     },
     {
       "path": "scripts/verify-refinement-framing.mjs",
@@ -2983,8 +3039,8 @@
     },
     {
       "path": "tests/lunario-branding.test.ts",
-      "bytes": 14097,
-      "sha256": "effab3234407b68e272e1a862e729b49014c296a6efdc980456f5ac4d52aa298"
+      "bytes": 14642,
+      "sha256": "43f9d8b483cb5385b17c69c38faedd860bf5384b33f597edb8b5a47aae8c6796"
     },
     {
       "path": "tests/lunario-reference-style.test.ts",
@@ -3085,6 +3141,11 @@
       "path": "tests/providers.test.ts",
       "bytes": 5843,
       "sha256": "e9a270ca899edf7f5aacb6c57212806d4651119efe543271ab0695f1a06ea752"
+    },
+    {
+      "path": "tests/public-exploration.test.ts",
+      "bytes": 3587,
+      "sha256": "5ca1fc0d3fdb9e0f77a76a88d957a18417f31b06dc4c8d4633e5b19ecd5f03d8"
     },
     {
       "path": "tests/public-flight-lessons.test.ts",
@@ -3195,6 +3256,11 @@
       "path": "tests/touchdown-physics.test.ts",
       "bytes": 11799,
       "sha256": "c34a0f57dd6202b90d5eabeff18419f2aacefc4d2fbe2d14f3ebdfceeb03da11"
+    },
+    {
+      "path": "tests/ui-theme.test.ts",
+      "bytes": 2228,
+      "sha256": "56a02a7ae5126d974a96ea00ecfe473ccccd5d0ff7725ba036c74d03dcea8777"
     },
     {
       "path": "tests/variable-notation.test.ts",

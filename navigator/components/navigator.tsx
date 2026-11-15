@@ -1,4 +1,6 @@
 "use client";
+import {PublicSiteStory} from "@/components/workbench/public-exploration";
+import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
 import {LunarWindowLoader, LunarioStartup} from '@/components/branding/lunar-window-loader';
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
@@ -499,6 +501,7 @@ export function Navigator() {
     return () => clearTimeout(timer);
   }, [notice]);
   const selectSite = (id: string) => {
+    if(mode==='public'){setLeftOpen(false);if(headingVisible)setHeadingMinimized(false);}
     if((catalog?.sites.find(s=>s.id===id)?.lat ?? -90)>-80)setMapArea("global");
     update({ siteId: id, custom: null, terrainMode:state?.terrainMode??'prepared' });
     setCoordError("");
@@ -670,6 +673,7 @@ export function Navigator() {
             ))}
           </div>
           <div className="header-actions">
+            <UiThemeToggle/>
             <Button variant="ghost" onClick={()=>{setFocusMode(true);setGuideOpen(false);}} aria-label="Hide panels for unobstructed view"><Maximize2 size={16}/><span>Hide panels</span></Button>
             <Button variant="ghost" onClick={() => setGuideOpen(true)} aria-label="Open current mode guide"><BookOpen size={16}/><span>Mode guide</span></Button>
             <span className="data-badge">
@@ -782,7 +786,7 @@ export function Navigator() {
             <>
             {view !== "terrain" && (
               <div className="map-pane" key="map">
-                {mapArea==='global'?<GlobalMap sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
+                {mapArea==='global'?<GlobalMap sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
                   catalog={catalog}
                   sites={mapSites.filter(s=>s.lat<=-80)}
                   selectedId={state.custom ? null : site.id}
@@ -794,6 +798,7 @@ export function Navigator() {
                   lighting={light}
                   onSelect={selectSite}
                   onPlace={(lat, lon) => {
+                    if(mode==='public'&&headingVisible)setHeadingMinimized(false);
                     update({ custom: { lat, lon }, terrainMode:state.terrainMode??'prepared' });
                     setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?"S":"N"}`);
                     setLonDraft(String(lon.toFixed(4)));
@@ -807,7 +812,7 @@ export function Navigator() {
                   assetFocus={assetFocus}
                   earthBodyKm={scenePositions.earth}
                   sunBodyKm={scenePositions.sun}
-                  onPlace={(lat,lon)=>{update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
+                  onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
                   earthRangeKm={sceneContext?.rangeKm}
                   sunRangeKm={sceneContext?.sunRangeKm??undefined}
                   epochMs={sceneContext?.epochMs}
@@ -820,6 +825,7 @@ export function Navigator() {
                   landingConfiguration={state.flight.landing}
                   onLandingDynamics={onLandingDynamics}
                   audienceMode={mode}
+                  siteEarthContact={current?.contact??null}
                   offline={typeof globalThis.location!=='undefined'&&globalThis.location.protocol==='file:'}
                   sites={sceneSites}
                   selectedSiteId={state.custom?CUSTOM_MARKER_ID:site.id}
@@ -852,6 +858,7 @@ export function Navigator() {
                 {(((location.lon % 360) + 360) % 360).toFixed(4)}° E ·{" "}
                 {terrain.heightM} m observer
               </span><small className="terrain-source-caption">{isGlobalTerrainChoice(terrain)?'≈4.3 km coarse terrain context':terrain.mask.some(Number.isFinite)?terrain.exact?'Prepared site horizon':`Borrowed horizon · ${number(terrain.distanceKm,2)} km away`:'Terrain horizon unavailable'}</small>{!terrain.mask.some(Number.isFinite)&&catalog.globalTerrain&&state.terrainMode!=='global-context'&&<Button className="terrain-context-action" variant="ghost" onClick={()=>update({terrainMode:'global-context'})} title="Uses calibrated coarse LOLA elevations at approximately4.3km spacing; fine obstacles remain unassessed">Calculate coarse global context</Button>}
+              {mode==='public'&&!headingMinimized&&<PublicSiteStory site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
             </div>
           </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>setHeadingVisible(true)}><Navigation size={14}/> Location</Button>}
           {leftOpen && (

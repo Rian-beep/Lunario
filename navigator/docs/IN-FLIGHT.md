@@ -1,3 +1,11 @@
+# Public exploration and theme delivery
+
+The document-owned original loader now runs on each load/reload with a three-second minimum (the original reduced-motion version is retained). Public site stories and DSN/weather explainers use existing sourced catalog records and explicitly distinguish geometry from signal/link margin. The persistent light/dark switch changes interface surfaces only. See `docs/qa/public-context-theme/VERIFICATION.md` for this release’s measured checks and artifact identity.
+
+No hosting settings are changed. Qualified station visibility/scheduling, actual radio/atmospheric link budgets, hardware/terrain flight qualification and observed human learning remain open as detailed below.
+
+---
+
 # Public flight first-use correction
 
 15 November 2026: fresh Public sessions now reach Play without scrolling past technical reset/status reports. Each of 22 numeric flight controls has adjacent effect/limit help; changed settings compare calculated contact values and public predictions explain all failed touchdown checks. Heavy WebGL setup yields until after a paint opportunity and cancels stale mounts. Production/offline playback and physical-scale Follow are verified; see [current first-use evidence](qa/public-flight-usability/VERIFICATION.md). Prior failed cold/software-renderer receipts remain in that record. Hosting remains teammate-owned.

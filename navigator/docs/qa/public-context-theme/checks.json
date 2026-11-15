@@ -1,0 +1,22 @@
+{
+  "sourceTests": {
+    "tests": 797,
+    "passed": 797,
+    "failed": 0
+  },
+  "focusedTests": {
+    "tests": 28,
+    "passed": 28,
+    "failed": 0
+  },
+  "productionBuild": "pass",
+  "standaloneBuild": "pass",
+  "eslint": "pass",
+  "typecheck": "pass",
+  "storageDeniedThemeBrowser": "pass",
+  "offlineBytes": 81164024,
+  "offlineSha256": "a7270fc95067acfacb422a368eb8f24c72a3d54c2ba0418b45e881cbbeea5342",
+  "verifierSha256": "b14491a7d9baa62e5f899bf1656e0da2b5fc3cb293d397056e35d243a4a22cb9",
+  "nativeMathMLExpressions": 314,
+  "nativeMathMLManifestSha256": "a55b52f3bafbbc401531949e92479c49014ee0fb59afa60dc8451c22be992f7f"
+}

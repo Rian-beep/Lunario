@@ -1,5 +1,15 @@
 # Changelog
 
+## 15 November 2026 — Themes and Public exploration
+
+- Switch between the existing light reference theme and near-black/orange dark mode. Your choice persists across reloads without restarting the scene or resetting mission settings.
+- Open a selected lunar location’s mission story and nearby published touchdown pins; distinguish historical landings, attempts and future candidates.
+- Select each DSN ground complex to understand its role, two-ended radio visibility and why one usable complex can carry contact. Read how dated regional weather can affect the radio path without mistaking cloud coverage for signal strength.
+
+## 15 November 2026 — Loading animation
+
+- See Rian’s original polar-grid/typewriter/lift-away animation on first load and reload, with a three-second minimum before its original exit. In-app interactions do not restart it; reduced-motion preferences retain the still version.
+
 ## 15 November 2026 — Lunario correction
 
 - Paint a 3D selection before heavy renderer setup begins, and cancel stale pending mounts when changing view.

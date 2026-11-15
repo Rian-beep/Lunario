@@ -2902,3 +2902,17 @@ select:focus-visible {
 .flight-goal { margin-top: 0; }
 .flight-secondary { margin: 16px 0; }
 @media (max-width: 600px) { .flight-reference-row { grid-template-columns: minmax(0, 1fr); } }
+
+.public-site-context { margin-top: 8px; font-size: 12px; line-height: 1.5; max-width: 100%; }
+.public-site-context p { font-size: 12px; line-height: 1.5; margin: 6px 0; }
+.public-site-context summary { cursor: pointer; font-weight: 650; }
+.public-site-context a, .public-station-context a { color: var(--mission-link); text-decoration: underline; }
+.public-site-context ul { margin: 6px 0; padding-left: 18px; }
+.public-site-context h4 { margin: 8px 0 4px; }
+.public-station-context { border-block: 1px solid var(--border); padding-block: 8px; }
+.public-station-context p { line-height: 1.6; }
+html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground); background: var(--card); }
+
+.public-story-body { max-height: 180px; overflow: auto; overscroll-behavior: contain; padding-right: 5px; }
+/* The location heading lets map gestures through; its disclosure is interactive. */
+.public-site-context { pointer-events: auto; }

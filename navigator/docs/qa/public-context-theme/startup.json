@@ -1,0 +1,18 @@
+{
+  "url": "http://127.0.0.1:4341",
+  "checks": [
+    {
+      "name": "reduced",
+      "status": "pass"
+    },
+    {
+      "name": "storage-denied",
+      "status": "pass"
+    },
+    {
+      "name": "catalog-error",
+      "status": "pass"
+    }
+  ],
+  "status": "pass"
+}
