@@ -811,7 +811,7 @@ export function Navigator() {
 
         </header>
         {focusMode&&<Button className="focus-restore glass" variant="outline" onClick={()=>setFocusMode(false)}><Maximize2 size={15}/> Show controls</Button>}
-        {learnOpen&&!focusMode&&<LearningDialog mode={mode} onClose={()=>setLearnOpen(false)}/>}
+        {learnOpen&&!focusMode&&<LearningDialog mode={mode} scenario={{catalog,state,assessment:planning.result}} onClose={()=>setLearnOpen(false)}/>}
         {touchdownOpen&&<dialog aria-label="Touchdown experiment" onCancel={e=>{e.preventDefault();setTouchdownOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><TouchdownLab onClose={()=>setTouchdownOpen(false)}/></dialog>}
         {solarOverviewOpen&&<dialog aria-label="Sun Earth Moon scale explorer" onCancel={e=>{e.preventDefault();setSolarOverviewOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><SolarSystemView catalog={catalog} timeIndex={playhead} onClose={()=>setSolarOverviewOpen(false)}/></dialog>}
         {teachingStudioOpen&&evidenceManifest&&<WorkspaceDialog label="Teaching studio" onClose={()=>setTeachingStudioOpen(false)}><TeachingStudio catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={(base,candidate)=>{setTeachingStudioOpen(false);comparePair(base,candidate);}} onClose={()=>setTeachingStudioOpen(false)}/></WorkspaceDialog>}
