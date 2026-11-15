@@ -179,7 +179,9 @@ export function LunarScene(props: SceneProps) {
           setMode(value.mode ?? "orbit");
           setRevision(v=>v+1);
           return true;
-        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),()=>setMode('orbit'),setSurfaceStatus,setGeography,selectStation,()=>focusRequest.current('lander'),setDetailStatus);
+        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),request=>{
+          if(settings.current.mode===request.mode&&settings.current.reset===request.reset)setMode('orbit');
+        },setSurfaceStatus,setGeography,selectStation,()=>focusRequest.current('lander'),setDetailStatus);
     } catch (error) {
       handoff?.globe?.asset.dispose();
       console.error("Lunar scene initialization failed.", error);
