@@ -12,8 +12,8 @@ import { evaluateEvidenceConfidence } from '../../lib/evidence-confidence';
 const dir = mkdtempSync(join(tmpdir(), 'lunario-confidence-browser-'));
 const summary = evaluateEvidenceConfidence({ catalog, state: scenario(), manifest });
 const output = await build({ stdin: { contents: `import React from 'react'; import {createRoot} from 'react-dom/client'; import {EvidenceConfidence} from './components/evidence-confidence/summary';
-let audience='planner'; window.renderAudience=(value)=>{audience=value; render();}; window.renderSummary=(value)=>{window.summary=value;render();};
-function render(){ root.render(<EvidenceConfidence summary={window.summary} audience={audience} onClose={()=>window.closedCount++} onExport={json=>window.exported=json}/>); }
+let audience='planner'; window.renderAudience=(value)=>{audience=value; render();}; window.renderSummary=(value)=>{window.summary=value;render();}; window.defaultExport=()=>{window.useDefaultExport=true;render();};
+function render(){ root.render(<EvidenceConfidence summary={window.summary} audience={audience} onClose={()=>window.closedCount++} onExport={window.useDefaultExport?undefined:json=>window.exported=json}/>); }
 const root=createRoot(document.getElementById('root'));window.closedCount=0;render();`, loader: 'tsx', resolveDir: process.cwd() }, outfile: join(dir, 'fixture.js'), bundle: true, write: false, jsx: 'automatic', define: { 'process.env.NODE_ENV': '"production"' } });
 for (const file of output.outputFiles!) writeFileSync(file.path, file.contents);
 writeFileSync(join(dir, 'fixture.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Isolated confidence component</title><style>${readFileSync('app/mission-theme.css', 'utf8')}
@@ -61,6 +61,16 @@ try {
   assert.equal(nextRecord.scenarioKey, nextSummary.scenarioKey); assert.equal(nextRecord.metrics[0].terrain, null);
   assert.equal(await page.locator('td').filter({ hasText: /^Unknown$/ }).count() > 0, true);
   check('live summary props replace old selection, preserve unknowns and export the new identity');
+  await page.evaluate(() => (window as unknown as { defaultExport: () => void }).defaultExport());
+  const downloadEvent = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export evidence summary' }).click();
+  const downloaded = await downloadEvent;
+  assert.equal(downloaded.suggestedFilename(), 'solarreach-evidence-confidence.json');
+  const downloadedRecord = JSON.parse(readFileSync((await downloaded.path())!, 'utf8'));
+  assert.equal(downloadedRecord.scenarioKey, nextSummary.scenarioKey);
+  assert.deepEqual(downloadedRecord.heldScenario, nextSummary.heldScenario);
+  assert.equal(downloadedRecord.physicalOutcomeInterval, null);
+  check('default offline Blob download contains replayable full selected inputs and null physical interval');
   for (const width of [320, 360, 720]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.locator('details').evaluateAll(nodes => nodes.forEach(node => node.setAttribute('open', '')));
