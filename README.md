@@ -1,9 +1,9 @@
 # Lunario site shell (GitHub Pages)
 
-Static site, no build step. Two pages share one top bar (logo, Dashboard, About):
+Static site, no build step. Dashboard and About:
 
-- `index.html`: Dashboard. The "Prepare for landing" loader plays first (at least three seconds, on each document load or reload — no `data-once="session"`), then embeds Luke's full lunar landing site navigator from `navigator/public/solarreach-navigator.html` inside `#dashboard-root`. GitHub Pages on `main` serves this offline embed as the live Dashboard.
-- `about.html`: project summary, team (Luke Dudley, Rian Banting, with LinkedIn links) and the Lunario banner as the footer (HTML + SVG, so it stays crisp at any width).
+- `index.html`: Dashboard. The "Prepare for landing" loader plays first (at least three seconds, on each document load or reload — no `data-once="session"`), then embeds the navigator full-bleed. **Dashboard / About** live in the cream navigator header (no second dark bar). GitHub Pages on `main` serves this offline embed as the live Dashboard.
+- `about.html`: project summary, team (Luke Dudley, Rian Banting, with LinkedIn links) and the Lunario banner as the footer (HTML + SVG, so it stays crisp at any width). Keeps the dark site shell nav for the story page.
 
 ```
 index.html  about.html  .nojekyll
