@@ -12,6 +12,12 @@ test('scientific register refuses stale input, numerical implementation, invento
  const compiled=JSON.parse(originalOutput);assert.ok(compiled.compiledUtc&&!compiled.checkedUtc);for(const id of ['E01','E02','E06','E07']){const row=compiled.findings.find((r:{id:string})=>r.id===id);assert.equal(row.inputIdentity.catalogSha256,compiled.assetHashes['public/data/catalog.json']);assert.ok(row.historicalBaseline);assert.match(JSON.stringify(row.reproduce),/expected exit 0/);assert.doesNotMatch(JSON.stringify(row.reproduce),/expected exit 1/);}assert.match(compiled.findings.find((r:{id:string})=>r.id==='S14').scope,/all matching/);
  const cases:[string,(text:string)=>string][]=[
  ['public/data/catalog.json',text=>text+' '],
+ ['public/data/engineering-evidence/spice-reference.json',text=>{const data=JSON.parse(text);data.samples[0].azimuthDeg+=10;return JSON.stringify(data);}],
+ ['docs/qa/scientific-audit/resources/reference.json',text=>text+' '],
+ ['scripts/audit-resources-compare.ts',text=>text+'\n// comparison producer mutation probe\n'],
+ ['lib/planning-types.ts',text=>text+'\n// default policy dependency mutation probe\n'],
+ ['public/data/global-terrain.json',text=>text+' '],
+
  ['lib/astro.ts',text=>text+'\n// numerical input mutation probe\n'],
  ['lib/engineering-evidence/communications.ts',text=>text+'\n// subsystem mutation probe\n'],
  ['docs/qa/scientific-audit/integration/terrain-registration-after.json',text=>JSON.stringify({...JSON.parse(text),errorM:1})],
