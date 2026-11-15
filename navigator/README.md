@@ -10,7 +10,7 @@ Map Layers adds a configurable regional screening index and separate published i
 
 ## Evidence and historical paths
 
-Use **Data & math** for source-to-output pipelines, native equations, variable dependencies and scoped audit findings. [Current verification](docs/qa/scientific-audit/VERIFICATION.md) and the [independent review and resolutions](docs/qa/final-science-review/RESOLUTION.md) distinguish implementation checks from operational qualification. The assessment identity is planning-5.
+Use **Data & math** for source-to-output pipelines, native equations, variable dependencies and scoped audit findings. [Current verification](docs/qa/scientific-audit/VERIFICATION.md) and the [independent review and resolutions](docs/qa/final-science-review/RESOLUTION.md) distinguish implementation checks from operational qualification. The assessment identity is planning-5. The supplementary station screen is separately versioned `station-comms-2`. Its conditional capacity never overrides the canonical assessment. [Integrated evaluation evidence](docs/qa/evaluation/integration/REPORT.md) records current comparisons and incomplete live retrievals.
 
 Expand **Location → Mission paths & reasons** for cited historical explanations. Two bounded numeric datasets are bundled: Chandrayaan-3 reference descent (flown accuracy unresolved) and Apollo15 CSM reconstructed orbit (not an LM landing). Historical replay uses its own clock and IAU_MOON display; it does not infer attitude, burns or map-terrain contact. Other sites retain an explicitly educational simulation. [Coverage and provenance](docs/TRAJECTORY-COVERAGE.md).
 
@@ -141,3 +141,11 @@ Public site selections expand a dismissible location story: historical mission c
 ### More workspace, supporting context on demand
 
 Mission context is a collapsed section in the right inspector. The inspector uses the available desktop workspace height, including when widened. Compare is docked at the side and Earth ground stations share a single disclosure. Planner’s Var button opens a docked native-equation reference with topic, symbols and assumptions; it does not change mission inputs.
+
+### Additional historical replay coverage
+
+Mission paths now includes hash-pinned reconstructed descents for Athena, Blue Ghost 1 and Odysseus from NASA/PDS CLPS SPKs. These are source-position replays, with no inferred attitude, thrust or touchdown qualification. The Chandrayaan-3 path remains a reference product; Apollo 15 is a command-module orbit. Fit path accounts for portrait aspect ratios. Missing source intervals are never connected into an invented route.
+
+### Evidence communication
+
+Data & math includes a scenario-specific evidence summary for each audience. The engineering evidence workspace retains declared sensitivity bounds and full held inputs in its export. Physical confidence intervals remain unavailable without applicable calibrated error models. Raw observer imports require the original retrieval timestamp; importing a file does not make its predictions fresh.
