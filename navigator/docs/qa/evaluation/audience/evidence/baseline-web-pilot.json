@@ -1,0 +1,958 @@
+{
+  "schemaVersion": 1,
+  "startedUtc": "2026-11-15T18:39:40.020Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "hostname": "CLEVO-X2",
+  "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+  "options": {
+    "url": "http://127.0.0.1:4357/web/index.html",
+    "file": "public/solarreach-navigator.html",
+    "out": "/tmp/lunario-audience-baseline-journeys-v2",
+    "section": "journeys",
+    "chrome": "/opt/google/chrome/chrome"
+  },
+  "offlineSha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256": "8e92e028e7adc59ae11892ed54b821ea90e08a3357edcb3c99b6d6114adca8ab",
+  "sessions": [
+    {
+      "id": "web",
+      "http": [
+        "http://127.0.0.1:4357/web/index.html",
+        "http://127.0.0.1:4357/web/assets/tailwind-dbf8ecc74381.css",
+        "http://127.0.0.1:4357/web/assets/main-DXBTEAL3.css",
+        "http://127.0.0.1:4357/web/assets/main-SSVEEWA2.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-CZXEINOJ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-Z5OIDHRQ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-5X4GV4DI.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-YOLCIZJX.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-QFPKXEUA.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-BX6BTCUD.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-UKKVK22C.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-JVUNH4JM.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-V73R7IPJ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-6EKG2RQK.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-3JRKLPAN.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-CAV3FXKF.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-2MUIZFOA.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-AX4KF55O.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-LQK2EQKI.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-W6R2IQQK.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-VEP72JGX.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-GE4IBOIZ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-GNTWDEBH.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-KIUUUEIZ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-3DFCVSYE.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-6NUZOME5.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-LOKUJV26.js",
+        "http://127.0.0.1:4357/navigator/public/data/catalog.json",
+        "http://127.0.0.1:4357/navigator/public/data/evidence-manifest.json",
+        "http://127.0.0.1:4357/web/assets/fonts/geist-var-PIJXEPVL.woff2",
+        "http://127.0.0.1:4357/navigator/public/data/imagery.json",
+        "http://127.0.0.1:4357/navigator/public/data/map.png",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/polar.jpg",
+        "http://127.0.0.1:4357/web/assets/chunks/scene-4GYLMPK6.js",
+        "http://127.0.0.1:4357/navigator/public/data/global-terrain.json",
+        "http://127.0.0.1:4357/navigator/public/data/terrain.json",
+        "http://127.0.0.1:4357/navigator/public/data/global-terrain.bin.gz",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-X4VFRCVA.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-EC2D7TCJ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-2MRREW72.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-CBNQURH6.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-TJTYBSUB.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-UBRIG4AJ.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-NK6FMLPF.js",
+        "http://127.0.0.1:4357/web/assets/chunks/chunk-IEJRRESR.js",
+        "http://127.0.0.1:4357/data/south-pole-detail/manifest.json",
+        "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/sun.glb",
+        "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/earth.glb",
+        "http://127.0.0.1:4357/navigator/public/data/equipment/apollo-lunar-module.glb",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/nasa-moon-8k.jpg",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/polar.jpg",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/malapert-massif-nac-surface.jpg",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/malapert-massif-nac.jpg",
+        "http://127.0.0.1:4357/navigator/public/data/dsn/earth-blue-marble-2048.jpg",
+        "http://127.0.0.1:4357/navigator/public/data/nasa-model.json",
+        "http://127.0.0.1:4357/navigator/public/data/nasa-moon-mesh.bin.gz",
+        "http://127.0.0.1:4357/navigator/public/data/equipment/draco/draco_decoder.js",
+        "http://127.0.0.1:4357/navigator/public/data/visual-moon/radii-1x.bin.gz",
+        "http://127.0.0.1:4357/web/assets/chunks/rapier-IF4EXMSY.js",
+        "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-1024.webp",
+        "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-2048.webp",
+        "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-4096.webp",
+        "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-8192.webp",
+        "http://127.0.0.1:4357/web/assets/chunks/teaching-studio-J6D7WI43.js",
+        "http://127.0.0.1:4357/web/assets/chunks/workspace-2NVHXMLD.js",
+        "http://127.0.0.1:4357/navigator/public/data/imagery/nasa-moon-8k.jpg"
+      ],
+      "errors": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "South pole detail terrain failed Error: Terrain manifest could not be loaded (HTTP 404).\n    at Ci.init (http://127.0.0.1:4357/web/assets/chunks/scene-4GYLMPK6.js:743:2641)",
+        "NASA sun asset failed AbortError: BodyStreamBuffer was aborted\n    at http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js:1:2560",
+        "NASA earth asset failed AbortError: BodyStreamBuffer was aborted\n    at http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js:1:2560"
+      ],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/sun.glb",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/earth.glb",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4357/data/south-pole-detail/manifest.json",
+          "status": 404
+        }
+      ],
+      "loader": [
+        {
+          "visible": false,
+          "ms": 133.89999985694885
+        },
+        {
+          "visible": true,
+          "ms": 2010.3999998569489
+        },
+        {
+          "visible": false,
+          "ms": 5555.799999952316
+        }
+      ],
+      "offline": false,
+      "mobile": false,
+      "url": "http://127.0.0.1:4357/web/index.html",
+      "initialTheme": "dark",
+      "replanText": "Replan mission\nContingency planning\nMission calendar\nSaved scenarios (0)\n\nREPLAN THE WHOLE STAY\n\nCompare two mission histories\n\nCompare real assessed cases, inspect the first known violation, then open or save a candidate.\n\nClose replanning\nChoose current or saved reference and candidate\nWhat is held fixed, and how are dates aligned?\nCandidate arrival (UTC)\nCandidate site i\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest\nApollo 11 — Tranquility Base\nApollo 12 — Oceanus Procellarum\nApollo 14 — Fra Mauro\nApollo 15 — Hadley–Apennine\nApollo 16 — Descartes Highlands\nApollo 17 — Taurus–Littrow\nSurveyor 1 — Oceanus Procellarum\nSurveyor 2 — approximate crash region\nSurveyor 3 — Oceanus Procellarum\nSurveyor 4 — planned Sinus Medii target\nSurveyor 5 — Mare Tranquillitatis\nSurveyor 6 — Sinus Medii\nSurveyor 7 — Tycho region\nLuna 5 — approximate crash region\nLuna 7 — approximate crash region\nLuna 8 — approximate crash region\nLuna 9 — approximate Oceanus Procellarum region\nLuna 13 — approximate Oceanus Procellarum region\nLuna 15 — approximate Mare Crisium crash region\nLuna 16 — Mare Fecunditatis\nLuna 17 — Mare Imbrium\nLuna 18 — approximate crash region\nLuna 20 — Apollonius highlands\nLuna 21 — Le Monnier\nLuna 23 — Mare Crisium\nLuna 24 — Mare Crisium\nLuna 25 — likely impact near Pontécoulant G\nChang’e 3 — Mare Imbrium\nChang’e 4 — Von Kármán\nChang’e 5 — Oceanus Procellarum\nChang’e 6 — Apollo basin\nBeresheet — Mare Serenitatis impact\nChandrayaan-2 Vikram — impact site\nChandrayaan-3 Vikram — Shiv Shakti Point\nHAKUTO-R Mission 1 — Atlas impact site\nHAKUTO-R Mission 2 RESILIENCE — impact site\nSLIM — Shioli region\nBlue Ghost Mission 1 — Mare Crisium\n+1 day\n+7 days\nReset to reference\n\nPreview changes here; the active mission and captured reference stay unchanged.\n\nTime alignment\nElapsed mission time\nAbsolute UTC overlap\nPrevious sample\nNext sample\n\nShared elapsed time; each exact UTC is shown below. · 1 h source samples; gaps are unknown.\n\nReference +84 h\n2 Jul 2027, 23:00 UTC\n\nCandidate +84 h\n3 Jul 2027, 23:00 UTC\n\nReference · Fails an assessed requirement\n\nReserve margin -2,000 Wh · unserved demand 36,239.67 Wh\n\nInspect first failure · 2 Jul 2027, 23:00 UTC\nCandidate · Fails an assessed requirement\n\nReserve margin -2,000 Wh · unserved demand 42,239.67 Wh\n\nInspect first failure · 2 Jul 2027, 23:00 UTC\nArray output and electrical load\nStored energy and reserve\nGeometric antenna contact\nShow all curves\n\nOlive reference / blue candidate; solid and dashed traces distinguish terrain, smooth Moon and entered limits. The cursor is shared.\n\nStored energy and reserve\nValue (Wh)\n-800\n3.1k\n6.9k\n10.8k\n0.0\n168.0\n336.0\nElapsed mission time (h)\nReference · terrain\nReference · smooth sphere\nReference · reserve requirement\nCandidate · terrain\nCandidate · smooth sphere\nCandidate · reserve requirement\nCursor values and source meaning\n\nREFERENCE\n\nCurrent scenario\n\nFails an assessed requirement · Resource screening\n\nMalapert Massif · -86.00000° latitude · 0.00000° east longitude\n\nLROC featured image 1294. The relatively flat ground at 86°S, 0°E is described as the heart of the Artemis III Malapert Massif region.\n\n2027-06-29T11:00:00.000Z → 2027-07-13T11:00:00.000Z (exclusive)\n\nWhole stay · paired model results\nMetric\tTerrain\tSmooth sphere\nMinimum storage\t0 Wh\t0 Wh\nReserve margin\t-2,000 Wh\t-2,000 Wh\nUnserved demand\t36,239.67 Wh\t64,956.33 Wh\nGenerated energy\t109,686.19 Wh\t45,727.65 Wh\nAntenna contact\t37.8 %\t63.69 %\nLongest observed outage\t≥ 209 h\t≥ 122 h\n\nObserved outage runs can extend beyond either stay boundary. These are bounded-window durations, not predictions of the true outage end.\n\n2 required failures · 0 required unknowns · 18 other unassessed disciplines/screens\n\nMission +84 h · 2027-07-02T23:00:00.000Z\n\n● Sun: azimuth 192.83 ° · centre elevation -4.72 ° · array terrain horizon -3.65 ° at 2 m.\n\n○ Earth: azimuth 356.36 ° · centre elevation 8.72 ° · antenna terrain horizon 5.28 ° at 2 m. Antenna minimum: 0° absolute.\n\nFirst known violation: reserve crossing\n\nSource interval 2027-07-02T23:00:00.000Z → 2027-07-03T00:00:00.000Z.\n\nModel event estimate: +84.070 h since arrival; not an independently measured event time.\n\nInspect first violation\nOpen failure in main view\nOpen this exact time\nShow Sun / Earth horizons\nRequirements, unknowns and evidence\n\nCANDIDATE\n\nEdited candidate\n\nFails an assessed requirement · Resource screening\n\nMalapert Massif · -86.00000° latitude · 0.00000° east longitude\n\nLROC featured image 1294. The relatively flat ground at 86°S, 0°E is described as the heart of the Artemis III Malapert Massif region.\n\n2027-06-30T11:00:00.000Z → 2027-07-14T11:00:00.000Z (exclusive)\n\nWhole stay · paired model results\nMetric\tTerrain\tSmooth sphere\nMinimum storage\t0 Wh\t0 Wh\nReserve margin\t-2,000 Wh\t-2,000 Wh\nUnserved demand\t42,239.67 Wh\t58,956.33 Wh\nGenerated energy\t76,368.91 Wh\t79,044.93 Wh\nAntenna contact\t30.65 %\t56.55 %\nLongest observed outage\t≥ 233 h\t≥ 146 h\n\nObserved outage runs can extend beyond either stay boundary. These are bounded-window durations, not predictions of the true outage end.\n\n2 required failures · 0 required unknowns · 18 other unassessed disciplines/screens\n\nMission +84 h · 2027-07-03T23:00:00.000Z\n\n● Sun: azimuth 180.53 ° · centre elevation -4.79 ° · array terrain horizon -3.59 ° at 2 m.\n\n○ Earth: azimuth 358.21 ° · centre elevation 7.37 ° · antenna terrain horizon 5.28 ° at 2 m. Antenna minimum: 0° absolute.\n\nFirst known violation: reserve crossing\n\nSource interval 2027-07-02T23:00:00.000Z → 2027-07-03T00:00:00.000Z.\n\nModel event estimate: +60.070 h since arrival; not an independently measured event time.\n\nInspect first violation\nOpen failure in main view\nOpen this exact time\nShow Sun / Earth horizons\nRequirements, unknowns and evidence\nCandidate minus reference\n\nRequirement inputs are held constant. Reserve margin increases mean more stored energy above the entered reserve; increases in unserved demand or outage mean more modeled exposure. Contact change is percentage points, not percent relative improvement.\n\nResult change\tTerrain\tSmooth sphere\nReserve margin\t0 Wh\t0 Wh\nUnserved demand\t+6,000 Wh\t-6,000 Wh\nGeometric antenna contact\t-7.14 percentage points\t-7.14 percentage points\nLongest observed outage\t+24 h\t+24 h\nWhat changed?\n\n2 changed input fields · 57 held constant. Requirements and external report bindings are inputs too; a weaker requirement is not an improved physical result. Flight inputs are recorded here but are not solved by the resource assessment.\n\nInput\tReference\tCandidate\nendIndex\t13402\t13426\nstartIndex\t13067\t13091\nHeld-constant inputs (57)\nWhere did the plan move?\nNASA Moon · original texture\n\nReference: -86.00000°, 0.00000°E. Candidate: -86.00000°, 0.00000°E. Both cases occupy the same coordinate. Select the reference pin to reuse its exact case; select bare map surface to preview a custom candidate with the current equipment and dates. The atlas is visual context; it does not identify a terrain occluder or certify landing hazards. Borrowed/coarse/missing horizon evidence stays visible in each case.\n\nChoose the next controlled change\n\nBase: Edited candidate. Keep equipment, stay duration, operations, requirement scope and external reports fixed. Changed dates/sites invalidate evidence bindings under the shared assessment.\n\nAlternative site\nKeep this point\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest (derived)\nApollo 11 — Tranquility Base\nApollo 12 — Oceanus Procellarum\nApollo 14 — Fra Mauro\nApollo 15 — Hadley–Apennine\nApollo 16 — Descartes Highlands\nApollo 17 — Taurus–Littrow\nSurveyor 1 — Oceanus Procellarum\nSurveyor 2 — approximate crash region\nSurveyor 3 — Oceanus Procellarum\nSurveyor 4 — planned Sinus Medii target\nSurveyor 5 — Mare Tranquillitatis\nSurveyor 6 — Sinus Medii\nSurveyor 7 — Tycho region\nLuna 5 — approximate crash region\nLuna 7 — approximate crash region\nLuna 8 — approximate crash region\nLuna 9 — approximate Oceanus Procellarum region\nLuna 13 — approximate Oceanus Procellarum region\nLuna 15 — approximate Mare Crisium crash region\nLuna 16 — Mare Fecunditatis\nLuna 17 — Mare Imbrium\nLuna 18 — approximate crash region\nLuna 20 — Apollonius highlands\nLuna 21 — Le Monnier\nLuna 23 — Mare Crisium\nLuna 24 — Mare Crisium\nLuna 25 — likely impact near Pontécoulant G\nChang’e 3 — Mare Imbrium\nChang’e 4 — Von Kármán\nChang’e 5 — Oceanus Procellarum\nChang’e 6 — Apollo basin\nBeresheet — Mare Serenitatis impact\nChandrayaan-2 Vikram — impact site\nChandrayaan-3 Vikram — Shiv Shakti Point\nHAKUTO-R Mission 1 — Atlas impact site\nHAKUTO-R Mission 2 RESILIENCE — impact site\nSLIM — Shioli region\nBlue Ghost Mission 1 — Mare Crisium\nDate shift (h)\nPreview controlled change\nTest a bounded date/site grid\n\nAt most 7 date offsets and 6 additional sites. The current point is always included. Limits: 48 cases and 150,000 forcing intervals per run. No automatic scan.\n\nDate offsets from this candidate (h)\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest\nApollo 11 — Tranquility Base · no prepared horizon\nApollo 12 — Oceanus Procellarum · no prepared horizon\nApollo 14 — Fra Mauro · no prepared horizon\nApollo 15 — Hadley–Apennine · no prepared horizon\nApollo 16 — Descartes Highlands · no prepared horizon\nApollo 17 — Taurus–Littrow · no prepared horizon\nSurveyor 1 — Oceanus Procellarum · no prepared horizon\nSurveyor 2 — approximate crash region · no prepared horizon\nSurveyor 3 — Oceanus Procellarum · no prepared horizon\nSurveyor 4 — planned Sinus Medii target · no prepared horizon\nSurveyor 5 — Mare Tranquillitatis · no prepared horizon\nSurveyor 6 — Sinus Medii · no prepared horizon\nSurveyor 7 — Tycho region · no prepared horizon\nLuna 5 — approximate crash region · no prepared horizon\nLuna 7 — approximate crash region · no prepared horizon\nLuna 8 — approximate crash region · no prepared horizon\nLuna 9 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 13 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 15 — approximate Mare Crisium crash region · no prepared horizon\nLuna 16 — Mare Fecunditatis · no prepared horizon\nLuna 17 — Mare Imbrium · no prepared horizon\nLuna 18 — approximate crash region · no prepared horizon\nLuna 20 — Apollonius highlands · no prepared horizon\nLuna 21 — Le Monnier · no prepared horizon\nLuna 23 — Mare Crisium · no prepared horizon\nLuna 24 — Mare Crisium · no prepared horizon\nLuna 25 — likely impact near Pontécoulant G · no prepared horizon\nChang’e 3 — Mare Imbrium · no prepared horizon\nChang’e 4 — Von Kármán · no prepared horizon\nChang’e 5 — Oceanus Procellarum · no prepared horizon\nChang’e 6 — Apollo basin · no prepared horizon\nBeresheet — Mare Serenitatis impact · no prepared horizon\nChandrayaan-2 Vikram — impact site · no prepared horizon\nChandrayaan-3 Vikram — Shiv Shakti Point · no prepared horizon\nHAKUTO-R Mission 1 — Atlas impact site · no prepared horizon\nHAKUTO-R Mission 2 RESILIENCE — impact site · no prepared horizon\nSLIM — Shioli region · no prepared horizon\nBlue Ghost Mission 1 — Mare Crisium · no prepared horizon\n\n3 explicitly requested cases; 1008 source intervals.\n\nTest these alternatives\nCancel scan\n\nCompleted 3 of 3 requested cases; 3 assessed, 0 unsupported.\n\nNon-dominated means no tested option in the same requirement/evidence cohort has at least as much reserve margin, no longer observed blackout and no larger absolute schedule shift, with one strict improvement. It is not a recommended or approved mission. Conditional outcomes stay conditional. Unknowns remain unranked. This covers only the listed grid.\n\n1 non-dominated · 0 unranked · 3 tested options\nTested option\tAssessment / evidence cohort\tReserve margin (Wh)\tObserved blackout (h)\tShift (h)\tNext step\nMalapert Massif · +0 h\nnon-dominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 233 h\t0\tCompare this option\nMalapert Massif · +24 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 257 h\t24\tCompare this option\nMalapert Massif · +48 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 281 h\t48\tCompare this option\nExact tested inputs and identities\nCarry this candidate forward\n\nOpening preserves this exact state, including requirements and separate subsystem heights. Saving records inputs for reassessment; it does not approve a mission.\n\nOpen candidate\nSaved case name\nSave candidate\nExplore mission calendar\n\nDataset solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748 · model planning-5. Source uncertainty is unquantified unless explicitly evidenced. Geometric contact and resource screening do not establish landing readiness.",
+      "decisionExport": {
+        "file": "/tmp/lunario-audience-baseline-journeys-v2/web-solarreach-decision.json",
+        "sha256": "47a8f63c35fc2714ed9f548a3182ac714b9ef0f9a4eda1ae62891c503c67096f",
+        "bytes": 708172
+      },
+      "resourceTimings": [
+        {
+          "url": "http://127.0.0.1:4357/web/assets/tailwind-dbf8ecc74381.css",
+          "durationMs": 348.10000014305115,
+          "transferSize": 122928
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/main-DXBTEAL3.css",
+          "durationMs": 348.10000014305115,
+          "transferSize": 72487
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/main-SSVEEWA2.js",
+          "durationMs": 917,
+          "transferSize": 826758
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-CZXEINOJ.js",
+          "durationMs": 120.20000004768372,
+          "transferSize": 24217
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-Z5OIDHRQ.js",
+          "durationMs": 134.09999990463257,
+          "transferSize": 2189
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-QFPKXEUA.js",
+          "durationMs": 120.40000009536743,
+          "transferSize": 5907
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-YOLCIZJX.js",
+          "durationMs": 138.90000009536743,
+          "transferSize": 3539
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-BX6BTCUD.js",
+          "durationMs": 144,
+          "transferSize": 51555
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-5X4GV4DI.js",
+          "durationMs": 182.40000009536743,
+          "transferSize": 91955
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-UKKVK22C.js",
+          "durationMs": 280.40000009536743,
+          "transferSize": 32766
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-JVUNH4JM.js",
+          "durationMs": 287.2999999523163,
+          "transferSize": 44576
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-V73R7IPJ.js",
+          "durationMs": 287.5,
+          "transferSize": 23159
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-6EKG2RQK.js",
+          "durationMs": 403,
+          "transferSize": 82715
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-3JRKLPAN.js",
+          "durationMs": 677.5999999046326,
+          "transferSize": 264644
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-CAV3FXKF.js",
+          "durationMs": 679.8000001907349,
+          "transferSize": 15402
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-LQK2EQKI.js",
+          "durationMs": 722.6000001430511,
+          "transferSize": 2676
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-W6R2IQQK.js",
+          "durationMs": 725.6000001430511,
+          "transferSize": 17686
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-2MUIZFOA.js",
+          "durationMs": 725.9000000953674,
+          "transferSize": 4253
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-AX4KF55O.js",
+          "durationMs": 726.1000001430511,
+          "transferSize": 1141
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-VEP72JGX.js",
+          "durationMs": 869.5,
+          "transferSize": 1613
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-GE4IBOIZ.js",
+          "durationMs": 868.3999998569489,
+          "transferSize": 47417
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-GNTWDEBH.js",
+          "durationMs": 898.5,
+          "transferSize": 4236
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-KIUUUEIZ.js",
+          "durationMs": 898.7000000476837,
+          "transferSize": 3010
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-6NUZOME5.js",
+          "durationMs": 904,
+          "transferSize": 1497
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-3DFCVSYE.js",
+          "durationMs": 907.7999999523163,
+          "transferSize": 9749
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-LOKUJV26.js",
+          "durationMs": 919.1999998092651,
+          "transferSize": 1081
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/catalog.json",
+          "durationMs": 926.2999999523163,
+          "transferSize": 1004845
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/evidence-manifest.json",
+          "durationMs": 101.40000009536743,
+          "transferSize": 30233
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/favicon.ico",
+          "durationMs": 21.899999856948853,
+          "transferSize": 4199
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/fonts/geist-var-PIJXEPVL.woff2",
+          "durationMs": 68.79999995231628,
+          "transferSize": 23580
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery.json",
+          "durationMs": 39.09999990463257,
+          "transferSize": 9817
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/map.png",
+          "durationMs": 1523.6000001430511,
+          "transferSize": 1363707
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/polar.jpg",
+          "durationMs": 2317.5,
+          "transferSize": 1796781
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/scene-4GYLMPK6.js",
+          "durationMs": 337.09999990463257,
+          "transferSize": 214281
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/global-terrain.json",
+          "durationMs": 320.2000000476837,
+          "transferSize": 8292
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/terrain.json",
+          "durationMs": 41049.39999985695,
+          "transferSize": 12119321
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/global-terrain.bin.gz",
+          "durationMs": 32683.700000047684,
+          "transferSize": 6026081
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-X4VFRCVA.js",
+          "durationMs": 399.2999999523163,
+          "transferSize": 11951
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js",
+          "durationMs": 517.2999999523163,
+          "transferSize": 53028
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-2MRREW72.js",
+          "durationMs": 516.7999999523163,
+          "transferSize": 47136
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-EC2D7TCJ.js",
+          "durationMs": 525.7999999523163,
+          "transferSize": 7676
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-CBNQURH6.js",
+          "durationMs": 901.5999999046326,
+          "transferSize": 450
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-TJTYBSUB.js",
+          "durationMs": 1065.5999999046326,
+          "transferSize": 18928
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-UBRIG4AJ.js",
+          "durationMs": 1080.9000000953674,
+          "transferSize": 20401
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-NK6FMLPF.js",
+          "durationMs": 1130.9000000953674,
+          "transferSize": 3972
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/chunk-IEJRRESR.js",
+          "durationMs": 2714.300000190735,
+          "transferSize": 596628
+        },
+        {
+          "url": "http://127.0.0.1:4357/data/south-pole-detail/manifest.json",
+          "durationMs": 736.7999999523163,
+          "transferSize": 760
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/sun.glb",
+          "durationMs": 30000.599999904633,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/earth.glb",
+          "durationMs": 30001.400000095367,
+          "transferSize": 300
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/equipment/apollo-lunar-module.glb",
+          "durationMs": 9758.200000047684,
+          "transferSize": 717140
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/nasa-moon-8k.jpg",
+          "durationMs": 31419.5,
+          "transferSize": 4632045
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/polar.jpg",
+          "durationMs": 15004.400000095367,
+          "transferSize": 0
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/malapert-massif-nac-surface.jpg",
+          "durationMs": 31368.299999952316,
+          "transferSize": 48880
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/malapert-massif-nac.jpg",
+          "durationMs": 31963.700000047684,
+          "transferSize": 321247
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/dsn/earth-blue-marble-2048.jpg",
+          "durationMs": 33079.90000009537,
+          "transferSize": 238976
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/nasa-model.json",
+          "durationMs": 1720.6000001430511,
+          "transferSize": 6334
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/nasa-moon-mesh.bin.gz",
+          "durationMs": 36527.90000009537,
+          "transferSize": 9587761
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/equipment/draco/draco_decoder.js",
+          "durationMs": 22477.099999904633,
+          "transferSize": 512765
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/visual-moon/radii-1x.bin.gz",
+          "durationMs": 1520.7000000476837,
+          "transferSize": 1393558
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/rapier-IF4EXMSY.js",
+          "durationMs": 4214.200000047684,
+          "transferSize": 4337256
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-1024.webp",
+          "durationMs": 1510.7000000476837,
+          "transferSize": 511724
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-2048.webp",
+          "durationMs": 1556.6000001430511,
+          "transferSize": 1970872
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-4096.webp",
+          "durationMs": 5041.799999952316,
+          "transferSize": 7873646
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/visual-moon/colour-2025-8192.webp",
+          "durationMs": 15209,
+          "transferSize": 31038218
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/teaching-studio-J6D7WI43.js",
+          "durationMs": 894.5,
+          "transferSize": 63766
+        },
+        {
+          "url": "http://127.0.0.1:4357/web/assets/chunks/workspace-2NVHXMLD.js",
+          "durationMs": 38.5,
+          "transferSize": 41252
+        },
+        {
+          "url": "http://127.0.0.1:4357/navigator/public/data/imagery/nasa-moon-8k.jpg",
+          "durationMs": 530.7000000476837,
+          "transferSize": 300
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "session": "web",
+      "name": "first-load",
+      "actions": "Fresh storage/cache context; navigate; wait for original loader and guide; no seed or loader skip.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:39:42.656Z",
+      "evidence": {
+        "loaderObservedMs": 3545.4000000953674,
+        "pausedOnLoad": true,
+        "initialTheme": "dark"
+      },
+      "snapshot": "web-first-load"
+    },
+    {
+      "session": "web",
+      "name": "public-pick-site",
+      "actions": "Public: Pick a site → Malapert Massif; expand inspector to inspect paired terrain/sphere.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:39:48.714Z",
+      "evidence": {
+        "siteId": "malapert-massif",
+        "pairedSphere": true
+      },
+      "snapshot": "web-public-pick-site"
+    },
+    {
+      "session": "web",
+      "name": "public-open-lander",
+      "actions": "Click Preview a lunar flight, observe deferred view at 5 s, then wait up to 120 s for mounted scene and usable model.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:39:49.450Z",
+      "evidence": {
+        "at5s": {
+          "sceneHosts": 1,
+          "terrainText": "Sun\nEarth\nRelief 1× · Vehicle fixed 1× · Local ENU · km",
+          "elapsedMs": 5189
+        },
+        "readyElapsedMs": 45843,
+        "renderer": {
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "vendor": "Google Inc. (Google)"
+        },
+        "dataset": {
+          "focusRequestId": "1",
+          "sceneInstance": "5d286f5a-cefa-4d35-b340-77564326efd1",
+          "flightRevision": "3",
+          "horizonRevision": "1",
+          "renderFrame": "200",
+          "vehicleWorldPosition": "-0.2999964590529014,0.30056725124508815,0.000028518990901460603",
+          "vehicleQuaternion": "4.077714944765079e-18,0,0.00008608310393328332,0.9999999962948498",
+          "vehicleVisible": "true",
+          "landingContact": "{\"timeS\":51.86559887975901,\"eastM\":-7.494965380112218,\"northM\":-0.000004936567636865205,\"yM\":-0.7155397799797356,\"velocityMps\":[0.6344815870297769,-0.5064463891164185,1.7123434326339218e-7],\"massKg\":4559.238899003943,\"terrainHeightM\":-0.7155397799798879,\"terrainKnown\":true,\"slopeDeg\":11.69085181866704,\"tiltDeg\":1.8392512484714845,\"headingDeg\":269.9953577219371,\"targetErrorM\":7.494968458331939}",
+          "landingDynamics": "",
+          "landingFragmentCount": "0",
+          "landingMassKg": "4700",
+          "terrainClearanceM": "",
+          "flightTimeS": "0",
+          "landingContactTimeS": "51.86559887975901",
+          "landingContactFrameIndex": "",
+          "landingContactFrameTimeS": "",
+          "sunModel": "error",
+          "sunDraws": "0",
+          "earthModel": "error",
+          "earthDraws": "0",
+          "earthRangeKm": "378164.28125",
+          "sunRangeKm": "151931103.42258206",
+          "orbitCount": "0",
+          "orbitPositions": "[]",
+          "starCount": "523",
+          "moonModel": "ready",
+          "terrainSourceSpacingM": "23.976608187134502",
+          "terrainDetail": "Measured DEM sampling 24.0 m; mesh 640 angular segments",
+          "southPoleDetail": "loading",
+          "contactReplay": "preparing",
+          "contactFrames": "0",
+          "contactCacheBytes": "0",
+          "focusRange": "ready",
+          "assetFlight": "idle",
+          "ionVisibleTiles": "0",
+          "ionHeightAboveSurfaceM": "",
+          "globeMinimumRadiusKm": "1747.880528431719",
+          "zoomEnabled": "true",
+          "panEnabled": "true",
+          "rotateEnabled": "true",
+          "vehicleScale": "1",
+          "cameraMode": "vehicle",
+          "lunarAppearance": "neutral-linear-rec709-v1",
+          "lightingMode": "atlas",
+          "stationInspection": "false",
+          "visibleStations": "[]",
+          "visiblePoiCount": "0",
+          "visiblePois": "[]",
+          "vehicleFraming": "framed",
+          "vehicleScreenBounds": "{\"left\":184.37632085551496,\"top\":303.12500000000006,\"right\":539.2472221316407,\"bottom\":588.3809015714724}",
+          "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":303.125,\"bottom\":625}",
+          "cameraPosition": "-0.2849964590529014,0.30956725124508816,0.020028518990901457",
+          "cameraTarget": "-0.2999964590529014,0.30056725124508815,0.000028518990901460596",
+          "vehicleCameraDistanceKm": "0.026570660511172853",
+          "cameraBodyRadiusKm": "1742.5094906726738",
+          "cameraNearKm": "0.0001",
+          "cameraFarKm": "167889596.64649555",
+          "framingProjectionZoom": "0.6810818247955359",
+          "viewLatitude": "-86.00064760051451",
+          "viewLongitude": "-0.13436093819086636",
+          "screenNorthAngle": "65.58901216408087",
+          "globeLabels": "[]",
+          "flightPointCount": "105",
+          "flightEndpoint": "-0.007494965380112218,-0.00192651915949682,4.936580921821587e-9",
+          "stationTexture": "ready",
+          "surfacePreparationStarted": "48901.09999990463",
+          "surfaceStatus": "ready",
+          "surfaceAngularSegments": "640",
+          "surfacePreparationMs": "738.5",
+          "surfaceSite": "-86:0",
+          "surfaceRevision": "2",
+          "moonColour": "NASA 2025",
+          "moonTextureWidth": "2048",
+          "moonRelief": "LOLA 1x",
+          "moonVisualWarnings": ""
+        }
+      },
+      "snapshot": "web-public-open-lander"
+    },
+    {
+      "session": "web",
+      "name": "public-play-edit-explain-retry",
+      "actions": "Load assisted reference → speed 50× → Play → pause → edit only Thrust 4000 N → read verdict → reload same reference and replay.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:40:37.945Z",
+      "error": "AssertionError [ERR_ASSERTION]: false == true\n    at file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:64:133\n    at async step (file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:22:194)\n    at async journeys (file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:59:2)\n    at async file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:137:3",
+      "snapshot": "web-public-play-edit-explain-retry"
+    },
+    {
+      "session": "web",
+      "name": "educator-site-date-native-formula",
+      "actions": "Select Educator; inspect three native MathML relations; open a relation; preserve current site/date question.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:40:46.538Z",
+      "evidence": {
+        "nativeMath": 36,
+        "relations": [
+          {
+            "text": "P☉=SAη(1−ℓ)F☉g",
+            "label": "P☉ = S A η (1 − ℓ) F☉ g"
+          },
+          {
+            "text": "P☉=SAη(1−ℓ)F☉g",
+            "label": "P☉ = S A η (1 − ℓ) F☉ g"
+          },
+          {
+            "text": "P☉",
+            "label": "Ideal electrical solar generation"
+          },
+          {
+            "text": "S",
+            "label": "Solar irradiance normal to the rays"
+          },
+          {
+            "text": "A",
+            "label": "Active collecting area"
+          },
+          {
+            "text": "η",
+            "label": "Eta: cell conversion efficiency"
+          },
+          {
+            "text": "ℓ",
+            "label": "Lowercase ell: aggregate system loss"
+          },
+          {
+            "text": "F☉",
+            "label": "Terrain-visible solar-disk fraction"
+          },
+          {
+            "text": "g",
+            "label": "Panel incidence factor (1 for ideal tracking)"
+          },
+          {
+            "text": "ΔEB=(ηcPcharge−Pdeliveredηd)Δt",
+            "label": "ΔE_B = (η_c P_charge − P_delivered / η_d) Δt"
+          },
+          {
+            "text": "ΔEB=(ηcPcharge−Pdeliveredηd)Δt",
+            "label": "ΔE_B = (η_c P_charge − P_delivered / η_d) Δt"
+          },
+          {
+            "text": "ΔEB",
+            "label": "Change in stored energy during one interval"
+          },
+          {
+            "text": "EB",
+            "label": "Stored battery energy, varying over the stay"
+          },
+          {
+            "text": "ηc",
+            "label": "Eta c: charge efficiency"
+          },
+          {
+            "text": "ηd",
+            "label": "Eta d: discharge efficiency"
+          },
+          {
+            "text": "Pcharge",
+            "label": "Charging power entering from the bus"
+          },
+          {
+            "text": "Pdelivered",
+            "label": "Battery power delivered to the bus"
+          },
+          {
+            "text": "Δt",
+            "label": "Solved interval duration; hours for Wh"
+          },
+          {
+            "text": "sin⁡h☉=sin⁡φsin⁡δ☉+cos⁡φcos⁡δ☉cos⁡(λ−λ☉)",
+            "label": "sin h☉ = sin φ sin δ☉ + cos φ cos δ☉ cos(λ − λ☉)"
+          },
+          {
+            "text": "sin⁡h☉=sin⁡φsin⁡δ☉+cos⁡φcos⁡δ☉cos⁡(λ−λ☉)",
+            "label": "sin h☉ = sin φ sin δ☉ + cos φ cos δ☉ cos(λ − λ☉)"
+          },
+          {
+            "text": "h☉",
+            "label": "Solar-centre elevation above local horizontal"
+          },
+          {
+            "text": "φ",
+            "label": "Phi: observer latitude, north positive"
+          },
+          {
+            "text": "δ☉",
+            "label": "Delta: subsolar latitude"
+          },
+          {
+            "text": "λ",
+            "label": "Lambda: observer longitude, east positive"
+          },
+          {
+            "text": "λ☉",
+            "label": "Subsolar longitude, east positive"
+          },
+          {
+            "text": "A",
+            "label": "A"
+          },
+          {
+            "text": "A",
+            "label": "A"
+          },
+          {
+            "text": "P☉=SAη(1−ℓ)F☉g",
+            "label": "P☉ = S A η (1 − ℓ) F☉ g"
+          },
+          {
+            "text": "A",
+            "label": "A"
+          },
+          {
+            "text": "P☉",
+            "label": "Ideal electrical solar generation"
+          },
+          {
+            "text": "S",
+            "label": "Solar irradiance normal to the rays"
+          },
+          {
+            "text": "A",
+            "label": "Active collecting area"
+          },
+          {
+            "text": "η",
+            "label": "Eta: cell conversion efficiency"
+          },
+          {
+            "text": "ℓ",
+            "label": "Lowercase ell: aggregate system loss"
+          },
+          {
+            "text": "F☉",
+            "label": "Terrain-visible solar-disk fraction"
+          },
+          {
+            "text": "g",
+            "label": "Panel incidence factor (1 for ideal tracking)"
+          }
+        ],
+        "scenario": {
+          "siteId": "malapert-massif",
+          "custom": null,
+          "startIndex": 13067,
+          "endIndex": 13402,
+          "heightM": 2,
+          "mission": {
+            "areaM2": 4,
+            "efficiency": 0.3,
+            "lossFraction": 0.15,
+            "solarFlux": 1361,
+            "arrayMode": "tracking",
+            "tiltDeg": 90,
+            "azimuthDeg": 0,
+            "loadW": 250,
+            "batteryWh": 10000,
+            "initialSoc": 1,
+            "reserveSoc": 0.2,
+            "chargeEfficiency": 0.95,
+            "dischargeEfficiency": 0.95,
+            "antennaMaskDeg": 0
+          },
+          "flight": {
+            "mode": "descent",
+            "altitudeM": 300,
+            "horizontalMps": 10,
+            "verticalMps": -8,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 4000,
+            "ispSeconds": 311,
+            "burnSeconds": 150,
+            "durationSeconds": 180,
+            "eastOffsetM": -300,
+            "northOffsetM": 0,
+            "landing": {
+              "guidance": "target-landing",
+              "targetRadiusM": 20,
+              "maxVerticalMps": 2,
+              "maxHorizontalMps": 1,
+              "maxTiltDeg": 15,
+              "breakupEnergyJ": 100000,
+              "friction": 0.8,
+              "restitution": 0.1,
+              "contactPreviewSeconds": 12
+            }
+          },
+          "schemaVersion": 2,
+          "terrainMode": "global-context",
+          "arrayHeightM": 2,
+          "antennaHeightM": 2,
+          "requirements": {
+            "scope": "resource-screening",
+            "requireZeroUnmetWh": true,
+            "requireReserve": true,
+            "maxGeometricOutageHours": null,
+            "minAssumedRadioMarginDb": null,
+            "criticalContacts": [],
+            "requiredExternal": [],
+            "extraScreens": {}
+          },
+          "operations": {
+            "deploymentDelayHours": 0,
+            "maxChargeW": null,
+            "maxDischargeW": null,
+            "loadSegments": []
+          }
+        }
+      },
+      "snapshot": "web-educator-site-date-native-formula"
+    },
+    {
+      "session": "web",
+      "name": "educator-predict-result",
+      "actions": "Open Teaching studio; predict raised array effect; capture baseline; reveal; compare table; inspect exact plot samples; save conclusion.",
+      "status": "fail",
+      "startedUtc": "2026-11-15T18:40:51.711Z",
+      "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Teaching studio', exact: true }).getByRole('table').filter({ has: getByRole('dialog', { name: 'Teaching studio', exact: true }).getByRole('caption', { name: /Full-stay computed results/ }) }) to be visible\u001b[22m\n\n    at /tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:76:131\n    at async step (/tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:22:194)\n    at async journeys (/tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:74:2)\n    at async file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:137:3",
+      "snapshot": "web-educator-predict-result"
+    },
+    {
+      "session": "web",
+      "name": "educator-export-material",
+      "actions": "In Teaching studio expand material builder; capture selected scenario; export student worksheet and separate teacher key/JSON; check exact model/scenario and no student answer key.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:41:13.537Z",
+      "evidence": {
+        "student": {
+          "file": "/tmp/lunario-audience-baseline-journeys-v2/web-lunar-window-student-worksheet.html",
+          "sha256": "0bc8ded768d5544f6474fa544f0c0e611c96f5debcb524aa49498a7a2d370601",
+          "bytes": 18538
+        },
+        "teacher": {
+          "file": "/tmp/lunario-audience-baseline-journeys-v2/web-lunar-window-teacher-answer-key.html",
+          "sha256": "3ceb975a22b26a71c0e8666c9a518bdb175e9642e4a4c76138ceab797baebda9",
+          "bytes": 22304
+        },
+        "json": {
+          "file": "/tmp/lunario-audience-baseline-journeys-v2/web-lunar-window-teaching-material.json",
+          "sha256": "088df35e68a6c78b24df7d3db88ac862ed06b4db5003d93a4f294cfa876dfaf9",
+          "bytes": 24173
+        },
+        "questions": 8,
+        "model": "planning-5",
+        "focusRestored": true
+      },
+      "snapshot": "web-educator-export-material"
+    },
+    {
+      "session": "web",
+      "name": "planner-delay-alternatives-why",
+      "actions": "Select Planner → Replan mission → delay candidate +1 day → run explicit 0,24,48 h alternatives → inspect first failure; compare held inputs.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:41:25.354Z",
+      "evidence": {
+        "alternatives": "Choose the next controlled change\n\nBase: Edited candidate. Keep equipment, stay duration, operations, requirement scope and external reports fixed. Changed dates/sites invalidate evidence bindings under the shared assessment.\n\nAlternative site\nKeep this point\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest (derived)\nApollo 11 — Tranquility Base\nApollo 12 — Oceanus Procellarum\nApollo 14 — Fra Mauro\nApollo 15 — Hadley–Apennine\nApollo 16 — Descartes Highlands\nApollo 17 — Taurus–Littrow\nSurveyor 1 — Oceanus Procellarum\nSurveyor 2 — approximate crash region\nSurveyor 3 — Oceanus Procellarum\nSurveyor 4 — planned Sinus Medii target\nSurveyor 5 — Mare Tranquillitatis\nSurveyor 6 — Sinus Medii\nSurveyor 7 — Tycho region\nLuna 5 — approximate crash region\nLuna 7 — approximate crash region\nLuna 8 — approximate crash region\nLuna 9 — approximate Oceanus Procellarum region\nLuna 13 — approximate Oceanus Procellarum region\nLuna 15 — approximate Mare Crisium crash region\nLuna 16 — Mare Fecunditatis\nLuna 17 — Mare Imbrium\nLuna 18 — approximate crash region\nLuna 20 — Apollonius highlands\nLuna 21 — Le Monnier\nLuna 23 — Mare Crisium\nLuna 24 — Mare Crisium\nLuna 25 — likely impact near Pontécoulant G\nChang’e 3 — Mare Imbrium\nChang’e 4 — Von Kármán\nChang’e 5 — Oceanus Procellarum\nChang’e 6 — Apollo basin\nBeresheet — Mare Serenitatis impact\nChandrayaan-2 Vikram — impact site\nChandrayaan-3 Vikram — Shiv Shakti Point\nHAKUTO-R Mission 1 — Atlas impact site\nHAKUTO-R Mission 2 RESILIENCE — impact site\nSLIM — Shioli region\nBlue Ghost Mission 1 — Mare Crisium\nDate shift (h)\nPreview controlled change\nTest a bounded date/site grid\n\nAt most 7 date offsets and 6 additional sites. The current point is always included. Limits: 48 cases and 150,000 forcing intervals per run. No automatic scan.\n\nDate offsets from this candidate (h)\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest\nApollo 11 — Tranquility Base · no prepared horizon\nApollo 12 — Oceanus Procellarum · no prepared horizon\nApollo 14 — Fra Mauro · no prepared horizon\nApollo 15 — Hadley–Apennine · no prepared horizon\nApollo 16 — Descartes Highlands · no prepared horizon\nApollo 17 — Taurus–Littrow · no prepared horizon\nSurveyor 1 — Oceanus Procellarum · no prepared horizon\nSurveyor 2 — approximate crash region · no prepared horizon\nSurveyor 3 — Oceanus Procellarum · no prepared horizon\nSurveyor 4 — planned Sinus Medii target · no prepared horizon\nSurveyor 5 — Mare Tranquillitatis · no prepared horizon\nSurveyor 6 — Sinus Medii · no prepared horizon\nSurveyor 7 — Tycho region · no prepared horizon\nLuna 5 — approximate crash region · no prepared horizon\nLuna 7 — approximate crash region · no prepared horizon\nLuna 8 — approximate crash region · no prepared horizon\nLuna 9 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 13 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 15 — approximate Mare Crisium crash region · no prepared horizon\nLuna 16 — Mare Fecunditatis · no prepared horizon\nLuna 17 — Mare Imbrium · no prepared horizon\nLuna 18 — approximate crash region · no prepared horizon\nLuna 20 — Apollonius highlands · no prepared horizon\nLuna 21 — Le Monnier · no prepared horizon\nLuna 23 — Mare Crisium · no prepared horizon\nLuna 24 — Mare Crisium · no prepared horizon\nLuna 25 — likely impact near Pontécoulant G · no prepared horizon\nChang’e 3 — Mare Imbrium · no prepared horizon\nChang’e 4 — Von Kármán · no prepared horizon\nChang’e 5 — Oceanus Procellarum · no prepared horizon\nChang’e 6 — Apollo basin · no prepared horizon\nBeresheet — Mare Serenitatis impact · no prepared horizon\nChandrayaan-2 Vikram — impact site · no prepared horizon\nChandrayaan-3 Vikram — Shiv Shakti Point · no prepared horizon\nHAKUTO-R Mission 1 — Atlas impact site · no prepared horizon\nHAKUTO-R Mission 2 RESILIENCE — impact site · no prepared horizon\nSLIM — Shioli region · no prepared horizon\nBlue Ghost Mission 1 — Mare Crisium · no prepared horizon\n\n3 explicitly requested cases; 1008 source intervals.\n\nTest these alternatives\nCancel scan\n\nCompleted 3 of 3 requested cases; 3 assessed, 0 unsupported.\n\nNon-dominated means no tested option in the same requirement/evidence cohort has at least as much reserve margin, no longer observed blackout and no larger absolute schedule shift, with one strict improvement. It is not a recommended or approved mission. Conditional outcomes stay conditional. Unknowns remain unranked. This covers only the listed grid.\n\n1 non-dominated · 0 unranked · 3 tested options\nTested option\tAssessment / evidence cohort\tReserve margin (Wh)\tObserved blackout (h)\tShift (h)\tNext step\nMalapert Massif · +0 h\nnon-dominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 233 h\t0\tCompare this option\nMalapert Massif · +24 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 257 h\t24\tCompare this option\nMalapert Massif · +48 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 281 h\t48\tCompare this option\nExact tested inputs and identities",
+        "text": "Replan mission\nContingency planning\nMission calendar\nSaved scenarios (0)\n\nREPLAN THE WHOLE STAY\n\nCompare two mission histories\n\nCompare real assessed cases, inspect the first known violation, then open or save a candidate.\n\nClose replanning\nChoose current or saved reference and candidate\nWhat is held fixed, and how are dates aligned?\nCandidate arrival (UTC)\nCandidate site i\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest\nApollo 11 — Tranquility Base\nApollo 12 — Oceanus Procellarum\nApollo 14 — Fra Mauro\nApollo 15 — Hadley–Apennine\nApollo 16 — Descartes Highlands\nApollo 17 — Taurus–Littrow\nSurveyor 1 — Oceanus Procellarum\nSurveyor 2 — approximate crash region\nSurveyor 3 — Oceanus Procellarum\nSurveyor 4 — planned Sinus Medii target\nSurveyor 5 — Mare Tranquillitatis\nSurveyor 6 — Sinus Medii\nSurveyor 7 — Tycho region\nLuna 5 — approximate crash region\nLuna 7 — approximate crash region\nLuna 8 — approximate crash region\nLuna 9 — approximate Oceanus Procellarum region\nLuna 13 — approximate Oceanus Procellarum region\nLuna 15 — approximate Mare Crisium crash region\nLuna 16 — Mare Fecunditatis\nLuna 17 — Mare Imbrium\nLuna 18 — approximate crash region\nLuna 20 — Apollonius highlands\nLuna 21 — Le Monnier\nLuna 23 — Mare Crisium\nLuna 24 — Mare Crisium\nLuna 25 — likely impact near Pontécoulant G\nChang’e 3 — Mare Imbrium\nChang’e 4 — Von Kármán\nChang’e 5 — Oceanus Procellarum\nChang’e 6 — Apollo basin\nBeresheet — Mare Serenitatis impact\nChandrayaan-2 Vikram — impact site\nChandrayaan-3 Vikram — Shiv Shakti Point\nHAKUTO-R Mission 1 — Atlas impact site\nHAKUTO-R Mission 2 RESILIENCE — impact site\nSLIM — Shioli region\nBlue Ghost Mission 1 — Mare Crisium\n+1 day\n+7 days\nReset to reference\n\nPreview changes here; the active mission and captured reference stay unchanged.\n\nTime alignment\nElapsed mission time\nAbsolute UTC overlap\nPrevious sample\nNext sample\n\nShared elapsed time; each exact UTC is shown below. · 1 h source samples; gaps are unknown.\n\nReference +84 h\n2 Jul 2027, 23:00 UTC\n\nCandidate +84 h\n3 Jul 2027, 23:00 UTC\n\nReference · Fails an assessed requirement\n\nReserve margin -2,000 Wh · unserved demand 36,239.67 Wh\n\nInspect first failure · 2 Jul 2027, 23:00 UTC\nCandidate · Fails an assessed requirement\n\nReserve margin -2,000 Wh · unserved demand 42,239.67 Wh\n\nInspect first failure · 2 Jul 2027, 23:00 UTC\nArray output and electrical load\nStored energy and reserve\nGeometric antenna contact\nShow all curves\n\nOlive reference / blue candidate; solid and dashed traces distinguish terrain, smooth Moon and entered limits. The cursor is shared.\n\nStored energy and reserve\nValue (Wh)\n-800\n3.1k\n6.9k\n10.8k\n0.0\n168.0\n336.0\nElapsed mission time (h)\nReference · terrain\nReference · smooth sphere\nReference · reserve requirement\nCandidate · terrain\nCandidate · smooth sphere\nCandidate · reserve requirement\nCursor values and source meaning\n\nREFERENCE\n\nCurrent scenario\n\nFails an assessed requirement · Resource screening\n\nMalapert Massif · -86.00000° latitude · 0.00000° east longitude\n\nLROC featured image 1294. The relatively flat ground at 86°S, 0°E is described as the heart of the Artemis III Malapert Massif region.\n\n2027-06-29T11:00:00.000Z → 2027-07-13T11:00:00.000Z (exclusive)\n\nWhole stay · paired model results\nMetric\tTerrain\tSmooth sphere\nMinimum storage\t0 Wh\t0 Wh\nReserve margin\t-2,000 Wh\t-2,000 Wh\nUnserved demand\t36,239.67 Wh\t64,956.33 Wh\nGenerated energy\t109,686.19 Wh\t45,727.65 Wh\nAntenna contact\t37.8 %\t63.69 %\nLongest observed outage\t≥ 209 h\t≥ 122 h\n\nObserved outage runs can extend beyond either stay boundary. These are bounded-window durations, not predictions of the true outage end.\n\n2 required failures · 0 required unknowns · 18 other unassessed disciplines/screens\n\nMission +84 h · 2027-07-02T23:00:00.000Z\n\n● Sun: azimuth 192.83 ° · centre elevation -4.72 ° · array terrain horizon -3.65 ° at 2 m.\n\n○ Earth: azimuth 356.36 ° · centre elevation 8.72 ° · antenna terrain horizon 5.28 ° at 2 m. Antenna minimum: 0° absolute.\n\nFirst known violation: reserve crossing\n\nSource interval 2027-07-02T23:00:00.000Z → 2027-07-03T00:00:00.000Z.\n\nModel event estimate: +84.070 h since arrival; not an independently measured event time.\n\nInspect first violation\nOpen failure in main view\nOpen this exact time\nShow Sun / Earth horizons\nRequirements, unknowns and evidence\n\nCANDIDATE\n\nEdited candidate\n\nFails an assessed requirement · Resource screening\n\nMalapert Massif · -86.00000° latitude · 0.00000° east longitude\n\nLROC featured image 1294. The relatively flat ground at 86°S, 0°E is described as the heart of the Artemis III Malapert Massif region.\n\n2027-06-30T11:00:00.000Z → 2027-07-14T11:00:00.000Z (exclusive)\n\nWhole stay · paired model results\nMetric\tTerrain\tSmooth sphere\nMinimum storage\t0 Wh\t0 Wh\nReserve margin\t-2,000 Wh\t-2,000 Wh\nUnserved demand\t42,239.67 Wh\t58,956.33 Wh\nGenerated energy\t76,368.91 Wh\t79,044.93 Wh\nAntenna contact\t30.65 %\t56.55 %\nLongest observed outage\t≥ 233 h\t≥ 146 h\n\nObserved outage runs can extend beyond either stay boundary. These are bounded-window durations, not predictions of the true outage end.\n\n2 required failures · 0 required unknowns · 18 other unassessed disciplines/screens\n\nMission +84 h · 2027-07-03T23:00:00.000Z\n\n● Sun: azimuth 180.53 ° · centre elevation -4.79 ° · array terrain horizon -3.59 ° at 2 m.\n\n○ Earth: azimuth 358.21 ° · centre elevation 7.37 ° · antenna terrain horizon 5.28 ° at 2 m. Antenna minimum: 0° absolute.\n\nFirst known violation: reserve crossing\n\nSource interval 2027-07-02T23:00:00.000Z → 2027-07-03T00:00:00.000Z.\n\nModel event estimate: +60.070 h since arrival; not an independently measured event time.\n\nInspect first violation\nOpen failure in main view\nOpen this exact time\nShow Sun / Earth horizons\nRequirements, unknowns and evidence\nCandidate minus reference\n\nRequirement inputs are held constant. Reserve margin increases mean more stored energy above the entered reserve; increases in unserved demand or outage mean more modeled exposure. Contact change is percentage points, not percent relative improvement.\n\nResult change\tTerrain\tSmooth sphere\nReserve margin\t0 Wh\t0 Wh\nUnserved demand\t+6,000 Wh\t-6,000 Wh\nGeometric antenna contact\t-7.14 percentage points\t-7.14 percentage points\nLongest observed outage\t+24 h\t+24 h\nWhat changed?\n\n2 changed input fields · 57 held constant. Requirements and external report bindings are inputs too; a weaker requirement is not an improved physical result. Flight inputs are recorded here but are not solved by the resource assessment.\n\nInput\tReference\tCandidate\nendIndex\t13402\t13426\nstartIndex\t13067\t13091\nHeld-constant inputs (57)\nWhere did the plan move?\nNASA Moon · original texture\n\nReference: -86.00000°, 0.00000°E. Candidate: -86.00000°, 0.00000°E. Both cases occupy the same coordinate. Select the reference pin to reuse its exact case; select bare map surface to preview a custom candidate with the current equipment and dates. The atlas is visual context; it does not identify a terrain occluder or certify landing hazards. Borrowed/coarse/missing horizon evidence stays visible in each case.\n\nChoose the next controlled change\n\nBase: Edited candidate. Keep equipment, stay duration, operations, requirement scope and external reports fixed. Changed dates/sites invalidate evidence bindings under the shared assessment.\n\nAlternative site\nKeep this point\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest (derived)\nApollo 11 — Tranquility Base\nApollo 12 — Oceanus Procellarum\nApollo 14 — Fra Mauro\nApollo 15 — Hadley–Apennine\nApollo 16 — Descartes Highlands\nApollo 17 — Taurus–Littrow\nSurveyor 1 — Oceanus Procellarum\nSurveyor 2 — approximate crash region\nSurveyor 3 — Oceanus Procellarum\nSurveyor 4 — planned Sinus Medii target\nSurveyor 5 — Mare Tranquillitatis\nSurveyor 6 — Sinus Medii\nSurveyor 7 — Tycho region\nLuna 5 — approximate crash region\nLuna 7 — approximate crash region\nLuna 8 — approximate crash region\nLuna 9 — approximate Oceanus Procellarum region\nLuna 13 — approximate Oceanus Procellarum region\nLuna 15 — approximate Mare Crisium crash region\nLuna 16 — Mare Fecunditatis\nLuna 17 — Mare Imbrium\nLuna 18 — approximate crash region\nLuna 20 — Apollonius highlands\nLuna 21 — Le Monnier\nLuna 23 — Mare Crisium\nLuna 24 — Mare Crisium\nLuna 25 — likely impact near Pontécoulant G\nChang’e 3 — Mare Imbrium\nChang’e 4 — Von Kármán\nChang’e 5 — Oceanus Procellarum\nChang’e 6 — Apollo basin\nBeresheet — Mare Serenitatis impact\nChandrayaan-2 Vikram — impact site\nChandrayaan-3 Vikram — Shiv Shakti Point\nHAKUTO-R Mission 1 — Atlas impact site\nHAKUTO-R Mission 2 RESILIENCE — impact site\nSLIM — Shioli region\nBlue Ghost Mission 1 — Mare Crisium\nDate shift (h)\nPreview controlled change\nTest a bounded date/site grid\n\nAt most 7 date offsets and 6 additional sites. The current point is always included. Limits: 48 cases and 150,000 forcing intervals per run. No automatic scan.\n\nDate offsets from this candidate (h)\nMalapert Massif\nConnecting Ridge\nPeak Near Shackleton\nde Gerlache–Shackleton ridge\nIM-1 Odysseus\nIM-2 Athena\nLCROSS at Cabeus\nGeographic south pole\nShackleton rim crest\nApollo 11 — Tranquility Base · no prepared horizon\nApollo 12 — Oceanus Procellarum · no prepared horizon\nApollo 14 — Fra Mauro · no prepared horizon\nApollo 15 — Hadley–Apennine · no prepared horizon\nApollo 16 — Descartes Highlands · no prepared horizon\nApollo 17 — Taurus–Littrow · no prepared horizon\nSurveyor 1 — Oceanus Procellarum · no prepared horizon\nSurveyor 2 — approximate crash region · no prepared horizon\nSurveyor 3 — Oceanus Procellarum · no prepared horizon\nSurveyor 4 — planned Sinus Medii target · no prepared horizon\nSurveyor 5 — Mare Tranquillitatis · no prepared horizon\nSurveyor 6 — Sinus Medii · no prepared horizon\nSurveyor 7 — Tycho region · no prepared horizon\nLuna 5 — approximate crash region · no prepared horizon\nLuna 7 — approximate crash region · no prepared horizon\nLuna 8 — approximate crash region · no prepared horizon\nLuna 9 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 13 — approximate Oceanus Procellarum region · no prepared horizon\nLuna 15 — approximate Mare Crisium crash region · no prepared horizon\nLuna 16 — Mare Fecunditatis · no prepared horizon\nLuna 17 — Mare Imbrium · no prepared horizon\nLuna 18 — approximate crash region · no prepared horizon\nLuna 20 — Apollonius highlands · no prepared horizon\nLuna 21 — Le Monnier · no prepared horizon\nLuna 23 — Mare Crisium · no prepared horizon\nLuna 24 — Mare Crisium · no prepared horizon\nLuna 25 — likely impact near Pontécoulant G · no prepared horizon\nChang’e 3 — Mare Imbrium · no prepared horizon\nChang’e 4 — Von Kármán · no prepared horizon\nChang’e 5 — Oceanus Procellarum · no prepared horizon\nChang’e 6 — Apollo basin · no prepared horizon\nBeresheet — Mare Serenitatis impact · no prepared horizon\nChandrayaan-2 Vikram — impact site · no prepared horizon\nChandrayaan-3 Vikram — Shiv Shakti Point · no prepared horizon\nHAKUTO-R Mission 1 — Atlas impact site · no prepared horizon\nHAKUTO-R Mission 2 RESILIENCE — impact site · no prepared horizon\nSLIM — Shioli region · no prepared horizon\nBlue Ghost Mission 1 — Mare Crisium · no prepared horizon\n\n3 explicitly requested cases; 1008 source intervals.\n\nTest these alternatives\nCancel scan\n\nCompleted 3 of 3 requested cases; 3 assessed, 0 unsupported.\n\nNon-dominated means no tested option in the same requirement/evidence cohort has at least as much reserve margin, no longer observed blackout and no larger absolute schedule shift, with one strict improvement. It is not a recommended or approved mission. Conditional outcomes stay conditional. Unknowns remain unranked. This covers only the listed grid.\n\n1 non-dominated · 0 unranked · 3 tested options\nTested option\tAssessment / evidence cohort\tReserve margin (Wh)\tObserved blackout (h)\tShift (h)\tNext step\nMalapert Massif · +0 h\nnon-dominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 233 h\t0\tCompare this option\nMalapert Massif · +24 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 257 h\t24\tCompare this option\nMalapert Massif · +48 h\ndominated\n\tFails an assessed requirement\nplanning-5-1d0e2d3d-4f860333-789\n\t-2,000 Wh\t≥ 281 h\t48\tCompare this option\nExact tested inputs and identities\nCarry this candidate forward\n\nOpening preserves this exact state, including requirements and separate subsystem heights. Saving records inputs for reassessment; it does not approve a mission.\n\nOpen candidate\nSaved case name\nSave candidate\nExplore mission calendar\n\nDataset solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748 · model planning-5. Source uncertainty is unquantified unless explicitly evidenced. Geometric contact and resource screening do not establish landing readiness."
+      },
+      "snapshot": "web-planner-delay-alternatives-why"
+    },
+    {
+      "session": "web",
+      "name": "planner-save-export-import",
+      "actions": "Save delayed candidate with a distinct name; open it; Export current scenario → export decision JSON; import exact download and recompute.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:41:37.806Z",
+      "evidence": {
+        "download": {
+          "file": "/tmp/lunario-audience-baseline-journeys-v2/web-solarreach-decision.json",
+          "sha256": "47a8f63c35fc2714ed9f548a3182ac714b9ef0f9a4eda1ae62891c503c67096f",
+          "bytes": 708172
+        },
+        "model": "planning-5",
+        "scenarioKey": "planning-5-877031a5-e0d77b5b-1357",
+        "events": 4
+      },
+      "snapshot": "web-planner-save-export-import"
+    },
+    {
+      "session": "web",
+      "name": "errors-and-artifact-identity",
+      "actions": "Record actual JS/data resource identities; check browser errors separately from optional requests.",
+      "status": "pass",
+      "startedUtc": "2026-11-15T18:41:45.127Z",
+      "evidence": {
+        "errors": [],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)",
+          "South pole detail terrain failed Error: Terrain manifest could not be loaded (HTTP 404).\n    at Ci.init (http://127.0.0.1:4357/web/assets/chunks/scene-4GYLMPK6.js:743:2641)",
+          "NASA sun asset failed AbortError: BodyStreamBuffer was aborted\n    at http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js:1:2560",
+          "NASA earth asset failed AbortError: BodyStreamBuffer was aborted\n    at http://127.0.0.1:4357/web/assets/chunks/chunk-PGFZ5IYS.js:1:2560"
+        ],
+        "failedRequests": [
+          {
+            "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/sun.glb",
+            "error": "net::ERR_ABORTED"
+          },
+          {
+            "url": "http://127.0.0.1:4357/navigator/public/data/celestial-models/assets/earth.glb",
+            "error": "net::ERR_ABORTED"
+          }
+        ],
+        "httpErrors": [
+          {
+            "url": "http://127.0.0.1:4357/data/south-pole-detail/manifest.json",
+            "status": 404
+          }
+        ]
+      },
+      "snapshot": "web-errors-and-artifact-identity"
+    }
+  ],
+  "limits": [
+    "Agent browser tasks, no human participant or real screen reader.",
+    "Mobile is touch/viewport emulation, not real hardware.",
+    "SwiftShader is software rendering; reverse tunnel timings do not establish target-device performance.",
+    "Selected opaque DOM text contrast only; no global accessibility or imagery-overlay contrast pass."
+  ],
+  "browser": "149.0.7827.155",
+  "servedBuildReceipt": {
+    "sha256": "184930b34bd0b9b999ba881b14c08b32b610996d20e70945e058cb0961d6ff96"
+  },
+  "webIndex": {
+    "sha256": "33bf36685194eb5bc5974ee84c940eedb4ec7fc064932d30417ff64b280c9b61",
+    "bytes": 1222
+  },
+  "offlineSha256After": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "finishedUtc": "2026-11-15T18:41:47.338Z",
+  "summary": {
+    "total": 10,
+    "passed": 8,
+    "failed": 2
+  }
+}

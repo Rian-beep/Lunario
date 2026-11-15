@@ -1,0 +1,78 @@
+{
+  "scriptSha256": "8328686866df9daa4355bbe23dd4502d9f6fe04b290b0efb9bf288702e520a1d",
+  "browser": "149.0.7827.155",
+  "utc": "2026-11-15T18:50:22.075Z",
+  "file": "/tmp/lunario-eval-audience/navigator/public/solarreach-navigator.html",
+  "fileSha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "checks": [
+    {
+      "name": "map-keyboard-pan-zoom",
+      "actions": "Focus map; ArrowRight pans and + zooms; compare actual raster hashes; mission time must stay fixed.",
+      "status": "pass",
+      "evidence": {
+        "before": "2037727ae1adfee91f82fb573098f9cbc52084aa590dff21a929011ca7ddff72",
+        "panned": "6c7f9de01dcf6edcb50ac8fd7f734544957319ebda3091359c45530341c54518",
+        "zoomed": "cdb111d43aec80c6671641ea10ffdcbffb7f67513b360f9c27bce9102ae851b4",
+        "fixedMissionTime": 13075
+      }
+    },
+    {
+      "name": "timeline-arrow-and-shift-arrow",
+      "actions": "Focus workspace body; ArrowRight, then Shift+ArrowRight; assert +1 and +6 hourly source samples.",
+      "status": "pass",
+      "evidence": {
+        "before": 13075,
+        "one": 13076,
+        "seven": 13082
+      }
+    },
+    {
+      "name": "reduced-motion-playback-announcement",
+      "actions": "Space starts environmental playback; await a stepped sample and polite DOM status; Space pauses.",
+      "status": "pass",
+      "evidence": {
+        "before": 13082,
+        "during": 13088,
+        "statuses": [
+          {
+            "live": "polite",
+            "text": "Paused. Sunlit."
+          },
+          {
+            "live": "polite",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "info-keyboard-focus-escape",
+      "actions": "Open inspector; focus About Time in sunlight; Enter pins explanation; ArrowDown focuses it as instructed; Escape closes and returns focus.",
+      "status": "pass",
+      "evidence": {
+        "focusInside": true,
+        "restored": true
+      }
+    },
+    {
+      "name": "errors-and-network",
+      "actions": "Check uncaught errors and HTTP requests.",
+      "status": "pass",
+      "evidence": {
+        "errors": [],
+        "http": []
+      }
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "limits": [
+    "Agent key events and rendered canvas pixel changes; not real assistive technology or human use.",
+    "Reduced-motion preference is emulated; motion discomfort and screen-reader announcement quality were not measured."
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  }
+}

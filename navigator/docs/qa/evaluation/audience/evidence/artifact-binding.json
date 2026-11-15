@@ -1,0 +1,221 @@
+{
+  "evaluatedSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "evaluatedSourceTree": "7587d27f2de5d340238198182f909902480fcba3",
+  "evaluationCodeCommit": "1d1dfdad4c800985fc819907343e0590c0807130",
+  "source": [
+    {
+      "path": "components/navigator.tsx",
+      "bytes": 107009,
+      "sha256": "bf5f5ad47877e70f8a7898ca89c07985b5c616e84ec7dbb457bf056ebe5c7f3a",
+      "gitBlob": "0d62aa221f7aedc23a4af72c81c443999d65f640"
+    },
+    {
+      "path": "app/globals.css",
+      "bytes": 89021,
+      "sha256": "961560a4828c2456c56d856d0b26fbf20dea5f166952f90e3f17eed8a43f3597",
+      "gitBlob": "507c5cf4f9c60b87c5284a28a66f4e5e7604b1b8"
+    },
+    {
+      "path": "app/mission-theme.css",
+      "bytes": 30404,
+      "sha256": "e5f5f8ef31c0904b0692f5a12645ad2115f86ffe8ed4c1646373cd4683d01533",
+      "gitBlob": "cc3a343390fe10d0b41f7e5e12d95f86d107fc5a"
+    },
+    {
+      "path": "components/workbench/scene/south-pole-detail.ts",
+      "bytes": 1913,
+      "sha256": "e51f35e03df7fd016a145dbf73d23c2c98eb367ff86c3d362c262885f6cc75f3",
+      "gitBlob": "83ab08090f81984686a60f64793274d12b041c3c"
+    },
+    {
+      "path": "web-source/lazy-dynamic.mjs",
+      "bytes": 1504,
+      "sha256": "8f53ad968dcde3b6a6afaee1da811089f201aa03471c15d984ec4be948dee8ea",
+      "gitBlob": "e70c61bbd41b06a0d874d5b098bca5295183a255"
+    },
+    {
+      "path": "lib/public-assets.ts",
+      "bytes": 2302,
+      "sha256": "9f906a92fe7e2a8064c1a1b6df830c2a4d2cb940c44afdef83acf8af7f84695d",
+      "gitBlob": "4464ac13156ebe0a68410a9ddf1f34a222566062"
+    },
+    {
+      "path": "public/solarreach-navigator.html",
+      "bytes": 97651922,
+      "sha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+      "gitBlob": "6e62148f69918e680116f9b03e282547ba5c5114"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "actual-agent-notebook.json",
+      "bytes": 5854,
+      "sha256": "0c3e252a298d2867255f117542f76e1261b4b17b3fb08554ad03575b8de97c95"
+    },
+    {
+      "path": "actual-agent-teacher-material.json",
+      "bytes": 24174,
+      "sha256": "b726f12fb741d43a59d6b174438028d3bafa7dd8d7145a7470dccc183f70dcf6"
+    },
+    {
+      "path": "base-lint.log",
+      "bytes": 272,
+      "sha256": "6b61968ec7fd1b69351bb2bfb7457398f1cfbec4af480123ea0c372afc8bedf8"
+    },
+    {
+      "path": "baseline-web-pilot.json",
+      "bytes": 71769,
+      "sha256": "1a8ec695e25252dce07f21b9c9203fc78e46b1da56e14e750fb30a8165f254fd"
+    },
+    {
+      "path": "baseline-web-pilot.log",
+      "bytes": 830,
+      "sha256": "4e9e2df299686b17014a4a651e8edffca0f81a22645068c354d4d764c9c9da67"
+    },
+    {
+      "path": "baseline-web-reflow-pilot.json",
+      "bytes": 84165,
+      "sha256": "fd16f3932b45049fedde0978a5ec48aaa9969bc2d0f398918b04390e135edece"
+    },
+    {
+      "path": "focused-tests.log",
+      "bytes": 1061,
+      "sha256": "84fd9bb8cd7a450bc7e6d3bc1150aa538bc6d70f7385c89e8276a26ba772605c"
+    },
+    {
+      "path": "incoming-offline-journeys.json",
+      "bytes": 56575,
+      "sha256": "1bc6d3c51adf8b6be97fbaaf527fb0c5a86155334c1a47af15ebbf77d248ab99"
+    },
+    {
+      "path": "incoming-offline-journeys.log",
+      "bytes": 744,
+      "sha256": "1f1a8afc731148c329313df60c262e9c495ef1fee334e01339874424564f1277"
+    },
+    {
+      "path": "incoming-offline-smoke.json",
+      "bytes": 5236,
+      "sha256": "1d1b7d5afae27d483ff43d8f5fb56af1b5160f348e3ca6e54b535a3dbde2d4fd"
+    },
+    {
+      "path": "incoming-offline-surfaces.json",
+      "bytes": 81384,
+      "sha256": "f6135e96e65f5f16bb0332ac0d53b54da05629e297257a49de9544109eb07d30"
+    },
+    {
+      "path": "incoming-offline-surfaces.log",
+      "bytes": 1507,
+      "sha256": "6151922ff49dd514a9b75f65d57fc486c02309c4ecc8b9b05f63229d39c23b46"
+    },
+    {
+      "path": "keyboard.json",
+      "bytes": 2513,
+      "sha256": "61a0474bfb8758c6d7de8e8c24cd7d09be3a540080ec8cbdebb159e336e74e10"
+    },
+    {
+      "path": "keyboard.log",
+      "bytes": 34,
+      "sha256": "72f0183d486406b7f9ca4f59e320db9d1196994c16cf656472bd2d0eb892c568"
+    },
+    {
+      "path": "lint.log",
+      "bytes": 276,
+      "sha256": "239c773193bcf52529c0b4d3772a132e72eec581a13d73b2dbaa5a28131436f2"
+    },
+    {
+      "path": "offline-educator-result.png",
+      "bytes": 108692,
+      "sha256": "38add00cd7557fb0960bd9441349651b8d990c49094760a2bb9d17dff9c99f45"
+    },
+    {
+      "path": "offline-mobile-dark-blocker.png",
+      "bytes": 138001,
+      "sha256": "23d262889747473687e97cf79c739e46d7882cb6d88a8b81194844ec44b656ef"
+    },
+    {
+      "path": "offline-mobile-horizon-chart.png",
+      "bytes": 126398,
+      "sha256": "b647b88825f21e3bae7f74be178395f041fcff1a661f1a66e822289248f93447"
+    },
+    {
+      "path": "offline-mobile-light-blocker.png",
+      "bytes": 130712,
+      "sha256": "1b4eeaa059c9470805e61cc0b6b4206c467cee6238d769ac82c599b7d29118d6"
+    },
+    {
+      "path": "offline-native200-dark-blocker.png",
+      "bytes": 831635,
+      "sha256": "92e60b1673970d53ff5b948deb2572a8791ee9ba0178919842c90af762f328cc"
+    },
+    {
+      "path": "offline-native200-horizon-chart.png",
+      "bytes": 356066,
+      "sha256": "8f250c20595e73cd3976d4b71a1b56073a836d530a16f6f92b4f05be9694f352"
+    },
+    {
+      "path": "offline-native200-light-blocker.png",
+      "bytes": 800471,
+      "sha256": "d2dbd8d2c906ca627b6791c6a909f5f220d3e7cddc5add4829fea0370250e14f"
+    },
+    {
+      "path": "offline-public-flight.png",
+      "bytes": 455227,
+      "sha256": "d7a7648c8631f94a68ef5f3cf3bb1580ea62bd2afbccab4a88d601ca5db0b21c"
+    },
+    {
+      "path": "runner-executed.mjs.txt",
+      "bytes": 26382,
+      "sha256": "10232552c9b34e6f36c65d146c6a36f46073eb16ec7fe77f0b82aef91ffd89a2"
+    },
+    {
+      "path": "served-build-receipt.json",
+      "bytes": 31170,
+      "sha256": "184930b34bd0b9b999ba881b14c08b32b610996d20e70945e058cb0961d6ff96"
+    },
+    {
+      "path": "served-index.html.txt",
+      "bytes": 1222,
+      "sha256": "33bf36685194eb5bc5974ee84c940eedb4ec7fc064932d30417ff64b280c9b61"
+    },
+    {
+      "path": "typecheck.log",
+      "bytes": 76,
+      "sha256": "59210fc5c79414cea713e78d8845ed1bde84a5c76d23d1920837b4f17d410976"
+    },
+    {
+      "path": "web-final-retry.json",
+      "bytes": 1738,
+      "sha256": "a7a014d073945a27aede51012c9d1efd4f307da8cacf588b3b7eb81aa4412954"
+    },
+    {
+      "path": "web-final-retry.log",
+      "bytes": 345,
+      "sha256": "fcb3a260390da5ef122b7619cb59cb0d48618da0e2da8e8a5b423d1d0be4672f"
+    },
+    {
+      "path": "web-initial-map.png",
+      "bytes": 939627,
+      "sha256": "027751c6c20c1fc268bb6692b6c4c1d411a2e934e3b99bfc18d0aba25d0c7463"
+    },
+    {
+      "path": "web-mobile-dark-blocker.png",
+      "bytes": 136945,
+      "sha256": "2b5f89ec16b901df69a0f4d165be02bb0d790e845b2ca1994e21bcf77055eaaa"
+    },
+    {
+      "path": "web-pending-3d.png",
+      "bytes": 81966,
+      "sha256": "c10c819cef8de7232997141676d12332e008de6d405d263fa98e785e673638d2"
+    },
+    {
+      "path": "web-planner-export-import.png",
+      "bytes": 451139,
+      "sha256": "b9194795a686b03b2434188369bae0cea231742628b3fe2c6e93a2797a386f65"
+    }
+  ],
+  "limitations": [
+    "Hosted build receipt hashes outputs but contains no independently verified source commit. Expected production baseline6b10ee8; lockedbase3c82b5a.",
+    "Incoming offline HTML is tracked at baseline but was not rebuilt by this worker; matching embedded production source is not asserted.",
+    "Full offline journey used runner-executed.mjs.txt; final surface runner only truncates BODY focus text. All full runs bind original script hashes."
+  ]
+}

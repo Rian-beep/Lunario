@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "startedUtc": "2026-11-15T18:46:34.047Z",
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "sourceBase": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "hostname": "CLEVO-X2",
+  "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+  "options": {
+    "url": "http://127.0.0.1:4357/web/index.html",
+    "file": "public/solarreach-navigator.html",
+    "out": "/tmp/lunario-audience-final-web-journeys",
+    "section": "journeys",
+    "transport": "web",
+    "chrome": "/opt/google/chrome/chrome"
+  },
+  "offlineSha256": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256": "10232552c9b34e6f36c65d146c6a36f46073eb16ec7fe77f0b82aef91ffd89a2",
+  "sessions": [],
+  "checks": [],
+  "limits": [
+    "Agent browser tasks, no human participant or real screen reader.",
+    "Mobile is touch/viewport emulation, not real hardware.",
+    "SwiftShader is software rendering; reverse tunnel timings do not establish target-device performance.",
+    "Selected opaque DOM text contrast only; no global accessibility or imagery-overlay contrast pass."
+  ],
+  "browser": "149.0.7827.155",
+  "fatal": "TimeoutError: The operation was aborted due to timeout\n    at node:internal/deps/undici/undici:14976:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async file:///tmp/lunario-eval-audience/navigator/scripts/evaluation-audience/run.mjs:141:17",
+  "offlineSha256After": "afa9fa3725f5297299368363c7a317ab62d374acc95a981ebaff59f8aa37e45d",
+  "scriptSha256After": "10232552c9b34e6f36c65d146c6a36f46073eb16ec7fe77f0b82aef91ffd89a2",
+  "finishedUtc": "2026-11-15T18:46:54.277Z",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}
