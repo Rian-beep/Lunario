@@ -1151,6 +1151,21 @@ select {
   display: block;
   touch-action: none;
 }
+.scene-host.cesium-closeup-active > canvas { visibility: hidden; }
+.cesium-moon-closeup { position: absolute; inset: 0; z-index: 4; background: #030404; }
+.cesium-moon-viewport, .cesium-moon-viewport .cesium-viewer, .cesium-moon-viewport .cesium-widget { width: 100%; height: 100%; }
+.cesium-moon-bar {
+  position: absolute; z-index: 5; top: 12px; left: 12px; display: flex; gap: 10px; align-items: center;
+  padding: 8px 10px; border-radius: 10px; background: #111214e6; color: #f5eee2; font-size: 13px;
+}
+.cesium-moon-bar button {
+  border: 1px solid #897868; background: #1b1d20; color: #f5eee2; border-radius: 8px; padding: 4px 8px; cursor: pointer;
+}
+.cesium-moon-hint {
+  position: absolute; z-index: 4; left: 12px; bottom: 128px; max-width: 420px; margin: 0;
+  padding: 10px 12px; border-radius: 10px; background: #111214e6; color: #f5eee2; font-size: 13px; line-height: 1.45;
+}
+.cesium-moon-hint code { font-size: 12px; }
 .scene-camera {
   position: absolute;
   bottom: 100px;

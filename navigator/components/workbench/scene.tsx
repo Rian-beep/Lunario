@@ -24,6 +24,7 @@ import { CELESTIAL_ASSETS } from "@/lib/celestial-assets";
 import { LANDER_ASSET } from "@/lib/equipment";
 import { siteNavigationKey, reconcileSiteHandoff } from "@/lib/site-transition";
 import { mountScene, type SceneCameraHandoff, type CameraMode, type CameraSettings, type Readout } from "./scene/runtime";
+import { CesiumMoonCloseup } from "./cesium-moon-closeup";
 
 type Pose = { sunAz: number; sunEl: number; earthAz: number; earthEl: number };
 export type SceneProps = {
@@ -252,6 +253,7 @@ export function LunarScene(props: SceneProps) {
   return (
     <div className={`scene-wrap sq-scene${hasFlight ? " sq-flight" : ""}`} aria-describedby={descriptionId}>
       <div ref={host} className="scene-host" data-focus-request-id={props.focusRequestId} />
+      <CesiumMoonCloseup host={host} lat={props.lat} lon={props.lon} focus={focus} />
 
       {surfaceStatus && <p className="sq-preparing" role="status">{surfaceStatus}</p>}
 
