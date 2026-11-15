@@ -1,10 +1,10 @@
-# Current evaluation release — 15 November 2026
+# Current verified release — 15 November 2026
 
-The latest release fixes interrupted Lander focus, false camera readiness and dark Data & math readability. It also adds scenario evidence exports, validated station imports, three reconstructed NASA/PDS descents, lazy measured terrain and unchanged-pixel NASA texture decoding. Original Lunario branding and the three-second introduction are preserved.
+Software-rendered contact preparation no longer starves behind repeated paints. Native Mac Metal, default headless SwiftShader and SwiftShader with a four-times CPU slowdown plus the older-browser fallback all pass complete web/offline flight workflows. Physics, original NASA geometry and visual/collider detail remain intact.
 
-Current validation: **1,470 tests pass**, nonincremental types/lint and production Next/web/offline builds pass. Actual generated web and disconnected offline journeys, native 200%/touch-emulation/keyboard checks, and native Radeon plus Mac Metal flight groups pass. Exact scope, measurements, retained failures and qualification limits are in [the final report](navigator/docs/qa/evaluation/release/REPORT.md). The scientific register records 42 bounded verified findings, 22 uncertain and no failing recorded comparisons; it does not qualify an operational mission.
+Current validation: **1,474 tests pass**, types/lint/MathML and production Next/web/offline builds pass. Independent Sol review found no actionable defects. Exact configurations, retained historical failures, timing scope and remaining limits are in [the software-rendering report](navigator/docs/qa/software-contact/REPORT.md). The earlier broader [evaluation report](navigator/docs/qa/evaluation/release/REPORT.md) remains archived evidence. Scientific findings remain bounded and do not qualify an operational mission.
 
-Hosting remains teammate-owned. Root `index.html` opens the split web build (`?demo=1` selects Rian's demo); the separate offline download is 97,806,361 bytes, SHA-256 `93f1cfdf0b502d402d2a65a1c58d9cd2d4b825b051f4c8453f02152e255a6a46`. Remaining work and evidence requirements are in [IN-FLIGHT.md](navigator/docs/IN-FLIGHT.md). Default Linux software-rendered contact preparation timed out; fresh JPL retrieval is incomplete due to an upstream HTTP 503. Both are retained explicitly.
+Hosting is teammate-owned. Root `index.html` opens the split web build (`?demo=1` selects Rian's demo); the offline download is 97,806,793 bytes, SHA-256 `5ca73925e68fae85654748189a51020db6830d2963c419785b86785040e2d76c`. Full remaining tasks are in [IN-FLIGHT.md](navigator/docs/IN-FLIGHT.md). The previous software contact timeout is resolved in the tested configurations; physical-device and qualified mission evidence requirements remain explicit.
 
 The chronology below preserves historical counts and hashes; use the current release report above.
 

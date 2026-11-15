@@ -1,0 +1,1788 @@
+{
+  "startedUtc": "2026-11-15T22:15:20.607Z",
+  "options": {
+    "url": "http://127.0.0.1:4361/web/index.html",
+    "file": "public/solarreach-navigator.html",
+    "out": "/tmp/lunario-contact-final-fallback-cpu4",
+    "mode": "both",
+    "executable": "/usr/bin/google-chrome"
+  },
+  "softwareMode": "1",
+  "schedulerDisabled": true,
+  "cases": [
+    {
+      "transport": "web",
+      "checks": [
+        {
+          "name": "original-loader-wordmark-and-reference-surfaces",
+          "status": "pass",
+          "detail": {
+            "logoSha256": "572c14fcbd73139087c471ac7fa0da085a101fdde62815f960a7dd570be89ca0",
+            "layout": {
+              "app": {
+                "x": 0,
+                "y": 0,
+                "width": 1600,
+                "height": 1000,
+                "top": 0,
+                "right": 1600,
+                "bottom": 1000,
+                "left": 0
+              },
+              "width": 1600,
+              "height": 1000,
+              "scrollWidth": 1600,
+              "scheme": "dark",
+              "card": "#1b1d20",
+              "font": "\"Lunario Geist\", \"Segoe UI\", Arial, sans-serif",
+              "loaderScripts": 1
+            }
+          }
+        },
+        {
+          "name": "local-follow-transfer-no-celestial-excursion",
+          "status": "pass",
+          "detail": [
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            }
+          ]
+        },
+        {
+          "name": "play-pause-replay-and-nominal-contact",
+          "status": "pass",
+          "detail": {
+            "pausedTimeS": 16.065999999999985,
+            "landed": {
+              "focusRequestId": "1",
+              "sceneInstance": "e3b0528a-62dc-48bc-bbce-cbcf2d72aae4",
+              "flightRevision": "1",
+              "horizonRevision": "1",
+              "renderFrame": "50",
+              "vehicleWorldPosition": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+              "vehicleQuaternion": "-0.011358408257365227,-0.7086247205734253,-0.003073920961469412,-0.7054875493049622",
+              "vehicleVisible": "true",
+              "landingContact": "{\"timeS\":50.48139816962106,\"eastM\":-8.425036257719135,\"northM\":-0.000005182250200764983,\"yM\":0.16407225420698524,\"velocityMps\":[0.7107326256015903,-0.5593293012008084,1.688674808083655e-7],\"massKg\":4562.229294846625,\"terrainHeightM\":0.16407225403994793,\"terrainKnown\":true,\"slopeDeg\":1.4221188703828147,\"tiltDeg\":1.9372902810000852,\"headingDeg\":269.99617469401676,\"targetErrorM\":8.425035462788589}",
+              "landingDynamics": "{\"phase\":\"settled\",\"elapsedContactS\":12,\"speedMps\":0.01851020594024011,\"verticalMps\":-0.010475733317434788,\"eastM\":-8.015073727260292,\"northM\":0.09760950554119897,\"yM\":1.9340078680985924,\"fragmentCount\":0,\"note\":\"128 m finite contact patch, 2.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+              "landingFragmentCount": "0",
+              "landingMassKg": "4562.229294846625",
+              "terrainClearanceM": "-0.0004775590416681158",
+              "flightTimeS": "62.48139816962106",
+              "landingContactTimeS": "50.48139816962106",
+              "landingContactFrameIndex": "1440",
+              "landingContactFrameTimeS": "62.48139816962106",
+              "sunModel": "ready",
+              "sunDraws": "0",
+              "earthModel": "ready",
+              "earthDraws": "0",
+              "earthRangeKm": "378164.28125",
+              "sunRangeKm": "151931103.42258206",
+              "orbitCount": "0",
+              "orbitPositions": "[]",
+              "starCount": "523",
+              "moonModel": "ready",
+              "terrainSourceSpacingM": "7.992202729044834",
+              "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+              "groundSurface": "canonical",
+              "contactReplay": "ready",
+              "contactFrames": "1441",
+              "contactCacheBytes": "23645369",
+              "focusRange": "ready",
+              "assetFlight": "idle",
+              "ionVisibleTiles": "0",
+              "ionHeightAboveSurfaceM": "",
+              "globeMinimumRadiusKm": "1747.880528431719",
+              "zoomEnabled": "true",
+              "panEnabled": "true",
+              "rotateEnabled": "true",
+              "vehicleScale": "1",
+              "cameraMode": "follow",
+              "lunarAppearance": "neutral-linear-rec709-v1",
+              "lightingMode": "atlas",
+              "stationInspection": "false",
+              "visibleStations": "[]",
+              "visiblePoiCount": "0",
+              "visiblePois": "[]",
+              "vehicleFraming": "framed",
+              "vehicleScreenBounds": "{\"left\":146.4219529705832,\"top\":234.59374999999991,\"right\":571.0643514455537,\"bottom\":582.0881571780537}",
+              "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+              "cameraPosition": "0.0069849262727399355,0.010934007867930683,0.019902390494458612",
+              "cameraTarget": "-0.008015073727260078,0.0019340078679306748,-0.00009760950554138503",
+              "vehicleCameraDistanceKm": "0.026570660511172926",
+              "cameraBodyRadiusKm": "1739.064014281954",
+              "cameraNearKm": "0.0001",
+              "cameraFarKm": "167889499.38800284",
+              "framingProjectionZoom": "0.8111511695503534",
+              "viewLatitude": "-89.5349756538142",
+              "viewLongitude": "-150.02397558981886",
+              "screenNorthAngle": "65.71612306052097",
+              "globeLabels": "[]",
+              "stationTexture": "ready",
+              "surfacePreparationStarted": "11019.400000095367",
+              "surfaceStatus": "ready",
+              "moonColour": "NASA 2025",
+              "moonTextureWidth": "8192",
+              "moonRelief": "LOLA 1x",
+              "moonVisualWarnings": "",
+              "surfaceAngularSegments": "640",
+              "surfacePreparationMs": "9092.700000047684",
+              "surfaceSite": "-89.53432:-150.05232999999998",
+              "surfaceRevision": "1",
+              "flightPointCount": "102",
+              "flightEndpoint": "-0.008425036257719398,0.0001640722539377748,5.182251072710642e-9"
+            }
+          }
+        },
+        {
+          "name": "weak-engine-contact-and-illustrative-breakup",
+          "status": "pass",
+          "detail": {
+            "focusRequestId": "1",
+            "sceneInstance": "e3b0528a-62dc-48bc-bbce-cbcf2d72aae4",
+            "flightRevision": "2",
+            "horizonRevision": "1",
+            "renderFrame": "76",
+            "vehicleWorldPosition": "-0.08740362331616947,-0.0002307537267824955,0.00809300136925728",
+            "vehicleQuaternion": "",
+            "vehicleVisible": "true",
+            "landingContact": "{\"timeS\":19.414645172181515,\"eastM\":-92.80910859467039,\"northM\":0.008297129815769506,\"yM\":-2.0759509946219623,\"velocityMps\":[10.541322061013,-23.01082212471413,0.0008825852694187361],\"massKg\":4674.537069516111,\"terrainHeightM\":-2.075950994743523,\"terrainKnown\":true,\"slopeDeg\":4.7288397462400225,\"tiltDeg\":1.9057424642205865,\"headingDeg\":269.9846687046621,\"targetErrorM\":92.80921966611983}",
+            "landingDynamics": "{\"phase\":\"broken\",\"elapsedContactS\":12,\"speedMps\":0.3254914919527263,\"verticalMps\":-0.2457454936042641,\"eastM\":-87.40362331616862,\"northM\":-8.093001369259609,\"yM\":-0.23075372656072246,\"fragmentCount\":157,\"note\":\"1279 m finite contact patch, 20.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+            "landingFragmentCount": "157",
+            "landingMassKg": "4674.537069516111",
+            "terrainClearanceM": "-0.00028413947371228043",
+            "flightTimeS": "31.414645172181515",
+            "landingContactTimeS": "19.414645172181515",
+            "landingContactFrameIndex": "1440",
+            "landingContactFrameTimeS": "31.414645172181515",
+            "sunModel": "ready",
+            "sunDraws": "3",
+            "earthModel": "ready",
+            "earthDraws": "0",
+            "earthRangeKm": "378164.28125",
+            "sunRangeKm": "151931103.42258206",
+            "orbitCount": "0",
+            "orbitPositions": "[]",
+            "starCount": "523",
+            "moonModel": "ready",
+            "terrainSourceSpacingM": "7.992202729044834",
+            "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+            "groundSurface": "canonical",
+            "contactReplay": "ready",
+            "contactFrames": "1441",
+            "contactCacheBytes": "23645369",
+            "focusRange": "ready",
+            "assetFlight": "idle",
+            "ionVisibleTiles": "0",
+            "ionHeightAboveSurfaceM": "",
+            "globeMinimumRadiusKm": "1747.880528431719",
+            "zoomEnabled": "true",
+            "panEnabled": "true",
+            "rotateEnabled": "true",
+            "vehicleScale": "1",
+            "cameraMode": "follow",
+            "lunarAppearance": "neutral-linear-rec709-v1",
+            "lightingMode": "atlas",
+            "stationInspection": "false",
+            "visibleStations": "[]",
+            "visiblePoiCount": "0",
+            "visiblePois": "[]",
+            "vehicleFraming": "framed",
+            "vehicleScreenBounds": "{\"left\":339.8977977880851,\"top\":414.1268163275126,\"right\":548.9120999750946,\"bottom\":625.0000000000001}",
+            "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+            "cameraPosition": "-0.023115716870640318,0.03834199014053498,0.09381020996329589",
+            "cameraTarget": "-0.08740362331616935,-0.00023075372678244,0.00809300136925728",
+            "vehicleCameraDistanceKm": "0.11387814247587952",
+            "cameraBodyRadiusKm": "1739.0914248200988",
+            "cameraNearKm": "0.0001",
+            "cameraFarKm": "167889499.47602475",
+            "framingProjectionZoom": "0.18229827101581858",
+            "viewLatitude": "-89.53741002669004",
+            "viewLongitude": "-150.1466576287046",
+            "screenNorthAngle": "65.61696867365184",
+            "globeLabels": "[]",
+            "stationTexture": "ready",
+            "surfacePreparationStarted": "11019.400000095367",
+            "surfaceStatus": "ready",
+            "moonColour": "NASA 2025",
+            "moonTextureWidth": "8192",
+            "moonRelief": "LOLA 1x",
+            "moonVisualWarnings": "",
+            "surfaceAngularSegments": "640",
+            "surfacePreparationMs": "9092.700000047684",
+            "surfaceSite": "-89.53432:-150.05232999999998",
+            "surfaceRevision": "1",
+            "flightPointCount": "40",
+            "flightEndpoint": "-0.09280910859467095,-0.002075950994822051,-0.000008297129815204585"
+          }
+        },
+        {
+          "name": "every-variable-has-usable-help-and-explains-the-edit",
+          "status": "pass",
+          "detail": [
+            {
+              "label": "Start altitude",
+              "newValue": "350",
+              "explanation": "Start altitude\n\nThe vehicle’s starting height above the selected site’s reference surface.\n\nWhat to check\n\nStart clear of the surface and inspect contact speed/clearance. A chosen altitude is an initial condition, not a guaranteed landing corridor.\n\nℎ\nstart\n · Start altitude: full explanation\n\nMore starting height gives the engine more time to slow down. This is height above the site reference, not clearance above every nearby hill. Replay to check contact speed.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start altitude\n\n300 → 350. More starting height gives the engine more time to slow down. This is height above the site reference, not clearance above every nearby hill. Replay to check contact speed.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 4.93 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Horizontal speed",
+              "newValue": "20",
+              "explanation": "Horizontal speed\n\nThe starting speed across the surface.\n\nWhat to check\n\nA successful landing needs vehicle-specific horizontal speed limits at touchdown; no universal safe value is assumed.\n\n𝑣\nℎ\n · Horizontal speed: full explanation\n\nSideways motion also needs braking. A fast sideways approach can miss the target or hit the ground while sliding, even if downward speed is small.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Horizontal speed\n\n10 → 20. Sideways motion also needs braking. A fast sideways approach can miss the target or hit the ground while sliding, even if downward speed is small.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 5.21 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Vertical speed",
+              "newValue": "-12",
+              "explanation": "Vertical speed\n\nThe starting speed up or down. Negative values mean descent.\n\nWhat to check\n\nCheck stopping distance and touchdown speed against actual lander requirements. Assisted target guidance is an ideal controller with immediate attitude and bounded throttle, not qualified guidance.\n\n𝑣\n𝑢\n · Vertical speed: full explanation\n\nNegative means falling; positive means climbing. A faster fall needs more braking distance. With other inputs fixed, compare downward speed at contact.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Vertical speed\n\n-8 → -12. Negative means falling; positive means climbing. A faster fall needs more braking distance. With other inputs fixed, compare downward speed at contact.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 9.06 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Heading, from north",
+              "newValue": "180",
+              "explanation": "Heading, from north\n\nThe direction the vehicle travels or points across the surface.\n\nWhat to check\n\nUse headings compatible with the intended orbit, terrain and mission constraints. The simplified preview does not solve an orbital launch window.\n\n𝜒\n · Heading, from north: full explanation\n\n0° is north, 90° east, 180° south and 270° west. It sets the starting sideways direction; manual guidance also points thrust this way. Assisted guidance steers toward the target itself.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Heading, from north\n\n90 → 180. 0° is north, 90° east, 180° south and 270° west. It sets the starting sideways direction; manual guidance also points thrust this way. Assisted guidance steers toward the target itself.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 12.22 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 1.01 m/s, above your 1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Wet mass",
+              "newValue": "5000",
+              "explanation": "Wet mass\n\nThe vehicle’s total mass before the burn, including propellant.\n\nWhat to check\n\nWet mass must be at least dry mass. Initial T/W > 1 is necessary for vertical liftoff from rest, not sufficient; tilted thrust must also supply an upward component greater than weight.\n\n𝑚\n · Vehicle mass: full explanation\n\nTotal starting mass, including fuel. Raising it while keeping dry mass fixed adds fuel but makes the same engine accelerate a heavier vehicle. More fuel is not automatically an easier landing.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Wet mass\n\n4700 → 5000. Total starting mass, including fuel. Raising it while keeping dry mass fixed adds fuel but makes the same engine accelerate a heavier vehicle. More fuel is not automatically an easier landing.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Dry mass",
+              "newValue": "2300",
+              "explanation": "Dry mass\n\nThe mass left after usable propellant is consumed.\n\nWhat to check\n\nDry mass must be positive and no greater than wet mass. Reserve and unusable propellant must be reflected in your assumptions.\n\n𝑚\n · Vehicle mass: full explanation\n\nVehicle mass when usable fuel is gone. Raising it at fixed wet mass leaves less fuel, so thrust can stop earlier. It does not increase starting mass.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Dry mass\n\n2200 → 2300. Vehicle mass when usable fuel is gone. Raising it at fixed wet mass leaves less fuel, so thrust can stop earlier. It does not increase starting mass.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Thrust",
+              "newValue": "4000",
+              "explanation": "Thrust\n\nThe push produced by the engine.\n\nWhat to check\n\nT/W > 1 is necessary for vertical liftoff from rest, not a success threshold. With tilted thrust, the upward component must exceed weight. Descent depends on speed, burn timing, mass, steering and terrain; no universal safe thrust is assumed.\n\n𝑇\n · Thrust: full explanation\n\nThe maximum engine push. Too little push cannot slow the fall in time. Assisted guidance can throttle down; manual guidance uses full thrust, so too much push or a long burn can make the vehicle climb again.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Thrust\n\n16000 → 4000. The maximum engine push. Too little push cannot slow the fall in time. Assisted guidance can throttle down; manual guidance uses full thrust, so too much push or a long burn can make the vehicle climb again.\n\nPredicted up/down contact speed: 0.56 → 23.01 m/s. Target distance: 8.43 → 92.81 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 23.01 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 10.54 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 92.81 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 1,497,294.91 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Specific impulse",
+              "newValue": "250",
+              "explanation": "Specific impulse\n\nHow efficiently the engine uses propellant.\n\nWhat to check\n\nUse the engine’s applicable vacuum rating. Ideal rocket-equation Δv excludes gravity and steering losses.\n\n𝐼\nsp\n · Specific impulse: full explanation\n\nEngine fuel efficiency, measured in seconds. Raising it uses less fuel for the same push; it does not make that initial push stronger.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Specific impulse\n\n311 → 250. Engine fuel efficiency, measured in seconds. Raising it uses less fuel for the same push; it does not make that initial push stronger.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Burn duration",
+              "newValue": "5",
+              "explanation": "Burn duration\n\nHow long the engine is commanded to fire.\n\nWhat to check\n\nThe burn must fit the mission’s propulsion and trajectory requirements. Fuel exhaustion ends thrust even if commanded time remains.\n\n𝜏\n𝑏\n · Burn duration: full explanation\n\nThe longest time thrust is allowed. A short limit can stop the engine before landing even with fuel left. Assisted guidance chooses the throttle within this time; manual guidance fires at full thrust.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Burn duration\n\n150 → 5. The longest time thrust is allowed. A short limit can stop the engine before landing even with fuel left. Assisted guidance chooses the throttle within this time; manual guidance fires at full thrust.\n\nPredicted up/down contact speed: 0.56 → 30.19 m/s. Target distance: 8.43 → 76.01 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 30.19 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 12.16 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 76.01 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 2,483,049.76 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Preview duration",
+              "newValue": "1",
+              "explanation": "Preview duration\n\nHow far ahead the flight calculation runs.\n\nWhat to check\n\nA time-limit result is not proof of a successful mission. Evaluate the required terminal conditions explicitly.\n\n𝜏\npreview\n · Preview duration: full explanation\n\nHow much flight time to calculate, not how long to fire the engine. If it ends before contact, a landing has not been demonstrated. Extend it to inspect what happens next.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Preview duration\n\n180 → 1. How much flight time to calculate, not how long to fire the engine. If it ends before contact, a landing has not been demonstrated. Extend it to inspect what happens next.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · No touchdown in this preview\nThe calculated time ends without reaching the ground. The vehicle may still be flying or climbing; extend preview duration and inspect the path. This is not a successful landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Start east offset",
+              "newValue": "-450",
+              "explanation": "Start east offset\n\nWhere you start relative to the target: positive is east, negative west. A larger offset needs more sideways travel and braking. It does not move the target.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start east offset\n\n-300 → -450. Where you start relative to the target: positive is east, negative west. A larger offset needs more sideways travel and braking. It does not move the target.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 14.21 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 1.19 m/s, above your 1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Start north offset",
+              "newValue": "100",
+              "explanation": "Start north offset\n\nWhere you start relative to the target: positive is north, negative south. Changing it changes the approach distance and terrain crossed, not the target.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start north offset\n\n0 → 100. Where you start relative to the target: positive is north, negative south. Changing it changes the approach distance and terrain crossed, not the target.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 9.27 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Target radius",
+              "newValue": "1",
+              "explanation": "Target radius\n\nHow far from the target a touchdown is allowed. Widening this only loosens the pass/fail rule; it does not steer the vehicle or fix a miss.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Target radius\n\n20 → 1. How far from the target a touchdown is allowed. Widening this only loosens the pass/fail rule; it does not steer the vehicle or fix a miss.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nMissed the target: 8.43 m away, outside your 1 m target radius. More sideways braking or a different start position may help.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum vertical contact speed",
+              "newValue": ".1",
+              "explanation": "Maximum vertical contact speed\n\nThe allowed up/down speed when ground contact first occurs. Raising this only loosens the verdict; the impact speed and crash motion stay the same.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum vertical contact speed\n\n2 → 0.1. The allowed up/down speed when ground contact first occurs. Raising this only loosens the verdict; the impact speed and crash motion stay the same.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 0.56 m/s at contact, above your 0.1 m/s limit. The engine did not remove enough vertical speed before contact.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum horizontal contact speed",
+              "newValue": ".1",
+              "explanation": "Maximum horizontal contact speed\n\nThe allowed sideways speed at first ground contact. Raising the limit does not remove sliding or change the flight.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum horizontal contact speed\n\n1 → 0.1. The allowed sideways speed at first ground contact. Raising the limit does not remove sliding or change the flight.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 0.71 m/s, above your 0.1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum contact tilt",
+              "newValue": ".1",
+              "explanation": "Maximum contact tilt\n\nThe allowed angle away from upright at contact. Raising it changes the verdict, not the vehicle attitude or stability.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum contact tilt\n\n15 → 0.1. The allowed angle away from upright at contact. Raising it changes the verdict, not the vehicle attitude or stability.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo tilted at contact: 1.94°, above your 0.1° limit. The vehicle is not upright enough for this example.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Breakup energy threshold",
+              "newValue": "1",
+              "explanation": "Breakup energy threshold\n\nThe demonstration energy at which the display vehicle breaks apart. Raising it changes the breakup rule, not incoming speed. This is not a measured strength of a real lander.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Breakup energy threshold\n\n100000 → 1. The demonstration energy at which the display vehicle breaks apart. Raising it changes the breakup rule, not incoming speed. This is not a measured strength of a real lander.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nImpact energy 1,865.93 J reaches the example's 1 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact friction",
+              "newValue": ".5",
+              "explanation": "Contact friction\n\nHow much the ground resists sliding after contact. More friction can reduce sliding or cause tipping. It does not brake the airborne vehicle.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact friction\n\n0.8 → 0.5. How much the ground resists sliding after contact. More friction can reduce sliding or cause tipping. It does not brake the airborne vehicle.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact restitution",
+              "newValue": ".7",
+              "explanation": "Contact restitution\n\nHow bouncy the contact is: 0 loses rebound, 1 is ideally elastic. It changes motion after contact, not incoming landing speed. Breakup can interrupt a bounce.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact restitution\n\n0.1 → 0.7. How bouncy the contact is: 0 loses rebound, 1 is ideally elastic. It changes motion after contact, not incoming landing speed. Breakup can interrupt a bounce.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact continuation",
+              "newValue": "20",
+              "explanation": "Contact continuation\n\nHow many extra seconds to show after first contact. Increase it to watch settling, sliding or fragments; it does not change the approach.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact continuation\n\n12 → 20. How many extra seconds to show after first contact. Increase it to watch settling, sliding or fragments; it does not change the approach.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Initial pitch",
+              "newValue": "75",
+              "explanation": "Initial pitch\n\nHow far the thrust points upward above the horizon at ignition.\n\nWhat to check\n\n−90° to +90° input bound. A valid ascent requires the resulting vertical acceleration and path to clear terrain.\n\n𝛾\n · Flight pitch: full explanation\n\n90° pushes straight up, 0° pushes sideways. In manual mode, upward thrust slows a fall; sideways thrust changes where you land. Assisted guidance chooses its own pitch.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Initial pitch\n\n90 → 75. 90° pushes straight up, 0° pushes sideways. In manual mode, upward thrust slows a fall; sideways thrust changes where you land. Assisted guidance chooses its own pitch.\n\nPredicted up/down contact speed: 11.66 → 11.39 m/s. Target distance: 0.00 → 46.02 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 11.39 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 3.36 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 46.02 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 328,696.08 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Final burn pitch",
+              "newValue": "65",
+              "explanation": "Final burn pitch\n\nThe upward angle of thrust at the end of the planned burn.\n\nWhat to check\n\nThis user-defined profile applies to manual guidance. Assisted target guidance ignores the manual pitch schedule and commands its own ideal attitude. A valid angle alone does not ensure orbit insertion or landing.\n\n𝛾\n · Flight pitch: full explanation\n\nThe manual engine tilts gradually from initial to final pitch during the requested burn. A higher angle gives more upward support and less sideways push. Assisted guidance ignores this setting.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Final burn pitch\n\n90 → 65. The manual engine tilts gradually from initial to final pitch during the requested burn. A higher angle gives more upward support and less sideways push. Assisted guidance ignores this setting.\n\nPredicted up/down contact speed: 11.66 → 11.53 m/s. Target distance: 0.00 → 51.97 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 11.53 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 5.47 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 51.97 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nToo tilted at contact: 25°, above your 15° limit. The vehicle is not upright enough for this example.\nImpact energy 379,481.13 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            }
+          ]
+        },
+        {
+          "name": "follow-stays-visible-through-launch-and-landing",
+          "status": "pass",
+          "detail": [
+            {
+              "id": "assisted",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.5063999999999942,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.123,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.773,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 26.243799990654285,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 58.74379999065428,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 62.48139816962106,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            },
+            {
+              "id": "underpowered",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.4567999999999884,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.1233999999999942,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.7732999999999883,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 23.996099992991073,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 31.414645172181515,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            },
+            {
+              "id": "ascent",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.8870999998569605,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 2.070399999856949,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 3.2369999998569545,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 53.32519999051152,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 112.49019999051094,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 168.3251999905115,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 214.99019999051094,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 244.98519999051064,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 269.98519999051064,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 294.1501999905115,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 316.6501999905115,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 339.98019999051036,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 363.31519999051096,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 407.4801999905103,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 424.9751999905115,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 444.14519999051123,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 464.14519999051123,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 480,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ascent-edits-camera-persistence-and-variable-help",
+          "status": "pass",
+          "detail": {
+            "launched": {
+              "focusRequestId": "1",
+              "sceneInstance": "e3b0528a-62dc-48bc-bbce-cbcf2d72aae4",
+              "flightRevision": "49",
+              "horizonRevision": "1",
+              "renderFrame": "285",
+              "vehicleWorldPosition": "4.924797420983251,13.722743291186681,0.000028518990889026122",
+              "vehicleQuaternion": "5.067257728648421e-19,0,-0.0014048515314262944,0.9999990131956005",
+              "vehicleVisible": "true",
+              "landingContact": "",
+              "landingDynamics": "",
+              "landingFragmentCount": "0",
+              "landingMassKg": "4062.4422092195823",
+              "terrainClearanceM": "",
+              "flightTimeS": "121.52919999284745",
+              "landingContactTimeS": "",
+              "landingContactFrameIndex": "",
+              "landingContactFrameTimeS": "",
+              "sunModel": "ready",
+              "sunDraws": "13",
+              "earthModel": "ready",
+              "earthDraws": "0",
+              "earthRangeKm": "378164.28125",
+              "sunRangeKm": "151931103.42258206",
+              "orbitCount": "0",
+              "orbitPositions": "[]",
+              "starCount": "523",
+              "moonModel": "ready",
+              "terrainSourceSpacingM": "7.992202729044834",
+              "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+              "groundSurface": "canonical",
+              "contactReplay": "idle",
+              "contactFrames": "0",
+              "contactCacheBytes": "0",
+              "focusRange": "ready",
+              "assetFlight": "idle",
+              "ionVisibleTiles": "0",
+              "ionHeightAboveSurfaceM": "",
+              "globeMinimumRadiusKm": "1747.880528431719",
+              "zoomEnabled": "true",
+              "panEnabled": "true",
+              "rotateEnabled": "true",
+              "vehicleScale": "1",
+              "cameraMode": "follow",
+              "lunarAppearance": "neutral-linear-rec709-v1",
+              "lightingMode": "atlas",
+              "stationInspection": "false",
+              "visibleStations": "[]",
+              "visiblePoiCount": "0",
+              "visiblePois": "[]",
+              "vehicleFraming": "framed",
+              "vehicleScreenBounds": "{\"left\":146.10752065286997,\"top\":234.59375,\"right\":575.9037861425155,\"bottom\":580.7233959110495}",
+              "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+              "cameraPosition": "4.939797420983255,13.731743291186698,0.02002851899088902",
+              "cameraTarget": "4.924797420983269,13.722743291186683,0.000028518990889042626",
+              "vehicleCameraDistanceKm": "0.026570660511180698",
+              "cameraBodyRadiusKm": "1752.7917843463442",
+              "cameraNearKm": "0.0001",
+              "cameraFarKm": "167889497.5121463",
+              "framingProjectionZoom": "0.8246359015524506",
+              "viewLatitude": "-89.5077381401462",
+              "viewLongitude": "-130.903217855972",
+              "screenNorthAngle": "77.19559622815316",
+              "globeLabels": "[]",
+              "stationTexture": "ready",
+              "surfacePreparationStarted": "189995.10000014305",
+              "surfaceStatus": "ready",
+              "moonColour": "NASA 2025",
+              "moonTextureWidth": "8192",
+              "moonRelief": "LOLA 1x",
+              "moonVisualWarnings": "",
+              "surfaceAngularSegments": "640",
+              "surfacePreparationMs": "2755.5999999046326",
+              "surfaceSite": "-89.53432:-150.05232999999998",
+              "surfaceRevision": "3",
+              "flightPointCount": "481",
+              "flightEndpoint": "126.29585544692347,79.0789220878446,-8.881784197001252e-15"
+            },
+            "editedMassKg": 4800
+          }
+        },
+        {
+          "name": "reload-replays-original-animation-and-no-browser-errors",
+          "status": "pass",
+          "detail": {
+            "httpRequests": 106,
+            "replayed": true
+          }
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpRequests": [
+        "http://127.0.0.1:4361/web/index.html",
+        "http://127.0.0.1:4361/web/assets/tailwind-f48e08d5ed23.css",
+        "http://127.0.0.1:4361/web/assets/main-V5CXROSI.css",
+        "http://127.0.0.1:4361/web/assets/main-Q5XQIZNO.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-WBRBCF2R.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-BYF7D3ZG.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-PPMMVN52.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-Z5OIDHRQ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-YX72CDH5.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-YOLCIZJX.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-QFPKXEUA.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-PEFLBYRG.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-C4PNESZJ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-TG6NO2IQ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-E7M3HPRY.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GUHW2LPN.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-BJHNUT4Q.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-NI6PLQCL.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-EBJZIC3V.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-Y3COZUTT.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-MREAK3FA.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-AX4KF55O.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-LQK2EQKI.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-W6R2IQQK.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-VEP72JGX.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-DGD7PSFO.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GZ7DTIBT.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GNTWDEBH.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-KIUUUEIZ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-3DFCVSYE.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-6NUZOME5.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-LOKUJV26.js",
+        "http://127.0.0.1:4361/navigator/public/data/catalog.json",
+        "http://127.0.0.1:4361/navigator/public/data/evidence-manifest.json",
+        "http://127.0.0.1:4361/web/assets/fonts/geist-var-PIJXEPVL.woff2",
+        "http://127.0.0.1:4361/navigator/public/data/imagery.json",
+        "http://127.0.0.1:4361/navigator/public/data/map.png",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/polar.jpg",
+        "http://127.0.0.1:4361/web/assets/chunks/scene-NX2SQGAY.js",
+        "http://127.0.0.1:4361/navigator/public/data/global-terrain.json",
+        "http://127.0.0.1:4361/navigator/public/data/terrain.json",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-VAZO247E.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-PGFZ5IYS.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-EC2D7TCJ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-2MRREW72.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-CBNQURH6.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-HMC6QPW6.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-UBRIG4AJ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-NK6FMLPF.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-IEJRRESR.js",
+        "http://127.0.0.1:4361/navigator/public/data/global-terrain.bin.gz",
+        "http://127.0.0.1:4361/navigator/public/data/celestial-models/assets/sun.glb",
+        "http://127.0.0.1:4361/navigator/public/data/celestial-models/assets/earth.glb",
+        "http://127.0.0.1:4361/navigator/public/data/equipment/apollo-lunar-module.glb",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/nasa-moon-8k.jpg",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/polar.jpg",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/connecting-ridge-nac-surface.jpg",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/connecting-ridge-nac.jpg",
+        "http://127.0.0.1:4361/navigator/public/data/dsn/earth-blue-marble-2048.jpg",
+        "http://127.0.0.1:4361/navigator/public/data/nasa-model.json",
+        "http://127.0.0.1:4361/navigator/public/data/equipment/draco/draco_decoder.js",
+        "http://127.0.0.1:4361/navigator/public/data/nasa-moon-mesh.bin.gz",
+        "http://127.0.0.1:4361/navigator/public/data/visual-moon/radii-1x.bin.gz",
+        "http://127.0.0.1:4361/web/assets/chunks/rapier-IF4EXMSY.js",
+        "http://127.0.0.1:4361/navigator/public/data/visual-moon/colour-2025-1024.webp",
+        "http://127.0.0.1:4361/navigator/public/data/visual-moon/colour-2025-2048.webp",
+        "http://127.0.0.1:4361/navigator/public/data/visual-moon/colour-2025-4096.webp",
+        "http://127.0.0.1:4361/navigator/public/data/visual-moon/colour-2025-8192.webp",
+        "http://127.0.0.1:4361/web/index.html",
+        "http://127.0.0.1:4361/web/assets/tailwind-f48e08d5ed23.css",
+        "http://127.0.0.1:4361/web/assets/main-V5CXROSI.css",
+        "http://127.0.0.1:4361/web/assets/main-Q5XQIZNO.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-WBRBCF2R.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-BYF7D3ZG.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-PPMMVN52.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-Z5OIDHRQ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-YX72CDH5.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-YOLCIZJX.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-QFPKXEUA.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-PEFLBYRG.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-C4PNESZJ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-TG6NO2IQ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-E7M3HPRY.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GUHW2LPN.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-BJHNUT4Q.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-NI6PLQCL.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-EBJZIC3V.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-Y3COZUTT.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-MREAK3FA.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-AX4KF55O.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-LQK2EQKI.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-W6R2IQQK.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-VEP72JGX.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-DGD7PSFO.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GZ7DTIBT.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-GNTWDEBH.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-KIUUUEIZ.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-3DFCVSYE.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-6NUZOME5.js",
+        "http://127.0.0.1:4361/web/assets/chunks/chunk-LOKUJV26.js",
+        "http://127.0.0.1:4361/web/assets/fonts/geist-var-PIJXEPVL.woff2",
+        "http://127.0.0.1:4361/navigator/public/data/catalog.json",
+        "http://127.0.0.1:4361/navigator/public/data/evidence-manifest.json",
+        "http://127.0.0.1:4361/navigator/public/data/imagery.json",
+        "http://127.0.0.1:4361/navigator/public/data/map.png",
+        "http://127.0.0.1:4361/navigator/public/data/imagery/polar.jpg"
+      ],
+      "cpuThrottle": 4,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 7371.089565000002,
+      "sceneInstance": "e3b0528a-62dc-48bc-bbce-cbcf2d72aae4",
+      "weakBefore": {
+        "focusRequestId": "1",
+        "sceneInstance": "e3b0528a-62dc-48bc-bbce-cbcf2d72aae4",
+        "flightRevision": "2",
+        "horizonRevision": "1",
+        "renderFrame": "57",
+        "vehicleWorldPosition": "-0.29999645851214013,0.3017782306252294,0.000028518990887249762",
+        "vehicleQuaternion": "0,0,0.00008623878435579838,0.9999999962814362",
+        "vehicleVisible": "true",
+        "landingContact": "{\"timeS\":19.414645172181515,\"eastM\":-92.80910859467039,\"northM\":0.008297129815769506,\"yM\":-2.0759509946219623,\"velocityMps\":[10.541322061013,-23.01082212471413,0.0008825852694187361],\"massKg\":4674.537069516111,\"terrainHeightM\":-2.075950994743523,\"terrainKnown\":true,\"slopeDeg\":4.7288397462400225,\"tiltDeg\":1.9057424642205865,\"headingDeg\":269.9846687046621,\"targetErrorM\":92.80921966611983}",
+        "landingDynamics": "",
+        "landingFragmentCount": "0",
+        "landingMassKg": "4700",
+        "terrainClearanceM": "",
+        "flightTimeS": "0",
+        "landingContactTimeS": "19.414645172181515",
+        "landingContactFrameIndex": "",
+        "landingContactFrameTimeS": "",
+        "sunModel": "ready",
+        "sunDraws": "0",
+        "earthModel": "ready",
+        "earthDraws": "0",
+        "earthRangeKm": "378164.28125",
+        "sunRangeKm": "151931103.42258206",
+        "orbitCount": "0",
+        "orbitPositions": "[]",
+        "starCount": "523",
+        "moonModel": "ready",
+        "terrainSourceSpacingM": "7.992202729044834",
+        "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+        "groundSurface": "canonical",
+        "contactReplay": "preparing",
+        "contactFrames": "0",
+        "contactCacheBytes": "0",
+        "focusRange": "ready",
+        "assetFlight": "idle",
+        "ionVisibleTiles": "0",
+        "ionHeightAboveSurfaceM": "",
+        "globeMinimumRadiusKm": "1747.880528431719",
+        "zoomEnabled": "true",
+        "panEnabled": "true",
+        "rotateEnabled": "true",
+        "vehicleScale": "1",
+        "cameraMode": "follow",
+        "lunarAppearance": "neutral-linear-rec709-v1",
+        "lightingMode": "atlas",
+        "stationInspection": "false",
+        "visibleStations": "[]",
+        "visiblePoiCount": "0",
+        "visiblePois": "[]",
+        "vehicleFraming": "framed",
+        "vehicleScreenBounds": "{\"left\":145.39688425791638,\"top\":234.59375,\"right\":575.8243453744459,\"bottom\":580.5842187515952}",
+        "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+        "cameraPosition": "-0.28499645851214,0.31077823062522947,0.020028518990887246",
+        "cameraTarget": "-0.29999645851214,0.30177823062522946,0.000028518990887249745",
+        "vehicleCameraDistanceKm": "0.026570660511172937",
+        "cameraBodyRadiusKm": "1739.363881840585",
+        "cameraNearKm": "0.0001",
+        "cameraFarKm": "167889499.50916025",
+        "framingProjectionZoom": "0.826092894103495",
+        "viewLatitude": "-89.53488500063148",
+        "viewLongitude": "-151.2088900824316",
+        "screenNorthAngle": "64.77210392832609",
+        "globeLabels": "[]",
+        "stationTexture": "ready",
+        "surfacePreparationStarted": "11019.400000095367",
+        "surfaceStatus": "ready",
+        "moonColour": "NASA 2025",
+        "moonTextureWidth": "8192",
+        "moonRelief": "LOLA 1x",
+        "moonVisualWarnings": "",
+        "surfaceAngularSegments": "640",
+        "surfacePreparationMs": "9092.700000047684",
+        "surfaceSite": "-89.53432:-150.05232999999998",
+        "surfaceRevision": "1",
+        "flightPointCount": "40",
+        "flightEndpoint": "-0.09280910859467095,-0.002075950994822051,-0.000008297129815204585"
+      }
+    },
+    {
+      "transport": "file",
+      "checks": [
+        {
+          "name": "original-loader-wordmark-and-reference-surfaces",
+          "status": "pass",
+          "detail": {
+            "logoSha256": "572c14fcbd73139087c471ac7fa0da085a101fdde62815f960a7dd570be89ca0",
+            "layout": {
+              "app": {
+                "x": 0,
+                "y": 0,
+                "width": 1600,
+                "height": 1000,
+                "top": 0,
+                "right": 1600,
+                "bottom": 1000,
+                "left": 0
+              },
+              "width": 1600,
+              "height": 1000,
+              "scrollWidth": 1600,
+              "scheme": "dark",
+              "card": "#1b1d20",
+              "font": "\"Lunario Geist\", \"Segoe UI\", Arial, sans-serif",
+              "loaderScripts": 1
+            }
+          }
+        },
+        {
+          "name": "local-follow-transfer-no-celestial-excursion",
+          "status": "pass",
+          "detail": [
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            },
+            {
+              "distanceKm": 0.02657066051117288,
+              "flight": "idle",
+              "visible": "true",
+              "framing": "framed"
+            }
+          ]
+        },
+        {
+          "name": "play-pause-replay-and-nominal-contact",
+          "status": "pass",
+          "detail": {
+            "pausedTimeS": 21.755000000476834,
+            "landed": {
+              "focusRequestId": "1",
+              "sceneInstance": "082c17f5-81ec-447f-8608-4589f9112e71",
+              "flightRevision": "1",
+              "horizonRevision": "1",
+              "renderFrame": "54",
+              "vehicleWorldPosition": "-0.00801507372726018,0.0019340078679306316,-0.00009760950554138503",
+              "vehicleQuaternion": "-0.011358408257365227,-0.7086247205734253,-0.003073920961469412,-0.7054875493049622",
+              "vehicleVisible": "true",
+              "landingContact": "{\"timeS\":50.48139816962106,\"eastM\":-8.425036257719135,\"northM\":-0.000005182250200764983,\"yM\":0.16407225420698524,\"velocityMps\":[0.7107326256015903,-0.5593293012008084,1.688674808083655e-7],\"massKg\":4562.229294846625,\"terrainHeightM\":0.16407225403994793,\"terrainKnown\":true,\"slopeDeg\":1.4221188703828147,\"tiltDeg\":1.9372902810000852,\"headingDeg\":269.99617469401676,\"targetErrorM\":8.425035462788589}",
+              "landingDynamics": "{\"phase\":\"settled\",\"elapsedContactS\":12,\"speedMps\":0.01851020594024011,\"verticalMps\":-0.010475733317434788,\"eastM\":-8.015073727260292,\"northM\":0.09760950554119897,\"yM\":1.9340078680985924,\"fragmentCount\":0,\"note\":\"128 m finite contact patch, 2.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+              "landingFragmentCount": "0",
+              "landingMassKg": "4562.229294846625",
+              "terrainClearanceM": "-0.0004775590416681158",
+              "flightTimeS": "62.48139816962106",
+              "landingContactTimeS": "50.48139816962106",
+              "landingContactFrameIndex": "1440",
+              "landingContactFrameTimeS": "62.48139816962106",
+              "sunModel": "ready",
+              "sunDraws": "0",
+              "earthModel": "ready",
+              "earthDraws": "0",
+              "earthRangeKm": "378164.28125",
+              "sunRangeKm": "151931103.42258206",
+              "orbitCount": "0",
+              "orbitPositions": "[]",
+              "starCount": "523",
+              "moonModel": "ready",
+              "terrainSourceSpacingM": "7.992202729044834",
+              "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+              "groundSurface": "canonical",
+              "contactReplay": "ready",
+              "contactFrames": "1441",
+              "contactCacheBytes": "23645369",
+              "focusRange": "ready",
+              "assetFlight": "idle",
+              "ionVisibleTiles": "0",
+              "ionHeightAboveSurfaceM": "",
+              "globeMinimumRadiusKm": "1747.880528431719",
+              "zoomEnabled": "true",
+              "panEnabled": "true",
+              "rotateEnabled": "true",
+              "vehicleScale": "1",
+              "cameraMode": "follow",
+              "lunarAppearance": "neutral-linear-rec709-v1",
+              "lightingMode": "atlas",
+              "stationInspection": "false",
+              "visibleStations": "[]",
+              "visiblePoiCount": "0",
+              "visiblePois": "[]",
+              "vehicleFraming": "framed",
+              "vehicleScreenBounds": "{\"left\":146.4219529705873,\"top\":234.59375,\"right\":571.0643514455512,\"bottom\":582.088157178047}",
+              "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+              "cameraPosition": "0.006984926272739908,0.010934007867930558,0.019902390494458612",
+              "cameraTarget": "-0.008015073727260106,0.0019340078679305505,-0.00009760950554138503",
+              "vehicleCameraDistanceKm": "0.026570660511172867",
+              "cameraBodyRadiusKm": "1739.064014281954",
+              "cameraNearKm": "0.0001",
+              "cameraFarKm": "167889499.38800284",
+              "framingProjectionZoom": "0.811151169550339",
+              "viewLatitude": "-89.5349756538142",
+              "viewLongitude": "-150.02397558981886",
+              "screenNorthAngle": "65.71612306052097",
+              "globeLabels": "[]",
+              "surfacePreparationStarted": "14583.100000143051",
+              "surfaceStatus": "ready",
+              "stationTexture": "ready",
+              "moonColour": "NASA 2025",
+              "moonTextureWidth": "4096",
+              "moonRelief": "LOLA 1x",
+              "moonVisualWarnings": "",
+              "surfaceAngularSegments": "640",
+              "surfacePreparationMs": "9683.299999952316",
+              "surfaceSite": "-89.53432:-150.05232999999998",
+              "surfaceRevision": "1",
+              "flightPointCount": "102",
+              "flightEndpoint": "-0.008425036257719398,0.0001640722539377748,5.182251072710642e-9"
+            }
+          }
+        },
+        {
+          "name": "weak-engine-contact-and-illustrative-breakup",
+          "status": "pass",
+          "detail": {
+            "focusRequestId": "1",
+            "sceneInstance": "082c17f5-81ec-447f-8608-4589f9112e71",
+            "flightRevision": "2",
+            "horizonRevision": "1",
+            "renderFrame": "79",
+            "vehicleWorldPosition": "-0.08740362331616947,-0.0002307537267824955,0.00809300136925728",
+            "vehicleQuaternion": "",
+            "vehicleVisible": "true",
+            "landingContact": "{\"timeS\":19.414645172181515,\"eastM\":-92.80910859467039,\"northM\":0.008297129815769506,\"yM\":-2.0759509946219623,\"velocityMps\":[10.541322061013,-23.01082212471413,0.0008825852694187361],\"massKg\":4674.537069516111,\"terrainHeightM\":-2.075950994743523,\"terrainKnown\":true,\"slopeDeg\":4.7288397462400225,\"tiltDeg\":1.9057424642205865,\"headingDeg\":269.9846687046621,\"targetErrorM\":92.80921966611983}",
+            "landingDynamics": "{\"phase\":\"broken\",\"elapsedContactS\":12,\"speedMps\":0.3254914919527263,\"verticalMps\":-0.2457454936042641,\"eastM\":-87.40362331616862,\"northM\":-8.093001369259609,\"yM\":-0.23075372656072246,\"fragmentCount\":157,\"note\":\"1279 m finite contact patch, 20.0 m collider sampling of the displayed numerical surface (triangular approximation). Numerical DEM context is not qualified footprint evidence. Bounded 12 s rigid-body preview; the final state is held afterward. Illustrative point-mass → rigid-body contact; 120 Hz replay with up to 8 CCD substeps per sample; nominal 7 m NASA geometry, box proxies and geometry-based mass. No soil, structural or vehicle qualification. Pieces contact terrain only; mutual piece contact omitted.\"}",
+            "landingFragmentCount": "157",
+            "landingMassKg": "4674.537069516111",
+            "terrainClearanceM": "-0.00028413947371228043",
+            "flightTimeS": "31.414645172181515",
+            "landingContactTimeS": "19.414645172181515",
+            "landingContactFrameIndex": "1440",
+            "landingContactFrameTimeS": "31.414645172181515",
+            "sunModel": "ready",
+            "sunDraws": "3",
+            "earthModel": "ready",
+            "earthDraws": "0",
+            "earthRangeKm": "378164.28125",
+            "sunRangeKm": "151931103.42258206",
+            "orbitCount": "0",
+            "orbitPositions": "[]",
+            "starCount": "523",
+            "moonModel": "ready",
+            "terrainSourceSpacingM": "7.992202729044834",
+            "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+            "groundSurface": "canonical",
+            "contactReplay": "ready",
+            "contactFrames": "1441",
+            "contactCacheBytes": "23645369",
+            "focusRange": "ready",
+            "assetFlight": "idle",
+            "ionVisibleTiles": "0",
+            "ionHeightAboveSurfaceM": "",
+            "globeMinimumRadiusKm": "1747.880528431719",
+            "zoomEnabled": "true",
+            "panEnabled": "true",
+            "rotateEnabled": "true",
+            "vehicleScale": "1",
+            "cameraMode": "follow",
+            "lunarAppearance": "neutral-linear-rec709-v1",
+            "lightingMode": "atlas",
+            "stationInspection": "false",
+            "visibleStations": "[]",
+            "visiblePoiCount": "0",
+            "visiblePois": "[]",
+            "vehicleFraming": "framed",
+            "vehicleScreenBounds": "{\"left\":339.8977977880851,\"top\":414.1268163275124,\"right\":548.9120999750955,\"bottom\":625.0000000000001}",
+            "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+            "cameraPosition": "-0.023115716870640346,0.03834199014053488,0.09381020996329593",
+            "cameraTarget": "-0.08740362331616941,-0.00023075372678255102,0.00809300136925728",
+            "vehicleCameraDistanceKm": "0.11387814247587949",
+            "cameraBodyRadiusKm": "1739.0914248200988",
+            "cameraNearKm": "0.0001",
+            "cameraFarKm": "167889499.47602475",
+            "framingProjectionZoom": "0.18229827101581916",
+            "viewLatitude": "-89.53741002669004",
+            "viewLongitude": "-150.1466576287046",
+            "screenNorthAngle": "65.61696867365184",
+            "globeLabels": "[]",
+            "surfacePreparationStarted": "14583.100000143051",
+            "surfaceStatus": "ready",
+            "stationTexture": "ready",
+            "moonColour": "NASA 2025",
+            "moonTextureWidth": "4096",
+            "moonRelief": "LOLA 1x",
+            "moonVisualWarnings": "",
+            "surfaceAngularSegments": "640",
+            "surfacePreparationMs": "9683.299999952316",
+            "surfaceSite": "-89.53432:-150.05232999999998",
+            "surfaceRevision": "1",
+            "flightPointCount": "40",
+            "flightEndpoint": "-0.09280910859467095,-0.002075950994822051,-0.000008297129815204585"
+          }
+        },
+        {
+          "name": "every-variable-has-usable-help-and-explains-the-edit",
+          "status": "pass",
+          "detail": [
+            {
+              "label": "Start altitude",
+              "newValue": "350",
+              "explanation": "Start altitude\n\nThe vehicle’s starting height above the selected site’s reference surface.\n\nWhat to check\n\nStart clear of the surface and inspect contact speed/clearance. A chosen altitude is an initial condition, not a guaranteed landing corridor.\n\nℎ\nstart\n · Start altitude: full explanation\n\nMore starting height gives the engine more time to slow down. This is height above the site reference, not clearance above every nearby hill. Replay to check contact speed.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start altitude\n\n300 → 350. More starting height gives the engine more time to slow down. This is height above the site reference, not clearance above every nearby hill. Replay to check contact speed.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 4.93 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Horizontal speed",
+              "newValue": "20",
+              "explanation": "Horizontal speed\n\nThe starting speed across the surface.\n\nWhat to check\n\nA successful landing needs vehicle-specific horizontal speed limits at touchdown; no universal safe value is assumed.\n\n𝑣\nℎ\n · Horizontal speed: full explanation\n\nSideways motion also needs braking. A fast sideways approach can miss the target or hit the ground while sliding, even if downward speed is small.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Horizontal speed\n\n10 → 20. Sideways motion also needs braking. A fast sideways approach can miss the target or hit the ground while sliding, even if downward speed is small.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 5.21 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Vertical speed",
+              "newValue": "-12",
+              "explanation": "Vertical speed\n\nThe starting speed up or down. Negative values mean descent.\n\nWhat to check\n\nCheck stopping distance and touchdown speed against actual lander requirements. Assisted target guidance is an ideal controller with immediate attitude and bounded throttle, not qualified guidance.\n\n𝑣\n𝑢\n · Vertical speed: full explanation\n\nNegative means falling; positive means climbing. A faster fall needs more braking distance. With other inputs fixed, compare downward speed at contact.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Vertical speed\n\n-8 → -12. Negative means falling; positive means climbing. A faster fall needs more braking distance. With other inputs fixed, compare downward speed at contact.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 9.06 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Heading, from north",
+              "newValue": "180",
+              "explanation": "Heading, from north\n\nThe direction the vehicle travels or points across the surface.\n\nWhat to check\n\nUse headings compatible with the intended orbit, terrain and mission constraints. The simplified preview does not solve an orbital launch window.\n\n𝜒\n · Heading, from north: full explanation\n\n0° is north, 90° east, 180° south and 270° west. It sets the starting sideways direction; manual guidance also points thrust this way. Assisted guidance steers toward the target itself.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Heading, from north\n\n90 → 180. 0° is north, 90° east, 180° south and 270° west. It sets the starting sideways direction; manual guidance also points thrust this way. Assisted guidance steers toward the target itself.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 12.22 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 1.01 m/s, above your 1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Wet mass",
+              "newValue": "5000",
+              "explanation": "Wet mass\n\nThe vehicle’s total mass before the burn, including propellant.\n\nWhat to check\n\nWet mass must be at least dry mass. Initial T/W > 1 is necessary for vertical liftoff from rest, not sufficient; tilted thrust must also supply an upward component greater than weight.\n\n𝑚\n · Vehicle mass: full explanation\n\nTotal starting mass, including fuel. Raising it while keeping dry mass fixed adds fuel but makes the same engine accelerate a heavier vehicle. More fuel is not automatically an easier landing.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Wet mass\n\n4700 → 5000. Total starting mass, including fuel. Raising it while keeping dry mass fixed adds fuel but makes the same engine accelerate a heavier vehicle. More fuel is not automatically an easier landing.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Dry mass",
+              "newValue": "2300",
+              "explanation": "Dry mass\n\nThe mass left after usable propellant is consumed.\n\nWhat to check\n\nDry mass must be positive and no greater than wet mass. Reserve and unusable propellant must be reflected in your assumptions.\n\n𝑚\n · Vehicle mass: full explanation\n\nVehicle mass when usable fuel is gone. Raising it at fixed wet mass leaves less fuel, so thrust can stop earlier. It does not increase starting mass.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Dry mass\n\n2200 → 2300. Vehicle mass when usable fuel is gone. Raising it at fixed wet mass leaves less fuel, so thrust can stop earlier. It does not increase starting mass.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Thrust",
+              "newValue": "4000",
+              "explanation": "Thrust\n\nThe push produced by the engine.\n\nWhat to check\n\nT/W > 1 is necessary for vertical liftoff from rest, not a success threshold. With tilted thrust, the upward component must exceed weight. Descent depends on speed, burn timing, mass, steering and terrain; no universal safe thrust is assumed.\n\n𝑇\n · Thrust: full explanation\n\nThe maximum engine push. Too little push cannot slow the fall in time. Assisted guidance can throttle down; manual guidance uses full thrust, so too much push or a long burn can make the vehicle climb again.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Thrust\n\n16000 → 4000. The maximum engine push. Too little push cannot slow the fall in time. Assisted guidance can throttle down; manual guidance uses full thrust, so too much push or a long burn can make the vehicle climb again.\n\nPredicted up/down contact speed: 0.56 → 23.01 m/s. Target distance: 8.43 → 92.81 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 23.01 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 10.54 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 92.81 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 1,497,294.91 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Specific impulse",
+              "newValue": "250",
+              "explanation": "Specific impulse\n\nHow efficiently the engine uses propellant.\n\nWhat to check\n\nUse the engine’s applicable vacuum rating. Ideal rocket-equation Δv excludes gravity and steering losses.\n\n𝐼\nsp\n · Specific impulse: full explanation\n\nEngine fuel efficiency, measured in seconds. Raising it uses less fuel for the same push; it does not make that initial push stronger.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Specific impulse\n\n311 → 250. Engine fuel efficiency, measured in seconds. Raising it uses less fuel for the same push; it does not make that initial push stronger.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Burn duration",
+              "newValue": "5",
+              "explanation": "Burn duration\n\nHow long the engine is commanded to fire.\n\nWhat to check\n\nThe burn must fit the mission’s propulsion and trajectory requirements. Fuel exhaustion ends thrust even if commanded time remains.\n\n𝜏\n𝑏\n · Burn duration: full explanation\n\nThe longest time thrust is allowed. A short limit can stop the engine before landing even with fuel left. Assisted guidance chooses the throttle within this time; manual guidance fires at full thrust.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Burn duration\n\n150 → 5. The longest time thrust is allowed. A short limit can stop the engine before landing even with fuel left. Assisted guidance chooses the throttle within this time; manual guidance fires at full thrust.\n\nPredicted up/down contact speed: 0.56 → 30.19 m/s. Target distance: 8.43 → 76.01 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 30.19 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 12.16 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 76.01 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 2,483,049.76 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Preview duration",
+              "newValue": "1",
+              "explanation": "Preview duration\n\nHow far ahead the flight calculation runs.\n\nWhat to check\n\nA time-limit result is not proof of a successful mission. Evaluate the required terminal conditions explicitly.\n\n𝜏\npreview\n · Preview duration: full explanation\n\nHow much flight time to calculate, not how long to fire the engine. If it ends before contact, a landing has not been demonstrated. Extend it to inspect what happens next.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Preview duration\n\n180 → 1. How much flight time to calculate, not how long to fire the engine. If it ends before contact, a landing has not been demonstrated. Extend it to inspect what happens next.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · No touchdown in this preview\nThe calculated time ends without reaching the ground. The vehicle may still be flying or climbing; extend preview duration and inspect the path. This is not a successful landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Start east offset",
+              "newValue": "-450",
+              "explanation": "Start east offset\n\nWhere you start relative to the target: positive is east, negative west. A larger offset needs more sideways travel and braking. It does not move the target.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start east offset\n\n-300 → -450. Where you start relative to the target: positive is east, negative west. A larger offset needs more sideways travel and braking. It does not move the target.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 14.21 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 1.19 m/s, above your 1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Start north offset",
+              "newValue": "100",
+              "explanation": "Start north offset\n\nWhere you start relative to the target: positive is north, negative south. Changing it changes the approach distance and terrain crossed, not the target.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Start north offset\n\n0 → 100. Where you start relative to the target: positive is north, negative south. Changing it changes the approach distance and terrain crossed, not the target.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 9.27 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Target radius",
+              "newValue": "1",
+              "explanation": "Target radius\n\nHow far from the target a touchdown is allowed. Widening this only loosens the pass/fail rule; it does not steer the vehicle or fix a miss.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Target radius\n\n20 → 1. How far from the target a touchdown is allowed. Widening this only loosens the pass/fail rule; it does not steer the vehicle or fix a miss.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nMissed the target: 8.43 m away, outside your 1 m target radius. More sideways braking or a different start position may help.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum vertical contact speed",
+              "newValue": ".1",
+              "explanation": "Maximum vertical contact speed\n\nThe allowed up/down speed when ground contact first occurs. Raising this only loosens the verdict; the impact speed and crash motion stay the same.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum vertical contact speed\n\n2 → 0.1. The allowed up/down speed when ground contact first occurs. Raising this only loosens the verdict; the impact speed and crash motion stay the same.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 0.56 m/s at contact, above your 0.1 m/s limit. The engine did not remove enough vertical speed before contact.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum horizontal contact speed",
+              "newValue": ".1",
+              "explanation": "Maximum horizontal contact speed\n\nThe allowed sideways speed at first ground contact. Raising the limit does not remove sliding or change the flight.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum horizontal contact speed\n\n1 → 0.1. The allowed sideways speed at first ground contact. Raising the limit does not remove sliding or change the flight.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo much sideways speed: 0.71 m/s, above your 0.1 m/s limit. There is still sliding motion to remove.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Maximum contact tilt",
+              "newValue": ".1",
+              "explanation": "Maximum contact tilt\n\nThe allowed angle away from upright at contact. Raising it changes the verdict, not the vehicle attitude or stability.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Maximum contact tilt\n\n15 → 0.1. The allowed angle away from upright at contact. Raising it changes the verdict, not the vehicle attitude or stability.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo tilted at contact: 1.94°, above your 0.1° limit. The vehicle is not upright enough for this example.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Breakup energy threshold",
+              "newValue": "1",
+              "explanation": "Breakup energy threshold\n\nThe demonstration energy at which the display vehicle breaks apart. Raising it changes the breakup rule, not incoming speed. This is not a measured strength of a real lander.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Breakup energy threshold\n\n100000 → 1. The demonstration energy at which the display vehicle breaks apart. Raising it changes the breakup rule, not incoming speed. This is not a measured strength of a real lander.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nImpact energy 1,865.93 J reaches the example's 1 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact friction",
+              "newValue": ".5",
+              "explanation": "Contact friction\n\nHow much the ground resists sliding after contact. More friction can reduce sliding or cause tipping. It does not brake the airborne vehicle.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact friction\n\n0.8 → 0.5. How much the ground resists sliding after contact. More friction can reduce sliding or cause tipping. It does not brake the airborne vehicle.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact restitution",
+              "newValue": ".7",
+              "explanation": "Contact restitution\n\nHow bouncy the contact is: 0 loses rebound, 1 is ideally elastic. It changes motion after contact, not incoming landing speed. Breakup can interrupt a bounce.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact restitution\n\n0.1 → 0.7. How bouncy the contact is: 0 loses rebound, 1 is ideally elastic. It changes motion after contact, not incoming landing speed. Breakup can interrupt a bounce.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Contact continuation",
+              "newValue": "20",
+              "explanation": "Contact continuation\n\nHow many extra seconds to show after first contact. Increase it to watch settling, sliding or fragments; it does not change the approach.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Contact continuation\n\n12 → 20. How many extra seconds to show after first contact. Increase it to watch settling, sliding or fragments; it does not change the approach.\n\nPredicted up/down contact speed: 0.56 → 0.56 m/s. Target distance: 8.43 → 8.43 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Within this example’s touchdown limits\nContact speed, distance from target, tilt and impact energy meet the limits entered for this example. Watch the continuation for sliding or tipping; this does not certify a real landing.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Initial pitch",
+              "newValue": "75",
+              "explanation": "Initial pitch\n\nHow far the thrust points upward above the horizon at ignition.\n\nWhat to check\n\n−90° to +90° input bound. A valid ascent requires the resulting vertical acceleration and path to clear terrain.\n\n𝛾\n · Flight pitch: full explanation\n\n90° pushes straight up, 0° pushes sideways. In manual mode, upward thrust slows a fall; sideways thrust changes where you land. Assisted guidance chooses its own pitch.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Initial pitch\n\n90 → 75. 90° pushes straight up, 0° pushes sideways. In manual mode, upward thrust slows a fall; sideways thrust changes where you land. Assisted guidance chooses its own pitch.\n\nPredicted up/down contact speed: 11.66 → 11.39 m/s. Target distance: 0.00 → 46.02 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 11.39 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 3.36 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 46.02 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nImpact energy 328,696.08 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            },
+            {
+              "label": "Final burn pitch",
+              "newValue": "65",
+              "explanation": "Final burn pitch\n\nThe upward angle of thrust at the end of the planned burn.\n\nWhat to check\n\nThis user-defined profile applies to manual guidance. Assisted target guidance ignores the manual pitch schedule and commands its own ideal attitude. A valid angle alone does not ensure orbit insertion or landing.\n\n𝛾\n · Flight pitch: full explanation\n\nThe manual engine tilts gradually from initial to final pitch during the requested burn. A higher angle gives more upward support and less sideways push. Assisted guidance ignores this setting.\n\nTap i to keep this open. From i, press ↓ to focus the explanation for scrolling. Tab moves through the explanation; Escape or Tab beyond its last control closes it and returns to i.",
+              "feedback": "Changed Final burn pitch\n\n90 → 65. The manual engine tilts gradually from initial to final pitch during the requested burn. A higher angle gives more upward support and less sideways push. Assisted guidance ignores this setting.\n\nPredicted up/down contact speed: 11.66 → 11.53 m/s. Target distance: 0.00 → 51.97 m.\n\nPlayback reset and paused. Press Play to watch the changed setup. These are calculated comparisons, not proof that one input alone caused a real-world outcome.",
+              "verdict": "Prediction · Landing misses this example’s limits\nToo fast up/down: 11.53 m/s at contact, above your 2 m/s limit. The engine did not remove enough vertical speed before contact.\nToo much sideways speed: 5.47 m/s, above your 1 m/s limit. There is still sliding motion to remove.\nMissed the target: 51.97 m away, outside your 20 m target radius. More sideways braking or a different start position may help.\nToo tilted at contact: 25°, above your 15° limit. The vehicle is not upright enough for this example.\nImpact energy 379,481.13 J reaches the example's 100,000 J breakup threshold. Expect illustrative fragments, not a reconstruction of real structural damage.\n\nPress Play to watch this prediction. Path green = entered limits met; red = failed check; amber = missing evidence. Touchdown motion can still show sliding or tipping."
+            }
+          ]
+        },
+        {
+          "name": "follow-stays-visible-through-launch-and-landing",
+          "status": "pass",
+          "detail": [
+            {
+              "id": "assisted",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.4536000000476779,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.1202000000476837,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.803500000047672,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 23.665599995374098,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 57.00059999537468,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 62.48139816962106,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            },
+            {
+              "id": "underpowered",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.4894999999046267,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.139399999904621,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 1.8060999999046325,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 25.41749999523163,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 31.414645172181515,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            },
+            {
+              "id": "ascent",
+              "samples": [
+                {
+                  "time": 0,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 0.8842999999046443,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 2.0342999999046443,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 3.2174999999046268,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 55.14719999289483,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 114.31219999289571,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 173.47719999289512,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 225.13719999289572,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 255.97219999289482,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 281.8021999928951,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 305.96719999289456,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 328.46719999289456,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 351.80219999289517,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 400.13219999289544,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 420.13219999289544,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 438.4671999928945,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 458.4621999928957,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 477.6271999928952,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                },
+                {
+                  "time": 480,
+                  "visible": "true",
+                  "framing": "framed",
+                  "scale": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ascent-edits-camera-persistence-and-variable-help",
+          "status": "pass",
+          "detail": {
+            "launched": {
+              "focusRequestId": "1",
+              "sceneInstance": "082c17f5-81ec-447f-8608-4589f9112e71",
+              "flightRevision": "49",
+              "horizonRevision": "1",
+              "renderFrame": "283",
+              "vehicleWorldPosition": "4.957991194422858,13.783335628598467,0.000028518990889026122",
+              "vehicleQuaternion": "5.067082360830587e-19,0,-0.0014142714724151672,0.999998999917601",
+              "vehicleVisible": "true",
+              "landingContact": "",
+              "landingDynamics": "",
+              "landingFragmentCount": "0",
+              "landingMassKg": "4061.029951422547",
+              "terrainClearanceM": "",
+              "flightTimeS": "121.79839999752043",
+              "landingContactTimeS": "",
+              "landingContactFrameIndex": "",
+              "landingContactFrameTimeS": "",
+              "sunModel": "ready",
+              "sunDraws": "13",
+              "earthModel": "ready",
+              "earthDraws": "0",
+              "earthRangeKm": "378164.28125",
+              "sunRangeKm": "151931103.42258206",
+              "orbitCount": "0",
+              "orbitPositions": "[]",
+              "starCount": "523",
+              "moonModel": "ready",
+              "terrainSourceSpacingM": "7.992202729044834",
+              "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+              "groundSurface": "canonical",
+              "contactReplay": "idle",
+              "contactFrames": "0",
+              "contactCacheBytes": "0",
+              "focusRange": "ready",
+              "assetFlight": "idle",
+              "ionVisibleTiles": "0",
+              "ionHeightAboveSurfaceM": "",
+              "globeMinimumRadiusKm": "1747.880528431719",
+              "zoomEnabled": "true",
+              "panEnabled": "true",
+              "rotateEnabled": "true",
+              "vehicleScale": "1",
+              "cameraMode": "follow",
+              "lunarAppearance": "neutral-linear-rec709-v1",
+              "lightingMode": "atlas",
+              "stationInspection": "false",
+              "visibleStations": "[]",
+              "visiblePoiCount": "0",
+              "visiblePois": "[]",
+              "vehicleFraming": "framed",
+              "vehicleScreenBounds": "{\"left\":146.11200270433142,\"top\":234.59375,\"right\":575.9042869534312,\"bottom\":580.72427208869}",
+              "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+              "cameraPosition": "4.972991194422848,13.792335628598455,0.02002851899088902",
+              "cameraTarget": "4.957991194422847,13.78333562859844,0.000028518990889042626",
+              "vehicleCameraDistanceKm": "0.02657066051116305",
+              "cameraBodyRadiusKm": "1752.8524703023918",
+              "cameraNearKm": "0.0001",
+              "cameraFarKm": "167889497.49923748",
+              "framingProjectionZoom": "0.824626728027087",
+              "viewLatitude": "-89.50738299396701",
+              "viewLongitude": "-130.78461671144782",
+              "screenNorthAngle": "77.2517291824466",
+              "globeLabels": "[]",
+              "surfacePreparationStarted": "197941.40000009537",
+              "surfaceStatus": "preparing",
+              "stationTexture": "ready",
+              "moonColour": "NASA 2025",
+              "moonTextureWidth": "4096",
+              "moonRelief": "LOLA 1x",
+              "moonVisualWarnings": "",
+              "surfaceAngularSegments": "640",
+              "surfacePreparationMs": "2463.9000000953674",
+              "surfaceSite": "-89.53432:-150.05232999999998",
+              "surfaceRevision": "3",
+              "flightPointCount": "481",
+              "flightEndpoint": "126.29585544692347,79.0789220878446,-8.881784197001252e-15"
+            },
+            "editedMassKg": 4800
+          }
+        },
+        {
+          "name": "reload-replays-original-animation-and-no-browser-errors",
+          "status": "pass",
+          "detail": {
+            "httpRequests": 0,
+            "replayed": true
+          }
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpRequests": [],
+      "cpuThrottle": 4,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "preparationMs": 4930.006565999996,
+      "sceneInstance": "082c17f5-81ec-447f-8608-4589f9112e71",
+      "weakBefore": {
+        "focusRequestId": "1",
+        "sceneInstance": "082c17f5-81ec-447f-8608-4589f9112e71",
+        "flightRevision": "2",
+        "horizonRevision": "1",
+        "renderFrame": "62",
+        "vehicleWorldPosition": "-0.29999645851214013,0.3017782306252294,0.000028518990887249762",
+        "vehicleQuaternion": "0,0,0.00008623878435579838,0.9999999962814362",
+        "vehicleVisible": "true",
+        "landingContact": "{\"timeS\":19.414645172181515,\"eastM\":-92.80910859467039,\"northM\":0.008297129815769506,\"yM\":-2.0759509946219623,\"velocityMps\":[10.541322061013,-23.01082212471413,0.0008825852694187361],\"massKg\":4674.537069516111,\"terrainHeightM\":-2.075950994743523,\"terrainKnown\":true,\"slopeDeg\":4.7288397462400225,\"tiltDeg\":1.9057424642205865,\"headingDeg\":269.9846687046621,\"targetErrorM\":92.80921966611983}",
+        "landingDynamics": "",
+        "landingFragmentCount": "0",
+        "landingMassKg": "4700",
+        "terrainClearanceM": "",
+        "flightTimeS": "0",
+        "landingContactTimeS": "19.414645172181515",
+        "landingContactFrameIndex": "",
+        "landingContactFrameTimeS": "",
+        "sunModel": "ready",
+        "sunDraws": "0",
+        "earthModel": "ready",
+        "earthDraws": "0",
+        "earthRangeKm": "378164.28125",
+        "sunRangeKm": "151931103.42258206",
+        "orbitCount": "0",
+        "orbitPositions": "[]",
+        "starCount": "523",
+        "moonModel": "ready",
+        "terrainSourceSpacingM": "7.992202729044834",
+        "terrainDetail": "Measured DEM sampling 8.0 m; mesh 640 angular segments",
+        "groundSurface": "canonical",
+        "contactReplay": "preparing",
+        "contactFrames": "0",
+        "contactCacheBytes": "0",
+        "focusRange": "ready",
+        "assetFlight": "idle",
+        "ionVisibleTiles": "0",
+        "ionHeightAboveSurfaceM": "",
+        "globeMinimumRadiusKm": "1747.880528431719",
+        "zoomEnabled": "true",
+        "panEnabled": "true",
+        "rotateEnabled": "true",
+        "vehicleScale": "1",
+        "cameraMode": "follow",
+        "lunarAppearance": "neutral-linear-rec709-v1",
+        "lightingMode": "atlas",
+        "stationInspection": "false",
+        "visibleStations": "[]",
+        "visiblePoiCount": "0",
+        "visiblePois": "[]",
+        "vehicleFraming": "framed",
+        "vehicleScreenBounds": "{\"left\":145.3968842579199,\"top\":234.59374999999991,\"right\":575.8243453744462,\"bottom\":580.5842187515921}",
+        "unoccludedCanvas": "{\"left\":12,\"right\":722.90625,\"top\":234.59375,\"bottom\":625}",
+        "cameraPosition": "-0.28499645851214006,0.31077823062522936,0.020028518990887246",
+        "cameraTarget": "-0.2999964585121401,0.30177823062522935,0.000028518990887249745",
+        "vehicleCameraDistanceKm": "0.026570660511172867",
+        "cameraBodyRadiusKm": "1739.363881840585",
+        "cameraNearKm": "0.0001",
+        "cameraFarKm": "167889499.50916025",
+        "framingProjectionZoom": "0.8260928941034866",
+        "viewLatitude": "-89.53488500063148",
+        "viewLongitude": "-151.2088900824316",
+        "screenNorthAngle": "64.77210392832609",
+        "globeLabels": "[]",
+        "surfacePreparationStarted": "14583.100000143051",
+        "surfaceStatus": "ready",
+        "stationTexture": "ready",
+        "moonColour": "NASA 2025",
+        "moonTextureWidth": "4096",
+        "moonRelief": "LOLA 1x",
+        "moonVisualWarnings": "",
+        "surfaceAngularSegments": "640",
+        "surfacePreparationMs": "9683.299999952316",
+        "surfaceSite": "-89.53432:-150.05232999999998",
+        "surfaceRevision": "1",
+        "flightPointCount": "40",
+        "flightEndpoint": "-0.09280910859467095,-0.002075950994822051,-0.000008297129815204585"
+      }
+    }
+  ],
+  "scriptSha256": "5ab076784f268bf8675721d5839b851be8d7c9aa0e95f62e48a7554a6b06f9a9",
+  "artifactSha256": "5ca73925e68fae85654748189a51020db6830d2963c419785b86785040e2d76c",
+  "browser": "149.0.7827.155",
+  "gpuArgs": [
+    "--no-sandbox",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader"
+  ],
+  "scriptSha256After": "5ab076784f268bf8675721d5839b851be8d7c9aa0e95f62e48a7554a6b06f9a9",
+  "finishedUtc": "2026-11-15T22:22:25.197Z",
+  "status": "pass"
+}

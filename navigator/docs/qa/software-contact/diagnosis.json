@@ -1,0 +1,249 @@
+{
+  "default": {
+    "rawCaptureSha256": "9a592cd3c40727744b95227090c0e335a70b92f67b7553d46af99928b3a289a3",
+    "samples": [
+      {
+        "elapsedDocumentMs": 18460.799999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "idle",
+        "completedRenders": "39",
+        "completedZeroDelayContinuations": 54
+      },
+      {
+        "elapsedDocumentMs": 23551.799999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "idle",
+        "completedRenders": "54",
+        "completedZeroDelayContinuations": 72
+      },
+      {
+        "elapsedDocumentMs": 28630,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "idle",
+        "completedRenders": "70",
+        "completedZeroDelayContinuations": 88
+      },
+      {
+        "elapsedDocumentMs": 33940.90000009537,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "83",
+        "completedZeroDelayContinuations": 102
+      },
+      {
+        "elapsedDocumentMs": 39209.299999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "96",
+        "completedZeroDelayContinuations": 109
+      },
+      {
+        "elapsedDocumentMs": 44566.10000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "109",
+        "completedZeroDelayContinuations": 116
+      },
+      {
+        "elapsedDocumentMs": 49912.799999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "122",
+        "completedZeroDelayContinuations": 123
+      },
+      {
+        "elapsedDocumentMs": 55109.40000009537,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "134",
+        "completedZeroDelayContinuations": 129
+      },
+      {
+        "elapsedDocumentMs": 60416.10000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "147",
+        "completedZeroDelayContinuations": 136
+      },
+      {
+        "elapsedDocumentMs": 65631.60000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "160",
+        "completedZeroDelayContinuations": 143
+      },
+      {
+        "elapsedDocumentMs": 70892.60000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "173",
+        "completedZeroDelayContinuations": 149
+      },
+      {
+        "elapsedDocumentMs": 76027.40000009537,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "186",
+        "completedZeroDelayContinuations": 156
+      },
+      {
+        "elapsedDocumentMs": 81160.5,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "199",
+        "completedZeroDelayContinuations": 162
+      },
+      {
+        "elapsedDocumentMs": 86324.60000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "212",
+        "completedZeroDelayContinuations": 169
+      },
+      {
+        "elapsedDocumentMs": 91429.60000014305,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "225",
+        "completedZeroDelayContinuations": 175
+      },
+      {
+        "elapsedDocumentMs": 96612.70000004768,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "238",
+        "completedZeroDelayContinuations": 182
+      },
+      {
+        "elapsedDocumentMs": 101853.20000004768,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "251",
+        "completedZeroDelayContinuations": 188
+      },
+      {
+        "elapsedDocumentMs": 107120.5,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "264",
+        "completedZeroDelayContinuations": 195
+      }
+    ]
+  },
+  "scheduler": {
+    "rawCaptureSha256": "a6c5594860c245a672e67ae07919fd7beb6d9922ec177f6cb9b7d307980c71ac",
+    "samples": [
+      {
+        "elapsedDocumentMs": 21077.599999904633,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "ready",
+        "completedRenders": "37",
+        "completedZeroDelayContinuations": 222
+      }
+    ]
+  },
+  "message": {
+    "rawCaptureSha256": "d15a891830252f490da3725de603b5e40e5f2e4f935463d95d84f437ceea2b55",
+    "samples": [
+      {
+        "elapsedDocumentMs": 18450.699999809265,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "idle",
+        "completedRenders": "39",
+        "completedZeroDelayContinuations": 78
+      },
+      {
+        "elapsedDocumentMs": 23609.299999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "53",
+        "completedZeroDelayContinuations": 103
+      },
+      {
+        "elapsedDocumentMs": 28806.199999809265,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "66",
+        "completedZeroDelayContinuations": 116
+      },
+      {
+        "elapsedDocumentMs": 34155.09999990463,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "77",
+        "completedZeroDelayContinuations": 123
+      },
+      {
+        "elapsedDocumentMs": 39348.799999952316,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "90",
+        "completedZeroDelayContinuations": 136
+      },
+      {
+        "elapsedDocumentMs": 44621.39999985695,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "102",
+        "completedZeroDelayContinuations": 148
+      },
+      {
+        "elapsedDocumentMs": 49884,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "115",
+        "completedZeroDelayContinuations": 161
+      },
+      {
+        "elapsedDocumentMs": 55064.199999809265,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "128",
+        "completedZeroDelayContinuations": 174
+      },
+      {
+        "elapsedDocumentMs": 60278.89999985695,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "141",
+        "completedZeroDelayContinuations": 187
+      },
+      {
+        "elapsedDocumentMs": 65607.29999995232,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "154",
+        "completedZeroDelayContinuations": 200
+      },
+      {
+        "elapsedDocumentMs": 70624.09999990463,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "166",
+        "completedZeroDelayContinuations": 212
+      },
+      {
+        "elapsedDocumentMs": 75913,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "179",
+        "completedZeroDelayContinuations": 225
+      },
+      {
+        "elapsedDocumentMs": 81149.59999990463,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "preparing",
+        "completedRenders": "192",
+        "completedZeroDelayContinuations": 238
+      },
+      {
+        "elapsedDocumentMs": 86307.69999980927,
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+        "contactReplay": "ready",
+        "completedRenders": "205",
+        "completedZeroDelayContinuations": 238
+      }
+    ]
+  },
+  "scope": "Diagnostic captures of the prior artifact. Default retains real zero-delay timers; scheduler/message experiments temporarily substituted the task queue for page zero-delay continuations. These are causal probes, not final builds or controlled latency benchmarks; raw CPU profiles remain in local recovery storage. Final production acceptance uses the normal application and unmodified task APIs except the explicitly disabled-scheduler fallback case."
+}
