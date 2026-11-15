@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunario — seven slides</title>
+<style>
+@font-face {
+  font-family: Geist;
+  src: url("../fonts/geist-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --bg: #0b0d12;
+  --ink: #f6f3ec;
+  --muted: #b7b2a8;
+  --faint: #8d887e;
+  --line: rgba(246, 243, 236, 0.14);
+  --orange: #ef8a2d;
+  --orange-2: #ffb15a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #050608; color: var(--ink); font-family: Geist, "Segoe UI", sans-serif; }
+body { height: 100vh; overflow: hidden; }
+.deck { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+.slide {
+  height: 100vh;
+  scroll-snap-align: start;
+  background: var(--bg);
+  display: grid;
+  padding: 4.2vh 4.6vw 3.6vh;
+  position: relative;
+  overflow: hidden;
+}
+.kicker {
+  margin: 0 0 1.4vh;
+  color: var(--orange-2);
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 620;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4.4vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 560;
+  max-width: 16ch;
+}
+.lead {
+  margin: 2vh 0 0;
+  max-width: 36ch;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  line-height: 1.35;
+}
+.by, .url { color: var(--faint); font-size: 1rem; letter-spacing: 0.01em; }
+.num {
+  position: absolute;
+  top: 3.2vh;
+  right: 4.6vw;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
+  font-size: 0.92rem;
+}
+.frame {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+
+.s1 { grid-template-columns: minmax(320px, 38vw) 1fr; gap: 3vw; align-items: end; }
+.s1 .copy { padding-bottom: 4vh; }
+.s1 .frame { height: 84vh; align-self: center; }
+.s1 .by { margin-top: 4vh; }
+
+.s2 { grid-template-rows: auto 1fr; }
+.s2 h1 { max-width: 22ch; font-size: clamp(2.2rem, 3.6vw, 3.6rem); }
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3vw; align-items: start; margin-top: 2.4vh; }
+.mode { display: grid; gap: 0.7vh; }
+.mode strong { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.03em; }
+.mode p { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.35; max-width: 32ch; }
+.mode .frame { min-height: 0; height: auto; background: #111318; }
+.mode .frame img { height: auto; object-fit: contain; object-position: center top; }
+
+.s3, .s4, .s5, .s6 { grid-template-columns: minmax(300px, 34vw) 1fr; gap: 3vw; align-items: center; }
+.s3 h1, .s4 h1, .s5 h1, .s6 h1, .s7 h1 { font-size: clamp(2.15rem, 3.5vw, 3.5rem); max-width: 14ch; }
+.points { margin: 2.4vh 0 0; padding: 0; list-style: none; }
+.points li { margin: 0 0 1.3vh; color: var(--muted); font-size: 1.08rem; line-height: 1.35; max-width: 36ch; }
+.points b { color: var(--ink); font-weight: 600; }
+.stat {
+  margin-top: 2vh;
+  padding-top: 1.6vh;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 1.6rem;
+}
+.stat div { min-width: 7ch; }
+.stat strong { display: block; font-size: 2.4rem; letter-spacing: -0.04em; font-weight: 560; color: var(--orange-2); }
+.stat span { color: var(--faint); font-size: 0.92rem; }
+.s3 .frame, .s4 .frame, .s5 .frame, .s6 .frame { height: 78vh; }
+.s6 .frame img { object-fit: contain; object-position: center center; background: #000; }
+
+.s7 { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+.s7 h1 { max-width: 16ch; }
+.s7 .url { margin-top: 3vh; font-size: 1.35rem; color: var(--ink); }
+.ask { margin-top: 3vh; display: grid; gap: 1.2vh; }
+.ask div { border-left: 3px solid var(--orange); padding: 0.2vh 0 0.2vh 1rem; color: var(--muted); font-size: 1.15rem; }
+.ask b { color: var(--ink); }
+
+@media print {
+  body { overflow: visible; background: var(--bg); }
+  .deck { height: auto; overflow: visible; }
+  .slide { height: 7.5in; width: 13.333in; break-after: page; page-break-after: always; }
+  .s1 .frame, .s3 .frame, .s4 .frame, .s5 .frame, .s6 .frame { height: 6.4in; }
+}
+@page { size: 13.333in 7.5in; margin: 0; }
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+  <section class="slide s1">
+    <p class="num">01 / 07</p>
+    <div class="copy">
+      <p class="kicker">Lunario</p>
+      <h1>The ridge decides if the Sun and Earth are there.</h1>
+      <p class="lead">A south-pole landing site can look open on a map. Lunario checks a real place, on a real date, against the terrain a lander would actually see.</p>
+      <p class="by">Luke Dudley · Rian Banting · Ted Turner<br>NASA Space Apps</p>
+    </div>
+    <div class="frame"><img src="images/globe.png" alt="Lunario showing the whole Moon, with landing sites marked."></div>
+  </section>
+
+  <section class="slide s2">
+    <p class="num">02 / 07</p>
+    <div>
+      <p class="kicker">One Moon, three ways in</p>
+      <h1>Public, Educator, and Planner.</h1>
+    </div>
+    <div class="modes">
+      <article class="mode">
+        <strong>Public</strong>
+        <p>Read a site in plain language. Is the Sun up, and is Earth above the hills?</p>
+        <div class="frame"><img src="images/public.png" alt="Public mode on the south-pole map at Connecting Ridge."></div>
+      </article>
+      <article class="mode">
+        <strong>Educator</strong>
+        <p>Predict one change, then reveal the result. The equation stays attached to the place.</p>
+        <div class="frame"><img src="images/educator.png" alt="Educator mode with a sunlight equation beside the south-pole map."></div>
+      </article>
+      <article class="mode">
+        <strong>Planner</strong>
+        <p>Set the array, the battery, the antenna and how long the lander has to stay.</p>
+        <div class="frame"><img src="images/planner.png" alt="Planner mode showing whether Connecting Ridge meets the stated assumptions."></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="slide s3">
+    <p class="num">03 / 07</p>
+    <div>
+      <p class="kicker">Place, date, Sun, Earth</p>
+      <h1>The same hardware can get a different answer.</h1>
+      <ul class="points">
+        <li><b>Connecting Ridge and the sites beside Shackleton.</b> Move the pin or the UTC date and the horizon changes.</li>
+        <li>Amber on the timeline is sunlight. Blue is an Earth view over the terrain.</li>
+        <li>A smooth Moon is the comparison, not the prediction. The ridge is what the lander sees.</li>
+      </ul>
+      <div class="stat">
+        <div><strong>97.6%</strong><span>sun, real terrain</span></div>
+        <div><strong>0%</strong><span>sun, smooth Moon</span></div>
+      </div>
+    </div>
+    <div class="frame"><img src="images/public.png" alt="South-pole map with Connecting Ridge, the geographic south pole and Peak Near Shackleton."></div>
+  </section>
+
+  <section class="slide s4">
+    <p class="num">04 / 07</p>
+    <div>
+      <p class="kicker">What holds it together</p>
+      <h1>Four measurements, one view.</h1>
+      <ul class="points">
+        <li><b>JPL Horizons</b> places the Sun and Earth for the hour you pick.</li>
+        <li><b>LOLA</b> supplies the horizon and the elevation the calculation uses.</li>
+        <li><b>LROC</b> supplies the picture of the ground. That picture keeps its own historical light.</li>
+        <li><b>A measured Shackleton mesh</b> comes in close, from 150 m down to 2 m, and stays light enough to read the ridges.</li>
+      </ul>
+    </div>
+    <div class="frame"><img src="images/terrain.png" alt="Close 3D view of the terrain around Connecting Ridge."></div>
+  </section>
+
+  <section class="slide s5">
+    <p class="num">05 / 07</p>
+    <div>
+      <p class="kicker">Beyond the landing site</p>
+      <h1>Earth, the Sun, and the Deep Space Network.</h1>
+      <ul class="points">
+        <li>Turn from the Moon to Earth and the three complexes are there: <b>Goldstone, Madrid, Canberra.</b></li>
+        <li>Satellites can be shown in Earth orbit, with the time of the orbit elements kept separate from the lunar date.</li>
+        <li>An Earth view over the ridge is a chance to communicate. It is not a booked ground-station pass.</li>
+      </ul>
+    </div>
+    <div class="frame"><img src="images/earth.png" alt="Lunario Earth view with a satellite orbit and the ground-station control."></div>
+  </section>
+
+  <section class="slide s6">
+    <p class="num">06 / 07</p>
+    <div>
+      <p class="kicker">Try the landing</p>
+      <h1>Change the approach, then read the checks.</h1>
+      <ul class="points">
+        <li>Planner holds the stay and the hardware: array, battery, antenna height, reserve.</li>
+        <li>Flight preview flies a short approach and marks the limits you typed. Green meets them. Red fails them.</li>
+        <li>This is a screening model and a preview. It does not certify a vehicle or a landing.</li>
+      </ul>
+    </div>
+    <div class="frame"><img src="images/flight.png" alt="Flight preview with a lunar lander and the flight experiment controls."></div>
+  </section>
+
+  <section class="slide s7">
+    <p class="num">07 / 07</p>
+    <div>
+      <p class="kicker">Leave with a decision</p>
+      <h1>One site. One date. One set of equipment.</h1>
+      <div class="ask">
+        <div><b>Can the battery last the longest dark gap?</b></div>
+        <div><b>Does Earth clear the hills often enough?</b></div>
+        <div>Change the date or the place, and read both answers again.</div>
+      </div>
+      <p class="url">rian-beep.github.io/Lunario</p>
+    </div>
+    <div class="frame"><img src="images/globe.png" alt="The Lunario Moon, ready to pick another site."></div>
+  </section>
+</main>
+<script>
+const deck = document.getElementById('deck');
+document.addEventListener('keydown', (event) => {
+  const slides = [...deck.children];
+  const height = deck.clientHeight || 1;
+  const index = Math.round(deck.scrollTop / height);
+  if (event.key === 'ArrowDown' || event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+    event.preventDefault();
+    slides[Math.min(slides.length - 1, index + 1)]?.scrollIntoView();
+  } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft' || event.key === 'PageUp') {
+    event.preventDefault();
+    slides[Math.max(0, index - 1)]?.scrollIntoView();
+  } else if (event.key === 'Home') {
+    slides[0]?.scrollIntoView();
+  } else if (event.key === 'End') {
+    slides[slides.length - 1]?.scrollIntoView();
+  }
+});
+</script>
+</body>
+</html>
