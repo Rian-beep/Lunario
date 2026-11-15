@@ -32,13 +32,13 @@
   <div class="dash__mount" id="dashboard-root">
     <p class="dash__status" id="dashboard-status" role="status">
       Loading the lunar landing site navigator…
-      <a class="dash__direct" href="navigator/public/solarreach-navigator.html">Open the navigator directly</a>
+      <a class="dash__direct" href="web/index.html">Open the navigator directly</a>
     </p>
     <iframe
       class="dash__frame"
       id="navigator-frame"
       title="Lunario lunar landing site navigator"
-      src="navigator/public/solarreach-navigator.html"
+      src="web/index.html"
       allow="clipboard-write; fullscreen"
       loading="eager"
     ></iframe>
@@ -71,6 +71,7 @@
       var doc = frame && frame.contentDocument;
       if (!doc || !doc.body) return;
       preferDarkInFrame(doc);
+      if (doc.querySelector(".site-shell-nav")) return;
       // Prefer the orange-arc wordmark on dark (logo.svg), not flat logo-white.
       var wordmark = doc.querySelector("img.lunario-wordmark");
       if (wordmark) {
@@ -131,7 +132,7 @@
       status.hidden = false;
       status.classList.add("dash__status--error");
       status.innerHTML = message +
-        ' <a class="dash__direct" href="navigator/public/solarreach-navigator.html">Open the navigator directly</a>';
+        ' <a class="dash__direct" href="web/index.html">Open the navigator directly</a>';
     }
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
