@@ -32,13 +32,13 @@
   <div class="dash__mount" id="dashboard-root">
     <p class="dash__status" id="dashboard-status" role="status">
       Loading the lunar landing site navigator…
-      <a class="dash__direct" href="navigator/public/solarreach-navigator.html">Open the navigator directly</a>
+      <a class="dash__direct" href="web/index.html">Open the navigator directly</a>
     </p>
     <iframe
       class="dash__frame"
       id="navigator-frame"
       title="Lunario lunar landing site navigator"
-      src="navigator/public/solarreach-navigator.html"
+      src="web/index.html"
       allow="clipboard-write; fullscreen"
       loading="eager"
     ></iframe>
@@ -72,16 +72,13 @@
       var doc = frame && frame.contentDocument;
       if (!doc || !doc.body) return false;
       preferDarkInFrame(doc);
-      // Prefer the orange-arc wordmark on dark (logo.svg), not flat logo-white.
-      var wordmark = doc.querySelector("img.lunario-wordmark");
-      if (wordmark && wordmark.getAttribute("src") !== "branding/lunario/assets/logo.svg") {
-        wordmark.setAttribute("src", "branding/lunario/assets/logo.svg");
-      }
+      if (doc.querySelector(".site-shell-nav")) return true;
+      // The app owns its original logo.svg / generated SVG source.
       var existing = doc.querySelector(".site-shell-nav");
       if (existing) {
         if (!existing.querySelector(".site-shell-nav__about")) {
           existing.innerHTML =
-            '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
+            '<a class="site-shell-nav__about" href="' + new URL("about.html", window.location.href).href + '" target="_top" aria-label="About the project">About the project</a>';
         }
         return true;
       }
@@ -105,7 +102,7 @@
       var cluster = doc.createElement("div");
       cluster.className = "header-brand-cluster";
       brand.parentNode.insertBefore(cluster, brand);
-      brand.setAttribute("href", "../../");
+      brand.setAttribute("href", new URL("./", window.location.href).href);
       brand.setAttribute("target", "_top");
       brand.setAttribute("aria-label", "Lunario home");
       cluster.appendChild(brand);
@@ -113,7 +110,7 @@
       nav.className = "site-shell-nav";
       nav.setAttribute("aria-label", "Site");
       nav.innerHTML =
-        '<a class="site-shell-nav__about" href="../../about.html" target="_top" aria-label="About the project">About the project</a>';
+        '<a class="site-shell-nav__about" href="' + new URL("about.html", window.location.href).href + '" target="_top" aria-label="About the project">About the project</a>';
       cluster.appendChild(nav);
       return true;
     } catch (e) {
@@ -195,7 +192,7 @@
       status.hidden = false;
       status.classList.add("dash__status--error");
       status.innerHTML = message +
-        ' <a class="dash__direct" href="navigator/public/solarreach-navigator.html">Open the navigator directly</a>';
+        ' <a class="dash__direct" href="web/index.html">Open the navigator directly</a>';
     }
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
@@ -207,13 +204,18 @@
   }
 
   frame.addEventListener("load", reveal);
+  window.addEventListener("message", function (event) {
+    if (event.source === frame.contentWindow && event.origin === window.location.origin &&
+        event.data && event.data.type === "lunario:navigator-ready") reveal();
+  });
   frame.addEventListener("error", function () {
     fail("The navigator could not be loaded.");
   });
 
   // If the browser restored a cached frame before listeners attached, settle soon.
   try {
-    if (frame.contentDocument && frame.contentDocument.readyState === "complete") {
+    if (frame.contentDocument && frame.contentDocument.readyState === "complete" &&
+        frame.contentDocument.querySelector(".lunar-app, .startup")) {
       reveal();
     }
   } catch (e) {

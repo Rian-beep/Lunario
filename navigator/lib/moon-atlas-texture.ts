@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import * as T from 'three';
 type Entry={texture:T.Texture;ready:Promise<T.Texture>;references:number;retired:boolean;cancel:()=>void};
 const atlas=new Map<string,Entry>();
@@ -11,7 +12,7 @@ export function acquireMoonAtlas(url:string,maxAnisotropy:number){
   // Store before starting so synchronous test loaders follow the same ownership path.
   atlas.set(url,created);entry=created;
   try{
-   created.texture=new T.TextureLoader().load(url,loaded=>{if(created.retired){(loaded as T.Texture).image=null;return;}resolve(loaded);},undefined,error=>{if(atlas.get(url)===created)atlas.delete(url);reject(error);});
+   created.texture=new T.TextureLoader().load(url.startsWith('/')?publicAssetURL(url):url,loaded=>{if(created.retired){(loaded as T.Texture).image=null;return;}resolve(loaded);},undefined,error=>{if(atlas.get(url)===created)atlas.delete(url);reject(error);});
    created.texture.colorSpace=T.SRGBColorSpace;created.texture.wrapS=T.RepeatWrapping;
   }catch(error){created.texture??=new T.Texture();atlas.delete(url);reject(error);}
  }

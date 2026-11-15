@@ -9,16 +9,18 @@
     "build": "npm run math:check && next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test tests/*.test.ts components/workbench/scene/*.test.ts",
+    "test": "tsx --test tests/*.test.ts tests/*/*.test.ts components/workbench/scene/*.test.ts",
     "typecheck": "tsc --noEmit",
     "terrain": "node scripts/prepare-terrain.mjs",
     "verify:horizons": "tsx scripts/verify-horizons.ts",
     "math:build": "tsx scripts/build-mathml.ts",
-    "math:check": "tsx scripts/build-mathml.ts --check"
+    "math:check": "tsx scripts/build-mathml.ts --check",
+    "build:web": "npm run math:check && node scripts/build-web.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@dimforge/rapier3d-compat": "^0.21.0",
+    "3d-tiles-renderer": "0.5.4",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
     "lucide-react": "^1.72.0",

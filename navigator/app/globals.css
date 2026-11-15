@@ -3057,6 +3057,17 @@ html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground);
 .earth-orbits h3 { font-size: 17px; font-weight: 650; margin-bottom: 10px; }
 .earth-orbits h4 { font-size: 14px; font-weight: 650; }
 
+/* Geographic poles stay legible at overview distance; hidden hemispheres are explicit. */
+.globe-map-labels button.pole-label { z-index: 2; min-height: 30px; padding: 5px 9px; border: 1.5px solid #f2d38c; color: #fff7e5; background: rgb(12 14 16 / 94%); font-size: 12px; font-weight: 650; }
+.globe-map-labels button.pole-far-side { border-style: dashed; opacity: .9; }
+
+.ion-credit { position:absolute; left:12px; bottom:48px; max-width:min(440px,65%); z-index:4; padding:4px 8px; border-radius:6px; font-size:10px; color:#fff7e5; background:rgb(12 14 16 / 88%); }
+.ion-credit a { text-decoration:underline; }
+
+.workspace > .map-screening-legend { position:absolute; left:16px; bottom:76px; z-index:15; max-width:calc(100% - 32px); max-height:calc(100% - 160px); overflow:auto; }
+.layer-popover { max-height:calc(100% - 108px); overflow-y:auto; overscroll-behavior:contain; width:min(340px,calc(100% - 32px)); }
+.layer-popover .map-screening-controls label { display:grid; align-items:start; }
+.layer-popover .map-screening-controls .map-screening-toggle { display:flex; align-items:center; }
 .resource-evidence {
   display: grid;
   gap: .8rem;

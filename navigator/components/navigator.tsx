@@ -1,4 +1,8 @@
 "use client";
+import {MissionHistoryCard} from "@/components/mission-history";
+import {missionHistoryForSite} from "@/lib/mission-history";
+import {mapAreaForLocation} from "@/lib/map-coverage";
+import {DEFAULT_MAP_LAYERS,MapLayerControls,MapLayerLegend,useMapLayers,type MapLayerSettings,type ScreeningViewport} from '@/components/map-screening';
 import {PublicSiteStory} from "@/components/workbench/public-exploration";
 import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
@@ -141,7 +145,10 @@ const STORAGE = "solarreach-workbench-v1",
 export function Navigator() {
   const [guideOpen, setGuideOpen] = useState(true);
   const [brandIntroReady,setBrandIntroReady]=useState(false);
-  const completeBrandIntro=useCallback(()=>setBrandIntroReady(true),[]);
+  const completeBrandIntro=useCallback(()=>{
+    setBrandIntroReady(true);
+    if(window.parent!==window)window.parent.postMessage({type:'lunario:navigator-ready'},window.location.origin==='null'?'*':window.location.origin);
+  },[]);
   const [focusMode,setFocusMode]=useState(false);
   const [assetFocus,setAssetFocus]=useState<AssetFocus>('moon');
   const [focusRequestId,setFocusRequestId]=useState(0);
@@ -150,7 +157,7 @@ export function Navigator() {
   const [flightTrackingReady,setFlightTrackingReady]=useState(false);
   const [pendingFlightPlay,setPendingFlightPlay]=useState(false);
   const [controlsTarget,setControlsTarget]=useState<HTMLDivElement|null>(null);
-  const [learnOpen,setLearnOpen]=useState<'models'|'lunar-ice'|null>(null);
+  const [learnOpen,setLearnOpen]=useState(false);
   const [teachingStudioOpen,setTeachingStudioOpen]=useState(false);
   const [engineeringOpen,setEngineeringOpen]=useState(false);
   const [engineeringVisited,setEngineeringVisited]=useState(false);
@@ -191,7 +198,11 @@ export function Navigator() {
     [rightOpen, setRightOpen] = useState(false),
     [compareOpen, setCompareOpen] = useState(false),
     [saved, setSaved] = useState<SavedScenario[]>([]);
+  const [flightRequested,setFlightRequested]=useState(false);
   const [mapArea,setMapArea]=useState<"polar"|"global">("polar");
+  const [mapLayers,setMapLayers]=useState<MapLayerSettings>(DEFAULT_MAP_LAYERS);
+  const [screeningViewport,setScreeningViewport]=useState<ScreeningViewport|undefined>();
+  const mapLayerModel=useMapLayers({catalog,state,terrain:data,projection:mapArea,visible:view!=='terrain',settings:mapLayers,viewport:mapArea==='global'?screeningViewport:undefined});
   const [siteFilter,setSiteFilter]=useState<"all"|"polar"|"apollo"|"robotic"|"attempt">("all");
   const [query, setQuery] = useState(""),
     [latDraft, setLatDraft] = useState("89.5 S"),
@@ -217,7 +228,6 @@ export function Navigator() {
   latestPlayhead.current=playhead;latestFlightTime.current=flightTime;
   useEffect(() => {
     let active = true;
-    const globalReady=loadGlobalTerrain().catch(error=>{if(active)setGlobalTerrainError(String(error.message??error));return null;});
     loadCatalog()
       .then((rawCatalog) => {
         if (!active) return;
@@ -279,7 +289,6 @@ export function Navigator() {
         }
         if((initial.custom?.lat ?? c.sites.find(s=>s.id===initial.siteId)?.lat ?? -90)>-80)setMapArea("global");
         setCatalog(c);
-        void globalReady.then(globalTerrain=>{if(active&&globalTerrain)setCatalog(previous=>previous?{...previous,globalTerrain}:previous);});
         setState(initial);
         const opensOnCatalogDemo=initial.siteId===c.meta.demo.siteId&&initial.startIndex===start&&!initial.custom;
         setPlayhead(opensOnCatalogDemo?firstSunlitPlayheadForScenario(c,initial):initial.startIndex);
@@ -292,14 +301,29 @@ export function Navigator() {
           ),
       );
     loadEvidenceManifest().then(m=>{if(active)setEvidenceManifest(m);}).catch(e=>{if(active)setEvidenceError(String(e.message??e));});
-    loadImagery().then(value=>{if(active)setImageryData(value);}).catch(()=>{if(active)setNotice("Higher-resolution imagery is unavailable; original relief remains available.");});
-    loadTerrain()
-      .then((t) => active && setData(t))
-      .catch((e) => active && setTerrainError(String(e.message ?? e)));
     return () => {
       active = false;
     };
   }, []);
+  useEffect(()=>{if(view!=='map'||panel==='flight'||assetFocus==='lander')setFlightRequested(true);},[view,panel,assetFocus]);
+  // The 2D prepared map does not need the large numerical 3D datasets.
+  const needsGlobalTerrain=useMemo(()=>{
+    if(!catalog||!state||catalog.globalTerrain||(state.terrainMode??'prepared')==='prepared')return false;
+    if(view!=='map'||state.terrainMode==='global-at-point')return true;
+    const selected=catalog.sites.find(s=>s.id===state.siteId);if(!selected)return false;
+    return [state.heightM,state.arrayHeightM,state.antennaHeightM].some(height=>[0,2,10].includes(height)&&!resolveTerrainChoice(catalog,selected,state.custom,height,'prepared').mask.some(Number.isFinite));
+  },[catalog,state,view]);
+  useEffect(()=>{
+    if(!needsGlobalTerrain)return;let active=true;
+    loadGlobalTerrain().then(globalTerrain=>{if(active){setCatalog(previous=>previous?{...previous,globalTerrain}:previous);setGlobalTerrainError('');}}).catch(error=>{if(active)setGlobalTerrainError(String(error.message??error));});
+    return()=>{active=false;};
+  },[needsGlobalTerrain]);
+  useEffect(()=>{
+    if(view==='map')return;let active=true;
+    loadImagery().then(value=>{if(active)setImageryData(value);}).catch(()=>{if(active)setNotice('Higher-resolution imagery is unavailable; original relief remains available.');});
+    loadTerrain().then(value=>{if(active){setData(value);setTerrainError('');}}).catch(error=>{if(active)setTerrainError(String(error.message??error));});
+    return()=>{active=false;};
+  },[view]);
   useEffect(() => {
     const q = matchMedia("(prefers-reduced-motion: reduce)"),
       apply = () => setReduced(q.matches);
@@ -385,7 +409,7 @@ export function Navigator() {
   }, [data, location, site, state?.custom,state?.terrainMode,catalog?.globalTerrain]);
   const flightInputKey=JSON.stringify(state?.flight);
   const flight = useMemo(() => {
-    if (!state || !location) return null;
+    if (!state || !location || !flightRequested) return null;
     const base = referenceHeightM;
     const ground = data
       ? (east: number, north: number) => {
@@ -399,7 +423,7 @@ export function Navigator() {
         }
       : undefined;
     return simulateFlight(state.flight, ground, 1737400 + base, {latitudeDeg: location.lat});
-  }, [flightInputKey, location, data, referenceHeightM]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [flightInputKey, location, data, referenceHeightM,flightRequested]); // eslint-disable-line react-hooks/exhaustive-deps
   const relative = series
     ? Math.max(0, Math.min(series.sunEl.length - 1, playhead - series.index0))
     : 0;
@@ -509,7 +533,8 @@ export function Navigator() {
   }, [notice]);
   const selectSite = (id: string) => {
     if(mode==='public'){setLeftOpen(false);if(headingVisible)setHeadingMinimized(false);}
-    if((catalog?.sites.find(s=>s.id===id)?.lat ?? -90)>-80)setMapArea("global");
+    const selected=catalog?.sites.find(s=>s.id===id);
+    if(catalog&&selected)setMapArea(mapAreaForLocation(catalog.map,selected.lat,selected.lon));
     update({ siteId: id, custom: null, terrainMode:state?.terrainMode??'prepared' });
     setCoordError("");
   };
@@ -629,8 +654,7 @@ export function Navigator() {
     !series ||
     !summary ||
     !mission ||
-    !sphere ||
-    !flight
+    !sphere
   )
     return (
       <><LunarioStartup ready={false} /><LunarWindowLoader /></>
@@ -638,7 +662,7 @@ export function Navigator() {
   const now = indexToMs(catalog, playhead),
     name = state.custom ? "Custom landing point" : site.name;
   const currentFlight =
-    flight.points.find((p) => p.t >= flightTime) ?? flight.points.at(-1)!;
+    flight?.points.find((p) => p.t >= flightTime) ?? flight?.points.at(-1) ?? null;
   const contactActive=!!landingFlight?.contact&&flightTime>=landingFlight.contact.timeS;
   const dynamics=currentLandingDynamics(landingReadout,landingReadoutKey,landingFlight?.contact,flightTime,flightPlaying?flightSpeed:0);
   const shift = (h: number) => range(state.startIndex + h, state.endIndex + h);
@@ -803,8 +827,7 @@ export function Navigator() {
             {mode!=='public'&&<Button variant="outline" aria-label="Replan mission" disabled={!evidenceManifest} onClick={openReplanning}><Columns3 size={15}/>Replan mission</Button>}
             {mode==='teach'&&<Button variant="outline" onClick={openTeachingStudio} disabled={!evidenceManifest}>Teaching studio</Button>}
             {mode==='plan'&&<Button variant="outline" onClick={openEngineeringEvidence} disabled={!evidenceManifest||!planning.result}>Engineering evidence</Button>}
-            {mode!=='public'&&<Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':Boolean(learnOpen)} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen('models')}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>}
-            {mode!=='teach'&&<Button variant="outline" aria-haspopup="dialog" aria-label="Lunar ice evidence" onClick={()=>setLearnOpen('lunar-ice')}><BookOpen size={15}/>Lunar ice</Button>}
+            {mode!=='public'&&<Button className="header-learn" variant="ghost" aria-label={mode==='plan'?'Var':'Learn'} aria-pressed={mode==='plan'?rightOpen&&panel==='variables':learnOpen} onClick={()=>mode==='plan'?openPanel('variables'):setLearnOpen(true)}><BookOpen size={15}/>{mode==='plan'?'Var':'Learn'}</Button>}
             {mode!=='public'&&<Button variant="ghost" onClick={()=>{setPlaying(false);setFlightPlaying(false);setTouchdownOpen(true);}}>Lab</Button>}
             {mode==='public'&&<Button variant="outline" aria-label="Compare sites and dates" onClick={()=>{setCompareMinimized(false);setCompareOpen(true);}}><Columns3 size={15}/>Compare</Button>}
             <Button variant="outline" aria-label="Show a delayed landing" disabled={!evidenceManifest} onClick={exploreDelayDemo}>Show a delayed landing</Button>
@@ -812,7 +835,7 @@ export function Navigator() {
 
         </header>
         {focusMode&&<Button className="focus-restore glass" variant="outline" onClick={()=>setFocusMode(false)}><Maximize2 size={15}/> Show controls</Button>}
-        {learnOpen&&!focusMode&&<LearningDialog mode={mode} initialTopic={learnOpen==='lunar-ice'?'lunar-ice':undefined} scenario={{catalog,state,assessment:planning.result}} onClose={()=>setLearnOpen(null)}/>}
+        {learnOpen&&!focusMode&&<LearningDialog mode={mode} scenario={{catalog,state,assessment:planning.result}} onClose={()=>setLearnOpen(false)}/>}
         {touchdownOpen&&<dialog aria-label="Touchdown experiment" onCancel={e=>{e.preventDefault();setTouchdownOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><TouchdownLab onClose={()=>setTouchdownOpen(false)}/></dialog>}
         {solarOverviewOpen&&<dialog aria-label="Sun Earth Moon scale explorer" onCancel={e=>{e.preventDefault();setSolarOverviewOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><SolarSystemView catalog={catalog} timeIndex={playhead} onClose={()=>setSolarOverviewOpen(false)}/></dialog>}
         {teachingStudioOpen&&evidenceManifest&&<WorkspaceDialog label="Teaching studio" onClose={()=>setTeachingStudioOpen(false)}><TeachingStudio catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={(base,candidate)=>{setTeachingStudioOpen(false);comparePair(base,candidate);}} onClose={()=>setTeachingStudioOpen(false)}/></WorkspaceDialog>}
@@ -828,8 +851,10 @@ export function Navigator() {
             <>
             {view !== "terrain" && (
               <div className="map-pane" key="map">
-                {mapArea==='global'?<GlobalMap sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
+                {mapArea==='global'?<GlobalMap raster={mapLayerModel.raster} iceFeatures={mapLayerModel.iceFeatures} onViewportChange={setScreeningViewport} sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{if(view==='split')setMapArea(mapAreaForLocation(catalog.map,lat,lon));if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
                   catalog={catalog}
+                  raster={mapLayerModel.raster}
+                  iceFeatures={mapLayerModel.iceFeatures}
                   sites={mapSites.filter(s=>s.lat<=-80)}
                   selectedId={state.custom ? null : site.id}
                   compareIds={saved.map((v) => v.state.siteId)}
@@ -854,7 +879,7 @@ export function Navigator() {
                   assetFocus={assetFocus}
                   earthBodyKm={scenePositions.earth}
                   sunBodyKm={scenePositions.sun}
-                  onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
+                  onPlace={(lat,lon)=>{setMapArea(mapAreaForLocation(catalog.map,lat,lon));if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
                   earthRangeKm={sceneContext?.rangeKm}
                   sunRangeKm={sceneContext?.sunRangeKm??undefined}
                   epochMs={sceneContext?.epochMs}
@@ -871,7 +896,7 @@ export function Navigator() {
                   offline={typeof globalThis.location!=='undefined'&&globalThis.location.protocol==='file:'}
                   sites={sceneSites}
                   selectedSiteId={state.custom?CUSTOM_MARKER_ID:site.id}
-                  onSelectSite={id=>{if(id===CUSTOM_MARKER_ID){setRightOpen(true);setPanel(mode==='plan'?'plan':'overview');}else selectSite(id);}}
+                  onSelectSite={id=>{if(id===CUSTOM_MARKER_ID){if(state.custom)setMapArea(mapAreaForLocation(catalog.map,state.custom.lat,state.custom.lon));setRightOpen(true);setPanel(mode==='plan'?'plan':'overview');}else selectSite(id);}}
                   terrain={sceneTerrain}
                   imagery={imageryData}
                   referenceHeightM={referenceHeightM}
@@ -1113,6 +1138,7 @@ export function Navigator() {
                     <Section title="Terrain evidence"><p className="muted">{isGlobalTerrainChoice(terrain)?'Calculated here from calibrated global LOLA elevations. Approximately 4.3 km equatorial output spacing; local obstacles are unresolved. This is conditional terrain context, not fine landing-site evidence.':terrain.mask.some(Number.isFinite)?'Prepared site or nearest polar-grid horizon; original source resolution and observer height are retained.':'No prepared terrain horizon covers this request. Sun/Earth geometry remains available; terrain-dependent results are unknown.'}</p><label>Terrain calculation mode<select aria-label="Terrain calculation mode" value={state.terrainMode??'prepared'} onChange={e=>update({terrainMode:e.target.value as ScenarioState['terrainMode']})}><option value="prepared">Prepared horizons only</option><option value="global-context">Prepared first, coarse global fallback</option><option value="global-at-point">Coarse global at exact custom coordinates</option></select></label>{globalTerrainError&&<p role="status">Global numerical terrain unavailable: {globalTerrainError}</p>}</Section>
                     <VisibilityWindows catalog={catalog} mission={mission} startIndex={state.startIndex} cursor={playhead} planner={mode === "plan"} arrayHeightM={state.arrayHeightM} antennaHeightM={state.antennaHeightM} minimumElevationDeg={state.mission.antennaMaskDeg}/>
                     <Section title="Why this site matters">
+                      <MissionHistoryCard mode={mode} record={state.custom?null:missionHistoryForSite(site.id)}/>
                       {site.mission&&!state.custom&&<p className="muted">{site.mission.program} · {site.mission.date} · {site.mission.outcome==='landed'?'Successful landing':site.mission.outcome==='partial'?'Off-nominal touchdown':'Landing attempt'}{site.mission.approximate?' · Approximate/estimated location; see source.':''}</p>}
                       {site.mission&&!state.custom&&<details className="location-provenance"><summary>Location provenance</summary><p>{site.mission.coordinateKind==='planned-target'?'This pin is a planned target; the actual landing/impact location is unknown.':site.mission.coordinateKind==='observed'?'Published observed feature; identification and coordinate uncertainty are described in the source notes.':site.mission.approximate?'This is a reported approximate region, not a precisely observed landing point.':'Published spacecraft position; coordinate precision does not imply zero uncertainty.'}</p>{site.mission.frame&&<p>Frame: {site.mission.frame}</p>}{site.mission.accuracy&&<p>{site.mission.accuracy}</p>}{site.mission.sourceNotes&&<p>{site.mission.sourceNotes}</p>}{site.mission.supportingSourceUrls?.map((url,i)=><p key={url}><a href={url} target="_blank" rel="noreferrer">Supporting source {i+1}</a></p>)}<p>Mission date is historical context. Visibility is evaluated for your selected catalog epoch, not a reconstruction of the original flight.</p></details>}
                       <p>
@@ -1267,7 +1293,7 @@ export function Navigator() {
                   {evidenceManifest&&!teachingStudioOpen&&<TeachingWorkbench catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={comparePair}/>}
                   </>
                 )}
-                {panel === "flight" && (
+                {panel === "flight" && flight && (
                   <>
                     <FlightPanel
                       value={state.flight}
@@ -1357,7 +1383,7 @@ export function Navigator() {
             </aside>
           )}
           <div className="map-bottom-tools" hidden={focusMode}>
-            {view!=="terrain"&&mapArea==="polar"&&<div className="glass layer-tools">
+            {view!=="terrain"&&<div className="glass layer-tools">
               <Button
                 variant="ghost"
                 aria-expanded={layers}
@@ -1391,9 +1417,11 @@ export function Navigator() {
                 <ChevronLeft size={13} />
               )}
             </Button>
-          {layers && view!=="terrain" && mapArea==="polar" && (
+          {layers && view!=="terrain" && (
             <div className="layer-popover glass">
               <h3>Map layers</h3><Button className="layer-close" size="icon" variant="ghost" aria-label="Dismiss map layers" onClick={()=>setLayers(false)}><X size={15}/></Button>
+              <MapLayerControls settings={mapLayers} onChange={setMapLayers} model={mapLayerModel} onInspect={(lat,lon)=>{update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>
+              {mapArea==='polar'&&<>
               <label>
                 <input
                   type="radio"
@@ -1423,15 +1451,16 @@ export function Navigator() {
               <p>
                 Imagery records historical illumination. The wash is a coarse
                 horizon-grid estimate, not a per-pixel shadow simulation.
-              </p>
+              </p></>}
             </div>
           )}
+          {view!=='terrain'&&!focusMode&&!layers&&(mapLayers.enabled||mapLayers.iceEnabled)&&<MapLayerLegend settings={mapLayers} onChange={setMapLayers} model={mapLayerModel} onInspect={(lat,lon)=>{update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>}
           {terrainError && view !== "map" && (
             <div className="terrain-notice glass">
               {terrainError} Reference surface shown.
             </div>
           )}
-          {showFlight && !focusMode && assetFocus!=='earth' && (flightHud==='hidden'?<Button className="flight-hud-restore glass" variant="outline" onClick={()=>setFlightHud('compact')}><Rocket size={15}/> Flight controls</Button>:<div
+          {showFlight && currentFlight && !focusMode && assetFocus!=='earth' && (flightHud==='hidden'?<Button className="flight-hud-restore glass" variant="outline" onClick={()=>setFlightHud('compact')}><Rocket size={15}/> Flight controls</Button>:<div
               className={`flight-telemetry glass ${flightHud==='compact'?'flight-hud-compact':''}`}
               aria-label="Flight telemetry"
             >

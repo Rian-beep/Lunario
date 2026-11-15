@@ -12,6 +12,11 @@ export function resolveSiteShellNav(
   const underNavigatorPublic =
     /solarreach-navigator\.html$/i.test(pathname) || /\/navigator\/public(?:\/|$)/i.test(pathname);
 
+  if (/\/web\/(?:index\.html)?$/i.test(pathname)) {
+    const siteRoot=new URL('../',href);
+    return {dashboardHref:siteRoot.href,aboutHref:new URL('about.html',siteRoot).href,current:'dashboard'};
+  }
+
   if (underNavigatorPublic) {
     const siteRoot = new URL("../../", href);
     return {

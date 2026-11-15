@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import type {Catalog} from './catalog';
 export const DSN_SOURCES={overview:'https://www.nasa.gov/communicating-with-missions/dsn/',live:'https://www.jpl.nasa.gov/deep-space-network-now/',coordinates:'https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301O.pdf',weather:'https://open-meteo.com/en/docs'} as const;
 export const DSN_EARTH_TEXTURE_PATH='/data/dsn/earth-blue-marble-2048.jpg';
@@ -6,7 +7,7 @@ declare global {var __SOLARREACH_DSN_EARTH_TEXTURE__:string|undefined;}
 export function dsnEarthTextureUrl():string{
  if(globalThis.__SOLARREACH_DSN_EARTH_TEXTURE__)return globalThis.__SOLARREACH_DSN_EARTH_TEXTURE__;
  if(typeof location!=='undefined'&&location.protocol==='file:')throw Error('Offline georeferenced Earth texture is missing');
- return DSN_EARTH_TEXTURE_PATH;
+ return publicAssetURL(DSN_EARTH_TEXTURE_PATH);
 }
 const dms=(d:number,m:number,s:number)=>Math.sign(d)*(Math.abs(d)+m/60+s/3600);
 export type DsnStation={id:'goldstone'|'madrid'|'canberra';name:string;country:string;antenna:string;latitudeDeg:number;longitudeEastDeg:number;heightM:number;description:string};

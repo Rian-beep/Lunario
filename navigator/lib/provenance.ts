@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import type {EvidenceManifest,EvidenceRef} from './planning-types';
 const isRecord=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 export function parseEvidenceManifest(value:unknown):EvidenceManifest{
@@ -15,7 +16,7 @@ export function parseEvidenceManifest(value:unknown):EvidenceManifest{
 export async function loadEvidenceManifest():Promise<EvidenceManifest>{
  const embedded=(globalThis as typeof globalThis&{__SOLARREACH_EVIDENCE__?:unknown}).__SOLARREACH_EVIDENCE__;
  if(embedded!==undefined)return parseEvidenceManifest(embedded);
- const response=await fetch('/data/evidence-manifest.json');
+ const response=await fetch(publicAssetURL('/data/evidence-manifest.json'));
  if(!response.ok)throw new Error(`Evidence manifest unavailable (${response.status})`);
  return parseEvidenceManifest(await response.json());
 }

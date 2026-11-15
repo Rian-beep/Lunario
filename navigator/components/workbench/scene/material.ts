@@ -1,3 +1,4 @@
+import {publicAssetURL} from "@/lib/public-assets";
 import {POLAR_BODY_GLSL} from '@/lib/lunar-projection';
 import * as T from "three";
 import {acquireMoonAtlas} from "@/lib/moon-atlas-texture";
@@ -43,7 +44,7 @@ export function createSurfaceMaterial(
     detailBoundsM: { value: new T.Vector4() },
   };
   const load = (url: string, slot: "globalImage" | "polarImage" | "regionalImage" | "detailImage", flag: "hasGlobal" | "hasPolar" | "hasRegional" | "hasDetail") => {
-    const texture = new T.TextureLoader().load(url, (loaded) => {
+    const texture = new T.TextureLoader().load(url.startsWith('/')?publicAssetURL(url):url, (loaded) => {
       if (disposed) { retire(loaded); return; }
       uniforms[slot].value = loaded;
       uniforms[flag].value = 1;
@@ -106,7 +107,7 @@ export function createSurfaceMaterial(
       try {
         // TextureLoader has no abort API: keep in-flight loads deduplicated and
         // bounded, dropping obsolete queued destinations before starting more.
-        entry.texture = new T.TextureLoader().load(url, loaded => {
+        entry.texture = new T.TextureLoader().load(url.startsWith('/')?publicAssetURL(url):url, loaded => {
           activeLoads--;
           if (disposed) { retire(loaded); return; }
           entry.state = "ready";

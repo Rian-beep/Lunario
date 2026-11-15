@@ -42,3 +42,10 @@ test("dark wordmark keeps the amber arc on the mark", () => {
   const gen = readFileSync(join(process.cwd(), "components/branding/generate-lunario.mjs"), "utf8");
   assert.match(gen, /LUNARIO_WORDMARK_ON_DARK:\s*data\("assets\/logo\.svg"/);
 });
+
+
+test("split web entry resolves site links within a nested Pages project",()=>{
+  const nav=resolveSiteShellNav('/Lunario/web/index.html','https://rian-beep.github.io/Lunario/web/index.html?site=apollo11');
+  assert.equal(nav.dashboardHref,'https://rian-beep.github.io/Lunario/');
+  assert.equal(nav.aboutHref,'https://rian-beep.github.io/Lunario/about.html');
+});

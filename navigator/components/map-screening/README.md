@@ -1,0 +1,25 @@
+# Revision2 map integration
+
+Import `useMapLayers`, `DEFAULT_MAP_LAYERS`, `MapLayerControls`, `MapLayerLegend` and their public types from `components/map-screening`. The entry also imports component-owned `styles.css`. Keep settings in component state; this lane introduces no persisted scenario fields. Mount the hook once per active map screen and pass `visible=false` when hidden. Nothing is sampled or loaded on initial disabled layers.
+
+Pass the existing `Catalog`, `ScenarioState` and already available local `TerrainData` (or null). Ranking requests missing local/global numerical DEMs through the existing shared loaders. Those coalesced fetches can finish after a view is cancelled; sampling, progress and publication are cancelled. Partial loader failures remain visible and unsupported physical factors stay unknown. `model.retry()` clears the two-result cache and retries source loads under their existing retry policy.
+
+The hook samples only when dates, instrument heights, antenna cutoff, catalogue/terrain identity, projection or viewport change. Weight, slope preference scale, selected metric and opacity update existing physical points using `reweightScreeningPoints`. A completed screen stores at most two result sets per hook. Array/antenna heights come from subsystem settings, never display observer height. No full-mission assessment is added.
+
+Insert controls inside the existing Layers popover. Place the legend in the existing map overlay container; its own width and height are bounded and it scrolls. Minimize retains the layer; dismiss turns both layers off. Pass the existing exact-coordinate inspector as `onInspect`. The six top entries rank the combined preference index, independently of the displayed factor, and retain raw factors/source coordinates. Ice region inspection uses only the published representative point.
+
+Use `model.raster` before pins and graticules. Opacity is **already baked into the raster**; draw it with context alpha 1. For polar maps its canvas is exactly `catalog.map.width × catalog.map.height`, including transparent unsupported areas, and uses the existing map pixel transform (tie coordinates, scale, centre offset). For global maps its canvas is equirectangular and `raster.bounds` gives geographic edges; the default is −180…180 / −90…90. A viewport can have unwrapped seam-crossing edges. Apply the existing world transform/wrapping and clip to the map. Do not stretch a viewport raster over the whole Moon or change NASA imagery.
+
+Global overview samples the verified 288 centres at 15° steps. Only supply a zoomed viewport when wanted, normally 12 × 8. Requested centres are bounded to 256 and reduced so neither angular step is smaller than the loaded global DEM spacing. Views smaller than one DEM cell have no supported refinement cells. If that DEM fails, the layer reports a fallback to the 15° lattice rather than invent refinement spacing. Polar mode always uses the actual 1980 prepared centres. Display cells use adjacent row/longitude midpoints with half-step outer edges; they do not interpolate physical results. The unsampled polar cap and unknown cells remain transparent. Polar annotations and the raster use the same projection and scale.
+
+`drawIceMarkers(ctx, model.iceFeatures, project)` belongs in the map annotation pass. `project` must return the annotation context's own coordinates, or null for clipped locations. Diamonds and impact crosses are enlarged symbols in that coordinate space, independent of detection count. The compact validated catalogue currently contains only published Point references. Polygon input is deliberately not given an invented centroid or boundary marker. M3 PSR references and LCROSS ejecta water evidence remain distinct; these are never deposit boundaries, concentration estimates or reserves. The lazy ice chunk statically imports JSON, without a file HTTP request. The integrator's single-file build must inline that chunk using its existing bundler and embed DEMs as usual.
+
+Scientific meanings remain the source lane's: mean visible solar-disk fraction, boundary-censored longest observed darkness, Earth-centre geometry with absolute antenna cutoff, and regional numerical elevation slope. Raw factor palettes run low to high quantity (longer darkness/steeper slopes are higher); the combined preference index runs 0–100. Unknown has no colour. Effective resolution, frame equivalence and propagated uncertainty are not established by these display cells.
+
+Verification in this lane covers pure projection/support/ramp behaviour, cancellation and debounce, cache/weight edits, failure/unknown paths, static ice import with HTTP blocked, and SSR labels/source copy. No browser, server, full app build or generated offline artifact was run or edited. The integrator still owns actual web/file rendering, map transforms, keyboard/interaction acceptance, responsive/contrast inspection and the final offline build.
+
+```sh
+npx tsx --test tests/map-screening/*.test.ts
+npm run typecheck -- --incremental false
+npm run lint
+```

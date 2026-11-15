@@ -6,6 +6,8 @@ Built for the [2026 NASA Space Apps Lunar Landing Site Navigator challenge](http
 
 Earth focus also includes six sourced spacecraft, including Starcloud-1, with dated orbital predictions, an independent UTC clock, station look angles and explicit refresh/import. These are educational context, not a claim of lunar relay service. Moon view restores labelled poles and landing sites; close views refine only where measured terrain exists.
 
+Map Layers adds a configurable regional screening index and separate published ice-evidence markers. Uncoloured locations remain unknown; regional slopes and ice-reference points are not landing-footprint measurements. Online Moon tiles can be connected with a runtime-only Cesium asset-read token; the self-contained offline terrain remains independent.
+
 ## Release and team handoff
 
 See [the current handoff and full to-do list](docs/IN-FLIGHT.md) for completed software, qualification gaps and independent teammate tasks. Hosting is owned by the teammate.

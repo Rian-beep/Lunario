@@ -4,11 +4,9 @@
 
 ## Run and validate
 
-From `navigator/`, use Node 20+ (developed with Node 22), `npm ci`, then `npm run dev`. This is a separate Next.js project, not a static dashboard that GitHub Pages can execute. Keep the host's project root set to `navigator` if hosting this application. No deployment settings are changed here.
+Root `index.html` now opens `web/index.html`, the generated split-module application. Serve the repository root for the static demonstration; use `?demo=1` for Rian’s default demo and original loader. `navigator/` remains a Next.js app: Node 20+, `npm ci --legacy-peer-deps`, `npm run dev`.
 
-Validation commands: `npm test`, `npm run typecheck -- --incremental false`, `npm run lint`, `npm run build`, and `npm run standalone`. The source release passed 790 tests, typechecking, ESLint and both builds. Actual web/disconnected-file checks passed 16 Public flight journey groups, all 22 numeric controls and complete Follow playback. The final isolated native viewport suite passed 8/8, including all 12 true-200% HTTP/file HUD/location states. These checks were run on the source release; this delivery is verified as an identical snapshot. From the relocated `navigator/` project, production build and typechecking also pass, 17 focused flight/scheduling tests pass, and regenerated standalone HTML has exactly the same SHA256 as the tested release.
-
-See [the exact QA receipt](navigator/docs/qa/public-flight-usability/VERIFICATION.md) for scope, diagnostic failures retained alongside the final pass, artifact identities and limits. The offline file is 81,145,681 bytes, SHA256 `30994eb901aec5d6e593d2b01364fd96f2bd6e07bfdfb41208a0b2d919a01fc9`.
+Validation: `npm test` (970 passed), typecheck and lint; production Next build; `npm run standalone`; `npm run build:web`. Actual browser flight checks passed 16 web/disconnected-file groups. Current map workflow results and remaining acceptance limitations are recorded in `navigator/docs/qa/map-integration-final.md`; earlier worker failures remain documented rather than erased. The release manifest identifies generated offline bytes.
 
 ## What is included
 
