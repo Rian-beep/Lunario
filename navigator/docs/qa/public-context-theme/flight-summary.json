@@ -1,0 +1,90 @@
+{
+  "status": "pass",
+  "artifactSha256": "0cc55f3fca6cc543f91d797850c12518aa4597c44f3090df11bfc5c9a90e92ee",
+  "scriptSha256": "893ac34a939464dba00019a1f4e4be61a80e5bc1a2d477b0dae0a7326733bef5",
+  "browser": "157.0.8103.52",
+  "cases": [
+    {
+      "transport": "web",
+      "checks": [
+        {
+          "name": "original-loader-wordmark-and-reference-surfaces",
+          "status": "pass"
+        },
+        {
+          "name": "local-follow-transfer-no-celestial-excursion",
+          "status": "pass"
+        },
+        {
+          "name": "play-pause-replay-and-nominal-contact",
+          "status": "pass"
+        },
+        {
+          "name": "weak-engine-contact-and-illustrative-breakup",
+          "status": "pass"
+        },
+        {
+          "name": "every-variable-has-usable-help-and-explains-the-edit",
+          "status": "pass"
+        },
+        {
+          "name": "follow-stays-visible-through-launch-and-landing",
+          "status": "pass"
+        },
+        {
+          "name": "ascent-edits-camera-persistence-and-variable-help",
+          "status": "pass"
+        },
+        {
+          "name": "reload-replays-original-animation-and-no-browser-errors",
+          "status": "pass"
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpRequestCount": 62
+    },
+    {
+      "transport": "file",
+      "checks": [
+        {
+          "name": "original-loader-wordmark-and-reference-surfaces",
+          "status": "pass"
+        },
+        {
+          "name": "local-follow-transfer-no-celestial-excursion",
+          "status": "pass"
+        },
+        {
+          "name": "play-pause-replay-and-nominal-contact",
+          "status": "pass"
+        },
+        {
+          "name": "weak-engine-contact-and-illustrative-breakup",
+          "status": "pass"
+        },
+        {
+          "name": "every-variable-has-usable-help-and-explains-the-edit",
+          "status": "pass"
+        },
+        {
+          "name": "follow-stays-visible-through-launch-and-landing",
+          "status": "pass"
+        },
+        {
+          "name": "ascent-edits-camera-persistence-and-variable-help",
+          "status": "pass"
+        },
+        {
+          "name": "reload-replays-original-animation-and-no-browser-errors",
+          "status": "pass"
+        }
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpRequestCount": 0
+    }
+  ]
+}

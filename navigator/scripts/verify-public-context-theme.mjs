@@ -16,7 +16,7 @@ try {for(const transport of ['web','file']){
  await page.goto(target,{waitUntil:'domcontentloaded'});
  await page.getByRole('button',{name:'Dismiss introduction',exact:true}).waitFor({timeout:90000});
  await page.getByRole('button',{name:'Dismiss introduction',exact:true}).click();
- const first=await page.evaluate(()=>window.__loaderTimes);const seen=first.find(x=>x.visible),hidden=first.find(x=>!x.visible&&x.ms>seen?.ms);assert.ok(seen&&hidden&&hidden.ms-(await page.evaluate(()=>window.__loaderInsertedMs))>=3000,JSON.stringify(first));
+ const insertedMs=await page.evaluate(()=>window.__loaderInsertedMs);const first=await page.evaluate(()=>window.__loaderTimes);const seen=first.find(x=>x.visible),hidden=first.find(x=>!x.visible&&x.ms>seen?.ms);assert.ok(seen&&hidden&&hidden.ms-insertedMs>=3000,JSON.stringify(first));
  const toggle=()=>page.getByRole('button',{name:'Switch to dark mode',exact:true});await toggle().click();
  await page.waitForFunction(()=>document.documentElement.dataset.uiTheme==='dark');
  assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--background').trim()),'#111214');
@@ -73,7 +73,7 @@ try {for(const transport of ['web','file']){
   await page.screenshot({path:`${out}/${transport}-dark-${audience}.png`});
  }
  assert.deepEqual(errors,[]);assert.equal(network.filter(x=>x.includes('api.open-meteo')).length,transport==='file'?0:1);if(transport==='file')assert.deepEqual(network,[]);
- report.push({transport,status:'pass',loaderDurationMs:hidden.ms-seen.ms,reload:true,hardReload:true,themePersistence:true,originalWhiteLogo:true,siteHistory:true,allThreeStations:true,noAutomaticWeather:true,httpRequests:network.length});
+ report.push({transport,status:'pass',loaderDurationMs:hidden.ms-insertedMs,mutationObservationSpanMs:hidden.ms-seen.ms,reload:true,hardReload:true,themePersistence:true,originalWhiteLogo:true,siteHistory:true,allThreeStations:true,noAutomaticWeather:true,httpRequests:network.length});
  await context.close();
 }}finally{await writeFile(`${out}/report.json`,JSON.stringify(report,null,2));await browser.close();}
 console.log(JSON.stringify(report,null,2));

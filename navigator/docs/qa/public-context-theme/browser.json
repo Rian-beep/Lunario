@@ -1,0 +1,30 @@
+[
+  {
+    "transport": "web",
+    "status": "pass",
+    "loaderDurationMs": 3532.0999999046326,
+    "mutationObservationSpanMs": 3528,
+    "reload": true,
+    "hardReload": true,
+    "themePersistence": true,
+    "originalWhiteLogo": true,
+    "siteHistory": true,
+    "allThreeStations": true,
+    "noAutomaticWeather": true,
+    "httpRequests": 82
+  },
+  {
+    "transport": "file",
+    "status": "pass",
+    "loaderDurationMs": 3531.2999999523163,
+    "mutationObservationSpanMs": 3044.7000000476837,
+    "reload": true,
+    "hardReload": true,
+    "themePersistence": true,
+    "originalWhiteLogo": true,
+    "siteHistory": true,
+    "allThreeStations": true,
+    "noAutomaticWeather": true,
+    "httpRequests": 0
+  }
+]
