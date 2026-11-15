@@ -2975,8 +2975,13 @@
       "format": "esm"
     },
     "components/workbench/scene/contact-dynamics.ts": {
-      "bytes": 20125,
+      "bytes": 20203,
       "imports": [
+        {
+          "path": "lib/yield-main-thread.ts",
+          "kind": "import-statement",
+          "original": "@/lib/yield-main-thread"
+        },
         {
           "path": "node_modules/three/build/three.module.js",
           "kind": "import-statement",
@@ -5336,8 +5341,13 @@
       "format": "esm"
     },
     "lib/touchdown-fragments.ts": {
-      "bytes": 5985,
+      "bytes": 6064,
       "imports": [
+        {
+          "path": "lib/yield-main-thread.ts",
+          "kind": "import-statement",
+          "original": "./yield-main-thread"
+        },
         {
           "path": "node_modules/three/build/three.module.js",
           "kind": "import-statement",
@@ -5352,8 +5362,13 @@
       "format": "esm"
     },
     "lib/touchdown-physics.ts": {
-      "bytes": 19826,
+      "bytes": 19853,
       "imports": [
+        {
+          "path": "lib/yield-main-thread.ts",
+          "kind": "import-statement",
+          "original": "./yield-main-thread"
+        },
         {
           "path": "node_modules/@dimforge/rapier3d-compat/dist/rapier.mjs",
           "kind": "dynamic-import",
@@ -5396,6 +5411,11 @@
     },
     "lib/windows.ts": {
       "bytes": 4179,
+      "imports": [],
+      "format": "esm"
+    },
+    "lib/yield-main-thread.ts": {
+      "bytes": 1709,
       "imports": [],
       "format": "esm"
     },
@@ -53923,6 +53943,56 @@
       },
       "bytes": 20101
     },
+    "assets/chunks/chunk-VAZO247E.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-EC2D7TCJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-2MRREW72.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/rapier-IF4EXMSY.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i"
+      ],
+      "inputs": {
+        "lib/equipment.ts": {
+          "bytesInOutput": 1771
+        },
+        "lib/yield-main-thread.ts": {
+          "bytesInOutput": 468
+        },
+        "lib/touchdown-physics.ts": {
+          "bytesInOutput": 6951
+        },
+        "lib/touchdown-fragments.ts": {
+          "bytesInOutput": 2577
+        }
+      },
+      "bytes": 12072
+    },
     "assets/chunks/chunk-VEP72JGX.js": {
       "imports": [],
       "exports": [
@@ -53991,52 +54061,6 @@
         }
       },
       "bytes": 10515
-    },
-    "assets/chunks/chunk-X4VFRCVA.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-EC2D7TCJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2MRREW72.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-IEJRRESR.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/rapier-IF4EXMSY.js",
-          "kind": "dynamic-import"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h"
-      ],
-      "inputs": {
-        "lib/equipment.ts": {
-          "bytesInOutput": 1771
-        },
-        "lib/touchdown-physics.ts": {
-          "bytesInOutput": 6985
-        },
-        "lib/touchdown-fragments.ts": {
-          "bytesInOutput": 2598
-        }
-      },
-      "bytes": 11651
     },
     "assets/chunks/chunk-Y3COZUTT.js": {
       "imports": [
@@ -54459,7 +54483,19 @@
       "inputs": {},
       "bytes": 134
     },
-    "assets/chunks/data-math-panel-LILIXBAJ.js": {
+    "assets/chunks/data-math-panel-PBBFRJUR.css": {
+      "imports": [],
+      "inputs": {
+        "components/evidence-confidence/summary.module.css": {
+          "bytesInOutput": 1531
+        },
+        "components/workbench/data-connections.module.css": {
+          "bytesInOutput": 1020
+        }
+      },
+      "bytes": 2552
+    },
+    "assets/chunks/data-math-panel-X7EJEEPA.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-RVJBOXGC.js",
@@ -54568,18 +54604,6 @@
         }
       },
       "bytes": 239749
-    },
-    "assets/chunks/data-math-panel-PBBFRJUR.css": {
-      "imports": [],
-      "inputs": {
-        "components/evidence-confidence/summary.module.css": {
-          "bytesInOutput": 1531
-        },
-        "components/workbench/data-connections.module.css": {
-          "bytesInOutput": 1020
-        }
-      },
-      "bytes": 2552
     },
     "assets/chunks/esm-24JYF5T7.js": {
       "imports": [
@@ -54905,10 +54929,10 @@
       },
       "bytes": 4336956
     },
-    "assets/chunks/scene-KUOB5TXO.js": {
+    "assets/chunks/scene-NX2SQGAY.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-X4VFRCVA.js",
+          "path": "assets/chunks/chunk-VAZO247E.js",
           "kind": "import-statement"
         },
         {
@@ -55099,13 +55123,13 @@
           "bytesInOutput": 719
         },
         "components/workbench/scene/contact-dynamics.ts": {
-          "bytesInOutput": 10260
+          "bytesInOutput": 10233
         },
         "components/workbench/scene/runtime.ts": {
           "bytesInOutput": 57181
         }
       },
-      "bytes": 221526
+      "bytes": 221507
     },
     "assets/chunks/scene-SJCNCMQK.css": {
       "imports": [],
@@ -55419,10 +55443,10 @@
       },
       "bytes": 8937
     },
-    "assets/chunks/touchdown-lab-WYJ2LEQD.js": {
+    "assets/chunks/touchdown-lab-TE274K6W.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-X4VFRCVA.js",
+          "path": "assets/chunks/chunk-VAZO247E.js",
           "kind": "import-statement"
         },
         {
@@ -55755,72 +55779,7 @@
       },
       "bytes": 23280
     },
-    "assets/main-V5CXROSI.css": {
-      "imports": [
-        {
-          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
-          "kind": "url-token"
-        }
-      ],
-      "inputs": {
-        "components/map-screening/styles.css": {
-          "bytesInOutput": 2896
-        },
-        "components/branding/branding.css": {
-          "bytesInOutput": 515
-        },
-        "components/audience/audience.module.css": {
-          "bytesInOutput": 4123
-        },
-        "components/global-map.module.css": {
-          "bytesInOutput": 2814
-        },
-        "components/workbench/audience-guide.module.css": {
-          "bytesInOutput": 1888
-        },
-        "components/workbench/alternatives.module.css": {
-          "bytesInOutput": 7058
-        },
-        "components/workbench/visibility-windows.module.css": {
-          "bytesInOutput": 2242
-        },
-        "components/workbench/teaching-workbench.module.css": {
-          "bytesInOutput": 1310
-        },
-        "components/workbench/touchdown-lab.module.css": {
-          "bytesInOutput": 8936
-        },
-        "components/workbench/solar-system-view.module.css": {
-          "bytesInOutput": 4477
-        },
-        "components/workbench/globe-navigation.module.css": {
-          "bytesInOutput": 1210
-        },
-        "components/replanning/workspace.module.css": {
-          "bytesInOutput": 6050
-        },
-        "components/education-materials/materials.module.css": {
-          "bytesInOutput": 742
-        },
-        "components/workbench/data-connections.module.css": {
-          "bytesInOutput": 1020
-        },
-        "components/evidence-confidence/summary.module.css": {
-          "bytesInOutput": 1531
-        },
-        "app/mission-theme.css": {
-          "bytesInOutput": 26608
-        },
-        "app/lunario-fonts.css": {
-          "bytesInOutput": 70
-        },
-        "web-source/fonts.css": {
-          "bytesInOutput": 235
-        }
-      },
-      "bytes": 73726
-    },
-    "assets/main-ZTHMZWB3.js": {
+    "assets/main-Q5XQIZNO.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-WBRBCF2R.js",
@@ -55959,7 +55918,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/touchdown-lab-WYJ2LEQD.js",
+          "path": "assets/chunks/touchdown-lab-TE274K6W.js",
           "kind": "dynamic-import"
         },
         {
@@ -55967,7 +55926,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/scene-KUOB5TXO.js",
+          "path": "assets/chunks/scene-NX2SQGAY.js",
           "kind": "dynamic-import"
         },
         {
@@ -55983,7 +55942,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/data-math-panel-LILIXBAJ.js",
+          "path": "assets/chunks/data-math-panel-X7EJEEPA.js",
           "kind": "dynamic-import"
         },
         {
@@ -56195,6 +56154,71 @@
         }
       },
       "bytes": 471340
+    },
+    "assets/main-V5CXROSI.css": {
+      "imports": [
+        {
+          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
+          "kind": "url-token"
+        }
+      ],
+      "inputs": {
+        "components/map-screening/styles.css": {
+          "bytesInOutput": 2896
+        },
+        "components/branding/branding.css": {
+          "bytesInOutput": 515
+        },
+        "components/audience/audience.module.css": {
+          "bytesInOutput": 4123
+        },
+        "components/global-map.module.css": {
+          "bytesInOutput": 2814
+        },
+        "components/workbench/audience-guide.module.css": {
+          "bytesInOutput": 1888
+        },
+        "components/workbench/alternatives.module.css": {
+          "bytesInOutput": 7058
+        },
+        "components/workbench/visibility-windows.module.css": {
+          "bytesInOutput": 2242
+        },
+        "components/workbench/teaching-workbench.module.css": {
+          "bytesInOutput": 1310
+        },
+        "components/workbench/touchdown-lab.module.css": {
+          "bytesInOutput": 8936
+        },
+        "components/workbench/solar-system-view.module.css": {
+          "bytesInOutput": 4477
+        },
+        "components/workbench/globe-navigation.module.css": {
+          "bytesInOutput": 1210
+        },
+        "components/replanning/workspace.module.css": {
+          "bytesInOutput": 6050
+        },
+        "components/education-materials/materials.module.css": {
+          "bytesInOutput": 742
+        },
+        "components/workbench/data-connections.module.css": {
+          "bytesInOutput": 1020
+        },
+        "components/evidence-confidence/summary.module.css": {
+          "bytesInOutput": 1531
+        },
+        "app/mission-theme.css": {
+          "bytesInOutput": 26608
+        },
+        "app/lunario-fonts.css": {
+          "bytesInOutput": 70
+        },
+        "web-source/fonts.css": {
+          "bytesInOutput": 235
+        }
+      },
+      "bytes": 73726
     }
   }
 }

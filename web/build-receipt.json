@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "publicBase": "../navigator/public/",
-  "entry": "assets/main-ZTHMZWB3.js",
+  "entry": "assets/main-Q5XQIZNO.js",
   "initialJS": [
     "assets/chunks/chunk-3DFCVSYE.js",
     "assets/chunks/chunk-6NUZOME5.js",
@@ -31,11 +31,11 @@
     "assets/chunks/chunk-YOLCIZJX.js",
     "assets/chunks/chunk-YX72CDH5.js",
     "assets/chunks/chunk-Z5OIDHRQ.js",
-    "assets/main-ZTHMZWB3.js"
+    "assets/main-Q5XQIZNO.js"
   ],
   "initialJSBytes": 1310611,
   "initialJSGzip6EstimateBytes": 393964,
-  "totalJSBytes": 7538038,
+  "totalJSBytes": 7538440,
   "initialInputs": [
     "app/lunario-fonts.css",
     "app/mission-theme.css",
@@ -551,6 +551,12 @@
       "gzip6EstimateBytes": 4482
     },
     {
+      "path": "assets/chunks/chunk-VAZO247E.js",
+      "bytes": 12072,
+      "sha256": "5d31d2a9b48c622c808456589c37208c8f20d7d1e751f7b894cb7f3df51cd94c",
+      "gzip6EstimateBytes": 5291
+    },
+    {
       "path": "assets/chunks/chunk-VEP72JGX.js",
       "bytes": 1313,
       "sha256": "086ce03af2cd9ee7b59f246850ca19ea3bcd39c93ae809ae6d00f435c89379ae",
@@ -567,12 +573,6 @@
       "bytes": 10515,
       "sha256": "1a512f1c7b8c7261c5d76cf427536273168cab2c2edd1153f9a18a4f4ca4521f",
       "gzip6EstimateBytes": 4389
-    },
-    {
-      "path": "assets/chunks/chunk-X4VFRCVA.js",
-      "bytes": 11651,
-      "sha256": "815945edc08633c479adb846053cfce147dc027a5e310feaa3bc47326b4779eb",
-      "gzip6EstimateBytes": 5140
     },
     {
       "path": "assets/chunks/chunk-Y3COZUTT.js",
@@ -617,16 +617,16 @@
       "gzip6EstimateBytes": 116
     },
     {
-      "path": "assets/chunks/data-math-panel-LILIXBAJ.js",
-      "bytes": 239749,
-      "sha256": "94782fe1da2bbf5818b47e0a7e6872b9ff5bab8b3b30eed4d23a97b31f8571bf",
-      "gzip6EstimateBytes": 48095
-    },
-    {
       "path": "assets/chunks/data-math-panel-PBBFRJUR.css",
       "bytes": 2552,
       "sha256": "2f692784a18477fca51547119635492b99b509e8d5bb5f03b75ec65fb2a20052",
       "gzip6EstimateBytes": 912
+    },
+    {
+      "path": "assets/chunks/data-math-panel-X7EJEEPA.js",
+      "bytes": 239749,
+      "sha256": "1204d8aedb2b8e42d48b32f944fdd329122fffb88b3824710a96a9f391a76024",
+      "gzip6EstimateBytes": 48096
     },
     {
       "path": "assets/chunks/esm-24JYF5T7.js",
@@ -671,10 +671,10 @@
       "gzip6EstimateBytes": 1654900
     },
     {
-      "path": "assets/chunks/scene-KUOB5TXO.js",
-      "bytes": 221526,
-      "sha256": "ee676f61b0f29e76a916fd5c4b3023d4c6629d6a6a1cd729f2ddae7488084847",
-      "gzip6EstimateBytes": 78409
+      "path": "assets/chunks/scene-NX2SQGAY.js",
+      "bytes": 221507,
+      "sha256": "fae97823d4794a1203c967bc46769797da91ae341c0b119141f9d10a981dd5c1",
+      "gzip6EstimateBytes": 78393
     },
     {
       "path": "assets/chunks/scene-SJCNCMQK.css",
@@ -725,9 +725,9 @@
       "gzip6EstimateBytes": 2436
     },
     {
-      "path": "assets/chunks/touchdown-lab-WYJ2LEQD.js",
+      "path": "assets/chunks/touchdown-lab-TE274K6W.js",
       "bytes": 18320,
-      "sha256": "47823a693acc5043e23087ec760c926e48462e8e379f08e9c7fca0afa26f8b60",
+      "sha256": "190e76dc6ef858e67561f968a953982de652185e681e50317fc32f480a99b8d0",
       "gzip6EstimateBytes": 7258
     },
     {
@@ -785,16 +785,16 @@
       "gzip6EstimateBytes": 678
     },
     {
+      "path": "assets/main-Q5XQIZNO.js",
+      "bytes": 471340,
+      "sha256": "bf989c4aea6d77fe3a32ce3cd833c08cac21c56a2182d414dd29663daf27f1ea",
+      "gzip6EstimateBytes": 151380
+    },
+    {
       "path": "assets/main-V5CXROSI.css",
       "bytes": 73726,
       "sha256": "38550acc2172a892b22e2599ad4819f523cd07e8bff626a3c2028f199327d73e",
       "gzip6EstimateBytes": 14770
-    },
-    {
-      "path": "assets/main-ZTHMZWB3.js",
-      "bytes": 471340,
-      "sha256": "9377c2356dbf37cff1adcc8316de4b3878221278c651db04f04297fad5ef94ff",
-      "gzip6EstimateBytes": 151380
     },
     {
       "path": "assets/tailwind-f48e08d5ed23.css",
@@ -805,14 +805,14 @@
     {
       "path": "index.html",
       "bytes": 1222,
-      "sha256": "faf8dd6a4e4fcc8d0df9b4cbbd833737bc32f21e066ba0666862c5c1afa3a5cf",
-      "gzip6EstimateBytes": 659
+      "sha256": "6cf260e4a222ee24782150d81b60e8d683551991899e0790aeb58b0c04cf9a08",
+      "gzip6EstimateBytes": 658
     },
     {
       "path": "metafile.json",
-      "bytes": 1801807,
-      "sha256": "f7aa5f7e62ec2e522b62525a87f6aad8b0c8ac54daa17844628039c5fdcc0628",
-      "gzip6EstimateBytes": 83151
+      "bytes": 1802456,
+      "sha256": "bf9488dfaa5591428e2e22519ea395bdb926412d14249c3769e5b0a8e3f9b347",
+      "gzip6EstimateBytes": 83181
     }
   ],
   "limits": "Static transitive import closure; render-triggered imports may add requests. Gzip6 estimates, not browser timings or CDN wire bytes."
