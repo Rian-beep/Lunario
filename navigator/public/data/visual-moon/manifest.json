@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "credit": "NASA’s Scientific Visualization Studio / NASA Goddard Space Flight Center; LRO LROC and LOLA instrument teams",
+  "pages": [
+    "https://svs.gsfc.nasa.gov/14959/",
+    "https://svs.gsfc.nasa.gov/4720/"
+  ],
+  "colour": {
+    "source": {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "bytes": 243289792,
+      "sha256": "db7808e878b6a55eb409bb231eab8deb477f84b5c9d7396d76ff73e5d54992d9"
+    },
+    "sourceWidth": 8192,
+    "sourceHeight": 4096,
+    "sourceBits": 16,
+    "colourSpace": "srgb",
+    "iccSha256": "3f6d674174f3804eb0dabdac90ae17486e898c5063a66f861c116ea033da8301",
+    "transform": "Decode original RGB16 sRGB code values with GeoTIFF; exact IEC 61966-2-1 transfer to float32 linear RGB; repeated 2x2 area filtering for lower tiers; exact sRGB encode and round to RGB8; lossless WebP. Native 8K rounds original code values directly. No sharpening, tint, contrast or synthesized detail. RGB8 quantization is not lossless versus RGB16.",
+    "assets": [
+      {
+        "url": "/data/visual-moon/colour-2025-1024.webp",
+        "width": 1024,
+        "height": 512,
+        "bytes": 511424,
+        "sha256": "2d96f1bdf7a62f8dea3d182a85f12c10ec4659b82d1f9f989d754afc94016fa5",
+        "decodedRgb8Sha256": "06ce7fbf0483e5c8de9aa34d3bf335c38f2c0b2437e5124b65476e90c88f1a89"
+      },
+      {
+        "url": "/data/visual-moon/colour-2025-2048.webp",
+        "width": 2048,
+        "height": 1024,
+        "bytes": 1970572,
+        "sha256": "02129aeb81425e4f5cc423880282a090ee205e27d136189a4ed6c4216322c9e4",
+        "decodedRgb8Sha256": "dca72f3debb33b32411a94078518054cad240565f96c98839154b098d42f0992"
+      },
+      {
+        "url": "/data/visual-moon/colour-2025-4096.webp",
+        "width": 4096,
+        "height": 2048,
+        "bytes": 7873346,
+        "sha256": "9a6e48c63f7a679cd805ae29f2664938389ce3e36a0c08e615fac2be1b3cd8ed",
+        "decodedRgb8Sha256": "733e87f33b678c4f57bc84813c8a33bbc8e3af8fe27f06c9dbfa438810ec24f9"
+      },
+      {
+        "url": "/data/visual-moon/colour-2025-8192.webp",
+        "width": 8192,
+        "height": 4096,
+        "bytes": 31037918,
+        "sha256": "9de2d8c8b33d1e8b8fb5f2cab3df6eaa0c68f9c021ddd4a2fe4d2db6b2c0c5b1",
+        "decodedRgb8Sha256": "123badd6e1ab9916aeb9792053081c5a8854562cc72c4a735bf8f21e17a25662"
+      }
+    ],
+    "calibration": [
+      {
+        "pixel": [
+          0,
+          0
+        ],
+        "sourceRgb16": [
+          53797,
+          52633,
+          51633
+        ],
+        "expectedRgb8": [
+          209,
+          205,
+          201
+        ],
+        "runtimeRgb8": [
+          209,
+          205,
+          201
+        ]
+      },
+      {
+        "pixel": [
+          4096,
+          2048
+        ],
+        "sourceRgb16": [
+          36663,
+          36019,
+          36021
+        ],
+        "expectedRgb8": [
+          143,
+          140,
+          140
+        ],
+        "runtimeRgb8": [
+          143,
+          140,
+          140
+        ]
+      },
+      {
+        "pixel": [
+          2048,
+          2048
+        ],
+        "sourceRgb16": [
+          50313,
+          49383,
+          49411
+        ],
+        "expectedRgb8": [
+          196,
+          192,
+          192
+        ],
+        "runtimeRgb8": [
+          196,
+          192,
+          192
+        ]
+      },
+      {
+        "pixel": [
+          6144,
+          2048
+        ],
+        "sourceRgb16": [
+          42033,
+          41181,
+          40627
+        ],
+        "expectedRgb8": [
+          164,
+          160,
+          158
+        ],
+        "runtimeRgb8": [
+          164,
+          160,
+          158
+        ]
+      },
+      {
+        "pixel": [
+          4096,
+          100
+        ],
+        "sourceRgb16": [
+          54097,
+          52961,
+          51983
+        ],
+        "expectedRgb8": [
+          210,
+          206,
+          202
+        ],
+        "runtimeRgb8": [
+          210,
+          206,
+          202
+        ]
+      },
+      {
+        "pixel": [
+          4096,
+          3995
+        ],
+        "sourceRgb16": [
+          51111,
+          49617,
+          48187
+        ],
+        "expectedRgb8": [
+          199,
+          193,
+          187
+        ],
+        "runtimeRgb8": [
+          199,
+          193,
+          187
+        ]
+      },
+      {
+        "pixel": [
+          8191,
+          2048
+        ],
+        "sourceRgb16": [
+          53935,
+          53361,
+          53437
+        ],
+        "expectedRgb8": [
+          210,
+          208,
+          208
+        ],
+        "runtimeRgb8": [
+          210,
+          208,
+          208
+        ]
+      },
+      {
+        "pixel": [
+          1907,
+          1572
+        ],
+        "sourceRgb16": [
+          47905,
+          46121,
+          44777
+        ],
+        "expectedRgb8": [
+          186,
+          179,
+          174
+        ],
+        "runtimeRgb8": [
+          186,
+          179,
+          174
+        ]
+      },
+      {
+        "pixel": [
+          5410,
+          2771
+        ],
+        "sourceRgb16": [
+          55571,
+          55407,
+          56291
+        ],
+        "expectedRgb8": [
+          216,
+          216,
+          219
+        ],
+        "runtimeRgb8": [
+          216,
+          216,
+          219
+        ]
+      }
+    ]
+  },
+  "relief": {
+    "source": {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_64.tif",
+      "bytes": 1061775722,
+      "sha256": "af55ea2ed9173d1744b98ac4205501bd0bb0dcfc6ac49a11473a411dc64afd90"
+    },
+    "sourceWidth": 23040,
+    "sourceHeight": 11520,
+    "sourceUnit": "signed float32 kilometres relative to radius 1737.4 km",
+    "sourceMinKm": -9.114500045776367,
+    "sourceMaxKm": 10.757000923156738,
+    "url": "/data/visual-moon/radii-1x.bin.gz",
+    "bytes": 1393258,
+    "sha256": "e222cf437d4a0e5b2b5fe190fd6e59a8315bf83faf40743926e1f523b620c5db",
+    "decodedSha256": "50e5337039a777449f0dbcb60924aacf8a98ad57f03f342548ed6910b66d9b5c",
+    "vertexCount": 507906,
+    "authoredMeshSha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+    "authoredIndicesSha256": "45616d160dc5d77ba099b20c385c2475bc99f123bc8d417706a0497c5460f57e",
+    "minRadiusKm": 1728.8523270420997,
+    "maxRadiusKm": 1747.8295284317192,
+    "reliefMultiplier": 1,
+    "transform": "Pixel-centred equirectangular bilinear interpolation, periodic longitude and clamped polar edge rows. Radius=1737.4km+signed elevation km. Radially reproject the existing authored vertex directions; preserve all triangles and body-frame directions. No added vertices, noise, displacement exaggeration or height inferred from colour.",
+    "calibration": [
+      {
+        "vertex": 0,
+        "lat": 56.424921673749246,
+        "lon": 89.99998486786384,
+        "elevationKm": -3.9167338731462595,
+        "radiusKmFloat32": 1733.4832763671875
+      },
+      {
+        "vertex": 50000,
+        "lat": -51.864688425493235,
+        "lon": 146.2499921446112,
+        "elevationKm": -1.30140110440447,
+        "radiusKmFloat32": 1736.0986328125
+      },
+      {
+        "vertex": 100000,
+        "lat": -39.56016541473402,
+        "lon": -0.7031119387390101,
+        "elevationKm": -0.031823744784441034,
+        "radiusKmFloat32": 1737.3681640625
+      },
+      {
+        "vertex": 150000,
+        "lat": 40.96534698355971,
+        "lon": -114.25753445087332,
+        "elevationKm": 2.6705980252604524,
+        "radiusKmFloat32": 1740.070556640625
+      },
+      {
+        "vertex": 200000,
+        "lat": 81.65905430949928,
+        "lon": 136.6369011578784,
+        "elevationKm": -1.9575932034722712,
+        "radiusKmFloat32": 1735.4423828125
+      },
+      {
+        "vertex": 250000,
+        "lat": -23.340134418639252,
+        "lon": 49.56745269258288,
+        "elevationKm": -0.808885191967456,
+        "radiusKmFloat32": 1736.591064453125
+      },
+      {
+        "vertex": 300000,
+        "lat": 31.454472950020588,
+        "lon": -9.140676694014505,
+        "elevationKm": -2.2140390876716305,
+        "radiusKmFloat32": 1735.1859130859375
+      },
+      {
+        "vertex": 350000,
+        "lat": -39.909292675578826,
+        "lon": -78.39998724290412,
+        "elevationKm": -0.2243446133280998,
+        "radiusKmFloat32": 1737.1756591796875
+      },
+      {
+        "vertex": 400000,
+        "lat": 20.512508394002687,
+        "lon": -124.45312019749754,
+        "elevationKm": 3.8797414585709826,
+        "radiusKmFloat32": 1741.27978515625
+      },
+      {
+        "vertex": 450000,
+        "lat": 22.984745194264576,
+        "lon": 165.58625293109532,
+        "elevationKm": 2.931263490635779,
+        "radiusKmFloat32": 1740.331298828125
+      },
+      {
+        "vertex": 500000,
+        "lat": -34.2746616388905,
+        "lon": 92.10932896687392,
+        "elevationKm": -2.5104350763769863,
+        "radiusKmFloat32": 1734.8895263671875
+      }
+    ]
+  },
+  "limitations": [
+    "2025 colour is optimized for aesthetics, not science. It is not a power, visibility, ice, reflectance or composition measurement.",
+    "Colour outside 70°N–70°S uses lower-resolution monochrome LDAM fill; small high-latitude gaps are inpainted. More texture pixels do not create polar geology.",
+    "Global raster sampling and the retained authored topology cannot resolve near-surface geology. Existing NASA polar angular pinching remains; use qualified local numerical terrain near the surface.",
+    "The radial reprojection is a separate 1x visual derivative. Original authored mesh, texture, metadata and scientific DEM/loaders remain unchanged.",
+    "The unsigned *_uint TIFFs use half-metres relative to 1727400m; they are not inputs to this preparation."
+  ]
+}
