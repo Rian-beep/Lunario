@@ -1,0 +1,299 @@
+{
+  "runUtc": "2026-11-15T14:39:55.393Z",
+  "browser": "149.0.7827.155",
+  "web": "http://127.0.0.1:4356/web/index.html",
+  "file": "/tmp/lunario-audit-ui/navigator/public/solarreach-navigator.html",
+  "fileSha256": "500ecca4774b7adead4a5268f3ad9b22bc970510a05c6b4d69b074ee77680828",
+  "runs": [
+    {
+      "transport": "web",
+      "url": "http://127.0.0.1:4356/web/index.html",
+      "http": [
+        "http://127.0.0.1:4356/web/index.html",
+        "http://127.0.0.1:4356/web/assets/tailwind-907cf7100f38.css",
+        "http://127.0.0.1:4356/web/assets/main-DXBTEAL3.css",
+        "http://127.0.0.1:4356/web/assets/main-SCDUGT5P.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-Z5OIDHRQ.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-5X4GV4DI.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-YOLCIZJX.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-QFPKXEUA.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-3GFJARJA.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-6EKG2RQK.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-VEP72JGX.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-HEKWEHTY.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-DOKQVTKZ.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-OMVKELJL.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-3JRKLPAN.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-AX4KF55O.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-2DMNQ476.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-GNTWDEBH.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-ULVCNHCJ.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-52Q4JTOF.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-CAV3FXKF.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-V73R7IPJ.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-2MUIZFOA.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-GE4IBOIZ.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-6NUZOME5.js",
+        "http://127.0.0.1:4356/web/assets/chunks/chunk-LOKUJV26.js",
+        "http://127.0.0.1:4356/navigator/public/data/catalog.json",
+        "http://127.0.0.1:4356/navigator/public/data/evidence-manifest.json",
+        "http://127.0.0.1:4356/web/assets/fonts/geist-var-PIJXEPVL.woff2",
+        "http://127.0.0.1:4356/navigator/public/data/imagery.json",
+        "http://127.0.0.1:4356/navigator/public/data/map.png",
+        "http://127.0.0.1:4356/navigator/public/data/imagery/polar.jpg",
+        "http://127.0.0.1:4356/web/assets/chunks/workspace-YIUZIF7L.js",
+        "http://127.0.0.1:4356/navigator/public/data/imagery/nasa-moon-8k.jpg",
+        "http://127.0.0.1:4356/web/assets/chunks/teaching-studio-MQKWCMRF.js"
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4356/web/index.html",
+          "status": 200,
+          "bytes": 1222,
+          "sha256": "9eb62412675227d29d7f05f1f4e8bfc9bf126bcaa516ceef9ea038fede065250"
+        },
+        {
+          "url": "http://127.0.0.1:4356/web/assets/main-DXBTEAL3.css",
+          "status": 200,
+          "bytes": 72187,
+          "sha256": "a79d7ca0e9f8789a8b3de83703f47d831b44a64d483235ede4d1fa9c558dc2fd"
+        },
+        {
+          "url": "http://127.0.0.1:4356/web/assets/tailwind-907cf7100f38.css",
+          "status": 200,
+          "bytes": 122236,
+          "sha256": "907cf7100f38a873a8c54bc1aca0edd8985be9f17a47fb532be964cbdb70b68d"
+        },
+        {
+          "url": "http://127.0.0.1:4356/web/assets/main-SCDUGT5P.js",
+          "status": 200,
+          "bytes": 606910,
+          "sha256": "cc07da8d22dc1b10805c356a042246e6d699864b56266c03014b86a88d899ead"
+        }
+      ],
+      "charts": [
+        {
+          "width": 1600,
+          "title": "Local horizon and body directions",
+          "background": "rgb(255, 255, 255)",
+          "svgBackground": "rgb(255, 255, 255)",
+          "labels": [
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)"
+          ],
+          "sx": 1,
+          "sy": 1,
+          "actions": 2
+        },
+        {
+          "width": 800,
+          "title": "Local horizon and body directions",
+          "background": "rgb(255, 255, 255)",
+          "svgBackground": "rgb(255, 255, 255)",
+          "labels": [
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)",
+            "rgb(28, 25, 21)"
+          ],
+          "sx": 1,
+          "sy": 1,
+          "actions": 2
+        }
+      ],
+      "checks": [
+        "All audience controls select and dismiss their introduction.",
+        "Actual integrated HorizonGraph and ResponsePlot rendered, exact values table opens and teaching modal returns focus. Image-action/paint failures are recorded separately."
+      ],
+      "discrepancies": [
+        "Replanning ComparisonPlot has no chart image actions or white chart surface (outside lane ownership)."
+      ],
+      "comparisonChart": {
+        "title": "Stored energy and reserveValue (Wh)",
+        "hasImageActions": false,
+        "background": "rgb(27, 29, 32)",
+        "svgBackground": "rgba(0, 0, 0, 0)"
+      },
+      "download": {
+        "sha256": "575a9d40a30d31ca9bda4e598a516170380b9e11cec8eb54ac35cdb7957b5f96",
+        "width": 1332,
+        "height": 1392
+      },
+      "teaching": {
+        "title": "Controlled response across tested inputs",
+        "background": "rgb(255, 255, 255)",
+        "svgBackground": "rgb(255, 255, 255)",
+        "labels": [
+          {
+            "text": "0",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "219,649.74",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "439,299.48",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "0",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "2",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "10",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "Array height (m)",
+            "fill": "rgb(28, 25, 21)"
+          },
+          {
+            "text": "Generated energy (Wh)",
+            "fill": "rgb(28, 25, 21)"
+          }
+        ],
+        "actions": 2
+      }
+    },
+    {
+      "transport": "file",
+      "url": "file:///tmp/lunario-audit-ui/navigator/public/solarreach-navigator.html",
+      "http": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "assets": [],
+      "charts": [
+        {
+          "width": 1600,
+          "title": "Local horizon and body directions",
+          "background": "rgba(0, 0, 0, 0)",
+          "svgBackground": "rgba(0, 0, 0, 0)",
+          "labels": [
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(245, 238, 226)",
+            "rgb(245, 238, 226)"
+          ],
+          "sx": 1,
+          "sy": 1,
+          "actions": 0
+        },
+        {
+          "width": 800,
+          "title": "Local horizon and body directions",
+          "background": "rgba(0, 0, 0, 0)",
+          "svgBackground": "rgba(0, 0, 0, 0)",
+          "labels": [
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(208, 195, 181)",
+            "rgb(245, 238, 226)",
+            "rgb(245, 238, 226)"
+          ],
+          "sx": 1,
+          "sy": 1,
+          "actions": 0
+        }
+      ],
+      "checks": [
+        "All audience controls select and dismiss their introduction.",
+        "Actual integrated HorizonGraph and ResponsePlot rendered, exact values table opens and teaching modal returns focus. Image-action/paint failures are recorded separately."
+      ],
+      "discrepancies": [
+        "Replanning ComparisonPlot has no chart image actions or white chart surface (outside lane ownership).",
+        "HorizonGraph at 1600px lacks expected white/dark paint or image actions.",
+        "HorizonGraph at 800px lacks expected white/dark paint or image actions.",
+        "Teaching ResponsePlot lacks expected white/dark paint or image actions."
+      ],
+      "comparisonChart": {
+        "title": "Stored energy and reserveValue (Wh)",
+        "hasImageActions": false,
+        "background": "rgb(27, 29, 32)",
+        "svgBackground": "rgba(0, 0, 0, 0)"
+      },
+      "download": {
+        "unexecuted": "Candidate has no Download PNG action; do not count as passed."
+      },
+      "teaching": {
+        "title": "Controlled response across tested inputs",
+        "background": "rgba(0, 0, 0, 0)",
+        "svgBackground": "rgba(0, 0, 0, 0)",
+        "labels": [
+          {
+            "text": "0",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "219,649.74",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "439,299.48",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "0",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "2",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "10",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "Array height (m)",
+            "fill": "rgb(245, 238, 226)"
+          },
+          {
+            "text": "Generated energy (Wh)",
+            "fill": "rgb(245, 238, 226)"
+          }
+        ],
+        "actions": 0
+      }
+    }
+  ]
+}

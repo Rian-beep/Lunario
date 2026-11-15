@@ -1,0 +1,102 @@
+[
+  {
+    "path": "/tmp/audit-ui-browser/canvas-fiducial.png",
+    "sha256": "91c8c0ca7deb521d379f4f033a31e78230ef51c06ee9a9e83281100c96eec679",
+    "bytes": 34214
+  },
+  {
+    "path": "/tmp/audit-ui-browser/dark-420.png",
+    "sha256": "7ab738cfd8d8b0839d3bb7639c45481dd1985691140325ee19330d4c2d160d81",
+    "bytes": 266053
+  },
+  {
+    "path": "/tmp/audit-ui-browser/dark-900.png",
+    "sha256": "18c34e4c8848d310900f26128f544110d67aab1b1fc97ff69fd6b2c7116d8c76",
+    "bytes": 311712
+  },
+  {
+    "path": "/tmp/audit-ui-browser/elevation.png",
+    "sha256": "49f039e118e9c968c6169c4a389c0bb821c6e8b1abd13d8c8509f23f2a573a16",
+    "bytes": 180259
+  },
+  {
+    "path": "/tmp/audit-ui-browser/light-420.png",
+    "sha256": "0e272ef01f6747c5af186089ebceaa766149f300f3defd90ff41237f8c497f8d",
+    "bytes": 265883
+  },
+  {
+    "path": "/tmp/audit-ui-browser/light-900.png",
+    "sha256": "9de12feb02f403a9b09e879875d6d0884c1c6e613a13f115e535d0e386b318bd",
+    "bytes": 309593
+  },
+  {
+    "path": "/tmp/audit-ui-browser/oblique.png",
+    "sha256": "c2830acd1cee7503192320a507d84b5af118d0b8a343e5131a66357a9ee96115",
+    "bytes": 160399
+  },
+  {
+    "path": "/tmp/audit-ui-browser/panorama.png",
+    "sha256": "b8394e01cfd2866fa475aa395c745ae77fb6f23848fb7d7f349c0262c06c2c68",
+    "bytes": 156038
+  },
+  {
+    "path": "/tmp/audit-ui-browser/response.png",
+    "sha256": "c6f6f543e5b2d1d021dfe974e7f20a59222b543637daca2cc8f3d316c0cadf19",
+    "bytes": 120885
+  },
+  {
+    "path": "/tmp/audit-ui-browser/science.png",
+    "sha256": "54e04bd66eb5297f403ea43a71f3bf59edc827d611ea4e65e3344b5726c10b86",
+    "bytes": 259322
+  },
+  {
+    "path": "/tmp/audit-ui-browser/supporting-text-after.png",
+    "sha256": "a9517b7f5d5d05365af54433e3e83e300c26230e000c94bee80b74373eff5187",
+    "bytes": 179360
+  },
+  {
+    "path": "/tmp/audit-ui-browser/svg-fiducial.png",
+    "sha256": "91c8c0ca7deb521d379f4f033a31e78230ef51c06ee9a9e83281100c96eec679",
+    "bytes": 34214
+  },
+  {
+    "path": "/tmp/audit-ui-browser/time.png",
+    "sha256": "0241717c80a04d2de9e6db5d47609e8444397c728f2a567234edda3798fe54ed",
+    "bytes": 258973
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/file-horizon-1600.png",
+    "sha256": "a61f76484aaa2dcb3ca292d7f4a5e7383fd1a44564c3ed067219a4a4e591aa92",
+    "bytes": 105121
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/file-horizon-800.png",
+    "sha256": "2921a9113c5fb831f131c49b02ed5f4af5aa04d570d8ff267613ee3720eef89f",
+    "bytes": 115759
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/file-teaching-response.png",
+    "sha256": "22bb172068375167e2430ffb8de2d710aafd2c9ec3326c1a5e8905f4955e70d2",
+    "bytes": 32032
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/web-horizon-1600.png",
+    "sha256": "7d3766e874d16f8528be63787e35f09ac922af895bb13687f84b62a5dda41e39",
+    "bytes": 95069
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/web-horizon-800.png",
+    "sha256": "37356d57d006e00f43b90c2dd6de80054912cb6828022c1357e105d2262a0c79",
+    "bytes": 90391
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/web-horizon-export.png",
+    "sha256": "575a9d40a30d31ca9bda4e598a516170380b9e11cec8eb54ac35cdb7957b5f96",
+    "bytes": 265634
+  },
+  {
+    "path": "/tmp/audit-ui-integrated-final/web-teaching-response.png",
+    "sha256": "75849909bf9b81749468afa66740579c12543d67de73b4e0a83e7d6fda3478f3",
+    "bytes": 34471
+  }
+]

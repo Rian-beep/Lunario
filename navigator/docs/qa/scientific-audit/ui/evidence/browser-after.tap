@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: audit-ui: native clipboard, exact PNG geometry, metadata and offline charts
+    # Subtest: six actual components: native clipboard PNG pixels equal their downloaded PNGs
+    ok 1 - six actual components: native clipboard PNG pixels equal their downloaded PNGs
+      ---
+      duration_ms: 17088.5241
+      ...
+    # Subtest: native denied permission gives fallback; download still succeeds
+    ok 2 - native denied permission gives fallback; download still succeeds
+      ---
+      duration_ms: 1090.85218
+      ...
+    # Subtest: dark/light labels and white surfaces, responsive uniform transforms and keyboard sample control
+    ok 3 - dark/light labels and white surfaces, responsive uniform transforms and keyboard sample control
+      ---
+      duration_ms: 452.464115
+      ...
+    # Subtest: UTC export extent and source caveats survive serialization
+    ok 4 - UTC export extent and source caveats survive serialization
+      ---
+      duration_ms: 0.189663
+      ...
+    # Subtest: chart notes, gradient explanations and exact sample readouts stay legible on white in dark mode
+    ok 5 - chart notes, gradient explanations and exact sample readouts stay legible on white in dark mode
+      ---
+      duration_ms: 111.989607
+      ...
+    # Subtest: independent circle fiducial stays circular at 2× in non-square SVG and canvas exports
+    ok 6 - independent circle fiducial stays circular at 2× in non-square SVG and canvas exports
+      ---
+      duration_ms: 179.323279
+      ...
+    1..6
+ok 1 - audit-ui: native clipboard, exact PNG geometry, metadata and offline charts
+  ---
+  duration_ms: 19255.366357
+  ...
+1..1
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19513.404858
