@@ -33,6 +33,8 @@ test("Dashboard page drops the dark double nav shell", () => {
   assert.match(index, /logo\.svg/);
   // Offline HTML paints the cream header after frame "load" — parent must retry inject.
   assert.match(index, /ensureCreamSiteNav/);
+  assert.match(index, /openDemoSplit/);
+  assert.match(index, /Split map and 3D/);
   assert.match(index, /MutationObserver/);
 });
 
