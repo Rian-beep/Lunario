@@ -1,0 +1,307 @@
+TAP version 13
+# Subtest: required failure wins over unknown; unknown prevents pass
+ok 1 - required failure wins over unknown; unknown prevents pass
+  ---
+  duration_ms: 0.511241
+  ...
+# Subtest: planning input identity is deterministic and preserves zero versus missing
+ok 2 - planning input identity is deterministic and preserves zero versus missing
+  ---
+  duration_ms: 4.807065
+  ...
+# Subtest: complete known shortfall fails; no requirements is not configured
+ok 3 - complete known shortfall fails; no requirements is not configured
+  ---
+  duration_ms: 5.160812
+  ...
+# Subtest: reserve equality passes; missing required antenna evidence cannot pass
+ok 4 - reserve equality passes; missing required antenna evidence cannot pass
+  ---
+  duration_ms: 1.388949
+  ...
+# Subtest: partial or borrowed evidence makes otherwise passing terrain constraints conditional
+ok 5 - partial or borrowed evidence makes otherwise passing terrain constraints conditional
+  ---
+  duration_ms: 1.993247
+  ...
+# Subtest: manual external pass is conditional and changed inputs invalidate it without self-invalidation
+ok 6 - manual external pass is conditional and changed inputs invalidate it without self-invalidation
+  ---
+  duration_ms: 2.060855
+  ...
+# Subtest: Unicode scenario roundtrip recomputes and keeps complete forcing, units, provenance and exclusive UTC end
+ok 7 - Unicode scenario roundtrip recomputes and keeps complete forcing, units, provenance and exclusive UTC end
+  ---
+  duration_ms: 20.35528
+  ...
+# Subtest: manual pass cannot certify external evidence or overwrite a current recomputation
+ok 8 - manual pass cannot certify external evidence or overwrite a current recomputation
+  ---
+  duration_ms: 6.898419
+  ...
+# Subtest: changed dataset, model and source hash versions are explicit and current evidence wins
+ok 9 - changed dataset, model and source hash versions are explicit and current evidence wins
+  ---
+  duration_ms: 4.797965
+  ...
+# Subtest: unknown horizon samples are portable nulls and remain unknown after recomputation
+ok 10 - unknown horizon samples are portable nulls and remain unknown after recomputation
+  ---
+  duration_ms: 4.328663
+  ...
+# Subtest: legacy state migrates with catalog step and bounds; unsupported coverage is rejected
+ok 11 - legacy state migrates with catalog step and bounds; unsupported coverage is rejected
+  ---
+  duration_ms: 4.820495
+  ...
+# Subtest: malformed, unsupported, oversized UTF-8 and incomplete packages fail without mutating caller
+ok 12 - malformed, unsupported, oversized UTF-8 and incomplete packages fail without mutating caller
+  ---
+  duration_ms: 6.306441
+  ...
+# Subtest: CSV guards formula text, tabs and carriage returns while retaining true numeric negatives and blank unknowns
+ok 13 - CSV guards formula text, tabs and carriage returns while retaining true numeric negatives and blank unknowns
+  ---
+  duration_ms: 1.864872
+  ...
+# Subtest: printable report puts escaped provenance and assumptions before result and has accessible requirement table
+ok 14 - printable report puts escaped provenance and assumptions before result and has accessible requirement table
+  ---
+  duration_ms: 1.400009
+  ...
+# Subtest: all three fresh Horizons observer fixtures agree with independently generated CSPICE reference
+ok 15 - all three fresh Horizons observer fixtures agree with independently generated CSPICE reference
+  ---
+  duration_ms: 2.730281
+  ...
+# Subtest: JPL 105E independent published attenuation and atmospheric-noise example
+ok 16 - JPL 105E independent published attenuation and atmospheric-noise example
+  ---
+  duration_ms: 0.2667
+  ...
+# Subtest: request pins actual station, UTC, airless, km and bounded observer settings
+ok 17 - request pins actual station, UTC, airless, km and bounded observer settings
+  ---
+  duration_ms: 0.364817
+  ...
+# Subtest: parser rejects wrong station, missing epochs, wrong frame, units and target, provider errors
+ok 18 - parser rejects wrong station, missing epochs, wrong frame, units and target, provider errors
+  ---
+  duration_ms: 0.608518
+  ...
+# Subtest: bounded strict offline envelope round trip preserves sources and nulls; strips unrecognized authority
+ok 19 - bounded strict offline envelope round trip preserves sources and nulls; strips unrecognized authority
+  ---
+  duration_ms: 2.968452
+  ...
+# Subtest: non-overlapping dated inputs are mandatory; horizon interpolation closes azimuth seam
+ok 20 - non-overlapping dated inputs are mandatory; horizon interpolation closes azimuth seam
+  ---
+  duration_ms: 0.399806
+  ...
+# Subtest: full chain computes rate-limited delivered data and critical contact equality conditionally
+ok 21 - full chain computes rate-limited delivered data and critical contact equality conditionally
+  ---
+  duration_ms: 1.341902
+  ...
+# Subtest: missing geometry prevents full adequacy even for zero requested bits
+ok 22 - missing geometry prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.355807
+  ...
+# Subtest: missing stationHorizon prevents full adequacy even for zero requested bits
+ok 23 - missing stationHorizon prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.694174
+  ...
+# Subtest: missing lunarMask prevents full adequacy even for zero requested bits
+ok 24 - missing lunarMask prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.715864
+  ...
+# Subtest: missing hardware prevents full adequacy even for zero requested bits
+ok 25 - missing hardware prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.590889
+  ...
+# Subtest: missing weather prevents full adequacy even for zero requested bits
+ok 26 - missing weather prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.680065
+  ...
+# Subtest: missing allocations prevents full adequacy even for zero requested bits
+ok 27 - missing allocations prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 1.217845
+  ...
+# Subtest: missing delivered-data requirement stays unconfigured rather than a zero-bit success
+ok 28 - missing delivered-data requirement stays unconfigured rather than a zero-bit success
+  ---
+  duration_ms: 0.969534
+  ...
+# Subtest: a missing geometry hour is unknown and never extrapolated from final endpoint
+ok 29 - a missing geometry hour is unknown and never extrapolated from final endpoint
+  ---
+  duration_ms: 0.645336
+  ...
+# Subtest: source bytes must reproduce imported computed geometry; wrong station is rejected
+ok 30 - source bytes must reproduce imported computed geometry; wrong station is rejected
+  ---
+  duration_ms: 0.675676
+  ...
+# Subtest: high cutoff, lunar obstruction, negative RF margin and zero allocation each yield known zero
+ok 31 - high cutoff, lunar obstruction, negative RF margin and zero allocation each yield known zero
+  ---
+  duration_ms: 1.758446
+  ...
+# Subtest: station full-disk clearance avoids promoting center just above a cutoff to useful contact
+ok 32 - station full-disk clearance avoids promoting center just above a cutoff to useful contact
+  ---
+  duration_ms: 0.608188
+  ...
+# Subtest: partial allocation clips time precisely while absent remainder stays unknown
+ok 33 - partial allocation clips time precisely while absent remainder stays unknown
+  ---
+  duration_ms: 0.569189
+  ...
+# Subtest: different dated allocation rates and critical subwindows integrate exact seconds
+ok 34 - different dated allocation rates and critical subwindows integrate exact seconds
+  ---
+  duration_ms: 0.54006
+  ...
+# Subtest: critical contact outside run, or unknown lunar sample, prevents adequacy
+ok 35 - critical contact outside run, or unknown lunar sample, prevents adequacy
+  ---
+  duration_ms: 0.970505
+  ...
+# Subtest: stale evidence never grants capacity; dated future ephemeris is identified without inventing forecast
+ok 36 - stale evidence never grants capacity; dated future ephemeris is identified without inventing forecast
+  ---
+  duration_ms: 0.568439
+  ...
+# Subtest: observed weather cannot become a later forecast; wrong band/frequency and future issue date stay unknown
+ok 37 - observed weather cannot become a later forecast; wrong band/frequency and future issue date stay unknown
+  ---
+  duration_ms: 1.598892
+  ...
+# Subtest: Earth-center lunar proxy must be an explicit assumption even if imported as reference
+ok 38 - Earth-center lunar proxy must be an explicit assumption even if imported as reference
+  ---
+  duration_ms: 0.478162
+  ...
+# Subtest: provider handles real response contract, HTTP errors, offline errors and aborted requests
+ok 39 - provider handles real response contract, HTTP errors, offline errors and aborted requests
+  ---
+  duration_ms: 11.448974
+  ...
+# Subtest: loader suppresses obsolete success/error after replacement and cancellation
+ok 40 - loader suppresses obsolete success/error after replacement and cancellation
+  ---
+  duration_ms: 1.565103
+  ...
+# Subtest: finite bounds use actual shared assessments and preserve requirements, operations, baseline and provenance
+ok 41 - finite bounds use actual shared assessments and preserve requirements, operations, baseline and provenance
+  ---
+  duration_ms: 19.289419
+  ...
+# Subtest: finite bounds reject stale binding, invalid physical corners, duplicate/more than three fields and absent provenance
+ok 42 - finite bounds reject stale binding, invalid physical corners, duplicate/more than three fields and absent provenance
+  ---
+  duration_ms: 1.905741
+  ...
+# Subtest: finite cases are cancellable with progress and no partial result published
+ok 43 - finite cases are cancellable with progress and no partial result published
+  ---
+  duration_ms: 2.75098
+  ...
+# Subtest: 27-case bound product has distinct identities and degeneracy does not duplicate cases
+ok 44 - 27-case bound product has distinct identities and degeneracy does not duplicate cases
+  ---
+  duration_ms: 33.511663
+  ...
+# (node:837549) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: lunar proxy reuses antenna timeline, mask and unknowns at exact interval times
+ok 45 - lunar proxy reuses antenna timeline, mask and unknowns at exact interval times
+  ---
+  duration_ms: 0.502301
+  ...
+# Subtest: workspace renders exact integration props, native equations and an honest empty offline state without fetching
+ok 46 - workspace renders exact integration props, native equations and an honest empty offline state without fetching
+  ---
+  duration_ms: 17.836902
+  ...
+# Subtest: streamed provider size limit and in-flight abort terminate with explicit errors
+ok 47 - streamed provider size limit and in-flight abort terminate with explicit errors
+  ---
+  duration_ms: 2.233589
+  ...
+# Subtest: provider timeout aborts the actual HTTP signal and exposes its reason
+ok 48 - provider timeout aborts the actual HTTP signal and exposes its reason
+  ---
+  duration_ms: 0.599108
+  ...
+# Subtest: full-disk station skyline includes a narrow adjacent ridge and wraps through north
+ok 49 - full-disk station skyline includes a narrow adjacent ridge and wraps through north
+  ---
+  duration_ms: 0.976644
+  ...
+# Subtest: negative supplied station cutoffs cannot make the Earth transparent
+ok 50 - negative supplied station cutoffs cannot make the Earth transparent
+  ---
+  duration_ms: 0.504231
+  ...
+# Subtest: metadata retains real UTC/source identity but invents no date for legacy reports
+ok 51 - metadata retains real UTC/source identity but invents no date for legacy reports
+  ---
+  duration_ms: 1.135769
+  ...
+# Subtest: invalid dates, unsafe protocols, embedded credentials and non-text metadata are rejected
+ok 52 - invalid dates, unsafe protocols, embedded credentials and non-text metadata are rejected
+  ---
+  duration_ms: 0.26413
+  ...
+# Subtest: structured report metadata survives canonical sharing and exact comparison differences
+ok 53 - structured report metadata survives canonical sharing and exact comparison differences
+  ---
+  duration_ms: 20.809464
+  ...
+# Subtest: conversion preserves forcing bounds, exact model offset and evidence
+ok 54 - conversion preserves forcing bounds, exact model offset and evidence
+  ---
+  duration_ms: 1.449558
+  ...
+# Subtest: unknown events keep a null model offset and mission-relative bounds
+ok 55 - unknown events keep a null model offset and mission-relative bounds
+  ---
+  duration_ms: 0.208293
+  ...
+# Subtest: conversion rejects invalid times and inconsistent model offsets
+ok 56 - conversion rejects invalid times and inconsistent model offsets
+  ---
+  duration_ms: 0.479032
+  ...
+# Subtest: every stored source byte identity and authoritative scenario assessment reproduces
+ok 57 - every stored source byte identity and authoritative scenario assessment reproduces
+  ---
+  duration_ms: 39.123899
+  ...
+# Subtest: controlled actual delay fails energy and actual site-only alternative restores conditional resource result
+ok 58 - controlled actual delay fails energy and actual site-only alternative restores conditional resource result
+  ---
+  duration_ms: 1.668839
+  ...
+# Subtest: historical missing mask is incomplete, never a zero terrain result or approved landing
+ok 59 - historical missing mask is incomplete, never a zero terrain result or approved landing
+  ---
+  duration_ms: 0.133895
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 388.77368

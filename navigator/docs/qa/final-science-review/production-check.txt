@@ -1,0 +1,1 @@
+PASS: independent production comparisons, four event brackets, contact roots, power/RF, 288 resource comparisons and planning-5 identity
