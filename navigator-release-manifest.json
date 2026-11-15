@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "be088b6f6b5a50f7fa9c6e372c31233487471a5a",
+  "sourceCommit": "2bc18c814e642c7643f2e7a328327cd49431227a",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -729,8 +729,8 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 19306,
-      "sha256": "2935a432fb9dfa0f47a0daafa7b3c5d4657cfec00c2999ab591f4c0c424fc566"
+      "bytes": 19635,
+      "sha256": "aa15608640d18d022709a7b4cccf49911eadb786b68dd65246cf35e4591f7d6e"
     },
     {
       "path": "docs/IN-FLIGHT.md",
@@ -4424,8 +4424,8 @@
     },
     {
       "path": "tests/audit-sources.test.ts",
-      "bytes": 11243,
-      "sha256": "1c6b8c0fc5327e07e999e8fbbd37673cdd9a4676b791359195c7fceb6cf30597"
+      "bytes": 11272,
+      "sha256": "5b363ff48a19bac3d13b788391282365ad61541c9b679da0cc9543f03d972e38"
     },
     {
       "path": "tests/audit-ui.browser.mjs",
