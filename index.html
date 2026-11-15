@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ui-theme="dark" class="dark">
 <head>
-<!-- Loader first, so the dashboard never flashes before it. Plays on each load/reload with a three-second minimum.
-     Stays up until the navigator iframe finishes loading (large offline bundle), then hides via Lunario.loader.hide(). -->
+<!-- Prefer dark before first paint; respect an explicit light preference. -->
+<script>(function(){try{var k='lunario-ui-theme';var t=localStorage.getItem(k);if(t!=='light'){document.documentElement.setAttribute('data-ui-theme','dark');document.documentElement.classList.add('dark');if(t!=='dark')localStorage.setItem(k,'dark');}}catch(e){document.documentElement.setAttribute('data-ui-theme','dark');document.documentElement.classList.add('dark');}})();</script>
+<!-- Loader first. Altitude holds until the navigator iframe is ready, then lands at 0 and reveals. -->
 <link rel="stylesheet" href="loader/loader.css">
-<script src="loader/loader.js" data-min-duration="3000" data-auto-hide="false"></script>
+<script src="loader/loader.js" data-min-duration="3000" data-auto-hide="false" data-altitude="15000"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
@@ -50,12 +51,26 @@
   var mount = document.getElementById("dashboard-root");
   var settled = false;
 
+  function preferDarkInFrame(doc) {
+    try {
+      var stored = null;
+      try { stored = localStorage.getItem("lunario-ui-theme"); } catch (e) {}
+      if (stored === "light") return;
+      doc.documentElement.setAttribute("data-ui-theme", "dark");
+      doc.documentElement.classList.add("dark");
+      try {
+        doc.defaultView.localStorage.setItem("lunario-ui-theme", "dark");
+      } catch (e2) {}
+    } catch (e3) {}
+  }
+
   function injectCreamSiteNav() {
     // Until the offline HTML is rebuilt with SiteShellNavLinks, stitch Dashboard/About
     // into the cream navigator header (same-origin iframe).
     try {
       var doc = frame && frame.contentDocument;
       if (!doc || !doc.body || doc.querySelector(".site-shell-nav")) return;
+      preferDarkInFrame(doc);
       var row = doc.querySelector(".header-primary-row");
       var brand = row && row.querySelector("a.brand, .brand");
       if (!row || !brand) return;
@@ -69,7 +84,10 @@
           "text-decoration:none;color:#626a58;font-size:13px;font-weight:500;border:1px solid transparent}" +
           ".site-shell-nav__link:hover{color:#303b29;background:#eaeae1}" +
           ".site-shell-nav__link[aria-current=page]{color:#303b29;background:#fffef9;" +
-          "box-shadow:0 2px 6px #3c41201c,inset 0 0 0 1px #6d76512b}";
+          "box-shadow:0 2px 6px #3c41201c,inset 0 0 0 1px #6d76512b}" +
+          "html[data-ui-theme=dark] .site-shell-nav__link{color:#d0c3b5}" +
+          "html[data-ui-theme=dark] .site-shell-nav__link:hover{color:#f5eee2;background:#24272b}" +
+          "html[data-ui-theme=dark] .site-shell-nav__link[aria-current=page]{color:#f5eee2;background:#1b1d20;box-shadow:inset 0 0 0 1px #897868}";
         doc.head.appendChild(style);
       }
       var cluster = doc.createElement("div");
@@ -93,7 +111,11 @@
     settled = true;
     if (mount) mount.classList.add("dash__mount--ready");
     if (status) status.hidden = true;
+    try {
+      if (frame && frame.contentDocument) preferDarkInFrame(frame.contentDocument);
+    } catch (e) {}
     injectCreamSiteNav();
+    // Touchdown: altitude lands at 0, then the loader lifts to show the dashboard.
     var loader = window.Lunario && window.Lunario.loader;
     if (loader && typeof loader.hide === "function") loader.hide();
   }

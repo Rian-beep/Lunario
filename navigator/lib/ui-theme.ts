@@ -1,7 +1,8 @@
 export type UiTheme = 'light' | 'dark';
 export const UI_THEME_KEY = 'lunario-ui-theme';
-export const parseUiTheme = (value: unknown): UiTheme => value === 'dark' ? 'dark' : 'light';
-let current: UiTheme = 'light';
+/** Missing or unknown preference defaults to dark (judging / first-visit default). */
+export const parseUiTheme = (value: unknown): UiTheme => (value === 'light' ? 'light' : 'dark');
+let current: UiTheme = 'dark';
 let initialized = false;
 const listeners = new Set<() => void>();
 export function applyUiTheme(root: Pick<HTMLElement, 'dataset' | 'classList'>, theme: UiTheme) {
