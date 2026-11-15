@@ -2,6 +2,8 @@ import { linkBudget } from '../mission';
 import { parseEnvelope, utc, span as parseSpan } from './import';
 import { horizonsSourceContext } from './horizons';
 import type { CommunicationsEnvelope, Span } from './types';
+// Version the supplementary station screen independently of the canonical mission model.
+export const COMMUNICATIONS_MODEL_VERSION = 'station-comms-2' as const;
 export type ContactSlice = {
     startUtc: string;
     endUtc: string;
@@ -20,6 +22,7 @@ export type ContactSlice = {
     unknown: string[];
 };
 export type CommunicationsResult = {
+    modelVersion: typeof COMMUNICATIONS_MODEL_VERSION;
     status: 'incomplete' | 'conditional-meets' | 'conditional-shortfall';
     reasons: string[];
     deliveredBits: number | null;
@@ -144,5 +147,5 @@ export function evaluateCommunications(input: CommunicationsEnvelope, scenarioKe
     if (source?.eopCoverage && end > ms(source.eopCoverage.dataEndUtc))
         reasons.push('Station orientation uses predicted EOP after the advertised data boundary; no measured pointing accuracy is inferred');
     const status = e.requirements.minimumBits === null || total.bits === null || critical.some(c => c.status === 'incomplete') ? 'incomplete' : total.bits < e.requirements.minimumBits! || critical.some(c => c.status === 'conditional-shortfall') ? 'conditional-shortfall' : 'conditional-meets';
-    return { status, reasons: [...new Set(reasons)], deliveredBits: total.bits, knownDeliveredBits: slices.reduce((sum, s) => sum + (s.bits ?? 0), 0), contactSeconds: total.seconds, critical, slices, scenarioKey, geometryAgeHours: geometry ? (ms(nowUtc) - ms(geometry.fetchedUtc)) / 3600000 : null, futureGeometry: !!geometry && ms(geometry.samples[0].utc) > ms(nowUtc), operationalApproval: false };
+    return { modelVersion: COMMUNICATIONS_MODEL_VERSION, status, reasons: [...new Set(reasons)], deliveredBits: total.bits, knownDeliveredBits: slices.reduce((sum, s) => sum + (s.bits ?? 0), 0), contactSeconds: total.seconds, critical, slices, scenarioKey, geometryAgeHours: geometry ? (ms(nowUtc) - ms(geometry.fetchedUtc)) / 3600000 : null, futureGeometry: !!geometry && ms(geometry.samples[0].utc) > ms(nowUtc), operationalApproval: false };
 }
