@@ -1,0 +1,59 @@
+{
+  "baseline": "96079ae",
+  "files": [
+    {
+      "path": "lib/mission.ts",
+      "sha256": "fa80967eb4b21f83633151b11278eb2b07e3eb0d874b4f27259e41011ffd921b",
+      "baselineSha256": "fa80967eb4b21f83633151b11278eb2b07e3eb0d874b4f27259e41011ffd921b",
+      "unchanged": true
+    },
+    {
+      "path": "lib/dsn.ts",
+      "sha256": "c16fef76e9355fe88ba0e671b5da6dcb5da3a60adf0c488e93df8887ee60e45b",
+      "baselineSha256": "c16fef76e9355fe88ba0e671b5da6dcb5da3a60adf0c488e93df8887ee60e45b",
+      "unchanged": true
+    },
+    {
+      "path": "lib/station-weather-context.ts",
+      "sha256": "1e4165ed729dcd72a1c26cc82d32af85dbdf18ec15897bd390db8e32e74d26fe",
+      "baselineSha256": "1e4165ed729dcd72a1c26cc82d32af85dbdf18ec15897bd390db8e32e74d26fe",
+      "unchanged": true
+    },
+    {
+      "path": "lib/providers/comms.ts",
+      "sha256": "8ba3a6cfbf292d328b36e085168bf7309d0a3d237bd3551efd283f51a65e7e53",
+      "baselineSha256": "8ba3a6cfbf292d328b36e085168bf7309d0a3d237bd3551efd283f51a65e7e53",
+      "unchanged": true
+    },
+    {
+      "path": "lib/engineering-evidence/communications.ts",
+      "sha256": "388a82a35c507bc620ddf7779d812f0c6991f0a5f9531e6847c1c4de541c4a00",
+      "baselineSha256": "388a82a35c507bc620ddf7779d812f0c6991f0a5f9531e6847c1c4de541c4a00",
+      "unchanged": true
+    },
+    {
+      "path": "lib/engineering-evidence/atmosphere.ts",
+      "sha256": "d326b865832e45c025466ed0e23905b1b498242eb2a04a488a1c0294b0d5c114",
+      "baselineSha256": "d326b865832e45c025466ed0e23905b1b498242eb2a04a488a1c0294b0d5c114",
+      "unchanged": true
+    },
+    {
+      "path": "lib/engineering-evidence/uncertainty.ts",
+      "sha256": "0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b",
+      "baselineSha256": "0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b",
+      "unchanged": true
+    },
+    {
+      "path": "lib/engineering-screens.ts",
+      "sha256": "233e8b14aafbc8c086623b1f51cdc91222a0a2fe4e9c7f88cf4a272a344827f2",
+      "baselineSha256": "233e8b14aafbc8c086623b1f51cdc91222a0a2fe4e9c7f88cf4a272a344827f2",
+      "unchanged": true
+    },
+    {
+      "path": "public/data/engineering-evidence/spice-reference.json",
+      "sha256": "8ce06e103b8c07e9bcf4e046a0a1a9aaba3dcd44b41243de11e8c18cb98169aa",
+      "baselineSha256": "8ce06e103b8c07e9bcf4e046a0a1a9aaba3dcd44b41243de11e8c18cb98169aa",
+      "unchanged": true
+    }
+  ]
+}

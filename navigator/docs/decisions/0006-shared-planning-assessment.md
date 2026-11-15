@@ -10,7 +10,7 @@ Requirements have pass/fail/conditional/not-assessed states. The overall result 
 
 ## Consequences
 
-Changing the model meaning increments the version (currently planning-3). Exports retain exact inputs and evidence; imports validate and recompute against installed data. Old input-only shares migrate to schema 2 without changing requested dates. Unsupported coverage is rejected, not silently shortened.
+Changing the model meaning increments the version (currently planning-5; earlier decisions introduced planning-3). Exports retain exact inputs and evidence; imports validate and recompute against installed data. Old input-only shares migrate to schema 2 without changing requested dates. Unsupported coverage is rejected, not silently shortened.
 
 External reports bind to a physical evidence-scope identity that excludes the report array; assessment identity includes reports. This prevents a report from invalidating itself while changes to site, date, hardware, operations or requirements still invalidate its scope. SHA256 is reserved for asset integrity; deterministic scenario keys are cache/comparison identity, not digital signatures.
 
@@ -19,3 +19,7 @@ The UI retains one comparison workspace with contingency, mission-calendar and s
 ## Validation
 
 Analytic electrical fixtures, independent instrument heights, evidence loss, endpoint coverage, key stability, report staleness, full-stay search, CSV/JSON roundtrips and browser workflows exercise the decision boundary. Independent high-resolution terrain/frame validation and actual screen-reader checks are reported separately, never inferred from unit tests.
+
+## 15 November 2026 — planning-5 identity
+
+Corrected Moon-observed Earth range and registered terrain inputs advance model and dataset identities. All comparison flows still use evaluateScenario. New evidence cannot be published from stale numerical inputs/code/receipts: explicit bindings and fail-closed compiler outcome gates preserve scoped audit provenance. This does not qualify missing physical or operations evidence.

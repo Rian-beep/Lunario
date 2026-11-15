@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: archived provider identity, lunar frame, site and every UTC epoch are validated
+ok 1 - archived provider identity, lunar frame, site and every UTC epoch are validated
+  ---
+  duration_ms: 4.217037
+  ...
+# Subtest: reject TDB relabel
+ok 2 - reject TDB relabel
+  ---
+  duration_ms: 3.30445
+  ...
+# Subtest: reject wrong target
+ok 3 - reject wrong target
+  ---
+  duration_ms: 1.398129
+  ...
+# Subtest: reject wrong frame
+ok 4 - reject wrong frame
+  ---
+  duration_ms: 1.199906
+  ...
+# Subtest: reject refraction
+ok 5 - reject refraction
+  ---
+  duration_ms: 2.020956
+  ...
+# Subtest: reject wrong units
+ok 6 - reject wrong units
+  ---
+  duration_ms: 0.887147
+  ...
+# Subtest: reject wrong epoch
+ok 7 - reject wrong epoch
+  ---
+  duration_ms: 0.749513
+  ...
+# Subtest: reject missing count
+ok 8 - reject missing count
+  ---
+  duration_ms: 0.727323
+  ...
+# Subtest: reject provider errors and changed API identities
+ok 9 - reject provider errors and changed API identities
+  ---
+  duration_ms: 1.008483
+  ...
+# Subtest: Earth surface subtraction agrees with independently formed Cartesian ENU vectors
+ok 10 - Earth surface subtraction agrees with independently formed Cartesian ENU vectors
+  ---
+  duration_ms: 0.620167
+  ...
+# Subtest: Sun infinite-distance approximation has a bounded finite-distance parallax
+ok 11 - Sun infinite-distance approximation has a bounded finite-distance parallax
+  ---
+  duration_ms: 1.212566
+  ...
+# Subtest: Earth semidiameter uses site distance at subearth point, limb and antipode
+ok 12 - Earth semidiameter uses site distance at subearth point, limb and antipode
+  ---
+  duration_ms: 0.27396
+  ...
+# Subtest: finite-disk sunlight and Earth-centre contact retain different threshold semantics
+ok 13 - finite-disk sunlight and Earth-centre contact retain different threshold semantics
+  ---
+  duration_ms: 0.307769
+  ...
+# Subtest: catalog actual epochs, byte order and rounded SI ranges are bounded against fresh inputs
+ok 14 - catalog actual epochs, byte order and rounded SI ranges are bounded against fresh inputs
+  ---
+  duration_ms: 9.710098
+  ...
+# Subtest: all 23 cached observer response identities and SHA256 values validate offline
+ok 15 - all 23 cached observer response identities and SHA256 values validate offline
+  ---
+  duration_ms: 13.524669
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 197.58382

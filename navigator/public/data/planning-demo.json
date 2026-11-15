@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "label": "Computed resource-screening demonstration; conditional evidence, not operational readiness",
-  "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
-  "modelVersion": "planning-4",
+  "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+  "modelVersion": "planning-5",
   "sources": {
     "catalog": {
       "path": "public/data/catalog.json",
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153"
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a"
     },
     "evidenceManifest": {
       "path": "public/data/evidence-manifest.json",
-      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9"
+      "sha256": "70e3560c6776f73d960b5c7d96f123371291d06ffc7148029bf792df24b45c37"
     },
     "landingSites": {
       "path": "lib/landing-sites.ts",
@@ -185,10 +185,10 @@
       "startUtc": "2027-06-29T11:00:00.000Z",
       "endUtcExclusive": "2027-07-13T11:00:00.000Z",
       "assessment": {
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
-        "scenarioKey": "planning-4-a4562d21-da81ecdd-1063",
-        "evidenceScopeKey": "planning-4-a4562d21-da81ecdd-1063",
-        "modelVersion": "planning-4",
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+        "scenarioKey": "planning-5-127ae241-310c465b-1088",
+        "evidenceScopeKey": "planning-5-127ae241-310c465b-1088",
+        "modelVersion": "planning-5",
         "scope": "resource-screening",
         "outcome": "conditional",
         "constraints": [
@@ -545,7 +545,7 @@
             "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -555,7 +555,8 @@
             "coverage": "complete",
             "notes": [
               "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
-              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005.",
+              "Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference."
             ]
           },
           {
@@ -565,7 +566,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -586,7 +587,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -607,7 +608,7 @@
             "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": null,
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -19596,10 +19597,10 @@
       "startUtc": "2027-07-13T11:00:00.000Z",
       "endUtcExclusive": "2027-07-27T11:00:00.000Z",
       "assessment": {
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
-        "scenarioKey": "planning-4-ec878dab-e744acf1-1063",
-        "evidenceScopeKey": "planning-4-ec878dab-e744acf1-1063",
-        "modelVersion": "planning-4",
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+        "scenarioKey": "planning-5-1117d0cb-160f1af7-1088",
+        "evidenceScopeKey": "planning-5-1117d0cb-160f1af7-1088",
+        "modelVersion": "planning-5",
         "scope": "resource-screening",
         "outcome": "fails-assessed",
         "constraints": [
@@ -19986,7 +19987,7 @@
             "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -19996,7 +19997,8 @@
             "coverage": "complete",
             "notes": [
               "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
-              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005.",
+              "Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference."
             ]
           },
           {
@@ -20006,7 +20008,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -20027,7 +20029,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -20048,7 +20050,7 @@
             "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": null,
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -39052,10 +39054,10 @@
       "startUtc": "2027-07-13T11:00:00.000Z",
       "endUtcExclusive": "2027-07-27T11:00:00.000Z",
       "assessment": {
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
-        "scenarioKey": "planning-4-8cfc72da-9855a08e-1068",
-        "evidenceScopeKey": "planning-4-8cfc72da-9855a08e-1068",
-        "modelVersion": "planning-4",
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+        "scenarioKey": "planning-5-6c3bfefa-36f1ebc8-1093",
+        "evidenceScopeKey": "planning-5-6c3bfefa-36f1ebc8-1093",
+        "modelVersion": "planning-5",
         "scope": "resource-screening",
         "outcome": "conditional",
         "constraints": [
@@ -39412,7 +39414,7 @@
             "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -39422,7 +39424,8 @@
             "coverage": "complete",
             "notes": [
               "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
-              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005.",
+              "Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference."
             ]
           },
           {
@@ -39432,7 +39435,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -39453,7 +39456,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -39474,7 +39477,7 @@
             "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": null,
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -58463,10 +58466,10 @@
       "startUtc": "2027-06-29T11:00:00.000Z",
       "endUtcExclusive": "2027-07-13T11:00:00.000Z",
       "assessment": {
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
-        "scenarioKey": "planning-4-30d89265-e9c7d20f-1056",
-        "evidenceScopeKey": "planning-4-30d89265-e9c7d20f-1056",
-        "modelVersion": "planning-4",
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+        "scenarioKey": "planning-5-bb3a005-16c6fc49-1081",
+        "evidenceScopeKey": "planning-5-bb3a005-16c6fc49-1081",
+        "modelVersion": "planning-5",
         "scope": "resource-screening",
         "outcome": "incomplete",
         "constraints": [
@@ -58823,7 +58826,7 @@
             "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
             "sourceSpacingM": null,
             "effectiveResolutionM": null,
@@ -58833,7 +58836,8 @@
             "coverage": "complete",
             "notes": [
               "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
-              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+              "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005.",
+              "Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference."
             ]
           },
           {
@@ -58843,7 +58847,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -58865,7 +58869,7 @@
             "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
             "sourceSpacingM": 40,
             "effectiveResolutionM": null,
@@ -58887,7 +58891,7 @@
             "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
             "productId": "catalog.json",
             "version": null,
-            "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+            "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
             "frame": null,
             "sourceSpacingM": null,
             "effectiveResolutionM": null,

@@ -1,0 +1,17 @@
+[
+  {
+    "path": "docs/qa/scientific-audit/ui/references/clipboard.json",
+    "sha256": "1549ee93e8144d6d346a08bc9d5493057614a1a23894edf4539dc79cf661119c",
+    "url": "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/"
+  },
+  {
+    "path": "docs/qa/scientific-audit/ui/references/canvas.json",
+    "sha256": "d0b3d4a59bf0e5a00b977dc8e65c8795b80fb59c47e13f0b222aa74110ad3960",
+    "url": "https://html.spec.whatwg.org/multipage/canvas.html"
+  },
+  {
+    "path": "docs/qa/scientific-audit/ui/references/contrast.json",
+    "sha256": "7c2c05a614100841142a97cb95693394998b395fcf06d497641c902bb473b5f8",
+    "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+  }
+]

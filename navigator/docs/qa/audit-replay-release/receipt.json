@@ -1,0 +1,48 @@
+{
+  "checkedUtc": "2026-11-15T15:40:38.416184+00:00",
+  "sourceCommit": "774956fb63f9b6aa38f057c0a6090bf39007834c",
+  "software": {
+    "tests": 1361,
+    "failed": 0,
+    "skipped": 0,
+    "typecheck": "pass",
+    "lint": "pass",
+    "nextBuild": "pass",
+    "webBuild": "pass",
+    "standaloneBuild": "pass",
+    "slopScan": {
+      "findings": 11,
+      "review": "Intentional validation/cleanup/storage fallbacks, error wrapping with causes, test alias and directory fanout; no new swallowed production error found."
+    }
+  },
+  "offline": {
+    "bytes": 97610381,
+    "sha256": "21c24beda8e7dc9b31d638835dbe6d24f42ca76ecca90f499b0bb0b5634aedcb",
+    "networkIndependent": true
+  },
+  "web": {
+    "receiptSha256": "5bac25789a79e765b893a13786c047b1cc95693bb79241591bee03edccc705c9",
+    "verifiedFiles": 64
+  },
+  "science": {
+    "model": "planning-5",
+    "register": "../scientific-audit/VERIFICATION.md",
+    "verifiedBoundedClaims": 41,
+    "uncertain": 21,
+    "failingRecordedComparisons": 0,
+    "operationalQualification": false
+  },
+  "browser": {
+    "flightGroups": 16,
+    "missionPathTransports": 2,
+    "earthMoonTransferTransports": 2,
+    "chartImageTransports": 2,
+    "locationCountryAudienceCases": 18
+  },
+  "limits": [
+    "No confirmed as-flown lander/Earth-launch/ascent series obtained; two bounded reference/orbital paths bundled.",
+    "IAU_MOON replay is not qualified against map ME terrain; no attitude, burn or contact inferred.",
+    "Global NASA display detail is not a touchdown footprint measurement; authentic Cesium close-up texture acceptance remains unresolved.",
+    "Physical DEM/frame/horizon, actual vehicle/GNC/contact, thermal/RF/station-service qualification and human/device acceptance remain open."
+  ]
+}

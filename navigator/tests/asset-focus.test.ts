@@ -102,3 +102,17 @@ test('geocentric NASA direction conversion preserves centre ranges and right-han
  near(Math.hypot(...nasaDirectionToBodyPoint([.6,.8,0],384400)),384400);
  assert.throws(()=>nasaDirectionToBodyPoint([1,1,0],384400),RangeError);
 });
+
+test('already-wide endpoints do not jump when a radial leg has no clearance left to gain',()=>{
+  for(const flight of [
+    {...plan,fromCamera:[200000,800000,0] as Point3},
+    {...plan,toCamera:[584400,800000,0] as Point3},
+  ]){
+    for(const boundary of [ASSET_FOCUS_MS.clearance,ASSET_FOCUS_MS.clearance+ASSET_FOCUS_MS.transfer,total]){
+      const left=sampleAssetFlight(flight,flight.startMs+boundary-.01);
+      const right=sampleAssetFlight(flight,flight.startMs+boundary+.01);
+      assert.ok(distance(left.camera,right.camera)<.001,`camera discontinuity at ${boundary} ms`);
+    }
+    assert.deepEqual(sampleAssetFlight(flight,flight.startMs+total).camera,flight.toCamera);
+  }
+});

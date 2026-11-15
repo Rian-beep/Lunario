@@ -1,6 +1,6 @@
 # Planning models and evidence boundaries
 
-The `planning-4` assessment evaluates explicit mission assumptions against prepared celestial directions and terrain horizons. It is a resource screening tool. Selecting landing-readiness scope adds required external evidence rows; it does not create missing trajectory, hazard or thermal evidence.
+The `planning-5` assessment evaluates explicit mission assumptions against prepared celestial directions and terrain horizons. It is a resource screening tool. Selecting landing-readiness scope adds required external evidence rows; it does not create missing trajectory, hazard or thermal evidence.
 
 ## Time and coverage
 
@@ -24,7 +24,7 @@ The evaluator retains interval-end storage and all operation subsegments. It fin
 
 ## Requirements and identity
 
-Equality meets a configured limit. Numerical comparisons use a 1e−9 tolerance in the metric's units, not an engineering safety margin. Required failures take precedence over missing evidence; missing required evidence prevents a complete pass. Borrowed or partial evidence makes an otherwise passing result conditional. No configured requirements gives `not-configured`.
+Equality meets a configured limit. Canonical assessment requirement comparisons use a 1e−9 tolerance in the metric's units, not an engineering safety margin. Required failures take precedence over missing evidence; missing required evidence prevents a complete pass. Borrowed or partial evidence makes an otherwise passing result conditional. No configured requirements gives `not-configured`.
 
 Free-space radio calculations use user-provided hardware and range assumptions. Geometric Earth visibility is not station availability, link acquisition or a service commitment. External reported passes remain conditional; changed physical inputs or requirements make their binding stale. An untimed aggregate failure is identified without inventing a first event time.
 
@@ -88,3 +88,7 @@ The additional engineering workspace evaluates a separate, explicitly conditiona
 Seventy-five independently generated CSPICE station samples and the published JPL atmospheric arithmetic example are documented under `public/data/engineering-evidence/README.md`. Fresh source conventions identify the DE440-PA-to-DE421-ME rotation; original catalog header/EOP provenance and propagated terrain/frame/event uncertainty remain unresolved. The reference checks do not certify the old catalog or resolve fine landing hazards.
 
 Declared-bounds results sample lower/nominal/upper combinations of at most three declared fields (27 cases), retaining exact requirements and operations through `evaluateScenario`. Sampled minima/maxima and outcome stability are not continuous enclosures, probabilities or qualified uncertainty intervals. Absent or unsupported bounds remain unquantified. Canonical `planning-4` assessment meaning/numerics are unchanged by these supplementary workflows.
+
+## 15 November 2026: planning-5 audit addendum
+
+Model 5 binds the regenerated registered terrain and Moon-observed Earth range to new dataset identities. The producer explicitly requests UT/AIRLESS; Earth range is target399 from Moon centre500@301, quantity20. Source code, inputs and comparison receipts are hash-bound before publishing verification; this checks freshness, not observation truth. Analytical engineering screens retain their disclosed direct/open-boundary comparisons and are not governed by the canonical 1e−9 equality rule. See the current scientific verification register and independent final review. Original full polar horizon masks remain unregenerated and frame/physical skyline qualification remains unresolved.

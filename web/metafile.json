@@ -44,12 +44,17 @@
       "format": "esm"
     },
     "components/audience/response-plot.tsx": {
-      "bytes": 3297,
+      "bytes": 4024,
       "imports": [
         {
           "path": "node_modules/react/index.js",
           "kind": "import-statement",
           "original": "react"
+        },
+        {
+          "path": "components/chart-image-actions.tsx",
+          "kind": "import-statement",
+          "original": "@/components/chart-image-actions"
         },
         {
           "path": "components/audience/audience.module.css",
@@ -369,6 +374,32 @@
     "components/branding/lunario-vendor.generated.ts": {
       "bytes": 34209,
       "imports": [],
+      "format": "esm"
+    },
+    "components/chart-image-actions.tsx": {
+      "bytes": 3206,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        {
+          "path": "lib/chart-image.ts",
+          "kind": "import-statement",
+          "original": "@/lib/chart-image"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
       "format": "esm"
     },
     "components/education-materials/material-builder.tsx": {
@@ -722,8 +753,111 @@
       ],
       "format": "esm"
     },
+    "components/mission-trajectories/replay.tsx": {
+      "bytes": 7114,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "node_modules/three/examples/jsm/controls/OrbitControls.js",
+          "kind": "import-statement",
+          "original": "three/examples/jsm/controls/OrbitControls.js"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "lib/visual-moon-device.ts",
+          "kind": "import-statement",
+          "original": "../../lib/visual-moon-device"
+        },
+        {
+          "path": "components/workbench/scene/nasa-globe.ts",
+          "kind": "import-statement",
+          "original": "../workbench/scene/nasa-globe"
+        },
+        {
+          "path": "lib/mission-trajectories.ts",
+          "kind": "import-statement",
+          "original": "../../lib/mission-trajectories"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/mission-trajectories/selector.tsx": {
+      "bytes": 6272,
+      "imports": [
+        {
+          "path": "components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "lib/mission-trajectories-catalog.ts",
+          "kind": "import-statement",
+          "original": "../../lib/mission-trajectories-catalog"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/mission-trajectories/workspace.tsx": {
+      "bytes": 1051,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "components/mission-trajectories/selector.tsx",
+          "kind": "import-statement",
+          "original": "./selector"
+        },
+        {
+          "path": "components/mission-trajectories/replay.tsx",
+          "kind": "import-statement",
+          "original": "./replay"
+        },
+        {
+          "path": "lib/mission-trajectories-catalog.ts",
+          "kind": "import-statement",
+          "original": "../../lib/mission-trajectories-catalog"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
     "components/navigator.tsx": {
-      "bytes": 104964,
+      "bytes": 107009,
       "imports": [
         {
           "path": "components/mission-history/index.tsx",
@@ -1019,6 +1153,21 @@
           "path": "lib/assessment.ts",
           "kind": "import-statement",
           "original": "@/lib/assessment"
+        },
+        {
+          "path": "components/science-framework/index.tsx",
+          "kind": "import-statement",
+          "original": "@/components/science-framework"
+        },
+        {
+          "path": "lib/generated/scientific-verification.json",
+          "kind": "import-statement",
+          "original": "@/lib/generated/scientific-verification.json"
+        },
+        {
+          "path": "components/mission-trajectories/workspace.tsx",
+          "kind": "dynamic-import",
+          "original": "@/components/mission-trajectories/workspace"
         },
         {
           "path": "components/workbench/touchdown-lab.tsx",
@@ -1438,6 +1587,63 @@
           "original": "react/jsx-runtime"
         }
       ],
+      "format": "esm"
+    },
+    "components/science-framework/equations.tsx": {
+      "bytes": 16959,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/science-framework/index.tsx": {
+      "bytes": 11185,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "lib/science-framework.ts",
+          "kind": "import-statement",
+          "original": "../../lib/science-framework"
+        },
+        {
+          "path": "components/science-framework/equations.tsx",
+          "kind": "import-statement",
+          "original": "./equations"
+        },
+        {
+          "path": "components/science-framework/styles.ts",
+          "kind": "import-statement",
+          "original": "./styles"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/science-framework/styles.ts": {
+      "bytes": 3681,
+      "imports": [],
       "format": "esm"
     },
     "components/site-shell-nav.tsx": {
@@ -2500,7 +2706,7 @@
       "format": "esm"
     },
     "components/workbench/public-exploration.tsx": {
-      "bytes": 3689,
+      "bytes": 3888,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -2833,7 +3039,7 @@
       "format": "esm"
     },
     "components/workbench/scene/nasa-globe.ts": {
-      "bytes": 3653,
+      "bytes": 4533,
       "imports": [
         {
           "path": "node_modules/three/build/three.module.js",
@@ -2846,9 +3052,19 @@
           "original": "@/lib/moon-atlas-texture"
         },
         {
-          "path": "lib/lunar-appearance.ts",
+          "path": "lib/visual-moon.ts",
           "kind": "import-statement",
-          "original": "@/lib/lunar-appearance"
+          "original": "@/lib/visual-moon"
+        },
+        {
+          "path": "components/workbench/scene/visual-moon/assets.ts",
+          "kind": "import-statement",
+          "original": "./visual-moon/assets"
+        },
+        {
+          "path": "components/workbench/scene/visual-moon/material.ts",
+          "kind": "import-statement",
+          "original": "./visual-moon/material"
         },
         {
           "path": "components/workbench/scene/surface.ts",
@@ -2874,7 +3090,7 @@
       "format": "esm"
     },
     "components/workbench/scene/runtime.ts": {
-      "bytes": 101514,
+      "bytes": 102395,
       "imports": [
         {
           "path": "components/workbench/scene/pole-labels.ts",
@@ -3007,6 +3223,11 @@
           "original": "@/lib/site-transition"
         },
         {
+          "path": "lib/visual-moon-device.ts",
+          "kind": "import-statement",
+          "original": "@/lib/visual-moon-device"
+        },
+        {
           "path": "components/workbench/scene/nasa-globe.ts",
           "kind": "import-statement",
           "original": "./nasa-globe"
@@ -3061,8 +3282,50 @@
       ],
       "format": "esm"
     },
+    "components/workbench/scene/visual-moon/assets.ts": {
+      "bytes": 5157,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "lib/moon-atlas-texture.ts",
+          "kind": "import-statement",
+          "original": "@/lib/moon-atlas-texture"
+        },
+        {
+          "path": "lib/public-assets.ts",
+          "kind": "import-statement",
+          "original": "@/lib/public-assets"
+        },
+        {
+          "path": "lib/visual-moon.ts",
+          "kind": "import-statement",
+          "original": "@/lib/visual-moon"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/workbench/scene/visual-moon/material.ts": {
+      "bytes": 2461,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "lib/lunar-appearance.ts",
+          "kind": "import-statement",
+          "original": "@/lib/lunar-appearance"
+        }
+      ],
+      "format": "esm"
+    },
     "components/workbench/science-charts.tsx": {
-      "bytes": 31550,
+      "bytes": 32568,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -3073,6 +3336,11 @@
           "path": "components/ui/button.tsx",
           "kind": "import-statement",
           "original": "@/components/ui/button"
+        },
+        {
+          "path": "components/chart-image-actions.tsx",
+          "kind": "import-statement",
+          "original": "@/components/chart-image-actions"
         },
         {
           "path": "components/workbench/info.tsx",
@@ -3533,7 +3801,7 @@
       "format": "esm"
     },
     "lib/asset-focus.ts": {
-      "bytes": 5995,
+      "bytes": 6249,
       "imports": [
         {
           "path": "lib/site-transition.ts",
@@ -3544,7 +3812,7 @@
       "format": "esm"
     },
     "lib/astro.ts": {
-      "bytes": 21823,
+      "bytes": 22456,
       "imports": [],
       "format": "esm"
     },
@@ -3656,6 +3924,11 @@
     },
     "lib/chart-gradient.ts": {
       "bytes": 4735,
+      "imports": [],
+      "format": "esm"
+    },
+    "lib/chart-image.ts": {
+      "bytes": 9703,
       "imports": [],
       "format": "esm"
     },
@@ -3947,7 +4220,7 @@
       "format": "esm"
     },
     "lib/flight.ts": {
-      "bytes": 10505,
+      "bytes": 11421,
       "imports": [
         {
           "path": "lib/landing-contract.ts",
@@ -3969,6 +4242,10 @@
     },
     "lib/generated/native-mathml.json": {
       "bytes": 198372,
+      "imports": []
+    },
+    "lib/generated/scientific-verification.json": {
+      "bytes": 227918,
       "imports": []
     },
     "lib/global-horizon.ts": {
@@ -4201,6 +4478,37 @@
     },
     "lib/mission-history/us.ts": {
       "bytes": 47560,
+      "imports": [],
+      "format": "esm"
+    },
+    "lib/mission-trajectories-catalog.ts": {
+      "bytes": 10550,
+      "imports": [
+        {
+          "path": "public/data/trajectories/chandrayaan-3-descent-reference.json",
+          "kind": "import-statement",
+          "original": "../public/data/trajectories/chandrayaan-3-descent-reference.json"
+        },
+        {
+          "path": "public/data/trajectories/apollo-15-csm-orbit-reconstructed.json",
+          "kind": "import-statement",
+          "original": "../public/data/trajectories/apollo-15-csm-orbit-reconstructed.json"
+        },
+        {
+          "path": "lib/landing-sites.ts",
+          "kind": "import-statement",
+          "original": "./landing-sites"
+        },
+        {
+          "path": "lib/mission-trajectories.ts",
+          "kind": "import-statement",
+          "original": "./mission-trajectories"
+        }
+      ],
+      "format": "esm"
+    },
+    "lib/mission-trajectories.ts": {
+      "bytes": 11326,
       "imports": [],
       "format": "esm"
     },
@@ -4503,6 +4811,11 @@
       ],
       "format": "esm"
     },
+    "lib/science-framework.ts": {
+      "bytes": 29778,
+      "imports": [],
+      "format": "esm"
+    },
     "lib/search-key.ts": {
       "bytes": 1064,
       "imports": [],
@@ -4726,6 +5039,22 @@
           "path": "lib/engineering-screens.ts",
           "kind": "import-statement",
           "original": "./engineering-screens"
+        }
+      ],
+      "format": "esm"
+    },
+    "lib/visual-moon-device.ts": {
+      "bytes": 449,
+      "imports": [],
+      "format": "esm"
+    },
+    "lib/visual-moon.ts": {
+      "bytes": 2440,
+      "imports": [
+        {
+          "path": "public/data/visual-moon/manifest.json",
+          "kind": "import-statement",
+          "original": "../public/data/visual-moon/manifest.json"
         }
       ],
       "format": "esm"
@@ -51488,7 +51817,7 @@
       "format": "cjs"
     },
     "public/data/evidence-manifest.json": {
-      "bytes": 29484,
+      "bytes": 29933,
       "imports": []
     },
     "public/data/ice/catalog.json": {
@@ -51505,6 +51834,18 @@
     },
     "public/data/stars.json": {
       "bytes": 75006,
+      "imports": []
+    },
+    "public/data/trajectories/apollo-15-csm-orbit-reconstructed.json": {
+      "bytes": 42554,
+      "imports": []
+    },
+    "public/data/trajectories/chandrayaan-3-descent-reference.json": {
+      "bytes": 26964,
+      "imports": []
+    },
+    "public/data/visual-moon/manifest.json": {
+      "bytes": 9713,
       "imports": []
     },
     "public/fonts/lunario/geist-var.woff2": {
@@ -51605,29 +51946,6 @@
       },
       "bytes": 75477
     },
-    "assets/chunks/chunk-2DMNQ476.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c"
-      ],
-      "inputs": {
-        "lib/global-horizon.ts": {
-          "bytesInOutput": 2266
-        }
-      },
-      "bytes": 2376
-    },
     "assets/chunks/chunk-2MUIZFOA.js": {
       "imports": [
         {
@@ -51651,6 +51969,84 @@
         }
       },
       "bytes": 3953
+    },
+    "assets/chunks/chunk-37CHWG2R.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/rapier-IF4EXMSY.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "inputs": {
+        "lib/equipment.ts": {
+          "bytesInOutput": 1771
+        },
+        "lib/touchdown-physics.ts": {
+          "bytesInOutput": 6985
+        },
+        "lib/touchdown-fragments.ts": {
+          "bytesInOutput": 2598
+        }
+      },
+      "bytes": 11646
+    },
+    "assets/chunks/chunk-3DFCVSYE.js": {
+      "imports": [],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u"
+      ],
+      "inputs": {
+        "lib/astro.ts": {
+          "bytesInOutput": 9281
+        }
+      },
+      "bytes": 9449
     },
     "assets/chunks/chunk-3JRKLPAN.js": {
       "imports": [
@@ -51696,8 +52092,29 @@
       },
       "bytes": 264344
     },
-    "assets/chunks/chunk-52Q4JTOF.js": {
-      "imports": [],
+    "assets/chunks/chunk-5KRKT2ME.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YOLCIZJX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-QFPKXEUA.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
       "exports": [
         "a",
         "b",
@@ -51709,49 +52126,40 @@
         "h",
         "i",
         "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u"
+        "k"
       ],
       "inputs": {
-        "lib/astro.ts": {
-          "bytesInOutput": 9077
+        "lib/celestial-assets.ts": {
+          "bytesInOutput": 4014
+        },
+        "public/data/stars.json": {
+          "bytesInOutput": 43448
+        },
+        "lib/stars.ts": {
+          "bytesInOutput": 2172
+        },
+        "lib/solar-system.ts": {
+          "bytesInOutput": 2786
         }
       },
-      "bytes": 9244
+      "bytes": 52728
     },
-    "assets/chunks/chunk-644FUW43.js": {
+    "assets/chunks/chunk-5X4GV4DI.js": {
       "imports": [
+        {
+          "path": "assets/chunks/chunk-YOLCIZJX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-QFPKXEUA.js",
+          "kind": "import-statement"
+        },
         {
           "path": "assets/chunks/chunk-6EKG2RQK.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CAV3FXKF.js",
-          "kind": "import-statement"
-        },
-        {
           "path": "assets/chunks/chunk-GE4IBOIZ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
           "kind": "import-statement"
         },
         {
@@ -51769,43 +52177,32 @@
         "g",
         "h",
         "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r"
+        "j"
       ],
       "inputs": {
-        "lib/charts.ts": {
-          "bytesInOutput": 5675
+        "components/workbench/public-exploration.tsx": {
+          "bytesInOutput": 3521
         },
-        "components/global-map.tsx": {
-          "bytesInOutput": 12589
+        "lib/public-exploration.ts": {
+          "bytesInOutput": 2415
         },
-        "lib/global-map.ts": {
-          "bytesInOutput": 2264
+        "components/mission-history/index.tsx": {
+          "bytesInOutput": 7193
         },
-        "components/global-map.module.css": {
-          "bytesInOutput": 177
+        "lib/mission-history/us.ts": {
+          "bytesInOutput": 41932
         },
-        "lib/map-overlays/index.ts": {
-          "bytesInOutput": 4104
+        "lib/mission-history/international.ts": {
+          "bytesInOutput": 33689
         },
-        "components/workbench/science-charts.tsx": {
-          "bytesInOutput": 17434
+        "lib/mission-history/index.ts": {
+          "bytesInOutput": 83
         },
-        "components/workbench/gradient-help.tsx": {
-          "bytesInOutput": 5780
-        },
-        "lib/chart-gradient.ts": {
-          "bytesInOutput": 2101
+        "lib/asset-focus.ts": {
+          "bytesInOutput": 2513
         }
       },
-      "bytes": 50619
+      "bytes": 91655
     },
     "assets/chunks/chunk-6EKG2RQK.js": {
       "imports": [
@@ -51856,23 +52253,35 @@
       },
       "bytes": 1197
     },
-    "assets/chunks/chunk-7YW4D3IE.js": {
+    "assets/chunks/chunk-7YBG2SLG.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-JFJDQMQ6.js",
+          "path": "assets/chunks/chunk-NK6FMLPF.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
           "path": "assets/chunks/chunk-6NUZOME5.js",
           "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/rapier-IF4EXMSY.js",
-          "kind": "dynamic-import"
         }
       ],
       "exports": [
@@ -51883,20 +52292,33 @@
         "e",
         "f",
         "g",
-        "h"
+        "h",
+        "i"
       ],
       "inputs": {
-        "lib/equipment.ts": {
-          "bytesInOutput": 1771
+        "lib/moon-atlas-texture.ts": {
+          "bytesInOutput": 1058
         },
-        "lib/touchdown-physics.ts": {
-          "bytesInOutput": 6985
+        "public/data/visual-moon/manifest.json": {
+          "bytesInOutput": 6186
         },
-        "lib/touchdown-fragments.ts": {
-          "bytesInOutput": 2598
+        "lib/visual-moon.ts": {
+          "bytesInOutput": 956
+        },
+        "components/workbench/scene/visual-moon/assets.ts": {
+          "bytesInOutput": 2232
+        },
+        "components/workbench/scene/visual-moon/material.ts": {
+          "bytesInOutput": 1812
+        },
+        "components/workbench/scene/surface.ts": {
+          "bytesInOutput": 3955
+        },
+        "components/workbench/scene/nasa-globe.ts": {
+          "bytesInOutput": 1971
         }
       },
-      "bytes": 11616
+      "bytes": 18628
     },
     "assets/chunks/chunk-AX4KF55O.js": {
       "imports": [],
@@ -51910,6 +52332,89 @@
         }
       },
       "bytes": 841
+    },
+    "assets/chunks/chunk-BX6BTCUD.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-UKKVK22C.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6EKG2RQK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LOKUJV26.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r"
+      ],
+      "inputs": {
+        "lib/charts.ts": {
+          "bytesInOutput": 5675
+        },
+        "components/global-map.tsx": {
+          "bytesInOutput": 12589
+        },
+        "lib/global-map.ts": {
+          "bytesInOutput": 2264
+        },
+        "components/global-map.module.css": {
+          "bytesInOutput": 177
+        },
+        "lib/map-overlays/index.ts": {
+          "bytesInOutput": 4104
+        },
+        "components/workbench/science-charts.tsx": {
+          "bytesInOutput": 18029
+        },
+        "components/workbench/gradient-help.tsx": {
+          "bytesInOutput": 5780
+        },
+        "lib/chart-gradient.ts": {
+          "bytesInOutput": 2101
+        }
+      },
+      "bytes": 51255
     },
     "assets/chunks/chunk-CAV3FXKF.js": {
       "imports": [
@@ -52123,121 +52628,86 @@
       },
       "bytes": 15102
     },
-    "assets/chunks/chunk-CYT4C2C2.js": {
+    "assets/chunks/chunk-CBNQURH6.js": {
       "imports": [],
       "exports": [
-        "$",
-        "A",
-        "Aa",
-        "B",
-        "Ba",
-        "C",
-        "Ca",
-        "D",
-        "Da",
-        "E",
-        "Ea",
-        "F",
-        "Fa",
-        "G",
-        "Ga",
-        "H",
-        "Ha",
-        "I",
-        "Ia",
-        "J",
-        "Ja",
-        "K",
-        "Ka",
-        "L",
-        "La",
-        "M",
-        "Ma",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-        "_",
-        "a",
-        "aa",
-        "b",
-        "ba",
-        "c",
-        "ca",
-        "d",
-        "da",
-        "e",
-        "ea",
-        "f",
-        "fa",
-        "g",
-        "ga",
-        "h",
-        "ha",
-        "i",
-        "ia",
-        "j",
-        "ja",
-        "k",
-        "ka",
-        "l",
-        "la",
-        "m",
-        "ma",
-        "n",
-        "na",
-        "o",
-        "oa",
-        "p",
-        "pa",
-        "q",
-        "qa",
-        "r",
-        "ra",
-        "s",
-        "sa",
-        "t",
-        "ta",
-        "u",
-        "ua",
-        "v",
-        "va",
-        "w",
-        "wa",
-        "x",
-        "xa",
-        "y",
-        "ya",
-        "z",
-        "za"
+        "a"
       ],
       "inputs": {
-        "node_modules/three/build/three.core.js": {
-          "bytesInOutput": 239752
-        },
-        "node_modules/three/build/three.module.js": {
-          "bytesInOutput": 355327
-        },
-        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
-          "bytesInOutput": 1177
-        },
-        "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
-          "bytesInOutput": 438
-        },
-        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
-          "bytesInOutput": 44809
+        "lib/visual-moon-device.ts": {
+          "bytesInOutput": 134
         }
       },
-      "bytes": 642489
+      "bytes": 150
+    },
+    "assets/chunks/chunk-CZXEINOJ.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-JVUNH4JM.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LOKUJV26.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v"
+      ],
+      "inputs": {
+        "lib/audience/guidance.ts": {
+          "bytesInOutput": 2841
+        },
+        "components/audience/audience.module.css": {
+          "bytesInOutput": 224
+        },
+        "lib/education-materials/resource-evidence.ts": {
+          "bytesInOutput": 6921
+        },
+        "components/education-materials/resource-evidence.tsx": {
+          "bytesInOutput": 3780
+        },
+        "lib/scenario-diff.ts": {
+          "bytesInOutput": 2532
+        },
+        "lib/teaching.ts": {
+          "bytesInOutput": 7198
+        }
+      },
+      "bytes": 23917
     },
     "assets/chunks/chunk-GE4IBOIZ.js": {
       "imports": [
@@ -52392,10 +52862,10 @@
       },
       "bytes": 3936
     },
-    "assets/chunks/chunk-GRGAYGQJ.js": {
+    "assets/chunks/chunk-JJGHQNSU.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
           "kind": "import-statement"
         }
       ],
@@ -52403,13 +52873,368 @@
         "a"
       ],
       "inputs": {
-        "node_modules/three/examples/jsm/controls/OrbitControls.js": {
-          "bytesInOutput": 19978
+        "node_modules/three/examples/jsm/loaders/DRACOLoader.js": {
+          "bytesInOutput": 7246
         }
       },
-      "bytes": 20099
+      "bytes": 7375
     },
-    "assets/chunks/chunk-H26GHFIE.js": {
+    "assets/chunks/chunk-JVUNH4JM.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "A",
+        "B",
+        "C",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
+      ],
+      "inputs": {
+        "lib/mission.ts": {
+          "bytesInOutput": 7002
+        },
+        "lib/landing-contract.ts": {
+          "bytesInOutput": 188
+        },
+        "lib/landing-inputs.ts": {
+          "bytesInOutput": 959
+        },
+        "lib/landing-flight.ts": {
+          "bytesInOutput": 7274
+        },
+        "lib/flight.ts": {
+          "bytesInOutput": 5611
+        },
+        "lib/planning-types.ts": {
+          "bytesInOutput": 595
+        },
+        "lib/external-assessments.ts": {
+          "bytesInOutput": 666
+        },
+        "lib/engineering-context.ts": {
+          "bytesInOutput": 1326
+        },
+        "lib/scenario.ts": {
+          "bytesInOutput": 6394
+        },
+        "lib/provenance.ts": {
+          "bytesInOutput": 2020
+        },
+        "lib/analysis-context.ts": {
+          "bytesInOutput": 3076
+        },
+        "lib/mission-events.ts": {
+          "bytesInOutput": 705
+        },
+        "lib/assessment.ts": {
+          "bytesInOutput": 7976
+        }
+      },
+      "bytes": 44276
+    },
+    "assets/chunks/chunk-KIUUUEIZ.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ],
+      "inputs": {
+        "lib/terrain.ts": {
+          "bytesInOutput": 2579
+        }
+      },
+      "bytes": 2710
+    },
+    "assets/chunks/chunk-LOKUJV26.js": {
+      "imports": [],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "inputs": {},
+      "bytes": 781
+    },
+    "assets/chunks/chunk-LQK2EQKI.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c"
+      ],
+      "inputs": {
+        "lib/global-horizon.ts": {
+          "bytesInOutput": 2266
+        }
+      },
+      "bytes": 2376
+    },
+    "assets/chunks/chunk-MLIHDGRM.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b"
+      ],
+      "inputs": {
+        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+          "bytesInOutput": 1174
+        },
+        "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
+          "bytesInOutput": 438
+        },
+        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+          "bytesInOutput": 44622
+        }
+      },
+      "bytes": 46830
+    },
+    "assets/chunks/chunk-NK6FMLPF.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b"
+      ],
+      "inputs": {
+        "lib/nasa-model.ts": {
+          "bytesInOutput": 3609
+        }
+      },
+      "bytes": 3672
+    },
+    "assets/chunks/chunk-QFPKXEUA.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j"
+      ],
+      "inputs": {
+        "lib/dsn.ts": {
+          "bytesInOutput": 5488
+        }
+      },
+      "bytes": 5607
+    },
+    "assets/chunks/chunk-RBG4N6L5.js": {
+      "imports": [],
+      "exports": [
+        "$",
+        "$a",
+        "A",
+        "Aa",
+        "B",
+        "Ba",
+        "C",
+        "Ca",
+        "D",
+        "Da",
+        "E",
+        "Ea",
+        "F",
+        "Fa",
+        "G",
+        "Ga",
+        "H",
+        "Ha",
+        "I",
+        "Ia",
+        "J",
+        "Ja",
+        "K",
+        "Ka",
+        "L",
+        "La",
+        "M",
+        "Ma",
+        "N",
+        "Na",
+        "O",
+        "Oa",
+        "P",
+        "Pa",
+        "Q",
+        "Qa",
+        "R",
+        "Ra",
+        "S",
+        "Sa",
+        "T",
+        "Ta",
+        "U",
+        "Ua",
+        "V",
+        "Va",
+        "W",
+        "Wa",
+        "X",
+        "Xa",
+        "Y",
+        "Ya",
+        "Z",
+        "Za",
+        "_",
+        "_a",
+        "a",
+        "aa",
+        "ab",
+        "b",
+        "ba",
+        "bb",
+        "c",
+        "ca",
+        "cb",
+        "d",
+        "da",
+        "db",
+        "e",
+        "ea",
+        "eb",
+        "f",
+        "fa",
+        "fb",
+        "g",
+        "ga",
+        "gb",
+        "h",
+        "ha",
+        "hb",
+        "i",
+        "ia",
+        "ib",
+        "j",
+        "ja",
+        "jb",
+        "k",
+        "ka",
+        "kb",
+        "l",
+        "la",
+        "lb",
+        "m",
+        "ma",
+        "n",
+        "na",
+        "o",
+        "oa",
+        "p",
+        "pa",
+        "q",
+        "qa",
+        "r",
+        "ra",
+        "s",
+        "sa",
+        "t",
+        "ta",
+        "u",
+        "ua",
+        "v",
+        "va",
+        "w",
+        "wa",
+        "x",
+        "xa",
+        "y",
+        "ya",
+        "z",
+        "za"
+      ],
+      "inputs": {
+        "node_modules/three/build/three.core.js": {
+          "bytesInOutput": 239754
+        },
+        "node_modules/three/build/three.module.js": {
+          "bytesInOutput": 355327
+        }
+      },
+      "bytes": 596310
+    },
+    "assets/chunks/chunk-UKKVK22C.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-V73R7IPJ.js",
@@ -52425,7 +53250,8 @@
         }
       ],
       "exports": [
-        "a"
+        "a",
+        "b"
       ],
       "inputs": {
         "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js": {
@@ -52553,415 +53379,15 @@
         },
         "components/ui/slider.tsx": {
           "bytesInOutput": 1382
+        },
+        "components/chart-image-actions.tsx": {
+          "bytesInOutput": 2490
+        },
+        "lib/chart-image.ts": {
+          "bytesInOutput": 5274
         }
       },
-      "bytes": 24686
-    },
-    "assets/chunks/chunk-HEKWEHTY.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-OMVKELJL.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GE4IBOIZ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-LOKUJV26.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v"
-      ],
-      "inputs": {
-        "lib/audience/guidance.ts": {
-          "bytesInOutput": 2841
-        },
-        "components/audience/audience.module.css": {
-          "bytesInOutput": 224
-        },
-        "lib/education-materials/resource-evidence.ts": {
-          "bytesInOutput": 6921
-        },
-        "components/education-materials/resource-evidence.tsx": {
-          "bytesInOutput": 3780
-        },
-        "lib/scenario-diff.ts": {
-          "bytesInOutput": 2532
-        },
-        "lib/teaching.ts": {
-          "bytesInOutput": 7198
-        }
-      },
-      "bytes": 23917
-    },
-    "assets/chunks/chunk-IQSAYLPU.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-YOLCIZJX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-QFPKXEUA.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6EKG2RQK.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GE4IBOIZ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-LOKUJV26.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j"
-      ],
-      "inputs": {
-        "components/workbench/public-exploration.tsx": {
-          "bytesInOutput": 3379
-        },
-        "lib/public-exploration.ts": {
-          "bytesInOutput": 2415
-        },
-        "components/mission-history/index.tsx": {
-          "bytesInOutput": 7193
-        },
-        "lib/mission-history/us.ts": {
-          "bytesInOutput": 41932
-        },
-        "lib/mission-history/international.ts": {
-          "bytesInOutput": 33689
-        },
-        "lib/mission-history/index.ts": {
-          "bytesInOutput": 83
-        },
-        "lib/asset-focus.ts": {
-          "bytesInOutput": 2488
-        }
-      },
-      "bytes": 91488
-    },
-    "assets/chunks/chunk-JFJDQMQ6.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a"
-      ],
-      "inputs": {
-        "node_modules/three/examples/jsm/loaders/DRACOLoader.js": {
-          "bytesInOutput": 7246
-        }
-      },
-      "bytes": 7375
-    },
-    "assets/chunks/chunk-K3YQ44PF.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-NK6FMLPF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-YOLCIZJX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-QFPKXEUA.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t"
-      ],
-      "inputs": {
-        "lib/celestial-assets.ts": {
-          "bytesInOutput": 4034
-        },
-        "public/data/stars.json": {
-          "bytesInOutput": 43449
-        },
-        "lib/stars.ts": {
-          "bytesInOutput": 2185
-        },
-        "lib/solar-system.ts": {
-          "bytesInOutput": 2790
-        },
-        "lib/moon-atlas-texture.ts": {
-          "bytesInOutput": 1062
-        },
-        "components/workbench/scene/surface.ts": {
-          "bytesInOutput": 3957
-        },
-        "components/workbench/scene/nasa-globe.ts": {
-          "bytesInOutput": 2102
-        }
-      },
-      "bytes": 60210
-    },
-    "assets/chunks/chunk-LOKUJV26.js": {
-      "imports": [],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d"
-      ],
-      "inputs": {},
-      "bytes": 781
-    },
-    "assets/chunks/chunk-NK6FMLPF.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b"
-      ],
-      "inputs": {
-        "lib/nasa-model.ts": {
-          "bytesInOutput": 3609
-        }
-      },
-      "bytes": 3672
-    },
-    "assets/chunks/chunk-OMVKELJL.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "A",
-        "B",
-        "C",
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z"
-      ],
-      "inputs": {
-        "lib/mission.ts": {
-          "bytesInOutput": 7000
-        },
-        "lib/landing-contract.ts": {
-          "bytesInOutput": 188
-        },
-        "lib/landing-inputs.ts": {
-          "bytesInOutput": 959
-        },
-        "lib/landing-flight.ts": {
-          "bytesInOutput": 7274
-        },
-        "lib/flight.ts": {
-          "bytesInOutput": 5305
-        },
-        "lib/planning-types.ts": {
-          "bytesInOutput": 595
-        },
-        "lib/external-assessments.ts": {
-          "bytesInOutput": 666
-        },
-        "lib/engineering-context.ts": {
-          "bytesInOutput": 1326
-        },
-        "lib/scenario.ts": {
-          "bytesInOutput": 6394
-        },
-        "lib/provenance.ts": {
-          "bytesInOutput": 2020
-        },
-        "lib/analysis-context.ts": {
-          "bytesInOutput": 3076
-        },
-        "lib/mission-events.ts": {
-          "bytesInOutput": 705
-        },
-        "lib/assessment.ts": {
-          "bytesInOutput": 7977
-        }
-      },
-      "bytes": 43969
-    },
-    "assets/chunks/chunk-QFPKXEUA.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j"
-      ],
-      "inputs": {
-        "lib/dsn.ts": {
-          "bytesInOutput": 5488
-        }
-      },
-      "bytes": 5607
-    },
-    "assets/chunks/chunk-ULVCNHCJ.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f"
-      ],
-      "inputs": {
-        "lib/terrain.ts": {
-          "bytesInOutput": 2579
-        }
-      },
-      "bytes": 2710
+      "bytes": 32466
     },
     "assets/chunks/chunk-V73R7IPJ.js": {
       "imports": [
@@ -53184,6 +53610,18 @@
       },
       "bytes": 1313
     },
+    "assets/chunks/chunk-W6R2IQQK.js": {
+      "imports": [],
+      "exports": [
+        "a"
+      ],
+      "inputs": {
+        "lib/landing-sites.ts": {
+          "bytesInOutput": 17370
+        }
+      },
+      "bytes": 17386
+    },
     "assets/chunks/chunk-YOLCIZJX.js": {
       "imports": [],
       "exports": [
@@ -53200,6 +53638,23 @@
         }
       },
       "bytes": 3239
+    },
+    "assets/chunks/chunk-YZRIYDYJ.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a"
+      ],
+      "inputs": {
+        "node_modules/three/examples/jsm/controls/OrbitControls.js": {
+          "bytesInOutput": 19978
+        }
+      },
+      "bytes": 20100
     },
     "assets/chunks/chunk-Z5OIDHRQ.js": {
       "imports": [
@@ -53220,18 +53675,22 @@
       },
       "bytes": 1889
     },
-    "assets/chunks/create-ion-moon-M6BLBT75.js": {
+    "assets/chunks/create-ion-moon-JLWUC2HL.js": {
       "imports": [
+        {
+          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "kind": "import-statement"
+        },
         {
           "path": "assets/chunks/chunk-NK6FMLPF.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-JFJDQMQ6.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
           "kind": "import-statement"
         },
         {
@@ -53288,7 +53747,7 @@
           "bytesInOutput": 4096
         }
       },
-      "bytes": 148766
+      "bytes": 148805
     },
     "assets/chunks/esm-24JYF5T7.js": {
       "imports": [
@@ -53327,30 +53786,14 @@
       },
       "bytes": 19404
     },
-    "assets/chunks/evidence-workspace-2QOVBKDX.js": {
+    "assets/chunks/evidence-workspace-4G6B2HR7.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-QFPKXEUA.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-OMVKELJL.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
+          "path": "assets/chunks/chunk-JVUNH4JM.js",
           "kind": "import-statement"
         },
         {
@@ -53358,11 +53801,27 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-2MUIZFOA.js",
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -53608,18 +54067,26 @@
       },
       "bytes": 1211
     },
-    "assets/chunks/scene-OVZ5S4OZ.js": {
+    "assets/chunks/scene-N7GF7MMF.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-K3YQ44PF.js",
+          "path": "assets/chunks/chunk-37CHWG2R.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "path": "assets/chunks/chunk-5KRKT2ME.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-IQSAYLPU.js",
+          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-5X4GV4DI.js",
           "kind": "import-statement"
         },
         {
@@ -53635,39 +54102,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
           "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-7YW4D3IE.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GRGAYGQJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-JFJDQMQ6.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
           "kind": "import-statement"
         },
         {
@@ -53679,7 +54114,43 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-CBNQURH6.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -53691,7 +54162,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/create-ion-moon-M6BLBT75.js",
+          "path": "assets/chunks/create-ion-moon-JLWUC2HL.js",
           "kind": "dynamic-import"
         }
       ],
@@ -53702,7 +54173,7 @@
       "cssBundle": "assets/chunks/scene-A5J6V53S.css",
       "inputs": {
         "components/workbench/scene.tsx": {
-          "bytesInOutput": 22199
+          "bytesInOutput": 22202
         },
         "lib/after-paint.ts": {
           "bytesInOutput": 279
@@ -53717,7 +54188,7 @@
           "bytesInOutput": 8474
         },
         "node_modules/satellite.js/dist/satellite.es.js": {
-          "bytesInOutput": 21763
+          "bytesInOutput": 21804
         },
         "lib/orbits.ts": {
           "bytesInOutput": 5567
@@ -53774,19 +54245,19 @@
           "bytesInOutput": 72
         },
         "components/workbench/scene/material.ts": {
-          "bytesInOutput": 5702
+          "bytesInOutput": 5705
         },
         "components/workbench/scene/vehicle.ts": {
           "bytesInOutput": 719
         },
         "components/workbench/scene/contact-dynamics.ts": {
-          "bytesInOutput": 10250
+          "bytesInOutput": 10253
         },
         "components/workbench/scene/runtime.ts": {
-          "bytesInOutput": 51439
+          "bytesInOutput": 51949
         }
       },
-      "bytes": 172607
+      "bytes": 173278
     },
     "assets/chunks/solar-system-view-HLMJ2GOP.css": {
       "imports": [],
@@ -53797,14 +54268,14 @@
       },
       "bytes": 4478
     },
-    "assets/chunks/solar-system-view-Q4LEP7TQ.js": {
+    "assets/chunks/solar-system-view-P4X77ESF.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-K3YQ44PF.js",
+          "path": "assets/chunks/chunk-5KRKT2ME.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
           "kind": "import-statement"
         },
         {
@@ -53820,7 +54291,27 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GE4IBOIZ.js",
           "kind": "import-statement"
         },
         {
@@ -53828,23 +54319,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GRGAYGQJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -53869,16 +54348,16 @@
           "bytesInOutput": 197
         }
       },
-      "bytes": 16627
+      "bytes": 16692
     },
-    "assets/chunks/suitability-ZNWHTLID.js": {
+    "assets/chunks/suitability-T2755WX2.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-AX4KF55O.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
           "kind": "import-statement"
         },
         {
@@ -53886,11 +54365,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -53922,34 +54401,30 @@
       },
       "bytes": 9465
     },
-    "assets/chunks/teaching-studio-3AF4IFKL.js": {
+    "assets/chunks/teaching-studio-3SDQF4NV.css": {
+      "imports": [],
+      "inputs": {
+        "components/audience/audience.module.css": {
+          "bytesInOutput": 4123
+        },
+        "components/education-materials/materials.module.css": {
+          "bytesInOutput": 742
+        }
+      },
+      "bytes": 4866
+    },
+    "assets/chunks/teaching-studio-J6D7WI43.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-HEKWEHTY.js",
+          "path": "assets/chunks/chunk-CZXEINOJ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-H26GHFIE.js",
+          "path": "assets/chunks/chunk-UKKVK22C.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-OMVKELJL.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
+          "path": "assets/chunks/chunk-JVUNH4JM.js",
           "kind": "import-statement"
         },
         {
@@ -53957,11 +54432,27 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-2MUIZFOA.js",
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -54004,7 +54495,7 @@
           "bytesInOutput": 1146
         },
         "components/audience/response-plot.tsx": {
-          "bytesInOutput": 3185
+          "bytesInOutput": 3703
         },
         "components/audience/solar-lesson.tsx": {
           "bytesInOutput": 5944
@@ -54013,28 +54504,16 @@
           "bytesInOutput": 1895
         }
       },
-      "bytes": 62940
+      "bytes": 63466
     },
-    "assets/chunks/teaching-studio-3SDQF4NV.css": {
-      "imports": [],
-      "inputs": {
-        "components/audience/audience.module.css": {
-          "bytesInOutput": 4123
-        },
-        "components/education-materials/materials.module.css": {
-          "bytesInOutput": 742
-        }
-      },
-      "bytes": 4866
-    },
-    "assets/chunks/terrain-7A5MSOGA.js": {
+    "assets/chunks/terrain-MYQRBVNG.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -54058,26 +54537,18 @@
       "inputs": {},
       "bytes": 240
     },
-    "assets/chunks/touchdown-lab-4JE5LJ7I.js": {
+    "assets/chunks/touchdown-lab-3KMK37TC.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-7YW4D3IE.js",
+          "path": "assets/chunks/chunk-37CHWG2R.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-GRGAYGQJ.js",
+          "path": "assets/chunks/chunk-JJGHQNSU.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-JFJDQMQ6.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CYT4C2C2.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "path": "assets/chunks/chunk-MLIHDGRM.js",
           "kind": "import-statement"
         },
         {
@@ -54085,7 +54556,19 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-2MUIZFOA.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
           "kind": "import-statement"
         },
         {
@@ -54114,7 +54597,7 @@
           "bytesInOutput": 461
         }
       },
-      "bytes": 18257
+      "bytes": 18281
     },
     "assets/chunks/touchdown-lab-XDJ5PZVN.css": {
       "imports": [],
@@ -54149,50 +54632,18 @@
       },
       "bytes": 5922
     },
-    "assets/chunks/workspace-2WESRRYE.js": {
+    "assets/chunks/workspace-2NVHXMLD.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-644FUW43.js",
+          "path": "assets/chunks/chunk-BX6BTCUD.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-6EKG2RQK.js",
+          "path": "assets/chunks/chunk-UKKVK22C.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-H26GHFIE.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-OMVKELJL.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-AX4KF55O.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "path": "assets/chunks/chunk-JVUNH4JM.js",
           "kind": "import-statement"
         },
         {
@@ -54200,11 +54651,43 @@
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-6EKG2RQK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-2MUIZFOA.js",
           "kind": "import-statement"
         },
         {
+          "path": "assets/chunks/chunk-AX4KF55O.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
           "kind": "import-statement"
         },
         {
@@ -54261,6 +54744,90 @@
       },
       "bytes": 40952
     },
+    "assets/chunks/workspace-JI7O7YVR.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-CBNQURH6.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-W6R2IQQK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LOKUJV26.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "MissionPathsWorkspace"
+      ],
+      "entryPoint": "components/mission-trajectories/workspace.tsx",
+      "inputs": {
+        "components/mission-trajectories/workspace.tsx": {
+          "bytesInOutput": 478
+        },
+        "public/data/trajectories/chandrayaan-3-descent-reference.json": {
+          "bytesInOutput": 14485
+        },
+        "public/data/trajectories/apollo-15-csm-orbit-reconstructed.json": {
+          "bytesInOutput": 22295
+        },
+        "lib/mission-trajectories.ts": {
+          "bytesInOutput": 4081
+        },
+        "lib/mission-trajectories-catalog.ts": {
+          "bytesInOutput": 8075
+        },
+        "components/mission-trajectories/selector.tsx": {
+          "bytesInOutput": 5369
+        },
+        "components/mission-trajectories/replay.tsx": {
+          "bytesInOutput": 4775
+        }
+      },
+      "bytes": 60187
+    },
     "assets/chunks/workspace-ZATT2AM5.css": {
       "imports": [],
       "inputs": {
@@ -54282,409 +54849,6 @@
         }
       },
       "bytes": 23280
-    },
-    "assets/main-7QC2BFEN.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-Z5OIDHRQ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-IQSAYLPU.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-YOLCIZJX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-QFPKXEUA.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-644FUW43.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6EKG2RQK.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-HEKWEHTY.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-H26GHFIE.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-OMVKELJL.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3JRKLPAN.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-AX4KF55O.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2DMNQ476.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-ULVCNHCJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-52Q4JTOF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-CAV3FXKF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-V73R7IPJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-2MUIZFOA.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GE4IBOIZ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-LOKUJV26.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/suitability-ZNWHTLID.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/terrain-7A5MSOGA.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/global-terrain-OPWCXIAB.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/ice-TY4NEWQU.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/catalog-PNMXDOQ6.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/touchdown-lab-4JE5LJ7I.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/solar-system-view-Q4LEP7TQ.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/scene-OVZ5S4OZ.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/workspace-2WESRRYE.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/teaching-studio-3AF4IFKL.js",
-          "kind": "dynamic-import"
-        },
-        {
-          "path": "assets/chunks/evidence-workspace-2QOVBKDX.js",
-          "kind": "dynamic-import"
-        }
-      ],
-      "exports": [],
-      "entryPoint": "web-source/main.tsx",
-      "cssBundle": "assets/main-DXBTEAL3.css",
-      "inputs": {
-        "node_modules/scheduler/cjs/scheduler.production.js": {
-          "bytesInOutput": 3662
-        },
-        "node_modules/scheduler/index.js": {
-          "bytesInOutput": 51
-        },
-        "node_modules/react-dom/cjs/react-dom-client.production.js": {
-          "bytesInOutput": 169743
-        },
-        "node_modules/react-dom/client.js": {
-          "bytesInOutput": 253
-        },
-        "web-source/main.tsx": {
-          "bytesInOutput": 216
-        },
-        "lib/map-coverage.ts": {
-          "bytesInOutput": 242
-        },
-        "components/map-screening/styles.css": {
-          "bytesInOutput": 0
-        },
-        "components/map-screening/model.ts": {
-          "bytesInOutput": 150
-        },
-        "components/map-screening/index.tsx": {
-          "bytesInOutput": 0
-        },
-        "components/map-screening/use-map-layers.ts": {
-          "bytesInOutput": 4341
-        },
-        "components/map-screening/runner.ts": {
-          "bytesInOutput": 4059
-        },
-        "components/map-screening/controls.tsx": {
-          "bytesInOutput": 10863
-        },
-        "components/ui-theme-toggle.tsx": {
-          "bytesInOutput": 383
-        },
-        "lib/ui-theme.ts": {
-          "bytesInOutput": 667
-        },
-        "components/branding/lunario-vendor.generated.ts": {
-          "bytesInOutput": 32867
-        },
-        "components/branding/branding.css": {
-          "bytesInOutput": 0
-        },
-        "components/branding/lunar-window-brand.tsx": {
-          "bytesInOutput": 161
-        },
-        "components/branding/lunario-startup.tsx": {
-          "bytesInOutput": 180
-        },
-        "components/branding/lunario-loader-runtime.ts": {
-          "bytesInOutput": 550
-        },
-        "components/branding/lunar-window-loader.tsx": {
-          "bytesInOutput": 317
-        },
-        "components/site-shell-nav.tsx": {
-          "bytesInOutput": 598
-        },
-        "lib/site-shell-nav.ts": {
-          "bytesInOutput": 837
-        },
-        "components/navigator.tsx": {
-          "bytesInOutput": 60835
-        },
-        "lib/custom-marker.ts": {
-          "bytesInOutput": 533
-        },
-        "components/workbench/audience-context.tsx": {
-          "bytesInOutput": 14190
-        },
-        "components/audience/task-strip.tsx": {
-          "bytesInOutput": 4734
-        },
-        "lib/windows.ts": {
-          "bytesInOutput": 2316
-        },
-        "components/workbench/workspace-dialog.tsx": {
-          "bytesInOutput": 497
-        },
-        "lib/inspector-layout.ts": {
-          "bytesInOutput": 221
-        },
-        "lib/playback.ts": {
-          "bytesInOutput": 1239
-        },
-        "components/polar-map.tsx": {
-          "bytesInOutput": 19149
-        },
-        "lib/imagery.ts": {
-          "bytesInOutput": 320
-        },
-        "lib/lighting.ts": {
-          "bytesInOutput": 1330
-        },
-        "lib/polar-imagery.ts": {
-          "bytesInOutput": 686
-        },
-        "components/workbench/data-connections.tsx": {
-          "bytesInOutput": 3975
-        },
-        "lib/providers/contract.ts": {
-          "bytesInOutput": 1108
-        },
-        "lib/providers/noaa-xray.ts": {
-          "bytesInOutput": 4236
-        },
-        "lib/providers/registry.ts": {
-          "bytesInOutput": 1806
-        },
-        "lib/providers/comms.ts": {
-          "bytesInOutput": 894
-        },
-        "components/workbench/data-connections.module.css": {
-          "bytesInOutput": 46
-        },
-        "components/workbench/assessment-explanation.tsx": {
-          "bytesInOutput": 4031
-        },
-        "lib/assessment-explanation.ts": {
-          "bytesInOutput": 4617
-        },
-        "components/workbench/physics-reference.tsx": {
-          "bytesInOutput": 4371
-        },
-        "lib/physics-reference.ts": {
-          "bytesInOutput": 13106
-        },
-        "web-source/lazy-dynamic.mjs": {
-          "bytesInOutput": 970
-        },
-        "lib/landing-sites.ts": {
-          "bytesInOutput": 17471
-        },
-        "lib/landing-catalog.ts": {
-          "bytesInOutput": 709
-        },
-        "components/workbench/audience-guide.tsx": {
-          "bytesInOutput": 1430
-        },
-        "lib/onboarding.ts": {
-          "bytesInOutput": 2953
-        },
-        "components/workbench/audience-guide.module.css": {
-          "bytesInOutput": 109
-        },
-        "components/workbench/alternatives.tsx": {
-          "bytesInOutput": 24939
-        },
-        "public/data/evidence-manifest.json": {
-          "bytesInOutput": 22514
-        },
-        "lib/alternatives.ts": {
-          "bytesInOutput": 5062
-        },
-        "lib/export.ts": {
-          "bytesInOutput": 142
-        },
-        "components/workbench/alternatives.module.css": {
-          "bytesInOutput": 531
-        },
-        "components/workbench/visibility-windows.tsx": {
-          "bytesInOutput": 3844
-        },
-        "components/workbench/visibility-windows.module.css": {
-          "bytesInOutput": 168
-        },
-        "components/workbench/controls.tsx": {
-          "bytesInOutput": 2013
-        },
-        "lib/landing-presets.ts": {
-          "bytesInOutput": 347
-        },
-        "lib/flight-lessons.ts": {
-          "bytesInOutput": 8257
-        },
-        "components/workbench/flight-experiments.tsx": {
-          "bytesInOutput": 12520
-        },
-        "lib/flight-experiments.ts": {
-          "bytesInOutput": 4518
-        },
-        "components/workbench/engineering-comparison.tsx": {
-          "bytesInOutput": 4052
-        },
-        "components/workbench/panels.tsx": {
-          "bytesInOutput": 38176
-        },
-        "lib/search-key.ts": {
-          "bytesInOutput": 327
-        },
-        "docs/qa/horizons-decoded-validation.json": {
-          "bytesInOutput": 1056
-        },
-        "lib/resources.ts": {
-          "bytesInOutput": 4819
-        },
-        "components/workbench/header-landing-status.tsx": {
-          "bytesInOutput": 1592
-        },
-        "lib/planning-demo-loader.ts": {
-          "bytesInOutput": 789
-        },
-        "lib/delayed-landing-demo.ts": {
-          "bytesInOutput": 2872
-        },
-        "components/workbench/teaching-workbench.tsx": {
-          "bytesInOutput": 9514
-        },
-        "components/workbench/teaching-workbench.module.css": {
-          "bytesInOutput": 56
-        },
-        "components/workbench/mission-calendar.tsx": {
-          "bytesInOutput": 8271
-        },
-        "lib/calendar-navigation.ts": {
-          "bytesInOutput": 366
-        },
-        "lib/planning-search.ts": {
-          "bytesInOutput": 3608
-        },
-        "components/workbench/sensitivity-panel.tsx": {
-          "bytesInOutput": 7665
-        },
-        "lib/sensitivity.ts": {
-          "bytesInOutput": 2267
-        },
-        "lib/sensitivity-summary.ts": {
-          "bytesInOutput": 1878
-        },
-        "lib/mitigations.ts": {
-          "bytesInOutput": 1817
-        },
-        "components/workbench/decision-package.tsx": {
-          "bytesInOutput": 1888
-        },
-        "lib/decision-export.ts": {
-          "bytesInOutput": 9219
-        },
-        "components/workbench/engineering-panel.tsx": {
-          "bytesInOutput": 5026
-        },
-        "components/workbench/decision-panel.tsx": {
-          "bytesInOutput": 10579
-        },
-        "components/workbench/evidence-panel.tsx": {
-          "bytesInOutput": 5483
-        },
-        "app/mission-theme.css": {
-          "bytesInOutput": 0
-        },
-        "app/lunario-fonts.css": {
-          "bytesInOutput": 0
-        },
-        "web-source/fonts.css": {
-          "bytesInOutput": 0
-        }
-      },
-      "bytes": 606910
     },
     "assets/main-DXBTEAL3.css": {
       "imports": [
@@ -54747,6 +54911,429 @@
         }
       },
       "bytes": 72187
+    },
+    "assets/main-YFAERREC.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-CZXEINOJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-Z5OIDHRQ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-5X4GV4DI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YOLCIZJX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-QFPKXEUA.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-BX6BTCUD.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-UKKVK22C.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-JVUNH4JM.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-V73R7IPJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6EKG2RQK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3JRKLPAN.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-CAV3FXKF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-2MUIZFOA.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-AX4KF55O.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LQK2EQKI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-W6R2IQQK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GE4IBOIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-LOKUJV26.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/suitability-T2755WX2.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/terrain-MYQRBVNG.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/global-terrain-OPWCXIAB.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/ice-TY4NEWQU.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/catalog-PNMXDOQ6.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/workspace-JI7O7YVR.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/touchdown-lab-3KMK37TC.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/solar-system-view-P4X77ESF.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/scene-N7GF7MMF.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/workspace-2NVHXMLD.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/teaching-studio-J6D7WI43.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "assets/chunks/evidence-workspace-4G6B2HR7.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [],
+      "entryPoint": "web-source/main.tsx",
+      "cssBundle": "assets/main-DXBTEAL3.css",
+      "inputs": {
+        "node_modules/scheduler/cjs/scheduler.production.js": {
+          "bytesInOutput": 3662
+        },
+        "node_modules/scheduler/index.js": {
+          "bytesInOutput": 51
+        },
+        "node_modules/react-dom/cjs/react-dom-client.production.js": {
+          "bytesInOutput": 169794
+        },
+        "node_modules/react-dom/client.js": {
+          "bytesInOutput": 253
+        },
+        "web-source/main.tsx": {
+          "bytesInOutput": 218
+        },
+        "lib/map-coverage.ts": {
+          "bytesInOutput": 242
+        },
+        "components/map-screening/styles.css": {
+          "bytesInOutput": 0
+        },
+        "components/map-screening/model.ts": {
+          "bytesInOutput": 150
+        },
+        "components/map-screening/index.tsx": {
+          "bytesInOutput": 0
+        },
+        "components/map-screening/use-map-layers.ts": {
+          "bytesInOutput": 4349
+        },
+        "components/map-screening/runner.ts": {
+          "bytesInOutput": 4059
+        },
+        "components/map-screening/controls.tsx": {
+          "bytesInOutput": 10865
+        },
+        "components/ui-theme-toggle.tsx": {
+          "bytesInOutput": 385
+        },
+        "lib/ui-theme.ts": {
+          "bytesInOutput": 667
+        },
+        "components/branding/lunario-vendor.generated.ts": {
+          "bytesInOutput": 32867
+        },
+        "components/branding/branding.css": {
+          "bytesInOutput": 0
+        },
+        "components/branding/lunar-window-brand.tsx": {
+          "bytesInOutput": 162
+        },
+        "components/branding/lunario-startup.tsx": {
+          "bytesInOutput": 181
+        },
+        "components/branding/lunario-loader-runtime.ts": {
+          "bytesInOutput": 550
+        },
+        "components/branding/lunar-window-loader.tsx": {
+          "bytesInOutput": 318
+        },
+        "components/site-shell-nav.tsx": {
+          "bytesInOutput": 600
+        },
+        "lib/site-shell-nav.ts": {
+          "bytesInOutput": 837
+        },
+        "components/navigator.tsx": {
+          "bytesInOutput": 62119
+        },
+        "lib/custom-marker.ts": {
+          "bytesInOutput": 533
+        },
+        "components/workbench/audience-context.tsx": {
+          "bytesInOutput": 14281
+        },
+        "components/audience/task-strip.tsx": {
+          "bytesInOutput": 4736
+        },
+        "lib/windows.ts": {
+          "bytesInOutput": 2316
+        },
+        "components/workbench/workspace-dialog.tsx": {
+          "bytesInOutput": 499
+        },
+        "lib/inspector-layout.ts": {
+          "bytesInOutput": 221
+        },
+        "lib/playback.ts": {
+          "bytesInOutput": 1239
+        },
+        "components/polar-map.tsx": {
+          "bytesInOutput": 19209
+        },
+        "lib/imagery.ts": {
+          "bytesInOutput": 320
+        },
+        "lib/lighting.ts": {
+          "bytesInOutput": 1339
+        },
+        "lib/polar-imagery.ts": {
+          "bytesInOutput": 686
+        },
+        "components/workbench/data-connections.tsx": {
+          "bytesInOutput": 3977
+        },
+        "lib/providers/contract.ts": {
+          "bytesInOutput": 1108
+        },
+        "lib/providers/noaa-xray.ts": {
+          "bytesInOutput": 4236
+        },
+        "lib/providers/registry.ts": {
+          "bytesInOutput": 1806
+        },
+        "lib/providers/comms.ts": {
+          "bytesInOutput": 894
+        },
+        "components/workbench/data-connections.module.css": {
+          "bytesInOutput": 46
+        },
+        "components/workbench/assessment-explanation.tsx": {
+          "bytesInOutput": 4033
+        },
+        "lib/assessment-explanation.ts": {
+          "bytesInOutput": 4617
+        },
+        "components/workbench/physics-reference.tsx": {
+          "bytesInOutput": 4373
+        },
+        "lib/physics-reference.ts": {
+          "bytesInOutput": 13106
+        },
+        "web-source/lazy-dynamic.mjs": {
+          "bytesInOutput": 971
+        },
+        "lib/landing-catalog.ts": {
+          "bytesInOutput": 709
+        },
+        "components/workbench/audience-guide.tsx": {
+          "bytesInOutput": 1432
+        },
+        "lib/onboarding.ts": {
+          "bytesInOutput": 2953
+        },
+        "components/workbench/audience-guide.module.css": {
+          "bytesInOutput": 109
+        },
+        "components/workbench/alternatives.tsx": {
+          "bytesInOutput": 24956
+        },
+        "public/data/evidence-manifest.json": {
+          "bytesInOutput": 22941
+        },
+        "lib/alternatives.ts": {
+          "bytesInOutput": 5062
+        },
+        "lib/export.ts": {
+          "bytesInOutput": 142
+        },
+        "components/workbench/alternatives.module.css": {
+          "bytesInOutput": 531
+        },
+        "components/workbench/visibility-windows.tsx": {
+          "bytesInOutput": 3846
+        },
+        "components/workbench/visibility-windows.module.css": {
+          "bytesInOutput": 168
+        },
+        "components/workbench/controls.tsx": {
+          "bytesInOutput": 2015
+        },
+        "lib/landing-presets.ts": {
+          "bytesInOutput": 347
+        },
+        "lib/flight-lessons.ts": {
+          "bytesInOutput": 8257
+        },
+        "components/workbench/flight-experiments.tsx": {
+          "bytesInOutput": 12522
+        },
+        "lib/flight-experiments.ts": {
+          "bytesInOutput": 4518
+        },
+        "components/workbench/engineering-comparison.tsx": {
+          "bytesInOutput": 4054
+        },
+        "components/workbench/panels.tsx": {
+          "bytesInOutput": 38253
+        },
+        "lib/search-key.ts": {
+          "bytesInOutput": 327
+        },
+        "docs/qa/horizons-decoded-validation.json": {
+          "bytesInOutput": 1056
+        },
+        "lib/resources.ts": {
+          "bytesInOutput": 4819
+        },
+        "components/workbench/header-landing-status.tsx": {
+          "bytesInOutput": 1593
+        },
+        "lib/planning-demo-loader.ts": {
+          "bytesInOutput": 789
+        },
+        "lib/delayed-landing-demo.ts": {
+          "bytesInOutput": 2872
+        },
+        "components/workbench/teaching-workbench.tsx": {
+          "bytesInOutput": 9522
+        },
+        "components/workbench/teaching-workbench.module.css": {
+          "bytesInOutput": 56
+        },
+        "components/workbench/mission-calendar.tsx": {
+          "bytesInOutput": 8276
+        },
+        "lib/calendar-navigation.ts": {
+          "bytesInOutput": 366
+        },
+        "lib/planning-search.ts": {
+          "bytesInOutput": 3608
+        },
+        "components/workbench/sensitivity-panel.tsx": {
+          "bytesInOutput": 7670
+        },
+        "lib/sensitivity.ts": {
+          "bytesInOutput": 2267
+        },
+        "lib/sensitivity-summary.ts": {
+          "bytesInOutput": 1878
+        },
+        "lib/mitigations.ts": {
+          "bytesInOutput": 1817
+        },
+        "components/workbench/decision-package.tsx": {
+          "bytesInOutput": 1890
+        },
+        "lib/decision-export.ts": {
+          "bytesInOutput": 9219
+        },
+        "components/workbench/engineering-panel.tsx": {
+          "bytesInOutput": 5028
+        },
+        "components/workbench/decision-panel.tsx": {
+          "bytesInOutput": 10581
+        },
+        "components/workbench/evidence-panel.tsx": {
+          "bytesInOutput": 5485
+        },
+        "components/science-framework/index.tsx": {
+          "bytesInOutput": 11212
+        },
+        "lib/science-framework.ts": {
+          "bytesInOutput": 28072
+        },
+        "components/science-framework/equations.tsx": {
+          "bytesInOutput": 22897
+        },
+        "components/science-framework/styles.ts": {
+          "bytesInOutput": 3649
+        },
+        "lib/generated/scientific-verification.json": {
+          "bytesInOutput": 168289
+        },
+        "app/mission-theme.css": {
+          "bytesInOutput": 0
+        },
+        "app/lunario-fonts.css": {
+          "bytesInOutput": 0
+        },
+        "web-source/fonts.css": {
+          "bytesInOutput": 0
+        }
+      },
+      "bytes": 825690
     }
   }
 }

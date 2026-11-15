@@ -1,0 +1,132 @@
+{
+  "browser": "149.0.7827.155",
+  "fixtureSha256": "d52c9c74b7c98a1106331f2becf0bae1bf8f63b969bb8db1f0bb6853fe1f1cdc",
+  "input": {
+    "kind": "synthetic rendering only",
+    "t0": "2026-11-15T00:00:00Z",
+    "index0": 10,
+    "stepHours": 1,
+    "terrainStepDeg": 90,
+    "observerHeightM": 2
+  },
+  "http": [],
+  "errors": [],
+  "records": [
+    {
+      "id": "science",
+      "pngSha256": "54e04bd66eb5297f403ea43a71f3bf59edc827d611ea4e65e3344b5726c10b86",
+      "clipboardPixelSha256": "cb5e1b5de4ab75b7c14658b77280784fed96a06a76c8045b8b660adab5039da7",
+      "downloadPixelSha256": "cb5e1b5de4ab75b7c14658b77280784fed96a06a76c8045b8b660adab5039da7",
+      "width": 1576,
+      "height": 1284,
+      "plot": {
+        "w": 756,
+        "h": 260,
+        "canvas": false
+      },
+      "darkPixels": 49298,
+      "coloredPixels": 1830,
+      "transparentPixels": 0,
+      "metadata": "Where are the Sun and Earth? Vertical axis: Elevation above local horizontal (°) Azimuth (° clockwise from north) on the horizontal axis. Elevation above local horizontal (°) on the vertical axis. North 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site's reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 90°; observer height: 2 m. Horizon borrowed from the nearest precomputed cell; not measured at this coordinate. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time. Values are available as text below the graph. -0.4 1.05 2.5 3.95 5.4 0 90 180 270 360 Earth now Horizontal axis: Azimuth (° clockwise from north) LOLA terrain horizon Smooth-sphere horizon (0°) Sun centre track Earth centre track North 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal, perpendicular to the site&apos;s reference-sphere radius. Sun is filled amber; Earth is a blue ring. The smooth-sphere horizon is 0°. A body is blocked when its direction falls below the terrain in that compass direction. Part of the Sun may still clear the rim when its centre does not. Tracks revisit directions at different times; they are not simultaneous. Native horizon spacing: 90°; observer height: 2 m. Horizon borrowed from the nearest precomputed cell; not measured at this coordinate. Each track readout identifies its own hourly stay sample; nearest directions need not be from the same time. JPL Horizons-derived hourly centre directions in source time order; not simultaneous directions Unknown values leave gaps. Values are rounded for reading, not uncertainty bounds."
+    },
+    {
+      "id": "time",
+      "pngSha256": "0241717c80a04d2de9e6db5d47609e8444397c728f2a567234edda3798fe54ed",
+      "clipboardPixelSha256": "3ace27857fab3f4d3fddc0ea68664cdb2a8313fac889d35fdab770acf4a3ac49",
+      "downloadPixelSha256": "3ace27857fab3f4d3fddc0ea68664cdb2a8313fac889d35fdab770acf4a3ac49",
+      "width": 1576,
+      "height": 1286,
+      "plot": {
+        "w": 756,
+        "h": 260,
+        "canvas": false
+      },
+      "darkPixels": 45336,
+      "coloredPixels": 4995,
+      "transparentPixels": 0,
+      "metadata": "Elevation over the surface stay Vertical axis: Elevation above local horizontal (°) Time (UTC) on the horizontal axis. Elevation above local horizontal (°) on the vertical axis. UTC dates and hours, not elapsed flight seconds. Elevation 0° is the local horizontal. Compare each body's centre direction with its terrain horizon and the smooth-sphere 0° line. Sun is filled amber; Earth is a blue ring. When the terrain line rises above a body's centre, the centre is hidden. The Sun's finite disk can remain partly visible; Earth communication uses its centre plus the antenna mask, not this chart alone. Values are available as text below the graph. -0.4 1.05 2.5 3.95 5.4 2026-11-15 10:00 UTC 2026-11-15 11:00 UTC 2026-11-15 12:00 UTC Horizontal axis: Time (UTC) Sun centre Earth centre LOLA horizon toward Sun LOLA horizon toward Earth Smooth-sphere horizon (0°) UTC extent: 2026-11-15 10:00 UTC to 2026-11-15 12:00 UTC. UTC dates and hours, not elapsed flight seconds. Elevation 0° is the local horizontal. Compare each body&apos;s centre direction with its terrain horizon and the smooth-sphere 0° line. Sun is filled amber; Earth is a blue ring. When the terrain line rises above a body&apos;s centre, the centre is hidden. The Sun&apos;s finite disk can remain partly visible; Earth communication uses its centre plus the antenna mask, not this chart alone. plotted JPL Horizons-derived time samples and LOLA direction-sampled horizons; the sphere line is an analytic constant reference Unknown values leave gaps. Values are rounded for reading, not uncertainty bounds."
+    },
+    {
+      "id": "response",
+      "pngSha256": "c6f6f543e5b2d1d021dfe974e7f20a59222b543637daca2cc8f3d316c0cadf19",
+      "clipboardPixelSha256": "ad6b9746f7d8609df342011aef3160f5581810c58d0dfa6b0e91771e6816baaa",
+      "downloadPixelSha256": "ad6b9746f7d8609df342011aef3160f5581810c58d0dfa6b0e91771e6816baaa",
+      "width": 1584,
+      "height": 990,
+      "plot": {
+        "w": 760,
+        "h": 295,
+        "canvas": false
+      },
+      "darkPixels": 14469,
+      "coloredPixels": 4014,
+      "transparentPixels": 0,
+      "metadata": "Synthetic response Vertical axis: Battery (Wh) Terrain in olive, smooth sphere in dashed blue. Exact values and unknowns are available in the adjacent data table. Segments join tested points; they do not add source resolution. 0 2.5 5 0 1 2 Load (W) Battery (Wh) Horizontal axis: Load (W) Terrain horizon Smooth sphere Segments join tested points; they do not add source resolution. Unknowns leave gaps. Exact plotted values are available in the chart data table."
+    },
+    {
+      "id": "panorama",
+      "pngSha256": "b8394e01cfd2866fa475aa395c745ae77fb6f23848fb7d7f349c0262c06c2c68",
+      "clipboardPixelSha256": "aec6c6a2dd0163f015e0822b050e5960fa2f8dc3a10122aca654bca0ab657043",
+      "downloadPixelSha256": "aec6c6a2dd0163f015e0822b050e5960fa2f8dc3a10122aca654bca0ab657043",
+      "width": 1584,
+      "height": 1112,
+      "plot": {
+        "w": 760,
+        "h": 300,
+        "canvas": true
+      },
+      "darkPixels": 217031,
+      "coloredPixels": 3752,
+      "transparentPixels": 0,
+      "metadata": "Horizon panorama Vertical axis: Elevation above local horizontal (°) [embedded plot PNG] Horizontal axis: Azimuth (° clockwise from north: N 0°, E 90°, S 180°, W 270°) Sun centre Earth centre LOLA terrain horizon Smooth-sphere horizon (0°) Selected sample series: Sun/Earth centre directions and LOLA terrain horizon. The smooth-sphere horizon is 0°. Centre elevation is not a disk visibility fraction. Unknown values leave gaps. Displayed position: sample 0.00 within selected span (0-based)."
+    },
+    {
+      "id": "elevation",
+      "pngSha256": "49f039e118e9c968c6169c4a389c0bb821c6e8b1abd13d8c8509f23f2a573a16",
+      "clipboardPixelSha256": "b8be13c81165fc00870052b63bfd088778a60021296808e5620b67e669ee56c8",
+      "downloadPixelSha256": "b8be13c81165fc00870052b63bfd088778a60021296808e5620b67e669ee56c8",
+      "width": 1584,
+      "height": 1070,
+      "plot": {
+        "w": 760,
+        "h": 260,
+        "canvas": true
+      },
+      "darkPixels": 27501,
+      "coloredPixels": 10600,
+      "transparentPixels": 0,
+      "metadata": "Elevation over selected samples Vertical axis: Elevation above local horizontal (°) [embedded plot PNG] Horizontal axis: Sample index within selected span (0-based) Sun centre Earth centre Terrain horizon toward Sun Terrain horizon toward Earth Smooth-sphere horizon (0°) Selected sample series: Sun/Earth centre directions and LOLA terrain horizon. The smooth-sphere horizon is 0°. Centre elevation is not a disk visibility fraction. Unknown values leave gaps. Selected sample: 0.00. Span: 3 samples; indices 10–12 in source series."
+    },
+    {
+      "id": "oblique",
+      "pngSha256": "c2830acd1cee7503192320a507d84b5af118d0b8a343e5131a66357a9ee96115",
+      "clipboardPixelSha256": "92f46dcd5c27842bec17ef66408495fe5b1933a050529210571c94ac0a2825dc",
+      "downloadPixelSha256": "92f46dcd5c27842bec17ef66408495fe5b1933a050529210571c94ac0a2825dc",
+      "width": 1584,
+      "height": 1072,
+      "plot": {
+        "w": 760,
+        "h": 280,
+        "canvas": true
+      },
+      "darkPixels": 261613,
+      "coloredPixels": 3155,
+      "transparentPixels": 0,
+      "metadata": "Oblique horizon sketch Vertical axis: Projected elevation (schematic; no distance scale) [embedded plot PNG] Horizontal axis: Projected sky direction (schematic; no distance scale) Sun centre Earth centre LOLA terrain horizon Smooth-sphere horizon (0°) Oblique sketch, not a three-dimensional terrain model. Simple sky-dome projection of centre directions; ground is schematic. Displayed position: sample 0.00 within selected span (0-based)."
+    },
+    {
+      "id": "svg-fiducial",
+      "diameterX": 80,
+      "diameterY": 80,
+      "expectedDiameter": 80,
+      "tolerancePx": 2
+    },
+    {
+      "id": "canvas-fiducial",
+      "diameterX": 80,
+      "diameterY": 80,
+      "expectedDiameter": 80,
+      "tolerancePx": 2
+    }
+  ]
+}

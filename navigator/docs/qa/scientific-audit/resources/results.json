@@ -1,0 +1,960 @@
+{
+  "schema": "lunario-scientific-audit-resources-1",
+  "lane": "resources",
+  "dateUtc": "2026-11-15",
+  "baseline": "96079ae",
+  "productionChanges": false,
+  "counts": {
+    "verified": 7,
+    "uncertain": 7,
+    "failing": 0
+  },
+  "countsMeaning": "Claims, not samples. Verified means only the explicitly stated implementation/reference scope; no mission-critical certification.",
+  "results": [
+    {
+      "id": "resources-01",
+      "claim": "Constant-power storage conserves bus energy, applies efficiencies once, and reports reserve/unserved demand onset.",
+      "status": "verified",
+      "scope": "Implementation of specified piecewise-constant model only; W, Wh, h (1 Wh=3600 J); analytic epochs independent; no coordinate frame.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "NASA Power live page archived 2026-11-15 for subsystem scope; closed-form dimensional/conservation references audit-resources-reference-1.",
+      "inputIdentity": "reference.json energy cases; input-identities.json lib/mission.ts SHA-256 at baseline 96079ae.",
+      "method": "Five independently specified closed-form cases, per-segment bus conservation, plus two-second and lossy round-trip tests.",
+      "tolerance": "1e-9 Wh/h, model event offsets 1e-12 h; floating point acceptance only.",
+      "observedError": {
+        "comparisons": [
+          {
+            "id": "dark-depletion/generatedWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/finalBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/minBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/unmetWh",
+            "actual": 88,
+            "expected": 88,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/reserveHours",
+            "actual": 1.85,
+            "expected": 1.85,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/reserve-crossing",
+            "actual": 1.65,
+            "expected": 1.65,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/unserved-load",
+            "actual": 2.4,
+            "expected": 2.4,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/generatedWh",
+            "actual": 300,
+            "expected": 300,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/finalBatteryWh",
+            "actual": 70,
+            "expected": 70,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/minBatteryWh",
+            "actual": 10,
+            "expected": 10,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/curtailedWh",
+            "actual": 195,
+            "expected": 195,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/generatedWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/finalBatteryWh",
+            "actual": 240,
+            "expected": 240,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/minBatteryWh",
+            "actual": 240,
+            "expected": 240,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/unmetWh",
+            "actual": 105,
+            "expected": 105,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/unserved-load",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "discharge-bus-cap/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/generatedWh",
+            "actual": 600,
+            "expected": 600,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/finalBatteryWh",
+            "actual": 100,
+            "expected": 100,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/minBatteryWh",
+            "actual": 25,
+            "expected": 25,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/curtailedWh",
+            "actual": 400,
+            "expected": 400,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/generatedWh",
+            "actual": 200,
+            "expected": 200,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/finalBatteryWh",
+            "actual": 100,
+            "expected": 100,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/minBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/reserveHours",
+            "actual": 2,
+            "expected": 2,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "h"
+          },
+          {
+            "id": "reserve-recovery/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          }
+        ],
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Synthetic closed-form inputs verify implementation, not physical battery performance. Reserve is a warning threshold, not load shedding."
+      ]
+    },
+    {
+      "id": "resources-02",
+      "claim": "Fixed-array cosine incidence and uniform local disk fraction match independent vector/area integration.",
+      "status": "verified",
+      "scope": "Local ENU east/north/up, azimuth clockwise from north, tilt from upward normal; degrees, W, W/m\u00b2, m\u00b2; stationary analytic forcing.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "NASA Power archived 2026-11-15 for technology context; independent ENU and midpoint disk quadrature, 100000 chords.",
+      "inputIdentity": "reference.json solar cases; input-identities.json baseline mission SHA-256.",
+      "method": "Unit-vector dot products and numerical chord quadrature differ from implementation trigonometric expansion and circular-segment formula. Half disk yields half irradiance for a whole interval.",
+      "tolerance": "0.001 W fixed before comparison to allow quadrature discretization.",
+      "observedError": {
+        "count": 8,
+        "before": [
+          {
+            "id": "solar-0/power",
+            "actual": 254.99999999999997,
+            "expected": 255.0000025006029,
+            "error": 2.5006029318319634e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-1/power",
+            "actual": 441.6729559300637,
+            "expected": 441.67296026123506,
+            "error": 4.3311713397997664e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-2/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-3/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-4/power",
+            "actual": 364.71015535551163,
+            "expected": 364.7101568008156,
+            "error": 1.4453039511863608e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-5/power",
+            "actual": 226.66914749802754,
+            "expected": 226.66914828390034,
+            "error": 7.858727997245296e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-6/power",
+            "actual": 88.62813964054347,
+            "expected": 88.62813991821616,
+            "error": 2.7767269727974053e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-7/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          }
+        ],
+        "after": [
+          {
+            "id": "solar-0/power",
+            "actual": 254.99999999999997,
+            "expected": 255.0000025006029,
+            "error": 2.5006029318319634e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-1/power",
+            "actual": 441.6729559300637,
+            "expected": 441.67296026123506,
+            "error": 4.3311713397997664e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-2/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-3/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-4/power",
+            "actual": 364.71015535551163,
+            "expected": 364.7101568008156,
+            "error": 1.4453039511863608e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-5/power",
+            "actual": 226.66914749802754,
+            "expected": 226.66914828390034,
+            "error": 7.858727997245296e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-6/power",
+            "actual": 88.62813964054347,
+            "expected": 88.62813991821616,
+            "error": 2.7767269727974053e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-7/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Uniform brightness/straight horizon cut/centre incidence only; no full solar-disk terrain convolution, limb darkening or tracking hardware dynamics."
+      ]
+    },
+    {
+      "id": "resources-03",
+      "claim": "One-way free-space RF budget uses consistent SI, dBW, dBi, power dB and Eb/N0 conventions.",
+      "status": "verified",
+      "scope": "GHz\u2192Hz, km\u2192m, W, K, bit/s; received dBW and Eb/N0/margin dB. Far-field vacuum scalar link, epoch/frame independent.",
+      "sourceUrls": [
+        "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.525-5-202411-I!!PDF-E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "ITU-R P.525-5 (11/2024), \u00a72.3; JPL 810-005 101I (2025-10-09) interface context.",
+      "inputIdentity": "reference.json three RF inputs; exact c=299792458 m/s and k=1.380649e-23 J/K.",
+      "method": "Python linear EIRP flux density \u00d7 receive effective aperture; energy per bit divided by kT; logarithms only at comparison outputs. Doubling invariants test SI/dB factors.",
+      "tolerance": "1e-10 dB roundoff tolerance; not an engineering margin.",
+      "observedError": {
+        "count": 12,
+        "before": [
+          {
+            "id": "rf-0/pathLossDb",
+            "actual": 211.37800752216538,
+            "expected": 211.37800752216538,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/receivedDbw",
+            "actual": -136.36770756552556,
+            "expected": -136.36770756552556,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-0/ebN0Db",
+            "actual": 32.2314596076921,
+            "expected": 32.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/marginDb",
+            "actual": 27.231459607692102,
+            "expected": 27.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/pathLossDb",
+            "actual": 222.97456876968025,
+            "expected": 222.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/receivedDbw",
+            "actual": -103.97456876968025,
+            "expected": -103.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-1/ebN0Db",
+            "actual": 74.62459840353742,
+            "expected": 74.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/marginDb",
+            "actual": 69.62459840353742,
+            "expected": 69.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/pathLossDb",
+            "actual": 233.67683280362724,
+            "expected": 233.67683280362724,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/receivedDbw",
+            "actual": -123.68713276026705,
+            "expected": -123.68713276026705,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-2/ebN0Db",
+            "actual": 23.151121822393804,
+            "expected": 23.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/marginDb",
+            "actual": 20.151121822393804,
+            "expected": 20.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          }
+        ],
+        "after": [
+          {
+            "id": "rf-0/pathLossDb",
+            "actual": 211.37800752216538,
+            "expected": 211.37800752216538,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/receivedDbw",
+            "actual": -136.36770756552556,
+            "expected": -136.36770756552556,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-0/ebN0Db",
+            "actual": 32.2314596076921,
+            "expected": 32.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/marginDb",
+            "actual": 27.231459607692102,
+            "expected": 27.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/pathLossDb",
+            "actual": 222.97456876968025,
+            "expected": 222.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/receivedDbw",
+            "actual": -103.97456876968025,
+            "expected": -103.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-1/ebN0Db",
+            "actual": 74.62459840353742,
+            "expected": 74.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/marginDb",
+            "actual": 69.62459840353742,
+            "expected": 69.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/pathLossDb",
+            "actual": 233.67683280362724,
+            "expected": 233.67683280362724,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/receivedDbw",
+            "actual": -123.68713276026705,
+            "expected": -123.68713276026705,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-2/ebN0Db",
+            "actual": 23.151121822393804,
+            "expected": 23.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/marginDb",
+            "actual": 20.151121822393804,
+            "expected": 20.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Synthetic gain/noise/pointing/loss/coding/rate values are not qualified vehicle or DSN hardware. No measured radio link tested."
+      ]
+    },
+    {
+      "id": "resources-04",
+      "claim": "All three representative ground-antenna coordinates match JPL published Cartesian data at source epoch.",
+      "status": "verified",
+      "scope": "DSS-14 Goldstone, DSS-63 Madrid, DSS-43 Canberra; ITRF93 epoch 2003.0; Earth-fixed XYZ m; WGS84 ellipsoid geodetic heights, east longitude.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301O.pdf"
+      ],
+      "referenceVersion": "301P issued 2026-05-22 Tables 2/3/5/6, 301O issued 2024-07-01; selected Table 5 values unchanged.",
+      "inputIdentity": "reference.json stationsM transcribed Table 2; source manifest full PDF SHA-256 identities.",
+      "method": "Convert code geodetic coordinates to ECEF and compare nine components with directly published Cartesian columns, not radii alone.",
+      "tolerance": "0.002 m: rounding of published DMS/Cartesian tables, not location accuracy.",
+      "observedError": {
+        "maximumComponentErrorM": 0.001145985908806324,
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Reference-epoch implementation comparison only; no propagation or EOP fit, current antenna status or support availability certified."
+      ]
+    },
+    {
+      "id": "resources-05",
+      "claim": "Fresh station Horizons results agree with separately computed retained CSPICE station reference.",
+      "status": "verified",
+      "scope": "75 samples: three stations, hourly inclusive 2026-11-14T00:00:00Z..2026-11-15T00:00:00Z; Moon 301 / Earth coord@399; ITRF93 airless apparent AZ/EL degrees, range km.",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf"
+      ],
+      "referenceVersion": "Fresh API 1.2 DE441; EOP eop.261113.p270209 (predicted at these epochs); retained CSPICE/spiceypy8.4.0 DE440s LT+S.",
+      "inputIdentity": "sources/*-fresh-horizons.json and manifest URLs/hashes; baseline public/data/engineering-evidence/spice-reference.json hash pinned in input-identities.json; its four kernel hashes retained.",
+      "method": "Parse fresh provider bytes at 25 hourly epochs/station, wrapped azimuth differences and direct elevation/range differences against retained CSPICE ENU results.",
+      "tolerance": "0.002 deg AZ/EL, 0.1 km range; original cross-kernel implementation check thresholds; neither temporal nor physical truth bounds.",
+      "observedError": {
+        "azimuth": 0.0002686886904257335,
+        "elevation": 7.336623912124196e-05,
+        "range": 0.00324417429510504
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Different calculations of JPL ephemeris are not independent observations. No fresh CSPICE/kernel run. EOP is predicted; station velocities are not applied. No operational acquisition guarantee."
+      ]
+    },
+    {
+      "id": "resources-06",
+      "claim": "Plane-parallel slant attenuation and atmospheric emission noise reproduce JPL published example.",
+      "status": "verified",
+      "scope": "DSS-34 Canberra climatological 90% year-average Ka32GHz, elevation20deg, Azen0.384dB, TM277.5K; approximate mapping valid here10..90deg.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf"
+      ],
+      "referenceVersion": "JPL 810-005 105E issued 2015-10-22 \u00a72.1.2\u20132.1.5 pp12\u201315.",
+      "inputIdentity": "reference.json atmospheric; sources/105E.pdf manifest SHA-256.",
+      "method": "Compare helper results against printed JPL 1.123dB and 63.214K, retaining intermediate-rounding discrepancy.",
+      "tolerance": "0.0005dB and0.06K allow printed/intermediate rounding only.",
+      "observedError": {
+        "count": 2,
+        "before": [
+          {
+            "id": "jpl-105E/slant",
+            "actual": 1.1227408896626256,
+            "expected": 1.123,
+            "error": 0.0002591103373743575,
+            "tolerance": 0.0005,
+            "unit": "dB"
+          },
+          {
+            "id": "jpl-105E/noise",
+            "actual": 63.216417510475054,
+            "expected": 63.214,
+            "error": 0.002417510475055451,
+            "tolerance": 0.06,
+            "unit": "K"
+          }
+        ],
+        "after": [
+          {
+            "id": "jpl-105E/slant",
+            "actual": 1.1227408896626256,
+            "expected": 1.123,
+            "error": 0.0002591103373743575,
+            "tolerance": 0.0005,
+            "unit": "dB"
+          },
+          {
+            "id": "jpl-105E/noise",
+            "actual": 63.216417510475054,
+            "expected": 63.214,
+            "error": 0.002417510475055451,
+            "tolerance": 0.06,
+            "unit": "K"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Published arithmetic example, not actual mission weather or full system noise; applies to DSS-34 rather than representative DSS-43 hardware."
+      ]
+    },
+    {
+      "id": "resources-07",
+      "claim": "Missing forcing and missing communication evidence remain unknown, with exact allocation-time integration and explicit inference boundaries.",
+      "status": "verified",
+      "scope": "Implementation/status behavior only; UTC half-open spans, h for resources, bit/s \u00d7 s for data; no new physical claim.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf"
+      ],
+      "referenceVersion": "Baseline96079ae communications envelope and canonical planning-4 behavior.",
+      "inputIdentity": "tests/audit-resources.test.ts and unchanged existing mission/evidence/weather suites; source identities pinned.",
+      "method": "Exercise unknown solar/contact gaps, missing horizon/hardware/weather/allocation, partial windows, wrong band/frequency, future issue times and current-weather lookup boundaries; verify no operational approval.",
+      "tolerance": "Exact null/status and integer-bit/second equality; numerical energy tolerances separately registered.",
+      "observedError": {
+        "focusedTests": 380,
+        "failed": 0,
+        "skipped": 0,
+        "cancelled": 0,
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Contract and boundary verification does not validate supplied evidence authenticity, actual contact capacity or all possible malformed numeric inputs."
+      ]
+    },
+    {
+      "id": "resources-08",
+      "claim": "Date-specific irradiance and real photovoltaic generation remain unqualified.",
+      "status": "uncertain",
+      "scope": "W/m\u00b2, W, m\u00b2; selected mission epochs; local ENU incidence.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Fixed default1361W/m\u00b2 with no Sun-distance/temperature/dust/IV/MPPT qualification.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Defaults and synthetic cases cannot certify vehicle output; two-dimensional terrain-disk integration absent."
+      ]
+    },
+    {
+      "id": "resources-09",
+      "claim": "Battery capacity, efficiencies, load profile and reserve policy lack qualified hardware/environment evidence.",
+      "status": "uncertain",
+      "scope": "Wh,W,h; cold lunar operating environment and vehicle requirements.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "No supplied thermal/age/rate-qualified battery test or complete load/heater specification.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Self-discharge, temperature-dependent capacity, lifecycle degradation and qualified reserve policy are missing."
+      ]
+    },
+    {
+      "id": "resources-10",
+      "claim": "Reference-epoch station positions and predicted EOP do not establish dated precision station pointing.",
+      "status": "uncertain",
+      "scope": "ITRF93 epoch2003.0; requests2026-11-14..15 UTC, EOP prediction after2026-11-13.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://ssd.jpl.nasa.gov/horizons/manual.html"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Table3 site velocities are not propagated; current station transform/UTC-UT1/EOP uncertainty is not quantified.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "About23.87yr velocity displacement scale0.466/0.728/1.235m is not an applied transform; JavaScript POSIX time omits leap seconds."
+      ]
+    },
+    {
+      "id": "resources-11",
+      "claim": "Earth-centre lunar visibility and positive RF margin do not prove selected-station support.",
+      "status": "uncertain",
+      "scope": "Lunar terrain-centre ray versus terrestrial station ray; bit/s,s and UTC support windows.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Separate lunar ray/mask, station cutoff, actual radio/noise/coding and dated allocation evidence are required; proxy is a user assumption.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "No actual booking or vehicle specs supplied. Conditional-meets and synthetic allocation never mean operational approval."
+      ]
+    },
+    {
+      "id": "resources-12",
+      "claim": "Weather context does not determine frequency-dependent slant attenuation or total receiving-system noise.",
+      "status": "uncertain",
+      "scope": "Open-Meteo mm/hourly accumulation,cloud%,wind km/h versus RF dB/K; band/frequency/polarization/path dependent.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+        "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.838-3-200503-I!!PDF-E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "No dated band-specific weather path or full receiver/atmosphere/cosmic/lunar noise qualification. ITU rain model is not implemented.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "No forecast is inferred from current weather or climatology. Missing path length, rain distribution, gas/cloud terms and equipment noise prevent a physical pass."
+      ]
+    },
+    {
+      "id": "resources-13",
+      "claim": "Hourly forcing and boundary-censored runs lack a qualified continuous-time visibility or event guarantee.",
+      "status": "uncertain",
+      "scope": "Half-open UTC stay; sample-held h and model event-offset h; lunar local and station horizons.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://ssd.jpl.nasa.gov/horizons/manual.html"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Load/deployment split points add no physical samples; whole-disk station clearance is spatial, not a temporal lower bound.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "Unknown samples remain unknown; runs meeting stay boundaries can extend outside the window. Event bracketing is not a measured timing uncertainty."
+      ]
+    },
+    {
+      "id": "resources-14",
+      "claim": "Finite declared-case stability is not a probability, continuous bound or qualified uncertainty result.",
+      "status": "uncertain",
+      "scope": "At most27 lower/nominal/upper cases across3 fields; canonical scenario requirements and operations held fixed.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Read lib/engineering-evidence/uncertainty.ts and run focused finite-case tests; canonical evaluateScenario remains authoritative.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": [
+        "No correlated distributions, terrain/EOP/frame/error propagation, hardware calibration or continuous enclosure; allCasesHaveBattery does not certify the mission."
+      ]
+    }
+  ]
+}

@@ -1,4 +1,22 @@
+## Mission paths and NASA Moon detail
+
+- Open Mission paths & reasons from an expanded Location card: inspect cited phase/route explanations, reference-data coverage and source limitations. Replay the bounded Chandrayaan-3 reference descent or Apollo15 command-module orbit at1×, seek, pause, restart and follow position; the editable educational landing remains separate.
+- NASA2025 colour and calibrated1× LOLA visual relief load progressively. Supported high-memory web devices can reach8K; offline and unknown-memory devices cap at4K with explicit texture budgets. No procedural surface measurements are invented.
+- Audit publication now rejects stale numerical inputs, code or receipts and failed outcome gates. Current and historical comparison identities remain distinct.
+
+## Scientific verification and traceability
+
+- Inspect source-to-output pipelines, native equations, current dataset identities and scoped NASA/JPL audit findings through Data & math.
+- Earth range uses the Moon-observed Earth reference; terrain cutout edges retain their declared source coordinates; missing producer ray support stays unknown. Legacy touchdown timing now solves the actual numerical contact event.
+- Planning model 5 and new data identities prevent earlier assessments from being silently reused. The recorded comparisons pass within their published bounds; physical terrain, vehicle and operations qualification remain outstanding.
+
 # Changelog
+
+## 15 November 2026 — shareable charts and location stories
+
+- Copy labelled charts as PNG images or download them, with white backgrounds and readable axes/legends.
+- Read each historical site’s mission summary directly in Location across Public, Educator and Planner; expand facts for hardware, objectives, support, findings and cited exploration evidence.
+- Switch Earth/Moon focus smoothly when retargeting or changing the displayed date.
 
 ## 15 November 2026 — integrated map and mission context
 

@@ -1,0 +1,33 @@
+{
+  "scope": "same bounded original COG sample stencils and declared coordinates; not independent physical accuracy",
+  "edge": {
+    "index": 263168,
+    "xM": 15747.95321637427,
+    "yM": 291732.04678362573,
+    "clampedHeightM": 2668.499755859375,
+    "clampedErrorM": -0.599755859374909,
+    "clampShiftXM": -7.953216374262411,
+    "clampShiftYM": 7.953216374269232,
+    "sourceCol": 7993.198830409357,
+    "sourceRow": 306.19883040935673,
+    "window": [
+      7993,
+      306,
+      7995,
+      308
+    ],
+    "sourceHeightsM": [
+      2668.499755859375,
+      2669.895751953125,
+      2664.134765625,
+      2665.242431640625
+    ],
+    "expectedHeightM": 2667.8980308327373,
+    "bundledHeightM": 2667.9,
+    "errorM": 0.0019691672628141532,
+    "toleranceM": 0.0551
+  },
+  "errorM": 0.0019691672628141532,
+  "toleranceM": 0.0551,
+  "sampleCount": 16
+}

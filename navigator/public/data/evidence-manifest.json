@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
+  "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
   "validFromUtc": "2026-01-01T00:00:00Z",
   "validUntilUtcExclusive": "2028-01-01T00:00:00Z",
   "entries": [
@@ -11,7 +11,7 @@
       "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
       "productId": "catalog.json",
       "version": null,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -21,7 +21,8 @@
       "coverage": "complete",
       "notes": [
         "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
-        "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+        "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005.",
+        "Apparent Earth range corrected on 2026-11-15: Earth observed from Moon centre, explicit UT/UTC and km, 17521 hourly samples; raw response identity is recorded in catalog meta.rangeReference."
       ]
     },
     {
@@ -31,7 +32,7 @@
       "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
       "productId": "catalog.json",
       "version": null,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
       "sourceSpacingM": 40,
       "effectiveResolutionM": null,
@@ -51,7 +52,7 @@
       "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
       "productId": "catalog.json",
       "version": null,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
       "sourceSpacingM": 40,
       "effectiveResolutionM": null,
@@ -70,7 +71,7 @@
       "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
       "productId": "terrain.json",
       "version": null,
-      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "sha256": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e",
       "frame": "MOON_ME / DE421; south polar stereographic; R=1737400 m",
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -80,7 +81,8 @@
       "coverage": "partial",
       "notes": [
         "Nested 5/10/40 m products where covered with 80 m base and coarser overviews. Per-cutout source spacing and output spacing are in terrain.json. No single resolution applies.",
-        "Display terrain does not replace prepared horizon masks; effective resolution and accuracy are unknown here."
+        "Display terrain does not replace prepared horizon masks; effective resolution and accuracy are unknown here.",
+        "Regenerated from original NASA COG source pixels using registered bilinear sampling with a one-pixel halo; missing stencil support stays unknown. Source-to-encoded checks do not establish physical accuracy."
       ]
     },
     {
@@ -90,7 +92,7 @@
       "sourceUrl": "https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=moon",
       "productId": "imagery.json",
       "version": null,
-      "sha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+      "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
       "frame": null,
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -128,7 +130,7 @@
       "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
       "productId": "catalog.json",
       "version": null,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "frame": null,
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -186,7 +188,7 @@
       "sourceUrl": null,
       "productId": "catalog.json",
       "version": null,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "frame": null,
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -547,7 +549,7 @@
       "sourceUrl": null,
       "productId": "imagery.json",
       "version": null,
-      "sha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+      "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
       "frame": null,
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -623,7 +625,7 @@
       "sourceUrl": null,
       "productId": "terrain.json",
       "version": null,
-      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "sha256": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e",
       "frame": null,
       "sourceSpacingM": null,
       "effectiveResolutionM": null,
@@ -692,7 +694,7 @@
       "coverage": "partial",
       "notes": [
         "Numerical LOLA elevations; no color/brightness or unitless visualization mesh conversion.",
-        "Global source contains interpolation and possible 45° latitude-band edge artifacts per source label.",
+        "Global source contains interpolation and possible 45\u00b0 latitude-band edge artifacts per source label.",
         "Coarse model omits local ridges/rocks and propagates no physical uncertainty. Not a landing hazard or safety certification.",
         "No source frame transformation to a different lunar orientation is asserted."
       ]

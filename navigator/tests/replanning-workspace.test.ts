@@ -304,7 +304,7 @@ test('workspace SSR exposes explicit cases, exact dates, paired curves, horizons
   for (const text of ['Reference case', 'Candidate case', 'Inspect first violation', 'Open failure in main view', 'What changed?', 'requirements.scope', 'Whole-Moon map', 'Geometric antenna contact', 'Elapsed mission time (h)', 'Show Sun / Earth horizons', 'Smooth sphere', 'Open candidate', 'Save candidate', 'Test a bounded date/site grid', 'unquantified']) assert.ok(html.includes(text), text);
   assert.ok(html.includes(reference.context.startUtc)); assert.ok(html.includes(candidate.context.startUtc));
   assert.match(html, /role="slider"/); assert.match(html, /role="tooltip"/); assert.match(html, /aria-valuetext=/);
-  assert.match(html, /planning-4/);
+  assert.match(html, /planning-5/);
   const visibleText = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<[^>]*>/g, '');
   assert.doesNotMatch(visibleText, /\bNaN\b|\bInfinity\b|lorem/i);
   assert.doesNotMatch(html, /(?:d|cx|cy)="[^"]*(?:NaN|Infinity)/);

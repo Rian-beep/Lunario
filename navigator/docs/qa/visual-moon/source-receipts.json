@@ -1,0 +1,83 @@
+{
+  "checkedUTC": "2026-11-15T15:14:27.889971+00:00",
+  "method": "HEAD; only the 8K colour TIFF and float32 ldem_64 payloads were downloaded for final preparation",
+  "receipts": [
+    {
+      "url": "https://svs.gsfc.nasa.gov/14959/",
+      "status": 200,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "50971",
+        "Last-Modified": null,
+        "ETag": null,
+        "Date": "Sun, 15 Nov 2026 15:14:25 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/4720/",
+      "status": 200,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "54929",
+        "Last-Modified": null,
+        "ETag": null,
+        "Date": "Sun, 15 Nov 2026 15:14:25 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "status": 200,
+      "headers": {
+        "Content-Type": "image/tiff",
+        "Content-Length": "243289792",
+        "Last-Modified": "Wed, 03 Dec 2025 19:55:35 GMT",
+        "ETag": "\"e804ec0-6451198823626\"",
+        "Date": "Sun, 15 Nov 2026 15:14:26 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_64.tif",
+      "status": 200,
+      "headers": {
+        "Content-Type": "image/tiff",
+        "Content-Length": "1061775722",
+        "Last-Modified": "Wed, 05 Jun 2019 20:21:05 GMT",
+        "ETag": "\"3f49696a-58a99563db37d\"",
+        "Date": "Sun, 15 Nov 2026 15:14:26 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color.exr",
+      "status": 200,
+      "headers": {
+        "Content-Type": "image/aces",
+        "Content-Length": "988589585",
+        "Last-Modified": "Wed, 03 Dec 2025 19:56:43 GMT",
+        "ETag": "\"3aecae11-645119c8c5cab\"",
+        "Date": "Sun, 15 Nov 2026 15:14:27 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_16k.tif",
+      "status": 200,
+      "headers": {
+        "Content-Type": "image/tiff",
+        "Content-Length": "953573340",
+        "Last-Modified": "Wed, 03 Dec 2025 19:55:33 GMT",
+        "ETag": "\"38d65fdc-645119861a6f4\"",
+        "Date": "Sun, 15 Nov 2026 15:14:27 GMT"
+      }
+    },
+    {
+      "url": "https://svs.gsfc.nasa.gov/vis/a010000/a014900/a014959/Moon_NASA_LRO_8k_Topo_Small.glb",
+      "status": 200,
+      "headers": {
+        "Content-Type": "model/gltf-binary",
+        "Content-Length": "81505784",
+        "Last-Modified": "Wed, 28 Jan 2026 18:02:57 GMT",
+        "ETag": "\"4dbadf8-649768cca778b\"",
+        "Date": "Sun, 15 Nov 2026 15:14:27 GMT"
+      }
+    }
+  ]
+}

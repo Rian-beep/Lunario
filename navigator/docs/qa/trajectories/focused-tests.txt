@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: published descent reference is never promoted to flown; CSM orbit never becomes landing/ascent
+ok 1 - published descent reference is never promoted to flown; CSM orbit never becomes landing/ascent
+  ---
+  duration_ms: 0.808151
+  ...
+# Subtest: trusted identity pins mission, vehicle role, source URL/version/hash, epoch and frame
+ok 2 - trusted identity pins mission, vehicle role, source URL/version/hash, epoch and frame
+  ---
+  duration_ms: 1.142559
+  ...
+# Subtest: malformed units, center, frame, time, sample order and coverage are rejected atomically
+ok 3 - malformed units, center, frame, time, sample order and coverage are rejected atomically
+  ---
+  duration_ms: 1.493585
+  ...
+# Subtest: all sample positions survive exact lookup and no data is extrapolated
+ok 4 - all sample positions survive exact lookup and no data is extrapolated
+  ---
+  duration_ms: 0.807401
+  ...
+# Subtest: linear interpolation, exact-only data and gaps remain explicit
+ok 5 - linear interpolation, exact-only data and gaps remain explicit
+  ---
+  duration_ms: 0.255771
+  ...
+# Subtest: 1× uses monotonic elapsed wall time, clamps at endpoint and rejects backwards/invalid clocks
+ok 6 - 1× uses monotonic elapsed wall time, clamps at endpoint and rejects backwards/invalid clocks
+  ---
+  duration_ms: 0.143585
+  ...
+# Subtest: Horizons import binds target, body center, time scale, units and uncorrected ICRF frame
+ok 7 - Horizons import binds target, body center, time scale, units and uncorrected ICRF frame
+  ---
+  duration_ms: 0.646386
+  ...
+# Subtest: numeric descent-shaped path is preserved without snapping to a historic pin or inventing attitude
+ok 8 - numeric descent-shaped path is preserved without snapping to a historic pin or inventing attitude
+  ---
+  duration_ms: 0.103807
+  ...
+# Subtest: source-derived reasons require citations and locators; model choices and assumptions stay distinct
+ok 9 - source-derived reasons require citations and locators; model choices and assumptions stay distinct
+  ---
+  duration_ms: 0.213192
+  ...
+# Subtest: untrusted file byte integrity is checked before import
+ok 10 - untrusted file byte integrity is checked before import
+  ---
+  duration_ms: 3.972256
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 178.851964

@@ -1,0 +1,629 @@
+{
+  "lane": "ui",
+  "auditDateUtc": "2026-11-15",
+  "baseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+  "physicalCertification": false,
+  "counts": {
+    "verified": 9,
+    "uncertain": 3,
+    "failing": 3
+  },
+  "results": [
+    {
+      "id": "UI-V1",
+      "claim": "Native clipboard PNG contents equal downloaded PNG contents for six actual components.",
+      "status": "verified",
+      "scope": "Isolated disconnected Chromium fixture; implementation only.",
+      "sourceUrls": [
+        "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/",
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "clipboard": {
+          "retrievedUtc": "2026-11-15T14:40:49.311978+00:00",
+          "responseSha256": "64ff9e279103212d7287137569bf593e73c0501fe6ccb6db824d0b1295bd65da",
+          "responseBytes": 541824
+        },
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Native ClipboardItem/write/read, sharp decoded-pixel comparison; no clipboard mocks.",
+      "tolerance": "Exact dimensions; zero unequal RGBA bytes.",
+      "observedError": {
+        "components": 6,
+        "unequalRgbaBytes": 0
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "Headless native clipboard only; no external application paste."
+      ]
+    },
+    {
+      "id": "UI-V2",
+      "claim": "Native denial reports failure/fallback and download remains available.",
+      "status": "verified",
+      "scope": "Actual isolated browser context.",
+      "sourceUrls": [
+        "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/"
+      ],
+      "referenceVersion": {
+        "clipboard": {
+          "retrievedUtc": "2026-11-15T14:40:49.311978+00:00",
+          "responseSha256": "64ff9e279103212d7287137569bf593e73c0501fe6ccb6db824d0b1295bd65da",
+          "responseBytes": 541824
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "CDP denies both clipboard-write variants with actual browserContextId; normal click and real download.",
+      "tolerance": "No success status on denial; actual download succeeds.",
+      "observedError": {
+        "falseSuccesses": 0,
+        "fallbackDownloadSucceeded": true
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "No human permission-prompt UX test."
+      ]
+    },
+    {
+      "id": "UI-V3",
+      "claim": "SVG/canvas PNGs render at 2x without aspect distortion.",
+      "status": "verified",
+      "scope": "Rendering geometry, not physical geometry.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Check ceil(2x wrapper size), retain source plot dimensions; independent non-square plot circle fiducials.",
+      "tolerance": "Exact wrapper pixels; 80px diameter +/-2px anti-alias tolerance; axis mismatch <=1px.",
+      "observedError": {
+        "svgDiameterPx": [
+          80,
+          80
+        ],
+        "canvasDiameterPx": [
+          80,
+          80
+        ],
+        "diameterErrorPx": 0
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "Tolerance is raster edge behavior, not a scientific uncertainty bound."
+      ]
+    },
+    {
+      "id": "UI-V4",
+      "claim": "Selected chart surfaces and PNGs stay white/opaque with dark labels and input gaps.",
+      "status": "verified",
+      "scope": "Dark/light fixture at 900/420 CSS px.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html",
+        "https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        },
+        "contrast": {
+          "retrievedUtc": "2026-11-15T14:40:50.788785+00:00",
+          "responseSha256": "6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057",
+          "responseBytes": 512457
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Computed SVG paint, equal transform scales, canvas backing stores, raster alpha/corners and nonblank dark/color pixel counts.",
+      "tolerance": "White corners RGBA255/255/255/255; zero nonopaque pixels; scale difference <1e-6.",
+      "observedError": {
+        "transparentPixels": 0,
+        "blankExports": 0
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs; node --test tests/chart-image.browser.mjs",
+      "limitations": [
+        "Selected paint and raster presence are not a full glyph contrast or accessibility audit."
+      ]
+    },
+    {
+      "id": "UI-V5",
+      "claim": "Chart supporting-text contrast defect is fixed in scoped component styles.",
+      "status": "verified",
+      "scope": "Notes, exact sample readout and gradient help in owned source.",
+      "sourceUrls": [
+        "https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+      ],
+      "referenceVersion": {
+        "contrast": {
+          "retrievedUtc": "2026-11-15T14:40:50.788785+00:00",
+          "responseSha256": "6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057",
+          "responseBytes": 512457
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Actual integrated screenshot plus RED regression; scoped fix; GREEN regression and inspected screenshot.",
+      "tolerance": "Ordinary selected text >=4.5:1; expected RGB28/25/21 on white.",
+      "observedError": {
+        "beforeNoteContrast": 1.7276469512559378,
+        "beforeReadoutContrast": 1.03513930251839,
+        "afterContrast": 17.51085437562116
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "Computed-color evidence; parent final build/raster review pending."
+      ]
+    },
+    {
+      "id": "UI-V6",
+      "claim": "Exports preserve supplied titles/axes/units/legends and exact time-plot UTC bounds.",
+      "status": "verified",
+      "scope": "Serialization behavior only.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Inspect actual production-action SVG blobs; assert labels, source caveats and synthetic UTC extent.",
+      "tolerance": "Exact 2026-11-15 10:00 to 12:00 UTC; no missing declared axes.",
+      "observedError": {
+        "mismatchedUtcBounds": 0,
+        "missingAxisLabels": 0
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "Complete standalone scenario provenance fails UI-F3."
+      ]
+    },
+    {
+      "id": "UI-V7",
+      "claim": "Disconnected fixture and full seeded offline app attempt zero HTTP requests.",
+      "status": "verified",
+      "scope": "Network behavior only.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Listen to all requests with context offline; complete real audience and teaching journeys.",
+      "tolerance": "Zero http/https attempts.",
+      "observedError": {
+        "fixtureHttpAttempts": 0,
+        "fullFileHttpAttempts": 0,
+        "pageErrors": 0,
+        "consoleErrors": 0
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs; node scripts/audit-ui-integrated.mjs",
+      "limitations": [
+        "Old offline chart UI still fails UI-F2; no export pass inferred from zero networking."
+      ]
+    },
+    {
+      "id": "UI-V8",
+      "claim": "Integrated web mounts owned image actions; audience controls and exact values remain functional.",
+      "status": "verified",
+      "scope": "Recorded loaded web assets; file audience controls only.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Normal Public/Educator/Planner clicks, prediction/capture/reveal, exact-value disclosure, real download, teaching close/opener focus.",
+      "tolerance": "Two actions per owned web chart; exact-value rows >0; focus returns; no browser errors.",
+      "observedError": {
+        "webHorizonDownloadPx": [
+          1332,
+          1392
+        ],
+        "webResponseActions": 2,
+        "pageErrors": 0,
+        "consoleErrors": 0
+      },
+      "reproduce": "node scripts/audit-ui-integrated.mjs",
+      "limitations": [
+        "Separate ComparisonPlot/file image support fails; no immutable final source equivalence asserted."
+      ]
+    },
+    {
+      "id": "UI-V9",
+      "claim": "SVG export removes tested active/external content and retains clips/metadata.",
+      "status": "verified",
+      "scope": "Bounded sanitizer regression cases.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Existing browser adds detached script, foreignObject, external image/paint and event handlers; inspect serialization.",
+      "tolerance": "Zero tested unsafe tokens retained; local clips and escaped text retained.",
+      "observedError": {
+        "testedUnsafeTokensRetained": 0
+      },
+      "reproduce": "node --test tests/chart-image.browser.mjs",
+      "limitations": [
+        "Not exhaustive security qualification."
+      ]
+    },
+    {
+      "id": "UI-U1",
+      "claim": "Lunar physical formulas and mission applicability are qualified by this audit.",
+      "status": "uncertain",
+      "scope": "All scientific frames, ephemerides, engineering applicability.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "No scientific numerical changes or independent physical reference calculation performed.",
+      "tolerance": "Not established.",
+      "observedError": "Not measured.",
+      "reproduce": "Read the other locked science lane reports.",
+      "limitations": [
+        "Synthetic/UI tests cannot certify physical truth; canonical evaluateScenario unchanged."
+      ]
+    },
+    {
+      "id": "UI-U2",
+      "claim": "Clipboard transfer and accessibility work across target browsers/devices/applications.",
+      "status": "uncertain",
+      "scope": "Safari/Firefox/mobile, external paste targets, screen readers and human evidence.",
+      "sourceUrls": [
+        "https://www.w3.org/TR/2026/WD-clipboard-apis-20260624/",
+        "https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+      ],
+      "referenceVersion": {
+        "clipboard": {
+          "retrievedUtc": "2026-11-15T14:40:49.311978+00:00",
+          "responseSha256": "64ff9e279103212d7287137569bf593e73c0501fe6ccb6db824d0b1295bd65da",
+          "responseBytes": 541824
+        },
+        "contrast": {
+          "retrievedUtc": "2026-11-15T14:40:50.788785+00:00",
+          "responseSha256": "6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057",
+          "responseBytes": 512457
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Only isolated Linux Chromium headless was exercised.",
+      "tolerance": "Not established.",
+      "observedError": "No target-device measurements.",
+      "reproduce": "node --test tests/audit-ui.browser.mjs",
+      "limitations": [
+        "No external application paste, complete raster glyph audit, native200 final-artifact reflow or human acceptance."
+      ]
+    },
+    {
+      "id": "UI-U3",
+      "claim": "Parent final artifacts contain this fix and match worker source.",
+      "status": "uncertain",
+      "scope": "Final combined artifact and publication.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Loaded web response hashes recorded; seeded file immutable; parent owns builds.",
+      "tolerance": "Exact source/artifact identity required.",
+      "observedError": "Parent web candidate changed across earlier probes; no final artifact built.",
+      "reproduce": "Parent rebuild/reidentify then rerun browser scripts.",
+      "limitations": [
+        "No build, server, generated output or deployment performed."
+      ]
+    },
+    {
+      "id": "UI-F1",
+      "claim": "Every integrated chart has image actions and white surfaces.",
+      "status": "failing",
+      "scope": "ComparisonPlot in components/replanning/curves.tsx, outside lane ownership.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Actual web/file Replan journey inspects stored-energy figure/actions.",
+      "tolerance": "Expected two image actions and white surfaces.",
+      "observedError": {
+        "imageActions": 0,
+        "figureBackgroundRgb": [
+          27,
+          29,
+          32
+        ],
+        "svgBackground": "transparent",
+        "transports": [
+          "web",
+          "file"
+        ]
+      },
+      "reproduce": "node scripts/audit-ui-integrated.mjs",
+      "limitations": [
+        "Parent determines coverage and edits outside-scope renderer."
+      ]
+    },
+    {
+      "id": "UI-F2",
+      "claim": "Seeded complete offline HTML contains current chart image support.",
+      "status": "failing",
+      "scope": "Generated public/solarreach-navigator.html only.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "fileSha256": "500ecca4774b7adead4a5268f3ad9b22bc970510a05c6b4d69b074ee77680828",
+        "site": "Connecting Ridge",
+        "latitudeDeg": -89.53432,
+        "longitudeEastDeg": 209.94767,
+        "observerHeightM": 2,
+        "startUtc": "2027-06-29T11:00:00Z",
+        "endExclusiveUtc": "2027-07-13T11:00:00Z",
+        "declaredFrame": "MOON_ME / Horizons MEAN_ME; not independently validated here",
+        "sourceEquivalence": "not established"
+      },
+      "method": "Real disconnected HorizonGraph at1600/800 and captured Educator ResponsePlot.",
+      "tolerance": "Two image actions per chart; white surfaces/dark labels.",
+      "observedError": {
+        "horizonActions": 0,
+        "responseActions": 0,
+        "download": "unexecuted: no action",
+        "httpAttempts": 0
+      },
+      "reproduce": "node scripts/audit-ui-integrated.mjs",
+      "limitations": [
+        "Parent owns regenerated artifact; missing export cannot count as passed."
+      ]
+    },
+    {
+      "id": "UI-F3",
+      "claim": "Export PNG metadata completely identifies the scientific scenario.",
+      "status": "failing",
+      "scope": "Actual exported metadata versus adjacent on-screen context.",
+      "sourceUrls": [
+        "https://html.spec.whatwg.org/multipage/canvas.html"
+      ],
+      "referenceVersion": {
+        "canvas": {
+          "retrievedUtc": "2026-11-15T14:40:50.599215+00:00",
+          "responseSha256": "042d6f60b712f6f9b33011b2c4dda3cf548e23c4163591d0216951e077b4b9c0",
+          "responseBytes": 788460
+        }
+      },
+      "inputIdentity": {
+        "sourceBaseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+        "browser": "Chrome 149.0.7827.155",
+        "fixtureEpochUtc": "2026-11-15T00:00:00Z",
+        "sampleIndices": [
+          10,
+          11,
+          12
+        ],
+        "stepSeconds": 3600,
+        "frame": "Synthetic local azimuth/elevation chart axes; no physical frame qualification",
+        "units": "SVG units / CSS px / raster px; displayed degrees (pi/180 rad), W (J/s), Wh (3600 J), UTC"
+      },
+      "method": "Inspect real action-generated SVG metadata and required exact scenario fields.",
+      "tolerance": "Exact site, epoch span, dataset/model/frame identity for standalone traceability.",
+      "observedError": {
+        "missing": "Complete site + UTC span + dataset/model/frame identity; response lacks source-family identity; oblique lacks source-family identity."
+      },
+      "reproduce": "node --test tests/audit-ui.browser.mjs; inspect evidence/browser-observations.json records[].metadata",
+      "limitations": [
+        "Caller context and source-to-UI wiring belong to parent; no context invented."
+      ]
+    }
+  ]
+}

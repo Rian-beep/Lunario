@@ -1,0 +1,41 @@
+TAP version 13
+# Subtest: chart PNGs in an isolated offline browser
+    # Subtest: white plot, axis and legend surfaces retain series paint and gaps under the real theme
+    ok 1 - white plot, axis and legend surfaces retain series paint and gaps under the real theme
+      ---
+      duration_ms: 2.950404
+      ...
+    # Subtest: safe SVG serialization removes active content and external references, preserves clipping and metadata
+    ok 2 - safe SVG serialization removes active content and external references, preserves clipping and metadata
+      ---
+      duration_ms: 6.745066
+      ...
+    # Subtest: PNG download works offline for both SVG families and all sky canvases, at 2× with white opaque corners
+    ok 3 - PNG download works offline for both SVG families and all sky canvases, at 2× with white opaque corners
+      ---
+      duration_ms: 5378.279778
+      ...
+    # Subtest: capability failure and denied clipboard write never announce success; successful write contains PNG
+    ok 4 - capability failure and denied clipboard write never announce success; successful write contains PNG
+      ---
+      duration_ms: 1393.162298
+      ...
+    # Subtest: resize redraws canvas backing stores at 2× without stretching
+    ok 5 - resize redraws canvas backing stores at 2× without stretching
+      ---
+      duration_ms: 91.378143
+      ...
+    1..5
+ok 1 - chart PNGs in an isolated offline browser
+  ---
+  duration_ms: 7193.312288
+  ...
+1..1
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7442.699013

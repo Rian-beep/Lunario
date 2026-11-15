@@ -1,0 +1,762 @@
+{
+  "schemaVersion": 1,
+  "baseline": "96079ae",
+  "createdUtc": "2026-11-15T14:36:55.539Z",
+  "sources": [
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+      "gridId": "connecting-ridge",
+      "lod": "fine5",
+      "ifd": 0,
+      "width": 40000,
+      "height": 40000,
+      "origin": [
+        -100000,
+        100000,
+        0
+      ],
+      "resolutionM": 5,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Moon2000_spole",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = GCS_Moon|Datum = D_Moon_2000|Ellipsoid = Moon_2000_IAU_IAG|Primem = Reference_Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "nodata": "NaN",
+      "samples": [
+        {
+          "index": 0,
+          "xM": -9097.5,
+          "yM": -10187.5,
+          "clampedHeightM": 1593.7965087890625,
+          "clampedErrorM": 0.0034912109374545253,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 18180,
+          "sourceRow": 22037,
+          "window": [
+            18180,
+            22037,
+            18182,
+            22039
+          ],
+          "sourceHeightsM": [
+            1593.7965087890625,
+            1593.6591796875,
+            1595.4700927734375,
+            1595.3792724609375
+          ],
+          "expectedHeightM": 1593.7965087890625,
+          "bundledHeightM": 1593.8,
+          "errorM": 0.0034912109374545253,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 131584,
+          "xM": -7051.4961013645225,
+          "yM": -12233.503898635478,
+          "clampedHeightM": 1653.0157516494164,
+          "clampedErrorM": -0.015751649416415603,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 18589.200779727096,
+          "sourceRow": 22446.200779727096,
+          "window": [
+            18589,
+            22446,
+            18591,
+            22448
+          ],
+          "sourceHeightsM": [
+            1652.9649658203125,
+            1653.07177734375,
+            1653.107666015625,
+            1653.2315673828125
+          ],
+          "expectedHeightM": 1653.0157516494164,
+          "bundledHeightM": 1653,
+          "errorM": -0.015751649416415603,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 263168,
+          "xM": -5005.492202729045,
+          "yM": -14279.507797270955,
+          "clampedHeightM": 1259.9810017596099,
+          "clampedErrorM": 0.018998240390146748,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 18998.401559454192,
+          "sourceRow": 22855.401559454192,
+          "window": [
+            18998,
+            22855,
+            19000,
+            22857
+          ],
+          "sourceHeightsM": [
+            1260.4625244140625,
+            1259.763671875,
+            1259.92724609375,
+            1259.3155517578125
+          ],
+          "expectedHeightM": 1259.9810017596099,
+          "bundledHeightM": 1260,
+          "errorM": 0.018998240390146748,
+          "toleranceM": 0.0551
+        }
+      ]
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+      "gridId": "malapert-massif",
+      "lod": "fine10",
+      "ifd": 0,
+      "width": 43280,
+      "height": 43280,
+      "origin": [
+        -216400,
+        216400,
+        0
+      ],
+      "resolutionM": 10,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Moon (2015) - Sphere / Ocentric / South Polar",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Moon (2015) - Sphere / Ocentric|Datum = Moon (2015) - Sphere|Ellipsoid = Moon (2015) - Sphere|Primem = Reference Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "nodata": "NaN",
+      "samples": [
+        {
+          "index": 0,
+          "xM": -6145,
+          "yM": 127485,
+          "clampedHeightM": 3023.80908203125,
+          "clampedErrorM": -0.009082031249818101,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21025,
+          "sourceRow": 8891,
+          "window": [
+            21025,
+            8891,
+            21027,
+            8893
+          ],
+          "sourceHeightsM": [
+            3023.80908203125,
+            3024.338134765625,
+            3029.1279296875,
+            3029.550048828125
+          ],
+          "expectedHeightM": 3023.80908203125,
+          "bundledHeightM": 3023.8,
+          "errorM": -0.009082031249818101,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 131584,
+          "xM": -6.988304093567422,
+          "yM": 121346.98830409357,
+          "clampedHeightM": 4798.812528971923,
+          "clampedErrorM": -0.012528971922620258,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21638.801169590643,
+          "sourceRow": 9504.801169590643,
+          "window": [
+            21638,
+            9504,
+            21640,
+            9506
+          ],
+          "sourceHeightsM": [
+            4799.32275390625,
+            4800.662109375,
+            4797.50341796875,
+            4798.64697265625
+          ],
+          "expectedHeightM": 4798.812528971923,
+          "bundledHeightM": 4798.8,
+          "errorM": -0.012528971922620258,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 131583,
+          "xM": -30.964912280702265,
+          "yM": 121346.98830409357,
+          "clampedHeightM": 4796.028439589988,
+          "clampedErrorM": -0.028439589988010994,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21636.40350877193,
+          "sourceRow": 9504.801169590643,
+          "window": [
+            21636,
+            9504,
+            21638,
+            9506
+          ],
+          "sourceHeightsM": [
+            4796.490234375,
+            4797.71728515625,
+            4795.416015625,
+            4796.34521484375
+          ],
+          "expectedHeightM": 4796.028439589988,
+          "bundledHeightM": 4796,
+          "errorM": -0.028439589988010994,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 131585,
+          "xM": 16.98830409356742,
+          "yM": 121346.98830409357,
+          "clampedHeightM": 4801.096456812435,
+          "clampedErrorM": 0.0035431875658105128,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21641.198830409357,
+          "sourceRow": 9504.801169590643,
+          "window": [
+            21641,
+            9504,
+            21643,
+            9506
+          ],
+          "sourceHeightsM": [
+            4802.66455078125,
+            4803.185546875,
+            4800.53955078125,
+            4801.25390625
+          ],
+          "expectedHeightM": 4801.096456812435,
+          "bundledHeightM": 4801.1,
+          "errorM": 0.0035431875658105128,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 131071,
+          "xM": -6.988304093567422,
+          "yM": 121370.9649122807,
+          "clampedHeightM": 4802.53513961828,
+          "clampedErrorM": -0.03513961827957246,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21638.801169590643,
+          "sourceRow": 9502.40350877193,
+          "window": [
+            21638,
+            9502,
+            21640,
+            9504
+          ],
+          "sourceHeightsM": [
+            4801.89208984375,
+            4803.3916015625,
+            4800.611328125,
+            4801.982421875
+          ],
+          "expectedHeightM": 4802.53513961828,
+          "bundledHeightM": 4802.5,
+          "errorM": -0.03513961827957246,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 132097,
+          "xM": -6.988304093567422,
+          "yM": 121323.01169590643,
+          "clampedHeightM": 4794.464351327517,
+          "clampedErrorM": 0.0356486724831484,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 21638.801169590643,
+          "sourceRow": 9507.198830409357,
+          "window": [
+            21638,
+            9507,
+            21640,
+            9509
+          ],
+          "sourceHeightsM": [
+            4794.14453125,
+            4794.90771484375,
+            4792.7275390625,
+            4793.4287109375
+          ],
+          "expectedHeightM": 4794.464351327517,
+          "bundledHeightM": 4794.5,
+          "errorM": 0.0356486724831484,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 263168,
+          "xM": 6131.023391812865,
+          "yM": 115208.97660818713,
+          "clampedHeightM": 3772.4906375689707,
+          "clampedErrorM": 0.009362431029330764,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 22252.602339181285,
+          "sourceRow": 10118.602339181287,
+          "window": [
+            22252,
+            10118,
+            22254,
+            10120
+          ],
+          "sourceHeightsM": [
+            3774.64404296875,
+            3774.301025390625,
+            3771.468017578125,
+            3771.031982421875
+          ],
+          "expectedHeightM": 3772.4906375689707,
+          "bundledHeightM": 3772.5,
+          "errorM": 0.009362431029330764,
+          "toleranceM": 0.0551
+        }
+      ]
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF",
+      "gridId": "odysseus",
+      "lod": "fine40",
+      "ifd": 0,
+      "width": 15200,
+      "height": 15200,
+      "origin": [
+        -304000,
+        304000,
+        0
+      ],
+      "resolutionM": 40,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Moon (2015) - Sphere / Ocentric / South Polar",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Moon (2015) - Sphere / Ocentric|Datum = Moon (2015) - Sphere|Ellipsoid = Moon (2015) - Sphere|Primem = Reference Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "nodata": "NaN",
+      "samples": [
+        {
+          "index": 0,
+          "xM": -660,
+          "yM": 308140,
+          "outside": true,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "bundledHeightM": null,
+          "errorM": null,
+          "clampedErrorM": null
+        },
+        {
+          "index": 131584,
+          "xM": 7543.976608187135,
+          "yM": 299936.02339181287,
+          "clampedHeightM": 2593.178208429119,
+          "clampedErrorM": 0.021791570880850486,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 7788.099415204679,
+          "sourceRow": 101.09941520467837,
+          "window": [
+            7788,
+            101,
+            7790,
+            103
+          ],
+          "sourceHeightsM": [
+            2592.0400390625,
+            2599.813232421875,
+            2595.84619140625,
+            2602.3046875
+          ],
+          "expectedHeightM": 2593.178208429119,
+          "bundledHeightM": 2593.2,
+          "errorM": 0.021791570880850486,
+          "toleranceM": 0.0551
+        },
+        {
+          "index": 263168,
+          "xM": 15747.95321637427,
+          "yM": 291732.04678362573,
+          "clampedHeightM": 2668.499755859375,
+          "clampedErrorM": -0.599755859374909,
+          "clampShiftXM": -7.953216374262411,
+          "clampShiftYM": 7.953216374269232,
+          "sourceCol": 7993.198830409357,
+          "sourceRow": 306.19883040935673,
+          "window": [
+            7993,
+            306,
+            7995,
+            308
+          ],
+          "sourceHeightsM": [
+            2668.499755859375,
+            2669.895751953125,
+            2664.134765625,
+            2665.242431640625
+          ],
+          "expectedHeightM": 2667.8980308327373,
+          "bundledHeightM": 2667.9,
+          "errorM": 0.0019691672628141532,
+          "toleranceM": 0.0551
+        }
+      ]
+    },
+    {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "gridId": "overview",
+      "lod": "overview",
+      "ifd": 4,
+      "width": 475,
+      "height": 475,
+      "origin": [
+        -304000,
+        304000,
+        0
+      ],
+      "resolutionM": 1280,
+      "geoKeys": {
+        "GTModelTypeGeoKey": 1,
+        "GTRasterTypeGeoKey": 1,
+        "GTCitationGeoKey": "Moon (2015) - Sphere / Ocentric / South Polar",
+        "GeographicTypeGeoKey": 32767,
+        "GeogCitationGeoKey": "GCS Name = Moon (2015) - Sphere / Ocentric|Datum = Moon (2015) - Sphere|Ellipsoid = Moon (2015) - Sphere|Primem = Reference Meridian|",
+        "GeogGeodeticDatumGeoKey": 32767,
+        "GeogAngularUnitsGeoKey": 9102,
+        "GeogEllipsoidGeoKey": 32767,
+        "GeogSemiMajorAxisGeoKey": 1737400,
+        "GeogSemiMinorAxisGeoKey": 1737400,
+        "GeogPrimeMeridianLongGeoKey": 0,
+        "ProjectedCSTypeGeoKey": 32767,
+        "ProjectionGeoKey": 32767,
+        "ProjCoordTransGeoKey": 15,
+        "ProjLinearUnitsGeoKey": 9001,
+        "ProjNatOriginLatGeoKey": -90,
+        "ProjFalseEastingGeoKey": 0,
+        "ProjFalseNorthingGeoKey": 0,
+        "ProjScaleAtNatOriginGeoKey": 1,
+        "ProjStraightVertPoleLongGeoKey": 0
+      },
+      "nodata": "NaN",
+      "samples": [
+        {
+          "index": 0,
+          "xM": -303360,
+          "yM": 303360,
+          "clampedHeightM": 588.2976684570312,
+          "clampedErrorM": 0.0023315429687045253,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 0,
+          "sourceRow": 0,
+          "window": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "sourceHeightsM": [
+            588.2976684570312,
+            591.2567138671875,
+            584.6934204101562,
+            586.3494873046875
+          ],
+          "expectedHeightM": 588.2976684570312,
+          "bundledHeightM": 588.3,
+          "errorM": 0.0023315429687045253,
+          "toleranceM": 0.2001
+        },
+        {
+          "index": 131584,
+          "xM": 47.40740740741603,
+          "yM": -47.40740740741603,
+          "clampedHeightM": 1263.0674753699277,
+          "clampedErrorM": -0.0674753699277062,
+          "clampShiftXM": 0,
+          "clampShiftYM": 0,
+          "sourceCol": 237.03703703703704,
+          "sourceRow": 237.03703703703704,
+          "window": [
+            237,
+            237,
+            239,
+            239
+          ],
+          "sourceHeightsM": [
+            1282.9306640625,
+            934.9569091796875,
+            1105.5328369140625,
+            462.3272399902344
+          ],
+          "expectedHeightM": 1263.0674753699277,
+          "bundledHeightM": 1263,
+          "errorM": -0.0674753699277062,
+          "toleranceM": 0.2001
+        },
+        {
+          "index": 263168,
+          "xM": 303454.81481481483,
+          "yM": -303454.81481481483,
+          "outside": true,
+          "clampShiftXM": -94.81481481481751,
+          "clampShiftYM": 94.81481481481751,
+          "bundledHeightM": -3950.1,
+          "errorM": null,
+          "clampedErrorM": null
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "name": "lemelin",
+      "url": "https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content",
+      "error": "Error: HTTP 403: https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content"
+    },
+    {
+      "name": "lemelinAlternate",
+      "url": "https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1",
+      "error": "Error: HTTP 403: https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1"
+    }
+  ],
+  "globalSamples": [
+    {
+      "x": 0,
+      "y": 0,
+      "x0": 0,
+      "x1": 2.25,
+      "y0": 0,
+      "y1": 2.25,
+      "rows": [
+        {
+          "row": 0,
+          "col": 0,
+          "dn": [
+            10,
+            21,
+            13
+          ]
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "dn": [
+            -155,
+            -158,
+            -157
+          ]
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "dn": [
+            -247,
+            -249,
+            -248
+          ]
+        }
+      ]
+    },
+    {
+      "x": 1280,
+      "y": 640,
+      "x0": 2880,
+      "x1": 2882.25,
+      "y0": 1440,
+      "y1": 1442.25,
+      "rows": [
+        {
+          "row": 1440,
+          "col": 2880,
+          "dn": [
+            5541,
+            5600,
+            5448
+          ]
+        },
+        {
+          "row": 1441,
+          "col": 2880,
+          "dn": [
+            5789,
+            5826,
+            5674
+          ]
+        },
+        {
+          "row": 1442,
+          "col": 2880,
+          "dn": [
+            5850,
+            5882,
+            5851
+          ]
+        }
+      ]
+    },
+    {
+      "x": 2559,
+      "y": 1279,
+      "x0": 5757.75,
+      "x1": 5760,
+      "y0": 2877.75,
+      "y1": 2880,
+      "rows": [
+        {
+          "row": 2877,
+          "col": 5757,
+          "dn": [
+            496,
+            491,
+            512
+          ]
+        },
+        {
+          "row": 2878,
+          "col": 5757,
+          "dn": [
+            1341,
+            1307,
+            1281
+          ]
+        },
+        {
+          "row": 2879,
+          "col": 5757,
+          "dn": [
+            2093,
+            2078,
+            1944
+          ]
+        }
+      ]
+    },
+    {
+      "x": 100,
+      "y": 1100,
+      "x0": 225,
+      "x1": 227.25,
+      "y0": 2475,
+      "y1": 2477.25,
+      "rows": [
+        {
+          "row": 2475,
+          "col": 225,
+          "dn": [
+            2778,
+            2712,
+            2542
+          ]
+        },
+        {
+          "row": 2476,
+          "col": 225,
+          "dn": [
+            2635,
+            2543,
+            2369
+          ]
+        },
+        {
+          "row": 2477,
+          "col": 225,
+          "dn": [
+            2133,
+            1976,
+            1835
+          ]
+        }
+      ]
+    },
+    {
+      "x": 1700,
+      "y": 1200,
+      "x0": 3825,
+      "x1": 3827.25,
+      "y0": 2700,
+      "y1": 2702.25,
+      "rows": [
+        {
+          "row": 2700,
+          "col": 3825,
+          "dn": [
+            -4457,
+            -4394,
+            -4339
+          ]
+        },
+        {
+          "row": 2701,
+          "col": 3825,
+          "dn": [
+            -4226,
+            -4227,
+            -4264
+          ]
+        },
+        {
+          "row": 2702,
+          "col": 3825,
+          "dn": [
+            -4331,
+            -4441,
+            -4547
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "probeCompleted": true,
+  "status": "failing",
+  "finding": "Compiler emits newly stamped 41/21/0 for an intentionally changed input without refusing stale observer comparisons",
+  "scope": "Disposable copied catalog first Earth range +100 km; comparison receipts and manifest unchanged; production source/data untouched",
+  "compilerExitCode": 0,
+  "compilerCounts": {
+    "verified": 41,
+    "uncertain": 21,
+    "failing": 0
+  },
+  "originalFirstRangeKm": 361004.59375,
+  "alteredFirstRangeKm": 361104.59375,
+  "staleEphemerisReceiptSha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
+  "newlyClaimedCatalogSha256": "98fe23fd6727ad7e9ebd21b5c4ee7eadc9f43e1c36c0d635c49b16c533ba2484",
+  "failedReceiptProbe": {
+    "compilerExitCode": 0,
+    "counts": {
+      "verified": 41,
+      "uncertain": 21,
+      "failing": 0
+    },
+    "claims": [
+      {
+        "id": "S03",
+        "status": "verified",
+        "observedError": {
+          "beforeM": 0.6019691672627232,
+          "afterM": 1.0,
+          "limitM": 0.0551
+        }
+      },
+      {
+        "id": "S10",
+        "status": "verified",
+        "observedError": {
+          "method": "AST-selected corrected Python functions; synthetic 64x64 terrain",
+          "knownHorizonDeg": -0.1611439672843969,
+          "missingRayHorizonDeg": -0.16,
+          "unknownRayBecameFinite": true,
+          "expectedUnknown": true,
+          "fixed": false,
+          "limitation": "No original polar DEM nodata prevalence inferred; pipeline is owned by ephemeris lane."
+        }
+      }
+    ]
+  }
+}

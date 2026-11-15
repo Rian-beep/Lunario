@@ -97,8 +97,9 @@ test('original 157 NASA proxies: finite actual terrain, every 120 Hz state and d
     const geometry=await prepareTouchdownFragments(model);
     assert.equal(geometry.sourceMeshCount,157);assert.equal(geometry.descriptors.length,157);
     assert.ok(Math.abs(geometry.bounds.max.y-geometry.bounds.min.y-7)<1e-5);
+    // Registered source-pixel halo correction; preserve the same 5 cm contact gate.
     const terrainBytes=await readFile(new URL('../public/data/terrain.json',import.meta.url));
-    assert.equal(createHash('sha256').update(terrainBytes).digest('hex'),'be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32');
+    assert.equal(createHash('sha256').update(terrainBytes).digest('hex'),'20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e');
     const data=decodeTerrain(JSON.parse(terrainBytes.toString()));
     const local=siteFrame(-89.53432,-150.05233,heightAt(data,-89.53432,-150.05233)!.heightM);
     const prepare=(contact:LandingContact,breakupEnergyJ:number,restitution=.1)=>prepareContactReplay(contact,

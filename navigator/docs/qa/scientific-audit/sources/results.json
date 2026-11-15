@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "lane": "sources",
+  "baseline": "96079ae",
+  "auditedUtc": "2026-11-15",
+  "counts": {
+    "verified": 9,
+    "failing": 3,
+    "uncertain": 6
+  },
+  "coordinateAndTimeConventions": {
+    "referenceRadiusM": 1737400,
+    "latitude": "selenocentric degrees",
+    "longitude": "east-positive degrees; terrain [0,360), ice [-180,180]",
+    "height": "metres above reference sphere, not geoid or Earth sea level",
+    "polarProjection": "south polar stereographic, central meridian 0, unit scale at pole, x=easting, y north toward 0 E",
+    "orientation": "DE421 MOON_ME for DEM products; other dataset equivalence unresolved",
+    "epochs": "Static topography; PDS source interval/version in S04. LCROSS event UTC in S09. Catalog time support [2026-01-01T00:00:00Z,2028-01-01T00:00:00Z), 1 h forcing. No new ephemeris queries."
+  },
+  "referenceCapture": {
+    "responses": 36,
+    "bytes": 5365794,
+    "failures": [
+      {
+        "name": "lemelin",
+        "url": "https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content",
+        "error": "Error: HTTP 403: https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content"
+      },
+      {
+        "name": "lemelinAlternate",
+        "url": "https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1",
+        "error": "Error: HTTP 403: https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1"
+      }
+    ],
+    "path": "references/responses.json"
+  },
+  "implementationChanges": [],
+  "sourceDataChanged": false,
+  "results": [
+    {
+      "id": "S01",
+      "claim": "Polar metadata uses height in metres, a 1737400 m sphere and DE421 mean-Earth frame",
+      "status": "verified",
+      "scope": "Primary product/GeoTIFF metadata, not an accuracy determination",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Capture NASA PGDA 90/81 and USGS; decode four original COG IFDs including area registration, metric units and sphere axes.",
+      "tolerance": "Exact metadata values; no positional tolerance asserted",
+      "observedError": {
+        "radiusDifferenceM": 0,
+        "rasterType": 1
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Pixel spacing is distinct from effective resolution/error. GeoTIFF projection labels alone do not establish a frame transform."
+    },
+    {
+      "id": "S02",
+      "claim": "Thirteen un-clamped polar samples reproduce primary COG heights within encoding tolerance",
+      "status": "verified",
+      "scope": "Bounded transfer/resampling check: one 5 m patch, one 10 m patch, one 40 m patch and one 1280 m overview",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Read original 2x2 COG windows at declared projected pixel centres; independent scalar bilinear interpolation versus decoded bundled heights. Exact HTTP range bodies replay offline.",
+      "tolerance": "Fine grids: 0.0551 m = 0.005 m decimal rounding + 0.05 m packing + 0.0001 m arithmetic allowance. Overview: 0.2001 m = 0.05 + 0.15 + 0.0001 m.",
+      "observedError": {
+        "samples": 13,
+        "maxFineAbsM": 0.0356486724831484,
+        "maxOverviewAbsM": 0.0674753699277062
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Sampling is deliberately small, not all pixels or an independent measurement. Two requested points lie beyond original support and are excluded, never counted as passes."
+    },
+    {
+      "id": "S03",
+      "claim": "Uniform patch coordinates disagree with the upsampling edge-replicated source sample",
+      "status": "failing",
+      "scope": "Existing fine40 odysseus grid final index 263168; overview edge also extends beyond source-centre support",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Compare source interpolation at metadata coordinate with bundled last node, then evaluate builder cutout edge clamp to isolate cause.",
+      "tolerance": "0.0551 m fixed encoding bound; no physical terrain tolerance invented",
+      "observedError": {
+        "beforeM": 0.6019691672627232,
+        "afterM": 0.6019691672627232,
+        "fixed": false,
+        "atDeclaredCoordinateM": 2667.8980308327373,
+        "bundledHeightM": 2668.5,
+        "clampedSourceErrorM": 0.000244140625,
+        "coordinateM": [
+          15747.95321637427,
+          291732.04678362573
+        ],
+        "clampShiftM": [
+          -7.953216374262411,
+          7.953216374269232
+        ]
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Public data read-only. Parent must authorize reproducible regeneration with a source-pixel halo or a correctly registered resampler; changing global spacing would misregister the interior. No whole-map error claim."
+    },
+    {
+      "id": "S04",
+      "claim": "Global height calibration and five downsampled cells match original PDS DN values",
+      "status": "verified",
+      "scope": "LDEM_16 V3.1, original 5760x2880 pixel-registered cylindrical grid, output 2560x1280",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.img"
+      ],
+      "referenceVersion": "PDS LRO-L-LOLA-4-GDR-V1.0; LDEM_16 V3.1 created 2019-03-15; input observations 2009-07-13T17:33:17 to 2016-11-29T05:48:19 (source label times).",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Fresh label matches bundled label SHA256. Bounded IMG row ranges decoded little-endian signed int16; independent integer quarter-pixel overlap weights reproduce five selected output DNs. Packed/decoded whole bundled hashes verified.",
+      "tolerance": "0 DN difference for selected rounded output; 0.5 m DN scale; height = DN*0.5 m; radius = height+1737400 m",
+      "observedError": {
+        "cells": 5,
+        "maxDnError": 0,
+        "maxHeightErrorM": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Full upstream IMG hash recorded in bundle metadata was not recomputed from a complete fresh download. Native coordinate-area average is not a spherical area integral."
+    },
+    {
+      "id": "S05",
+      "claim": "A Malapert regional slope stencil agrees with primary heights at the stated scale",
+      "status": "verified",
+      "scope": "lat -85.99985841143967 deg, lon 359.99670036862335 deg east; DE421 ME; source 10 m, output 23.976608187134502 m projected",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Four original COG stencil heights, independent central differences and stereographic metric correction, versus regionalSlope on bundled heights.",
+      "tolerance": "0.1864364403885588 deg upper arithmetic bound from atan Lipschitz bound and 0.0551 m per-height encoding error; not source slope accuracy",
+      "observedError": {
+        "expectedDeg": 11.253694481043707,
+        "actualDeg": 11.204527366666207,
+        "beforeDeg": -0.0491671143775001,
+        "afterDeg": -0.0491671143775001,
+        "fixed": false,
+        "groundStencilSpacingM": 23.94740321429714
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "One regional stencil does not validate vehicle footprint slopes, rocks, regolith or PGDA slope-error maps. Source interpolation errors are not covered by this tolerance."
+    },
+    {
+      "id": "S06",
+      "claim": "Coarse horizon reproduces analytic spherical dip under its discrete ray policy",
+      "status": "verified",
+      "scope": "Synthetic sphere R=1737400 m, observer 2 m, north-clockwise ENU azimuth; no epoch",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Compare all 180 rays with closed-form tangent dip -acos(R/(R+h)). Also check angular interpolation across north and NaN sectors.",
+      "tolerance": "0.001 deg algorithm-only test bound, declared before execution",
+      "observedError": {
+        "analyticDeg": -0.08693657193373108,
+        "maxAbsDeg": 4.481753885275663e-05
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Synthetic-only formula verification; never physical skyline validation. 200 log distances from 1 to 1000000 m and 2 deg azimuth can miss ridges."
+    },
+    {
+      "id": "S07",
+      "claim": "Missing coarse DEM support remains unknown",
+      "status": "verified",
+      "scope": "Runtime global DEM height/slope/horizon support semantics",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Replace decoded fixture samples with nodata and verify height/slope null and horizon unavailable; polar inventory keeps int16 -32768 as null.",
+      "tolerance": "Exact unknown states, not a numerical physical tolerance",
+      "observedError": {
+        "inventedFiniteValues": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Does not apply to Python prepared-mask pipeline (S10); no claim that source interpolation holes become measured returns."
+    },
+    {
+      "id": "S08",
+      "claim": "Observed darkness is censored at stay boundaries and unknown coverage is not darkness",
+      "status": "verified",
+      "scope": "Interval bookkeeping at 1 h sampling; any-limb visibility; implementation-only",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Boundary, interior, entire-window and missing-sample fixtures exercise observedAbsence.",
+      "tolerance": "Exact discrete duration and censor flags",
+      "observedError": {
+        "durationErrorHours": 0,
+        "unknownsConvertedToDarkness": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Real event times remain bracketed by forcing cadence. Censored duration is a lower bound, not a full lunar darkness interval."
+    },
+    {
+      "id": "S09",
+      "claim": "LCROSS marker agrees with original NASA-hosted impact-location paper",
+      "status": "verified",
+      "scope": "Centaur 2009-10-09T11:31:19.506 UTC; Mean Earth selenocentric degrees east longitude/latitude",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/api/citations/20140005563/downloads/20140005563.pdf"
+      ],
+      "referenceVersion": "Marshall et al. 2012, DOI 10.1007/s11214-011-9765-0; NASA NTRS 20140005563; SHA256 8d1fdffb2db74f67b1801ec4671d557191f35b1025da49da790aab04a79bb660",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Fresh NASA PDF bytes match pinned original SHA256 and byte length; pdftotext confirms published coordinates and impact UTC. Runtime keeps abundance/extent null.",
+      "tolerance": "Exact factual transcription; reported location uncertainty 115 m latitude, 44 m longitude (1 sigma), not pixel resolution",
+      "observedError": {
+        "latitudeDeg": -84.6796,
+        "longitudeEastDeg": -48.7093,
+        "transcriptionDifferenceDeg": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Location paper is not independent remeasurement of water abundance or deposit shape. Ejecta-water detection cannot characterize nearby excavatable resources."
+    },
+    {
+      "id": "S10",
+      "claim": "Prepared-mask pipeline can return a finite horizon after skipping unknown terrain",
+      "status": "failing",
+      "scope": "Unchanged pipeline/build_dataset.py horizon_masks; synthetic unknown-on-ray case",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "AST-execute original pure functions without decorators; both DEMs missing a near ray location, >=8 remaining samples. Ray remains finite.",
+      "tolerance": "Unknown crossing should remain unknown unless a justified conservative occlusion bound is supplied",
+      "observedError": {
+        "beforeDeg": -0.1611439672843969,
+        "afterDeg": -0.1611439672843969,
+        "expected": "NaN",
+        "fixed": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Pipeline belongs to ephemeris lane. This demonstrates policy failure, not that a specific bundled ray was affected; original DEM nodata prevalence unavailable."
+    },
+    {
+      "id": "S11",
+      "claim": "Bundled imagery registry does not match its evidence-manifest SHA256",
+      "status": "failing",
+      "scope": "public/data/imagery.json integrity identity; reproduced from git baseline 96079ae",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Read-only SHA256 inventory of 58 public/data assets; compare registered asset identities; git show baseline confirms same mismatch.",
+      "tolerance": "Exact SHA256 match required",
+      "observedError": {
+        "before": [
+          {
+            "path": "public/data/imagery.json",
+            "bytes": 9517,
+            "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
+            "embeddedProvenance": {
+              "retrievedUtc": "2026-11-14T11:30:36.818Z",
+              "frame": "South polar stereographic, Moon radius 1737400 m; global texture equirectangular lon -180..180, lat 90..-90."
+            },
+            "manifestVersion": null,
+            "manifestSourceUrl": null,
+            "manifestFrame": null,
+            "manifestSha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+            "manifestMatches": false
+          }
+        ],
+        "after": [
+          {
+            "path": "public/data/imagery.json",
+            "bytes": 9517,
+            "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
+            "embeddedProvenance": {
+              "retrievedUtc": "2026-11-14T11:30:36.818Z",
+              "frame": "South polar stereographic, Moon radius 1737400 m; global texture equirectangular lon -180..180, lat 90..-90."
+            },
+            "manifestVersion": null,
+            "manifestSourceUrl": null,
+            "manifestFrame": null,
+            "manifestSha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+            "manifestMatches": false
+          }
+        ],
+        "fixed": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Hash mismatch does not by itself prove numerical corruption. Shared manifest/metadata belong to integrator; no silent rehash."
+    },
+    {
+      "id": "S12",
+      "claim": "Polar DEM effective resolution and physical error are unresolved",
+      "status": "uncertain",
+      "scope": "5/10/40 m native pixel spacing, 80 m base with 160/1280 m overviews; output spacing differs",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Review PGDA height, EFFRES, ERR, slope-error/count metadata and inspect bundled provenance.",
+      "tolerance": "No physical tolerance available",
+      "observedError": {
+        "physicalHeightErrorM": null,
+        "physicalSlopeErrorDeg": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No per-pixel EFFRES/ERR/count maps ingested or compared. PGDA81 mosaic alignment residuals are not a universal height-error guarantee."
+    },
+    {
+      "id": "S13",
+      "claim": "Cross-dataset lunar orientation registration remains unquantified",
+      "status": "uncertain",
+      "scope": "Polar/global DEM DE421 ME versus catalog DE441/MEAN_ME and M3 GCS_Moon D_Moon_2000",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/",
+        "https://doi.org/10.5281/zenodo.4646092"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Compare primary metadata with catalog/ice manifests; do not equate a named sphere with a realized orientation frame.",
+      "tolerance": "No justified angular or metre registration tolerance",
+      "observedError": {
+        "rotationErrorDeg": null,
+        "positionErrorM": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No authenticated raw original Horizons headers/epoch-dependent orientation mapping in this lane. M3 archive specifies no DE realization. LCROSS Mean Earth label is not an exact all-dataset transform."
+    },
+    {
+      "id": "S14",
+      "claim": "Upstream raw data identity is incomplete despite a complete current-byte inventory",
+      "status": "uncertain",
+      "scope": "58 asset SHA256 identities; 24 comparable manifest entries, 23 matching, 1 failing; 24 polar grids / 4541976 samples / 91619 unknown",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Inventory all existing public/data bytes and decode all packed polar grids; compare identities without modifying data.",
+      "tolerance": "Exact current-byte hash/count integrity only",
+      "observedError": {
+        "missingPolarOriginalWholeHashes": true,
+        "upstreamGlobalWholeHashFreshlyRecomputed": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Original polar/horizon source bytes, immutable versions, full response headers and all asset manifest entries are not complete. Hashes prove identity only; physical accuracy is separate."
+    },
+    {
+      "id": "S15",
+      "claim": "Prepared/coarse horizons are not independently validated physical skylines",
+      "status": "uncertain",
+      "scope": "Named 1 deg horizons 0/2/10 m; nearest custom grid 3 deg at 2 m; global 2 deg rays",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Read pipeline/runtimes; distinguish nearest terrain sampling, angular interpolation, spatial borrowing, finite radial extent, and discrete terrain from actual disk integration.",
+      "tolerance": "No global terrain occlusion error tolerance supported",
+      "observedError": {
+        "physicalHorizonErrorDeg": null,
+        "illuminationErrorFraction": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No complete original 40/240 m datasets or independent skyline/illumination observations. Numerical display cutouts use bilinear 5/10/40 m products, not the prepared horizon pipeline nearest samples. Narrow obstructions and remote missing terrain can bias exposure."
+    },
+    {
+      "id": "S16",
+      "claim": "M3 association extraction cannot be freshly reproduced from the author archive in this run",
+      "status": "uncertain",
+      "scope": "169 published PSR representative points, 820 positive M3 detections at ~280 m sampling; no per-point observation epoch",
+      "sourceUrls": [
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://doi.org/10.3847/PSJ/abf3c5",
+        "https://www.jpl.nasa.gov/news/ice-confirmed-at-the-moons-poles/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Inspect extraction/parser and output counts; fetch pinned API URL and alternate official file URL; both return HTTP 403. Existing parser tests verify semantics only.",
+      "tolerance": "Original ZIP/member hashes and byte-for-byte output required for a new provenance pass",
+      "observedError": {
+        "freshArchiveError": [
+          {
+            "name": "lemelin",
+            "url": "https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content",
+            "error": "Error: HTTP 403: https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content"
+          },
+          {
+            "name": "lemelinAlternate",
+            "url": "https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1",
+            "error": "Error: HTTP 403: https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1"
+          }
+        ],
+        "newIndependentArchiveMatch": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Existing source-manifest claims remain unrefreshed. PSR representative locations are not individual M3 ice pixels or measured ice outlines; association is not abundance."
+    },
+    {
+      "id": "S17",
+      "claim": "Exposure/slope ranking and ice markers do not establish safety or recoverable reserves",
+      "status": "uncertain",
+      "scope": "Regional weighted index 0\u2013100 and resource applicability",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://www.jpl.nasa.gov/news/ice-confirmed-at-the-moons-poles/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Review suitability score inputs, slope ranking preference, explicit limitations and ice evidence types; no mission readiness solver substituted.",
+      "tolerance": "No safety, probability, excavation or concentration tolerance established",
+      "observedError": {
+        "qualifiedLandingFootprintEvidence": false,
+        "excavatableIceEvidence": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Mean uniform visible-solar-disk fraction is not electrical power. Contact is geometric Earth-centre clearance plus antenna cutoff, not allocated RF service. Neither PSR nor M3 spectral associations establish deposit depth, grade or excavation feasibility."
+    },
+    {
+      "id": "S18",
+      "claim": "Runtime ice loader preserves evidence methods and counts rather than inferring resource quantity",
+      "status": "verified",
+      "scope": "Source/schema interpretation and error handling only; no independent physical detections",
+      "sourceUrls": [
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://ntrs.nasa.gov/api/citations/20140005563/downloads/20140005563.pdf"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Existing focused parser tests plus audit inspect 169 Point associations and one impact marker, count units, null dates/quantities and source-method constraints.",
+      "tolerance": "Exact schema/count/null semantics; no physical tolerance",
+      "observedError": {
+        "iceBearingPsrPoints": 169,
+        "associatedDetections": 820,
+        "impactWaterMarkers": 1,
+        "surfaceIcePixelFeatures": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Correct parser behavior does not refresh the inaccessible original archive or verify all science interpretations. M3 observationUtc null and LCROSS abundance null remain meaningful."
+    }
+  ],
+  "acceptance": "Not accepted as an all-green scientific audit: failing and uncertain findings remain. Passing tests reproduce discrepancies as well as formula behavior; no operational certification."
+}

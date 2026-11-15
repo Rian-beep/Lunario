@@ -1,0 +1,61 @@
+{
+  "notes": [
+    {
+      "text": "Hover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 sam",
+      "color": "rgb(208, 195, 181)"
+    },
+    {
+      "text": "LOLA terrain horizon: 1 ° · azimuth 0 °",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Smooth-sphere horizon (0°): 0 ° (constant reference)",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Sun centre track: 2 ° · azimuth 5 ° · stay sample 1 (hourly)",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Earth centre track: 3 ° · azimuth 60 ° · stay sample 1 (hourly)",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "A line rising to the right has a positive slope; a falling line has a negative s",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "m=ΔyΔx. Here m is the finite slope, Δ means “change”, y is Elevation above local",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "This is elevation change per degree of compass direction (°/°). It describes the",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Use the graph’s arrow keys or Previous/Next sample controls to update these valu",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "LOLA terrain horizon: Finite sample slope ≈ 0.011111 °/° (rises as x increases).",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Smooth-sphere horizon (0°) (constant reference): Unavailable: The azimuth seam i",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Sun centre track: Unavailable: Outside the sampled source bounds; no extrapolati",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "Earth centre track: Unavailable: Outside the sampled source bounds; no extrapola",
+      "color": "rgb(28, 25, 21)"
+    },
+    {
+      "text": "North 0°, east 90°, south 180°, west 270°. Elevation 0° is the local horizontal,",
+      "color": "rgb(208, 195, 181)"
+    }
+  ],
+  "readout": "rgb(20, 22, 25)"
+}

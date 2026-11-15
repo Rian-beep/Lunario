@@ -1,0 +1,652 @@
+TAP version 13
+# Subtest: nonfinite terrain NaN stays unknown and cannot poison legacy contact
+ok 1 - nonfinite terrain NaN stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 5.353525
+  ...
+# Subtest: nonfinite terrain Infinity stays unknown and cannot poison legacy contact
+ok 2 - nonfinite terrain Infinity stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 2.019477
+  ...
+# Subtest: nonfinite terrain -Infinity stays unknown and cannot poison legacy contact
+ok 3 - nonfinite terrain -Infinity stays unknown and cannot poison legacy contact
+  ---
+  duration_ms: 1.319942
+  ...
+# Subtest: both solvers reject an initial point below known numerical terrain
+ok 4 - both solvers reject an initial point below known numerical terrain
+  ---
+  duration_ms: 0.492632
+  ...
+# (node:726250) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: legacy force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+ok 5 - legacy force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+  ---
+  duration_ms: 1.851543
+  ...
+# Subtest: legacy fractional burn, propellant depletion and ideal delta-v
+ok 6 - legacy fractional burn, propellant depletion and ideal delta-v
+  ---
+  duration_ms: 1.1073
+  ...
+# Subtest: legacy circular two-body closed form, energy and angular momentum
+ok 7 - legacy circular two-body closed form, energy and angular momentum
+  ---
+  duration_ms: 13.254379
+  ...
+# Subtest: configured force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+ok 8 - configured force/mass and short hover limits use lunar gravity but terrestrial Isp conversion
+  ---
+  duration_ms: 1.219396
+  ...
+# Subtest: configured fractional burn, propellant depletion and ideal delta-v
+ok 9 - configured fractional burn, propellant depletion and ideal delta-v
+  ---
+  duration_ms: 4.020404
+  ...
+# Subtest: configured circular two-body closed form, energy and angular momentum
+ok 10 - configured circular two-body closed form, energy and angular momentum
+  ---
+  duration_ms: 135.782042
+  ...
+# Subtest: configured radial fall reaches the same surface with independent energy and exact time-of-fall
+ok 11 - configured radial fall reaches the same surface with independent energy and exact time-of-fall
+  ---
+  duration_ms: 4.041213
+  ...
+# Subtest: constant-spin equatorial frame agrees with circular inertial solution transformed analytically
+ok 12 - constant-spin equatorial frame agrees with circular inertial solution transformed analytically
+  ---
+  duration_ms: 26.529437
+  ...
+# Subtest: target distance is a sphere arc in metres, separate from chord and tangent-plane distance
+ok 13 - target distance is a sphere arc in metres, separate from chord and tangent-plane distance
+  ---
+  duration_ms: 0.251551
+  ...
+# Subtest: negative numerical surfaces, contact mass and known failure precedence remain explicit
+ok 14 - negative numerical surfaces, contact mass and known failure precedence remain explicit
+  ---
+  duration_ms: 6.032521
+  ...
+# Subtest: trajectory screen agrees with independent angular-momentum/apsis equations and reverse transfer
+ok 15 - trajectory screen agrees with independent angular-momentum/apsis equations and reverse transfer
+  ---
+  duration_ms: 1.089501
+  ...
+# Subtest: touchdown screen work/energy and static support boundary; missing inputs cannot become pass
+ok 16 - touchdown screen work/energy and static support boundary; missing inputs cannot become pass
+  ---
+  duration_ms: 0.53108
+  ...
+# Subtest: radiative blackbody limiting case uses independent total power and no instantaneous survival pass
+ok 17 - radiative blackbody limiting case uses independent total power and no instantaneous survival pass
+  ---
+  duration_ms: 0.172434
+  ...
+# Subtest: rigid proxy follows disclosed constant-gravity ballistic limit before any contact
+ok 18 - rigid proxy follows disclosed constant-gravity ballistic limit before any contact
+  ---
+  duration_ms: 140.126084
+  ...
+# Subtest: fragment mass shares follow padded bounding boxes, independent of nominal mesh naming
+ok 19 - fragment mass shares follow padded bounding boxes, independent of nominal mesh naming
+  ---
+  duration_ms: 724.378992
+  ...
+# Subtest: empty defaults never assess seven domains, descriptors/map complete and inputs immutable
+ok 20 - empty defaults never assess seven domains, descriptors/map complete and inputs immutable
+  ---
+  duration_ms: 3.04123
+  ...
+# Subtest: parser rejects unknown/coerced/nonfinite/unphysical data and preserves missing fields
+ok 21 - parser rejects unknown/coerced/nonfinite/unphysical data and preserves missing fields
+  ---
+  duration_ms: 1.336991
+  ...
+# Subtest: footprint measured limits, coverage and coarse spacing never invent hazard closure
+ok 22 - footprint measured limits, coverage and coarse spacing never invent hazard closure
+  ---
+  duration_ms: 0.587858
+  ...
+# Subtest: touchdown energy/stroke/deceleration and static tipping use explicit supplied geometry
+ok 23 - touchdown energy/stroke/deceleration and static tipping use explicit supplied geometry
+  ---
+  duration_ms: 0.364197
+  ...
+# Subtest: rocket budget and two-body circular/escape/Hohmann calculations respect units and symmetry
+ok 24 - rocket budget and two-body circular/escape/Hohmann calculations respect units and symmetry
+  ---
+  duration_ms: 0.329588
+  ...
+# Subtest: support union uses best single-link capacity without duplicate overlap; allocation affects duration/data
+ok 25 - support union uses best single-link capacity without duplicate overlap; allocation affects duration/data
+  ---
+  duration_ms: 0.526211
+  ...
+# Subtest: thermal equilibrium and heater sizing preserve solar/albedo/IR/view-factor terms
+ok 26 - thermal equilibrium and heater sizing preserve solar/albedo/IR/view-factor terms
+  ---
+  duration_ms: 0.606058
+  ...
+# Subtest: plume is supplied geometric keep-out only, including exact angular boundary
+ok 27 - plume is supplied geometric keep-out only, including exact angular boundary
+  ---
+  duration_ms: 0.457283
+  ...
+# Subtest: traverse route accounts for return, auxiliaries, final reserve and time
+ok 28 - traverse route accounts for return, auxiliaries, final reserve and time
+  ---
+  duration_ms: 0.638087
+  ...
+# Subtest: overflow never emits Infinity/NaN or promotes an unavailable calculation to conditional
+ok 29 - overflow never emits Infinity/NaN or promotes an unavailable calculation to conditional
+  ---
+  duration_ms: 0.473453
+  ...
+# Subtest: reference factories are independent, preserve engine defaults and require explicit loading
+ok 30 - reference factories are independent, preserve engine defaults and require explicit loading
+  ---
+  duration_ms: 1.499656
+  ...
+# Subtest: production solver distinguishes assisted nominal, insufficient thrust and sideways overshoot
+ok 31 - production solver distinguishes assisted nominal, insufficient thrust and sideways overshoot
+  ---
+  duration_ms: 33.684748
+  ...
+# Subtest: single-variable manual burn and ascent pitch changes have the predicted direction in production
+ok 32 - single-variable manual burn and ascent pitch changes have the predicted direction in production
+  ---
+  duration_ms: 31.68153
+  ...
+# Subtest: contact reference keeps real incoming speed and sub-threshold energy; restitution does not change airborne motion
+ok 33 - contact reference keeps real incoming speed and sub-threshold energy; restitution does not change airborne motion
+  ---
+  duration_ms: 2.155442
+  ...
+# Subtest: unknown terrain never inherits the synthetic reference pass, including in a rotating local frame
+ok 34 - unknown terrain never inherits the synthetic reference pass, including in a rotating local frame
+  ---
+  duration_ms: 28.414339
+  ...
+# Subtest: diagnostics use actual initial radius, radial velocity and final airborne mass with explicit ideal assumptions
+ok 35 - diagnostics use actual initial radius, radial velocity and final airborne mass with explicit ideal assumptions
+  ---
+  duration_ms: 13.871336
+  ...
+# Subtest: stopping estimates remain unavailable without descent, net braking, burn time or fuel
+ok 36 - stopping estimates remain unavailable without descent, net braking, burn time or fuel
+  ---
+  duration_ms: 35.911836
+  ...
+# Subtest: fuel explanations distinguish depletion from cutoff and preview end in the production solver
+ok 37 - fuel explanations distinguish depletion from cutoff and preview end in the production solver
+  ---
+  duration_ms: 9.067651
+  ...
+# Subtest: compact experiment controls preserve callbacks, controlled play state and audience-specific native mathematics
+ok 38 - compact experiment controls preserve callbacks, controlled play state and audience-specific native mathematics
+  ---
+  duration_ms: 44.951229
+  ...
+# Subtest: visible current-site observation qualifies missing ground separately from reference evidence
+ok 39 - visible current-site observation qualifies missing ground separately from reference evidence
+  ---
+  duration_ms: 13.24293
+  ...
+# Subtest: current-result next actions follow actual failure rather than the browsed reference card
+ok 40 - current-result next actions follow actual failure rather than the browsed reference card
+  ---
+  duration_ms: 27.565329
+  ...
+# Subtest: unpowered circular orbit conserves specific energy
+ok 41 - unpowered circular orbit conserves specific energy
+  ---
+  duration_ms: 17.521045
+  ...
+# Subtest: burn consumes propellant at thrust over Isp g0 and stops at dry mass
+ok 42 - burn consumes propellant at thrust over Isp g0 and stops at dry mass
+  ---
+  duration_ms: 0.864298
+  ...
+# Subtest: falling trajectory terminates at reference-surface contact
+ok 43 - falling trajectory terminates at reference-surface contact
+  ---
+  duration_ms: 0.53463
+  ...
+# Subtest: coordinates are represented by heading-dependent motion
+ok 44 - coordinates are represented by heading-dependent motion
+  ---
+  duration_ms: 2.174711
+  ...
+# Subtest: invalid vehicle and unbounded run are rejected
+ok 45 - invalid vehicle and unbounded run are rejected
+  ---
+  duration_ms: 0.390556
+  ...
+# Subtest: surface-relative altitude includes the site elevation in gravity radius
+ok 46 - surface-relative altitude includes the site elevation in gravity radius
+  ---
+  duration_ms: 0.150964
+  ...
+# Subtest: absurd finite velocities are rejected before numerical overflow
+ok 47 - absurd finite velocities are rejected before numerical overflow
+  ---
+  duration_ms: 0.111436
+  ...
+# Subtest: sampled terrain contact is distinguished from a reference sphere
+ok 48 - sampled terrain contact is distinguished from a reference sphere
+  ---
+  duration_ms: 0.307749
+  ...
+# Subtest: reported thrust-to-weight uses the selected site radius
+ok 49 - reported thrust-to-weight uses the selected site radius
+  ---
+  duration_ms: 0.317239
+  ...
+# Subtest: legacy absent-landing default trajectory retains the recorded base solver numerics
+ok 50 - legacy absent-landing default trajectory retains the recorded base solver numerics
+  ---
+  duration_ms: 5.571058
+  ...
+# (node:726280) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: contact patch includes motion redirected from vertical impact, with a fixed vertex budget
+ok 51 - contact patch includes motion redirected from vertical impact, with a fixed vertex budget
+  ---
+  duration_ms: 35.967595
+  ...
+# Subtest: negative-height terrain catches the rigid body on the numerical surface, not reference y=0
+ok 52 - negative-height terrain catches the rigid body on the numerical surface, not reference y=0
+  ---
+  duration_ms: 154.111287
+  ...
+# Subtest: signed X/Z velocity and SI position are handed to Rapier without heading loss or release-height replacement
+ok 53 - signed X/Z velocity and SI position are handed to Rapier without heading loss or release-height replacement
+  ---
+  duration_ms: 5.890966
+  ...
+# Subtest: both signs of slope collide and friction resists motion on the heightfield
+ok 54 - both signs of slope collide and friction resists motion on the heightfield
+  ---
+  duration_ms: 52.114759
+  ...
+# Subtest: fast breakup retains mass and no proxy tunnels through a negative terrain patch
+ok 55 - fast breakup retains mass and no proxy tunnels through a negative terrain patch
+  ---
+  duration_ms: 19.204293
+  ...
+# Subtest: curved Moon surface heights match the radial display sampler at displaced sites and negative DEM elevations
+ok 56 - curved Moon surface heights match the radial display sampler at displaced sites and negative DEM elevations
+  ---
+  duration_ms: 0.522421
+  ...
+# Subtest: terrain preparation is finite, cooperative, curved and preserves the contact frame signs
+ok 57 - terrain preparation is finite, cooperative, curved and preserves the contact frame signs
+  ---
+  duration_ms: 27.976885
+  ...
+# Subtest: unknown terrain is explicit and cannot become a qualified reference-plane collider
+ok 58 - unknown terrain is explicit and cannot become a qualified reference-plane collider
+  ---
+  duration_ms: 0.972884
+  ...
+# Subtest: coarse global coverage stays explicitly coarse when sampled more densely for contact
+ok 59 - coarse global coverage stays explicitly coarse when sampled more densely for contact
+  ---
+  duration_ms: 35.394005
+  ...
+# Subtest: heightfield validation rejects holes, bad bounds and unsupported velocities, and snapshots caller data
+ok 60 - heightfield validation rejects holes, bad bounds and unsupported velocities, and snapshots caller data
+  ---
+  duration_ms: 7.536206
+  ...
+# Subtest: aborting after terrain/world allocation cancels body preparation without leaving a stale simulation
+ok 61 - aborting after terrain/world allocation cancels body preparation without leaving a stale simulation
+  ---
+  duration_ms: 22.056359
+  ...
+# (node:726281) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: exact SI handoff and model-origin lift are continuous at first contact, including heading/tilt
+ok 62 - exact SI handoff and model-origin lift are continuous at first contact, including heading/tilt
+  ---
+  duration_ms: 186.564299
+  ...
+# Subtest: scrubbing, pause, replay and fresh reset are deterministic without advancing or retaining a world
+ok 63 - scrubbing, pause, replay and fresh reset are deterministic without advancing or retaining a world
+  ---
+  duration_ms: 128.855624
+  ...
+# Subtest: replay memory is bounded to a single finite twelve-second flight, even at the body budget
+ok 64 - replay memory is bounded to a single finite twelve-second flight, even at the body budget
+  ---
+  duration_ms: 5.165233
+  ...
+# Subtest: unknown, missing configuration and unsupported hypervelocity cannot silently clamp into contact physics
+ok 65 - unknown, missing configuration and unsupported hypervelocity cannot silently clamp into contact physics
+  ---
+  duration_ms: 22.530503
+  ...
+# Subtest: actual rigid positions/velocities drive the readout; breakup reports mass-weighted motion in flight axes
+ok 66 - actual rigid positions/velocities drive the readout; breakup reports mass-weighted motion in flight axes
+  ---
+  duration_ms: 0.463543
+  ...
+# Subtest: obsolete asynchronous generations, errors and teardown never publish old flights or retain prior caches
+ok 67 - obsolete asynchronous generations, errors and teardown never publish old flights or retain prior caches
+  ---
+  duration_ms: 37.381793
+  ...
+# Subtest: cancellation during engine/cache preparation releases work and cannot finish an invalid generation
+ok 68 - cancellation during engine/cache preparation releases work and cannot finish an invalid generation
+  ---
+  duration_ms: 62.527531
+  ...
+# Subtest: redirected vertical impact on sloped terrain retains the full bounded contact preview
+ok 69 - redirected vertical impact on sloped terrain retains the full bounded contact preview
+  ---
+  duration_ms: 77.132851
+  ...
+# Subtest: surface support lift accounts for negative terrain, tilted geometry and model origin
+ok 70 - surface support lift accounts for negative terrain, tilted geometry and model origin
+  ---
+  duration_ms: 0.353117
+  ...
+# Subtest: all 157 actual NASA primitives replay against curved Moon terrain without refetch/remount, preserve mass and breakup poses
+ok 71 - all 157 actual NASA primitives replay against curved Moon terrain without refetch/remount, preserve mass and breakup poses
+  ---
+  duration_ms: 432.511414
+  ...
+# Subtest: assisted 300 m terminal approach descends monotonically to the selected target within the entered limits
+ok 72 - assisted 300 m terminal approach descends monotonically to the selected target within the entered limits
+  ---
+  duration_ms: 18.919913
+  ...
+# Subtest: target error is a reference-sphere geodesic in metres, not a flat map distance or kilometres
+ok 73 - target error is a reference-sphere geodesic in metres, not a flat map distance or kilometres
+  ---
+  duration_ms: 11.176235
+  ...
+# Subtest: low thrust, fast sideways approach and empty propellant retain the incoming crash or miss
+ok 74 - low thrust, fast sideways approach and empty propellant retain the incoming crash or miss
+  ---
+  duration_ms: 16.901356
+  ...
+# Subtest: partial throttle uses actual impulse for propellant, and all mass use respects burn and dry limits
+ok 75 - partial throttle uses actual impulse for propellant, and all mass use respects burn and dry limits
+  ---
+  duration_ms: 21.504069
+  ...
+# Subtest: terrain height unknown, nonfinite or missing stays unresolved even when incoming limits are met
+ok 76 - terrain height unknown, nonfinite or missing stays unresolved even when incoming limits are met
+  ---
+  duration_ms: 70.729883
+  ...
+# Subtest: negative crater floors override radius zero, and sloped numerical ground stops at the same callback
+ok 77 - negative crater floors override radius zero, and sloped numerical ground stops at the same callback
+  ---
+  duration_ms: 23.713109
+  ...
+# Subtest: sub-millisecond fast impact refines time and exact incoming velocity without penetration
+ok 78 - sub-millisecond fast impact refines time and exact incoming velocity without penetration
+  ---
+  duration_ms: 0.8272
+  ...
+# Subtest: all entered contact limits control the outcome; signed metrics remain measurable on failure
+ok 79 - all entered contact limits control the outcome; signed metrics remain measurable on failure
+  ---
+  duration_ms: 73.253421
+  ...
+# Subtest: configured hardware, heading, offsets and ground change the integrated result
+ok 80 - configured hardware, heading, offsets and ground change the integrated result
+  ---
+  duration_ms: 105.202352
+  ...
+# Subtest: configured manual mode honors the pitch schedule rather than silently applying assisted control
+ok 81 - configured manual mode honors the pitch schedule rather than silently applying assisted control
+  ---
+  duration_ms: 34.115672
+  ...
+# Subtest: rotation uses the E/up/N handedness, both apparent accelerations and the declared sidereal assumption
+ok 82 - rotation uses the E/up/N handedness, both apparent accelerations and the declared sidereal assumption
+  ---
+  duration_ms: 2.878586
+  ...
+# Subtest: unpowered rotating-frame flight conserves inertial two-body energy
+ok 83 - unpowered rotating-frame flight conserves inertial two-body energy
+  ---
+  duration_ms: 35.018609
+  ...
+# Subtest: preset reset preserves hardware, repeated selection preserves edits and explicit reset restores the example
+ok 84 - preset reset preserves hardware, repeated selection preserves edits and explicit reset restores the example
+  ---
+  duration_ms: 0.244961
+  ...
+# Subtest: extreme finite hardware cannot create an infinite integration loop or nonfinite contact evidence
+ok 85 - extreme finite hardware cannot create an infinite integration loop or nonfinite contact evidence
+  ---
+  duration_ms: 0.53652
+  ...
+# Subtest: legacy point numerics remain stable: default launch
+ok 86 - legacy point numerics remain stable: default launch
+  ---
+  duration_ms: 16.26791
+  ...
+# Subtest: legacy point numerics remain stable: short launch
+ok 87 - legacy point numerics remain stable: short launch
+  ---
+  duration_ms: 2.296577
+  ...
+# Subtest: legacy point numerics remain stable: launch returning to terrain
+ok 88 - legacy point numerics remain stable: launch returning to terrain
+  ---
+  duration_ms: 10.694532
+  ...
+# Subtest: legacy point numerics remain stable: launch returning to sphere
+ok 89 - legacy point numerics remain stable: launch returning to sphere
+  ---
+  duration_ms: 8.25914
+  ...
+# Subtest: legacy point numerics remain stable: reference fall
+ok 90 - legacy point numerics remain stable: reference fall
+  ---
+  duration_ms: 0.720414
+  ...
+# Subtest: legacy point numerics remain stable: raised terrain
+ok 91 - legacy point numerics remain stable: raised terrain
+  ---
+  duration_ms: 0.343328
+  ...
+# Subtest: legacy point numerics remain stable: negative terrain
+ok 92 - legacy point numerics remain stable: negative terrain
+  ---
+  duration_ms: 0.398725
+  ...
+# Subtest: legacy point numerics remain stable: sloped terrain
+ok 93 - legacy point numerics remain stable: sloped terrain
+  ---
+  duration_ms: 0.407816
+  ...
+# Subtest: legacy point numerics remain stable: fuel exhaustion
+ok 94 - legacy point numerics remain stable: fuel exhaustion
+  ---
+  duration_ms: 1.455167
+  ...
+# Subtest: legacy point numerics remain stable: fractional burn cutoff
+ok 95 - legacy point numerics remain stable: fractional burn cutoff
+  ---
+  duration_ms: 0.189663
+  ...
+# Subtest: legacy point numerics remain stable: site radius and offsets
+ok 96 - legacy point numerics remain stable: site radius and offsets
+  ---
+  duration_ms: 0.463843
+  ...
+# Subtest: legacy point numerics remain stable: circular coast
+ok 97 - legacy point numerics remain stable: circular coast
+  ---
+  duration_ms: 10.680342
+  ...
+# Subtest: legacy ascent returning to terrain exposes the exact final impact and manual continuation metadata
+ok 98 - legacy ascent returning to terrain exposes the exact final impact and manual continuation metadata
+  ---
+  duration_ms: 10.503959
+  ...
+# Subtest: legacy reference contact keeps terrain and slope explicitly unknown
+ok 99 - legacy reference contact keeps terrain and slope explicitly unknown
+  ---
+  duration_ms: 0.674336
+  ...
+# Subtest: legacy contact preserves E/up/N axes, selected radius, pitch tilt and reference-arc target error
+ok 100 - legacy contact preserves E/up/N axes, selected radius, pitch tilt and reference-arc target error
+  ---
+  duration_ms: 4.087772
+  ...
+# Subtest: legacy contact slope stays unknown when any centred terrain sample is missing or nonfinite
+ok 101 - legacy contact slope stays unknown when any centred terrain sample is missing or nonfinite
+  ---
+  duration_ms: 0.587369
+  ...
+# Subtest: legacy nonimpact flights add no contact, continuation, configuration or outcome metadata
+ok 102 - legacy nonimpact flights add no contact, continuation, configuration or outcome metadata
+  ---
+  duration_ms: 8.786781
+  ...
+# (node:726299) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: decoded vertices and nested transforms determine boxes; clones preserve actual geometry/material and fixed scale
+ok 103 - decoded vertices and nested transforms determine boxes; clones preserve actual geometry/material and fixed scale
+  ---
+  duration_ms: 6.083269
+  ...
+# Subtest: more than 256 primitives merge deterministically without dropping render geometry, and work yields
+ok 104 - more than 256 primitives merge deterministically without dropping render geometry, and work yields
+  ---
+  duration_ms: 109.12064
+  ...
+# Subtest: bad, empty, animated, cancelled and unused decoded geometry is handled explicitly
+ok 105 - bad, empty, animated, cancelled and unused decoded geometry is handled explicitly
+  ---
+  duration_ms: 9.484786
+  ...
+# Subtest: optional fragments conserve all mass, obey release clearance and move as dynamic bodies
+ok 106 - optional fragments conserve all mass, obey release clearance and move as dynamic bodies
+  ---
+  duration_ms: 137.034007
+  ...
+# Subtest: breakup poses match intact geometry and inherit solved point velocities/spin without an explosion
+ok 107 - breakup poses match intact geometry and inherit solved point velocities/spin without an explosion
+  ---
+  duration_ms: 696.435966
+  ...
+# Subtest: optional geometry snapshots cannot be mutated and fresh/reset runs repeat deterministically
+ok 108 - optional geometry snapshots cannot be mutated and fresh/reset runs repeat deterministically
+  ---
+  duration_ms: 28.583803
+  ...
+# Subtest: optional descriptor bounds reject missing, nonfinite, zero-mass, degenerate and excessive pieces
+ok 109 - optional descriptor bounds reject missing, nonfinite, zero-mass, degenerate and excessive pieces
+  ---
+  duration_ms: 2.942754
+  ...
+# Subtest: overlapping decorative proxies do not generate artificial mutual separation impulses
+ok 110 - overlapping decorative proxies do not generate artificial mutual separation impulses
+  ---
+  duration_ms: 5.075636
+  ...
+# Subtest: actual decoded NASA primitives keep their 7 m shape at breakup; all bounded engine pieces remain finite
+ok 111 - actual decoded NASA primitives keep their 7 m shape at breakup; all bounded engine pieces remain finite
+  ---
+  duration_ms: 360.42836
+  ...
+# Subtest: maximum fragment body budget yields during startup and does not grow at repeated contact
+ok 112 - maximum fragment body budget yields during startup and does not grow at repeated contact
+  ---
+  duration_ms: 96.150571
+  ...
+# Subtest: lab SSR retains dismiss/reset controls, honest geometry assumptions and readable labels without Node CSS bypasses
+ok 113 - lab SSR retains dismiss/reset controls, honest geometry assumptions and readable labels without Node CSS bypasses
+  ---
+  duration_ms: 111.153956
+  ...
+# Subtest: fixed-step lunar free fall matches independent SI acceleration and displacement
+ok 114 - fixed-step lunar free fall matches independent SI acceleration and displacement
+  ---
+  duration_ms: 136.715648
+  ...
+# Subtest: gentle flat touchdown settles on four feet without breaking
+ok 115 - gentle flat touchdown settles on four feet without breaking
+  ---
+  duration_ms: 823.696387
+  ...
+# Subtest: high-speed contact breaks into the original five mass-conserving dynamic pieces
+ok 116 - high-speed contact breaks into the original five mass-conserving dynamic pieces
+  ---
+  duration_ms: 9.544894
+  ...
+# Subtest: failure threshold uses incoming energy and is configurable
+ok 117 - failure threshold uses incoming energy and is configurable
+  ---
+  duration_ms: 13.576268
+  ...
+# Subtest: soft CCD prevents a fast entry from skipping the synthetic plane
+ok 118 - soft CCD prevents a fast entry from skipping the synthetic plane
+  ---
+  duration_ms: 7.472749
+  ...
+# Subtest: failure requires contact even when free-flight kinetic energy exceeds the threshold
+ok 119 - failure requires contact even when free-flight kinetic energy exceeds the threshold
+  ---
+  duration_ms: 11.266051
+  ...
+# Subtest: restitution produces a physical bounce and contact is not latched
+ok 120 - restitution produces a physical bounce and contact is not latched
+  ---
+  duration_ms: 4.001765
+  ...
+# Subtest: friction resists sliding on the explicitly synthetic inclined plane
+ok 121 - friction resists sliding on the explicitly synthetic inclined plane
+  ---
+  duration_ms: 85.490098
+  ...
+# Subtest: height denotes lowest-collider clearance for tilted bodies on either slope sign
+ok 122 - height denotes lowest-collider clearance for tilted bodies on either slope sign
+  ---
+  duration_ms: 9.328341
+  ...
+# Subtest: an overbalanced tilted vehicle tips through rigid-body contacts
+ok 123 - an overbalanced tilted vehicle tips through rigid-body contacts
+  ---
+  duration_ms: 36.448368
+  ...
+# Subtest: independent concurrent worlds repeat every intact and fractured frame deterministically
+ok 124 - independent concurrent worlds repeat every intact and fractured frame deterministically
+  ---
+  duration_ms: 43.25527
+  ...
+# Subtest: finite numerical bounds reject invalid, missing, and extreme inputs
+ok 125 - finite numerical bounds reject invalid, missing, and extreme inputs
+  ---
+  duration_ms: 1.621271
+  ...
+# Subtest: inputs and returned frames cannot mutate a running world; dispose is idempotent
+ok 126 - inputs and returned frames cannot mutate a running world; dispose is idempotent
+  ---
+  duration_ms: 2.341285
+  ...
+1..126
+# tests 126
+# suites 0
+# pass 126
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1875.67734

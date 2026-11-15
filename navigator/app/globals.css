@@ -3116,3 +3116,6 @@ html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground);
   vertical-align: top;
 }
 .resource-evidence-table small { display: block; font-weight: 400; }
+
+/* Historical context stays readable without covering the lunar workspace. */
+.location-mission-story { max-height:min(42dvh,24rem); overflow:auto; overscroll-behavior:contain; scrollbar-gutter:stable; margin-block:8px; }

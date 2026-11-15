@@ -4,6 +4,7 @@ import {missionHistoryForSite} from "@/lib/mission-history";
 import {mapAreaForLocation} from "@/lib/map-coverage";
 import {DEFAULT_MAP_LAYERS,MapLayerControls,MapLayerLegend,useMapLayers,type MapLayerSettings,type ScreeningViewport} from '@/components/map-screening';
 import {PublicSiteStory} from "@/components/workbench/public-exploration";
+const MissionPathsWorkspace=dynamic(()=>import("@/components/mission-trajectories/workspace").then(module=>module.MissionPathsWorkspace),{ssr:false});
 import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
 import {LunarWindowLoader, LunarioStartup} from '@/components/branding/lunar-window-loader';
@@ -134,7 +135,11 @@ import {DecisionPackageControls} from "./workbench/decision-package";
 import {DecisionPanel} from "./workbench/decision-panel";
 import {createDecisionPackage,stringifyDecisionPackage} from "@/lib/decision-export";
 import {loadEvidenceManifest} from "@/lib/provenance";
-import {evaluateScenario} from "@/lib/assessment";
+import {evaluateScenario,PLANNING_MODEL_VERSION} from "@/lib/assessment";
+import {ScienceFramework} from "@/components/science-framework";
+import type {ScienceFinding} from "@/lib/science-framework";
+import scientificVerification from "@/lib/generated/scientific-verification.json";
+const scientificFindings=scientificVerification.findings as readonly ScienceFinding[];
 import type {EvidenceManifest} from "@/lib/planning-types";
 
 type View = "map" | "terrain" | "split";
@@ -154,6 +159,7 @@ export function Navigator() {
   const [focusRequestId,setFocusRequestId]=useState(0);
   const [followRequest,setFollowRequest]=useState<{id:number;focusRequestId:number}>();
   const [flightPlaybackRevision,setFlightPlaybackRevision]=useState(0);
+  const [missionPathsOpen,setMissionPathsOpen]=useState(false);
   const [flightTrackingReady,setFlightTrackingReady]=useState(false);
   const [pendingFlightPlay,setPendingFlightPlay]=useState(false);
   const [controlsTarget,setControlsTarget]=useState<HTMLDivElement|null>(null);
@@ -532,7 +538,8 @@ export function Navigator() {
     return () => clearTimeout(timer);
   }, [notice]);
   const selectSite = (id: string) => {
-    if(mode==='public'){setLeftOpen(false);if(headingVisible)setHeadingMinimized(false);}
+    if(mode==='public')setLeftOpen(false);
+    if(headingVisible)setHeadingMinimized(false);
     const selected=catalog?.sites.find(s=>s.id===id);
     if(catalog&&selected)setMapArea(mapAreaForLocation(catalog.map,selected.lat,selected.lon));
     update({ siteId: id, custom: null, terrainMode:state?.terrainMode??'prepared' });
@@ -739,10 +746,7 @@ export function Navigator() {
             <UiThemeToggle/>
             <Button variant="ghost" onClick={()=>{setFocusMode(true);setGuideOpen(false);}} aria-label="Hide panels for unobstructed view"><Maximize2 size={16}/><span>Hide panels</span></Button>
             <Button variant="ghost" onClick={() => setGuideOpen(true)} aria-label="Open current mode guide"><BookOpen size={16}/><span>Mode guide</span></Button>
-            <span className="data-badge">
-              <i />
-              NASA data
-            </span>
+            <Button variant="ghost" className="data-badge" onClick={()=>openPanel("sources")} aria-label="Open data pipelines and mathematical framework"><i />Data &amp; math</Button>
             <Button
               variant="ghost"
               aria-label="Share current scenario"
@@ -838,6 +842,7 @@ export function Navigator() {
         {learnOpen&&!focusMode&&<LearningDialog mode={mode} scenario={{catalog,state,assessment:planning.result}} onClose={()=>setLearnOpen(false)}/>}
         {touchdownOpen&&<dialog aria-label="Touchdown experiment" onCancel={e=>{e.preventDefault();setTouchdownOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><TouchdownLab onClose={()=>setTouchdownOpen(false)}/></dialog>}
         {solarOverviewOpen&&<dialog aria-label="Sun Earth Moon scale explorer" onCancel={e=>{e.preventDefault();setSolarOverviewOpen(false);}} ref={node=>{if(node&&!node.open)node.showModal();}} style={{position:'fixed',inset:16,width:'calc(100vw - 32px)',height:'calc(100dvh - 32px)',maxWidth:'none',maxHeight:'none',padding:0,border:0,borderRadius:20,overflow:'hidden'}}><SolarSystemView catalog={catalog} timeIndex={playhead} onClose={()=>setSolarOverviewOpen(false)}/></dialog>}
+        {missionPathsOpen&&<WorkspaceDialog label="Mission paths and documented reasons" onClose={()=>setMissionPathsOpen(false)}><MissionPathsWorkspace site={{id:state.custom?"custom":site.id,name}} onClose={()=>setMissionPathsOpen(false)} onSimulation={()=>{setMissionPathsOpen(false);landingConfigured.current=true;setFlightPlaying(false);setFlightTime(0);setFlightSpeed(1);update({flight:createLandingFlight(state.flight,true)});requestAssetFocus("lander");setNotice("Educational terminal descent at the selected point. This 300 m approach is an editable model, not a historical mission path.");}}/></WorkspaceDialog>}
         {teachingStudioOpen&&evidenceManifest&&<WorkspaceDialog label="Teaching studio" onClose={()=>setTeachingStudioOpen(false)}><TeachingStudio catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={(base,candidate)=>{setTeachingStudioOpen(false);comparePair(base,candidate);}} onClose={()=>setTeachingStudioOpen(false)}/></WorkspaceDialog>}
         {engineeringVisited&&evidenceManifest&&planning.result&&<WorkspaceDialog label="Engineering evidence workspace" open={engineeringOpen} onClose={()=>setEngineeringOpen(false)}><EngineeringEvidenceWorkspace catalog={catalog} manifest={evidenceManifest} state={state} assessment={planning.result} onInspect={index=>{setEngineeringOpen(false);setPlaying(false);setFlightPlaying(false);setPlayhead(Math.max(state.startIndex,Math.min(state.endIndex,index)));openPanel('analysis');}} onClose={()=>setEngineeringOpen(false)}/></WorkspaceDialog>}
         <AudienceGuide mode={mode} open={guideOpen&&brandIntroReady} onClose={() => setGuideOpen(false)}/>
@@ -925,9 +930,10 @@ export function Navigator() {
                 {(((location.lon % 360) + 360) % 360).toFixed(4)}° E ·{" "}
                 {terrain.heightM} m observer
               </span><small className="terrain-source-caption">{isGlobalTerrainChoice(terrain)?'≈4.3 km coarse terrain context':terrain.mask.some(Number.isFinite)?terrain.exact?'Prepared site horizon':`Borrowed horizon · ${number(terrain.distanceKm,2)} km away`:'Terrain horizon unavailable'}</small>{!terrain.mask.some(Number.isFinite)&&catalog.globalTerrain&&state.terrainMode!=='global-context'&&<Button className="terrain-context-action" variant="ghost" onClick={()=>update({terrainMode:'global-context'})} title="Uses calibrated coarse LOLA elevations at approximately4.3km spacing; fine obstacles remain unassessed">Calculate coarse global context</Button>}
-              {mode==='public'&&!headingMinimized&&<PublicSiteStory site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
+              {!headingMinimized&&<Button variant="outline" style={{pointerEvents:"auto"}} onClick={()=>setMissionPathsOpen(true)}>Mission paths &amp; reasons</Button>}
+              {!headingMinimized&&<PublicSiteStory mode={mode} site={state.custom?null:site} sites={catalog.sites} lat={location.lat} lon={location.lon} radiusM={catalog.meta.moonRadiusM}/>}
             </div>
-          </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>setHeadingVisible(true)}><Navigation size={14}/> Location</Button>}
+          </div>:<Button hidden={focusMode} className="location-restore glass" variant="outline" onClick={()=>{setHeadingVisible(true);setHeadingMinimized(false);}}><Navigation size={14}/> Location</Button>}
           {leftOpen && (
             <aside hidden={focusMode} className="site-drawer glass" aria-label="Landing sites">
               <div className="drawer-heading">
@@ -1374,7 +1380,7 @@ export function Navigator() {
                     onOpen={range}
                   />
                 ) : <Section title="Landing-date search"><p>There is no numerical terrain horizon for this location. A terrain-based date ranking is unavailable. Horizon analysis still shows Sun/Earth geometry and the smooth-sphere reference.</p></Section>)}
-                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={typeof location!=='undefined'&&globalThis.location?.protocol==='file:'}/><ResourcesPanel catalog={catalog} /></>}
+                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={typeof location!=='undefined'&&globalThis.location?.protocol==='file:'}/><ScienceFramework mode={mode} context={{lat:location.lat,lon:location.lon,observerHeightM:state.heightM,arrayHeightM:state.arrayHeightM,antennaHeightM:state.antennaHeightM,terrainMode:state.terrainMode??"prepared",terrainLabel:isGlobalTerrainChoice(terrain)?"Coarse global LOLA context":terrain.mask.some(Number.isFinite)?terrain.exact?"Prepared site horizon":"Borrowed polar-grid horizon":"Unknown terrain horizon",epochUtc:new Date(indexToMs(catalog,playhead)).toISOString(),datasetId:evidenceManifest?.datasetId??"Pending evidence manifest",modelVersion:PLANNING_MODEL_VERSION}} findings={scientificFindings}/><ResourcesPanel catalog={catalog} /></>}
               </div>
               <div className="inspector-footer">
                 <span className="data-status-dot" />

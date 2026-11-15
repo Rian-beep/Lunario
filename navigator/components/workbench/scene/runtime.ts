@@ -26,6 +26,7 @@ import type {LandingConfiguration, LandingDynamicsReadout} from "@/lib/landing-c
 import {ContactReplayGeneration, prepareContactReplay, contactUnsupported, contactReadout, minimumProxyTerrainClearance, CONTACT_STEP_S, CONTACT_MODEL_NOTE, type ContactFlight} from "./contact-dynamics";
 import type { SceneProps } from "../scene";
 import {createSiteTransition,shortestArcDirection,siteNavigationKey,siteCameraOffset,retainCameraAfterSiteArrival,type Point3} from "@/lib/site-transition";
+import {visualMoonDevice} from "@/lib/visual-moon-device";
 import {createNasaGlobe} from "./nasa-globe";
 
 type IonMoon=import("./ion/create-ion-moon").IonMoon;
@@ -792,11 +793,12 @@ export function mountScene(
     const navigating=sample!==null||awaitingHandoff;
     if(!nasaRequested){
       nasaRequested=true;host.dataset.moonModel='loading';onModelStatus('Loading NASA’s original topographic Moon…');
-      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal).then(result=>{
+      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal,{device:visualMoonDevice(renderer.capabilities.maxTextureSize,renderer.capabilities.getMaxAnisotropy(),(navigator as Navigator&{deviceMemory?:number}).deviceMemory,!!initial.offline),prepareTexture:texture=>renderer.initTexture(texture)}).then(result=>{
         if(disposed){result.dispose();return;}
-        nasaGlobe=result;scene.add(result.mesh);if(result.mesh.material.map)renderer.initTexture(result.mesh.material.map);host.dataset.moonModel='ready';onModelStatus('NASA LRO · 1,015,808 original triangles · 8K image');
+        nasaGlobe=result;scene.add(result.mesh);if(result.mesh.material.map)renderer.initTexture(result.mesh.material.map);host.dataset.moonModel='ready';onModelStatus(`NASA LRO · ${result.visualStatus.colour} colour · ${result.visualStatus.relief} relief · progressive device-bounded texture${result.visualStatus.warnings.length?' · '+result.visualStatus.warnings.join('; '):''}`);
       }).catch(error=>{if(!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
     }
+    if(nasaGlobe?.visualStatus){host.dataset.moonColour=nasaGlobe.visualStatus.colour;host.dataset.moonTextureWidth=String(nasaGlobe.visualStatus.width);host.dataset.moonRelief=nasaGlobe.visualStatus.relief;host.dataset.moonVisualWarnings=nasaGlobe.visualStatus.warnings.join("; ");}
     if(poiSites!==live.sites)updatePois(live);
     const terrainRangeKm=camera.position.distanceTo(siteRing.position),detail=terrainDetailPolicy(live.terrain,live.lat,live.lon,terrainRangeKm,requestedSurfaceSegments);
     if(detail.segments!==requestedSurfaceSegments&&!navigating){if(!lodChangedAt)lodChangedAt=now;if(now-lodChangedAt>500){lodChangedAt=0;prepareSurface(live,detail.segments);}}else lodChangedAt=0;
@@ -991,8 +993,10 @@ export function mountScene(
       const motion=assetMotion,position=sampleAssetFlight(motion.plan,now,reducedMotion.matches);
       const anchor=motion.mode==='earth'?earth.position:motion.mode==='sun'?sun.position:motion.mode==='vehicle'||motion.mode==='follow'?currentPoint:motion.anchor;
       const drift=anchor.clone().sub(motion.anchor);
-      // Ramp target drift from zero so rapid retargeting starts at the exact pose.
-      camera.position.fromArray(position.camera).addScaledVector(drift,position.progress);controls.target.fromArray(position.target).addScaledVector(drift,position.progress);
+      // Earth drift must settle to body-follow velocity at arrival, while
+      // retargeting still begins at the exact current pose.
+      const p=position.progress,driftProgress=motion.mode==='earth'?p*p*p*(10+p*(-15+6*p)):p;
+      camera.position.fromArray(position.camera).addScaledVector(drift,driftProgress);controls.target.fromArray(position.target).addScaledVector(drift,driftProgress);
       camera.up.fromArray(shortestArcDirection(tuple(motion.fromUp),tuple(motion.toUp),position.progress));camera.lookAt(controls.target);
       host.dataset.assetFlight=position.complete?'complete':'traveling';
       if(position.complete){assetMotion=null;focusedAnchor=anchor.clone();followPosition=currentPoint.clone();rebuildControls();}

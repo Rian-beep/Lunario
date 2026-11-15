@@ -8,6 +8,14 @@ Earth focus also includes six sourced spacecraft, including Starcloud-1, with da
 
 Map Layers adds a configurable regional screening index and separate published ice-evidence markers. Uncoloured locations remain unknown; regional slopes and ice-reference points are not landing-footprint measurements. Online Moon tiles can be connected with a runtime-only Cesium asset-read token; the self-contained offline terrain remains independent.
 
+## Evidence and historical paths
+
+Use **Data & math** for source-to-output pipelines, native equations, variable dependencies and scoped audit findings. [Current verification](docs/qa/scientific-audit/VERIFICATION.md) and the [independent review and resolutions](docs/qa/final-science-review/RESOLUTION.md) distinguish implementation checks from operational qualification. The assessment identity is planning-5.
+
+Expand **Location → Mission paths & reasons** for cited historical explanations. Two bounded numeric datasets are bundled: Chandrayaan-3 reference descent (flown accuracy unresolved) and Apollo15 CSM reconstructed orbit (not an LM landing). Historical replay uses its own clock and IAU_MOON display; it does not infer attitude, burns or map-terrain contact. Other sites retain an explicitly educational simulation. [Coverage and provenance](docs/TRAJECTORY-COVERAGE.md).
+
+The 3D Moon uses NASA2025 colour and calibrated visual relief with progressive device budgets: web up to8K where supported, offline up to4K. Display detail never upgrades the scientific evidence. [Source, transformation and GPU limits](docs/qa/visual-moon/README.md).
+
 ## Release and team handoff
 
 See [the current handoff and full to-do list](docs/IN-FLIGHT.md) for completed software, qualification gaps and independent teammate tasks. Hosting is owned by the teammate.

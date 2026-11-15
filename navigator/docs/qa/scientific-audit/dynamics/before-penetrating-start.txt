@@ -1,0 +1,14 @@
+{
+  timeS: 0,
+  eastM: 0,
+  northM: 0,
+  yM: 10,
+  velocityMps: [ 0, -1, 0 ],
+  massKg: 4700,
+  terrainHeightM: 20,
+  terrainKnown: true,
+  slopeDeg: 0,
+  tiltDeg: 0,
+  headingDeg: 90,
+  targetErrorM: 0
+}

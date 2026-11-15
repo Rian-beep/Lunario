@@ -8,7 +8,7 @@ import type {Catalog} from './catalog';
 import {evaluateMission,linkBudget,type MissionResult} from './mission';
 import type {ScenarioState} from './scenario';
 import {DEFAULT_OPERATIONS,DEFAULT_REQUIREMENTS,EXTERNAL_IDS,type AssessmentContext,type AssessmentResult,type ConstraintResult,type EvidenceManifest,type MissionEvent,type PlanningRequirements} from './planning-types';
-export const PLANNING_MODEL_VERSION='planning-4';
+export const PLANNING_MODEL_VERSION='planning-5';
 /** Stable input identity, not a cryptographic signature or asset integrity hash. */
 function canonical(value:unknown):string{
  if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';

@@ -1,0 +1,711 @@
+{
+  "lane": "dynamics",
+  "contract": "docs/qa/scientific-audit/CONTRACTS.md (locked 2026-11-15)",
+  "baseline": "96079ae",
+  "measuredUtc": "2026-11-15T14:38:10.660Z",
+  "statusMeaning": "Verified means the explicitly scoped formula/implementation check, never independently verified physical truth or mission-critical certification.",
+  "framesAndEpochs": {
+    "flight": "Moon-centred site east/up/north (left handed), synthetic elapsed SI seconds t=0; no UTC/TDB epoch or ephemeris targeting",
+    "contact": "Rigid replay uses right-handed X/up/Z with north reflected to south by parent-owned handoff; our lane validates engine SI limits, existing handoff regressions only.",
+    "epoch": "Synthetic t=0 elapsed seconds; no absolute mission epoch, UTC/TDB conversion, J2000 targeting or NAIF orientation validation."
+  },
+  "counts": {
+    "verified": 13,
+    "uncertain": 4,
+    "failing": 1
+  },
+  "results": [
+    {
+      "id": "D01",
+      "claim": "Reference GM, sphere radius, sidereal spin and Isp conversion constants match primary tables",
+      "status": "verified",
+      "scope": "Constant transcription and SI conversions only",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.constants; Moon nominal mean sphere, synthetic t=0",
+      "method": "Read frozen primary tables; km^3/s^2 to m^3/s^2 multiplies by 1e9; 655.720 h to spin uses 3600 s/h.",
+      "tolerance": "Exact displayed constants; no claimed physical error bound.",
+      "observedError": {
+        "muM3s2": 4902800118000,
+        "referenceRadiusM": 1737400,
+        "g0Mps2": 9.80665,
+        "centralSurfaceGravityMps2": 1.6242188765608128,
+        "rigidProxyGravityMps2": 1.62
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "GM reference is DE440; constant mean radius/spin are approximations to an irregular rotating Moon. No date-specific gravity field or orientation validation."
+    },
+    {
+      "id": "D02",
+      "claim": "Both solvers reproduce force/mass acceleration and the short-time hover limit",
+      "status": "verified",
+      "scope": "Implementation limit at t=0..0.001 s, nonrotating E/up/N, SI",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.propulsion[*].input",
+      "method": "Subtract unpowered from powered velocity; compare delta-v/delta-t to F/m. Set initial F=mu*m/r^2 for hover.",
+      "tolerance": "Acceleration 2e-6 m/s^2; hover residual 1e-8 m/s. Finite-difference O(dt) includes decreasing mass.",
+      "observedError": [
+        {
+          "configured": false,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 1000,
+            "dryMassKg": 500,
+            "thrustN": 3000,
+            "ispSeconds": 300,
+            "burnSeconds": 1,
+            "durationSeconds": 0.001
+          },
+          "forceMassAccelerationErrorMps2": 1.5295761497391425e-06,
+          "massErrorKg": 0,
+          "hoverVerticalMps": 3.5842784784634316e-10
+        },
+        {
+          "configured": true,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 1000,
+            "dryMassKg": 500,
+            "thrustN": 3000,
+            "ispSeconds": 300,
+            "burnSeconds": 1,
+            "durationSeconds": 0.001,
+            "landing": {
+              "guidance": "manual",
+              "targetRadiusM": 20,
+              "maxVerticalMps": 2,
+              "maxHorizontalMps": 1,
+              "maxTiltDeg": 15,
+              "breakupEnergyJ": 100000,
+              "friction": 0.8,
+              "restitution": 0.1,
+              "contactPreviewSeconds": 12
+            }
+          },
+          "forceMassAccelerationErrorMps2": 1.5295761497391425e-06,
+          "massErrorKg": 0,
+          "hoverVerticalMps": 3.5842784784634316e-10
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Short-time formula verification; thrust=m_initial*g does not sustain hover while mass falls."
+    },
+    {
+      "id": "D03",
+      "claim": "Mass flow, fractional burn cutoff, dry-mass stop and ideal rocket delta-v use standard g0",
+      "status": "verified",
+      "scope": "Propulsion arithmetic, not actual net trajectory delta-v",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts: .37 s burn, 1000 kg wet, 300 s Isp, 10000 N; dry 500/999.9 kg",
+      "method": "Use frozen standard g0=9.80665, independent propellant F*t/(Isp*g0) and logarithmic impulse integral; verify coast stops consuming mass.",
+      "tolerance": "Mass 1e-9 kg; ideal delta-v 1e-8 m/s.",
+      "observedError": {
+        "newTests": "Both configured and legacy fractional/depletion assertions pass",
+        "massErrorKg": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No measured engine Isp, throttling, ignition or performance curve. Ideal delta-v excludes gravity/steering losses; using lunar gravity in Isp would be wrong."
+    },
+    {
+      "id": "D04",
+      "claim": "Both solvers reproduce analytic circular two-body motion and invariants",
+      "status": "verified",
+      "scope": "Point-mass spherical Moon; nonrotating site axes; 100 km circular orbit, 600 elapsed seconds",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.circular[*].input",
+      "method": "Compare position to r[sin(nt),cos(nt),0] and energy/angular momentum to exact circular values, independently of RK4.",
+      "tolerance": "Position 1e-5 m; specific energy 1e-5 J/kg; specific angular momentum .01 m^2/s.",
+      "observedError": [
+        {
+          "configured": false,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 1633.5041340503267,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 600
+          },
+          "positionErrorM": 6.61024692473175e-10,
+          "energyErrorJPerKg": 1.862645149230957e-09,
+          "angularMomentumErrorM2PerS": 1.9073486328125e-06
+        },
+        {
+          "configured": true,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 1633.5041340503267,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 600
+          },
+          "positionErrorM": 1.1109951802522048e-07,
+          "energyErrorJPerKg": -2.3283064365386963e-10,
+          "angularMomentumErrorM2PerS": 0
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No harmonics, third bodies, mascons, tides or actual orbital tracking data; this validates the chosen two-body ODE only."
+    },
+    {
+      "id": "D05",
+      "claim": "Configured radial contact agrees with closed-form vacuum fall time and energy",
+      "status": "verified",
+      "scope": "100 m drop from rest onto synthetic y=0; nonrotating E/up/N",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.radial.configured.input",
+      "method": "Use exact central-force radial time integral and v^2=2mu(1/R-1/r0); compare refined first crossing and kinetic energy.",
+      "tolerance": "Time 1e-6 s; speed 1e-7 m/s; height 1e-7 m; energy .01 J. Conservative roundoff budget for subtracting lunar-scale radii.",
+      "observedError": {
+        "expectedTimeS": 11.097203526181376,
+        "expectedSpeedMps": 18.022904296123084,
+        "timeErrorS": -1.3507417406799505e-11,
+        "speedErrorMps": -1.830713358685898e-11,
+        "heightResidualM": 2.3283064365386963e-10,
+        "energyErrorJ": -1.5508849173784256e-06
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Synthetic smooth surface only. Probes can miss narrow features; terrain accuracy is not established."
+    },
+    {
+      "id": "D06",
+      "claim": "Configured constant-spin terms reproduce an analytically rotated inertial circular orbit",
+      "status": "verified",
+      "scope": "Equatorial Moon-fixed E/up/N, left handed; 120 s; no UTC epoch",
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ssd.jpl.nasa.gov/astro_par.html"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.rotating.input/environment",
+      "method": "Start with v_rot=(sqrt(mu/r^3)-omega)r; transform exact orbit to rotating axes at angle (n-omega)t. Existing tests also check polar Coriolis signs.",
+      "tolerance": "Position 1e-5 m.",
+      "observedError": {
+        "input": {
+          "mode": "ascent",
+          "altitudeM": 100000,
+          "horizontalMps": 1628.6135283533608,
+          "verticalMps": 0,
+          "headingDeg": 90,
+          "pitchDeg": 90,
+          "finalPitchDeg": 35,
+          "wetMassKg": 4700,
+          "dryMassKg": 2200,
+          "thrustN": 0,
+          "ispSeconds": 311,
+          "burnSeconds": 0,
+          "durationSeconds": 120,
+          "landing": {
+            "guidance": "manual",
+            "targetRadiusM": 20,
+            "maxVerticalMps": 2,
+            "maxHorizontalMps": 1,
+            "maxTiltDeg": 15,
+            "breakupEnergyJ": 100000,
+            "friction": 0.8,
+            "restitution": 0.1,
+            "contactPreviewSeconds": 12
+          }
+        },
+        "environment": {
+          "latitudeDeg": 0,
+          "rotationRateRadS": 2.661698975163682e-06
+        },
+        "positionErrorM": 3.027381567049939e-09
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Uniform fixed-axis spin only. No validated lunar orientation kernel, libration or site registration to a dated ME/PA frame."
+    },
+    {
+      "id": "D07",
+      "claim": "Target distance reports a reference-sphere arc in metres",
+      "status": "verified",
+      "scope": "Reference sphere R=1740400 m, radial height -125 m, angular displacement .04 rad",
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.targetArc.input",
+      "method": "Construct position from known spherical angle; compare API target distance to R*angle rather than flat distance or chord.",
+      "tolerance": "Absolute 1e-8 m.",
+      "observedError": {
+        "input": {
+          "eastM": 69592.43855164477,
+          "northM": 0,
+          "yM": -1517.0343805665616,
+          "radiusM": 1740400
+        },
+        "arcErrorM": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Not a terrain geodesic or traversable route. Local east/north components are Cartesian offsets, not surface arc coordinates."
+    },
+    {
+      "id": "D08",
+      "claim": "Nonfinite terrain cannot poison or suppress legacy reference contact after the fix",
+      "status": "verified",
+      "scope": "Finite/unknown height handling in the legacy solver; configured semantics retained",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.nonfinite; baseline 96079ae vs owned fix",
+      "method": "Reproduce NaN/+Infinity/-Infinity callback heights; compare fixed output with a null callback and inspect all contact numbers.",
+      "tolerance": "All contact numeric fields finite; unknown terrain uses reference contact exactly.",
+      "observedError": {
+        "before": [
+          {
+            "height": "NaN",
+            "status": "coasting",
+            "hasContact": false,
+            "finiteContact": false,
+            "timeS": null
+          },
+          {
+            "height": "Infinity",
+            "status": "terrain contact",
+            "hasContact": true,
+            "finiteContact": false,
+            "timeS": null
+          },
+          {
+            "height": "-Infinity",
+            "status": "coasting",
+            "hasContact": false,
+            "finiteContact": false,
+            "timeS": null
+          }
+        ],
+        "after": [
+          {
+            "height": "NaN",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          },
+          {
+            "height": "Infinity",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          },
+          {
+            "height": "-Infinity",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          }
+        ]
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "A reference contact remains unresolved physical terrain. This correction creates no new terrain evidence."
+    },
+    {
+      "id": "D09",
+      "claim": "Both solvers reject a state initially below known terrain after the fix",
+      "status": "verified",
+      "scope": "Initial local numerical surface consistency only",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.penetratingStart; y=10 m with terrain y=20 m",
+      "method": "Invoke both actual solvers at a penetrated initial point; require a RangeError instead of an accepted negative-clearance time-zero impact.",
+      "tolerance": "Initial nonpenetration guard 1e-6 m, matching configured solver numeric tolerance.",
+      "observedError": {
+        "before": {
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 10,
+            "horizontalMps": 0,
+            "verticalMps": -1,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 5
+          },
+          "rejected": false,
+          "contact": {
+            "timeS": 0,
+            "eastM": 0,
+            "northM": 0,
+            "yM": 10,
+            "velocityMps": [
+              0,
+              -1,
+              0
+            ],
+            "massKg": 4700,
+            "terrainHeightM": 20,
+            "terrainKnown": true,
+            "slopeDeg": 0,
+            "tiltDeg": 0,
+            "headingDeg": 90,
+            "targetErrorM": 0
+          }
+        },
+        "after": {
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 10,
+            "horizontalMps": 0,
+            "verticalMps": -1,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 5
+          },
+          "rejected": true,
+          "error": "Flight starts below the numerical surface"
+        }
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Does not validate the actual lander footprint or collider support. A point state is not a finite-size vehicle."
+    },
+    {
+      "id": "D10",
+      "claim": "Legacy impact interpolation meets the same exact radial event benchmark",
+      "status": "failing",
+      "scope": "Legacy event state, distinct from otherwise accurate RK4 free flight",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.radial.beforeLegacy/afterLegacy; 100 m drop from rest, 4700 kg, y=0",
+      "method": "Compare linear-interpolated contact with independent exact central-force fall; repeat .25/.125/.0625 s steps in isolated code copies.",
+      "tolerance": "Exact-event benchmark shared with independently tested D05: 1e-6 s, 1e-7 m/s, .01 J; numerical comparison only, no engineering safety margin.",
+      "observedError": {
+        "before": {
+          "expectedTimeS": 11.097203526181376,
+          "expectedSpeedMps": 18.022904296123084,
+          "timeErrorS": -0.0006675729310394729,
+          "speedErrorMps": -0.00108403452110295,
+          "heightResidualM": 0,
+          "energyErrorJ": -91.8232554520946
+        },
+        "after": {
+          "expectedTimeS": 11.097203526181376,
+          "expectedSpeedMps": 18.022904296123084,
+          "timeErrorS": -0.0006675729310394729,
+          "speedErrorMps": -0.00108403452110295,
+          "heightResidualM": 0,
+          "energyErrorJ": -91.8232554520946
+        }
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Unfixed: existing frozen legacy point fixtures explicitly retain interpolation. Parent must decide the compatibility change, independently revise those expectations and model identity; do not relax the tolerance or call it operationally safe."
+    },
+    {
+      "id": "D11",
+      "claim": "Assisted contact tends toward a stable result as command steps shrink",
+      "status": "uncertain",
+      "scope": "Numerical self-convergence of an authored feedback demonstration; not independent guidance truth",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ntrs.nasa.gov/citations/19720018253"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.assistedConvergence.input and rows; y=0 m; 300 m altitude; 300 m west; east 10 m/s, down 8 m/s",
+      "method": "Hold all physical inputs fixed; isolated copies use .1/.05/.025/.0125 s commands. Compare contact time/state/mass to finest case.",
+      "tolerance": "No qualified guidance acceptance tolerance exists. Step differences are diagnostic only, with no pass/fail tolerance assigned after observing them.",
+      "observedError": [
+        {
+          "stepS": 0.1,
+          "timeS": 50.499768491328325,
+          "positionM": [
+            -8.411990587887123,
+            2.3283064365386963e-10,
+            1.9491761964809167e-16
+          ],
+          "velocityMps": [
+            0.7096622612368124,
+            -0.5593924190210684,
+            -1.561316127178475e-17
+          ],
+          "massKg": 4561.955487948457,
+          "timeDifferenceS": 0.003199561574369625,
+          "positionDifferenceM": 0.011375348220356685,
+          "velocityDifferenceMps": 0.006022144219243935,
+          "massDifferenceKg": -0.0404454862464263
+        },
+        {
+          "stepS": 0.05,
+          "timeS": 50.49790026080829,
+          "positionM": [
+            -8.40551399359386,
+            2.3283064365386963e-10,
+            1.96580719213418e-16
+          ],
+          "velocityMps": [
+            0.7106614495826308,
+            -0.5627626797921206,
+            -1.5755869250961995e-17
+          ],
+          "massKg": 4561.978869138979,
+          "timeDifferenceS": 0.0013313310543310308,
+          "positionDifferenceM": 0.004898753927093935,
+          "velocityDifferenceMps": 0.0025070625514079198,
+          "massDifferenceKg": -0.017064295724594558
+        },
+        {
+          "stepS": 0.025,
+          "timeS": 50.49700627122296,
+          "positionM": [
+            -8.4022519240012,
+            2.3283064365386963e-10,
+            1.974156789096871e-16
+          ],
+          "velocityMps": [
+            0.711161257468884,
+            -0.5643697538099696,
+            -1.582745343531903e-17
+          ],
+          "massKg": 4561.990288604617,
+          "timeDifferenceS": 0.00043734146900220594,
+          "positionDifferenceM": 0.0016366843344339799,
+          "velocityDifferenceMps": 0.0008240731572922204,
+          "massDifferenceKg": -0.005644830086566799
+        },
+        {
+          "stepS": 0.0125,
+          "timeS": 50.496568929753956,
+          "positionM": [
+            -8.400615239666767,
+            2.3283064365386963e-10,
+            1.9783401727804424e-16
+          ],
+          "velocityMps": [
+            0.7114112353036021,
+            -0.565154997498718,
+            -1.586330323478868e-17
+          ],
+          "massKg": 4561.995933434703,
+          "timeDifferenceS": 0,
+          "positionDifferenceM": 0,
+          "velocityDifferenceMps": 0,
+          "massDifferenceKg": 0
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Only step sensitivity is measured; finest case is not truth. Held commands make feedback globally lower order than RK4. No independent GNC reconstruction, 6-DoF attitude, sensor/actuator/delay or uncertainty campaign."
+    },
+    {
+      "id": "D12",
+      "claim": "Incoming landing classification preserves known-failure precedence and unknown terrain",
+      "status": "verified",
+      "scope": "Entered preview limits only; radial velocity/tilt and reference-sphere target distance",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ntrs.nasa.gov/citations/19640005067"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts negative surface case: y=-25 m, 10 m start, -2 m/s; generous entered limits",
+      "method": "Verify contact surface/mass; remove terrain to get unresolved; enter zero speed limit to retain failure; place breakup threshold exactly at measured .5*m*v^2.",
+      "tolerance": "Height 1e-7 m; mass 1e-12 kg. Equality breaks at energy threshold by explicit API policy; entered speed limits use 1e-9 m/s comparison slack.",
+      "observedError": {
+        "assertions": "All pass: known finite terrain within assumptions; unknown unresolved; violation overrides unknown; equal energy threshold outside limits."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No slope, soil, leg stroke, structural stress or operational success follows from within-assumed-limits. Flight point is a surface anchor, not a vehicle centre of mass."
+    },
+    {
+      "id": "D13",
+      "claim": "Rigid proxy free flight matches its disclosed constant-gravity ballistic equation",
+      "status": "verified",
+      "scope": "Rapier 0.21.0, 120 Hz, right-handed X/up/Z; +X horizontal; synthetic t=0",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.rigidBallistic.input and frame; 1 s precontact",
+      "method": "Compare v_y=-2-1.62*t, y=101.8-2*t-.5*1.62*t^2 and x=3*t before contact.",
+      "tolerance": "Velocity 1e-4 m/s; position .02 m vertical, 1e-4 m horizontal. Allows single-precision rigid solver and discrete integration.",
+      "observedError": {
+        "verticalVelocityErrorMps": -2.563476562489342e-05,
+        "heightErrorM": -0.0008566284179636341,
+        "horizontalPositionErrorM": -2.7894973754882812e-05
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "1.62 m/s^2 is an approximate constant, versus central mu/R^2=1.62421887656 m/s^2; gravity handoff differs by .00421887656 m/s^2 (~.260%). No local measured gravity claim."
+    },
+    {
+      "id": "D14",
+      "claim": "Fragment proxies constitute physical vehicle breakup and qualified contact",
+      "status": "uncertain",
+      "scope": "Bounding-box collision/inertia and assumed AABB-volume mass allocation",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "lib/touchdown-fragments.ts; tests/audit-dynamics-formula.test.ts 1 m and 2 m cube mass shares 1/9 and 8/9; existing contact regression suite",
+      "method": "Check geometry units/transforms and normalized assumed mass shares; existing tests check retained total mass, CCD nonpenetration, bounce/friction and deterministic continuation.",
+      "tolerance": "Mass-share arithmetic 1e-12; no physical fracture/soil tolerance available.",
+      "observedError": {
+        "numericalTests": "Pass; no physical validation residual available",
+        "knownBoundary": "Break decision uses pre-step velocity advanced by a full 1/120 s gravity step, then releases solved post-impact boxes."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Proxies are not CAD mass properties. 3 cm thickness floor and overlapping AABBs change inertia; detailed fragments omit mutual collision. Threshold is incoming translational-energy proxy, not absorbed energy, stress, strain, fatigue or material fracture. Contact-time energy discretization can shift decisions near a threshold."
+    },
+    {
+      "id": "D15",
+      "claim": "Analytical touchdown/propulsion/orbit screens reproduce independent mechanics limits",
+      "status": "verified",
+      "scope": "Supplied scalars; SI arithmetic only",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",
+        "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.screens.input; tests/audit-dynamics-formula.test.ts",
+      "method": "Derive Hohmann apsis velocities from angular momentum l^2=2mu*r1*r2/(r1+r2), compare rocket integral; compare stopping work with m*a*s and tipping projected COM.",
+      "tolerance": "Hohmann/rocket 1e-10 m/s; energy 1e-10 J; load factor 1e-12; tipping exact 45 degree boundary fails.",
+      "observedError": {
+        "hohmannErrorMps": -4.263256414560601e-14,
+        "rocketBudgetErrorMps": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Circular coplanar impulsive endpoints only. Constant net vertical deceleration is not peak gear load. Reported normal load factor 1+a/g should be interpreted as ideal vertical support-force ratio, not slope-resolved individual strut force."
+    },
+    {
+      "id": "D16",
+      "claim": "Engineering screen success is conditional and missing/known-failing inputs retain their gates",
+      "status": "verified",
+      "scope": "evaluateEngineeringScreens only; parent-owned evaluateScenario is unchanged",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253",
+        "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+        "https://www.nasa.gov/plume-surface-interaction/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/engineering-screens.test.ts and audit-dynamics-formula.test.ts; all seven domains with explicit synthetic inputs",
+      "method": "Exercise empty/not-assessed, complete/conditional, violated/fail, missing-with-known-failure, overflow/null and strict nonfinite/range parsing.",
+      "tolerance": "Exact expected enum states; finite metric or null; no pass state exists.",
+      "observedError": {
+        "focusedTests": "Passing; independent of all physical qualification statuses."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Shared assessment mapping/stale-scope/model identity are parent-owned and are not certified by these tests. Screens use direct comparisons; shared assessment documentation claims 1e-9 metric-unit tolerance, a contract discrepancy for parent review."
+    },
+    {
+      "id": "D17",
+      "claim": "Steady-state thermal arithmetic predicts real component survival",
+      "status": "uncertain",
+      "scope": "Single-node balance and supplied optical/environment values",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts blackbody limiting case, 459.300327939 W, 1 m^2, 300 K expected",
+      "method": "Independent constant-power blackbody limit plus existing solar/albedo/IR/view-factor and heater tests.",
+      "tolerance": "Arithmetic temperature assertion 1e-9 K only; no physical transient uncertainty bound.",
+      "observedError": {
+        "equilibriumAssertion": "300 K within 1e-9 K",
+        "survivalResidual": null
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No heat capacity, conduction, varying radiation geometry, thermal cycle or component validation. Heater electrical draw is separate. Algebraic agreement is not survival evidence."
+    },
+    {
+      "id": "D18",
+      "claim": "NASA history and empirical literature qualify this generic landing/GNC/soil/plume model",
+      "status": "uncertain",
+      "scope": "Applicability boundary; no claim that editable defaults represent Apollo telemetry",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253",
+        "https://www.nasa.gov/plume-surface-interaction/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "NTRS 19640005067 (NASA-TN-D-2027), 19720018253 (NASA-TN-D-6850); frozen API metadata, not qualified vehicle telemetry",
+      "method": "Compare declared model scope with primary source descriptions of configuration/surface-dependent tests and qualification analyses. Do not transplant historical thresholds or invent empirical cone bounds.",
+      "tolerance": "No applicable independent acceptance tolerance or measured vehicle/soil/plume dataset supplied.",
+      "observedError": {
+        "qualifiedResidual": null,
+        "missing": [
+          "vehicle mass/inertia/engine curves",
+          "GNC/attitude/navigation validation",
+          "landing-gear structural/stroke validation",
+          "site soil/contact properties",
+          "applicable engine/regolith plume/ejecta bounds"
+        ]
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Only metadata/abstracts for the historical NTRS reports were archived. No flight telemetry, force/stroke test series or dated Apollo reconstruction was validated. The supplied cone and traverse/support budgets are arithmetic over assumptions, not environmental predictions."
+    }
+  ]
+}

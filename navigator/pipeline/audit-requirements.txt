@@ -1,0 +1,2 @@
+# Numerical audit harness dependency, verified on Clevo and macOS.
+numpy==2.5.4

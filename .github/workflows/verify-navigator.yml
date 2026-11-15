@@ -26,6 +26,14 @@ jobs:
           cache: npm
           cache-dependency-path: navigator/package-lock.json
       - run: npm ci --no-audit --no-fund
+      - name: Install PDF source-replay dependency
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Install scientific audit dependency
+        run: |
+          python3 -m venv "$RUNNER_TEMP/lunario-science-python"
+          "$RUNNER_TEMP/lunario-science-python/bin/python" -m pip install -r pipeline/audit-requirements.txt
+          echo "$RUNNER_TEMP/lunario-science-python/bin" >> "$GITHUB_PATH"
+      - run: python3 scripts/compile-scientific-verification.py --check
       - run: npm test
       - run: npm run typecheck -- --incremental false
       - run: npm run lint

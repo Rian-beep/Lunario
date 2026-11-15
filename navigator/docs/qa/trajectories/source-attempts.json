@@ -1,0 +1,221 @@
+[
+  {
+    "id": "svs14959",
+    "url": "https://svs.gsfc.nasa.gov/14959/",
+    "finding": "Moon model geometry; no flight positions.",
+    "retrievedUtc": "2026-11-15T15:10:27.497896+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://svs.gsfc.nasa.gov/14959/",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 50971,
+    "sha256": "28b777a2ea7fd2179619c7d8c03bb1e2f231592becc9d0318d7fdf34994c3858"
+  },
+  {
+    "id": "svs5632",
+    "url": "https://svs.gsfc.nasa.gov/5632/",
+    "finding": "Flight-derived Artemis II flyby visualization; not a lunar landing. Numeric ephemeris link is a follow-up, not imported here.",
+    "retrievedUtc": "2026-11-15T15:10:28.235446+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://svs.gsfc.nasa.gov/5632/",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 37347,
+    "sha256": "4bc367ba16edd0d360eedda245a748f596ac26fbd2ec653f5fa787259cc237dd"
+  },
+  {
+    "id": "svs5610",
+    "url": "https://svs.gsfc.nasa.gov/5610/",
+    "finding": "Nominal reference Artemis II flyby; not flown landing telemetry.",
+    "retrievedUtc": "2026-11-15T15:10:28.802469+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://svs.gsfc.nasa.gov/5610/",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 51930,
+    "sha256": "f20e0dd40689a26c6e62e46b3961c7f78874bdd20d6f85e2bd6f9f868e80a1e1"
+  },
+  {
+    "id": "svs5535",
+    "url": "https://svs.gsfc.nasa.gov/5535/",
+    "finding": "CSM osculating elements interpreted from mission-report tables; not LM descent. Coordinate switches and errors explicitly discussed.",
+    "retrievedUtc": "2026-11-15T15:10:29.474551+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://svs.gsfc.nasa.gov/5535/",
+    "contentType": "text/html; charset=utf-8",
+    "bytes": 59978,
+    "sha256": "4063b955d9b4ef547880aefa9bc6eaf2439dbda6fd15c7e03c5a4cfa9a604cd2"
+  },
+  {
+    "id": "apollo-naif",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/",
+    "finding": "Index has Apollo 15 CSM and Apollo 16 subsatellite; no lander kernel identified.",
+    "retrievedUtc": "2026-11-15T15:10:30.099038+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/",
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 12403,
+    "sha256": "55a8934410642258ab5a325d327450dd6952baeb561fee4378bd406f41f15cf0"
+  },
+  {
+    "id": "apollo15-comments",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/apollo15-1.cmt",
+    "finding": "Confirms CSM identity, J2000, two coverage intervals and reconstruction limitations.",
+    "retrievedUtc": "2026-11-15T15:10:31.139140+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/apollo15-1.cmt",
+    "contentType": null,
+    "bytes": 2816,
+    "sha256": "47b96d7df1e6655c2f7adbdfefbc550ff6cdc3bc911bf84ecad4d9063c229dcd"
+  },
+  {
+    "id": "apollo16-comments",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/a16_subsat_ssd_lp150q.cmt",
+    "finding": "Non-propulsive subsatellite, with segment discontinuities. Not the LM.",
+    "retrievedUtc": "2026-11-15T15:10:31.748277+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://naif.jpl.nasa.gov/pub/naif/APOLLO/kernels/spk/a16_subsat_ssd_lp150q.cmt",
+    "contentType": "text/plain; charset=UTF-8",
+    "bytes": 5877,
+    "sha256": "76375c8b5110dc975c331893962494a6a44fee17989bd9eadb85d39f9efd4e53"
+  },
+  {
+    "id": "apollo-pds",
+    "url": "https://pds-geosciences.wustl.edu/missions/apollo/",
+    "finding": "PDS lists 15/16/17 camera-support ephemerides from orbit. Not lander paths.",
+    "retrievedUtc": "2026-11-15T15:10:32.342885+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://pds-geosciences.wustl.edu/missions/apollo/",
+    "contentType": "text/html",
+    "bytes": 50333,
+    "sha256": "9f63f04d8aae50ca5d68ab0df3988a0bfdc6bd3e319785a4549c79600df64972"
+  },
+  {
+    "id": "apollo-image-ephemeris",
+    "url": "https://apollo.im-ldi.com/EPHEMERIS/",
+    "finding": "Returned temporarily unavailable page; no dataset obtained.",
+    "retrievedUtc": "2026-11-15T15:10:33.038399+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://apollo.im-ldi.com/EPHEMERIS/",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 12021,
+    "sha256": "6d23d5c5f785c886b8344538c0adc18f1057297abab9f9b9c30e0f0343518655"
+  },
+  {
+    "id": "apollo11-bet1",
+    "url": "https://ntrs.nasa.gov/api/citations/19700014995/downloads/19700014995.pdf",
+    "finding": "Foreword says NAT listing is in Volume II, not generally distributed, available by request at publication. Volume I alone is not a sampled final-descent path.",
+    "retrievedUtc": "2026-11-15T15:10:33.729875+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ntrs.nasa.gov/api/citations/19700014995/downloads/19700014995.pdf",
+    "contentType": "application/pdf",
+    "bytes": 4829177,
+    "sha256": "9b9aa3bd4fa9a410fd157402cca41eb37248445a9c97211ddf30bc7f74ad5d55"
+  },
+  {
+    "id": "apollo11-report",
+    "url": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+    "finding": "Sections 5.1/5.3/5.6/5.7 document descent rationale, avoidance, ascent and rendezvous.",
+    "retrievedUtc": "2026-11-15T15:10:36.590977+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf",
+    "contentType": "application/pdf",
+    "bytes": 11835694,
+    "sha256": "5b9d033c7b9dd604220f439cddc8a53ad08e3e9c43c83f7342d7e61ef32a1baa"
+  },
+  {
+    "id": "apollo-experience",
+    "url": "https://ntrs.nasa.gov/api/citations/19720018205/downloads/19720018205.pdf",
+    "finding": "NASA TN D-6846, June 1972; mission planning and Apollo 12 navigation correction rationale.",
+    "retrievedUtc": "2026-11-15T15:10:38.536549+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ntrs.nasa.gov/api/citations/19720018205/downloads/19720018205.pdf",
+    "contentType": "application/pdf",
+    "bytes": 2947375,
+    "sha256": "606c8714f56cebe906aef231bed5e46e369bb974beaed1c5b94f594c89c8246c"
+  },
+  {
+    "id": "apollo11-2022",
+    "url": "https://ntrs.nasa.gov/api/citations/20220007267/downloads/NASA-TM-20220007267.pdf",
+    "finding": "NASA/TM-20220007267 reconstructs planar descent from digitized graphics; not direct time-tagged global 3D telemetry. No numeric attachment identified.",
+    "retrievedUtc": "2026-11-15T15:10:42.413753+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ntrs.nasa.gov/api/citations/20220007267/downloads/NASA-TM-20220007267.pdf",
+    "contentType": "application/pdf",
+    "bytes": 1270635,
+    "sha256": "a3c6f0ea4157d5d71cd8f6bfe2be0d0a13e7f1eaeeab212ba1e3db5d5315c18f"
+  },
+  {
+    "id": "ch3-isro",
+    "url": "https://www.isro.gov.in/Chandrayaan3_Details.html",
+    "finding": "Primary country agency: vehicle capabilities and touchdown limits; no sampled global path here. Header Horizons slope 120 degrees conflicts with this 12 degree specification and is not used.",
+    "retrievedUtc": "2026-11-15T15:10:44.209141+00:00",
+    "error": "HTTP Error 403: Forbidden",
+    "webRetrieval": "web.run successfully retrieved the official page; direct Python request returned 403. Capabilities and 12-degree slope text verified."
+  },
+  {
+    "id": "ch3-sequence",
+    "url": "https://www.isro.gov.in/NSPD2025/assets/pdf/CH3_Landing_Brochure.pdf",
+    "finding": "Search-indexed brochure; direct Python request 403 and web tool open 404. Not relied upon; replaced by verified Government of India presentation at UNOOSA.",
+    "retrievedUtc": "2026-11-15T15:10:44.323786+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "ch3-archive",
+    "url": "https://pradan.issdc.gov.in/ch3/",
+    "finding": "ISRO archive describes landed payload products; no final-descent tracking-fit product identified on landing page. Authentication not bypassed.",
+    "retrievedUtc": "2026-11-15T15:10:44.376936+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://pradan.issdc.gov.in/ch3/",
+    "contentType": "text/html;charset=UTF-8",
+    "bytes": 45437,
+    "sha256": "95e7596b4ea9ec25de263f6df8023000c108095f556c10b712e318a5ede85c20"
+  },
+  {
+    "id": "slim-jaxa",
+    "url": "https://darts.isas.jaxa.jp/en/missions/slim",
+    "finding": "JAXA archive dataset list says in preparation. No numeric descent product obtained.",
+    "retrievedUtc": "2026-11-15T15:10:45.950113+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://darts.isas.jaxa.jp/en/missions/slim",
+    "contentType": "text/html",
+    "bytes": 86758,
+    "sha256": "a810d4f22e05b32eff8db1e4a8a0f0a73a9ecceef7beaa24ef9e5f8f6bfffe72"
+  },
+  {
+    "id": "horizons-news",
+    "url": "https://ssd.jpl.nasa.gov/dat/horizons_news.txt",
+    "finding": "2023 announcements identify initial pre-launch solution and distinguish -158 lander from -169 propulsion module; not proof of final descent fit.",
+    "retrievedUtc": "2026-11-15T15:10:48.219923+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ssd.jpl.nasa.gov/dat/horizons_news.txt",
+    "contentType": "text/plain",
+    "bytes": 272270,
+    "sha256": "02761493c991c8edf288a21c9c8d7d99de17b1c23bb3d88cc633e4ff9570fba6"
+  },
+  {
+    "id": "horizons-manual",
+    "url": "https://ssd.jpl.nasa.gov/horizons/manual.html",
+    "finding": "Spacecraft trajectories may mix tracking fits and predictions; not live telemetry.",
+    "retrievedUtc": "2026-11-15T15:10:49.271648+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
+    "contentType": "text/html",
+    "bytes": 229979,
+    "sha256": "be45b0137b37068c48760bbaf306f52a72c10239c175ba91119a30eb30612a81"
+  },
+  {
+    "id": "apollo11-old-journal-link",
+    "url": "https://www.nasa.gov/wp-content/uploads/static/history/afj/ap11fj/pdf/19700014995_as11-trajectory-reconstruction-vol1.pdf",
+    "httpStatus": 404,
+    "finding": "Observed 404 during investigation; resolved to verified NTRS document, not guessed adjacent URLs."
+  },
+  {
+    "id": "ch3-india-presentation",
+    "url": "https://www.unoosa.org/documents/pdf/copuos/stsc/2024/ListTechnicalPresentations/2024_STSC_technical_presentations_slides/9_26_--_4_INDIA_Chandrayaan3.pdf",
+    "finalUrl": "https://www.unoosa.org/documents/pdf/copuos/stsc/2024/ListTechnicalPresentations/2024_STSC_technical_presentations_slides/9_26_--_4_INDIA_Chandrayaan3.pdf",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "bytes": 15849459,
+    "sha256": "023e33e629bf6abe88945a0b6e0429b21b1789b866d48b457d43318b2749ed30",
+    "retrievedUtc": "2026-11-15T15:14:57.096764+00:00",
+    "finding": "Government of India presentation to STSC 2024; slide 10 landing sequence visually inspected after direct download. Web tool returned 404, direct HTTPS succeeded. No PDF/imagery redistributed."
+  }
+]

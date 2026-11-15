@@ -1,6 +1,7 @@
 import { fromUrl } from "geotiff";
 import fs from "node:fs/promises";
 import crypto from "node:crypto";
+import {resampleRegisteredTerrain} from "./terrain-resample.mjs";
 const source =
   "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF";
 const root = new URL("../", import.meta.url);
@@ -48,14 +49,9 @@ async function patch(id, bbox, n) {
   let values;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      values = await selected.readRasters({
-        window,
-        width: n,
-        height: n,
-        interleave: true,
-        resampleMethod: "bilinear",
-        fillValue: NaN,
-      });
+      const width=window[2]-window[0],height=window[3]-window[1];
+      const raw=await selected.readRasters({window:[window[0],window[1],window[2]+1,window[3]+1],interleave:true,fillValue:NaN});
+      values=resampleRegisteredTerrain(raw,width+1,height+1,n,n,width/n,height/n,selected.getGDALNoData());
       break;
     } catch (error) {
       console.warn(id, "read attempt", attempt + 1, error.message);
