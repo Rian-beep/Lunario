@@ -1,3 +1,9 @@
+# Workspace room and Planner Var
+
+The wide context banner is now an optional inspector disclosure; desktop inspectors reserve canvas space and fill the available height. Compare is docked separately, Earth station controls are grouped, and Planner Var brings relevant native formulae into the inspector. See [workspace evidence](qa/workspace-room/VERIFICATION.md). Hosting stays teammate-owned. Existing operational-evidence and human/device acceptance TODOs below are preserved.
+
+---
+
 # Public exploration and theme delivery
 
 The document-owned original loader now runs on each load/reload with a three-second minimum (the original reduced-motion version is retained). Public site stories and DSN/weather explainers use existing sourced catalog records and explicitly distinguish geometry from signal/link margin. The persistent light/dark switch changes interface surfaces only. See `docs/qa/public-context-theme/VERIFICATION.md` for this release’s measured checks and artifact identity.

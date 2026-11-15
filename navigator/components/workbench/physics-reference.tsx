@@ -45,3 +45,16 @@ export function LearningDialog({ mode, onClose }: { mode: PhysicsReferenceMode; 
     <PhysicsReference mode={mode} />
   </dialog>;
 }
+
+/** A docked equation reference; changing topics never edits mission inputs. */
+export function VariableReference({topicId}:{topicId:string}) {
+ const [selected,setSelected]=useState(topicId);
+ const topic=PHYSICS_TOPICS.find(item=>item.id===selected)??PHYSICS_TOPICS[0];
+ return <section className="variable-reference" aria-label="Planner variable reference">
+  <h2>Variables & formulae</h2>
+  <label>Discipline<select aria-label="Variable discipline" value={selected} onChange={event=>setSelected(event.target.value)}>{PHYSICS_TOPICS.map(item=><option key={item.id} value={item.id}>{item.title}</option>)}</select></label>
+  <p>{topic.explanation}</p>
+  {topic.equations.map(expression=><div className="variable-relation" key={expression}><NativeMath expression={expression} display/><EquationLesson expression={expression} topic={topic} mode="plan"/></div>)}
+  <details><summary>Assumptions, limits & sources</summary><p>{topic.correction}</p><p><strong>Frame:</strong> {topic.frame}</p><p>{topic.assumptions}</p><p><strong>Model boundary:</strong> {topic.calculated}</p><p><strong>Required evidence:</strong> {topic.evidence}</p><ul>{topic.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul></details>
+ </section>;
+}

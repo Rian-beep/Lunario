@@ -39,6 +39,7 @@ try {for(const transport of ['web','file']){
  const history=page.getByRole('region',{name:'Selected location mission history',exact:true});await history.waitFor();await history.locator('summary').click();assert.match(await history.innerText(),/Surveyor 3/);
  await page.screenshot({path:`${out}/${transport}-site-history.png`});
  await page.locator('.app-header').getByRole('button',{name:'Earth',exact:true}).click();
+ await page.locator('.header-station-details > summary').click();
  for(const station of ['Goldstone','Madrid','Canberra']){
   console.log(transport,station);
   await page.getByRole('group',{name:'DSN ground complexes',exact:true}).getByRole('button',{name:station,exact:true}).click();

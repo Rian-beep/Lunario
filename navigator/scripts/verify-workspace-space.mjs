@@ -1,0 +1,41 @@
+import {chromium} from 'playwright-core';
+import assert from 'node:assert/strict';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+const out=process.env.LUNARIO_SPACE_EVIDENCE||'/tmp/lunario-space-checks';await mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});const report=[];
+const overlap=(a,b)=>Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1;
+try{for(const transport of ['web','file']){
+ const context=await browser.newContext({viewport:{width:1600,height:1000},reducedMotion:'reduce'});if(transport==='file')await context.setOffline(true);
+ const page=await context.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^http/.test(r.url()))requests.push(r.url());});
+ const b=name=>page.getByRole('button',{name,exact:true});const rect=s=>page.locator(s).evaluate(el=>el.getBoundingClientRect().toJSON());
+ await page.goto(transport==='web'?(process.env.LUNARIO_SPACE_URL||'http://127.0.0.1:4345'):pathToFileURL(process.env.LUNARIO_SPACE_FILE||'/tmp/lunario-space.html').href,{waitUntil:'domcontentloaded'});
+ await b('Dismiss introduction').click();assert.equal(await page.locator('.app-header [aria-label="Audience task context"]').count(),0);
+ await page.locator('.app-header').getByRole('button',{name:'Lander',exact:true}).click();
+ await b('Play experiment').waitFor({timeout:90000});const play=await b('Play experiment').boundingBox();assert.ok(play&&play.y>=0&&play.y+play.height<=1000,'Public first Play is visible');
+ await page.locator('.app-header').getByRole('button',{name:'Moon',exact:true}).click();
+ await b('Planner').click();await b('Dismiss introduction').click();assert.equal(await b('Learn').count(),0);await b('Var').click();
+ await page.getByRole('region',{name:'Planner variable reference',exact:true}).waitFor();assert.equal(await page.getByLabel('Variable discipline',{exact:true}).inputValue(),'light');assert.ok(await page.locator('.variable-reference math').count()>0);
+ await page.getByLabel('Variable discipline',{exact:true}).selectOption('descent');assert.ok((await page.locator('.variable-reference').innerText()).includes('Powered descent')||await page.locator('.variable-reference math').count()>0);
+ const dock=await rect('.inspector'),workspace=await rect('.workspace');assert.ok(dock.height>=workspace.height-26,'Inspector uses available workspace height');
+ assert.ok(dock.top>=workspace.top&&dock.bottom<=workspace.bottom);await b('Widen inspector').click();const wide=await rect('.inspector');assert.ok(wide.width>dock.width&&wide.height>=workspace.height-26);
+ await page.locator('.app-header').getByRole('button',{name:'Earth',exact:true}).click();await page.locator('.header-station-details > summary').waitFor();
+ const canvas=await rect('.viewport'),dockAtEarth=await rect('.inspector');assert.ok(canvas.right<=dockAtEarth.left+1,'Inspector reserves scene space instead of covering Earth');
+ const toolbar=await rect('.header-context-toolbar');assert.ok(toolbar.height<=76,`Earth toolbar is ${toolbar.height}px`);
+ await b('Var').click();assert.equal(await page.getByLabel('Variable discipline',{exact:true}).inputValue(),'communications');
+ assert.equal(await page.getByRole('group',{name:'DSN ground complexes',exact:true}).isVisible(),false);await page.locator('.header-station-details > summary').click();
+ await page.getByRole('group',{name:'DSN ground complexes',exact:true}).getByRole('button',{name:'Madrid',exact:true}).click();await page.keyboard.press('Escape');
+ await page.screenshot({path:`${out}/${transport}-earth-light.png`});await b('Switch to dark mode').click();await page.waitForTimeout(250);await page.screenshot({path:`${out}/${transport}-earth-dark.png`});
+ const captionContrast=await page.locator('.mission-task-context > summary').evaluate(el=>{
+  const lum=color=>{const c=color.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4);return c[0]*.2126+c[1]*.7152+c[2]*.0722;};
+  const style=getComputedStyle(el),a=lum(style.color),b=lum(style.backgroundColor);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+ });assert.ok(captionContrast>=4.5,`Dark disclosure contrast ${captionContrast}`);
+ await page.locator('.app-header').getByRole('button',{name:'Lander',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.scene-host')?.dataset.vehicleFraming==='framed',null,{timeout:90000});
+ const compare=await rect('.compare-side'),hud=await rect('.flight-telemetry'),inspector=await rect('.inspector');assert.ok(!overlap(compare,hud)&&!overlap(compare,inspector),'Side compare clears flight HUD and inspector');
+ await b('Compare scenarios').click();await page.locator('.comparison-sheet').waitFor();await b('Close comparisons').click();
+ await page.screenshot({path:`${out}/${transport}-flight.png`});
+ await b('Var').click();assert.equal(await page.getByLabel('Variable discipline',{exact:true}).inputValue(),'descent');
+ assert.deepEqual(errors,[]);if(transport==='file')assert.deepEqual(requests,[]);
+ report.push({transport,status:'pass',dock,workspace,wide,earthToolbar:toolbar,compare,hud,zeroOfflineNetwork:transport==='file'?requests.length===0:null});await context.close();
+}}finally{await writeFile(`${out}/report.json`,JSON.stringify(report,null,2));await browser.close();}
+console.log(JSON.stringify(report,null,2));

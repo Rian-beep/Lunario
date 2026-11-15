@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "e4b28459a317076e2e62d8f3733ed71741adb851",
+  "sourceCommit": "48ee3b7cfc6ffc1b92e13c5af9fedf244bca37d7",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 9097,
-      "sha256": "fa5505afd8b0a7ba408fde67da19423315e43bdd916f48289c01426439c885ed"
+      "bytes": 9738,
+      "sha256": "0d67817fd628f9b2ac09540e8bf00cefe9f6d004ebb9ef39e2b1ba6b35ad5f8f"
     },
     {
       "path": "CODEX_PROMPT.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 15561,
-      "sha256": "5c972f319ea8418e737e560c25dbf0908b3209e08c4b572c41bc9367018fd6aa"
+      "bytes": 15977,
+      "sha256": "4c61b8197296f77f9df3fe5cf43bd9b63de6029cc2069a54aa79e5d7c92ea735"
     },
     {
       "path": "app/favicon.ico",
@@ -44,8 +44,8 @@
     },
     {
       "path": "app/globals.css",
-      "bytes": 79159,
-      "sha256": "85541359df39e5309cfd7aeb0498319e2af3b86fef9eb7d6a35a5bb656e965c1"
+      "bytes": 82265,
+      "sha256": "212544b924774bbf04cf3bc10b9ff21f77bdf4883e5c83814b70423cd81678de"
     },
     {
       "path": "app/layout.tsx",
@@ -59,8 +59,8 @@
     },
     {
       "path": "app/mission-theme.css",
-      "bytes": 28049,
-      "sha256": "b9c0c1bcda66e879b27549a4e9db34f0ff76eb6168af94834c6f14d0452efb59"
+      "bytes": 29465,
+      "sha256": "df6f66403dfeb5056032a75b84d7817fe8f069d5ce7b9295fa99e95981666fb4"
     },
     {
       "path": "app/page.tsx",
@@ -174,8 +174,8 @@
     },
     {
       "path": "components/navigator.tsx",
-      "bytes": 98064,
-      "sha256": "0f332d8c05b2327e731046488d92ef70e3a2bf7da1903f2d4000c9ea6af8b152"
+      "bytes": 98665,
+      "sha256": "0a84e5303f69b90b3017732ba81f1daa392b64b0fdcc4f15260ee2e803456e48"
     },
     {
       "path": "components/polar-map.tsx",
@@ -409,8 +409,8 @@
     },
     {
       "path": "components/workbench/physics-reference.tsx",
-      "bytes": 3102,
-      "sha256": "e44c0a8b05cfce4bef90967706c2efc482da271069d569f60bfc43f0e300cea9"
+      "bytes": 4398,
+      "sha256": "abc54dea976b8f139e8274b97760d7a56b472fa4e73209d9cf6af13ec8ce9929"
     },
     {
       "path": "components/workbench/public-exploration.tsx",
@@ -419,8 +419,8 @@
     },
     {
       "path": "components/workbench/scene.tsx",
-      "bytes": 24221,
-      "sha256": "c1c582b7dd36b3d37e04a2719827fd1d27624b36a14a1d214f0873a06adf5858"
+      "bytes": 24215,
+      "sha256": "5aff5bd939678940f2a1622a9313c44d36c8c0229f76cf0fd27c11e8eae2f711"
     },
     {
       "path": "components/workbench/scene/camera-limits.test.ts",
@@ -584,13 +584,13 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 11792,
-      "sha256": "2e1f194d56909a5d9b6dee3f3fdfb9081b2a20c4cf512dd537a6113589a6d29c"
+      "bytes": 12264,
+      "sha256": "b54264ce2a9f424e7cf19d1c4711a25e0fe5e3408658bac3f9642da835723caf"
     },
     {
       "path": "docs/IN-FLIGHT.md",
-      "bytes": 14633,
-      "sha256": "745c0803fdb2dab9ae1edb3f54287a1417821f01e74aa39d160dcf02c43c661c"
+      "bytes": 15119,
+      "sha256": "c18fa333456315169956d5b24c2aa5186c9e5b52216143f72006e3cf765f912c"
     },
     {
       "path": "docs/LANDING-CONTRACTS.md",
@@ -1743,6 +1743,21 @@
       "sha256": "cd35a47bfe32662d7f5278ee0169d4e6091ddd0dba10f24d6e702f5a055cfa3d"
     },
     {
+      "path": "docs/qa/workspace-room/VERIFICATION.md",
+      "bytes": 4771,
+      "sha256": "7ca8cad2e7035c6d939aa893f55f9ccafb41438ffb3e2d9913202bb1468337cb"
+    },
+    {
+      "path": "docs/qa/workspace-room/browser.json",
+      "bytes": 2289,
+      "sha256": "19472c40cd3d83a44bd705294a32bd3c3eb33e7ef26795df51ed443c2d52bead"
+    },
+    {
+      "path": "docs/qa/workspace-room/native-200.json",
+      "bytes": 65110,
+      "sha256": "48afbdd9f6e00c26ddf918fffd7ea2abc5ed8c77733e2a80928a808314c93434"
+    },
+    {
       "path": "docs/station-weather.md",
       "bytes": 6362,
       "sha256": "54b5775bc02553fab950c644f55661bcbb49664a5fa0fe96f2937e674d321b8f"
@@ -2614,8 +2629,8 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 81164024,
-      "sha256": "a7270fc95067acfacb422a368eb8f24c72a3d54c2ba0418b45e881cbbeea5342"
+      "bytes": 81169598,
+      "sha256": "f75705f8e651552be500aaf4a9e6331f717970b9cb81489d7d293bb1defa4cfd"
     },
     {
       "path": "scripts/build-mathml.ts",
@@ -2774,8 +2789,8 @@
     },
     {
       "path": "scripts/verify-public-context-theme.mjs",
-      "bytes": 8594,
-      "sha256": "b14491a7d9baa62e5f899bf1656e0da2b5fc3cb293d397056e35d243a4a22cb9"
+      "bytes": 8660,
+      "sha256": "327757d99bab352a3f7dcf830a8d6e1902763b813334f81d1181ac5ad9a96c92"
     },
     {
       "path": "scripts/verify-public-flight.mjs",
@@ -2801,6 +2816,11 @@
       "path": "scripts/verify-webgl-lifecycle.mjs",
       "bytes": 4852,
       "sha256": "a4336d34dfcb850e11b653fdbbb8ee650c269ac0d51e1e3b7ae23e76fa88e48e"
+    },
+    {
+      "path": "scripts/verify-workspace-space.mjs",
+      "bytes": 5539,
+      "sha256": "2b0f90f31616233f35ec135264e7a006b988df4b35eb67b877a17cb8cc1ca87a"
     },
     {
       "path": "standalone/main.tsx",
@@ -3179,8 +3199,8 @@
     },
     {
       "path": "tests/refinement-viewport.test.ts",
-      "bytes": 20179,
-      "sha256": "288e8bfd8a7d048ca346612d8a3f79cf97140701018676ed1c4ce461a454f888"
+      "bytes": 20206,
+      "sha256": "9b7385bd6fee5026a366ed560c0ded7b074e8c8ac68f5d0a45f62f2742de47e0"
     },
     {
       "path": "tests/replanning-workspace.test.ts",

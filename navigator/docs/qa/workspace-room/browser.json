@@ -1,0 +1,132 @@
+[
+  {
+    "transport": "web",
+    "status": "pass",
+    "dock": {
+      "x": 1100,
+      "y": 138,
+      "width": 488,
+      "height": 786,
+      "top": 138,
+      "right": 1588,
+      "bottom": 924,
+      "left": 1100
+    },
+    "workspace": {
+      "x": 0,
+      "y": 126,
+      "width": 1600,
+      "height": 810,
+      "top": 126,
+      "right": 1600,
+      "bottom": 936,
+      "left": 0
+    },
+    "wide": {
+      "x": 800,
+      "y": 138,
+      "width": 788,
+      "height": 786,
+      "top": 138,
+      "right": 1588,
+      "bottom": 924,
+      "left": 800
+    },
+    "earthToolbar": {
+      "x": 24,
+      "y": 73,
+      "width": 1552,
+      "height": 51,
+      "top": 73,
+      "right": 1576,
+      "bottom": 124,
+      "left": 24
+    },
+    "compare": {
+      "x": 614.890625,
+      "y": 512,
+      "width": 145.109375,
+      "height": 38,
+      "top": 512,
+      "right": 760,
+      "bottom": 550,
+      "left": 614.890625
+    },
+    "hud": {
+      "x": 24,
+      "y": 765,
+      "width": 732,
+      "height": 71,
+      "top": 765,
+      "right": 756,
+      "bottom": 836,
+      "left": 24
+    },
+    "zeroOfflineNetwork": null
+  },
+  {
+    "transport": "file",
+    "status": "pass",
+    "dock": {
+      "x": 1100,
+      "y": 138,
+      "width": 488,
+      "height": 786,
+      "top": 138,
+      "right": 1588,
+      "bottom": 924,
+      "left": 1100
+    },
+    "workspace": {
+      "x": 0,
+      "y": 126,
+      "width": 1600,
+      "height": 810,
+      "top": 126,
+      "right": 1600,
+      "bottom": 936,
+      "left": 0
+    },
+    "wide": {
+      "x": 800,
+      "y": 138,
+      "width": 788,
+      "height": 786,
+      "top": 138,
+      "right": 1588,
+      "bottom": 924,
+      "left": 800
+    },
+    "earthToolbar": {
+      "x": 24,
+      "y": 73,
+      "width": 1552,
+      "height": 51,
+      "top": 73,
+      "right": 1576,
+      "bottom": 124,
+      "left": 24
+    },
+    "compare": {
+      "x": 614.890625,
+      "y": 512,
+      "width": 145.109375,
+      "height": 38,
+      "top": 512,
+      "right": 760,
+      "bottom": 550,
+      "left": 614.890625
+    },
+    "hud": {
+      "x": 24,
+      "y": 765,
+      "width": 732,
+      "height": 71,
+      "top": 765,
+      "right": 756,
+      "bottom": 836,
+      "left": 24
+    },
+    "zeroOfflineNetwork": true
+  }
+]

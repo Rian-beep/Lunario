@@ -2916,3 +2916,55 @@ html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground);
 .public-story-body { max-height: 180px; overflow: auto; overscroll-behavior: contain; padding-right: 5px; }
 /* The location heading lets map gestures through; its disclosure is interactive. */
 .public-site-context { pointer-events: auto; }
+
+/* Dock supporting material at the edge; reserve the centre for the simulation. */
+.lunar-app .workspace .compare-side {
+  position: absolute; left: auto; right: 12px; top: 50%; bottom: auto;
+  transform: translateY(-50%); z-index: 7; height: 38px; min-height: 38px;
+  padding: 6px 10px; font-size: 12px; gap: 6px;
+}
+.focus-mode .compare-side { display: none !important; }
+.mission-task-context { margin-bottom: 12px; }
+.mission-task-context > summary { cursor: pointer; padding: 10px 12px; }
+.mission-task-context section { display: block; padding: 10px 0; border: 0; background: transparent; }
+.mission-task-context section > div { max-width: none; }
+.mission-task-context section > div:last-child { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.variable-reference h2 { font-size: 20px; margin: 0 0 14px; }
+.variable-reference label { display: grid; gap: 8px; font-size: 13px; }
+.variable-reference select { width: 100%; min-width: 0; max-width: 100%; padding: 8px; }
+.variable-reference p { font-size: 14px; line-height: 1.65; }
+.variable-relation { padding: 12px 0; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.variable-relation math { font-size: 20px; }
+.variable-reference details { margin-top: 12px; }
+@media(min-width:1101px) {
+ .lunar-app .workspace .inspector { top: 12px; bottom: 12px; height: calc(100% - 24px); max-height: none; }
+ .header-context-toolbar { padding-block: 4px; gap: 4px 8px; }
+ .header-context-toolbar .header-scene-controls { flex: 0 1 auto; }
+}
+@media(max-width:1100px) {
+ .lunar-app .workspace .compare-side { top: 12px; transform: none; }
+}
+
+.map-bottom-tools:empty { display: none; }
+@media(min-width:1101px) {
+ .workspace:has(.inspector:not([hidden])) .compare-side { right: calc(var(--active-inspector-width) + 40px); }
+}
+@media(max-width:1100px) {
+ .workspace:has(.inspector:not([hidden])) .compare-side { right: calc(min(60%, var(--active-inspector-width)) + 12px); }
+ .compare-side .compare-label { display: none; }
+}
+
+.compare-side > .compare-label { background: transparent; color: inherit; padding: 0; font: inherit; }
+@media(max-width:1080px) and (max-height:700px) {
+ .lunar-app .workspace:has(.flight-telemetry) .compare-side {
+  position: relative; inset: auto; transform: none; grid-column: 1; grid-row: 3;
+  justify-self: end; align-self: center; margin: 6px 12px; height: 32px; min-height: 32px;
+ }
+}
+/* A desktop inspector reserves canvas space rather than covering the planet. */
+@media(min-width:1101px) {
+ .lunar-app .workspace { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
+ .lunar-app .workspace:has(.inspector:not([hidden])) { grid-template-columns: minmax(0, 1fr) var(--active-inspector-width); }
+ .lunar-app .workspace .viewport { position: relative; inset: auto; grid-column: 1; grid-row: 1; min-width: 0; min-height: 0; height: 100%; }
+ .lunar-app .workspace .inspector { position: relative; inset: auto; grid-column: 2; grid-row: 1; align-self: stretch; height: auto; margin: 12px 12px 12px 0; width: calc(100% - 12px) !important; max-width: none !important; }
+}

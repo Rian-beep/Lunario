@@ -25,3 +25,9 @@ The byte-preserved import retains one existing trailing space in `navigator/scri
 Use the header Dark/Light control; light retains the reference mint/cream appearance and dark uses near-black/grey and orange. Reload preference is separate from mission inputs and NASA renderer state. Public lunar selection opens sourced mission context; Earth-complex selection opens role, geometry and weather explanations. Station availability, signal strength and far-future weather are explicitly not inferred from a visible model.
 
 [Current QA and artifact receipt](navigator/docs/qa/public-context-theme/VERIFICATION.md) supersedes the historical baseline counts/hash above for this update. Final HTML is 81,164,024 bytes with SHA256 `a7270fc95067acfacb422a368eb8f24c72a3d54c2ba0418b45e881cbbeea5342`. Hosting remains teammate-owned.
+
+## Latest: more space for the scene
+
+The right inspector now fills available desktop height and reserves real canvas space instead of covering Earth/Moon. Compare is side-docked, Earth station controls are grouped, mission guidance is an optional inspector disclosure, and Planner Var supplies relevant native formulae without a modal. Panel edges and navigation surfaces are quieter while both palettes and original branding are preserved.
+
+[Latest workspace QA](navigator/docs/qa/workspace-room/VERIFICATION.md): final source797/797, actual web/offline journeys and8/8 native zoom tests pass. Offline HTML81,169,598bytes, SHA256 `f75705f8e651552be500aaf4a9e6331f717970b9cb81489d7d293bb1defa4cfd`. This supersedes the previous release identity above. Hosting and qualified-evidence TODOs remain unchanged.
