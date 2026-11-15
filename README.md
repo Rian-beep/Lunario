@@ -2,7 +2,7 @@
 
 Static site, no build step. Dashboard and About:
 
-- `index.html`: Dashboard. The "Prepare for landing" loader plays first (at least three seconds, on each document load or reload — no `data-once="session"`), then embeds the navigator full-bleed. **Dashboard / About** live in the cream navigator header (no second dark bar). GitHub Pages on `main` serves this offline embed as the live Dashboard.
+- `index.html`: Dashboard. The "Prepare for landing" loader plays first (at least three seconds, on each document load or reload — no `data-once="session"`), then embeds the navigator full-bleed. **Dashboard / About** live in the cream navigator header (no second dark bar). GitHub Pages on `main` serves the split-module `web/index.html` application in the live Dashboard.
 - `about.html`: project summary, team (Luke Dudley, Rian Banting, with LinkedIn links) and the Lunario banner as the footer (HTML + SVG, so it stays crisp at any width). Keeps the dark site shell nav for the story page.
 
 ```
@@ -16,7 +16,7 @@ navigator/               Next.js workbench + offline HTML bundle used by Dashboa
 
 All paths are relative, so it works on a project site (`https://<user>.github.io/<repo>/`) as well as a custom domain.
 
-The Dashboard tab loads the verified offline navigator (~78 MB). First visit can take a while on slow links; a direct open link is shown while it loads. For a host that can run Next.js, you can still serve `navigator/` with `npm run dev` / `npm run build` instead of the embedded file.
+The Dashboard loads the split web application and fetches larger terrain and 3D assets on demand. The separate single-file offline download remains available for disconnected use. A direct open link is shown while the Dashboard loads. For a host that can run Next.js, you can still serve `navigator/` with `npm run dev` / `npm run build` instead of the embedded file.
 
 ## Deploy
 
@@ -52,7 +52,7 @@ python3 -m http.server 8000
 
 ## Integrated lunar navigator workbench
 
-The tested map-first Public / Educator / Planner application lives in [`navigator/`](navigator/README.md). The site **Dashboard** tab embeds the verified offline build at [`navigator/public/solarreach-navigator.html`](navigator/public/solarreach-navigator.html) so GitHub Pages can serve the full workbench without a Node host. Branding and the About page stay in the static shell.
+The tested map-first Public / Educator / Planner application lives in [`navigator/`](navigator/README.md). The site **Dashboard** tab embeds the split application at [`web/index.html`](web/index.html), with the separate [`offline download`](navigator/public/solarreach-navigator.html) so GitHub Pages can serve the full workbench without a Node host. Branding and the About page stay in the static shell.
 
 For local Next.js development:
 
@@ -65,3 +65,7 @@ npm run dev
 Open http://127.0.0.1:4317/. On a host that runs Next.js, set **`navigator` as the project root**, then `npm run build` and `npm run start -- --port 4317`.
 
 GitHub’s file preview is not the application — open the HTML via the Dashboard tab, a local static server, or download the file. See [the team handoff](NAVIGATOR-HANDOFF.md) for release identity and validation, and [SPACE-APPS-JUDGING-REVIEW.md](SPACE-APPS-JUDGING-REVIEW.md) for the challenge/rubric self-assessment.
+
+## Release checks
+
+From `navigator/`, run the documented tests, typecheck, lint, scientific publication check and web/offline builds. Serve the repository root to check generated web assets, and separately open the offline HTML with networking disabled. `LUNARIO_PAGES_BASE=http://127.0.0.1:8000 bash scripts/verify-pages-dashboard.sh` checks the Dashboard route and entry/CSS hashes without downloading the large offline file. It checks offline download headers; it does not substitute for disconnected browser execution. Current evaluation evidence is in `navigator/docs/qa/evaluation/`. Hosting remains teammate-owned.

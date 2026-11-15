@@ -1,88 +1,47 @@
 #!/usr/bin/env bash
-# Smoke-check the live GitHub Pages deploy for Lunario Dashboard + offline navigator.
-# Exit 0 only when the homepage embeds the navigator (post Agent A merge).
-# Against today's placeholder homepage this script is expected to FAIL.
+# Check the hosted split application without downloading the large offline file.
 set -euo pipefail
+python3 - <<'PY'
+import hashlib
+import json
+import os
+from html.parser import HTMLParser
+from urllib.parse import urljoin, urlsplit
+from urllib.request import Request, urlopen
 
-BASE_URL="${LUNARIO_PAGES_BASE:-https://rian-beep.github.io/Lunario}"
-INDEX_URL="${BASE_URL}/"
-ABOUT_URL="${BASE_URL}/about.html"
-NAV_URL="${BASE_URL}/navigator/public/solarreach-navigator.html"
-
-PASS=0
-FAIL=0
-
-pass() {
-  echo "PASS: $*"
-  PASS=$((PASS + 1))
-}
-
-fail() {
-  echo "FAIL: $*"
-  FAIL=$((FAIL + 1))
-}
-
-echo "Lunario Pages smoke check"
-echo "Base: ${BASE_URL}"
-echo
-
-INDEX_TMP="$(mktemp)"
-NAV_TMP="$(mktemp)"
-trap 'rm -f "${INDEX_TMP}" "${NAV_TMP}"' EXIT
-
-# --- Index (Dashboard) ---
-INDEX_CODE="$(curl -sS -L -o "${INDEX_TMP}" -w "%{http_code}" "${INDEX_URL}" || true)"
-INDEX_SIZE="$(wc -c < "${INDEX_TMP}" | tr -d ' ')"
-
-if [[ "${INDEX_CODE}" == "200" ]]; then
-  pass "index HTTP 200 (${INDEX_SIZE} bytes) — ${INDEX_URL}"
-else
-  fail "index HTTP ${INDEX_CODE} (expected 200) — ${INDEX_URL}"
-fi
-
-if grep -q "Placeholder layout" "${INDEX_TMP}"; then
-  fail "index still contains 'Placeholder layout' (Dashboard embed not live yet)"
-else
-  pass "index no longer contains 'Placeholder layout'"
-fi
-
-if grep -q "navigator-frame" "${INDEX_TMP}"; then
-  pass "index contains 'navigator-frame'"
-else
-  fail "index missing 'navigator-frame' (expected after Dashboard embed PR)"
-fi
-
-if grep -q "solarreach-navigator.html" "${INDEX_TMP}"; then
-  pass "index references 'solarreach-navigator.html'"
-else
-  fail "index missing 'solarreach-navigator.html' (expected after Dashboard embed PR)"
-fi
-
-# --- About ---
-ABOUT_CODE="$(curl -sS -L -o /dev/null -w "%{http_code}" "${ABOUT_URL}" || true)"
-if [[ "${ABOUT_CODE}" == "200" ]]; then
-  pass "about HTTP 200 — ${ABOUT_URL}"
-else
-  fail "about HTTP ${ABOUT_CODE} (expected 200) — ${ABOUT_URL}"
-fi
-
-# --- Offline navigator (large static bundle; ~78–81MB) ---
-echo "Fetching offline navigator (large; may take a few seconds)…"
-NAV_CODE="$(curl -sS -L -o "${NAV_TMP}" -w "%{http_code}" "${NAV_URL}" || true)"
-NAV_SIZE="$(wc -c < "${NAV_TMP}" | tr -d ' ')"
-
-if [[ "${NAV_CODE}" == "200" ]]; then
-  pass "offline navigator HTTP 200 (${NAV_SIZE} bytes) — ${NAV_URL}"
-else
-  fail "offline navigator HTTP ${NAV_CODE} (expected 200) — ${NAV_URL}"
-fi
-
-echo
-echo "Summary: ${PASS} passed, ${FAIL} failed"
-if [[ "${FAIL}" -gt 0 ]]; then
-  echo "RESULT: FAIL"
-  exit 1
-fi
-
-echo "RESULT: PASS"
-exit 0
+base = os.environ.get('LUNARIO_PAGES_BASE', 'https://rian-beep.github.io/Lunario').rstrip('/') + '/'
+parts = urlsplit(base)
+assert parts.scheme in ('http', 'https') and parts.netloc and not (parts.username or parts.password or parts.query or parts.fragment), 'Use a plain HTTP(S) site base'
+class Links(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.frames = []; self.modules = []; self.styles = []
+    def handle_starttag(self, tag, attributes):
+        a = dict(attributes)
+        if tag == 'iframe': self.frames.append(a.get('src', ''))
+        if tag == 'script' and a.get('type') == 'module': self.modules.append(a.get('src', '').removeprefix('./'))
+        if tag == 'link' and a.get('rel') == 'stylesheet': self.styles.append(a.get('href', '').removeprefix('./'))
+def fetch(relative, method='GET'):
+    url = urljoin(base, relative)
+    with urlopen(Request(url, method=method, headers={'Accept-Encoding': 'identity'}), timeout=30) as response:
+        assert response.status == 200, f'HTTP {response.status}: {relative}'
+        return response.read() if method == 'GET' else {key.lower(): value for key, value in response.headers.items()}
+root = fetch('').decode('utf-8'); links = Links(); links.feed(root)
+assert any(urljoin(base, frame) == urljoin(base, 'web/index.html') for frame in links.frames), 'Dashboard must embed web/index.html'
+assert 'Placeholder layout' not in root, 'Placeholder dashboard remains'
+fetch('about.html'); print('PASS dashboard iframe and About')
+web = fetch('web/index.html').decode('utf-8'); links = Links(); links.feed(web)
+receipt = json.loads(fetch('web/build-receipt.json'))
+files = {row['path']: row for row in receipt['files']}
+assert receipt['entry'] in links.modules and links.styles, 'Hosted entry or stylesheet is missing'
+for name in [receipt['entry'], *links.styles]:
+    assert name in files and not name.startswith('/') and '..' not in name.split('/'), 'Unregistered hosted asset'
+    data = fetch('web/' + name); row = files[name]
+    assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], f'Hosted artifact differs: {name}'
+print('PASS hosted entry and stylesheet bytes match build receipt')
+headers = fetch('navigator/public/solarreach-navigator.html', 'HEAD')
+assert 'text/html' in headers.get('content-type', ''), 'Offline download is not HTML'
+length = headers.get('content-length')
+if length is not None: assert 0 < int(length) < 100 * 1024 * 1024, 'Offline file exceeds publication limit'
+print('PASS offline download headers; disconnected browser execution is a separate acceptance check')
+print('RESULT: PASS')
+PY
