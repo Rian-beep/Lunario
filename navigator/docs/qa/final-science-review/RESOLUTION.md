@@ -9,3 +9,5 @@ The independent report audits source97dd985 and remains unchanged. Its three fin
 The Mac integrator reran independent scalar/vector reproduction (`reference-macos.json`) and production checks:112 direction checkpoints,17521 ranges, four event brackets, radial contact roots, power/RF and planning identity passed their unchanged scoped gates. Platform float-rounding differences are retained rather than replacing the independent Clevo receipt. `tests/audit-register-freshness.test.ts` verifies both negative publication gates and current/historical row identity.
 
 No operational qualification is asserted. The21 uncertain recorded claims and all physical/operations limits in REPORT.md remain open.
+
+The publication gate also binds the scoped communications, atmosphere, uncertainty, engineering, terrain/contact and evidence-input modules plus the compiler itself. CI verifies committed findings in non-writing `--check` mode. A subsystem mutation must reject publication, and check mode preserves the existing compilation timestamp. This remains an integrity mechanism, not an authenticity signature.

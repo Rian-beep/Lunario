@@ -1,6 +1,6 @@
 """Compile scoped scientific claims; passing software does not certify a mission."""
 from pathlib import Path
-import json,hashlib,datetime,re
+import json,hashlib,datetime,re,sys
 root=Path('docs/qa/scientific-audit');rows=[]
 def require(condition,message):
  if not condition:raise ValueError(message)
@@ -59,6 +59,12 @@ byid['S14']['inputIdentity']={'assetInventory':'sources/inventory.json','receipt
 manifest=json.loads(Path('public/data/evidence-manifest.json').read_text());model=re.search("PLANNING_MODEL_VERSION='([^']+)'",Path('lib/assessment.ts').read_text()).group(1)
 counts={s:sum(r['status']==s for r in rows) for s in ['verified','uncertain','failing']}
 output={'schemaVersion':1,'compiledUtc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'comparisonEvidenceUtc':{'ephemeris':ephem['checkedUtc'],'dynamics':json.loads((root/'integration/dynamics-after.json').read_text())['measuredUtc']},'datasetId':manifest['datasetId'],'modelVersion':model,'counts':counts,'operationalQualification':False,'scopeNotice':'Verified means the stated bounded implementation/input check passed. It does not mean an arbitrary selected scenario, landing site, vehicle or operational mission is qualified. Baseline reports remain archived; this register supersedes only the listed corrected findings.','assetHashes':{p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in ['public/data/catalog.json','public/data/terrain.json','public/data/evidence-manifest.json']},'findings':rows}
+if '--check' in sys.argv:
+ expected={k:v for k,v in output.items() if k!='compiledUtc'}
+ for name in ['lib/generated/scientific-verification.json',str(root/'VERIFICATION.json')]:
+  existing=json.loads(Path(name).read_text());existing.pop('compiledUtc',None)
+  require(existing==expected,'Published register differs from checked evidence: '+name)
+ print(json.dumps({'publicationCheck':'pass','counts':counts}));raise SystemExit(0)
 Path('lib/generated/scientific-verification.json').write_text(json.dumps(output,indent=2)+'\n');(root/'VERIFICATION.json').write_text(json.dumps(output,indent=2)+'\n')
 lines=['# Scientific verification register','',f'Model `{model}`; dataset `{manifest["datasetId"]}`.','',output['scopeNotice'],'',f'**{counts["verified"]} verified bounded claims; {counts["uncertain"]} uncertain; {counts["failing"]} currently failing recorded comparisons. No operational qualification.**','','| ID | Status | Claim | Scope |','|---|---|---|---|']
 for r in rows:lines.append('| '+ ' | '.join(str(r[k]).replace('|','/').replace('\n',' ') for k in ['id','status','claim','scope'])+' |')

@@ -148,3 +148,5 @@ PATH=/tmp/lunario-audit-python/bin:$PATH npm test
 ```
 
 CI creates that environment before tests. Do not treat a missing dependency as a skipped pass. Rerun affected independent audits before changing `docs/qa/scientific-audit/integration/receipt-bindings.json`; the compiler deliberately rejects stale numerical code, inputs and failed receipts. Compilation time is not a new comparison timestamp. Run `python3 scripts/compile-scientific-verification.py`, then rebuild web/offline and execute `node scripts/verify-mission-paths.mjs` against the documented local4356 root server. See scientific-audit reports for independent source replay commands.
+
+CI runs `python3 scripts/compile-scientific-verification.py --check` before tests: this validates reviewed input/subsystem-engine/receipt bindings and committed findings without restamping compilation time. Ordinary compilation remains explicit after reviewed source comparisons. The freshness regression includes a communications-subsystem mutation, failed outcome and non-writing check-mode cases.

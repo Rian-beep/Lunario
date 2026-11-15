@@ -8,10 +8,12 @@ test('scientific register refuses stale input, numerical implementation, invento
  mkdirSync(join(dir,'lib/generated'),{recursive:true});
  const run=()=>spawnSync('python3',['scripts/compile-scientific-verification.py'],{cwd:dir,encoding:'utf8'});
  const valid=run();assert.equal(valid.status,0,valid.stderr);const output=join(dir,'lib/generated/scientific-verification.json'),originalOutput=readFileSync(output,'utf8');
+ const check=spawnSync('python3',['scripts/compile-scientific-verification.py','--check'],{cwd:dir,encoding:'utf8'});assert.equal(check.status,0,check.stderr);assert.equal(readFileSync(output,'utf8'),originalOutput);
  const compiled=JSON.parse(originalOutput);assert.ok(compiled.compiledUtc&&!compiled.checkedUtc);for(const id of ['E01','E02','E06','E07']){const row=compiled.findings.find((r:{id:string})=>r.id===id);assert.equal(row.inputIdentity.catalogSha256,compiled.assetHashes['public/data/catalog.json']);assert.ok(row.historicalBaseline);assert.match(JSON.stringify(row.reproduce),/expected exit 0/);assert.doesNotMatch(JSON.stringify(row.reproduce),/expected exit 1/);}assert.match(compiled.findings.find((r:{id:string})=>r.id==='S14').scope,/all matching/);
  const cases:[string,(text:string)=>string][]=[
  ['public/data/catalog.json',text=>text+' '],
  ['lib/astro.ts',text=>text+'\n// numerical input mutation probe\n'],
+ ['lib/engineering-evidence/communications.ts',text=>text+'\n// subsystem mutation probe\n'],
  ['docs/qa/scientific-audit/integration/terrain-registration-after.json',text=>JSON.stringify({...JSON.parse(text),errorM:1})],
  ['docs/qa/scientific-audit/integration/pipeline-after.json',text=>JSON.stringify({...JSON.parse(text),fixed:false,unknownRayBecameFinite:true,missingRayHorizonDeg:-.16})],
  ['docs/qa/scientific-audit/sources/inventory.json',text=>text+' '],
