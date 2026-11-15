@@ -72,6 +72,9 @@
     "public/data/trajectories/athena-descent-reconstructed.json": "6265db235ee414bd82fc5b2ef07b02b70472c9df8fdfc9c99ae10a4cf4f0acbe",
     "public/data/trajectories/odysseus-descent-reconstructed.json": "d67775edd0b279748469a11dba9eb73457b14f1e51d747fd806de78239559460",
     "public/data/trajectories/blue-ghost-1-descent-reconstructed.json": "cd8aa49aa363904f3b7ed582a2d22a0e4c298b77548e60ded00969f130637a53",
-    "public/data/trajectories/chandrayaan-3-descent-reference.json": "6b1b4a4a7028134ec9aab255e07ae23d90875a622c21f08e74b1ebf9652dd831"
+    "public/data/trajectories/chandrayaan-3-descent-reference.json": "6b1b4a4a7028134ec9aab255e07ae23d90875a622c21f08e74b1ebf9652dd831",
+    "lib/engineering-evidence/import-metadata.ts": "758f8adb76130a4e983a51cd2778fd5c1cab4f2cf580ea2e669b1d963d5e6b23",
+    "lib/evidence-confidence/index.ts": "db3985b99900490abfbfeaf1659e6ce1ba7b2d063bec093a653601bd7f9c7e6d",
+    "lib/evidence-confidence/finite.ts": "551c68bdc688e966f3bc3395fad758bdee68c347d0e5c273ef3f6795cfbc4091"
   }
 }
