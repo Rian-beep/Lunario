@@ -1,0 +1,49 @@
+{
+  "originalManifest": "/tmp/refine-c15-visual-inputs-before/historical-manifest.json",
+  "historicalFiles": 1319,
+  "historicalFilesUnchanged": 1319,
+  "activeOtherLaneFilesExcluded": [
+    {
+      "path": "/tmp/refinement-framing-c15-contact/source-test.log",
+      "startupSha256": "e9cf3ce341ec9e9daba01d44a8161d9bbcefb9a6074f0d0d6ed494220b2f1f43",
+      "changed": true,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/report.json",
+      "startupSha256": "ee0ded094a764686e798c8f200772e9c1590c25e1b909683dd95dd86da737ee8",
+      "changed": true,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/verifier.mjs",
+      "startupSha256": "04603af83b18b0a5159cece00f61de0236c61782b8a5300f738252d2082c5b6d",
+      "changed": false,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/run.log",
+      "startupSha256": "ca8a90e50b6b3016e2022acbf5903c52f24fb9fa20eb9e8ff954f19eab842b19",
+      "changed": true,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/inputs-before.json",
+      "startupSha256": "9521bc82afaf5a801c064f52d0d17d2eafc6572b5f025e6d9afe1dbc250c7b3d",
+      "changed": false,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/history-before.json",
+      "startupSha256": "e6021a39b24845d4981ce675e5216074d90fe8016dbbd308ec45094f855f7237",
+      "changed": false,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    },
+    {
+      "path": "/tmp/refinement-framing-c15-contact/source-identity-before.json",
+      "startupSha256": "99a060f567f8e3b3c8cb12e4c804d02254b5b682ae3a8fa8a85c56dacf07ec0b",
+      "changed": false,
+      "reason": "Live C15 contact-worker output inadvertently included by startup c* inventory; outside historical RED/owned visual scope."
+    }
+  ]
+}

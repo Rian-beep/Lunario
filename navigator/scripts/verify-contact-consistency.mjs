@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+import {chromium} from 'playwright-core';
+const args=process.argv.slice(2),options={};
+for(let i=0;i<args.length;i+=2){assert.ok(['--file','--url','--output'].includes(args[i])&&args[i+1]);options[args[i]]=args[i+1];}
+assert.ok(options['--output']&&!!options['--file']!==!!options['--url']);
+const output=resolve(options['--output']);await mkdir(output,{recursive:true});
+const report={checkedUtc:new Date().toISOString(),target:options['--file']?pathToFileURL(resolve(options['--file'])).href:options['--url'],checks:[],errors:[],httpRequests:[]};
+if(options['--file']){const bytes=await readFile(options['--file']);report.artifactSha256=createHash('sha256').update(bytes).digest('hex');}
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});report.browser=browser.version();
+const context=await browser.newContext({viewport:{width:1600,height:1000},reducedMotion:'reduce',acceptDownloads:true});if(options['--file'])await context.setOffline(true);
+const page=await context.newPage();page.setDefaultTimeout(15000);page.on('pageerror',e=>report.errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))report.httpRequests.push(r.url());});
+const button=name=>page.getByRole('button',{name,exact:true});
+async function guide(){await page.locator(".lunario-loader").waitFor({state:"hidden",timeout:30000});await button("Dismiss introduction").waitFor({state:"visible",timeout:3000});const close=button('Dismiss introduction');if(await close.isVisible())await close.click();}
+async function details(name){const summary=page.locator('summary').filter({hasText:name}).first();if(!await summary.evaluate(n=>n.parentElement.open)){await summary.focus();await summary.press('Enter');}return summary.locator('..');}
+async function check(name,fn){try{const detail=await fn();report.checks.push({name,status:'pass',detail});console.log('PASS '+name);}catch(e){report.checks.push({name,status:'fail',error:e.stack});await page.screenshot({path:resolve(output,name+'-FAIL.png')});throw e;}}
+const current=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('solarreach-workbench-v1')));
+const metric=()=>page.locator('.metric').filter({has:page.locator('.metric-label').filter({hasText:/^Earth contact/})});
+try{
+ await page.goto(report.target,{waitUntil:'load',timeout:120000});await page.getByRole('group',{name:'Audience mode',exact:true}).waitFor();await guide();await button('Planner').click();await guide();
+ await button('Explore a real delay contingency').click();await button('Demo · alternative site').click();if(await button('Close comparisons').isVisible())await button('Close comparisons').click();const state=await current();
+ await check('public-zero-cutoff-retains-raw-visibility',async()=>{await button('Public').click();await guide();await metric().waitFor();const text=await metric().innerText();assert.match(text,/50\.0\s*%/);assert.match(text,/Terrain-only visibility: 56\.0%/);assert.match(text,/0° minimum antenna elevation above horizontal/);assert.deepEqual(await current(),state);await page.screenshot({path:resolve(output,'public-contact.png')});return{text,state};});
+ await check('contact-countdown-is-masked-and-explicit',async()=>{const card=page.getByRole('article',{name:'Antenna visibility: Contact opens',exact:true});await card.waitFor();const text=await card.innerText();assert.match(text,/20 Jul 2027/);assert.match(text,/10:00.*11:00/s);assert.match(await page.getByRole('region',{name:'Upcoming visibility changes'}).innerText(),/minimum antenna elevation 0° above horizontal/);return{text};});
+ await check('horizon-windows-use-the-same-zero-cutoff',async()=>{await button('Horizon analysis').click();const heading=page.getByRole('heading',{name:'Earth contact windows',exact:true});await heading.waitFor();const panel=heading.locator('..');const text=await panel.innerText();assert.match(text,/0° minimum antenna elevation/);assert.match(text,/20 Jul 2027, 11:00 UTC/);assert.match(text,/168\s*h/);return{text};});
+ await check('comparison-column-identifies-antenna-contact',async()=>{await page.getByRole('button',{name:/^Compare scenarios/}).click();const table=page.locator('.comparison-content table').first();const heading=table.getByRole('columnheader',{name:/Antenna contact %/});await heading.waitFor();const index=await heading.evaluate(n=>Array.from(n.parentElement.children).indexOf(n));const row=button('Demo · alternative site').locator('xpath=ancestor::tr[1]');const text=await row.locator('th,td').nth(index).innerText();assert.match(text,/50\.0/);await button('Close comparisons').click();return{column:index,text};});
+ await check('changed-absolute-cutoff-matches-export-and-public',async()=>{await button('Planner').click();await guide();const field=page.locator('label.number-field').filter({hasText:/^Minimum antenna elevation/}).locator('input');await field.fill('2');await field.blur();const controls=await details('Export, import & print evidence');const pending=page.waitForEvent('download');await controls.getByRole('button',{name:'Export decision JSON',exact:true}).click();const download=await pending,path=resolve(output,'two-degree-contact.json');await download.saveAs(path);const exported=JSON.parse(await readFile(path,'utf8'));const fraction=exported.assessment.mission.contactFraction;assert.ok(Number.isFinite(fraction)&&fraction<.5);await button('Public').click();await guide();const value=await metric().locator('.metric-value').innerText();assert.equal(Number(value.replace('%','').trim()),Number((fraction*100).toFixed(1)));const text=await metric().innerText();assert.match(text,/2° minimum antenna elevation/);assert.match(text,/Terrain-only visibility: 56\.0%/);assert.equal((await current()).mission.antennaMaskDeg,2);return{fraction,value,text};});
+ await check('errors-and-offline-network',async()=>{assert.deepEqual(report.errors,[]);if(options['--file'])assert.deepEqual(report.httpRequests,[]);return{errors:report.errors,httpRequests:report.httpRequests.length};});
+}catch(e){report.failure=e.stack;console.error(e.message);process.exitCode=1;}finally{await browser.close();await writeFile(resolve(output,'report.json'),JSON.stringify(report,null,2));}

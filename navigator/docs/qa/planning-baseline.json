@@ -1,0 +1,36 @@
+{
+  "checkpoint": "be7d92d017cf980e75b933a1bbd5b9862eeb393d",
+  "recordedUtc": "2026-11-14T13:11:35.614281+00:00",
+  "sourceSha256": {
+    "lib/astro.ts": "3b622e7e4cd9278876ffe483e3a5748f5127f2fdf79101526010723d2d3993a8",
+    "lib/mission.ts": "5eb67b747b5acaecbccb5bb3e5cb0af4c5cafcf0bacb2a6b05c1461807fb77d6",
+    "lib/scenario.ts": "9acaa12149f533633e6fd38adf7994e876c2eac89fc828f8fd8a9db7d78b43b7",
+    "lib/alternatives.ts": "63751a08512bdbaf105da15d41cbfb5780b59e4f6baafc7a2f9bdc3b4abf5e02",
+    "public/data/catalog.json": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+    "public/data/terrain.json": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+    "public/data/imagery.json": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5"
+  },
+  "dirtyFilesAtCheckpoint": [
+    "public/solarreach-navigator.html"
+  ],
+  "validation": {
+    "npm test": {
+      "passed": 121,
+      "failed": 0
+    },
+    "npm run typecheck": {
+      "exitCode": 0
+    },
+    "npm run lint": {
+      "exitCode": 0
+    },
+    "git diff --check": {
+      "exitCode": 0
+    }
+  },
+  "notes": [
+    "Source checkpoint includes active root integration; no other chat edits were taken.",
+    "Eight prior workers completed and bundles already integrated.",
+    "Generated HTML pending separate artifact commit."
+  ]
+}

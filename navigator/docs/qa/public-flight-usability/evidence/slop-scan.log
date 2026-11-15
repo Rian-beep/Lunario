@@ -1,0 +1,30 @@
+slop-scan report
+root: /Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator
+files scanned: 307
+directories scanned: 22
+physical LOC: 36201
+logical LOC: 15965
+functions: 1663
+
+Primary normalized metrics:
+- score / file: 0.10
+- score / KLOC (logical): 1.92
+- score / function: 0.02
+- findings / file: 0.03
+- findings / KLOC (logical): 0.50
+- findings / function: 0.00
+
+Raw totals:
+- findings: 8
+- repo score: 30.69
+
+File hotspots:
+- lib/scenario.ts: score=6.00 findings=1
+- lib/nasa-model.ts: score=5.00 findings=1
+- scripts/verify-refinement-framing.mjs: score=2.75 findings=2
+- public/branding/lunario/loader/loader.js: score=1.90 findings=1
+
+Directory hotspots:
+- lib: score=6.00 findings=1
+- scripts: score=4.75 findings=1
+- components/workbench: score=4.29 findings=1

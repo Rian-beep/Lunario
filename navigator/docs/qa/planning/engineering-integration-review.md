@@ -1,0 +1,15 @@
+# Engineering integration source review
+
+Reviewed the parent-owned integration at Git HEAD `f8ed4613a41f60c369316839bb734a6266bea79e` plus its live changes. Scope: engineering-context, canonical parsing/types, shared assessment, scenario diff, engineering editor/comparison and decision-panel wiring. No application source was changed by this review.
+
+The seven analytical domains remain separate from qualified external reports. Empty inputs remain unknown, supplied values/provenance round-trip through canonical state, and site/custom/stay/dataset scope changes blank stale metrics until explicit application/reconfirmation. A changed model recomputes metrics rather than trusting imported numbers. Camera state does not change measurement scope. Source and responsible-author strings do not become internally verified measurements.
+
+Required external rows keep their original IDs; analytical rows use `engineering:<domain>` and cannot overwrite them. A supplied screen becomes required when its discipline is required. Full landing-readiness additionally requires navigation/guidance; the other newly listed disciplines remain opt-in. Known scoped analytical failures remain failures while missing external reports stay independently unassessed.
+
+One concrete P2 was found and fixed by the parent: engineering comparison guarded raw finite values but subtracted them without guarding the result. Opposite finite margins near the numeric limit could therefore display an infinite delta. The current UI uses the parent's pure `engineeringDifference` guard and displays Unknown for an unrepresentable difference. The source fix is verified; its actual browser rendering belongs to the focused engineering flow check.
+
+The empty-calculator policy was explicitly resolved with the parent: calculators are optional until supplied. A qualified external report need not be accompanied by an empty introductory calculator. The UI and MODELS now say this directly. Once supplied, a required discipline's stale/incomplete or failing analytical result participates in assessment; the qualified report still does not disappear. This is a policy choice, not operational closure.
+
+The editor preserves empty strings as missing numeric fields, validates before application, binds the applied values to the current scope, and labels unapplied drafts. Comparison reads only scoped finite values; source/author, exact inputs and recomputed engineering screens are retained through exports. No additional concrete integration defect was found in this bounded source pass.
+
+Parent reported327 tests green before its latest reference/helper additions. This reviewer did not duplicate that suite, start a server/build or claim browser/printing/accessibility conformance. A focused dedicated-browser check is a separate artifact. All successful numerical screens remain conditional; trajectory guidance, landing dynamics, empirical plume applicability, transient thermal behavior and other qualified domain evidence remain explicit limitations.

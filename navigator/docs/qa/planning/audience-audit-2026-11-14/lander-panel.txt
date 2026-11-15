@@ -1,0 +1,203 @@
+Skip to lunar workspace
+Paused. In shadow.
+SolarReach
+Lunar navigator
+Public
+Educator
+Planner
+Hide panels
+Mode guide
+Share
+Export
+2D map
+3D terrain
+Sites
+Inspector
+Moon
+Earth
+Lander
+Camera & lighting
+Learn
+Lab
+Sun
+Earth
+Relief 1× · Vehicle fixed 1× · Local ENU · km
+Connecting Ridge
+89.5343°S   209.9477° E · 2 m observer
+Prepared site horizon
+⋮
+Planning context & decision margins
+Reset landing preset
+
+Ideal assisted terminal example. Edit the vehicle and contact assumptions below; this is not reconstructed Apollo guidance.
+
+✓ Within entered contact limits
+Within the entered speed, ideal tilt, target-radius and breakup-energy limits on known numerical terrain. This is a preview requirement result, not landing certification.
+
+Landing preview path colours
+Explore rigid-body touchdown
+
+Release the real-size NASA display model over a synthetic plane. Test contact, bounce and tipping using editable assumptions.
+
+Lunar flight preview
+
+A generic vehicle with editable assumptions. This is a local ascent or terminal descent, not an operational flight solution.
+
+Ascent
+Descent
+Assisted target approach
+Manual pitch & burn
+Reset 300 m approach
+ⓘ About guidance and start position
+Start east offset
+m
+ⓘ Start east offset (m)
+Start north offset
+m
+ⓘ Start north offset (m)
+Start altitude
+i
+m
+Horizontal speed
+i
+m/s
+Vertical speed
+i
+m/s
+Heading, from north
+i
+°
+Initial pitch
+i
+°
+Final burn pitch
+i
+°
+Landing contact assumptions
+
+Entered preview limits, not NASA acceptance criteria. All must be met with known numerical terrain for the incoming contact to be within limits.
+
+Edit contact limits & continuation
+✓ Within entered contact limits
+
+Incoming vertical -0.56 m/s (limit ±2.0 m/s) · horizontal 0.71 m/s (limit 1.0 m/s).
+
+Ideal tilt 1.94° (limit 15.0°) · surface target error 8.43 m (radius 20.0 m).
+
+Contact at 50.48 s · incoming mass 4,562.23 kg · numerical ground +0.16 m relative to reference. Incoming kinetic energy 1,866 J; breakup threshold 100,000 J.
+
+Within the entered speed, ideal tilt, target-radius and breakup-energy limits on known numerical terrain. This is a preview requirement result, not landing certification.
+Vehicle & burn
+Wet mass
+i
+kg
+Dry mass
+i
+kg
+Thrust
+i
+N
+Specific impulse
+i
+s
+Burn duration
+i
+s
+Preview duration
+i
+s
+
+Assisted guidance controls thrust direction and throttle; the two manual pitch values are retained for manual mode. Burn duration is the maximum powered time, not a compulsory full-thrust burn.
+
+Initial thrust / weight
+2.10
+i
+Above 1 is necessary for vertical liftoff from rest. Landing limits depend on the vehicle and guidance.
+terrain contact
+Ideal engine Δv
+i
+ 91 m/s · Maximum altitude
+i
+ 0.30 km
+
+3-DoF RK4 central lunar gravity; ≤0.1 s force commands. Moon-fixed east/up/north frame; Coriolis and centrifugal acceleration at latitude -89.53432°, constant spin 0.000002661698975163682 rad/s (default NASA sidereal period 655.720 h). Ideal instantaneous attitude and continuously variable throttle, bounded by configured thrust, burn time and propellant; target feedback with descending speed schedule. Target error is a reference-sphere great-circle surface arc in metres; terrain heights and E/up/N contact velocity use the same local numerical frame. Tilt is from radial vertical; slope uses a 2 m centred numerical difference, not a footprint assessment. Collision probes are at most 0.025 s apart with refined crossings; unresolved terrain features between probes are not certified. No Apollo GNC, attitude dynamics, tides, soil or qualified 6-DoF model. Friction, restitution and breakup energy apply to the downstream contact continuation, not airborne guidance. Surface contact is not a successful landing; inspect the contact speed. Terrain clearance is unknown outside prepared coverage.
+
+Flight radial altitude
+Vertical axis: Radial altitude above site reference sphere (km)
+i
+-0.024
+0.06301
+0.15
+0.237
+0.324
+0
+12.62
+25.24
+37.86
+50.48
+Horizontal axis: Flight time (s since preview start)
+i
+Radial altitude (not terrain clearance)
+i
+
+Hover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.
+
+Previous sample
+in Flight radial altitude
+Next sample
+in Flight radial altitude
+Sample values
+Radial altitude (not terrain clearance): 0.3 km · elapsed time 0 s
+How fast does this graph change? · Gradient and symbols
+
+Seconds elapsed from preview start at the selected mission epoch. Altitude is radial distance minus the site reference radius, not height above the actual terrain. Zero is the reference sphere, not a safe landing. 3-DoF RK4 with central lunar gravity in a nonrotating local frame; lunar rotation neglected. Output samples are roughly 1 s apart, including the terminal state; solver steps are at most 0.25 s. Contact, fuel exhaustion or a time bound is not mission success. Display rounding is not an error bound.
+
+Flight speed
+Vertical axis: Speed (m/s)
+i
+-9.806
+-3.265
+3.276
+9.818
+16.36
+0
+12.62
+25.24
+37.86
+50.48
+Horizontal axis: Flight time (s since preview start)
+i
+Total speed
+i
+Radial speed (+up / −down)
+i
+
+Hover or tap to inspect samples. Focus the graph and use ←/→; Shift moves 10 samples; Home/End select the first/last. Values are rounded for reading, not uncertainty bounds.
+
+Previous sample
+in Flight speed
+Next sample
+in Flight speed
+Sample values
+Total speed: 12.81 m/s · elapsed time 0 s
+Radial speed (+up / −down): -8 m/s · elapsed time 0 s
+How fast does this graph change? · Gradient and symbols
+
+Seconds elapsed from preview start at the selected mission epoch. Altitude is radial distance minus the site reference radius, not height above the actual terrain. Zero is the reference sphere, not a safe landing. 3-DoF RK4 with central lunar gravity in a nonrotating local frame; lunar rotation neglected. Output samples are roughly 1 s apart, including the terminal state; solver steps are at most 0.25 s. Contact, fuel exhaustion or a time bound is not mission success. Display rounding is not an error bound. Total speed is the velocity magnitude; signed radial speed is positive outward and negative downward. Touchdown speed limits are vehicle-specific.
+
+Hourly ephemeris · Terrain-aware horizons
+Compare scenarios
+0
+Flight time
+i
+0 s
+Radial altitude
+i
+0.30 km
+1×
+10×
+50×
+29 Jun 2027, 11:00 UTC
+1 h/s
+6 h/s
+1 d/s

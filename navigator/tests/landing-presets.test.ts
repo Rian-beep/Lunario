@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {createLandingFlight} from '../lib/landing-presets';import {DEFAULT_FLIGHT} from '../lib/flight';
+test('terminal landing preset approaches the selected origin while preserving declared hardware',()=>{const a=createLandingFlight({...DEFAULT_FLIGHT,wetMassKg:6000});assert.equal(a.mode,'descent');assert.equal(a.wetMassKg,6000);assert.equal(a.eastOffsetM,-300);assert.equal(a.verticalMps,-8);assert.equal(a.landing.guidance,'target-landing');assert.equal(DEFAULT_FLIGHT.mode,'ascent');});
+test('revisiting Lander retains edits; explicit reset restores the terminal example',()=>{const a=createLandingFlight(DEFAULT_FLIGHT);a.verticalMps=-40;a.landing.maxVerticalMps=3;const b=createLandingFlight(a);assert.equal(b.verticalMps,-40);assert.equal(b.landing.maxVerticalMps,3);assert.notEqual(a.landing,b.landing);assert.equal(createLandingFlight(a,true).verticalMps,-8);});

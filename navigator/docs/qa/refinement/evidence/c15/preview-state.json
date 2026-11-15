@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:4317/",
+  "beforeStateSha256": "23fc24c307a15a27a318b335acf4128bfb7a87776290bcfd591160e96cf5029e",
+  "afterStateSha256": "23fc24c307a15a27a318b335acf4128bfb7a87776290bcfd591160e96cf5029e",
+  "stateBytes": 1265,
+  "viewportBefore": {
+    "width": 1200,
+    "height": 898
+  },
+  "viewportAfter": {
+    "width": 1200,
+    "height": 898
+  },
+  "appAfter": {
+    "width": 1200,
+    "height": 898
+  },
+  "title": "Lunar Window \u2014 Lunar Landing Site Navigator",
+  "inputInjection": false
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "scope": "main800",
+    "command": [
+      "node",
+      "/tmp/refine-c15-visual-final.mjs",
+      "--widths",
+      "800",
+      "--sections",
+      "framing,poles,import-return,model,surfaces,contrast,expanded-contrast,maps,graphs",
+      "--output",
+      "/tmp/refinement-framing-c15-main800"
+    ],
+    "exit": 0,
+    "log": "/tmp/refine-c15-visual-main800.log",
+    "report": "/tmp/refinement-framing-c15-main800/report.json"
+  },
+  {
+    "scope": "native",
+    "command": [
+      "node",
+      "/tmp/refine-c15-visual-final.mjs",
+      "--widths",
+      "none",
+      "--sections",
+      "zoom",
+      "--output",
+      "/tmp/refinement-framing-c15-native"
+    ],
+    "exit": 0,
+    "log": "/tmp/refine-c15-visual-native.log",
+    "report": "/tmp/refinement-framing-c15-native/report.json"
+  }
+]

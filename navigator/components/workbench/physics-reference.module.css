@@ -1,0 +1,20 @@
+.reference { margin-block: .75rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--card); color: var(--foreground); font-size: .85rem; }
+.reference summary { cursor: pointer; padding: .75rem; font-weight: 600; }
+.reference summary span { margin-inline-start: .6rem; font-size: .75rem; font-weight: 400; opacity: .8; }
+.content { padding: 0 .85rem .85rem; overflow-wrap: anywhere; }
+.content h3 { margin-block: .8rem .4rem; font-size: 1rem; }
+.content p, .content dd { line-height: 1.55; }
+.toolbar { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.toolbar select { flex: 1; min-width: 0; max-width: 100%; }
+.toolbar select, .toolbar button, .restore { padding: .4rem .55rem; border: 1px solid var(--border); border-radius: .35rem; background: var(--card); color: var(--foreground); font: inherit; }
+.toolbar :focus-visible, .restore:focus-visible, .reference summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+.content dt { margin-top: .6rem; font-weight: 650; }
+.content dd { margin-inline-start: 0; }
+.correction { border-inline-start: 3px solid var(--sun); padding-inline-start: .65rem; }
+.equations { overflow-x: auto; font-family: ui-monospace, monospace; }
+.equations p { white-space: pre-wrap; }
+.scope { font-size: .78rem; opacity: .85; }
+.sources { padding-inline-start: 1.2rem; }
+.sources a { color: var(--primary); text-decoration: underline; text-underline-offset: .15em; }
+@media (max-width: 480px) { .reference summary span { display: block; margin-inline-start: 0; margin-block-start: .3rem; } }
+.toolbar button:not(:disabled):hover, .restore:not(:disabled):hover { background: var(--mission-hover); border-color: var(--primary); }

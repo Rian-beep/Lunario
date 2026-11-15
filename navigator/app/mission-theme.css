@@ -1,0 +1,609 @@
+/* Lunario reference: cream frames, peach paper, orange title strips and mint tabs.
+   Surface colours only; lunar imagery and renderer pixels keep their own palette. */
+:root {
+  color-scheme: light;
+  --mission-space: #0b0d0f;
+  --mission-on-space: #fff6e8;
+  --mission-on-space-muted: #e8dccb;
+  --mission-ink: #25241f;
+  --mission-cream: #fffbed;
+  --mission-title: #ff913e;
+  --mission-backing: #e4e76b;
+  --mission-hover: #f6d6be;
+  --mission-selected: #afe1bb;
+  --mission-primary-hover: #71320b;
+  --mission-frame: #f9ca4e;
+  --mission-control-border: #484036;
+  --mission-success: #215c40;
+  --mission-success-bg: #d5ecd8;
+  --mission-warning: #754704;
+  --mission-warning-bg: #fff0b5;
+  --mission-link: #245675;
+  --mission-backdrop: rgb(8 10 13 / 78%);
+  --mission-text-shadow: 0 1px 4px var(--mission-space);
+  --mission-shadow: 4px 4px 0 var(--mission-ink);
+  --mission-panel-shadow: 4px 4px 0 var(--mission-title), 5px 5px 0 1px var(--mission-ink);
+  --background: #e4e76b;
+  --foreground: #25241f;
+  --card: #fce3d4;
+  --card-foreground: var(--foreground);
+  --popover: #fffbed;
+  --popover-foreground: var(--foreground);
+  --primary: #8f400f;
+  --primary-foreground: var(--mission-cream);
+  --secondary: #fffbed;
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: #5d483e;
+  --accent: var(--mission-hover);
+  --accent-foreground: var(--foreground);
+  --destructive: #933923;
+  --border: #25241f;
+  --input: var(--mission-control-border);
+  --ring: #245675;
+  --sun: #80500b;
+  --earth: #245c7c;
+  --paper: var(--mission-cream);
+  --ink: var(--foreground);
+  --line: var(--border);
+  --glass-bg: var(--card);
+  --glass-edge: var(--border);
+  --chart-1: var(--sun);
+  --chart-2: var(--earth);
+  --chart-3: var(--mission-success);
+  --chart-4: #704a8c;
+  --chart-5: var(--primary);
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+body { background: var(--background); color: var(--foreground); }
+::selection { background: var(--primary); color: var(--primary-foreground); }
+
+/* Legacy UI surfaces retain their existing layout and icon markup. */
+html:root .skip-link,
+html:root .app-header,
+html:root .workspace-heading,
+html:root .drawer-toggles [data-slot="button"],
+html:root .site-search [data-slot="input"],
+html:root .number-field [data-slot="input"],
+html:root .number-field textarea,
+html:root select,
+html:root .constraint,
+html:root .date-result,
+html:root .scene-legend,
+html:root .timeline,
+html:root .date-fields input,
+html:root .comparison-sheet,
+html:root .notice,
+html:root .info-button,
+html:root .info-button:focus-visible,
+html:root .variable-tooltip,
+html:root .chart-readout,
+html:root .number-field input:focus-visible,
+html:root .date-fields input:focus-visible,
+html:root .site-search input:focus-visible,
+html:root select:focus-visible,
+html:root .inspector.glass,
+html:root .site-drawer.glass,
+html:root .comparison-header,
+html:root .planning-calendar-grid button,
+html:root .comparison-sheet.glass,
+html:root .planning-table-scroll th,
+html:root .planning-table-scroll td,
+html:root .workspace-dialog,
+html:root .comparison-notice,
+html:root .inspector-resize-handle:focus-visible { background: var(--card); }
+
+html:root .audience-switch,
+html:root .segmented,
+html:root .compare-toggle > span,
+html:root .column-config,
+html:root .timeline [data-slot="slider-track"],
+html:root .chart-sample-readout,
+html:root .assessment-reason { background: var(--secondary); }
+
+html:root .audience-switch [aria-pressed="true"],
+html:root .view-switch [aria-pressed="true"],
+html:root .site-item.selected,
+html:root .inspector-nav [aria-pressed="true"],
+html:root .segmented [aria-pressed="true"],
+html:root .lesson-list [aria-pressed="true"],
+html:root .scene-camera [aria-pressed="true"],
+html:root .drawer-toggles [aria-expanded="true"],
+html:root .comparison-tabs button[aria-pressed="true"],
+html:root .planning-calendar-grid button[aria-pressed=true],
+html:root .planning-selected { background: var(--mission-selected); }
+
+html:root .data-badge i,
+html:root .data-status-dot,
+html:root .selected .site-symbol,
+html:root .play-button,
+html:root .timeline [data-slot="slider-range"] { background: var(--primary); }
+
+html:root .workspace { background: var(--mission-space); }
+
+html:root .site-item:hover,
+html:root .info-button:hover,
+html:root .inspector-resize-handle:hover { background: var(--mission-hover); }
+
+html:root .constraint.warning,
+html:root .planning-first-failure,
+html:root .comparison-coverage-notice,
+html:root .landing-outcome,
+html:root .learn-correction { background: var(--mission-warning-bg); }
+
+html:root .workspace-dialog::backdrop,
+html:root .learning-dialog::backdrop { background: var(--mission-backdrop); }
+
+html:root .app-header,
+html:root .brand-orbit,
+html:root .audience-switch,
+html:root .workspace-heading,
+html:root .drawer-toggles [data-slot="button"],
+html:root .site-search [data-slot="input"],
+html:root .site-item.selected,
+html:root .site-symbol,
+html:root .selected .site-symbol,
+html:root .coordinate-form,
+html:root .site-drawer-footer,
+html:root .inspector-nav,
+html:root .inspector-section,
+html:root .shadow-dot,
+html:root .metric-grid,
+html:root .inspector-footer,
+html:root .number-field [data-slot="input"],
+html:root .number-field textarea,
+html:root select,
+html:root .segmented,
+html:root .constraint,
+html:root .constraint.warning,
+html:root .resource-entry,
+html:root .window-row,
+html:root .date-result,
+html:root .scene-legend,
+html:root .flight-play,
+html:root .timeline,
+html:root .date-fields input,
+html:root .column-order > div,
+html:root th,
+html:root td,
+html:root .reference-tag,
+html:root .notice,
+html:root .info-button,
+html:root .info-button:hover,
+html:root .variable-tooltip,
+html:root .variable-tooltip > div,
+html:root .science-figure,
+html:root .chart-readout,
+html:root .observer-bar,
+html:root .drawer-toggles [aria-expanded="true"],
+html:root .timeline [data-slot="slider-thumb"],
+html:root .chart-sample-readout,
+html:root .comparison-tabs,
+html:root .comparison-header,
+html:root .planning-first-failure,
+html:root .comparison-coverage-notice,
+html:root .workspace-dialog,
+html:root .comparison-notice,
+html:root .assessment-reason,
+html:root .assessment-explanation details,
+html:root .assessment-timing,
+html:root .landing-outcome,
+html:root .landing-outcome.within-assumed-limits,
+html:root .landing-outcome.outside-assumed-limits { border-color: var(--border); }
+
+html:root .info-button:focus-visible,
+html:root .number-field input:focus-visible,
+html:root .date-fields input:focus-visible,
+html:root .site-search input:focus-visible,
+html:root select:focus-visible { border-color: var(--ring); }
+
+html:root .glass,
+html:root .brand-orbit:after,
+html:root .audience-switch,
+html:root .audience-switch [aria-pressed="true"],
+html:root .workspace-heading,
+html:root .view-switch [aria-pressed="true"],
+html:root .drawer-toggles [data-slot="button"],
+html:root .site-item.selected,
+html:root .selected .site-symbol,
+html:root .inspector-nav [aria-pressed="true"],
+html:root .segmented [aria-pressed="true"],
+html:root .timeline,
+html:root .variable-tooltip,
+html:root .chart-readout,
+html:root .number-field input:focus-visible,
+html:root .date-fields input:focus-visible,
+html:root .site-search input:focus-visible,
+html:root select:focus-visible,
+html:root .timeline [data-slot="slider-thumb"],
+html:root .workspace-dialog,
+html:root .header-dropdown-content,
+html:root .learning-dialog { box-shadow: none; }
+
+html:root .skip-link,
+html:root .brand small,
+html:root .brand-orbit,
+html:root .audience-switch [data-slot="button"],
+html:root .data-badge,
+html:root .workspace-heading p,
+html:root .workspace-heading span,
+html:root .view-switch [data-slot="button"],
+html:root .drawer-heading h2 span,
+html:root .site-search > svg,
+html:root .site-item small,
+html:root .coordinate-form summary,
+html:root .coordinate-form label,
+html:root .site-drawer-footer,
+html:root .inspector-nav [data-slot="button"],
+html:root .inspector-section p,
+html:root .inspector-section .muted,
+html:root .muted,
+html:root .metric-label,
+html:root .metric-value > span,
+html:root .sphere-value,
+html:root .metric p,
+html:root .site-facts span,
+html:root .inspector-footer,
+html:root .number-field > span,
+html:root .number-field > div > span,
+html:root .select-field,
+html:root .resource-entry > span,
+html:root .resource-entry p,
+html:root .data-list dt,
+html:root .date-result small,
+html:root .layer-popover p,
+html:root .scene-legend,
+html:root .scene-legend .muted,
+html:root .flight-telemetry > div > span,
+html:root .flight-telemetry small,
+html:root .time-stamp > span,
+html:root .date-fields label,
+html:root .timeline-labels,
+html:root .comparison-actions p,
+html:root .compare-threshold > span,
+html:root caption,
+html:root th,
+html:root td small,
+html:root th small,
+html:root .empty-state,
+html:root .startup p,
+html:root .info-button,
+html:root .variable-tooltip .tooltip-extra,
+html:root .inspector-section .chart-note,
+html:root .chart-note,
+html:root .reference-select,
+html:root .flight-feasibility,
+html:root .flight-feasibility > small,
+html:root .resource-graphs summary,
+html:root .observer-bar,
+html:root .metric-value .metric-unknown,
+html:root .terrain-source-caption,
+html:root .inspector-resize-handle { color: var(--muted-foreground); }
+
+html:root .brand,
+html:root .audience-switch [aria-pressed="true"],
+html:root .workspace-heading h1,
+html:root .view-switch [aria-pressed="true"],
+html:root .inspector-nav [aria-pressed="true"],
+html:root .inspector-section h3,
+html:root .instant-status,
+html:root .metric-value,
+html:root .sphere-value strong,
+html:root .site-facts strong,
+html:root .number-field [data-slot="input"],
+html:root .number-field textarea,
+html:root select,
+html:root .segmented [aria-pressed="true"],
+html:root .constraint,
+html:root .inspector details summary,
+html:root .resource-entry > div,
+html:root .data-list dd,
+html:root .compare-toggle > span,
+html:root .layer-popover h3,
+html:root .scene-camera [aria-pressed="true"],
+html:root .flight-telemetry strong,
+html:root .time-stamp > strong,
+html:root .comparison-actions h2,
+html:root th,
+html:root td,
+html:root .reference-tag,
+html:root .notice,
+html:root .info-button:hover,
+html:root .info-button:focus-visible,
+html:root .variable-tooltip,
+html:root .variable-tooltip > strong,
+html:root .science-figure figcaption,
+html:root .chart-axis-heading,
+html:root .chart-x-label,
+html:root .chart-legend,
+html:root .chart-readout,
+html:root .drawer-toggles [aria-expanded="true"],
+html:root .comparison-tabs button[aria-pressed="true"],
+html:root .planning-decision,
+html:root .planning-selected,
+html:root .planning-table-scroll th,
+html:root .planning-table-scroll td,
+html:root .workspace-dialog,
+html:root .audience-mode-context>summary { color: var(--foreground); }
+
+html:root .site-drawer-footer button,
+html:root .resource-link,
+html:root .scenario-open { color: var(--mission-link); }
+
+html:root .number-field small { color: var(--destructive); }
+
+html:root .constraint.warning,
+html:root .date-result strong,
+html:root .threshold-fail,
+html:root .variable-tooltip > div > span { color: var(--mission-warning); }
+
+html:root .play-button { color: var(--primary-foreground); }
+
+html:root .chart-tick,
+html:root .chart-tick.secondary { fill: var(--muted-foreground); }
+
+html:root .chart-marker-label { fill: var(--foreground); }
+
+html:root .chart-gridline { stroke: var(--border); }
+
+html:root .chart-axis { stroke: var(--mission-control-border); }
+
+html:root .chart-marker-label { stroke: var(--card); }
+
+html:root input[type="checkbox"],
+html:root input[type="radio"] { accent-color: var(--primary); }
+
+html:root .site-list,
+html:root .inspector-scroll { scrollbar-color: var(--mission-control-border) transparent; }
+
+/* Structural accents sit on the UI frame, never on the imagery. */
+html:root .app-header {
+  background: var(--mission-cream);
+  border-top: 3px solid var(--mission-backing);
+  border-bottom: 2px solid var(--mission-ink);
+  box-shadow: inset 0 3px var(--mission-frame);
+}
+html:root :is(.inspector.glass, .site-drawer.glass, .workspace-heading, .header-dropdown-content,
+  .variable-tooltip, .workspace-dialog, .learning-dialog, .notice, .layer-popover,
+  .flight-telemetry, .scene-legend) {
+  border: 2px solid var(--mission-ink);
+  box-shadow: var(--mission-panel-shadow);
+  background: var(--card);
+  color: var(--foreground);
+}
+/* An inset cream mat follows the reference without adding layout padding. */
+html:root :is(.inspector.glass, .site-drawer.glass, .workspace-dialog, .learning-dialog) {
+  box-shadow: inset 0 0 0 4px var(--mission-cream), var(--mission-panel-shadow);
+}
+html:root :is(.drawer-heading, .inspector-nav, .comparison-header, .comparison-tabs,
+  .learn-heading, .audience-mode-context > summary) {
+  --muted-foreground: var(--mission-ink);
+  background: var(--mission-title);
+  color: var(--mission-ink);
+  border-bottom: 2px solid var(--mission-ink);
+}
+html:root :is(.drawer-heading h2 span, .inspector-nav [data-slot="button"],
+  .learn-heading p, .comparison-header p) { color: var(--mission-ink); }
+html:root .header-context-toolbar {
+  --muted-foreground: var(--mission-ink);
+  background: var(--mission-title);
+  border-color: var(--mission-ink);
+  box-shadow: 0 2px 0 var(--mission-ink);
+}
+html:root :is(.header-asset-focus, .audience-switch, .segmented) {
+  background: var(--mission-cream);
+  border: 2px solid var(--mission-ink);
+}
+html:root :is(.inspector-section > h3, .learn-lesson > h3,
+  .inspector details > summary, .header-dropdown-content details > summary,
+  .learning-dialog details > summary, .workspace-dialog details > summary) {
+  background: var(--mission-title);
+  color: var(--mission-ink);
+  box-shadow: inset 0 -2px var(--mission-ink);
+  border-radius: 3px;
+}
+html:root :is(.number-field [data-slot="input"], .number-field textarea,
+  .site-search [data-slot="input"], .date-fields input, select,
+  .variable-tooltip, .chart-readout, .chart-sample-readout, .info-button) {
+  background: var(--mission-cream);
+}
+html:root :is(.science-figure, .chart-sample-readout, .chart-readout, .constraint,
+  .date-result, .assessment-reason) { border: 2px solid var(--mission-ink); }
+html:root :is(.site-drawer-footer, .inspector-footer, .observer-bar) { background: var(--mission-cream); }
+/* The existing sheet and play button have important light-theme declarations. */
+html:root .comparison-sheet.glass { background: var(--card) !important; border: 2px solid var(--mission-ink); box-shadow: var(--mission-panel-shadow); }
+html:root .play-button { background: var(--mission-title) !important; color: var(--mission-ink) !important; }
+html:root .timeline {
+  background: var(--mission-cream);
+  border-top: 2px solid var(--mission-ink);
+  box-shadow: inset 0 4px var(--mission-frame);
+}
+html:root .brand-orbit { color: var(--sun); border-color: var(--mission-frame); }
+html:root .brand-orbit::after { box-shadow: 0 0 0 3px var(--mission-cream); }
+html:root .skip-link { color: var(--foreground); border: 2px solid var(--ring); }
+html:root :is(.site-item.selected, .audience-switch [aria-pressed="true"],
+  .view-switch [aria-pressed="true"], .inspector-nav [aria-pressed="true"],
+  .segmented [aria-pressed="true"], .comparison-tabs [aria-pressed="true"],
+  .lesson-list [aria-pressed="true"], .header-asset-focus [aria-pressed="true"],
+  .header-station-buttons [aria-pressed="true"], .scene-camera [aria-pressed="true"],
+  .drawer-toggles [aria-expanded="true"]) {
+  background: var(--mission-selected);
+  color: var(--mission-ink);
+  box-shadow: inset 0 0 0 2px var(--mission-ink), 2px 2px 0 var(--mission-ink);
+}
+html:root .selected .site-symbol { border-color: var(--primary); }
+html:root .planning-calendar-grid button[aria-pressed="true"] { outline-color: var(--ring); }
+html:root .landing-outcome.within-assumed-limits { border-color: var(--mission-success); background: var(--mission-success-bg); }
+html:root .landing-outcome.outside-assumed-limits { border-color: var(--destructive); }
+html:root :is(.constraint.warning, .planning-first-failure, .comparison-coverage-notice, .assessment-timing) { border-color: var(--mission-warning); }
+
+/* Native and shadcn controls share states, including fields in expanded cards. */
+html:root :is(input, select, textarea):not(:where([type="checkbox"], [type="radio"], [type="range"])) {
+  background-color: var(--mission-cream);
+  color: var(--foreground);
+  border-color: var(--mission-control-border);
+  caret-color: var(--primary);
+}
+html:root :is(input, textarea)::placeholder { color: var(--muted-foreground); opacity: 1; }
+html:root option { background: var(--mission-cream); color: var(--foreground); }
+html:root input[type="range"], html:root progress { accent-color: var(--primary); }
+html:root [data-slot="slider-thumb"] { background: var(--card); border-color: var(--primary); }
+html:root [data-slot="slider-track"] { background: var(--border); }
+html:root [data-slot="slider-range"] { background: var(--primary); }
+html:root :is(button, a, summary, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--mission-cream);
+}
+html:root :is(button, input, select, textarea):is(:disabled, [aria-disabled="true"]) {
+  opacity: .65;
+  cursor: not-allowed;
+}
+html:root :is(input, textarea, select)[aria-invalid="true"],
+html:root .lunar-app [aria-invalid="true"],
+html:root dialog [aria-invalid="true"],
+html:root .startup [aria-invalid="true"] {
+  border-color: var(--destructive);
+  border-style: dashed;
+}
+html:root :is([role="alert"], .input-error),
+html:root .lunar-app :is([role="alert"], .input-error) { color: var(--destructive); }
+html:root [aria-busy="true"] { cursor: progress; }
+html:root .lunar-app :is(button, summary), html:root .startup button {
+  transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+html:root .lunar-app button:not(:disabled):not([aria-disabled="true"]):not([aria-pressed="true"]):not([aria-expanded="true"]):hover {
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+html:root .lunar-app summary:hover { color: var(--mission-ink); text-decoration: underline; text-underline-offset: 3px; }
+html:root .lunar-app a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* These older panels emit scoped styles after the application stylesheet. */
+html:root :is(.audience-context, .audience-relation, .dsn-views, .dsn-panel,
+  .dsn-restore, .dsn-actions button, .sq-notes-body, .scene-error) {
+  color: var(--foreground);
+  background: var(--card);
+  border-color: var(--border);
+}
+html:root :is(.audience-context, .dsn-panel, .sq-notes-body) :is(button, select, textarea, details) { border-color: var(--border); }
+html:root .audience-context button { background: var(--secondary); color: var(--foreground); }
+html:root :is(.audience-source, .audience-context header small, .dsn-panel dt, .dsn-limit, .dsn-status) { color: var(--muted-foreground); }
+html:root :is(.dsn-views, .dsn-stations) button[aria-pressed="true"] { background: var(--mission-selected); border-color: var(--primary); }
+html:root .dsn-panel a { color: var(--mission-link); }
+html:root .sq-position { background: var(--card); color: var(--foreground); }
+html:root .sq-horizon input { accent-color: var(--primary); }
+
+/* Native MathML inherits dark ink. Only authored SVG teaching/chart graphics
+   are recoloured below; no blanket svg, image or canvas treatment. */
+html:root math { color: var(--foreground); }
+/* Native lesson cells and disclosures currently have inline light borders. */
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) :is(th, td, details) { border-color: var(--border) !important; }
+html:root svg[aria-roledescription="line chart"],
+html:root svg[role="img"][aria-labelledby*="caption"] { color: var(--foreground); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) figure svg[role="img"][style] {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+}
+html:root :is(.science-figure, .variable-tooltip, .learn-lesson, .inspector-section) svg [stroke="#d9ddcf"] { stroke: var(--border); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) svg [stroke="#59634f"] { stroke: var(--mission-control-border); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) svg [stroke="#95631e"] { stroke: var(--primary); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) svg [fill="#95631e"] { fill: var(--primary); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) svg [fill="#30382b"] { fill: var(--foreground); }
+html:root :is(.variable-tooltip, .learn-lesson, .inspector-section) svg [stroke="#fffef8"] { stroke: var(--card); }
+html:root .science-figure [stroke="#ae7317"] { stroke: var(--sun); }
+html:root .science-figure [fill="#ae7317"] { fill: var(--sun); }
+html:root .science-figure [stroke="#376c82"] { stroke: var(--earth); }
+html:root .science-figure :is([fill="#fffdf7"], [fill="#fffdf8"]) { fill: var(--card); }
+html:root .science-figure :is([stroke="#595e54"], [stroke="#565f57"], [stroke="#81877b"]) { stroke: var(--muted-foreground); }
+html:root .science-figure [stroke="#647d85"] { stroke: var(--chart-4); }
+html:root .science-figure [stroke="#99663b"] { stroke: var(--primary); }
+html:root .science-figure :is([fill="#595e54"], [fill="#81877b"]) { fill: var(--muted-foreground); }
+html:root .science-figure [fill="#99663b"] { fill: var(--primary); }
+html:root .science-figure [fill="#647d85"] { fill: var(--chart-4); }
+html:root .chart-legend :is([style*="#ae7317"], [style*="174, 115, 23"]) { color: var(--sun) !important; border-color: var(--sun) !important; }
+html:root .chart-legend :is([style*="#376c82"], [style*="55, 108, 130"]) { color: var(--earth) !important; border-color: var(--earth) !important; }
+html:root .chart-legend :is(:is([style*="#595e54"], [style*="89, 94, 84"]), :is([style*="#81877b"], [style*="129, 135, 123"])) { border-color: var(--muted-foreground) !important; }
+html:root .chart-legend :is([style*="#647d85"], [style*="100, 125, 133"]) { border-color: var(--chart-4) !important; }
+html:root .chart-legend :is([style*="#99663b"], [style*="153, 102, 59"]) { border-color: var(--primary) !important; }
+
+/* Stage annotations need pale text independently of the surrounding paper UI.
+   Stable component landmarks keep this out of canvas and NASA material styles. */
+html:root [aria-label="Sun, Earth and Moon explorer"] > :is(header, p:last-child),
+html:root [data-controls] > div:first-child > :is(div:has(> small), div:has(> span > b)),
+html:root [data-controls] > div:first-child > :is(div:has(> small), div:has(> span > b)) :is(span, small, b) {
+  color: var(--mission-on-space);
+}
+html:root [aria-label="Sun, Earth and Moon explorer"] > header small,
+html:root [data-controls] > div:first-child > div:has(> small) :is(span, small) {
+  color: var(--mission-on-space-muted);
+}
+html:root [aria-label="Sun, Earth and Moon explorer"] > header [data-slot="button"] {
+  color: var(--mission-ink);
+  background: var(--mission-cream);
+}
+html:root section:has(> [data-controls]) > header {
+  background: var(--mission-title);
+  border-bottom: 2px solid var(--mission-ink);
+}
+html:root section:has(> [data-controls]) > footer,
+html:root [aria-label="Touchdown experiment controls"] [role="tooltip"] {
+  background: var(--mission-cream);
+  color: var(--mission-ink);
+}
+html:root [aria-label="Touchdown experiment controls"],
+html:root [aria-label="Sun, Earth and Moon explorer"] > aside {
+  border: 2px solid var(--mission-ink);
+  box-shadow: var(--mission-panel-shadow);
+}
+html:root :is([aria-label="Focus a celestial body"],
+  [aria-label="Look at the Moon from a cardinal direction"]) [aria-pressed="true"] {
+  background: var(--mission-selected);
+  color: var(--mission-ink);
+  box-shadow: inset 0 0 0 2px var(--mission-ink);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html:root .glass { background: var(--card); backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  :root { --border: var(--mission-control-border); --muted-foreground: var(--foreground); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:root *, html:root *::before, html:root *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (forced-colors: active) {
+  html:root :is(.glass, dialog, .variable-tooltip, .header-dropdown-content) { border-color: CanvasText; box-shadow: none; }
+  html:root :is(button, input, select, textarea, summary, [tabindex]):focus-visible { outline-color: Highlight; }
+}
+
+html:root .glass { background: var(--glass-bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+/* The native mode guide uses the same reference frame and brand face. */
+html:root dialog[aria-labelledby="audience-guide-title"] {
+  border: 2px solid var(--mission-ink);
+  box-shadow: inset 0 22px var(--mission-title), var(--mission-panel-shadow);
+}
+html:root :is(dialog[aria-labelledby="audience-guide-title"], .workspace-dialog, .learning-dialog) :is(h1,h2) {
+  font-family: var(--font-sans);
+}
+
+/* This legend is intentionally unboxed over lunar imagery, not a paper card. */
+html:root .scene-legend {
+  --sun: #f5a524;
+  --earth: #8dc8f2;
+  color: var(--mission-on-space);
+  text-shadow: 0 1px 2px #000, 0 -1px 2px #000, 1px 0 2px #000, -1px 0 2px #000;
+}
+html:root .scene-legend .muted { color: var(--mission-on-space-muted); }

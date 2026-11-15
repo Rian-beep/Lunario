@@ -1,0 +1,8 @@
+{
+  "sourceUrl": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+  "document": "JPL 810-005 module 105, Revision E, issued 2015-10-22, section 2.1.5, pages 14–15",
+  "scope": "Published climatological arithmetic example for DSS-34 at Canberra, Ka 32 GHz. Not DSS-43 hardware and not a forecast for any selected stay.",
+  "inputs": {"zenithAttenuationDb": 0.384, "elevationDeg": 20, "meanRadiatingK": 277.5},
+  "printedResults": {"slantAttenuationDb": 1.123, "lossFactor": 1.295, "atmosphereNoiseK": 63.214},
+  "comparison": "The published noise calculation uses the rounded intermediate loss factor 1.295. Unrounded direct evaluation differs slightly. Tolerance 0.06 K tests the printed arithmetic, not physical uncertainty."
+}

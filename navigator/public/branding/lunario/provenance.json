@@ -1,0 +1,50 @@
+{
+  "repository": "https://github.com/Rian-beep/Lunario",
+  "commit": "aeb673fff6de377e5dba0982c0c55c8b0d874ee8",
+  "files": {
+    "README.md": {
+      "sha256": "6e22efb9e9713acce2d15fe0adc0f355d0f1a5cc85af5a6848f1eecd1674ac3e",
+      "bytes": 2363
+    },
+    "index.html": {
+      "sha256": "0cf9e9e0786d142c831d57e097cc8d652b37a1a8da9408923865a802e341c651",
+      "bytes": 2714
+    },
+    "css/site.css": {
+      "sha256": "34650df91d44b04fa2e486d2dc6546416e58c4908938dffe7d6a79edc71dfdc9",
+      "bytes": 9883
+    },
+    "assets/logo-dark.svg": {
+      "sha256": "f84ad5fa1e02b6ab53d677a96c3eb495c7c994e1ec42f97c4c5aa11251069656",
+      "bytes": 5797
+    },
+    "assets/logo-mark-dark.svg": {
+      "sha256": "dc861e61cf6f41fdda048f524706a99eb8944c0d65df85ca2a3abc46fdf656ba",
+      "bytes": 350
+    },
+    "assets/logo-mark.svg": {
+      "sha256": "e6fbdf49b520df65a1bf0afb70d54277eee63d10d2f3ded552987706b6c03f69",
+      "bytes": 350
+    },
+    "assets/logo-white.svg": {
+      "sha256": "f0c7c591375782febb31b158cee473c21a5970be9339ee8cd378726ebfe34ae9",
+      "bytes": 5797
+    },
+    "assets/logo.svg": {
+      "sha256": "572c14fcbd73139087c471ac7fa0da085a101fdde62815f960a7dd570be89ca0",
+      "bytes": 5797
+    },
+    "loader/loader.js": {
+      "sha256": "7f7dfa0d123841c838f8c7a79db6456b582c297c674a0749f16ac4f44249a149",
+      "bytes": 9793
+    },
+    "loader/loader.css": {
+      "sha256": "28ff62158122a223d875acf0da3ae42944aa1b7568bf90a68b596788c3a253f1",
+      "bytes": 2368
+    },
+    "loader/fonts/geist-mono-regular.woff2": {
+      "sha256": "9dbb5abf4c6b640ddc777cb63c6e81266f76878b2c871a242f62cf16f8753905",
+      "bytes": 3872
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "checkedUtc": "2026-11-14T18:49:06.087Z",
+  "note": "Fresh Horizons observer tables versus decoded, quantized browser catalog; 4 sites (including Apollo 11) × 2 bodies × 7 hours. Terrain occlusion is not validated by this test.",
+  "toleranceDeg": 0.02,
+  "rows": [
+    {
+      "site": "malapert-massif",
+      "body": "Sun",
+      "count": 7,
+      "maxAzDeg": 0.004088568622364619,
+      "maxElDeg": 0.003586204646462199
+    },
+    {
+      "site": "malapert-massif",
+      "body": "Earth",
+      "count": 7,
+      "maxAzDeg": 0.008483866767392101,
+      "maxElDeg": 0.004390327646325354
+    },
+    {
+      "site": "connecting-ridge",
+      "body": "Sun",
+      "count": 7,
+      "maxAzDeg": 0.003920584505522129,
+      "maxElDeg": 0.0034154348847590388
+    },
+    {
+      "site": "connecting-ridge",
+      "body": "Earth",
+      "count": 7,
+      "maxAzDeg": 0.008528849873869149,
+      "maxElDeg": 0.00441651392195741
+    },
+    {
+      "site": "athena",
+      "body": "Sun",
+      "count": 7,
+      "maxAzDeg": 0.004168171721858016,
+      "maxElDeg": 0.003709124824974541
+    },
+    {
+      "site": "athena",
+      "body": "Earth",
+      "count": 7,
+      "maxAzDeg": 0.008347586515924377,
+      "maxElDeg": 0.004188993155725268
+    },
+    {
+      "site": "apollo-11",
+      "body": "Sun",
+      "count": 7,
+      "maxAzDeg": 0.0027799384239415303,
+      "maxElDeg": 0.004537770150399467
+    },
+    {
+      "site": "apollo-11",
+      "body": "Earth",
+      "count": 7,
+      "maxAzDeg": 0.011576150347536895,
+      "maxElDeg": 0.008829294954438183
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+Skip to lunar workspace
+Paused. Sunlit.
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.
+SolarReach
+Lunar navigator
+Public
+Educator
+Planner
+Hide panels
+Mode guide
+NASA data
+Share
+Export
+2D map
+3D terrain
+South pole
+Whole Moon
+Sites
+Inspector
+Moon
+Earth
+Lander
+Learn
+Lab
+Load online NAC
+LROC WAC imagery · NASA / ASU · Finest visible WAC source ≈100 m/px · output sampling 268 m/px · Historical image illumination
+Connecting Ridge
+89.5343°S   209.9477° E · 2 m observer
+Prepared site horizon
+⋮
+Equations & guided investigation
+Predict · change one input · observe
+Make a testable prediction
+
+Connecting Ridge
+
+The picture supplies context; these relations explain the calculations. Keep hardware, dates and requirements fixed while testing one proposed cause.
+
+𝑃
+☉
+=
+𝑆
+𝐴
+𝜂
+(
+1
+−
+ℓ
+)
+𝐹
+☉
+𝑔
+
+P☉ is generation [W], S irradiance [W/m²], A area [m²], η cell efficiency, ℓ loss fraction, F☉ terrain-visible solar-disk fraction and g incidence. Ideal tracking uses g = 1; fixed-panel g depends on β tilt and α bearing.
+
+Understand this relation: symbols, assumptions and behavior
+Δ
+𝐸
+𝐵
+=
+(
+𝜂
+c
+𝑃
+charge
+−
+𝑃
+delivered
+𝜂
+d
+)
+Δ
+𝑡
+
+Stored battery energy is measured in Wh; charge and discharge efficiencies account for energy losses. Charging input and battery-supplied output are bus powers in W. The symbol key below defines every term. Δt must be in hours: 1 Wh = 3600 J. Capacity and power-rate limits still apply; missing forcing stays unknown.
+
+Understand this relation: symbols, assumptions and behavior
+sin
+⁡
+ℎ
+☉
+=
+sin
+⁡
+𝜑
+sin
+⁡
+𝛿
+☉
++
+cos
+⁡
+𝜑
+cos
+⁡
+𝛿
+☉
+cos
+⁡
+(
+𝜆
+−
+𝜆
+☉
+)
+
+h☉ is solar elevation; φ and λ locate the observer; δ☉ and λ☉ locate the subsolar point. Controls show degrees; trigonometric evaluation uses radians. This sphere direction is compared with terrain and finite disk size afterward.
+
+Understand this relation: symbols, assumptions and behavior
+Before changing an input, predict the effect
+Record prediction and baseline
+Explore a symbol, unit and physical meaning
+Lunar field notes
+
+Predict, change one variable, then compare what happens.
+
+A ridge can change a mission
+Look over the rim
+Move the landing date
+Will a perfectly smooth Moon give this site more sunlight?
+Your prediction
+Explore Connecting RidgeReveal the explanation
+
+Discuss: does more sunlight also mean more contact with Earth?
+
+Explore Canada’s role in lunar missions
+
+CSA learning context: Artemis, Gateway and lunar robotics connect surface missions to a wider exploration programme.
+
+Experiment notebook 0 saved
+Hourly ephemeris · Terrain-aware horizons
+Layers
+Compare scenarios
+3
+13 Jul 2027, 11:00 UTC
+1 h/s
+6 h/s
+1 d/s
+Real computed case: original arrival, 14-day delay, then a site-only alternative. Hardware and stay are unchanged; source limits remain conditional.

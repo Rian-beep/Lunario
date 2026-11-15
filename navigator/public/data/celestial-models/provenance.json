@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "kind": "sun",
+      "path": "/data/celestial-models/assets/sun.glb",
+      "bytes": 4343656,
+      "sha256": "a178f5c43c2c9a6ee6c011c315149a7ab5a2594fd5aa9119ee219625a18da1dd",
+      "sourcePage": "https://science.nasa.gov/learn/heat/resource/sun-3d-model/",
+      "sourceDownload": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/s/Sun_1_1391000.glb",
+      "gitRevision": null,
+      "versionPin": "SHA-256 of unchanged NASA CDN bytes; these globe GLBs are not in the inventoried NASA Git tree.",
+      "credit": "NASA (NASA Science HEAT / Eyes resource)",
+      "images": [
+        {
+          "bufferView": 4,
+          "mimeType": "image/png",
+          "name": "sun_diff.jpg"
+        }
+      ],
+      "requiredExtensions": [],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "Cube.001",
+          "rotation": [
+            0.7071068286895752,
+            0,
+            0,
+            0.7071067094802856
+          ],
+          "scale": [
+            1000,
+            1000,
+            1000
+          ]
+        }
+      ],
+      "conversion": "None: original GLB is byte-for-byte retained. Runtime centres bounds and scales uniformly to nominal diameter 2 display units.",
+      "frame": "Authored glTF orientation preserved; no independently verified celestial body-fixed/epoch rotation transform.",
+      "scienceScope": "Visual geometry/textures only. Physical size/direction/range/times remain existing JPL-derived calculations.",
+      "licenseGuidelines": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licenseNote": "Official NASA educational model download. NASA media-use guidance applies; do not imply endorsement. No broader third-party code licence is inferred."
+    },
+    {
+      "kind": "earth",
+      "path": "/data/celestial-models/assets/earth.glb",
+      "bytes": 12916400,
+      "sha256": "05a5aea99db8ab472487a06debc3b5d0b2cae7636a1a6b9ecfa40b7d1722ba23",
+      "sourcePage": "https://science.nasa.gov/learn/heat/resource/earth-3d-model/",
+      "sourceDownload": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/e/Earth_1_12756.glb",
+      "gitRevision": null,
+      "versionPin": "SHA-256 of unchanged NASA CDN bytes; these globe GLBs are not in the inventoried NASA Git tree.",
+      "credit": "NASA/JPL-Caltech",
+      "images": [
+        {
+          "bufferView": 4,
+          "mimeType": "image/png",
+          "name": "earth_norm.jpg"
+        },
+        {
+          "bufferView": 5,
+          "mimeType": "image/png",
+          "name": "earth_diff.jpg"
+        }
+      ],
+      "requiredExtensions": [],
+      "nodes": [
+        {
+          "mesh": 0,
+          "name": "Cube.001"
+        }
+      ],
+      "conversion": "None: original GLB is byte-for-byte retained. Runtime centres bounds and scales uniformly to nominal diameter 2 display units.",
+      "frame": "Authored glTF orientation preserved; no independently verified celestial body-fixed/epoch rotation transform.",
+      "scienceScope": "Visual geometry/textures only. Physical size/direction/range/times remain existing JPL-derived calculations.",
+      "licenseGuidelines": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licenseNote": "Official NASA educational model download. NASA media-use guidance applies; do not imply endorsement. No broader third-party code licence is inferred."
+    }
+  ]
+}

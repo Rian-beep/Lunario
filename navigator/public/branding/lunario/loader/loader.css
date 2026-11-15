@@ -1,0 +1,58 @@
+/* Lunario loading screen. No dependencies. */
+@font-face {
+  font-family: "Lunario Mono";
+  src: url("fonts/geist-mono-regular.woff2") format("woff2");
+  font-weight: 400 500;
+  font-display: block;
+}
+
+/* Instant cover so the dashboard never flashes before the loader is built */
+html.lunario-loading { background: #0B0D12; }
+html.lunario-loading::before {
+  content: ""; position: fixed; inset: 0; z-index: 2147483646; background: #0B0D12;
+}
+html.lunario-loading body { overflow: hidden; }
+
+.lunario-loader {
+  position: fixed; inset: 0; z-index: 2147483647;
+  background: #0B0D12; color: #D5D7DB; overflow: hidden;
+  font-family: "Lunario Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+.lunario-loader__grid {
+  position: absolute; left: 50%; top: 42%;
+  width: max(220vw, 220vh); height: max(220vw, 220vh);
+  transform: translate(-50%, -50%); pointer-events: none;
+}
+.lunario-loader__ridge {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  width: 100%; height: min(30vh, 260px); pointer-events: none;
+}
+.lunario-loader__content {
+  position: absolute; left: 50%; top: 42%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center;
+  will-change: transform, opacity;
+}
+.lunario-loader__mark { width: 76px; height: 76px; display: block; }
+.lunario-loader__rule { width: 32px; height: 2px; background: #F5A524; margin: 34px 0 22px; }
+.lunario-loader__text {
+  font-size: 15px; line-height: 1; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #D5D7DB; white-space: pre; display: flex; align-items: center;
+  /* keep the block centred while the text types: reserve the full width */
+  position: relative;
+}
+.lunario-loader__ghost { visibility: hidden; }
+.lunario-loader__typed { position: absolute; left: 0; top: 0; display: flex; align-items: center; }
+.lunario-loader__cursor {
+  display: inline-block; width: 0.62em; height: 1.05em; margin-left: 0.18em;
+  background: #F5A524; transform: translateY(-0.02em);
+}
+.lunario-loader__telemetry {
+  margin-top: 18px; font-size: 11px; letter-spacing: 0.2em; color: #8A8F98;
+  font-variant-numeric: tabular-nums; text-transform: uppercase; white-space: pre;
+}
+@media (max-width: 480px) {
+  .lunario-loader__mark { width: 64px; height: 64px; }
+  .lunario-loader__text { font-size: 13px; letter-spacing: 0.18em; }
+}

@@ -1,0 +1,1550 @@
+{
+  "schemaVersion": 1,
+  "retrievedUtc": "2026-11-14T13:50:42.986124+00:00",
+  "nasaGit": {
+    "repository": "https://github.com/nasa/NASA-3D-Resources.git",
+    "revision": "11ebb4ee043715aefbba6aeec8a61746fad67fa7",
+    "treeTruncated": false,
+    "totalTreeEntries": 1583,
+    "totalBlobBytes": 5003809285,
+    "acquisition": "Actual depth-1 blobless Git clone with README-only sparse checkout; complete Git-tree metadata archived. Five-gigabyte asset collection NOT bulk-downloaded.",
+    "fullTreeFile": "source-git/nasa-tree.json",
+    "relevantEntries": [
+      {
+        "path": "3D Models/Apollo Lunar Module/Apollo Lunar Module.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74b7b99a60f9903a0592fd763ed14482204e24d9",
+        "size": 716840,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/74b7b99a60f9903a0592fd763ed14482204e24d9"
+      },
+      {
+        "path": "3D Models/Apollo Lunar Module/Apollo Lunar Module.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "de6ae54d3a61fbe1e3959f9f1ddd823c7c60fec1",
+        "size": 1124858,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/de6ae54d3a61fbe1e3959f9f1ddd823c7c60fec1"
+      },
+      {
+        "path": "3D Models/Apollo Soyuz/Apollo Soyuz.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e1bd1e9d3c2c5f76c17eed35528a5084af80842",
+        "size": 952608,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/5e1bd1e9d3c2c5f76c17eed35528a5084af80842"
+      },
+      {
+        "path": "3D Models/Apollo Soyuz/Apollo Soyuz.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "50c33122a816fb999735f259dc7def70622a81bf",
+        "size": 1032455,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/50c33122a816fb999735f259dc7def70622a81bf"
+      },
+      {
+        "path": "3D Models/Curiosity Rover (MSL)/Curiosity Rover (MSL) (Clean).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d4cd53ec0d20f89619a816b2ea8fa825d7aa4ac",
+        "size": 10231670,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1d4cd53ec0d20f89619a816b2ea8fa825d7aa4ac"
+      },
+      {
+        "path": "3D Models/Curiosity Rover (MSL)/Curiosity Rover (MSL) (Clean).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b69b69ba1cee975892b9b999312cc12d618b138",
+        "size": 840090,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/0b69b69ba1cee975892b9b999312cc12d618b138"
+      },
+      {
+        "path": "3D Models/Curiosity Rover (MSL)/Curiosity Rover (MSL) (Dirty).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "690911314cc77c1982b8f7c0c03c25e72335868b",
+        "size": 10684226,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/690911314cc77c1982b8f7c0c03c25e72335868b"
+      },
+      {
+        "path": "3D Models/Curiosity Rover (MSL)/Curiosity Rover (MSL) (Dirty).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b6f16537717bf27500c67e382faef581d15189c",
+        "size": 1012595,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/5b6f16537717bf27500c67e382faef581d15189c"
+      },
+      {
+        "path": "3D Models/Curiosity Scarecrow Test Rover/Curiosity Scarecrow Test Rover.blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6779e0fd7d41f1f7e92c0af2746f7b493d723512",
+        "size": 4613488,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6779e0fd7d41f1f7e92c0af2746f7b493d723512"
+      },
+      {
+        "path": "3D Models/Curiosity Scarecrow Test Rover/Curiosity Scarecrow Test Rover.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98929e5215a41bcb83efced05e6afc4daf956362",
+        "size": 739910,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/98929e5215a41bcb83efced05e6afc4daf956362"
+      },
+      {
+        "path": "3D Models/Earth Observing-1 (EO-1)/Earth Observing-1 (EO-1).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2befde48f339bbb6a6ba7e46356040b4f693f0c",
+        "size": 224580,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a2befde48f339bbb6a6ba7e46356040b4f693f0c"
+      },
+      {
+        "path": "3D Models/Earth Observing-1 (EO-1)/Earth Observing-1 (EO-1).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8e7447c577c90753b85d649c53638737c5b9dde3",
+        "size": 1310901,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8e7447c577c90753b85d649c53638737c5b9dde3"
+      },
+      {
+        "path": "3D Models/Gateway/Low Lunar Orbit.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b7735eb2494b385f1bdf67d003981faf5337b2ff",
+        "size": 3471234,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b7735eb2494b385f1bdf67d003981faf5337b2ff"
+      },
+      {
+        "path": "3D Models/Gemini Spacesuit/Gemini Spacesuit.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c4166e134ff5c7a6a8d98517ea395521d09c6df1",
+        "size": 2876516,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/c4166e134ff5c7a6a8d98517ea395521d09c6df1"
+      },
+      {
+        "path": "3D Models/Gemini Spacesuit/Gemini Spacesuit.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bc408e149bac881119bab7ec4e99e27239290f4e",
+        "size": 207773,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/bc408e149bac881119bab7ec4e99e27239290f4e"
+      },
+      {
+        "path": "3D Models/Habitat Demonstration Unit/Habitat Demonstration Unit (part 1).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3a16e21105438b4fc7be2717698d570fc9100b9f",
+        "size": 516748,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/3a16e21105438b4fc7be2717698d570fc9100b9f"
+      },
+      {
+        "path": "3D Models/Habitat Demonstration Unit/Habitat Demonstration Unit (part 1).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42a51e562ef6d992a250cecaea5d2510c3def2cd",
+        "size": 835045,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/42a51e562ef6d992a250cecaea5d2510c3def2cd"
+      },
+      {
+        "path": "3D Models/Habitat Demonstration Unit/Habitat Demonstration Unit (part 2).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a5c41e1e661482955380450d240d7ed2418df0b7",
+        "size": 710988,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a5c41e1e661482955380450d240d7ed2418df0b7"
+      },
+      {
+        "path": "3D Models/Habitat Demonstration Unit/Habitat Demonstration Unit (part 2).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2fa59685272cebab13e2538dd1f4e6c273056aa",
+        "size": 808253,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a2fa59685272cebab13e2538dd1f4e6c273056aa"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (arm deployed).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fab3805014feaaea9a0a4f5ce61e0aacb4b25815",
+        "size": 16784824,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/fab3805014feaaea9a0a4f5ce61e0aacb4b25815"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (arm deployed).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9356e2adfa5a6b6ec118f6e5bf92a1d65d6395fc",
+        "size": 3949036,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9356e2adfa5a6b6ec118f6e5bf92a1d65d6395fc"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (arm deployed).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "73a6e39972e8bc2840f38f7e210444daca97543b",
+        "size": 1174859,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/73a6e39972e8bc2840f38f7e210444daca97543b"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels deployed).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d24bdac4cf534443a59d13a8e7ea1a5488210d8d",
+        "size": 16941500,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d24bdac4cf534443a59d13a8e7ea1a5488210d8d"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels deployed).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bdec483d5fbbf17d444fce5c50322abb3e180416",
+        "size": 3948936,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/bdec483d5fbbf17d444fce5c50322abb3e180416"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels deployed).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b38b20902bcd42ee4cda0de8f12403309584f343",
+        "size": 1349532,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b38b20902bcd42ee4cda0de8f12403309584f343"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels stowed).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "95c80594dd161ef7be35a16cf530c1023bcffb19",
+        "size": 16724960,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/95c80594dd161ef7be35a16cf530c1023bcffb19"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels stowed).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f900b6448dd7cf7e48566beb60b8692e0afb9726",
+        "size": 3727616,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/f900b6448dd7cf7e48566beb60b8692e0afb9726"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (panels stowed).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6a81d6982134e527c836b0ac9502ea3d59bef381",
+        "size": 1050198,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6a81d6982134e527c836b0ac9502ea3d59bef381"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (stowed).blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "02c1250c98c81a7616a83f07630e46bc3444516b",
+        "size": 17101024,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/02c1250c98c81a7616a83f07630e46bc3444516b"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (stowed).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cf51b7287d36caea27e9fd1aa79a78d9bb319c1a",
+        "size": 3990572,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/cf51b7287d36caea27e9fd1aa79a78d9bb319c1a"
+      },
+      {
+        "path": "3D Models/InSight Cruise Lander/InSight Cruise Lander (stowed).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3165810b8227cec1310873c18cc3cce99cbefad3",
+        "size": 1304513,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/3165810b8227cec1310873c18cc3cce99cbefad3"
+      },
+      {
+        "path": "3D Models/Lunar Atmosphere and Dust Environment Explorer (LADEE)/Lunar Atmosphere and Dust Environment Explorer (LADEE).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0694fa918e9d4183550f16fb42fad74c9a3f6b18",
+        "size": 235468,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/0694fa918e9d4183550f16fb42fad74c9a3f6b18"
+      },
+      {
+        "path": "3D Models/Lunar Atmosphere and Dust Environment Explorer (LADEE)/Lunar Atmosphere and Dust Environment Explorer (LADEE).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec75aad151e97a599b9b38424f619d023e3ef118",
+        "size": 726959,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/ec75aad151e97a599b9b38424f619d023e3ef118"
+      },
+      {
+        "path": "3D Models/Lunar Laser Communications Demonstration (LLCD)/Lunar Laser Communications Demonstration (LLCD).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4a509a996beebcdd737b45b45acab1a7ec2dcf14",
+        "size": 1048648,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/4a509a996beebcdd737b45b45acab1a7ec2dcf14"
+      },
+      {
+        "path": "3D Models/Lunar Laser Communications Demonstration (LLCD)/Lunar Laser Communications Demonstration (LLCD).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "286a0267b28ce784d229e31c8bfdf9582599d842",
+        "size": 838868,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/286a0267b28ce784d229e31c8bfdf9582599d842"
+      },
+      {
+        "path": "3D Models/Lunar Reconnaissance Orbiter (A)/Lunar Reconnaissance Orbiter (A).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f39b1d63fcaa1dbd9a2098ff4eb1d927558dca2",
+        "size": 654500,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1f39b1d63fcaa1dbd9a2098ff4eb1d927558dca2"
+      },
+      {
+        "path": "3D Models/Lunar Reconnaissance Orbiter (A)/Lunar Reconnaissance Orbiter (A).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bbdbb8b5e2b2468d7b0212b391379f11a25e1ecc",
+        "size": 736027,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/bbdbb8b5e2b2468d7b0212b391379f11a25e1ecc"
+      },
+      {
+        "path": "3D Models/Lunar Reconnaissance Orbiter (B)/Lunar Reconnaissance Orbiter (B).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d17e0a781d1bd599faca618d2efb01209f77a912",
+        "size": 2902744,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d17e0a781d1bd599faca618d2efb01209f77a912"
+      },
+      {
+        "path": "3D Models/Lunar Reconnaissance Orbiter (B)/Lunar Reconnaissance Orbiter (B).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "61842e05c451beead098e688b79bb1f909675416",
+        "size": 941317,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/61842e05c451beead098e688b79bb1f909675416"
+      },
+      {
+        "path": "3D Models/Mark III Spacesuit/Mark III Spacesuit.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9a2e393a3123f3bb9537a425010e3871d5592cb1",
+        "size": 894092,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9a2e393a3123f3bb9537a425010e3871d5592cb1"
+      },
+      {
+        "path": "3D Models/Mark III Spacesuit/Mark III Spacesuit.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1de1a7a4d0977b4b5b87c828f679d81114958d45",
+        "size": 264610,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1de1a7a4d0977b4b5b87c828f679d81114958d45"
+      },
+      {
+        "path": "3D Models/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover.blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f047c02a5a34b8af21a9c320afee46a4eb3a5721",
+        "size": 21936989,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/f047c02a5a34b8af21a9c320afee46a4eb3a5721"
+      },
+      {
+        "path": "3D Models/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eb129b730235dd2c751417914b3fb4017d0e7895",
+        "size": 4987176,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/eb129b730235dd2c751417914b3fb4017d0e7895"
+      },
+      {
+        "path": "3D Models/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ea7f1637e7769bb88d5c8dcadee287a72f2aa14",
+        "size": 867821,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/5ea7f1637e7769bb88d5c8dcadee287a72f2aa14"
+      },
+      {
+        "path": "3D Models/Mars Exploration Rover - Opportunity (MER-B)/Mars Exploration Rover - Opportunity (MER-B).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e154ed38a6d4bf128ecb52f7231baed716c4f55",
+        "size": 36668,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/4e154ed38a6d4bf128ecb52f7231baed716c4f55"
+      },
+      {
+        "path": "3D Models/Mars Exploration Rover - Opportunity (MER-B)/Mars Exploration Rover - Opportunity (MER-B).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b924790f3687f8d1d5342d1a4288c101c45bbe31",
+        "size": 302605,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b924790f3687f8d1d5342d1a4288c101c45bbe31"
+      },
+      {
+        "path": "3D Models/Mars Exploration Rover - Spirit and Opportunity/Mars Exploration Rover - Spirit and Opportunity.blend",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2d5f2b4b187ffc11bfb5e8dadf7fb83183ea145",
+        "size": 12243528,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a2d5f2b4b187ffc11bfb5e8dadf7fb83183ea145"
+      },
+      {
+        "path": "3D Models/Mars Exploration Rover - Spirit and Opportunity/Mars Exploration Rover - Spirit and Opportunity.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98e99362ba015ad8df504eca7e32c24dcf34357e",
+        "size": 410047,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/98e99362ba015ad8df504eca7e32c24dcf34357e"
+      },
+      {
+        "path": "3D Models/Mars Global Surveyor/Mars Global Surveyor (MOI).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4afae9efd9812c57df3c9b2d8a3ee93926b1f04b",
+        "size": 53352,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/4afae9efd9812c57df3c9b2d8a3ee93926b1f04b"
+      },
+      {
+        "path": "3D Models/Mars Global Surveyor/Mars Global Surveyor (launch).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7220fee0708796d5ebc3f6aaea3eb67ab3ed7305",
+        "size": 58252,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/7220fee0708796d5ebc3f6aaea3eb67ab3ed7305"
+      },
+      {
+        "path": "3D Models/Mars Global Surveyor/Mars Global Surveyor (mapping).glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "076df8cda483406524c0a14ee663c523003134b2",
+        "size": 55184,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/076df8cda483406524c0a14ee663c523003134b2"
+      },
+      {
+        "path": "3D Models/Mars Global Surveyor/Mars Global Surveyor.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0526627ca664faa8ded925284e1d9e7853254dfd",
+        "size": 1921268,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/0526627ca664faa8ded925284e1d9e7853254dfd"
+      },
+      {
+        "path": "3D Models/Mars Global Surveyor/Mars Global Surveyor.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c698d0fa37fda024209c6d6a94f7acf8400f7384",
+        "size": 475903,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/c698d0fa37fda024209c6d6a94f7acf8400f7384"
+      },
+      {
+        "path": "3D Models/Mercury Spacesuit/Mercury Spacesuit.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "031973460926227109a35620f75f817e8b9d40d9",
+        "size": 513884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/031973460926227109a35620f75f817e8b9d40d9"
+      },
+      {
+        "path": "3D Models/Mercury Spacesuit/Mercury Spacesuit.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c8882f6d5455bd2885a3e728aee85b3c4cfd38f",
+        "size": 180249,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8c8882f6d5455bd2885a3e728aee85b3c4cfd38f"
+      },
+      {
+        "path": "3D Models/Viking Lander/Viking Lander.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "690059aa913f23b23ab9eea204f01a2676b44447",
+        "size": 1849384,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/690059aa913f23b23ab9eea204f01a2676b44447"
+      },
+      {
+        "path": "3D Models/Viking Lander/Viking Lander.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "51261bd1f1c5c0cc34802eaecf5e7d0c59dccd5e",
+        "size": 447880,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/51261bd1f1c5c0cc34802eaecf5e7d0c59dccd5e"
+      },
+      {
+        "path": "3D Models/Z2 Spacesuit/Z2 Spacesuit.glb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8ebbd5689e2ea6a255712521aef4b099cdcb111",
+        "size": 16933148,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b8ebbd5689e2ea6a255712521aef4b099cdcb111"
+      },
+      {
+        "path": "3D Models/Z2 Spacesuit/Z2 Spacesuit.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d0e35bf84eab951e37c6817e9c1b852c98e61435",
+        "size": 485424,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d0e35bf84eab951e37c6817e9c1b852c98e61435"
+      },
+      {
+        "path": "3D Printing/Apollo 11 - Landing Site/Apollo 11 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d9e6d6c5d05b9c3360c7929f418d2713678a957a",
+        "size": 1169854,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d9e6d6c5d05b9c3360c7929f418d2713678a957a"
+      },
+      {
+        "path": "3D Printing/Apollo 11 - Landing Site/Apollo 11 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39fc0de3c44fb933f23149edf6a1debe35cb2155",
+        "size": 7138484,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/39fc0de3c44fb933f23149edf6a1debe35cb2155"
+      },
+      {
+        "path": "3D Printing/Apollo 12 - Landing Site/Apollo 12 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2c4cdb18c0d3049ab44a3a74b49ec5c839a3059",
+        "size": 1646886,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d2c4cdb18c0d3049ab44a3a74b49ec5c839a3059"
+      },
+      {
+        "path": "3D Printing/Apollo 12 - Landing Site/Apollo 12 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "003b79c3be584a34c0495c0bfaacae306910ce84",
+        "size": 26418784,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/003b79c3be584a34c0495c0bfaacae306910ce84"
+      },
+      {
+        "path": "3D Printing/Apollo 14 - Landing Site/Apollo 14 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32a070a61049ae21617e96b58f1dfa8ab5592326",
+        "size": 1371660,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/32a070a61049ae21617e96b58f1dfa8ab5592326"
+      },
+      {
+        "path": "3D Printing/Apollo 14 - Landing Site/Apollo 14 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "60f4849d683a1d316d4953868e22f511dce470c5",
+        "size": 6963584,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/60f4849d683a1d316d4953868e22f511dce470c5"
+      },
+      {
+        "path": "3D Printing/Apollo 15 - Landing Site/Apollo 15 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da419970b691e12779cc073ac182790c3bb10784",
+        "size": 1177120,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/da419970b691e12779cc073ac182790c3bb10784"
+      },
+      {
+        "path": "3D Printing/Apollo 15 - Landing Site/Apollo 15 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e282e543b217ade2ac225d76c5c6dfdb69fa54ca",
+        "size": 7064884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e282e543b217ade2ac225d76c5c6dfdb69fa54ca"
+      },
+      {
+        "path": "3D Printing/Apollo 16 - Landing Site/Apollo 16 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2454144393c2373060be7b4d9227c1a27998dcd",
+        "size": 1320530,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a2454144393c2373060be7b4d9227c1a27998dcd"
+      },
+      {
+        "path": "3D Printing/Apollo 16 - Landing Site/Apollo 16 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "79c5ff52d9a7e4ec2d11a75a62f93f25ff41e4bf",
+        "size": 6940584,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/79c5ff52d9a7e4ec2d11a75a62f93f25ff41e4bf"
+      },
+      {
+        "path": "3D Printing/Apollo 17 - Landing Site/Apollo 17 - Landing Site.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dfff72188cce8b9b074e59334d190ee202d9177f",
+        "size": 1468976,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/dfff72188cce8b9b074e59334d190ee202d9177f"
+      },
+      {
+        "path": "3D Printing/Apollo 17 - Landing Site/Apollo 17 - Landing Site.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "082264a172b148945cf068280ac4344213d3620f",
+        "size": 26675384,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/082264a172b148945cf068280ac4344213d3620f"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/1-body.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "25f76004f22ad5d9d31768a56546a8745860b017",
+        "size": 1089100,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/25f76004f22ad5d9d31768a56546a8745860b017"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/1-body.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d6a66b571a04792ba7b8d0b33e73cdfafb370f9",
+        "size": 916984,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9d6a66b571a04792ba7b8d0b33e73cdfafb370f9"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/2-components.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d948f2cfe30e7fe8bae52d76b409ac306ede782",
+        "size": 1301827,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9d948f2cfe30e7fe8bae52d76b409ac306ede782"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/2-components.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1288792a5948f8033041bb2963fcdbd9db0cfd62",
+        "size": 12157084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1288792a5948f8033041bb2963fcdbd9db0cfd62"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/3-pins-and-hubs.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cb8b16b1e2b7b0d72d3e81914f222795a9bcb1b4",
+        "size": 1269434,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/cb8b16b1e2b7b0d72d3e81914f222795a9bcb1b4"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/3-pins-and-hubs.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2dc3ab5340a8ce7a36abbba220d6adc3b0e0ed35",
+        "size": 6986284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/2dc3ab5340a8ce7a36abbba220d6adc3b0e0ed35"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/4-wheels.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "87d9b7e289c44ff105226988f4386e78e74b4b87",
+        "size": 1379169,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/87d9b7e289c44ff105226988f4386e78e74b4b87"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/4-wheels.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d19d360761427e23c38746de8e6fddccfb7f09d8",
+        "size": 17407284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d19d360761427e23c38746de8e6fddccfb7f09d8"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/Build Instructions.pdf",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8949a6d259a504dac2cd3d2efb775cc95ddf4847",
+        "size": 8645499,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8949a6d259a504dac2cd3d2efb775cc95ddf4847"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/Curiosity Rover (Detailed).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aeb307821258c14173334e644e8a5b156c1a3579",
+        "size": 337545,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/aeb307821258c14173334e644e8a5b156c1a3579"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Detailed)/Parts.7z",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ef70b45301f374375d29b6604de4b3a82e18680",
+        "size": 2868838,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8ef70b45301f374375d29b6604de4b3a82e18680"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Simplified)/Build Instructions.pdf",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6038359ba138acc740ccae3acaf8fb9094cabd79",
+        "size": 2390741,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6038359ba138acc740ccae3acaf8fb9094cabd79"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Simplified)/Curiosity (200uM).png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e42a1f0fe21eff38e80b13e44dfe912085888849",
+        "size": 1014662,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e42a1f0fe21eff38e80b13e44dfe912085888849"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Simplified)/Curiosity (200uM).stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c9e900bf38d487d5341fd89cf5addef6e40ed48",
+        "size": 19247184,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1c9e900bf38d487d5341fd89cf5addef6e40ed48"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover (Simplified)/Parts.7z",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c5658fd7396cd8350ca9c56c20fcf45780778bae",
+        "size": 1303983,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/c5658fd7396cd8350ca9c56c20fcf45780778bae"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover Path/Curiosity Rover Path.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7a58a326f053e49e42d420dedbfbcbf5f01fa609",
+        "size": 890316,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/7a58a326f053e49e42d420dedbfbcbf5f01fa609"
+      },
+      {
+        "path": "3D Printing/Curiosity Rover Path/Curiosity Rover Path.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64780f1e28d68f93ea6c2977728ab29c41f88139",
+        "size": 20000084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/64780f1e28d68f93ea6c2977728ab29c41f88139"
+      },
+      {
+        "path": "3D Printing/Earth/Earth.7z.001",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "839685b614ecdc05eeed3b14ca9620593c8a8daf",
+        "size": 41943040,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/839685b614ecdc05eeed3b14ca9620593c8a8daf"
+      },
+      {
+        "path": "3D Printing/Earth/Earth.7z.002",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3e03cf630e2539b8980689f1511f78819bf251f2",
+        "size": 27951296,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/3e03cf630e2539b8980689f1511f78819bf251f2"
+      },
+      {
+        "path": "3D Printing/Earth/Earth.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6763127d448cfdf62ecca29e3941176117b3da82",
+        "size": 1701278,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6763127d448cfdf62ecca29e3941176117b3da82"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Core 2.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4b799df3dad453cb17022c04e405e89e962fa120",
+        "size": 664284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/4b799df3dad453cb17022c04e405e89e962fa120"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Exboom (empty).stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a1b28f7c3cca88c76ccc1cf7be5f2a461346776",
+        "size": 307084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8a1b28f7c3cca88c76ccc1cf7be5f2a461346776"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Exboom1.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2636d2ab42390fe930858814356d5d0f55b78723",
+        "size": 3973684,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/2636d2ab42390fe930858814356d5d0f55b78723"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Exboom2.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "62737a92d8ac8840637e036d0d142acf06582d37",
+        "size": 309784,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/62737a92d8ac8840637e036d0d142acf06582d37"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Inertia boom.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "14e8410874bbf4367615ee25cdb3e01d969399e5",
+        "size": 98284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/14e8410874bbf4367615ee25cdb3e01d969399e5"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/International Sun-Earth Explorer-3.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "01984cc334f541f599be13c02be67402bf946af5",
+        "size": 1031714,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/01984cc334f541f599be13c02be67402bf946af5"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Rad antenna.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32dd301ace2d11cbbd93cf5ddf33587634d9065e",
+        "size": 36884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/32dd301ace2d11cbbd93cf5ddf33587634d9065e"
+      },
+      {
+        "path": "3D Printing/International Sun-Earth Explorer-3/Thruster.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0d1ed681e42498252cebc282dd2052d718d20f77",
+        "size": 1610884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/0d1ed681e42498252cebc282dd2052d718d20f77"
+      },
+      {
+        "path": "3D Printing/Kepler 1-33 scale/sun shield.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "04bf13035717939e8daeb2ec8537ea9ca4eac4be",
+        "size": 1790384,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/04bf13035717939e8daeb2ec8537ea9ca4eac4be"
+      },
+      {
+        "path": "3D Printing/Mars - Spirit Rover Path/Mars - Spirit Rover Path.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "732e1a539c6fcf78b008edcfdc7ccbb643782cb6",
+        "size": 715340,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/732e1a539c6fcf78b008edcfdc7ccbb643782cb6"
+      },
+      {
+        "path": "3D Printing/Mars - Spirit Rover Path/Mars - Spirit Rover Path.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "68dc14b2f6b0a778869436bfa53a39f4790fa5ab",
+        "size": 20025684,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/68dc14b2f6b0a778869436bfa53a39f4790fa5ab"
+      },
+      {
+        "path": "3D Printing/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover assembly instructions.7z",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b1f7b0cbc635f5af69b656bc23638e00a370c816",
+        "size": 5081671,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b1f7b0cbc635f5af69b656bc23638e00a370c816"
+      },
+      {
+        "path": "3D Printing/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover parts.7z",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6526a4a33aa3859a9b090b135870442349dd80d4",
+        "size": 4827172,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6526a4a33aa3859a9b090b135870442349dd80d4"
+      },
+      {
+        "path": "3D Printing/Mars 2020 Perseverance Rover/Mars 2020 Perseverance Rover.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2607f117036a1501dda914d902a2d50a195f2ba3",
+        "size": 759248,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/2607f117036a1501dda914d902a2d50a195f2ba3"
+      },
+      {
+        "path": "3D Printing/Moon - Aristarchus Region/Moon - Aristarchus Region.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "33bcf83593624fa2d67ebe3b4d5872e6de078abb",
+        "size": 1234541,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/33bcf83593624fa2d67ebe3b4d5872e6de078abb"
+      },
+      {
+        "path": "3D Printing/Moon - Aristarchus Region/Moon - Aristarchus Region.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ee89f1e3db79ad0af44a99de5c0408e257baa7f9",
+        "size": 6492084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/ee89f1e3db79ad0af44a99de5c0408e257baa7f9"
+      },
+      {
+        "path": "3D Printing/Moon - Copernicus Crater/Moon - Copernicus Crater.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cdb97577149ebdd67bd1b707af7ac36b029f9643",
+        "size": 1570343,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/cdb97577149ebdd67bd1b707af7ac36b029f9643"
+      },
+      {
+        "path": "3D Printing/Moon - Copernicus Crater/Moon - Copernicus Crater.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1290df0fc03304182383d241f37f2bb4c4723eb1",
+        "size": 27775884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1290df0fc03304182383d241f37f2bb4c4723eb1"
+      },
+      {
+        "path": "3D Printing/Moon - Gassendi Crater/Moon - Gassendi Crater.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7544887ac111afbe9514e54333c29092c42e172d",
+        "size": 1286264,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/7544887ac111afbe9514e54333c29092c42e172d"
+      },
+      {
+        "path": "3D Printing/Moon - Gassendi Crater/Moon - Gassendi Crater.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd819130e643d015a1882a49076474d17f31c101",
+        "size": 29735884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/cd819130e643d015a1882a49076474d17f31c101"
+      },
+      {
+        "path": "3D Printing/Moon - Mount Hadley/Moon - Mount Hadley.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2527c7e7b3ed95ee3eb1a8b22c4644b708a014b3",
+        "size": 1208603,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/2527c7e7b3ed95ee3eb1a8b22c4644b708a014b3"
+      },
+      {
+        "path": "3D Printing/Moon - Mount Hadley/Moon - Mount Hadley.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ba7dbf397983e6a9efe7ebda5244313243d0ee6",
+        "size": 47500084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6ba7dbf397983e6a9efe7ebda5244313243d0ee6"
+      },
+      {
+        "path": "3D Printing/Moon - Tycho/Moon - Tycho.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dc76255d12a7c2b1e125fbb41785864c8b2369b5",
+        "size": 1028793,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/dc76255d12a7c2b1e125fbb41785864c8b2369b5"
+      },
+      {
+        "path": "3D Printing/Moon - Tycho/Moon - Tycho.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c395de28d7a09204b0e008d21cec09b9e796e92",
+        "size": 47500084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1c395de28d7a09204b0e008d21cec09b9e796e92"
+      },
+      {
+        "path": "3D Printing/Moon/Moon (far side).stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f315d9c3ca076e6a633819769775ed196f515c3",
+        "size": 12362584,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1f315d9c3ca076e6a633819769775ed196f515c3"
+      },
+      {
+        "path": "3D Printing/Moon/Moon (near side).stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "767caeca6863cd1489ead094a5a0816d23deff3f",
+        "size": 12362584,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/767caeca6863cd1489ead094a5a0816d23deff3f"
+      },
+      {
+        "path": "3D Printing/Moon/Moon.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1ba9e73b1d18cbe0d9b1581a7b37c518672819d6",
+        "size": 1440660,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1ba9e73b1d18cbe0d9b1581a7b37c518672819d6"
+      },
+      {
+        "path": "3D Printing/Viking Lander/3D Foot x 3.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9196fcf2bd0b3bf2859a5581b856aceaa322df76",
+        "size": 85984,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9196fcf2bd0b3bf2859a5581b856aceaa322df76"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Bottom.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5ca93c578388bb3356bd0078e8625f57bd9f36c",
+        "size": 286884,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e5ca93c578388bb3356bd0078e8625f57bd9f36c"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Dish part A.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9f7f4c8e2abc2741b740634d63332d4abb666342",
+        "size": 161184,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9f7f4c8e2abc2741b740634d63332d4abb666342"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Dish part B.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a0fcd84c09fc630c60097a389ce1eef7f3c3f83",
+        "size": 49384,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/1a0fcd84c09fc630c60097a389ce1eef7f3c3f83"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Leg x 3.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df4864516958af1fb1c2b698ef5a11193683276b",
+        "size": 260784,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/df4864516958af1fb1c2b698ef5a11193683276b"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Tool1 A.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "33f62d05f7a949d4da1e5d771b2420a7d8bb805e",
+        "size": 25284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/33f62d05f7a949d4da1e5d771b2420a7d8bb805e"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Tool1 B.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "564d2c67dc7437b754ca6c7beecf5887a6fa2544",
+        "size": 15084,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/564d2c67dc7437b754ca6c7beecf5887a6fa2544"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Tool1 C.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09124226dd3a1cee619adc729de739caaebf4a5c",
+        "size": 104284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/09124226dd3a1cee619adc729de739caaebf4a5c"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Tool2.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "372b3593c1ea105fa543183d8dbdce7846117c3f",
+        "size": 42284,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/372b3593c1ea105fa543183d8dbdce7846117c3f"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Top.stl",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4987c9a313745826f8c7870cbd5dc33618ddd82c",
+        "size": 720984,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/4987c9a313745826f8c7870cbd5dc33618ddd82c"
+      },
+      {
+        "path": "3D Printing/Viking Lander/Viking Lander.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e7f6e879f3ebbac3c146da2ac22dd5f433b690f6",
+        "size": 1087063,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e7f6e879f3ebbac3c146da2ac22dd5f433b690f6"
+      },
+      {
+        "path": "Images and Textures/Earth (A)/Earth (A).jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6adcb9237e3240b804bc4b932aadd8a08635054d",
+        "size": 1398329,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6adcb9237e3240b804bc4b932aadd8a08635054d"
+      },
+      {
+        "path": "Images and Textures/Earth (A)/Earth (A).tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fcaf25c0423db0209304d8170b418c324b7b562f",
+        "size": 3139568,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/fcaf25c0423db0209304d8170b418c324b7b562f"
+      },
+      {
+        "path": "Images and Textures/Earth (A)/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fe3171d74291660e5af4aa50c55d767275a218d6",
+        "size": 473246,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/fe3171d74291660e5af4aa50c55d767275a218d6"
+      },
+      {
+        "path": "Images and Textures/Earth (B)/Earth (B).jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "37b34292b5977802dc5ba458ad3673a20911ed00",
+        "size": 2510007,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/37b34292b5977802dc5ba458ad3673a20911ed00"
+      },
+      {
+        "path": "Images and Textures/Earth (B)/Earth (B).tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "78173fbc602badc4462fb9bf874ce1bcf8e691b6",
+        "size": 50333756,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/78173fbc602badc4462fb9bf874ce1bcf8e691b6"
+      },
+      {
+        "path": "Images and Textures/Earth (B)/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ae1b3054b2831f57d905ae23e26e3e9ffd14a25",
+        "size": 131730,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6ae1b3054b2831f57d905ae23e26e3e9ffd14a25"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Astronaut Bootprint/Moon - Apollo Astronaut Bootprint.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a98b6717f33f17006790c4a9997a98958333831",
+        "size": 4707847,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/2a98b6717f33f17006790c4a9997a98958333831"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Astronaut Bootprint/Moon - Apollo Astronaut Bootprint.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "89c80f2ff1a51adfe3e6e7b09fe7f3ad386243b4",
+        "size": 10250560,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/89c80f2ff1a51adfe3e6e7b09fe7f3ad386243b4"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Astronaut Bootprint/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "31a4ad295bb3f89a60873149e0eb492ca2786a5d",
+        "size": 527342,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/31a4ad295bb3f89a60873149e0eb492ca2786a5d"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Crater/Moon - Apollo Crater.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b987339782a0016a8dee54185178bb5ad443f002",
+        "size": 2826739,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b987339782a0016a8dee54185178bb5ad443f002"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Crater/Moon - Apollo Crater.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c1df26054c03a1c3cbd86246254d5c2e9238dc3",
+        "size": 27027244,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/3c1df26054c03a1c3cbd86246254d5c2e9238dc3"
+      },
+      {
+        "path": "Images and Textures/Moon - Apollo Crater/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "93d9a8f1e9f08cf3d8fd38ea576d70951557533e",
+        "size": 137102,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/93d9a8f1e9f08cf3d8fd38ea576d70951557533e"
+      },
+      {
+        "path": "Images and Textures/Moon - Bright Halo Craters/Moon - Bright Halo Craters.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b24cdb63226c149aa41cef395121e4626533fe7a",
+        "size": 3684232,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b24cdb63226c149aa41cef395121e4626533fe7a"
+      },
+      {
+        "path": "Images and Textures/Moon - Bright Halo Craters/Moon - Bright Halo Craters.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8b7bd9f44950e40a0d4d0142a9107e1b695ab775",
+        "size": 27028668,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8b7bd9f44950e40a0d4d0142a9107e1b695ab775"
+      },
+      {
+        "path": "Images and Textures/Moon - Bright Halo Craters/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "db3a09ab07dbf7ab672a2bab56238f0b4b198515",
+        "size": 235268,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/db3a09ab07dbf7ab672a2bab56238f0b4b198515"
+      },
+      {
+        "path": "Images and Textures/Moon - Bruce Crater/Moon - Bruce Crater.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f640ba177bab333e756ba280d97bf6425876b965",
+        "size": 9905720,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/f640ba177bab333e756ba280d97bf6425876b965"
+      },
+      {
+        "path": "Images and Textures/Moon - Bruce Crater/Moon - Bruce Crater.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ad05d85c84b36635ea94012ba8a8c253dd60b6f",
+        "size": 49921272,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/6ad05d85c84b36635ea94012ba8a8c253dd60b6f"
+      },
+      {
+        "path": "Images and Textures/Moon - Bruce Crater/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "de3da129b022b8239e885723f8037564eecc00d6",
+        "size": 462130,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/de3da129b022b8239e885723f8037564eecc00d6"
+      },
+      {
+        "path": "Images and Textures/Moon - Far Side Crater/Moon - Far Side Crater.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "45d14b35ce0df0b67a41c374ac3da2d215432117",
+        "size": 3452575,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/45d14b35ce0df0b67a41c374ac3da2d215432117"
+      },
+      {
+        "path": "Images and Textures/Moon - Far Side Crater/Moon - Far Side Crater.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2c4b919fd45c2841a595d53266005706547cdaa",
+        "size": 27027692,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/c2c4b919fd45c2841a595d53266005706547cdaa"
+      },
+      {
+        "path": "Images and Textures/Moon - Far Side Crater/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9efb60eff765f542f290625c01a9c5dd95ce4a7d",
+        "size": 170118,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/9efb60eff765f542f290625c01a9c5dd95ce4a7d"
+      },
+      {
+        "path": "Images and Textures/Moon - Hypatia Rille/Moon - Hypatia Rille.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa12eb3c3e759c39007171f2885b239cfcdb730f",
+        "size": 5693311,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/aa12eb3c3e759c39007171f2885b239cfcdb730f"
+      },
+      {
+        "path": "Images and Textures/Moon - Hypatia Rille/Moon - Hypatia Rille.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ca2d59c64d904e1b1ff0faeb4e52b8ce38974f71",
+        "size": 49478780,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/ca2d59c64d904e1b1ff0faeb4e52b8ce38974f71"
+      },
+      {
+        "path": "Images and Textures/Moon - Hypatia Rille/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4300f7fa3626a6bb9f9be5581f48d223a382a83",
+        "size": 239406,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/b4300f7fa3626a6bb9f9be5581f48d223a382a83"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Color/Moon - Lunar Color.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "96d490916f54e3a098a7fd0423b3c90a404089a5",
+        "size": 4573032,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/96d490916f54e3a098a7fd0423b3c90a404089a5"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Color/Moon - Lunar Color.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74a1193bb5b62575091aaa78dd1347101393fe34",
+        "size": 27030044,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/74a1193bb5b62575091aaa78dd1347101393fe34"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Color/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a80578dab06a61bf5bee1b6d9cb934b1420754dc",
+        "size": 281894,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/a80578dab06a61bf5bee1b6d9cb934b1420754dc"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Crater/Moon - Lunar Crater.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "903f86cb19ef8d38d9ee4906010dd72b1a53c114",
+        "size": 4188958,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/903f86cb19ef8d38d9ee4906010dd72b1a53c114"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Crater/Moon - Lunar Crater.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "379c823783522b2ef9ee888cc3d3d45de61faf38",
+        "size": 27035156,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/379c823783522b2ef9ee888cc3d3d45de61faf38"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Crater/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5209abbcc8c20eea748095c8282088edcaf32a3f",
+        "size": 312154,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/5209abbcc8c20eea748095c8282088edcaf32a3f"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Far Side/Moon - Lunar Far Side.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f763b623a3fc21bf6a6d53ada4e861d582e110a",
+        "size": 4376947,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/0f763b623a3fc21bf6a6d53ada4e861d582e110a"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Far Side/Moon - Lunar Far Side.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3ac1cb9c8416eecbc69017c8c2986baa61f81c11",
+        "size": 27034416,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/3ac1cb9c8416eecbc69017c8c2986baa61f81c11"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Far Side/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec3aafb1f942890f86560466ee205c69f0aad125",
+        "size": 350530,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/ec3aafb1f942890f86560466ee205c69f0aad125"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Terrain/Moon - Lunar Terrain.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ef47fa48a6095200981d19bd6cb84a690937f43",
+        "size": 5761351,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/5ef47fa48a6095200981d19bd6cb84a690937f43"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Terrain/Moon - Lunar Terrain.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "830ec4aee8f3664ed63002604b35219ceabd4c71",
+        "size": 50361792,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/830ec4aee8f3664ed63002604b35219ceabd4c71"
+      },
+      {
+        "path": "Images and Textures/Moon - Lunar Terrain/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13de8295cf0a25abcea59291dcdbd9ac4fd994f0",
+        "size": 294208,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/13de8295cf0a25abcea59291dcdbd9ac4fd994f0"
+      },
+      {
+        "path": "Images and Textures/Moon - Southern Sea/Moon - Southern Sea.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "19c73e4d0a620abbb02d57f6708b65d36f82d081",
+        "size": 4394427,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/19c73e4d0a620abbb02d57f6708b65d36f82d081"
+      },
+      {
+        "path": "Images and Textures/Moon - Southern Sea/Moon - Southern Sea.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e88f1f24221fb410dd8c5cb2a620651fa6599ace",
+        "size": 27032068,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e88f1f24221fb410dd8c5cb2a620651fa6599ace"
+      },
+      {
+        "path": "Images and Textures/Moon - Southern Sea/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d60f7a1c0ee2af091128f868f622d4fce39b875f",
+        "size": 540462,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/d60f7a1c0ee2af091128f868f622d4fce39b875f"
+      },
+      {
+        "path": "Images and Textures/Moon/Moon.jpg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e39f899b3f37e39c75acbe405018157dcfba8b0b",
+        "size": 2957499,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/e39f899b3f37e39c75acbe405018157dcfba8b0b"
+      },
+      {
+        "path": "Images and Textures/Moon/Moon.tif",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be645cad3eec9c9177515debffdee7f343362cab",
+        "size": 10995708,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/be645cad3eec9c9177515debffdee7f343362cab"
+      },
+      {
+        "path": "Images and Textures/Moon/preview.webp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83c389b5eb7bac4b3e6629c9fa5b006d9e6bb4f9",
+        "size": 386502,
+        "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/83c389b5eb7bac4b3e6629c9fa5b006d9e6bb4f9"
+      }
+    ],
+    "sunEarthGlobeGlbInThisTree": false,
+    "sourceNote": "Earth printing archives and Earth texture images exist, but Sun/Earth globe GLBs are separate official NASA CDN educational downloads. Existing Apollo Lunar Module is already bundled under public/data/equipment. Existing NASA Moon globe source remains unchanged.",
+    "gitTreeObject": "20cddf392bdd9474d6e2e7c4bdad7d06f183b06b",
+    "revisionVerifiedBy": "Actual sparse clone HEAD; git rev-parse HEAD^{tree} records the tree object separately from the API tree-ref response."
+  },
+  "originalGit": {
+    "repository": "https://github.com/Rian-beep/NASA---Space---App-Challenge.git",
+    "acquisition": "Read-only depth-1 blobless no-checkout clone and all available branch-tree metadata. No upstream script executed; no branch merged; Luke origin preserved.",
+    "branchesFile": "source-git/original-branches.json",
+    "branches": [
+      {
+        "name": "cursor/earth-facing-2608",
+        "revision": "fd78c86af7eb83df7e48de65eb32ad2d7fa94741",
+        "files": 138
+      },
+      {
+        "name": "cursor/earth-link-2608",
+        "revision": "e4bcb8a267178900dc8e73b303d2c59e414b9c22",
+        "files": 134
+      },
+      {
+        "name": "cursor/earth-weather-2608",
+        "revision": "a2c7f65cd1e7ff7251bd7c0ef679147a79e0585f",
+        "files": 134
+      },
+      {
+        "name": "cursor/lunar-window-2608",
+        "revision": "531fba9e3ce32c1411abf3ea01f0b1bd37deac6e",
+        "files": 99
+      },
+      {
+        "name": "cursor/mission-climate-2608",
+        "revision": "debb200fa60f6ac08fa851ae357e39a41a499cb7",
+        "files": 153
+      },
+      {
+        "name": "cursor/moon-globe-2608",
+        "revision": "32546a46f20344f3e4ac060be4f939eab39e8234",
+        "files": 108
+      },
+      {
+        "name": "cursor/next-security-update-2608",
+        "revision": "45a4730c779ad51a12c9f9909eabeef616aa26ae",
+        "files": 99
+      },
+      {
+        "name": "cursor/sky-outlines-2608",
+        "revision": "25b0d5b8296c7a6769d13372872d73c3372f312d",
+        "files": 108
+      },
+      {
+        "name": "cursor/sun-flares-2608",
+        "revision": "f8808cf8a221f735673ff9ad17bb9c2f81ea4540",
+        "files": 145
+      },
+      {
+        "name": "main",
+        "revision": "09b158c828f6af72df0b42afc2b3da533c8c4169",
+        "files": 138
+      }
+    ],
+    "changedDuringAudit": "First refs listing returned nine heads; a tenth cursor/mission-climate-2608 head appeared by clone. This is a pinned snapshot, not a standing claim about future branches.",
+    "glbOrGltfFiles": [],
+    "licenceFiles": [],
+    "sharedScienceFiles": {
+      "src/lib/science/fixtures/terrain.json": {
+        "gitBlobs": [
+          "79d82a35705b0a0b8ef82a4bd248a2a5eca2e2c9"
+        ],
+        "bytes": 1448961
+      },
+      "src/lib/science/fixtures/terrain-preparation.json": {
+        "gitBlobs": [
+          "32c94ceed2802c69c8876fb5cdd5a50de1a99a9e"
+        ],
+        "bytes": 3885
+      },
+      "src/lib/science/fixtures/ephemerides.json": {
+        "gitBlobs": [
+          "3e2fe08b4ff427b0888826faf2ff25c958dea064"
+        ],
+        "bytes": 527038
+      },
+      "src/lib/science/fixtures/sites.json": {
+        "gitBlobs": [
+          "2763e90d39bcab952cba6edd53001581a1365678"
+        ],
+        "bytes": 1387
+      },
+      "src/lib/science/fixtures/demoManifest.json": {
+        "gitBlobs": [
+          "f9ca8717ffda7e91fa21f985b2a4fbc7c77bdc8f"
+        ],
+        "bytes": 3677
+      }
+    },
+    "terrainSummary": {
+      "datasetId": "PGDA-90-LDEM_80S_80MPP_ADJ-south-pole-window",
+      "productUrl": "https://pgda.gsfc.nasa.gov/products/90",
+      "citation": "Barker, M. K., et al. (2023), A New View of the Lunar South Pole from the Lunar Orbiter Laser Altimeter, The Planetary Science Journal, https://doi.org/10.3847/PSJ/acf3e1. LOLA DEM LDEM_80S_80MPP_ADJ, NASA GSFC PGDA product 90, https://pgda.gsfc.nasa.gov/products/90.",
+      "coordinateReference": "MOON_ME / DE421 sphere, radius 1737400 m, south-polar stereographic metres. +X toward east longitude 90\u00b0, +Y toward east longitude 0\u00b0. Row 0 is the maximum-Y side. originX and originY are the centre of pixel (0,0).",
+      "bodyRadiusM": 1737400.0,
+      "sourcePixelSpacingM": 80.0,
+      "analysisResolutionM": 80.0,
+      "rows": 432,
+      "cols": 432,
+      "originX": -14840.0,
+      "originY": 16840.0,
+      "pixelSizeM": 80.0,
+      "retrievedAtUtc": "2026-11-14T10:10:17Z",
+      "horizonSearchRadiusM": 12000.0,
+      "preparationNote": "Windowed read with rasterio and GDAL /vsicurl/ from the cloud-optimized GeoTIFF. Analysis heights are the native 80 m postings, rounded to 0.01 m, with no spatial resampling. The display hillshade is a separate 2x2 block mean and is not this grid. Horizon search radius is 12000 m; the window keeps that radius inside the grid for every example site.",
+      "sourceFileUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
+      "sourceSizePx": [
+        7600,
+        7600
+      ],
+      "nodataPolicy": "Source nodata is NaN. This window has no nodata. Missing mask azimuths are never filled as flat.",
+      "crsWkt": "PROJCS[\"Moon (2015) - Sphere / Ocentric / South Polar\",GEOGCS[\"Moon (2015) - Sphere / Ocentric\",DATUM[\"Moon (2015) - Sphere\",SPHEROID[\"Moon (2015) - Sphere\",1737400,0,AUTHORITY[\"IAU\",\"30100\"]],AUTHORITY[\"IAU\",\"30100\"]],PRIMEM[\"Reference Meridian\",0,AUTHORITY[\"IAU\",\"30100\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"IAU\",\"30100\"]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH],AUTHORITY[\"IAU\",\"30135\"]]",
+      "sites": [
+        {
+          "id": "example-a",
+          "name": "Example analysis A \u2014 Shackleton rim crest",
+          "kind": "example_analysis",
+          "eastLongitudeDeg": -154.29004621918875,
+          "latitudeDeg": -89.80235285354544,
+          "surfaceHeightM": 1703.41,
+          "summary": "Example analysis location on a local high of the Shackleton rim, about 6 km from the south pole. It is NOT an officially designated landing site.",
+          "stereographicX": -2600.0,
+          "stereographicY": -5400.0
+        },
+        {
+          "id": "example-b",
+          "name": "Example analysis B \u2014 near-side ridge",
+          "kind": "example_analysis",
+          "eastLongitudeDeg": 58.134022306396325,
+          "latitudeDeg": -89.71265740822516,
+          "surfaceHeightM": 1231.22,
+          "summary": "Example analysis location on a ridge near east longitude 58\u00b0, on the Earth-facing side of the south pole. It is NOT an officially designated landing site.",
+          "stereographicX": 7400.0,
+          "stereographicY": 4600.0
+        },
+        {
+          "id": "example-c",
+          "name": "Example analysis C \u2014 Shackleton floor",
+          "kind": "example_analysis",
+          "eastLongitudeDeg": 122.19573393471325,
+          "latitudeDeg": -89.78956100857326,
+          "surfaceHeightM": -2317.7,
+          "summary": "Example analysis location on the floor of Shackleton crater, surrounded by the rim. It is NOT an officially designated landing site.",
+          "stereographicX": 5400.0,
+          "stereographicY": -3400.0
+        }
+      ],
+      "method": "rasterio 1.x windowed read of COG via /vsicurl/. Source window rows 3589:4020 cols 3614:4045.",
+      "bytesHint": "heights omitted from this sidecar"
+    },
+    "ephemerisGroups": 36,
+    "integrationNotes": [
+      "All inventoried branches share the same blobs for the listed terrain/ephemerides/sites/demo manifest.",
+      "Original numeric terrain grid is 432\u00d7432, 80 m spacing, 12 km ray radius around three derived example sites, not global terrain.",
+      "Preview PNG is 160 m display hillshade and explicitly not numerical analysis terrain.",
+      "Original Earth Blue Marble/cloud textures have NASA credits; static cloud mosaic is not selected-date weather.",
+      "No GLB/glTF model is present in any inventoried original branch; procedural spheres with NASA textures are not NASA-authored mesh assets.",
+      "Original app source code has no licence file located in these trees; do not infer redistribution rights from NASA imagery credit.",
+      "Do not import original science/UI blindly: preserve current canonical science contracts and validate adapters independently."
+    ]
+  }
+}

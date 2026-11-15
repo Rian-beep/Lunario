@@ -1,0 +1,107 @@
+.root {
+  --alt-ink: var(--foreground);
+  --alt-muted: var(--muted-foreground);
+  --alt-line: var(--border);
+  --alt-paper: var(--card);
+  --alt-accent: var(--primary);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--alt-ink);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.root h2, .root h3, .root p { margin: 0; }
+.root h2 { font-size: 23px; font-weight: 550; line-height: 1.25; letter-spacing: -.025em; }
+.root h3 { font-size: 18px; font-weight: 550; line-height: 1.35; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+.header p:not(.eyebrow) { max-width: 68ch; color: var(--alt-muted); margin-top: 7px; }
+.eyebrow { color: var(--alt-muted); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px !important; }
+.baseline { display: flex; flex-wrap: wrap; gap: 5px 22px; padding: 12px 15px; background: var(--card); border-left: 3px solid var(--alt-accent); margin-bottom: 20px; font-variant-numeric: tabular-nums; }
+.baseline strong { flex-basis: 100%; font-weight: 600; }
+.baseline span { color: var(--foreground); font-size: 13px; }
+.searchFields { display: grid; grid-template-columns: minmax(145px, 1fr) minmax(240px, 3fr); gap: 16px; margin-bottom: 16px; }
+.field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.field label { font-size: 13px; font-weight: 550; line-height: 1.4; }
+.fieldLabel { display: flex; align-items: flex-start; gap: 4px; min-height: 38px; }
+.fieldLabel label span { font-weight: 400; color: var(--alt-muted); }
+.field input { background: var(--alt-paper); font-size: 14px; height: 36px; border-color: var(--border); }
+.field small { color: var(--alt-muted); font-size: 12px; }
+.disclosure { border-top: 1px solid var(--alt-line); padding: 13px 0; }
+.disclosure summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.disclosure summary span { font-size: 12px; font-weight: 400; margin-left: 12px; color: var(--alt-muted); }
+.disclosure > p { color: var(--alt-muted); margin-top: 9px; font-size: 13px; }
+.candidates { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 4px 18px; margin-top: 10px; }
+.candidate { display: flex; gap: 9px; align-items: flex-start; padding: 7px 0; cursor: pointer; font-size: 13px; min-width: 0; }
+.candidate input { flex: 0 0 auto; margin-top: 4px; width: 16px; height: 16px; accent-color: var(--alt-accent); }
+.candidate strong { font-weight: 500; display: block; }
+.candidate small { display: block; color: var(--alt-muted); font-size: 12px; }
+.criteria { margin: 5px 0 16px; padding: 14px 0 0; border: 0; border-top: 1px solid var(--alt-line); min-width: 0; }
+.criteria legend { font-size: 15px; font-weight: 600; padding-right: 10px; }
+.criteria > p { max-width: 100ch; color: var(--alt-muted); font-size: 13px; }
+.criteriaFields { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 13px 16px; margin: 13px 0; }
+.note { color: var(--alt-muted); font-size: 12px; margin: 10px 0 !important; }
+.runbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 7px; }
+.runbar > span { color: var(--alt-muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.progress { display: block; width: 100%; height: 7px; margin-top: 12px; accent-color: var(--alt-accent); }
+.feedback { min-height: 22px; margin: 8px 0 !important; font-size: 13px; }
+.error, .field .error { color: var(--destructive); font-size: 13px; }
+.legend { display: flex; gap: 8px 20px; flex-wrap: wrap; border-top: 1px solid var(--alt-line); padding-top: 15px; font-size: 12px; }
+.legend b { display: inline-block; width: 16px; font-size: 16px; color: var(--alt-ink); }
+.tableScroll { width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--alt-line); border-radius: 5px; background: var(--alt-paper); }
+.matrix { border-collapse: separate; border-spacing: 0; width: max-content; min-width: 100%; font-size: 12px; font-variant-numeric: tabular-nums; }
+.matrix caption, .metrics caption { text-align: left; padding: 10px 13px; color: var(--alt-muted); font-size: 12px; caption-side: top; border-bottom: 1px solid var(--alt-line); }
+.matrix th, .matrix td { border-right: 1px solid var(--alt-line); border-bottom: 1px solid var(--alt-line); padding: 0; vertical-align: top; }
+.matrix tr:last-child > * { border-bottom: 0; }
+.matrix tr > *:last-child { border-right: 0; }
+.matrix thead th { min-width: 180px; text-align: left; padding: 10px 12px; background: var(--card); font-weight: 500; }
+.matrix thead th strong { display: block; font-weight: 600; font-size: 13px; }
+.matrix th span, .matrix th small { display: block; color: var(--alt-muted); font-size: 12px; }
+.matrix thead th small { margin-top: 2px; }
+.matrix tbody th { position: sticky; left: 0; z-index: 1; width: 220px; min-width: 220px; max-width: 220px; padding: 12px; text-align: left; background: var(--card); box-shadow: 1px 0 0 var(--alt-line); }
+.matrix tbody th strong { display: block; font-weight: 550; font-size: 13px; margin-bottom: 4px; }
+.cell { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; border: 0; width: 100%; min-height: 115px; height: 100%; padding: 12px; background: transparent; text-align: left; cursor: pointer; font: inherit; color: var(--alt-ink); }
+.cell:hover { background: var(--mission-hover); }
+.cell[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--alt-accent); background: var(--secondary); }
+.cell:focus-visible, .tableScroll:focus-visible, .disclosure summary:focus-visible, .candidate input:focus-visible { outline: 3px solid var(--ring); outline-offset: -3px; }
+.cellStatus { display: flex; gap: 7px; align-items: baseline; max-width: 170px; font-weight: 600; line-height: 1.35; margin-bottom: 3px; font-size: 13px; }
+.cellStatus b { font-size: 17px; line-height: 1; }
+.meets .cellStatus { color: var(--mission-success); }
+.fails .cellStatus { color: var(--destructive); }
+.unknown .cellStatus, .outside .cellStatus { color: var(--foreground); }
+.baselineCell { background: var(--secondary); }
+.baselineTag { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 650; color: var(--mission-warning); }
+.pending { display: block; padding: 17px 12px; color: var(--alt-muted); }
+.detail { border-top: 2px solid var(--alt-accent); margin-top: 23px; padding-top: 17px; }
+.detailHeader { display: flex; gap: 18px; justify-content: space-between; align-items: flex-start; }
+.detailHeader p:not(.eyebrow) { color: var(--alt-muted); margin-top: 6px; font-size: 13px; }
+.actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.detail > p, .detail > div:not(.detailHeader):not(.tableScroll) { margin: 12px 0; font-size: 13px; }
+.verdict { font-size: 15px !important; font-weight: 600; }
+.detail ul { margin: 5px 0 12px; padding-left: 22px; list-style: disc; }
+.detail li { margin: 4px 0; }
+.metrics { border-collapse: collapse; width: 100%; min-width: 850px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.metrics th, .metrics td { padding: 10px 13px; border-bottom: 1px solid var(--alt-line); text-align: right; }
+.metrics thead { background: var(--card); }
+.metrics th { font-weight: 550; }
+.metrics th:first-child { text-align: left; }
+.metrics tr:last-child > * { border-bottom: 0; }
+.metrics tbody tr:hover { background: var(--mission-hover); }
+.detail pre { max-width: 100%; overflow-x: auto; padding: 12px; margin-top: 12px; background: var(--card); font-family: var(--font-geist-mono), monospace; font-size: 12px; line-height: 1.6; }
+.caveat { margin-top: 18px !important; border-top: 1px solid var(--alt-line); padding-top: 12px; color: var(--alt-muted); font-size: 12px; }
+@media (max-width: 640px) {
+  .header, .detailHeader { flex-direction: column; gap: 12px; }
+  .searchFields { grid-template-columns: 1fr; }
+  .criteriaFields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .candidates { grid-template-columns: 1fr; }
+  .matrix tbody th { min-width: 145px; max-width: 145px; width: 145px; }
+  .header h2 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .root button, .root input { transition: none; }
+}
+
+.metricPicker{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:13px;flex-wrap:wrap}.metricPicker select{border:1px solid var(--border);border-radius:8px;background:var(--card);padding:8px 12px;font:inherit;max-width:100%}.matrixScroll{max-height:min(560px,60vh);overflow:auto;scroll-margin-top:76px}.matrixScroll .matrix thead th{position:sticky;top:0;z-index:2}.matrixScroll .matrix thead th:first-child{left:0;z-index:4}.cell>strong{font-size:17px;font-weight:550}.detail{scroll-margin-top:80px}
+
+.conditional .cellStatus { color: var(--mission-warning); }

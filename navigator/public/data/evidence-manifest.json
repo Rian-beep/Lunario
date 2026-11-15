@@ -1,0 +1,758 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748",
+  "validFromUtc": "2026-01-01T00:00:00Z",
+  "validUntilUtcExclusive": "2028-01-01T00:00:00Z",
+  "entries": [
+    {
+      "id": "ephemeris",
+      "kind": "computed",
+      "label": "Hourly Sun and Earth geometry",
+      "sourceUrl": "https://ssd.jpl.nasa.gov/horizons/manual.html",
+      "productId": "catalog.json",
+      "version": null,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": 1,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "Complete epoch coverage within manifest bounds; not an accuracy certification. Final epoch is a boundary only, with no following interval.",
+        "DE441 is catalog metadata; raw provider response headers are not bundled. Observer-table requests rely on provider defaults for time scale and apparent corrections; see ADR 0005."
+      ]
+    },
+    {
+      "id": "horizon-catalog",
+      "kind": "computed",
+      "label": "Prepared named-site terrain horizons",
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
+      "productId": "catalog.json",
+      "version": null,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
+      "sourceSpacingM": 40,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": 1,
+      "coverage": "partial",
+      "notes": [
+        "40 m fine and 240 m fallback source rasters; not effective resolution. Heights 0, 2 and 10 m. Ray steps 40/160/400 m to 250 km.",
+        "Uniform disk fraction above the local sampled horizon, not full terrain-disk integration. Frame equivalence and propagated uncertainty remain unquantified."
+      ]
+    },
+    {
+      "id": "horizon-custom",
+      "kind": "computed",
+      "label": "Nearest prepared custom-site horizon",
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
+      "productId": "catalog.json",
+      "version": null,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "frame": "MOON_ME / DE421 source DEM; R=1737400 m",
+      "sourceSpacingM": 40,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": 3,
+      "coverage": "borrowed",
+      "notes": [
+        "Nearest prepared grid point, 2 m observer only; spatial borrowing must remain visible. 240 m fallback; ray steps 160/400/800 m to 200 km."
+      ]
+    },
+    {
+      "id": "terrain-local",
+      "kind": "computed",
+      "label": "Local display terrain",
+      "sourceUrl": "https://pgda.gsfc.nasa.gov/products/90",
+      "productId": "terrain.json",
+      "version": null,
+      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "frame": "MOON_ME / DE421; south polar stereographic; R=1737400 m",
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Nested 5/10/40 m products where covered with 80 m base and coarser overviews. Per-cutout source spacing and output spacing are in terrain.json. No single resolution applies.",
+        "Display terrain does not replace prepared horizon masks; effective resolution and accuracy are unknown here."
+      ]
+    },
+    {
+      "id": "imagery",
+      "kind": "external-report",
+      "label": "Historical LROC imagery",
+      "sourceUrl": "https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=moon",
+      "productId": "imagery.json",
+      "version": null,
+      "sha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "WAC 100 m polar source; NAC 1 m source where supported sampled near 4.18 m/pixel. Historical acquisition shadows are not selected-date illumination."
+      ]
+    },
+    {
+      "id": "globe",
+      "kind": "external-report",
+      "label": "Original NASA visualization geometry",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/14959/",
+      "productId": "nasa-model.json",
+      "version": null,
+      "sha256": "aeac27f823f27a86efc03543dacdc8ef9c5e9fcb1d58121a78746b6d9d3c5b41",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Original NASA topology; unitless geometry at nominal scale, not measured local heights. Documented polar artifacts. See nasa-model.json for source GLB and decoded mesh hashes."
+      ]
+    },
+    {
+      "id": "mission-locations",
+      "kind": "external-report",
+      "label": "Published mission and study locations",
+      "sourceUrl": "https://www.nasa.gov/news-release/nasa-provides-update-on-artemis-iii-moon-landing-regions/",
+      "productId": "catalog.json",
+      "version": null,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "NASA release 24-136, 2024-10-28, describes potential regions, not approval of individual catalogue pins or current mission assignment.",
+        "Original study designations, dates where supplied, URLs and mission approximation flags are retained in catalog.json; IDs and coordinates unchanged."
+      ]
+    },
+    {
+      "id": "user-assumptions",
+      "kind": "user-assumption",
+      "label": "Scenario engineering assumptions",
+      "sourceUrl": null,
+      "productId": null,
+      "version": null,
+      "sha256": null,
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "User-supplied loads, efficiencies, reserves and radio assumptions are not measured NASA evidence. Scenario values must accompany exported results."
+      ]
+    },
+    {
+      "id": "landing-readiness",
+      "kind": "unavailable",
+      "label": "Operational landing readiness",
+      "sourceUrl": null,
+      "productId": null,
+      "version": null,
+      "sha256": null,
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "unavailable",
+      "notes": [
+        "No certified slope/roughness, navigation, thermal, plume, structural, RF/link budget or operational landing approval evidence. Resource screening cannot establish readiness."
+      ]
+    },
+    {
+      "id": "asset:catalog.json",
+      "kind": "external-report",
+      "label": "Bundled asset catalog.json",
+      "sourceUrl": null,
+      "productId": "catalog.json",
+      "version": null,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/athena.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/athena.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/athena.jpg",
+      "version": null,
+      "sha256": "116a6621fa34c665b6a32b6c6243d74ce82c8b98d78dc935d3928cfb0c29ed98",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/connecting-ridge-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/connecting-ridge-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/connecting-ridge-nac.jpg",
+      "version": null,
+      "sha256": "ab968c13f1af2d7a3f1bce213d3e7c685a8fe8253ad643d5c790c7ac03a3edc4",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/connecting-ridge.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/connecting-ridge.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/connecting-ridge.jpg",
+      "version": null,
+      "sha256": "3fdd7e7d7bfe5851b6ee38f768a4b082d8e4ead993cfa6efe4a5abd0a7e04a19",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/degerlache-shackleton-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/degerlache-shackleton-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/degerlache-shackleton-nac.jpg",
+      "version": null,
+      "sha256": "47b195692c9295589af9589c3e9ffd1ae13a6ea4cb035403d0c904f9628a0392",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/degerlache-shackleton.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/degerlache-shackleton.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/degerlache-shackleton.jpg",
+      "version": null,
+      "sha256": "07a33b13b1b853202926c58adbc82580927a60592879302b4282b4f6290b7b8e",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/global.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/global.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/global.jpg",
+      "version": null,
+      "sha256": "d00b31d34a8356307c89dea6bf5735fec21953973418fa73ee1d3f97e2b5bfb9",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/lcross-cabeus.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/lcross-cabeus.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/lcross-cabeus.jpg",
+      "version": null,
+      "sha256": "8645ca33db5d033c0b664ba6cb603401ca1292b447d10906360731be5733b7e0",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/malapert-massif-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/malapert-massif-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/malapert-massif-nac.jpg",
+      "version": null,
+      "sha256": "bd410efc90e95c553f72cd2f6158a0b06bd63dba832bb5fec3a8e6b88f13fc64",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/malapert-massif.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/malapert-massif.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/malapert-massif.jpg",
+      "version": null,
+      "sha256": "efa1150cbb54e9a2c9ccab753f445060383315413b4cf7ddb7c182c38a1e5fbd",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/nasa-moon-8k.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/nasa-moon-8k.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/nasa-moon-8k.jpg",
+      "version": null,
+      "sha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/odysseus.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/odysseus.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/odysseus.jpg",
+      "version": null,
+      "sha256": "631ddafd5bafa648d131c3868e6fdb8d76113287e285c4b58e8d13f112f012e7",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/peak-near-shackleton-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/peak-near-shackleton-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/peak-near-shackleton-nac.jpg",
+      "version": null,
+      "sha256": "0b1ee513c8bd2358cdd70767a5066a446cf7b16c1e601a3034c41f1d27babd29",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/peak-near-shackleton.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/peak-near-shackleton.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/peak-near-shackleton.jpg",
+      "version": null,
+      "sha256": "5fcd29477242acf8ecd2ac9071318aaf165d9d7fdd3f6dbc6a64d462a388a6fc",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/polar.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/polar.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/polar.jpg",
+      "version": null,
+      "sha256": "699f2faef42d65543adfbcfe0eac959c9705c82b6469cc12f4c607fbff7599eb",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/shackleton-crest-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/shackleton-crest-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/shackleton-crest-nac.jpg",
+      "version": null,
+      "sha256": "6509414413b44cfda45ff9f00e7c72017b3d6906affc7869171376d1d8a8ef3b",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/shackleton-crest.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/shackleton-crest.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/shackleton-crest.jpg",
+      "version": null,
+      "sha256": "dc40bd8ff896c6e231472f5559381cd2c16ea1e66c1c54e08660bf92c7ab68e6",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/south-pole-nac.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/south-pole-nac.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/south-pole-nac.jpg",
+      "version": null,
+      "sha256": "338bdbe2accd7efb967f1609f145404cad0d397f28a18e6d995831d97fe75934",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery/south-pole.jpg",
+      "kind": "external-report",
+      "label": "Bundled asset imagery/south-pole.jpg",
+      "sourceUrl": null,
+      "productId": "imagery/south-pole.jpg",
+      "version": null,
+      "sha256": "496142b863d390e5774227b2b62197a01ec1fecddc4a27a7ac4f9c4ad066c20b",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:imagery.json",
+      "kind": "external-report",
+      "label": "Bundled asset imagery.json",
+      "sourceUrl": null,
+      "productId": "imagery.json",
+      "version": null,
+      "sha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:map.png",
+      "kind": "external-report",
+      "label": "Bundled asset map.png",
+      "sourceUrl": null,
+      "productId": "map.png",
+      "version": null,
+      "sha256": "4f17664655cffbce577b9affedbb768727ba80f83c5bb1cab747778452ba88a2",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:nasa-model.json",
+      "kind": "external-report",
+      "label": "Bundled asset nasa-model.json",
+      "sourceUrl": null,
+      "productId": "nasa-model.json",
+      "version": null,
+      "sha256": "aeac27f823f27a86efc03543dacdc8ef9c5e9fcb1d58121a78746b6d9d3c5b41",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:nasa-moon-mesh.bin.gz",
+      "kind": "external-report",
+      "label": "Bundled asset nasa-moon-mesh.bin.gz",
+      "sourceUrl": null,
+      "productId": "nasa-moon-mesh.bin.gz",
+      "version": null,
+      "sha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "asset:terrain.json",
+      "kind": "external-report",
+      "label": "Bundled asset terrain.json",
+      "sourceUrl": null,
+      "productId": "terrain.json",
+      "version": null,
+      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "complete",
+      "notes": [
+        "SHA-256 identifies exact committed bytes only; scientific meaning and limitations inherit the relevant evidence entry."
+      ]
+    },
+    {
+      "id": "equipment-lander",
+      "kind": "computed",
+      "label": "Original NASA Apollo Lunar Module geometry",
+      "sourceUrl": "https://science.nasa.gov/3d-resources/apollo-lunar-module/",
+      "productId": "public/data/equipment/apollo-lunar-module.glb",
+      "version": "4dd37a50fdf79beadf7b2e3a407cedc63fda81de",
+      "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e",
+      "frame": "glTF Y-up; nominal display scale",
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Source has no explicit physical dimensional provenance beyond glTF convention. Runtime normalizes total height to nominal 7 metres; not engineering CAD or clearance evidence. Runtime world uses kilometres.",
+        "None. Original GLB is retained byte for byte. Runtime applies uniform display normalization and translation.",
+        "NASA source repository describes assets as free and without copyright; NASA media-use guidelines apply. Do not imply NASA endorsement."
+      ]
+    },
+    {
+      "id": "equipment-decoder",
+      "kind": "computed",
+      "label": "Pinned Google Draco decoder",
+      "sourceUrl": "https://github.com/google/draco",
+      "productId": "public/data/equipment/draco/draco_decoder.js",
+      "version": "three@0.187.0",
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f",
+      "frame": null,
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Apache-2.0 decoder distributed with Three.js; local decoding only, not engineering evidence."
+      ]
+    },
+    {
+      "id": "terrain-global",
+      "kind": "computed",
+      "label": "Calibrated coarse global LOLA elevations",
+      "sourceUrl": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.img",
+      "productId": "public/data/global-terrain.bin.gz",
+      "version": "V3.1",
+      "sha256": "296296decb091b8d7075d70de1fc6acbb341b89f343a55de67855bb823a30350",
+      "frame": "MEAN EARTH/POLAR AXIS OF DE421",
+      "sourceSpacingM": 1895.21,
+      "effectiveResolutionM": null,
+      "outputSpacingM": 4264.221153396021,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Numerical LOLA elevations; no color/brightness or unitless visualization mesh conversion.",
+        "Global source contains interpolation and possible 45° latitude-band edge artifacts per source label.",
+        "Coarse model omits local ridges/rocks and propagates no physical uncertainty. Not a landing hazard or safety certification.",
+        "No source frame transformation to a different lunar orientation is asserted."
+      ]
+    },
+    {
+      "id": "horizon-global",
+      "kind": "computed",
+      "label": "Computed coarse global terrain horizon",
+      "sourceUrl": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+      "productId": "public/data/global-terrain.bin.gz",
+      "version": "V3.1",
+      "sha256": "296296decb091b8d7075d70de1fc6acbb341b89f343a55de67855bb823a30350",
+      "frame": "MEAN EARTH/POLAR AXIS OF DE421",
+      "sourceSpacingM": 1895.21,
+      "effectiveResolutionM": null,
+      "outputSpacingM": 4264.221153396021,
+      "temporalStepHours": null,
+      "angularStepDeg": 2,
+      "coverage": "partial",
+      "notes": [
+        "At requested coordinates; 180 azimuths and 200 logarithmic radial samples,1m to1000km. Approximately4.26km equatorial output spacing, not effective resolution. Fine obstacles, source uncertainty and DE421/ephemeris frame equivalence remain unresolved."
+      ]
+    },
+    {
+      "id": "visual-sun",
+      "kind": "computed",
+      "label": "Original NASA sun display asset",
+      "sourceUrl": "https://science.nasa.gov/learn/heat/resource/sun-3d-model/",
+      "productId": "public/data/celestial-models/assets/sun.glb",
+      "version": null,
+      "sha256": "a178f5c43c2c9a6ee6c011c315149a7ab5a2594fd5aa9119ee219625a18da1dd",
+      "frame": "Authored visualization frame; no verified celestial epoch transform",
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Original NASA visualization geometry; nominal scale/orientation only. Directions and times remain JPL-derived."
+      ]
+    },
+    {
+      "id": "visual-earth",
+      "kind": "computed",
+      "label": "Original NASA earth display asset",
+      "sourceUrl": "https://science.nasa.gov/learn/heat/resource/earth-3d-model/",
+      "productId": "public/data/celestial-models/assets/earth.glb",
+      "version": null,
+      "sha256": "05a5aea99db8ab472487a06debc3b5d0b2cae7636a1a6b9ecfa40b7d1722ba23",
+      "frame": "Authored visualization frame; no verified celestial epoch transform",
+      "sourceSpacingM": null,
+      "effectiveResolutionM": null,
+      "outputSpacingM": null,
+      "temporalStepHours": null,
+      "angularStepDeg": null,
+      "coverage": "partial",
+      "notes": [
+        "Original NASA visualization geometry; nominal scale/orientation only. Directions and times remain JPL-derived."
+      ]
+    }
+  ]
+}

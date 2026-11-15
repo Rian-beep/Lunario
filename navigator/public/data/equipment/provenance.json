@@ -1,0 +1,24 @@
+{
+  "id": "apollo-lunar-module",
+  "title": "Apollo Lunar Module",
+  "credit": "NASA/Michael D. Carbajal",
+  "sourcePage": "https://science.nasa.gov/3d-resources/apollo-lunar-module/",
+  "sourceRepository": "https://github.com/nasa/NASA-3D-Resources",
+  "sourceRevision": "4dd37a50fdf79beadf7b2e3a407cedc63fda81de",
+  "sourceDownload": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/4dd37a50fdf79beadf7b2e3a407cedc63fda81de/3D%20Models/Apollo%20Lunar%20Module/Apollo%20Lunar%20Module.glb",
+  "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e",
+  "bytes": 716840,
+  "geometryConversion": "None. Original GLB is retained byte for byte. Runtime applies uniform display normalization and translation.",
+  "orientation": "glTF 2.0 Y-up; no attitude inferred. Ground contact is the mesh lower Y bound.",
+  "units": "Source has no explicit physical dimensional provenance beyond glTF convention. Runtime normalizes total height to nominal 7 metres; not engineering CAD or clearance evidence. Runtime world uses kilometres.",
+  "licenseStatement": "NASA source repository describes assets as free and without copyright; NASA media-use guidelines apply. Do not imply NASA endorsement.",
+  "usageGuidelines": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "decoder": {
+    "source": "three@0.187.0/examples/jsm/libs/draco/gltf/draco_decoder.js",
+    "upstream": "https://github.com/google/draco",
+    "license": "Apache-2.0; accompanying draco/LICENSE",
+    "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f",
+    "bytes": 512465
+  },
+  "rover": "Not included: no bounded official NASA Apollo lunar rover GLB located in the checked NASA 3D Resources collection. No Mars rover substitution."
+}

@@ -1,0 +1,27 @@
+{
+  "stoppedOwnedPids": [
+    42608,
+    46681,
+    48806
+  ],
+  "removed": [
+    {
+      "path": "/Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator/.next-lunar-window-c9",
+      "bytes": 251105902
+    },
+    {
+      "path": "/Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator/.next-lunar-window-c10",
+      "bytes": 246824590
+    },
+    {
+      "path": "/Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator/.next-lunar-window-c11",
+      "bytes": 247142159
+    },
+    {
+      "path": "/Users/lukedudley/Documents/ChatGPT/COMPUTER OPS/solarreach-navigator/.next-lunar-window-c12",
+      "bytes": 247157899
+    }
+  ],
+  "retainedBuild": ".next-lunar-window-c13",
+  "retainedPreview": "http://127.0.0.1:4317/"
+}

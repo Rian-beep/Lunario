@@ -1,0 +1,58 @@
+# A two-week delay changes the resource plan
+
+Use this demonstration to answer: **with the same hardware and two-week stay, what changes when arrival moves by two weeks, and which tested site restores the modeled energy requirements?** The restored case is **conditional**, not operationally approved. It still has a 168 h geometric Earth outage and no configured outage or radio-margin requirement.
+
+The reproducible fixture is `public/data/planning-demo.json`. It contains four complete canonical input states and their actual assessments from `evaluateScenario`, with source SHA-256 hashes, scenario keys and `planning-4` model identity. This dedicated demonstration record is not a decision-package import file. The parent app can load `cases.find(c => c.role === role).state`; roles are `baseline`, `delayed`, `alternative`, `unknown-historical`. Full hourly terrain and smooth-reference results are retained. No percentages or event times were invented for this story.
+
+## Walk through the decision
+
+1. In Planner, use **Explore a real delay contingency** when that demonstration action is available. Otherwise select **Connecting Ridge**, arrival **2027-06-29 11:00 UTC**, duration **14 days**, and the exact assumptions below. The interval ends **2027-07-13 11:00 UTC exclusive**. Save this scenario. The shared mission assessment is **conditional**: zero unserved demand and a positive stored-energy reserve margin, with unresolved terrain/frame evidence. Minimum modeled stored energy is approximately 7382 Wh; reserve margin is approximately 5382 Wh.
+2. Keep hardware, requirements and stay length fixed. Move arrival to **2027-07-13 11:00 UTC**; the stay ends **2027-07-27 11:00 UTC exclusive**. Save the delayed scenario. It **fails-assessed**. Open **Assessed requirements & margins** and inspect the first known violation: reserve crossing bracket **2027-07-14 18:00–19:00 UTC**, with model-estimated offset **approximately 31.18 h** from arrival. This hourly bracket and estimated offset are different claims. The full stay accumulates **approximately 52.10 kWh** of unserved demand. These are modeled requirements failures, not a claim that an actual vehicle failed.
+3. Keep those delayed dates and the same hardware. Change only the site to **de Gerlache–Shackleton ridge** (`degerlache-shackleton`). Save the alternative, set **Reference scenario** to the delayed arrival in **Saved scenarios**, and compare its exact input differences with the delayed case: only `siteId` changes. It returns to **conditional**, with zero unserved demand, minimum stored energy **approximately 5947 Wh** and reserve margin **approximately 3947 Wh**. It meets the assessed energy requirements under the prepared model; it does not resolve communications or landing readiness.
+4. Open **Horizon analysis**. Compare the Sun and Earth against prepared terrain and the smooth reference. The site/date combination changes how the low polar Sun crosses the sampled local horizon. Do not identify a named occluding ridge unless retained ray-march provenance actually supports that name. Named masks have 1° azimuth samples, not continuous measured horizons. To return to mission controls, click **Planner** and dismiss its guide with **Open mission workspace**. The alternative has **56.0% terrain-only Earth visibility** but **50.0% antenna contact** under its active 0° minimum elevation. Contact opens at the 20 July 11:00 UTC sample, bracketed by 10:00–11:00 UTC. A depressed terrain horizon does not remove the antenna cutoff.
+5. Use **Find whole-mission arrival windows**, or **Compare scenarios → Mission calendar**, to test explicit nearby arrival dates under the same whole-mission requirements. Keep the stay length and assumptions fixed. The calendar can report conditional, incomplete and failed outcomes; a bright instant or coarse sunlight percentage does not establish a passing whole stay.
+6. Close the comparison sheet using its **Close comparisons** control, then expand **Sensitivity & tested alternatives**. A useful controlled test varies battery capacity over explicit values while holding other fields fixed. Inspect exact outcomes, reserve margins and blackout duration; counts across tested cases are not probabilities. A larger battery does not cure an Earth outage, and a sparse sweep cannot establish a minimum required capacity.
+7. Switch to Educator while keeping the same scenario. Use the saved prediction/capture/change/explain notebook; the independent array/antenna-height lessons preserve the other subsystem's height. The outage-order table is explicitly synthetic and is separate from this real catalog demonstration. Switch to Public to explain the selected moment versus the selected stay. Audience changes must preserve the scenario input identity.
+8. Open the `unknown-historical` fixture or select **Apollo 11 — Tranquility Base** on the baseline dates. It is **incomplete**: terrain generation, storage result and geometric terrain contact are unknown because no local horizon mask is prepared. Smooth-sphere geometry remains context. A historical landing coordinate does not supply missing terrain evidence; unknown is not zero or pass. These are catalog-epoch calculations, not a reconstruction of the 1969 mission.
+9. Use the decision-package export controls for the selected scenario. Inspect source identities, inputs, differences, assumptions, constraints, event bracket and terrain/smooth results. Reimport that exported decision package, not `planning-demo.json`; the app must recompute it from current inputs/evidence and explain changed source/model identity instead of trusting imported historical metrics. Keep exported copies for review.
+
+The rounded display may shorten the values above; the fixture retains full computed precision. Float output is not a claim of matching physical accuracy. For each case, use the stored `scenarioKey` as the exact comparison identity.
+
+## Exact assumptions shared by the three resource cases
+
+All use the unmodified `DEFAULT_MISSION`: 4 m² array, efficiency 0.3, loss fraction 0.15, assumed solar flux 1361 W/m², ideal tracking (captured fixed tilt 90° and azimuth 0° are inactive), constant 250 W demand, 10000 Wh usable storage, initial state of charge 1, reserve fraction 0.2, charge/discharge efficiencies 0.95, antenna extra mask 0°. Array and antenna prepared heights are independently 2 m; display height is 2 m.
+
+Resource-screening requirements demand zero unserved electrical demand and stored-energy reserve. There is **no** geometric outage limit, assumed radio-margin limit, critical contact window, external-report requirement or extra screen. Deployment delay is 0 h; charge/discharge bus caps are null, meaning an explicitly unlimited model assumption; no additional load segments exist. These omissions materially limit the verdict. All flight-preview defaults are preserved in each state, but the preview does not certify trajectory access, landing dynamics or ground clearance.
+
+The demonstration search first tests the catalog's existing 14-day demo start, default hardware and explicit delays of 1/3/7/14 days, then other prepared polar study sites. The successful set used unchanged defaults and **26** total evaluations including recorded cases, well below the hard **1000**-evaluation bound. Fallback load/capacity choices are explicit in the generator but were not needed. The generator fails without replacing the fixture if no real bounded example is found.
+
+## Evidence and limits to explain aloud
+
+- JPL Horizons supplies the prepared Sun/Earth geometry. Hourly coverage is **2026-01-01 through 2028-01-01 exclusive**; the final epoch is a boundary, not another hour.
+- NASA Goddard LOLA source rasters prepare terrain masks (40 m fine / 240 m fallback). Named masks sample azimuth at 1°; custom points borrow a 3° mask at 2 m only. Display terrain cutouts and mesh spacing are separate. Uniform disk fraction above a local sampled horizon is not full terrain-disk integration.
+- Moon Trek serves the bundled LROC imagery and optional detail. Acquisition shadows are historical, not selected-date illumination. QuickMap is an independent reference viewer, not an API queried by this app. CSA links supply learning context, not numerical model inputs.
+- The original NASA globe has unitless relief at nominal scale, with documented polar artifacts; it is not measured local terrain. Published polar study pins are not a claim of current NASA mission approval.
+- DE421 MOON_ME versus the catalog's Horizons orientation equivalence, DEM effective error/resolution propagation and event uncertainty remain unresolved. This is why the restored energy result remains conditional.
+- Unassessed landing considerations include terrain footprint, touchdown dynamics, trajectory access, ground support, thermal survival, plume/ejecta, traverse/return, science access, radiation/contingency and heritage coordination. No landing-readiness approval follows from resource screening.
+
+## Reproduce and review
+
+```sh
+node --import tsx scripts/prepare-planning-demo.mts
+node --import tsx --test tests/planning-demo.test.ts
+npx tsc --noEmit
+```
+
+The generator uses the same runtime historical-site augmentation as the app, not just the nine prepared polar pins. Tests hash all recorded input sources, recompute every complete assessment, verify exact keys and exclusive dates, preserve 336 h stays/hardware, enforce date-only then site-only differences, and prove historical missing terrain remains incomplete with a smooth reference. Regenerate after any catalog, source augmentation, evidence or model change; stale fixture tests deliberately fail.
+
+Cold-review acceptance still requires a nonauthor to follow this guide in the rebuilt app and explain both why the tested alternative is preferred for energy and what remains unknown. That UI walkthrough, final artifact packaging and submission links are parent-owned gates; they are not claimed by generating this file. No repository visibility or publication change is requested by this demonstration.
+
+Fresh fixture validation: three tests passed locally; generator rerun produced byte-identical JSON (SHA-256 `2d5ef175ecdf29c7c73bb7fb7d1b95c07bc0bee56348c1755c200efdb05b2459`). Full typecheck at checkpoint `90129a1` reports the missing `conditional` display mapping in existing `components/workbench/alternatives.tsx`; the exact archived checkpoint and this demo worktree produce byte-identical diagnostics. This is not a clean full-project typecheck; parent integration owns that mapping fix.
+
+The same three fixture tests also passed on Clevo in isolated remote Node validation using existing dependencies. No remote Sol authorship, browser walkthrough or public publication is implied.
+
+For the historical unknown-evidence comparison, explicitly choose **Prepared horizons only**. Coarse global context can now calculate preliminary resource results at historical coordinates; it does not provide fine landing evidence. Older saved records retain their prepared-only semantics.
+
+## Integrated release validation
+
+The historical checkpoint diagnostic above was resolved during integration; the current combined source passes all589 tests, TypeScript and lint. The final R7 offline app passes nine planning workflows; web/offline contact checks pass six each. A non-author agent followed the demo and recorded the original contact-label mismatch plus its verified resolution in `qa/planning/cold-demo-final.md`. This is agent/browser evidence, not human usability or screen-reader acceptance. Teammate hosting and submission links remain outside this workstream.
