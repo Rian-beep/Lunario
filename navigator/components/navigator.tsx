@@ -550,10 +550,8 @@ export function Navigator() {
     setPanel(p);
     setRightOpen(true);
     if (p === "flight") {
-      setAudienceContextCollapsed(true);
       setView("terrain");
-      setPlaying(false);
-      setLeftOpen(false);
+      requestAssetFocus('lander');
     }
   }
   function requestAssetFocus(next:AssetFocus){

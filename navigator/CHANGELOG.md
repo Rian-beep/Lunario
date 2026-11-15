@@ -99,3 +99,4 @@ Public guidance now explains why sunlight, battery storage and a clear Earth vie
 - Reach north/south poles and east/west rotation directly. Visible lunar landmark labels and a geographic readout restore orientation in both globe and orbit views.
 - Zoom into covered points using measured DEM relief and finer mesh sampling. Stable polar texture projection removes close-up quantization; ground-level views hide the oversized site annotation ring. Source resolution remains explicit.
 - Read circular information buttons and charts whose text, markers and icons retain their proportions in wide workspaces.
+- Open Flight preview from Public’s inspector with the lander already in focus; an early Follow click completes the approach instead of keeping a distant intermediate camera position.

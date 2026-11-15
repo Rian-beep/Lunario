@@ -857,6 +857,7 @@ export function mountScene(
     if (!navigating && !missingRange && (settings.mode !== lastMode || settings.reset !== lastReset || missingFocusRange)) {
       const fromCamera=camera.position.clone(),fromTarget=controls.target.clone(),fromUp=camera.up.clone();
       const sourceCentre=earth.visible&&camera.position.distanceTo(earth.position)<camera.position.distanceTo(moonCentre)?earth.position.clone():sun.visible&&camera.position.distanceTo(sun.position)<camera.position.distanceTo(moonCentre)?sun.position.clone():moonCentre.clone();
+      const focusWasMoving=assetMotion!==null;
       assetMotion=null;focusedAnchor=null;geographicMotion=null;
       controls.enabled = true;
       allowFullPolarOrbit(controls);
@@ -887,7 +888,7 @@ export function mountScene(
         camera.position.copy(currentPoint).add(localDirection(followOffset,visualFrame));
         followPosition = currentPoint.clone();
       } else followPosition = null;
-      const trackingTransfer = lastMode !== settings.mode &&
+      const trackingTransfer = !focusWasMoving && lastMode !== settings.mode &&
         (lastMode === 'vehicle' || lastMode === 'follow') &&
         (settings.mode === 'vehicle' || settings.mode === 'follow');
       if (trackingTransfer) {

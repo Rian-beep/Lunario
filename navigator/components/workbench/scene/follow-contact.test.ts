@@ -151,3 +151,14 @@ test('render telemetry uses current COM/sample state, leaves collective breakup 
   for(const key of ['vehicleWorldPosition','vehicleQuaternion','landingContact','landingDynamics','landingMassKg','terrainClearanceM','landingContactTimeS','landingContactFrameIndex','landingContactFrameTimeS']) assert.equal(host.dataset[key],'',key);
   assert.equal(host.dataset.vehicleVisible,'false');assert.equal(host.dataset.landingFragmentCount,'0');
 });
+
+// Retargeting before focus finishes must complete the approach, not retain a distant offset.
+test('Follow preserves only settled local camera offsets',()=>{
+  const expression=source.match(/const trackingTransfer = ([\s\S]*?);/)?.[1];
+  assert.ok(expression);
+  const transfer=new Function('lastMode','settings','focusWasMoving',`return ${expression}`);
+  assert.equal(transfer('vehicle',{mode:'follow'},false),true);
+  assert.equal(transfer('vehicle',{mode:'follow'},true),false);
+  assert.equal(transfer('globe',{mode:'follow'},false),false);
+  assert.equal(transfer('follow',{mode:'vehicle'},false),true);
+});
