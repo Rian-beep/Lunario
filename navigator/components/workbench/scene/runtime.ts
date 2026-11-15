@@ -21,7 +21,7 @@ import {allowFullPolarOrbit,globeMinimumRadiusKm,outsideSphere} from "./camera-l
 import { horizonSegments } from "./flight-visuals";
 import { createSurfaceMaterial } from "./material";
 import { LunarTerrain } from "./lunar-terrain.js";
-import { insideSouthPoleDetail, sceneToTerrainRotation, southPoleManifestUrl, southPoleTerrainMatrix } from "./south-pole-detail";
+import { wantsSouthPoleDetail, sceneToTerrainRotation, southPoleManifestUrl, southPoleTerrainMatrix } from "./south-pole-detail";
 import { createLander } from "./vehicle";
 import {prepareTouchdownFragments, type PreparedTouchdownFragments} from "@/lib/touchdown-fragments";
 import type {LandingConfiguration, LandingDynamicsReadout} from "@/lib/landing-contract";
@@ -76,6 +76,7 @@ export function mountScene(
   onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>})=>void=()=>{},
   onStation:(id:string|null)=>void=()=>{},
   onVehicleFocus:()=>void=()=>{},
+  onDetailStatus:(status:string)=>void=()=>{},
 ) {
   host.dataset.sceneInstance = crypto.randomUUID();
   host.dataset.flightRevision = "0";
@@ -127,6 +128,7 @@ export function mountScene(
     transferredGlobe=null;
     cancelAnimationFrame(animationFrame);
     disposeObserver?.(); disposeControls?.();
+    disposeSouthPole?.();
     const geometries = new Set<T.BufferGeometry>(), materials = new Set<T.Material>(), textures = new Set<T.Texture>();
     scene.traverse((object) => {
       if (object instanceof T.Mesh || object instanceof T.Line || object instanceof T.Sprite || object instanceof T.Points) {
@@ -142,7 +144,6 @@ export function mountScene(
     textures.forEach((texture) => texture.dispose());
     materials.forEach((material) => material.dispose());
     disposeSurfaceMaterial?.();
-    disposeSouthPole?.();
     releaseRenderer(renderer,disposeListeners);
     renderer.domElement.remove();
   };
@@ -178,33 +179,48 @@ export function mountScene(
   const southPoleMatrix = southPoleTerrainMatrix(frame);
   const southPoleProxy = new T.PerspectiveCamera(43, 1, 0.0005, 18000);
   let southPoleTerrain: InstanceType<typeof LunarTerrain> | null = null;
-  try {
-    southPoleTerrain = new LunarTerrain(scene, {
-      renderer,
-      quality: "balanced",
-      manifestUrl: southPoleManifestUrl(),
-      viewportHeight: () => renderer.domElement.height,
-    });
-    southPoleTerrain.setMode("surface");
-    southPoleTerrain.setStyle("studio");
-    southPoleTerrain.setSun(225, 28);
-    southPoleTerrain.setExaggeration(1);
-    southPoleTerrain.group.matrixAutoUpdate = false;
-    southPoleTerrain.group.matrix.copy(southPoleMatrix);
-    southPoleTerrain.group.updateMatrixWorld(true);
-    southPoleTerrain.uniforms.sceneToTerrain.value.copy(sceneToTerrainRotation(southPoleMatrix));
-    southPoleTerrain.group.visible = false;
-    disposeSouthPole = () => southPoleTerrain?.dispose();
-    void southPoleTerrain.init().catch((error) => {
-      if (!disposed) {
-        host.dataset.southPoleDetail = "unavailable";
+  let southPoleRequested = false;
+  let southPoleFailure = false;
+  let previousDetailStatus = '';
+  let lastDetailReport = -Infinity;
+  const detailStatus = (message:string) => {
+    if (disposed || message === previousDetailStatus) return;
+    previousDetailStatus=message;onDetailStatus(message);
+  };
+  const requestSouthPole = () => {
+    const manifestUrl=southPoleManifestUrl(!!getLive().offline);
+    if (disposed || southPoleRequested || !manifestUrl) return;
+    southPoleRequested=true;
+    host.dataset.southPoleDetail='loading';
+    detailStatus('Loading measured visual relief; canonical terrain remains visible.');
+    try {
+      southPoleTerrain = new LunarTerrain(scene, {
+        renderer, quality: "balanced", manifestUrl,
+        viewportHeight: () => renderer.domElement.height,
+      });
+      southPoleTerrain.setMode("surface");
+      southPoleTerrain.group.matrixAutoUpdate = false;
+      southPoleTerrain.group.matrix.copy(southPoleMatrix);
+      southPoleTerrain.group.updateMatrixWorld(true);
+      southPoleTerrain.uniforms.sceneToTerrain.value.copy(sceneToTerrainRotation(southPoleMatrix));
+      southPoleTerrain.group.visible = false;
+      disposeSouthPole = () => southPoleTerrain?.dispose();
+      void southPoleTerrain.init().catch((error) => {
+        if (disposed) return;
+        southPoleFailure=true;
+        // Release partial loads too; retrying 3D creates a fresh demand loader.
+        southPoleTerrain?.dispose();
+        host.dataset.southPoleDetail="unavailable";
+        detailStatus('Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.');
         console.error("South pole detail terrain failed", error);
-      }
-    });
-  } catch (error) {
-    host.dataset.southPoleDetail = "unavailable";
-    console.error("South pole detail terrain failed", error);
-  }
+      });
+    } catch (error) {
+      southPoleFailure=true;southPoleTerrain?.dispose();
+      host.dataset.southPoleDetail="unavailable";
+      detailStatus('Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.');
+      console.error("South pole detail terrain failed", error);
+    }
+  };
   // The small fill makes the educational view usable on the night side.
   // It is disclosed as display fill and never changes computed visibility.
   const fill = new T.AmbientLight(0xe2e7ee, 0.18);
@@ -827,10 +843,10 @@ export function mountScene(
     const navigating=sample!==null||awaitingHandoff;
     if(!nasaRequested){
       nasaRequested=true;host.dataset.moonModel='loading';onModelStatus('Loading NASA’s original topographic Moon…');
-      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal,{device:visualMoonDevice(renderer.capabilities.maxTextureSize,renderer.capabilities.getMaxAnisotropy(),(navigator as Navigator&{deviceMemory?:number}).deviceMemory,!!initial.offline),prepareTexture:texture=>renderer.initTexture(texture)}).then(result=>{
+      createNasaGlobe(initial.lat,initial.lon,frame.referenceRadiusM/1000,globeAbort.signal,{device:visualMoonDevice(renderer.capabilities.maxTextureSize,renderer.capabilities.getMaxAnisotropy(),(navigator as Navigator&{deviceMemory?:number}).deviceMemory,!!initial.offline),prepareTexture:texture=>{if(!disposed&&!globeAbort.signal.aborted)renderer.initTexture(texture);}}).then(result=>{
         if(disposed){result.dispose();return;}
         nasaGlobe=result;scene.add(result.mesh);if(result.mesh.material.map)renderer.initTexture(result.mesh.material.map);host.dataset.moonModel='ready';onModelStatus(`NASA LRO · ${result.visualStatus.colour} colour · ${result.visualStatus.relief} relief · progressive device-bounded texture${result.visualStatus.warnings.length?' · '+result.visualStatus.warnings.join('; '):''}`);
-      }).catch(error=>{if(!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
+      }).catch(error=>{if(!disposed&&!globeAbort.signal.aborted){host.dataset.moonModel='error';console.error('NASA Moon model loading failed',error);onModelStatus('NASA model unavailable. Local terrain remains usable; retry 3D to reload.');}});
     }
     if(nasaGlobe?.visualStatus){host.dataset.moonColour=nasaGlobe.visualStatus.colour;host.dataset.moonTextureWidth=String(nasaGlobe.visualStatus.width);host.dataset.moonRelief=nasaGlobe.visualStatus.relief;host.dataset.moonVisualWarnings=nasaGlobe.visualStatus.warnings.join("; ");}
     if(poiSites!==live.sites)updatePois(live);
@@ -861,9 +877,10 @@ export function mountScene(
     const globalSurface=(settings.mode==='globe'&&!detail.measuredCloseView)||sceneToBody(camera.position).length()>1850;
     const targetGeography=cameraBodyGeography(tuple(sceneToBody(controls.target)));
     const targetDistanceKm=camera.position.distanceTo(controls.target);
-    const southClose=!globalSurface&&!navigating&&!!targetGeography&&insideSouthPoleDetail(targetGeography.latDeg,targetGeography.lonDeg)&&targetDistanceKm<80&&settings.mode!=='earth'&&settings.mode!=='sun';
+    const southClose=settings.mode===lastMode&&settings.reset===lastReset&&!assetMotion&&wantsSouthPoleDetail({offline:!!live.offline,showFlight:!!live.showFlight,globalSurface,navigating,geography:targetGeography,distanceKm:targetDistanceKm,mode:settings.mode});
+    if(southClose)requestSouthPole();
     const showSouthPoleDetail=southClose&&!!southPoleTerrain?.ready;
-    const showIon=useIon&&!showSouthPoleDetail;
+    const showIon=useIon&&!live.showFlight&&!showSouthPoleDetail;
     if(ionMoon){ionMoon.group.visible=showIon;if(showIon)ionMoon.update();}
     const streamedSurface=showIon&&ionMoon?.ready===true;
     ground.visible=!streamedSurface&&!showSouthPoleDetail&&(!globalSurface||!nasaGlobe);
@@ -879,12 +896,35 @@ export function mountScene(
         southPoleProxy.matrix.copy(inverse).multiply(camera.matrixWorld);
         southPoleProxy.matrix.decompose(southPoleProxy.position,southPoleProxy.quaternion,southPoleProxy.scale);
         southPoleProxy.updateMatrixWorld(true);
-        southPoleTerrain.update(southPoleProxy,controls.target.clone().applyMatrix4(inverse));
-        const detailStatus=southPoleTerrain.status as {datasetName?: string};
-        host.dataset.southPoleDetail=detailStatus.datasetName??'measured';
-      }else host.dataset.southPoleDetail=southClose?'loading':'hidden';
+        southPoleTerrain.setStyle(settings.inspection?'studio':'lunar');
+        // liveSky already rotates the live site's ENU direction into this mounted scene.
+        const terrainSun=liveSky(live,live.pose.sunAz,live.pose.sunEl).applyMatrix3(sceneToTerrainRotation(southPoleMatrix));
+        if(settings.inspection)southPoleTerrain.setSun(225,28);
+        else southPoleTerrain.setSunDirection(terrainSun);
+        const terrainTarget=controls.target.clone().applyMatrix4(inverse);
+        southPoleTerrain.update(southPoleProxy,terrainTarget);
+        host.dataset.southPoleLighting=settings.inspection?'studio':'epoch';
+        host.dataset.southPoleSunDirection=southPoleTerrain.uniforms.sunDirection.value.toArray().join(',');
+        if(now-lastDetailReport>300){
+          lastDetailReport=now;
+          const point=southPoleTerrain.fromWorld(terrainTarget),sample=southPoleTerrain.getElevation(point.x,point.y);
+          const failures=southPoleTerrain.datasets.filter(d=>d.failed).map(d=>d.name);
+          const loading=southPoleTerrain.datasets.filter(d=>!d.loaded&&!d.failed).length;
+          const source=sample?`Effective source: ${sample.effectiveSource}. Display elevation ${sample.elevation.toFixed(3)} m at polar x ${point.x.toFixed(0)}, y ${point.y.toFixed(0)} m. Contributors: ${sample.contributors.map((c:{datasetName:string;weight:number;elevation:number;spacing:number;nativeSpacing:number})=>`${c.datasetName}: ${(100*c.weight).toFixed(2)}%, ${c.elevation.toFixed(3)} m; grid ${c.spacing} m, native ${c.nativeSpacing} m`).join(' / ')}.`:'No measured sample at the camera target; reference geometry only.';
+          detailStatus(`${source} ${failures.length?`Unavailable layers: ${failures.join(', ')}; showing available source fallback. `:''}${loading?'Finer coverage loads only where demanded. ':''}${settings.inspection?'Studio inspection light (fixed illustrative direction).':'Illustrative epoch light follows the live Sun.'}`);
+        }
+        const terrainStatus=southPoleTerrain.status as {datasetName?: string};
+        host.dataset.southPoleDetail=terrainStatus.datasetName??'measured';
+      }else host.dataset.southPoleDetail=southPoleFailure?'unavailable':southClose?'loading':'hidden';
     }
-    ground.receiveShadow=!southClose;
+    if(!showSouthPoleDetail){
+      if(live.offline || !southPoleManifestUrl(!!live.offline))detailStatus('Offline: embedded canonical terrain retained; visual detail grids are not embedded and are not requested.');
+      else if(live.showFlight)detailStatus('Flight/contact view: canonical numerical terrain retained; visual detail is not registered to this ground.');
+      else if(southClose)detailStatus(southPoleFailure?'Visual detail unavailable; canonical terrain remains visible. Retry 3D to reload.':'Loading measured visual relief; canonical terrain remains visible.');
+      else detailStatus('Canonical terrain context. Measured visual detail loads only during close south-polar inspection.');
+    }
+    host.dataset.groundSurface=showSouthPoleDetail?'visual-detail':streamedSurface?'streamed':globalSurface&&nasaGlobe?'nasa-globe':'canonical';
+    ground.receiveShadow=!showSouthPoleDetail;
     path.visible=travelled.visible=groundTrack.visible=pathVectors.length>1&&!['globe','earth','sun'].includes(settings.mode)&&!navigating;
     let vehicleMassKg: number | null = null;
     if (flightPoints.length) {
@@ -1096,7 +1136,7 @@ export function mountScene(
     if (radial.length()<2500 && radial.length() < minRadius) camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));
     if(!navigating&&!geographicMotion&&!assetMotion&&!tileMotion)controls.update();
     // Wheel/pinch control updates must also respect the actual physical sphere.
-    if(!navigating&&!assetMotion&&settings.mode==='globe') { camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));camera.lookAt(controls.target); }
+    if(!navigating&&!assetMotion&&settings.mode==='globe'&&minRadius>0) { camera.position.fromArray(outsideSphere(camera.position.toArray(),centre.toArray(),minRadius));camera.lookAt(controls.target); }
     host.dataset.globeMinimumRadiusKm=String(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770));
     host.dataset.zoomEnabled=String(controls.enableZoom);host.dataset.panEnabled=String(controls.enablePan);host.dataset.rotateEnabled=String(controls.enableRotate);
     lander.position.copy(modelOrigin);
@@ -1143,7 +1183,7 @@ export function mountScene(
     horizon.visible = settings.horizon && settings.mode === "surface"&&!navigating;
     const liveFrame=siteFrame(live.lat,live.lon,0);
     const sunDir = liveSky(live,live.pose.sunAz, live.pose.sunEl);
-    fill.intensity = settings.inspection || southClose ? 1.15 : 0.18;
+    fill.intensity = settings.inspection ? 1.15 : 0.18;
     host.dataset.lunarAppearance='neutral-linear-rec709-v1';
     host.dataset.lightingMode=settings.inspection?'atlas':'epoch';
     surfaceMaterial.setAtlasAppearance(settings.inspection);

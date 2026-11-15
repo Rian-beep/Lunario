@@ -8,17 +8,17 @@ import {existsSync,readFileSync} from 'node:fs';
 
 const fixture={datasets:[{id:'small',width:2,height:2,xMin:0,yMax:1,spacing:1,file:'grid.bin',scale:.5}]};
 
-test('incoming URL reproducer: hosted subpath escapes its base and file mode needs external files',()=>{
+test('detail manifest fallback stays root-relative without a hosted base and file mode needs no external files',()=>{
  const descriptor=Object.getOwnPropertyDescriptor(globalThis,'location');
  try{
   Object.defineProperty(globalThis,'location',{configurable:true,value:new URL('https://fixture.invalid/lunario/index.html')});
   assert.equal(new URL(southPoleManifestUrl(),location.href).pathname,'/data/south-pole-detail/manifest.json');
   Object.defineProperty(globalThis,'location',{configurable:true,value:new URL('file:///tmp/solarreach-navigator.html')});
-  assert.equal(southPoleManifestUrl(),'file:///tmp/data/south-pole-detail/manifest.json');
+  assert.equal(southPoleManifestUrl(),'');
  }finally{if(descriptor)Object.defineProperty(globalThis,'location',descriptor);else Reflect.deleteProperty(globalThis,'location');}
 });
 
-test('incoming late-completion reproducer: disposed terrain reacquires a height texture',async()=>{
+test('late data completion cannot reacquire a texture or publish status after disposal',async()=>{
  const nativeFetch=globalThis.fetch,descriptor=Object.getOwnPropertyDescriptor(globalThis,'location');
  let finish!:(buffer:ArrayBuffer)=>void;
  const events:unknown[]=[];
@@ -29,9 +29,9 @@ test('incoming late-completion reproducer: disposed terrain reacquires a height 
   const pending=terrain.init();await setImmediate();assert.ok(finish);
   terrain.dispose();const count=events.length;finish(new Int16Array([100,100,100,100]).buffer);await pending;
   assert.equal(terrain.ready,false);
-  assert.equal(terrain.datasets[0].loaded,true,'observed defect: load continuation marks disposed data loaded');
-  assert.ok(terrain.datasets[0].heightTexture,'observed defect: texture created after dispose');
-  assert.ok(events.length>count,'observed defect: status callback runs after dispose');
+  assert.equal(terrain.datasets[0].loaded,false,'disposed data stays unloaded');
+  assert.equal(terrain.datasets[0].heightTexture,undefined,'no texture is created after disposal');
+  assert.equal(events.length,count,'no status callback runs after disposal');
  }finally{terrain.datasets[0]?.heightTexture?.dispose();globalThis.fetch=nativeFetch;if(descriptor)Object.defineProperty(globalThis,'location',descriptor);else Reflect.deleteProperty(globalThis,'location');}
 });
 

@@ -1,6 +1,7 @@
 import * as T from "three";
 import { latLonToProjected } from "@/lib/astro";
 import { bodyToScene, siteFrame, type SiteFrame } from "./surface";
+import { publicAssetURL } from "@/lib/public-assets";
 
 /** Half-width of the bundled 150 m polar overview, in stereographic metres. */
 const OVERVIEW_HALF_M = 153_600;
@@ -32,18 +33,21 @@ export function sceneToTerrainRotation(matrix: T.Matrix4) {
   return new T.Matrix3().setFromMatrix4(matrix).invert();
 }
 
-const SOUTH_POLE_MANIFEST = "/data/south-pole-detail/manifest.json";
+/** Empty URL offline: detail grids are not embedded; keep canonical embedded terrain. */
+export function southPoleManifestUrl(offline = false) {
+  if (offline || (typeof location !== "undefined" && location.protocol === "file:")) return "";
+  const resolve = globalThis.__LUNARIO_PUBLIC_ASSET_URL__;
+  return typeof resolve === "function" ? resolve("/data/south-pole-detail/manifest.json") : publicAssetURL("/data/south-pole-detail/manifest.json");
+}
 
-/**
- * Manifest URL for the hosted Pages app, the offline HTML file, and Next.
- * The dashboard loads `web/index.html`, which resolves public files through
- * `__LUNARIO_PUBLIC_ASSET_URL__` into `navigator/public/`.
- */
-export function southPoleManifestUrl() {
-  const resolve = (globalThis as { __LUNARIO_PUBLIC_ASSET_URL__?: (path: string) => string }).__LUNARIO_PUBLIC_ASSET_URL__;
-  if (typeof resolve === "function") return resolve(SOUTH_POLE_MANIFEST);
-  if (typeof location !== "undefined" && /solarreach-navigator\.html$/.test(location.pathname)) {
-    return new URL("data/south-pole-detail/manifest.json", location.href).href;
-  }
-  return SOUTH_POLE_MANIFEST;
+export function wantsSouthPoleDetail(options: {
+  offline: boolean; showFlight: boolean; globalSurface: boolean; navigating: boolean;
+  geography: {latDeg: number; lonDeg: number} | null; distanceKm: number; mode: string;
+}) {
+  const {offline, showFlight, globalSurface, navigating, geography, distanceKm, mode} = options;
+  // Visual detail is not registered to the numerical flight/contact terrain.
+  return !offline && !showFlight && !globalSurface && !navigating &&
+    ["orbit", "surface", "globe"].includes(mode) && Number.isFinite(distanceKm) && distanceKm < 80 &&
+    !!geography && insideSouthPoleDetail(geography.latDeg, geography.lonDeg);
+
 }
