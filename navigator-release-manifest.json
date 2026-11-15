@@ -928,6 +928,11 @@
       "sha256": "96c4c46ab8625681a281ee08e4547e3bb668fa3e98233507de9686d9a0428df9"
     },
     {
+      "path": "docs/qa/audit-replay-release/release-gates.json",
+      "bytes": 886,
+      "sha256": "322289bfd63c0ee98d4e7178a6a0b73bd8ca365ec3a81ca339eb0382576c644e"
+    },
+    {
       "path": "docs/qa/audit-replay-release/transfers.json",
       "bytes": 39113,
       "sha256": "8ba2e30cc3c0031071e1f60ac367ca6a05a0886bbb7ae9258318af3bca2ba654"
