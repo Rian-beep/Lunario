@@ -20,7 +20,7 @@ try{for(const transport of options.mode==='both'?['web','file']:[options.mode]){
  if(process.env.LUNARIO_NO_SCHEDULER)await context.addInitScript(()=>{Object.defineProperty(window,'scheduler',{value:undefined,configurable:true});});
  if(transport==='file')await context.setOffline(true);
  await context.addInitScript(()=>{window.__publicLoaderProbe={seen:false,overlap:false};const observer=new MutationObserver(()=>{const loader=document.querySelector('.lunario-loader');if(loader&&loader.getClientRects().length){window.__publicLoaderProbe.seen=true;if(document.querySelector('dialog[open]'))window.__publicLoaderProbe.overlap=true;}});observer.observe(document,{childList:true,subtree:true,attributes:true});});
- const page=await context.newPage();
+ const page=await context.newPage();page.setDefaultTimeout(30000);
  const cpuThrottle=Number(process.env.LUNARIO_CPU_THROTTLE??1);assert.ok(Number.isFinite(cpuThrottle)&&cpuThrottle>=1&&cpuThrottle<=20);if(cpuThrottle>1){const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpuThrottle});}c.cpuThrottle=cpuThrottle;
  page.on('pageerror',e=>c.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')c.consoleErrors.push(m.text());});page.on('requestfailed',r=>c.failedRequests.push(r.url()));page.on('request',r=>{if(/^https?:/.test(r.url()))c.httpRequests.push(r.url());});
  const b=n=>page.getByRole('button',{name:n,exact:true}),scene=()=>page.locator('.scene-host').evaluate(h=>({...h.dataset}));
@@ -58,13 +58,14 @@ try{for(const transport of options.mode==='both'?['web','file']:[options.mode]){
    const fields=[['Start altitude','350'],['Horizontal speed','20'],['Vertical speed','-12'],['Heading, from north','180'],['Wet mass','5000'],['Dry mass','2300'],['Thrust','4000'],['Specific impulse','250'],['Burn duration','5'],['Preview duration','1'],['Start east offset','-450'],['Start north offset','100'],['Target radius','1'],['Maximum vertical contact speed','.1'],['Maximum horizontal contact speed','.1'],['Maximum contact tilt','.1'],['Breakup energy threshold','1'],['Contact friction','.5'],['Contact restitution','.7'],['Contact continuation','20'],['Initial pitch','75'],['Final burn pitch','65']];
    const evidence=[];
    for(const [label,newValue] of fields){
+    c.variableProgress={label,stage:"load reference"};console.log(`${transport} VARIABLE ${label}`);await save();
     await select(label.includes('pitch')?'manual':'assisted');
     if(['Target radius','Maximum vertical contact speed','Maximum horizontal contact speed','Maximum contact tilt','Breakup energy threshold','Contact friction','Contact restitution','Contact continuation'].includes(label)){
      const details=page.locator('details').filter({has:page.locator('summary').filter({hasText:/^Edit contact limits & continuation$/})});if(!await details.evaluate(d=>d.open))await details.locator('summary').first().click();
     }
     const field=page.locator('label.number-field').filter({has:page.getByRole('button',{name:`About ${label}`,exact:true})});
-    const info=field.getByRole('button',{name:`About ${label}`,exact:true});await info.hover();const dialog=page.getByRole('dialog',{name:`About ${label}`,exact:true});await dialog.waitFor();const explanation=await dialog.innerText();assert.ok(explanation.length>120);const bounds=await dialog.boundingBox();assert.ok(bounds&&bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=1601&&bounds.y+bounds.height<=1001);await page.keyboard.press('Escape');
-    await field.getByRole('spinbutton').fill(newValue);await page.waitForFunction(label=>document.querySelector('[data-flight-edit-feedback]')?.textContent.includes(`Changed ${label}`),label);
+    const info=field.getByRole('button',{name:`About ${label}`,exact:true});c.variableProgress.stage="open help";await save();await info.hover();const dialog=page.getByRole('dialog',{name:`About ${label}`,exact:true});await dialog.waitFor();const explanation=await dialog.innerText();assert.ok(explanation.length>120);const bounds=await dialog.boundingBox();assert.ok(bounds&&bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=1601&&bounds.y+bounds.height<=1001);await page.keyboard.press('Escape');
+    c.variableProgress.stage='edit';await save();await field.getByRole('spinbutton').fill(newValue);await page.waitForFunction(label=>document.querySelector('[data-flight-edit-feedback]')?.textContent.includes(`Changed ${label}`),label);
     const feedback=await page.locator('[data-flight-edit-feedback]').innerText();assert.match(feedback,/Playback reset and paused/);assert.ok(Number((await scene()).flightTimeS)<.1);assert.equal(await b('Pause experiment').count(),0);
     const verdict=await page.locator('[data-public-flight-verdict]').innerText();
     if(label==='Thrust')assert.match(verdict,/Too fast up\/down/);
