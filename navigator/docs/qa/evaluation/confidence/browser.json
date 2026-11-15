@@ -1,0 +1,60 @@
+{
+  "artifact": "Isolated component fixture; not parent application",
+  "sourceCommit": "f6c3726f86ffd4364d8f30e0a5afe419c508e4b0",
+  "browser": "149.0.7827.155",
+  "platform": "linux",
+  "checks": [
+    {
+      "name": "canonical conditional outcome and terrain/sphere comparison visible",
+      "pass": true
+    },
+    {
+      "name": "native details opens with Enter and closes with Space",
+      "pass": true
+    },
+    {
+      "name": "export callback receives selected scenario, full inputs and limitations",
+      "pass": true
+    },
+    {
+      "name": "close delegates to host",
+      "pass": true
+    },
+    {
+      "name": "public, educator and planner have visible evidence boundary and distinct disclosure",
+      "pass": true
+    },
+    {
+      "name": "live summary props replace old selection, preserve unknowns and export the new identity",
+      "pass": true
+    },
+    {
+      "name": "default offline Blob download contains replayable full selected inputs and null physical interval",
+      "pass": true
+    },
+    {
+      "name": "all cards expanded: no page overflow at 320/360/720 CSS px",
+      "pass": true
+    },
+    {
+      "name": "page-scale 2 emulation only; native browser 200% acceptance pending",
+      "pass": true
+    },
+    {
+      "name": "touch emulation toggles disclosure",
+      "pass": true
+    },
+    {
+      "name": "zero page errors and zero HTTP requests in file fixture",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "screenshots": "/tmp/lunario-confidence-browser-322pev",
+  "limitations": [
+    "No human participants or screen-reader acceptance",
+    "No integrated workspace, native browser 200% zoom or target-device acceptance",
+    "No physical uncertainty qualification"
+  ]
+}
