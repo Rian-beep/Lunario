@@ -28,7 +28,7 @@ export function updateLunarioStartup(document: Document, ready: boolean): Promis
     const script = document.createElement("script");
     script.dataset.lunarioVendor = "loader";
     script.dataset.autoHide = "false";
-    script.dataset.once = "session";
+    script.dataset.minDuration = "3000";
     script.dataset.altitude = "0";
     script.textContent = LUNARIO_LOADER_JS;
     document.body.appendChild(script);

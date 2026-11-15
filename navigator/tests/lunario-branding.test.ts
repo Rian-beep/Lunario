@@ -201,9 +201,9 @@ test("Strict Mode replay and conditional branch remount retain one original over
   assert.equal(fixture.overlay(), overlay);
   assert.equal(fixture.scriptCount(), 1);
   assert.equal(fixture.dom.head.children.length, 1);
-  assert.equal(fixture.storageWrites(), 1);
+  assert.equal(fixture.storageWrites(), 0);
   assert.deepEqual(fixture.dom.body.children.find(el => el.tagName === "script")!.dataset, {
-    lunarioVendor: "loader", autoHide: "false", once: "session", altitude: "0",
+    lunarioVendor: "loader", autoHide: "false", minDuration: "3000", altitude: "0",
   });
   for (const selector of [".lunario-loader__grid", ".lunario-loader__ridge", ".lunario-loader__mark", ".lunario-loader__ring", ".lunario-loader__cursor"]) assert.ok(overlay.querySelector(selector), selector);
   assert.equal(overlay.querySelector(".lunario-loader__telemetry"), null);
@@ -231,25 +231,37 @@ test("Strict Mode replay and conditional branch remount retain one original over
 test("already-ready and terminal-error readiness finish the vendor's minimum and lift-away without trapping the app", async () => {
   const fixture = documentFixture();
   updateLunarioStartup(fixture.document, true);
-  fixture.advance(1799);
-  assert.ok(fixture.overlay(), "original minimum duration remains intact");
+  fixture.advance(2999);
+  assert.ok(fixture.overlay(), "three-second minimum remains intact");
   fixture.advance(600);
   await fixture.window.Lunario!.loader.ready;
   assert.equal(fixture.overlay(), null);
   assert.equal(fixture.pending(), 0);
 });
 
-test("a session-suppressed document initializes once and hide remains safe", async () => {
-  const fixture = documentFixture({ seen: true });
-  updateLunarioStartup(fixture.document, false);
-  updateLunarioStartup(fixture.document, true);
-  updateLunarioStartup(fixture.document, false);
-  await fixture.window.Lunario!.loader.ready;
-  assert.equal(fixture.window.Lunario!.loader.skipped, true);
-  assert.equal(fixture.scriptCount(), 1);
-  assert.equal(fixture.overlay(), null);
-  assert.equal(fixture.pending(), 0);
-  assert.equal(fixture.dom.body.style.overflow, "");
+test("previous session visits never suppress first-load or reload animation", async () => {
+  for (let navigation = 0; navigation < 3; navigation++) {
+    const fixture = documentFixture({ seen: true });
+    updateLunarioStartup(fixture.document, false);
+    updateLunarioStartup(fixture.document, true);
+    assert.notEqual(fixture.window.Lunario!.loader.skipped, true);
+    assert.ok(fixture.overlay());
+    assert.equal(fixture.scriptCount(), 1);
+    assert.equal(fixture.storageWrites(), 0);
+    fixture.advance(2999);
+    assert.ok(fixture.overlay(), "Reload cannot finish before three seconds");
+    fixture.advance(600);
+    await fixture.window.Lunario!.loader.ready;
+    assert.equal(fixture.overlay(), null);
+    assert.equal(fixture.pending(), 0);
+    assert.equal(fixture.loadedEvents(), 1);
+  }
+});
+
+test("the root static entry also requests three seconds without session suppression", () => {
+  const html = readFileSync(new URL("../../index.html", import.meta.url), "utf8");
+  assert.match(html, /src="loader\/loader.js" data-min-duration="3000"/);
+  assert.doesNotMatch(html, /data-once="session"/);
 });
 
 test("blocked sessionStorage still completes and reduced motion uses the original still version", async () => {
