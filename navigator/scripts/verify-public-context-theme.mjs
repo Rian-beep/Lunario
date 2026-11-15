@@ -20,7 +20,7 @@ try {for(const transport of ['web','file']){
  const toggle=()=>page.getByRole('button',{name:'Switch to dark mode',exact:true});await toggle().click();
  await page.waitForFunction(()=>document.documentElement.dataset.uiTheme==='dark');
  assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).getPropertyValue('--background').trim()),'#111214');
- const logo=await page.getByRole('img',{name:'Lunario',exact:true}).getAttribute('src');assert.equal(Buffer.from(logo.split(',')[1],'base64').toString(),await readFile('public/branding/lunario/assets/logo-white.svg','utf8'));
+ const logo=await page.getByRole('img',{name:'Lunario',exact:true}).getAttribute('src');assert.equal(Buffer.from(logo.split(',')[1],'base64').toString(),await readFile('public/branding/lunario/assets/logo.svg','utf8'));
  assert.equal(await page.locator('.lunario-loader').count(),0);
  await page.waitForTimeout(400);await page.screenshot({path:`${out}/${transport}-dark.png`});
  for(const hard of [false,true]){

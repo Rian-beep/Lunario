@@ -238,36 +238,33 @@
 .header-brand-cluster {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   min-width: 0;
   flex-wrap: wrap;
 }
 .site-shell-nav {
   display: flex;
   align-items: center;
-  gap: 2px;
 }
-.site-shell-nav__link {
+.site-shell-nav__about {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 6px 12px;
-  border-radius: 8px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 9px;
   text-decoration: none;
-  color: #626a58;
+  color: #303b29;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  border: 1px solid transparent;
-}
-.site-shell-nav__link:hover {
-  color: #303b29;
-  background: #eaeae1;
-}
-.site-shell-nav__link[aria-current="page"] {
-  color: #303b29;
+  letter-spacing: 0.01em;
+  border: 1px solid #80785666;
   background: #fffef9;
-  box-shadow: 0 2px 6px #3c41201c, inset 0 0 0 1px #6d76512b;
+  box-shadow: 0 1px 0 #3c412014;
+  white-space: nowrap;
+}
+.site-shell-nav__about:hover {
+  border-color: #6d7651a0;
+  background: #fff;
 }
 .header-actions {
   display: flex;
