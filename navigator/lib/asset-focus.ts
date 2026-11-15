@@ -58,7 +58,10 @@ export function sampleAssetFlight(flight: AssetFlight, now: number, reducedMotio
     centre=fromCentre;
     radius=Math.exp(Math.log(fromRadius)*(1-t)+Math.log(clearance)*t);
     // Turn away before the radial leg can encounter the destination body.
-    const turn=Math.min(1,Math.max(0,(radius-fromRadius)/(Math.max(fromRadius*1.2,separation*.25)-fromRadius)));
+    // A retarget can already be at clearance: finish the turn in time even
+    // when this leg has little or no radial travel.
+    const turnRadius=Math.min(clearance,Math.max(fromRadius*1.2,separation*.25));
+    const turn=turnRadius>fromRadius?Math.min(1,Math.max(0,(radius-fromRadius)/(turnRadius-fromRadius))):t;
     direction=escape?shortestArcDirection(from,escape,ease(turn)):scale(from,1/fromRadius);
     target=mix(fromTarget,fromCentre,t);
   } else if (elapsed < ASSET_FOCUS_MS.clearance+ASSET_FOCUS_MS.transfer) {
@@ -68,7 +71,8 @@ export function sampleAssetFlight(flight: AssetFlight, now: number, reducedMotio
     const t=ease((elapsed-ASSET_FOCUS_MS.clearance-ASSET_FOCUS_MS.transfer)/ASSET_FOCUS_MS.approach);
     centre=toCentre;
     radius=Math.exp(Math.log(clearance)*(1-t)+Math.log(toRadius)*t);
-    const turn=Math.min(1,Math.max(0,(Math.max(toRadius*1.2,separation*.25)-radius)/(Math.max(toRadius*1.2,separation*.25)-toRadius)));
+    const turnRadius=Math.min(clearance,Math.max(toRadius*1.2,separation*.25));
+    const turn=turnRadius>toRadius?Math.min(1,Math.max(0,(turnRadius-radius)/(turnRadius-toRadius))):t;
     direction=escape?shortestArcDirection(escape,to,ease(turn)):scale(to,1/toRadius);
     target=mix(toCentre,toTarget,t);
   }

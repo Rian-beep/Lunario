@@ -991,8 +991,10 @@ export function mountScene(
       const motion=assetMotion,position=sampleAssetFlight(motion.plan,now,reducedMotion.matches);
       const anchor=motion.mode==='earth'?earth.position:motion.mode==='sun'?sun.position:motion.mode==='vehicle'||motion.mode==='follow'?currentPoint:motion.anchor;
       const drift=anchor.clone().sub(motion.anchor);
-      // Ramp target drift from zero so rapid retargeting starts at the exact pose.
-      camera.position.fromArray(position.camera).addScaledVector(drift,position.progress);controls.target.fromArray(position.target).addScaledVector(drift,position.progress);
+      // Earth drift must settle to body-follow velocity at arrival, while
+      // retargeting still begins at the exact current pose.
+      const p=position.progress,driftProgress=motion.mode==='earth'?p*p*p*(10+p*(-15+6*p)):p;
+      camera.position.fromArray(position.camera).addScaledVector(drift,driftProgress);controls.target.fromArray(position.target).addScaledVector(drift,driftProgress);
       camera.up.fromArray(shortestArcDirection(tuple(motion.fromUp),tuple(motion.toUp),position.progress));camera.lookAt(controls.target);
       host.dataset.assetFlight=position.complete?'complete':'traveling';
       if(position.complete){assetMotion=null;focusedAnchor=anchor.clone();followPosition=currentPoint.clone();rebuildControls();}
