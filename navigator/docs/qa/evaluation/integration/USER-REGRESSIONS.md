@@ -12,4 +12,6 @@ Focused result: eight science framework tests pass, including the browser contra
 
 ## Unexpected camera switching
 
-User screenshot shows Lander selected while the camera displays the whole Moon. A dedicated isolated Clevo camera workstream is tracing interruption and focus state against the actual runtime. No pass is asserted before its fix and integrated browser replay.
+User screenshot shows Lander selected while the camera displays the whole Moon. The actual runtime reproduced a plain canvas click canceling Lander travel while the camera remained 4,114 km away. It then reported a subpixel vehicle as framed. The repair distinguishes clicks from real drags, resumes the still-selected destination after an interrupted drag, rejects stale site-mode callbacks, and avoids restarting focus from clicks on an already focused vehicle. Held or subpixel views cannot release pending flight playback. Physical spacecraft scale and flight clock are unchanged.
+
+The isolated production-runtime verification passed ten browser groups and 123 focused tests, with nonincremental types and owned lint passing. It covers pending travel, drag/wheel interruption, rapid retargeting, portal controls, site changes, Follow/scrubbing/variable edits, source clock and bounded warmed renderer resources. Final generated web/offline acceptance is recorded separately. Touch emulation and real-device acceptance remain distinct.

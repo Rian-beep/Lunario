@@ -1,5 +1,8 @@
 ## Evidence checks and usable mission replay
 
+- Keep the selected lander destination through ordinary clicks, interrupted travel and site changes. Follow and flight playback wait for a genuinely visible, settled target.
+- Read the science framework and its controls in both themes; dark cards now use light reading text while orange headers keep dark text.
+
 - Keep site search and selection usable on touch screens and at 200% browser zoom, with the inspector open.
 - Load measured close-up terrain only when needed for inspection; retain the numerical contact terrain during flight and embedded terrain offline. Lighting follows the selected epoch, and source blends disclose their contributors.
 - Decode unchanged NASA colour maps before GPU upload to reduce progressive texture stalls on tested devices. Offline textures and device memory budgets remain unchanged.
