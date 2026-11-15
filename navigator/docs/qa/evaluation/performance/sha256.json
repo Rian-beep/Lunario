@@ -1,0 +1,20 @@
+{
+  "REPORT.md": "804651267dea85f5e723ca3793806d543ae79fdf495627d873f38acd33e4af2a",
+  "evidence/baseline-native.json": "3236d3f726310e39e0dbb9e3a350c44446bd20b76c17770c5dc25a60b32e953f",
+  "evidence/bitmap-native.json": "eda06d9e93a5b541c3095e5558639ff49abfd3ef9696c34c76b822911b0b76a9",
+  "evidence/bitmap-near.png": "ae40d44b494746ab44bc6c3868eb64dc8ed89fb87f4b75180d35fe2ddbc2eda3",
+  "evidence/bitmap-south.png": "df9adf1fe9c71aa68ff905bef5ba2fab369a58bcaa624f086bf824ac321e83b1",
+  "evidence/comparison.json": "a82019d3dcb717b003b790710d43ac47eb4dda6702fa20567016981e36428e0a",
+  "evidence/focused-tests.tap": "d00d5b82218a2dc4d2dad02244cfa3b2261938e113dd35f6a70bb25a2e13f3ab",
+  "evidence/html-decode-native.json": "96f9125c73dc2152594fa3cee85ebbe7dec658bc8fadacd8269ec170cf2df8e0",
+  "evidence/html-to-bitmap-native.json": "69c6d9f189b25619f9489a6b02aaab4430a0db8921869a1ae8a1090b6b9b47e6",
+  "evidence/offline-native.json": "2171eec54bf35fb1be4b2274131840e62f6e68175258e0ec4d24614e6c838529",
+  "evidence/orbit-baseline-native.json": "145fbf103a25d7b729723deb126efab7f5ad6b1e1c3ea8e56ef48b4550a5d9ba",
+  "evidence/orbit-bitmap-native.json": "66b227ea154ecba97e015b867ca4477575c8be19895f934f2b6d1cbd7e16245c",
+  "evidence/orbit-comparison.json": "9032e1cb6d07c224f9ec1f1ff643e276dd8207d45b6644c5f809461f05512bd9",
+  "evidence/red-control.json": "127a5acb0c7ce98d0f45945ca66c3ab5aae9453492b919ec4859e7b11526870f",
+  "evidence/red-control.log": "1bab6a10e6c2c0d1fd2f5cd541f44863dff6e416b5a3b1f50c6c60fafc7170f4",
+  "findings.json": "a4c0dc9578a183b18eada37294b49a1811375122601836ec7688fb60cfdf2190",
+  "primary-sources.json": "25df313208c02cc303cce42035c4ca399bb64b5a17ba3559b224fb1c62f5c7a3",
+  "verification.json": "97fcfb25fb8ed72975a4f7a579eee211d5c1c06673a143dae77264caa4b9ba76"
+}

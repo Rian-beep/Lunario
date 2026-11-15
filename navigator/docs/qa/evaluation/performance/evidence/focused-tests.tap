@@ -1,0 +1,131 @@
+TAP version 13
+# Subtest: visual sources are bounded 2025 RGB16 sRGB and signed float kilometre LOLA, with unchanged authored triangles
+ok 1 - visual sources are bounded 2025 RGB16 sRGB and signed float kilometre LOLA, with unchanged authored triangles
+  ---
+  duration_ms: 70.07431
+  ...
+# Subtest: committed primary textures match hashes, actual dimensions, RGB8 pixels and native colour calibration
+ok 2 - committed primary textures match hashes, actual dimensions, RGB8 pixels and native colour calibration
+  ---
+  duration_ms: 635.544688
+  ...
+# Subtest: 1x radial decoder rejects wrong topology, headers, nonfinite samples and source-bound violations
+ok 3 - 1x radial decoder rejects wrong topology, headers, nonfinite samples and source-bound violations
+  ---
+  duration_ms: 7.611872
+  ...
+# Subtest: device selection accounts for old/new mip chains and both decoded images during replacement
+ok 4 - device selection accounts for old/new mip chains and both decoded images during replacement
+  ---
+  duration_ms: 0.283669
+  ...
+# (node:1258175) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: bitmap leases share one fetch/decode and close exactly once after their last owner
+ok 5 - bitmap leases share one fetch/decode and close exactly once after their last owner
+  ---
+  duration_ms: 14.654124
+  ...
+# Subtest: only one decode runs; cancelled queued work never fetches, and cancelled active work closes its late bitmap
+ok 6 - only one decode runs; cancelled queued work never fetches, and cancelled active work closes its late bitmap
+  ---
+  duration_ms: 4.008074
+  ...
+# Subtest: progressive bitmap path keeps the last tier on failure and transfers lifetime beyond the old signal
+ok 7 - progressive bitmap path keeps the last tier on failure and transfers lifetime beyond the old signal
+  ---
+  duration_ms: 10.927461
+  ...
+# Subtest: dispose during bitmap decode prevents publish, immediately settles upgrade and closes the late result
+ok 8 - dispose during bitmap decode prevents publish, immediately settles upgrade and closes the late result
+  ---
+  duration_ms: 5.501719
+  ...
+# Subtest: startup cancellation during bitmap decode rejects immediately without HTML fallback
+ok 9 - startup cancellation during bitmap decode rejects immediately without HTML fallback
+  ---
+  duration_ms: 2.051455
+  ...
+# Subtest: bitmap startup failure falls back conservatively to existing HTML images through 4K
+ok 10 - bitmap startup failure falls back conservatively to existing HTML images through 4K
+  ---
+  duration_ms: 4.054182
+  ...
+# Subtest: offline embedding keeps HTML data-image leases and never invokes bitmap fetch/decode
+ok 11 - offline embedding keeps HTML data-image leases and never invokes bitmap fetch/decode
+  ---
+  duration_ms: 1.757315
+  ...
+# Subtest: bitmap rejects malformed dimensions and closes the rejected image
+ok 12 - bitmap rejects malformed dimensions and closes the rejected image
+  ---
+  duration_ms: 1.291003
+  ...
+# Subtest: HTTP and encoded-length failures never decode or upload
+ok 13 - HTTP and encoded-length failures never decode or upload
+  ---
+  duration_ms: 1.048072
+  ...
+# Subtest: release aborts active transport and rejects the lease without waiting for the network
+ok 14 - release aborts active transport and rejects the lease without waiting for the network
+  ---
+  duration_ms: 0.744052
+  ...
+# Subtest: unknown bitmap tiers are rejected before allocating or fetching
+ok 15 - unknown bitmap tiers are rejected before allocating or fetching
+  ---
+  duration_ms: 0.245111
+  ...
+# Subtest: unsupported bitmap API uses original HTML images with a 4K cap
+ok 16 - unsupported bitmap API uses original HTML images with a 4K cap
+  ---
+  duration_ms: 3.875038
+  ...
+# Subtest: web high-memory budget permits native8K; unknown memory and offline retain bounded4K
+ok 17 - web high-memory budget permits native8K; unknown memory and offline retain bounded4K
+  ---
+  duration_ms: 0.565619
+  ...
+# (node:1258182) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+# Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# Subtest: progressive maps respect dimensions/colour space, release old tiers, and never reload on appearance updates
+ok 18 - progressive maps respect dimensions/colour space, release old tiers, and never reload on appearance updates
+  ---
+  duration_ms: 6.028939
+  ...
+# Subtest: failed upgrade retains the last successful map without a larger or legacy request
+ok 19 - failed upgrade retains the last successful map without a larger or legacy request
+  ---
+  duration_ms: 1.204796
+  ...
+# Subtest: dispose aborts a stalled upgrade, late image completion cannot resurrect GPU ownership
+ok 20 - dispose aborts a stalled upgrade, late image completion cannot resurrect GPU ownership
+  ---
+  duration_ms: 0.916006
+  ...
+# Subtest: startup abort and primary dimension mismatch release their only texture immediately
+ok 21 - startup abort and primary dimension mismatch release their only texture immediately
+  ---
+  duration_ms: 0.691475
+  ...
+# Subtest: a device that cannot hold the smallest tier causes zero texture requests
+ok 22 - a device that cannot hold the smallest tier causes zero texture requests
+  ---
+  duration_ms: 0.188183
+  ...
+# Subtest: actual material uses stable seam-safe gradients, smooth diffuse normals and calibrated RGB without fabricated regolith
+ok 23 - actual material uses stable seam-safe gradients, smooth diffuse normals and calibrated RGB without fabricated regolith
+  ---
+  duration_ms: 0.254671
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 859.473257
