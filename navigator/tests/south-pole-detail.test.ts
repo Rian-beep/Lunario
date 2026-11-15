@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import * as T from 'three';
 import {bodyToScene, siteFrame} from '../components/workbench/scene/surface';
-import {insideSouthPoleDetail, southPoleTerrainMatrix} from '../components/workbench/scene/south-pole-detail';
+import {insideSouthPoleDetail, southPoleManifestUrl, southPoleTerrainMatrix} from '../components/workbench/scene/south-pole-detail';
 
 test('south-pole close-up covers the landing sites and not the equator', () => {
   assert.equal(insideSouthPoleDetail(-89.53432, 209.94767), true);
@@ -28,4 +28,15 @@ test('terrain frame is identity at the south pole and places the pole on the sph
   const placed = new T.Vector3(0, 0, 0).applyMatrix4(matrix);
   const expected = bodyToScene(pole.up, 0, ridge);
   assert.ok(placed.distanceTo(expected) < 1e-6);
+});
+
+test('hosted pages resolve the close-up manifest beside the public assets', () => {
+  const previous = globalThis.__LUNARIO_PUBLIC_ASSET_URL__;
+  globalThis.__LUNARIO_PUBLIC_ASSET_URL__ = path => `https://rian-beep.github.io/Lunario/navigator/public${path}`;
+  try {
+    assert.equal(southPoleManifestUrl(), 'https://rian-beep.github.io/Lunario/navigator/public/data/south-pole-detail/manifest.json');
+  } finally {
+    if (previous) globalThis.__LUNARIO_PUBLIC_ASSET_URL__ = previous;
+    else delete globalThis.__LUNARIO_PUBLIC_ASSET_URL__;
+  }
 });

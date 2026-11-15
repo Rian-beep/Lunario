@@ -2747,7 +2747,7 @@
       "format": "esm"
     },
     "components/workbench/scene.tsx": {
-      "bytes": 30342,
+      "bytes": 30622,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -3002,6 +3002,17 @@
       ],
       "format": "esm"
     },
+    "components/workbench/scene/lunar-terrain.js": {
+      "bytes": 56370,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        }
+      ],
+      "format": "esm"
+    },
     "components/workbench/scene/material.ts": {
       "bytes": 11317,
       "imports": [
@@ -3090,7 +3101,7 @@
       "format": "esm"
     },
     "components/workbench/scene/runtime.ts": {
-      "bytes": 102395,
+      "bytes": 105617,
       "imports": [
         {
           "path": "components/workbench/scene/pole-labels.ts",
@@ -3203,6 +3214,16 @@
           "original": "./material"
         },
         {
+          "path": "components/workbench/scene/lunar-terrain.js",
+          "kind": "import-statement",
+          "original": "./lunar-terrain.js"
+        },
+        {
+          "path": "components/workbench/scene/south-pole-detail.ts",
+          "kind": "import-statement",
+          "original": "./south-pole-detail"
+        },
+        {
           "path": "components/workbench/scene/vehicle.ts",
           "kind": "import-statement",
           "original": "./vehicle"
@@ -3236,6 +3257,27 @@
           "path": "components/workbench/scene/ion/create-ion-moon.ts",
           "kind": "dynamic-import",
           "original": "./ion/create-ion-moon"
+        }
+      ],
+      "format": "esm"
+    },
+    "components/workbench/scene/south-pole-detail.ts": {
+      "bytes": 2308,
+      "imports": [
+        {
+          "path": "node_modules/three/build/three.module.js",
+          "kind": "import-statement",
+          "original": "three"
+        },
+        {
+          "path": "lib/astro.ts",
+          "kind": "import-statement",
+          "original": "@/lib/astro"
+        },
+        {
+          "path": "components/workbench/scene/surface.ts",
+          "kind": "import-statement",
+          "original": "./surface"
         }
       ],
       "format": "esm"
@@ -4755,7 +4797,7 @@
       "format": "esm"
     },
     "lib/resources.ts": {
-      "bytes": 5263,
+      "bytes": 6127,
       "imports": [],
       "format": "esm"
     },
@@ -51946,6 +51988,30 @@
       },
       "bytes": 75477
     },
+    "assets/chunks/chunk-2MRREW72.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b"
+      ],
+      "inputs": {
+        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+          "bytesInOutput": 1174
+        },
+        "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
+          "bytesInOutput": 438
+        },
+        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
+          "bytesInOutput": 44622
+        }
+      },
+      "bytes": 46836
+    },
     "assets/chunks/chunk-2MUIZFOA.js": {
       "imports": [
         {
@@ -51969,52 +52035,6 @@
         }
       },
       "bytes": 3953
-    },
-    "assets/chunks/chunk-37CHWG2R.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-JJGHQNSU.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/rapier-IF4EXMSY.js",
-          "kind": "dynamic-import"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h"
-      ],
-      "inputs": {
-        "lib/equipment.ts": {
-          "bytesInOutput": 1771
-        },
-        "lib/touchdown-physics.ts": {
-          "bytesInOutput": 6985
-        },
-        "lib/touchdown-fragments.ts": {
-          "bytesInOutput": 2598
-        }
-      },
-      "bytes": 11646
     },
     "assets/chunks/chunk-3DFCVSYE.js": {
       "imports": [],
@@ -52091,58 +52111,6 @@
         }
       },
       "bytes": 264344
-    },
-    "assets/chunks/chunk-5KRKT2ME.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-YOLCIZJX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-QFPKXEUA.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k"
-      ],
-      "inputs": {
-        "lib/celestial-assets.ts": {
-          "bytesInOutput": 4014
-        },
-        "public/data/stars.json": {
-          "bytesInOutput": 43448
-        },
-        "lib/stars.ts": {
-          "bytesInOutput": 2172
-        },
-        "lib/solar-system.ts": {
-          "bytesInOutput": 2786
-        }
-      },
-      "bytes": 52728
     },
     "assets/chunks/chunk-5X4GV4DI.js": {
       "imports": [
@@ -52252,73 +52220,6 @@
         }
       },
       "bytes": 1197
-    },
-    "assets/chunks/chunk-7YBG2SLG.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-NK6FMLPF.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-VEP72JGX.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-GNTWDEBH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-KIUUUEIZ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-3DFCVSYE.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "assets/chunks/chunk-6NUZOME5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i"
-      ],
-      "inputs": {
-        "lib/moon-atlas-texture.ts": {
-          "bytesInOutput": 1058
-        },
-        "public/data/visual-moon/manifest.json": {
-          "bytesInOutput": 6186
-        },
-        "lib/visual-moon.ts": {
-          "bytesInOutput": 956
-        },
-        "components/workbench/scene/visual-moon/assets.ts": {
-          "bytesInOutput": 2232
-        },
-        "components/workbench/scene/visual-moon/material.ts": {
-          "bytesInOutput": 1812
-        },
-        "components/workbench/scene/surface.ts": {
-          "bytesInOutput": 3955
-        },
-        "components/workbench/scene/nasa-globe.ts": {
-          "bytesInOutput": 1971
-        }
-      },
-      "bytes": 18628
     },
     "assets/chunks/chunk-AX4KF55O.js": {
       "imports": [],
@@ -52709,6 +52610,23 @@
       },
       "bytes": 23917
     },
+    "assets/chunks/chunk-EC2D7TCJ.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a"
+      ],
+      "inputs": {
+        "node_modules/three/examples/jsm/loaders/DRACOLoader.js": {
+          "bytesInOutput": 7246
+        }
+      },
+      "bytes": 7376
+    },
     "assets/chunks/chunk-GE4IBOIZ.js": {
       "imports": [
         {
@@ -52862,22 +52780,141 @@
       },
       "bytes": 3936
     },
-    "assets/chunks/chunk-JJGHQNSU.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        }
-      ],
+    "assets/chunks/chunk-IEJRRESR.js": {
+      "imports": [],
       "exports": [
-        "a"
+        "$",
+        "$a",
+        "A",
+        "Aa",
+        "B",
+        "Ba",
+        "C",
+        "Ca",
+        "D",
+        "Da",
+        "E",
+        "Ea",
+        "F",
+        "Fa",
+        "G",
+        "Ga",
+        "H",
+        "Ha",
+        "I",
+        "Ia",
+        "J",
+        "Ja",
+        "K",
+        "Ka",
+        "L",
+        "La",
+        "M",
+        "Ma",
+        "N",
+        "Na",
+        "O",
+        "Oa",
+        "P",
+        "Pa",
+        "Q",
+        "Qa",
+        "R",
+        "Ra",
+        "S",
+        "Sa",
+        "T",
+        "Ta",
+        "U",
+        "Ua",
+        "V",
+        "Va",
+        "W",
+        "Wa",
+        "X",
+        "Xa",
+        "Y",
+        "Ya",
+        "Z",
+        "Za",
+        "_",
+        "_a",
+        "a",
+        "aa",
+        "ab",
+        "b",
+        "ba",
+        "bb",
+        "c",
+        "ca",
+        "cb",
+        "d",
+        "da",
+        "db",
+        "e",
+        "ea",
+        "eb",
+        "f",
+        "fa",
+        "fb",
+        "g",
+        "ga",
+        "gb",
+        "h",
+        "ha",
+        "hb",
+        "i",
+        "ia",
+        "ib",
+        "j",
+        "ja",
+        "jb",
+        "k",
+        "ka",
+        "kb",
+        "l",
+        "la",
+        "lb",
+        "m",
+        "ma",
+        "mb",
+        "n",
+        "na",
+        "nb",
+        "o",
+        "oa",
+        "p",
+        "pa",
+        "q",
+        "qa",
+        "r",
+        "ra",
+        "s",
+        "sa",
+        "t",
+        "ta",
+        "u",
+        "ua",
+        "v",
+        "va",
+        "w",
+        "wa",
+        "x",
+        "xa",
+        "y",
+        "ya",
+        "z",
+        "za"
       ],
       "inputs": {
-        "node_modules/three/examples/jsm/loaders/DRACOLoader.js": {
-          "bytesInOutput": 7246
+        "node_modules/three/build/three.core.js": {
+          "bytesInOutput": 239754
+        },
+        "node_modules/three/build/three.module.js": {
+          "bytesInOutput": 355327
         }
       },
-      "bytes": 7375
+      "bytes": 596328
     },
     "assets/chunks/chunk-JVUNH4JM.js": {
       "imports": [
@@ -53032,30 +53069,6 @@
       },
       "bytes": 2376
     },
-    "assets/chunks/chunk-MLIHDGRM.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a",
-        "b"
-      ],
-      "inputs": {
-        "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
-          "bytesInOutput": 1174
-        },
-        "node_modules/three/examples/jsm/utils/SkeletonUtils.js": {
-          "bytesInOutput": 438
-        },
-        "node_modules/three/examples/jsm/loaders/GLTFLoader.js": {
-          "bytesInOutput": 44622
-        }
-      },
-      "bytes": 46830
-    },
     "assets/chunks/chunk-NK6FMLPF.js": {
       "imports": [
         {
@@ -53073,6 +53086,58 @@
         }
       },
       "bytes": 3672
+    },
+    "assets/chunks/chunk-PGFZ5IYS.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-2MRREW72.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-YOLCIZJX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-QFPKXEUA.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k"
+      ],
+      "inputs": {
+        "lib/celestial-assets.ts": {
+          "bytesInOutput": 4014
+        },
+        "public/data/stars.json": {
+          "bytesInOutput": 43448
+        },
+        "lib/stars.ts": {
+          "bytesInOutput": 2172
+        },
+        "lib/solar-system.ts": {
+          "bytesInOutput": 2786
+        }
+      },
+      "bytes": 52728
     },
     "assets/chunks/chunk-QFPKXEUA.js": {
       "imports": [
@@ -53100,139 +53165,89 @@
       },
       "bytes": 5607
     },
-    "assets/chunks/chunk-RBG4N6L5.js": {
-      "imports": [],
+    "assets/chunks/chunk-TJTYBSUB.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-NK6FMLPF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-VEP72JGX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-GNTWDEBH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-KIUUUEIZ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-3DFCVSYE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        }
+      ],
       "exports": [
-        "$",
-        "$a",
-        "A",
-        "Aa",
-        "B",
-        "Ba",
-        "C",
-        "Ca",
-        "D",
-        "Da",
-        "E",
-        "Ea",
-        "F",
-        "Fa",
-        "G",
-        "Ga",
-        "H",
-        "Ha",
-        "I",
-        "Ia",
-        "J",
-        "Ja",
-        "K",
-        "Ka",
-        "L",
-        "La",
-        "M",
-        "Ma",
-        "N",
-        "Na",
-        "O",
-        "Oa",
-        "P",
-        "Pa",
-        "Q",
-        "Qa",
-        "R",
-        "Ra",
-        "S",
-        "Sa",
-        "T",
-        "Ta",
-        "U",
-        "Ua",
-        "V",
-        "Va",
-        "W",
-        "Wa",
-        "X",
-        "Xa",
-        "Y",
-        "Ya",
-        "Z",
-        "Za",
-        "_",
-        "_a",
         "a",
-        "aa",
-        "ab",
         "b",
-        "ba",
-        "bb",
         "c",
-        "ca",
-        "cb",
         "d",
-        "da",
-        "db",
         "e",
-        "ea",
-        "eb",
         "f",
-        "fa",
-        "fb",
         "g",
-        "ga",
-        "gb",
         "h",
-        "ha",
-        "hb",
-        "i",
-        "ia",
-        "ib",
-        "j",
-        "ja",
-        "jb",
-        "k",
-        "ka",
-        "kb",
-        "l",
-        "la",
-        "lb",
-        "m",
-        "ma",
-        "n",
-        "na",
-        "o",
-        "oa",
-        "p",
-        "pa",
-        "q",
-        "qa",
-        "r",
-        "ra",
-        "s",
-        "sa",
-        "t",
-        "ta",
-        "u",
-        "ua",
-        "v",
-        "va",
-        "w",
-        "wa",
-        "x",
-        "xa",
-        "y",
-        "ya",
-        "z",
-        "za"
+        "i"
       ],
       "inputs": {
-        "node_modules/three/build/three.core.js": {
-          "bytesInOutput": 239754
+        "lib/moon-atlas-texture.ts": {
+          "bytesInOutput": 1058
         },
-        "node_modules/three/build/three.module.js": {
-          "bytesInOutput": 355327
+        "public/data/visual-moon/manifest.json": {
+          "bytesInOutput": 6186
+        },
+        "lib/visual-moon.ts": {
+          "bytesInOutput": 956
+        },
+        "components/workbench/scene/visual-moon/assets.ts": {
+          "bytesInOutput": 2232
+        },
+        "components/workbench/scene/visual-moon/material.ts": {
+          "bytesInOutput": 1812
+        },
+        "components/workbench/scene/surface.ts": {
+          "bytesInOutput": 3955
+        },
+        "components/workbench/scene/nasa-globe.ts": {
+          "bytesInOutput": 1971
         }
       },
-      "bytes": 596310
+      "bytes": 18628
+    },
+    "assets/chunks/chunk-UBRIG4AJ.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a"
+      ],
+      "inputs": {
+        "node_modules/three/examples/jsm/controls/OrbitControls.js": {
+          "bytesInOutput": 19978
+        }
+      },
+      "bytes": 20101
     },
     "assets/chunks/chunk-UKKVK22C.js": {
       "imports": [
@@ -53622,6 +53637,52 @@
       },
       "bytes": 17386
     },
+    "assets/chunks/chunk-X4VFRCVA.js": {
+      "imports": [
+        {
+          "path": "assets/chunks/chunk-EC2D7TCJ.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-2MRREW72.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-IEJRRESR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/chunk-6NUZOME5.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "assets/chunks/rapier-IF4EXMSY.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "inputs": {
+        "lib/equipment.ts": {
+          "bytesInOutput": 1771
+        },
+        "lib/touchdown-physics.ts": {
+          "bytesInOutput": 6985
+        },
+        "lib/touchdown-fragments.ts": {
+          "bytesInOutput": 2598
+        }
+      },
+      "bytes": 11651
+    },
     "assets/chunks/chunk-YOLCIZJX.js": {
       "imports": [],
       "exports": [
@@ -53638,23 +53699,6 @@
         }
       },
       "bytes": 3239
-    },
-    "assets/chunks/chunk-YZRIYDYJ.js": {
-      "imports": [
-        {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
-          "kind": "import-statement"
-        }
-      ],
-      "exports": [
-        "a"
-      ],
-      "inputs": {
-        "node_modules/three/examples/jsm/controls/OrbitControls.js": {
-          "bytesInOutput": 19978
-        }
-      },
-      "bytes": 20100
     },
     "assets/chunks/chunk-Z5OIDHRQ.js": {
       "imports": [
@@ -53675,14 +53719,14 @@
       },
       "bytes": 1889
     },
-    "assets/chunks/create-ion-moon-JLWUC2HL.js": {
+    "assets/chunks/create-ion-moon-AE2LZPC3.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "path": "assets/chunks/chunk-EC2D7TCJ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "path": "assets/chunks/chunk-2MRREW72.js",
           "kind": "import-statement"
         },
         {
@@ -53690,7 +53734,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "path": "assets/chunks/chunk-IEJRRESR.js",
           "kind": "import-statement"
         },
         {
@@ -53747,7 +53791,7 @@
           "bytesInOutput": 4096
         }
       },
-      "bytes": 148805
+      "bytes": 148806
     },
     "assets/chunks/esm-24JYF5T7.js": {
       "imports": [
@@ -54067,22 +54111,22 @@
       },
       "bytes": 1211
     },
-    "assets/chunks/scene-N7GF7MMF.js": {
+    "assets/chunks/scene-AQOMGKOS.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-37CHWG2R.js",
+          "path": "assets/chunks/chunk-X4VFRCVA.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-5KRKT2ME.js",
+          "path": "assets/chunks/chunk-PGFZ5IYS.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "path": "assets/chunks/chunk-EC2D7TCJ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "path": "assets/chunks/chunk-2MRREW72.js",
           "kind": "import-statement"
         },
         {
@@ -54118,11 +54162,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "path": "assets/chunks/chunk-TJTYBSUB.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "path": "assets/chunks/chunk-UBRIG4AJ.js",
           "kind": "import-statement"
         },
         {
@@ -54130,7 +54174,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "path": "assets/chunks/chunk-IEJRRESR.js",
           "kind": "import-statement"
         },
         {
@@ -54162,7 +54206,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/create-ion-moon-JLWUC2HL.js",
+          "path": "assets/chunks/create-ion-moon-AE2LZPC3.js",
           "kind": "dynamic-import"
         }
       ],
@@ -54173,7 +54217,7 @@
       "cssBundle": "assets/chunks/scene-A5J6V53S.css",
       "inputs": {
         "components/workbench/scene.tsx": {
-          "bytesInOutput": 22202
+          "bytesInOutput": 22490
         },
         "lib/after-paint.ts": {
           "bytesInOutput": 279
@@ -54185,10 +54229,10 @@
           "bytesInOutput": 919
         },
         "components/workbench/earth-orbits.tsx": {
-          "bytesInOutput": 8474
+          "bytesInOutput": 8468
         },
         "node_modules/satellite.js/dist/satellite.es.js": {
-          "bytesInOutput": 21804
+          "bytesInOutput": 21750
         },
         "lib/orbits.ts": {
           "bytesInOutput": 5567
@@ -54245,19 +54289,25 @@
           "bytesInOutput": 72
         },
         "components/workbench/scene/material.ts": {
-          "bytesInOutput": 5705
+          "bytesInOutput": 5698
+        },
+        "components/workbench/scene/lunar-terrain.js": {
+          "bytesInOutput": 38327
+        },
+        "components/workbench/scene/south-pole-detail.ts": {
+          "bytesInOutput": 699
         },
         "components/workbench/scene/vehicle.ts": {
           "bytesInOutput": 719
         },
         "components/workbench/scene/contact-dynamics.ts": {
-          "bytesInOutput": 10253
+          "bytesInOutput": 10245
         },
         "components/workbench/scene/runtime.ts": {
-          "bytesInOutput": 51949
+          "bytesInOutput": 53417
         }
       },
-      "bytes": 173278
+      "bytes": 214093
     },
     "assets/chunks/solar-system-view-HLMJ2GOP.css": {
       "imports": [],
@@ -54268,14 +54318,14 @@
       },
       "bytes": 4478
     },
-    "assets/chunks/solar-system-view-P4X77ESF.js": {
+    "assets/chunks/solar-system-view-USVV4FSB.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-5KRKT2ME.js",
+          "path": "assets/chunks/chunk-PGFZ5IYS.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "path": "assets/chunks/chunk-2MRREW72.js",
           "kind": "import-statement"
         },
         {
@@ -54291,11 +54341,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "path": "assets/chunks/chunk-TJTYBSUB.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "path": "assets/chunks/chunk-UBRIG4AJ.js",
           "kind": "import-statement"
         },
         {
@@ -54303,7 +54353,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "path": "assets/chunks/chunk-IEJRRESR.js",
           "kind": "import-statement"
         },
         {
@@ -54537,18 +54587,18 @@
       "inputs": {},
       "bytes": 240
     },
-    "assets/chunks/touchdown-lab-3KMK37TC.js": {
+    "assets/chunks/touchdown-lab-ENXW6SZB.js": {
       "imports": [
         {
-          "path": "assets/chunks/chunk-37CHWG2R.js",
+          "path": "assets/chunks/chunk-X4VFRCVA.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-JJGHQNSU.js",
+          "path": "assets/chunks/chunk-EC2D7TCJ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-MLIHDGRM.js",
+          "path": "assets/chunks/chunk-2MRREW72.js",
           "kind": "import-statement"
         },
         {
@@ -54564,11 +54614,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "path": "assets/chunks/chunk-UBRIG4AJ.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "path": "assets/chunks/chunk-IEJRRESR.js",
           "kind": "import-statement"
         },
         {
@@ -54597,7 +54647,7 @@
           "bytesInOutput": 461
         }
       },
-      "bytes": 18281
+      "bytes": 18286
     },
     "assets/chunks/touchdown-lab-XDJ5PZVN.css": {
       "imports": [],
@@ -54744,18 +54794,18 @@
       },
       "bytes": 40952
     },
-    "assets/chunks/workspace-JI7O7YVR.js": {
+    "assets/chunks/workspace-TT5QBGVO.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-CBNQURH6.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-7YBG2SLG.js",
+          "path": "assets/chunks/chunk-TJTYBSUB.js",
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-YZRIYDYJ.js",
+          "path": "assets/chunks/chunk-UBRIG4AJ.js",
           "kind": "import-statement"
         },
         {
@@ -54763,7 +54813,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "assets/chunks/chunk-RBG4N6L5.js",
+          "path": "assets/chunks/chunk-IEJRRESR.js",
           "kind": "import-statement"
         },
         {
@@ -54850,69 +54900,7 @@
       },
       "bytes": 23280
     },
-    "assets/main-DXBTEAL3.css": {
-      "imports": [
-        {
-          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
-          "kind": "url-token"
-        }
-      ],
-      "inputs": {
-        "components/map-screening/styles.css": {
-          "bytesInOutput": 2896
-        },
-        "components/branding/branding.css": {
-          "bytesInOutput": 515
-        },
-        "components/audience/audience.module.css": {
-          "bytesInOutput": 4123
-        },
-        "components/global-map.module.css": {
-          "bytesInOutput": 2814
-        },
-        "components/workbench/data-connections.module.css": {
-          "bytesInOutput": 1016
-        },
-        "components/workbench/audience-guide.module.css": {
-          "bytesInOutput": 1888
-        },
-        "components/workbench/alternatives.module.css": {
-          "bytesInOutput": 7058
-        },
-        "components/workbench/visibility-windows.module.css": {
-          "bytesInOutput": 2242
-        },
-        "components/workbench/teaching-workbench.module.css": {
-          "bytesInOutput": 1310
-        },
-        "components/workbench/touchdown-lab.module.css": {
-          "bytesInOutput": 8932
-        },
-        "components/workbench/solar-system-view.module.css": {
-          "bytesInOutput": 4477
-        },
-        "components/workbench/globe-navigation.module.css": {
-          "bytesInOutput": 1210
-        },
-        "components/replanning/workspace.module.css": {
-          "bytesInOutput": 6050
-        },
-        "components/education-materials/materials.module.css": {
-          "bytesInOutput": 742
-        },
-        "app/mission-theme.css": {
-          "bytesInOutput": 26608
-        },
-        "app/lunario-fonts.css": {
-          "bytesInOutput": 70
-        },
-        "web-source/fonts.css": {
-          "bytesInOutput": 235
-        }
-      },
-      "bytes": 72187
-    },
-    "assets/main-YFAERREC.js": {
+    "assets/main-CMXTCLAI.js": {
       "imports": [
         {
           "path": "assets/chunks/chunk-CZXEINOJ.js",
@@ -55027,19 +55015,19 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/workspace-JI7O7YVR.js",
+          "path": "assets/chunks/workspace-TT5QBGVO.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/touchdown-lab-3KMK37TC.js",
+          "path": "assets/chunks/touchdown-lab-ENXW6SZB.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/solar-system-view-P4X77ESF.js",
+          "path": "assets/chunks/solar-system-view-USVV4FSB.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "assets/chunks/scene-N7GF7MMF.js",
+          "path": "assets/chunks/scene-AQOMGKOS.js",
           "kind": "dynamic-import"
         },
         {
@@ -55255,7 +55243,7 @@
           "bytesInOutput": 1056
         },
         "lib/resources.ts": {
-          "bytesInOutput": 4819
+          "bytesInOutput": 5587
         },
         "components/workbench/header-landing-status.tsx": {
           "bytesInOutput": 1593
@@ -55333,7 +55321,69 @@
           "bytesInOutput": 0
         }
       },
-      "bytes": 825690
+      "bytes": 826458
+    },
+    "assets/main-DXBTEAL3.css": {
+      "imports": [
+        {
+          "path": "assets/fonts/geist-var-PIJXEPVL.woff2",
+          "kind": "url-token"
+        }
+      ],
+      "inputs": {
+        "components/map-screening/styles.css": {
+          "bytesInOutput": 2896
+        },
+        "components/branding/branding.css": {
+          "bytesInOutput": 515
+        },
+        "components/audience/audience.module.css": {
+          "bytesInOutput": 4123
+        },
+        "components/global-map.module.css": {
+          "bytesInOutput": 2814
+        },
+        "components/workbench/data-connections.module.css": {
+          "bytesInOutput": 1016
+        },
+        "components/workbench/audience-guide.module.css": {
+          "bytesInOutput": 1888
+        },
+        "components/workbench/alternatives.module.css": {
+          "bytesInOutput": 7058
+        },
+        "components/workbench/visibility-windows.module.css": {
+          "bytesInOutput": 2242
+        },
+        "components/workbench/teaching-workbench.module.css": {
+          "bytesInOutput": 1310
+        },
+        "components/workbench/touchdown-lab.module.css": {
+          "bytesInOutput": 8932
+        },
+        "components/workbench/solar-system-view.module.css": {
+          "bytesInOutput": 4477
+        },
+        "components/workbench/globe-navigation.module.css": {
+          "bytesInOutput": 1210
+        },
+        "components/replanning/workspace.module.css": {
+          "bytesInOutput": 6050
+        },
+        "components/education-materials/materials.module.css": {
+          "bytesInOutput": 742
+        },
+        "app/mission-theme.css": {
+          "bytesInOutput": 26608
+        },
+        "app/lunario-fonts.css": {
+          "bytesInOutput": 70
+        },
+        "web-source/fonts.css": {
+          "bytesInOutput": 235
+        }
+      },
+      "bytes": 72187
     }
   }
 }

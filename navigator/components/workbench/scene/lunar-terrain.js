@@ -18,7 +18,6 @@ const MAX_IMAGE_TILES = 4;
 // encoded RG8 values can round the high byte before decoding and create false
 // terraces many metres tall, even with a highp sampler on some GPUs.
 const terrainSamplingGLSL = `
-  precision highp sampler2D;
   uniform sampler2D dem0;
   uniform sampler2D dem1;
   uniform sampler2D dem2;
@@ -113,6 +112,7 @@ const vertexShader = `
 `;
 
 const fragmentShader = `
+  precision highp sampler2D;
   #include <common>
   #include <logdepthbuf_pars_fragment>
   ${terrainSamplingGLSL}
@@ -277,6 +277,7 @@ const shadowVertexShader = `
   void main(){shadowUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}
 `;
 const shadowFragmentShader = `
+  precision highp sampler2D;
   ${terrainSamplingGLSL}
   uniform vec3 sunDirection;
   uniform vec4 shadowRect;
