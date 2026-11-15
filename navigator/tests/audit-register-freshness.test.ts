@@ -15,6 +15,8 @@ test('scientific register refuses stale input, numerical implementation, invento
  ['public/data/engineering-evidence/spice-reference.json',text=>{const data=JSON.parse(text);data.samples[0].azimuthDeg+=10;return JSON.stringify(data);}],
  ['docs/qa/scientific-audit/resources/reference.json',text=>text+' '],
  ['scripts/audit-resources-compare.ts',text=>text+'\n// comparison producer mutation probe\n'],
+ ['scripts/terrain-codec.mjs',text=>{assert.ok(text.includes('Math.max(0.1,'));return text.replace('Math.max(0.1,','Math.max(1000,');}],
+ ['package-lock.json',text=>text+' '],
  ['lib/planning-types.ts',text=>text+'\n// default policy dependency mutation probe\n'],
  ['public/data/global-terrain.json',text=>text+' '],
 

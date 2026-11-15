@@ -153,6 +153,10 @@
     "scripts/audit-resources-reference.py": "d8ebbdb33eb10c54dc24447ceeac8227467deea283fc8cd76846d11d5b6fb8ec",
     "scripts/prepare-mission-trajectories-clps.py": "0eaeaea5939b62ec64ef37d69e0ba11e7b2e28496498833b0c5243ebf0ab8819",
     "scripts/verify-engineering-evidence.mts": "25d09947c0df693d4ce6a35865490e787f2f701388c46d026579edcd1f050178",
-    "tests/comms-evaluation/compare-sources.mts": "c0360b6fe4ba49376b6a06140c5c9a00916354b4c52b9e3ce71bd5ee2c67ce5f"
+    "tests/comms-evaluation/compare-sources.mts": "c0360b6fe4ba49376b6a06140c5c9a00916354b4c52b9e3ce71bd5ee2c67ce5f",
+    "scripts/terrain-codec.mjs": "13dda079a31ca00858f68562c01378cbcbb25048e58f986b8f7ad2720924193f",
+    "package-lock.json": "f3228bbfa1c50847a162881e70ec01077990561c653479635d59b257b06cf5b4",
+    "pipeline/audit-requirements.txt": "3ca9a894d467b905912ec9cda354fdf80f0c7d11f9e530d3cba2fb62ec891c99",
+    "pipeline/requirements.txt": "6ef75a03e26860a84a45de6b9e5490ab1b9122f72d7014a24397071dc5a9d77b"
   }
 }
