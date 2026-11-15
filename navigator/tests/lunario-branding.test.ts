@@ -43,7 +43,11 @@ test("vendor bytes and provenance match the pinned original Lunario commit", () 
 });
 
 test("offline runtime preserves the actual SVG outlines, vendor JS and CSS with only its font URL embedded", () => {
-  for (const [uri, path] of [[LUNARIO_WORDMARK, "assets/logo-dark.svg"], [LUNARIO_MARK, "assets/logo-mark-dark.svg"]]) {
+  for (const [uri, path] of [
+    [LUNARIO_WORDMARK, "assets/logo-dark.svg"],
+    [LUNARIO_WORDMARK_ON_DARK, "assets/logo.svg"],
+    [LUNARIO_MARK, "assets/logo-mark-dark.svg"],
+  ] as const) {
     assert.match(uri, /^data:image\/svg\+xml;base64,/);
     assert.deepEqual(Buffer.from(uri.split(",")[1], "base64"), read(path));
   }
@@ -52,6 +56,8 @@ test("offline runtime preserves the actual SVG outlines, vendor JS and CSS with 
   assert.match(svg, /<path fill="#0B0D12" d="M88/); // Original letter outlines, not font-dependent text.
   assert.match(svg, /stroke="#D98A00"/);
   assert.doesNotMatch(svg, /<text|<image|href=|<script/);
+  const onDark = Buffer.from(LUNARIO_WORDMARK_ON_DARK.split(",")[1], "base64").toString();
+  assert.match(onDark, /stroke="#F5A524"/); // Amber arc on the mark for dark UI.
   assert.equal(LUNARIO_LOADER_JS, read("loader/loader.js").toString());
   const font = `data:font/woff2;base64,${read("loader/fonts/geist-mono-regular.woff2").toString("base64")}`;
   assert.equal(LUNARIO_LOADER_CSS, read("loader/loader.css").toString().replace('url("fonts/geist-mono-regular.woff2")', `url("${font}")`));
