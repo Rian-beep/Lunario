@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+ok 1 - a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+  ---
+  duration_ms: 1.609401
+  ...
+# Subtest: provider numeric fields reject JavaScript hexadecimal notation
+ok 2 - provider numeric fields reject JavaScript hexadecimal notation
+  ---
+  duration_ms: 0.259181
+  ...
+# Subtest: strict import rejects geometry columns that do not reproduce archived source bytes
+ok 3 - strict import rejects geometry columns that do not reproduce archived source bytes
+  ---
+  duration_ms: 1.250304
+  ...
+# Subtest: future-issued stationHorizon cannot grant modeled capacity
+ok 4 - future-issued stationHorizon cannot grant modeled capacity
+  ---
+  duration_ms: 2.041705
+  ...
+# Subtest: future-issued lunarMask cannot grant modeled capacity
+ok 5 - future-issued lunarMask cannot grant modeled capacity
+  ---
+  duration_ms: 1.521035
+  ...
+# Subtest: future-issued hardware cannot grant modeled capacity
+ok 6 - future-issued hardware cannot grant modeled capacity
+  ---
+  duration_ms: 1.185067
+  ...
+# Subtest: future-issued allocations cannot grant modeled capacity
+ok 7 - future-issued allocations cannot grant modeled capacity
+  ---
+  duration_ms: 0.893447
+  ...
+# Subtest: missing Earth-orientation coverage stays unknown
+ok 8 - missing Earth-orientation coverage stays unknown
+  ---
+  duration_ms: 1.181306
+  ...
+# Subtest: epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+ok 9 - epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+  ---
+  duration_ms: 1.021743
+  ...
+# Subtest: a fully covered conditional chain retains existing capacity and has no overall authority
+ok 10 - a fully covered conditional chain retains existing capacity and has no overall authority
+  ---
+  duration_ms: 0.661816
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 128.249663

@@ -1,0 +1,1867 @@
+TAP version 13
+# Subtest: audit resources: dark-depletion/generatedWh
+ok 1 - audit resources: dark-depletion/generatedWh
+  ---
+  duration_ms: 0.536871
+  ...
+# Subtest: audit resources: dark-depletion/finalBatteryWh
+ok 2 - audit resources: dark-depletion/finalBatteryWh
+  ---
+  duration_ms: 0.125516
+  ...
+# Subtest: audit resources: dark-depletion/minBatteryWh
+ok 3 - audit resources: dark-depletion/minBatteryWh
+  ---
+  duration_ms: 0.052778
+  ...
+# Subtest: audit resources: dark-depletion/unmetWh
+ok 4 - audit resources: dark-depletion/unmetWh
+  ---
+  duration_ms: 0.060657
+  ...
+# Subtest: audit resources: dark-depletion/reserveHours
+ok 5 - audit resources: dark-depletion/reserveHours
+  ---
+  duration_ms: 0.066747
+  ...
+# Subtest: audit resources: dark-depletion/reserve-crossing
+ok 6 - audit resources: dark-depletion/reserve-crossing
+  ---
+  duration_ms: 0.041109
+  ...
+# Subtest: audit resources: dark-depletion/unserved-load
+ok 7 - audit resources: dark-depletion/unserved-load
+  ---
+  duration_ms: 0.041719
+  ...
+# Subtest: audit resources: dark-depletion/bus-energy-balance
+ok 8 - audit resources: dark-depletion/bus-energy-balance
+  ---
+  duration_ms: 0.092857
+  ...
+# Subtest: audit resources: charge-bus-cap/generatedWh
+ok 9 - audit resources: charge-bus-cap/generatedWh
+  ---
+  duration_ms: 0.087057
+  ...
+# Subtest: audit resources: charge-bus-cap/finalBatteryWh
+ok 10 - audit resources: charge-bus-cap/finalBatteryWh
+  ---
+  duration_ms: 0.063137
+  ...
+# Subtest: audit resources: charge-bus-cap/minBatteryWh
+ok 11 - audit resources: charge-bus-cap/minBatteryWh
+  ---
+  duration_ms: 0.044688
+  ...
+# Subtest: audit resources: charge-bus-cap/curtailedWh
+ok 12 - audit resources: charge-bus-cap/curtailedWh
+  ---
+  duration_ms: 0.053049
+  ...
+# Subtest: audit resources: charge-bus-cap/unmetWh
+ok 13 - audit resources: charge-bus-cap/unmetWh
+  ---
+  duration_ms: 0.064568
+  ...
+# Subtest: audit resources: charge-bus-cap/bus-energy-balance
+ok 14 - audit resources: charge-bus-cap/bus-energy-balance
+  ---
+  duration_ms: 0.057068
+  ...
+# Subtest: audit resources: discharge-bus-cap/generatedWh
+ok 15 - audit resources: discharge-bus-cap/generatedWh
+  ---
+  duration_ms: 0.041128
+  ...
+# Subtest: audit resources: discharge-bus-cap/finalBatteryWh
+ok 16 - audit resources: discharge-bus-cap/finalBatteryWh
+  ---
+  duration_ms: 0.035389
+  ...
+# Subtest: audit resources: discharge-bus-cap/minBatteryWh
+ok 17 - audit resources: discharge-bus-cap/minBatteryWh
+  ---
+  duration_ms: 0.035189
+  ...
+# Subtest: audit resources: discharge-bus-cap/unmetWh
+ok 18 - audit resources: discharge-bus-cap/unmetWh
+  ---
+  duration_ms: 0.123346
+  ...
+# Subtest: audit resources: discharge-bus-cap/unserved-load
+ok 19 - audit resources: discharge-bus-cap/unserved-load
+  ---
+  duration_ms: 0.109866
+  ...
+# Subtest: audit resources: discharge-bus-cap/bus-energy-balance
+ok 20 - audit resources: discharge-bus-cap/bus-energy-balance
+  ---
+  duration_ms: 0.073797
+  ...
+# Subtest: audit resources: capacity-saturation/generatedWh
+ok 21 - audit resources: capacity-saturation/generatedWh
+  ---
+  duration_ms: 0.077288
+  ...
+# Subtest: audit resources: capacity-saturation/finalBatteryWh
+ok 22 - audit resources: capacity-saturation/finalBatteryWh
+  ---
+  duration_ms: 0.036779
+  ...
+# Subtest: audit resources: capacity-saturation/minBatteryWh
+ok 23 - audit resources: capacity-saturation/minBatteryWh
+  ---
+  duration_ms: 0.055968
+  ...
+# Subtest: audit resources: capacity-saturation/curtailedWh
+ok 24 - audit resources: capacity-saturation/curtailedWh
+  ---
+  duration_ms: 0.070587
+  ...
+# Subtest: audit resources: capacity-saturation/unmetWh
+ok 25 - audit resources: capacity-saturation/unmetWh
+  ---
+  duration_ms: 0.051828
+  ...
+# Subtest: audit resources: capacity-saturation/bus-energy-balance
+ok 26 - audit resources: capacity-saturation/bus-energy-balance
+  ---
+  duration_ms: 0.048838
+  ...
+# Subtest: audit resources: reserve-recovery/generatedWh
+ok 27 - audit resources: reserve-recovery/generatedWh
+  ---
+  duration_ms: 0.075467
+  ...
+# Subtest: audit resources: reserve-recovery/finalBatteryWh
+ok 28 - audit resources: reserve-recovery/finalBatteryWh
+  ---
+  duration_ms: 0.056057
+  ...
+# Subtest: audit resources: reserve-recovery/minBatteryWh
+ok 29 - audit resources: reserve-recovery/minBatteryWh
+  ---
+  duration_ms: 0.046938
+  ...
+# Subtest: audit resources: reserve-recovery/reserveHours
+ok 30 - audit resources: reserve-recovery/reserveHours
+  ---
+  duration_ms: 0.045148
+  ...
+# Subtest: audit resources: reserve-recovery/unmetWh
+ok 31 - audit resources: reserve-recovery/unmetWh
+  ---
+  duration_ms: 0.044699
+  ...
+# Subtest: audit resources: reserve-recovery/bus-energy-balance
+ok 32 - audit resources: reserve-recovery/bus-energy-balance
+  ---
+  duration_ms: 0.041209
+  ...
+# Subtest: audit resources: solar-0/power
+ok 33 - audit resources: solar-0/power
+  ---
+  duration_ms: 0.124196
+  ...
+# Subtest: audit resources: solar-1/power
+ok 34 - audit resources: solar-1/power
+  ---
+  duration_ms: 0.052938
+  ...
+# Subtest: audit resources: solar-2/power
+ok 35 - audit resources: solar-2/power
+  ---
+  duration_ms: 0.046918
+  ...
+# Subtest: audit resources: solar-3/power
+ok 36 - audit resources: solar-3/power
+  ---
+  duration_ms: 0.044458
+  ...
+# Subtest: audit resources: solar-4/power
+ok 37 - audit resources: solar-4/power
+  ---
+  duration_ms: 0.042398
+  ...
+# Subtest: audit resources: solar-5/power
+ok 38 - audit resources: solar-5/power
+  ---
+  duration_ms: 0.108366
+  ...
+# Subtest: audit resources: solar-6/power
+ok 39 - audit resources: solar-6/power
+  ---
+  duration_ms: 0.036668
+  ...
+# Subtest: audit resources: solar-7/power
+ok 40 - audit resources: solar-7/power
+  ---
+  duration_ms: 0.022379
+  ...
+# Subtest: audit resources: rf-0/pathLossDb
+ok 41 - audit resources: rf-0/pathLossDb
+  ---
+  duration_ms: 0.022019
+  ...
+# Subtest: audit resources: rf-0/receivedDbw
+ok 42 - audit resources: rf-0/receivedDbw
+  ---
+  duration_ms: 0.021409
+  ...
+# Subtest: audit resources: rf-0/ebN0Db
+ok 43 - audit resources: rf-0/ebN0Db
+  ---
+  duration_ms: 0.023059
+  ...
+# Subtest: audit resources: rf-0/marginDb
+ok 44 - audit resources: rf-0/marginDb
+  ---
+  duration_ms: 0.022959
+  ...
+# Subtest: audit resources: rf-1/pathLossDb
+ok 45 - audit resources: rf-1/pathLossDb
+  ---
+  duration_ms: 0.035708
+  ...
+# Subtest: audit resources: rf-1/receivedDbw
+ok 46 - audit resources: rf-1/receivedDbw
+  ---
+  duration_ms: 0.020249
+  ...
+# Subtest: audit resources: rf-1/ebN0Db
+ok 47 - audit resources: rf-1/ebN0Db
+  ---
+  duration_ms: 0.01861
+  ...
+# Subtest: audit resources: rf-1/marginDb
+ok 48 - audit resources: rf-1/marginDb
+  ---
+  duration_ms: 0.01861
+  ...
+# Subtest: audit resources: rf-2/pathLossDb
+ok 49 - audit resources: rf-2/pathLossDb
+  ---
+  duration_ms: 0.01906
+  ...
+# Subtest: audit resources: rf-2/receivedDbw
+ok 50 - audit resources: rf-2/receivedDbw
+  ---
+  duration_ms: 0.018939
+  ...
+# Subtest: audit resources: rf-2/ebN0Db
+ok 51 - audit resources: rf-2/ebN0Db
+  ---
+  duration_ms: 0.021529
+  ...
+# Subtest: audit resources: rf-2/marginDb
+ok 52 - audit resources: rf-2/marginDb
+  ---
+  duration_ms: 0.019459
+  ...
+# Subtest: audit resources: goldstone/ecef-x
+ok 53 - audit resources: goldstone/ecef-x
+  ---
+  duration_ms: 0.020879
+  ...
+# Subtest: audit resources: goldstone/ecef-y
+ok 54 - audit resources: goldstone/ecef-y
+  ---
+  duration_ms: 0.021499
+  ...
+# Subtest: audit resources: goldstone/ecef-z
+ok 55 - audit resources: goldstone/ecef-z
+  ---
+  duration_ms: 0.020739
+  ...
+# Subtest: audit resources: madrid/ecef-x
+ok 56 - audit resources: madrid/ecef-x
+  ---
+  duration_ms: 0.021819
+  ...
+# Subtest: audit resources: madrid/ecef-y
+ok 57 - audit resources: madrid/ecef-y
+  ---
+  duration_ms: 0.022859
+  ...
+# Subtest: audit resources: madrid/ecef-z
+ok 58 - audit resources: madrid/ecef-z
+  ---
+  duration_ms: 0.020419
+  ...
+# Subtest: audit resources: canberra/ecef-x
+ok 59 - audit resources: canberra/ecef-x
+  ---
+  duration_ms: 0.021549
+  ...
+# Subtest: audit resources: canberra/ecef-y
+ok 60 - audit resources: canberra/ecef-y
+  ---
+  duration_ms: 0.020569
+  ...
+# Subtest: audit resources: canberra/ecef-z
+ok 61 - audit resources: canberra/ecef-z
+  ---
+  duration_ms: 0.021839
+  ...
+# Subtest: audit resources: jpl-105E/slant
+ok 62 - audit resources: jpl-105E/slant
+  ---
+  duration_ms: 0.021199
+  ...
+# Subtest: audit resources: jpl-105E/noise
+ok 63 - audit resources: jpl-105E/noise
+  ---
+  duration_ms: 0.020579
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/azimuth
+ok 64 - audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.023159
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/elevation
+ok 65 - audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.034899
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/range
+ok 66 - audit resources: station-geometry/goldstone/2026-11-14T00:00:00.000Z/range
+  ---
+  duration_ms: 0.023059
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/azimuth
+ok 67 - audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021599
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/elevation
+ok 68 - audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/elevation
+  ---
+  duration_ms: 0.022549
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/range
+ok 69 - audit resources: station-geometry/goldstone/2026-11-14T01:00:00.000Z/range
+  ---
+  duration_ms: 0.022189
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/azimuth
+ok 70 - audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021209
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/elevation
+ok 71 - audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/elevation
+  ---
+  duration_ms: 0.021219
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/range
+ok 72 - audit resources: station-geometry/goldstone/2026-11-14T02:00:00.000Z/range
+  ---
+  duration_ms: 0.020579
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/azimuth
+ok 73 - audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022239
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/elevation
+ok 74 - audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/elevation
+  ---
+  duration_ms: 0.033168
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/range
+ok 75 - audit resources: station-geometry/goldstone/2026-11-14T03:00:00.000Z/range
+  ---
+  duration_ms: 0.021079
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/azimuth
+ok 76 - audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021159
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/elevation
+ok 77 - audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/elevation
+  ---
+  duration_ms: 0.022669
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/range
+ok 78 - audit resources: station-geometry/goldstone/2026-11-14T04:00:00.000Z/range
+  ---
+  duration_ms: 0.021149
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/azimuth
+ok 79 - audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020909
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/elevation
+ok 80 - audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/elevation
+  ---
+  duration_ms: 0.021959
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/range
+ok 81 - audit resources: station-geometry/goldstone/2026-11-14T05:00:00.000Z/range
+  ---
+  duration_ms: 0.023789
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/azimuth
+ok 82 - audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.019609
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/elevation
+ok 83 - audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/elevation
+  ---
+  duration_ms: 0.021459
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/range
+ok 84 - audit resources: station-geometry/goldstone/2026-11-14T06:00:00.000Z/range
+  ---
+  duration_ms: 0.020479
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/azimuth
+ok 85 - audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020259
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/elevation
+ok 86 - audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/elevation
+  ---
+  duration_ms: 0.023949
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/range
+ok 87 - audit resources: station-geometry/goldstone/2026-11-14T07:00:00.000Z/range
+  ---
+  duration_ms: 0.023319
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/azimuth
+ok 88 - audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.02031
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/elevation
+ok 89 - audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/elevation
+  ---
+  duration_ms: 0.02037
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/range
+ok 90 - audit resources: station-geometry/goldstone/2026-11-14T08:00:00.000Z/range
+  ---
+  duration_ms: 0.02117
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/azimuth
+ok 91 - audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.02096
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/elevation
+ok 92 - audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/elevation
+  ---
+  duration_ms: 0.032529
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/range
+ok 93 - audit resources: station-geometry/goldstone/2026-11-14T09:00:00.000Z/range
+  ---
+  duration_ms: 0.031728
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/azimuth
+ok 94 - audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.023359
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/elevation
+ok 95 - audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020539
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/range
+ok 96 - audit resources: station-geometry/goldstone/2026-11-14T10:00:00.000Z/range
+  ---
+  duration_ms: 0.021419
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/azimuth
+ok 97 - audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020599
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/elevation
+ok 98 - audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020149
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/range
+ok 99 - audit resources: station-geometry/goldstone/2026-11-14T11:00:00.000Z/range
+  ---
+  duration_ms: 0.022229
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/azimuth
+ok 100 - audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022909
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/elevation
+ok 101 - audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/elevation
+  ---
+  duration_ms: 0.021469
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/range
+ok 102 - audit resources: station-geometry/goldstone/2026-11-14T12:00:00.000Z/range
+  ---
+  duration_ms: 0.022469
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/azimuth
+ok 103 - audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.024099
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/elevation
+ok 104 - audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/elevation
+  ---
+  duration_ms: 0.045969
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/range
+ok 105 - audit resources: station-geometry/goldstone/2026-11-14T13:00:00.000Z/range
+  ---
+  duration_ms: 0.0225
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/azimuth
+ok 106 - audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.02143
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/elevation
+ok 107 - audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/elevation
+  ---
+  duration_ms: 0.030189
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/range
+ok 108 - audit resources: station-geometry/goldstone/2026-11-14T14:00:00.000Z/range
+  ---
+  duration_ms: 0.023549
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/azimuth
+ok 109 - audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022169
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/elevation
+ok 110 - audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/elevation
+  ---
+  duration_ms: 0.023619
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/range
+ok 111 - audit resources: station-geometry/goldstone/2026-11-14T15:00:00.000Z/range
+  ---
+  duration_ms: 0.021669
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/azimuth
+ok 112 - audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022059
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/elevation
+ok 113 - audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/elevation
+  ---
+  duration_ms: 0.022429
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/range
+ok 114 - audit resources: station-geometry/goldstone/2026-11-14T16:00:00.000Z/range
+  ---
+  duration_ms: 0.022339
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/azimuth
+ok 115 - audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021779
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/elevation
+ok 116 - audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/elevation
+  ---
+  duration_ms: 0.021529
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/range
+ok 117 - audit resources: station-geometry/goldstone/2026-11-14T17:00:00.000Z/range
+  ---
+  duration_ms: 0.022199
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/azimuth
+ok 118 - audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022819
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/elevation
+ok 119 - audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/elevation
+  ---
+  duration_ms: 0.022699
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/range
+ok 120 - audit resources: station-geometry/goldstone/2026-11-14T18:00:00.000Z/range
+  ---
+  duration_ms: 0.022349
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/azimuth
+ok 121 - audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020679
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/elevation
+ok 122 - audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020929
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/range
+ok 123 - audit resources: station-geometry/goldstone/2026-11-14T19:00:00.000Z/range
+  ---
+  duration_ms: 0.024839
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/azimuth
+ok 124 - audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021419
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/elevation
+ok 125 - audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020939
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/range
+ok 126 - audit resources: station-geometry/goldstone/2026-11-14T20:00:00.000Z/range
+  ---
+  duration_ms: 0.021149
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/azimuth
+ok 127 - audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021519
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/elevation
+ok 128 - audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020079
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/range
+ok 129 - audit resources: station-geometry/goldstone/2026-11-14T21:00:00.000Z/range
+  ---
+  duration_ms: 0.021719
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/azimuth
+ok 130 - audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021679
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/elevation
+ok 131 - audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/elevation
+  ---
+  duration_ms: 0.019849
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/range
+ok 132 - audit resources: station-geometry/goldstone/2026-11-14T22:00:00.000Z/range
+  ---
+  duration_ms: 0.020959
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/azimuth
+ok 133 - audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.018759
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/elevation
+ok 134 - audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/elevation
+  ---
+  duration_ms: 0.023549
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/range
+ok 135 - audit resources: station-geometry/goldstone/2026-11-14T23:00:00.000Z/range
+  ---
+  duration_ms: 0.020579
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/azimuth
+ok 136 - audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.038378
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/elevation
+ok 137 - audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.046858
+  ...
+# Subtest: audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/range
+ok 138 - audit resources: station-geometry/goldstone/2026-11-15T00:00:00.000Z/range
+  ---
+  duration_ms: 0.044108
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/azimuth
+ok 139 - audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.037258
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/elevation
+ok 140 - audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.038678
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/range
+ok 141 - audit resources: station-geometry/madrid/2026-11-14T00:00:00.000Z/range
+  ---
+  duration_ms: 0.036059
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/azimuth
+ok 142 - audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.035659
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/elevation
+ok 143 - audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/elevation
+  ---
+  duration_ms: 0.035909
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/range
+ok 144 - audit resources: station-geometry/madrid/2026-11-14T01:00:00.000Z/range
+  ---
+  duration_ms: 0.034598
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/azimuth
+ok 145 - audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.054488
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/elevation
+ok 146 - audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/elevation
+  ---
+  duration_ms: 0.038209
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/range
+ok 147 - audit resources: station-geometry/madrid/2026-11-14T02:00:00.000Z/range
+  ---
+  duration_ms: 0.033448
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/azimuth
+ok 148 - audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.031969
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/elevation
+ok 149 - audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/elevation
+  ---
+  duration_ms: 0.033479
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/range
+ok 150 - audit resources: station-geometry/madrid/2026-11-14T03:00:00.000Z/range
+  ---
+  duration_ms: 0.033089
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/azimuth
+ok 151 - audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.034049
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/elevation
+ok 152 - audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/elevation
+  ---
+  duration_ms: 0.033039
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/range
+ok 153 - audit resources: station-geometry/madrid/2026-11-14T04:00:00.000Z/range
+  ---
+  duration_ms: 0.203432
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/azimuth
+ok 154 - audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.034749
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/elevation
+ok 155 - audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/elevation
+  ---
+  duration_ms: 0.038919
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/range
+ok 156 - audit resources: station-geometry/madrid/2026-11-14T05:00:00.000Z/range
+  ---
+  duration_ms: 0.033569
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/azimuth
+ok 157 - audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.032109
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/elevation
+ok 158 - audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/elevation
+  ---
+  duration_ms: 0.033089
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/range
+ok 159 - audit resources: station-geometry/madrid/2026-11-14T06:00:00.000Z/range
+  ---
+  duration_ms: 0.044468
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/azimuth
+ok 160 - audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.032518
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/elevation
+ok 161 - audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/elevation
+  ---
+  duration_ms: 0.030099
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/range
+ok 162 - audit resources: station-geometry/madrid/2026-11-14T07:00:00.000Z/range
+  ---
+  duration_ms: 0.051549
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/azimuth
+ok 163 - audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.034189
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/elevation
+ok 164 - audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/elevation
+  ---
+  duration_ms: 0.032808
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/range
+ok 165 - audit resources: station-geometry/madrid/2026-11-14T08:00:00.000Z/range
+  ---
+  duration_ms: 0.030009
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/azimuth
+ok 166 - audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.052579
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/elevation
+ok 167 - audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/elevation
+  ---
+  duration_ms: 0.030189
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/range
+ok 168 - audit resources: station-geometry/madrid/2026-11-14T09:00:00.000Z/range
+  ---
+  duration_ms: 0.031629
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/azimuth
+ok 169 - audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.031249
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/elevation
+ok 170 - audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/elevation
+  ---
+  duration_ms: 0.032619
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/range
+ok 171 - audit resources: station-geometry/madrid/2026-11-14T10:00:00.000Z/range
+  ---
+  duration_ms: 1.762355
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/azimuth
+ok 172 - audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.075268
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/elevation
+ok 173 - audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/elevation
+  ---
+  duration_ms: 0.035569
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/range
+ok 174 - audit resources: station-geometry/madrid/2026-11-14T11:00:00.000Z/range
+  ---
+  duration_ms: 0.027119
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/azimuth
+ok 175 - audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.026909
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/elevation
+ok 176 - audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/elevation
+  ---
+  duration_ms: 0.026939
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/range
+ok 177 - audit resources: station-geometry/madrid/2026-11-14T12:00:00.000Z/range
+  ---
+  duration_ms: 0.030099
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/azimuth
+ok 178 - audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.024759
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/elevation
+ok 179 - audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/elevation
+  ---
+  duration_ms: 0.025689
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/range
+ok 180 - audit resources: station-geometry/madrid/2026-11-14T13:00:00.000Z/range
+  ---
+  duration_ms: 0.043779
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/azimuth
+ok 181 - audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.027969
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/elevation
+ok 182 - audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/elevation
+  ---
+  duration_ms: 0.034279
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/range
+ok 183 - audit resources: station-geometry/madrid/2026-11-14T14:00:00.000Z/range
+  ---
+  duration_ms: 0.025929
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/azimuth
+ok 184 - audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.025909
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/elevation
+ok 185 - audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/elevation
+  ---
+  duration_ms: 0.02632
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/range
+ok 186 - audit resources: station-geometry/madrid/2026-11-14T15:00:00.000Z/range
+  ---
+  duration_ms: 0.025539
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/azimuth
+ok 187 - audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.023579
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/elevation
+ok 188 - audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/elevation
+  ---
+  duration_ms: 0.163824
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/range
+ok 189 - audit resources: station-geometry/madrid/2026-11-14T16:00:00.000Z/range
+  ---
+  duration_ms: 0.040188
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/azimuth
+ok 190 - audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.026399
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/elevation
+ok 191 - audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/elevation
+  ---
+  duration_ms: 0.024929
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/range
+ok 192 - audit resources: station-geometry/madrid/2026-11-14T17:00:00.000Z/range
+  ---
+  duration_ms: 0.024339
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/azimuth
+ok 193 - audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.023999
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/elevation
+ok 194 - audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/elevation
+  ---
+  duration_ms: 0.02346
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/range
+ok 195 - audit resources: station-geometry/madrid/2026-11-14T18:00:00.000Z/range
+  ---
+  duration_ms: 0.026299
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/azimuth
+ok 196 - audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.045768
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/elevation
+ok 197 - audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/elevation
+  ---
+  duration_ms: 0.025299
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/range
+ok 198 - audit resources: station-geometry/madrid/2026-11-14T19:00:00.000Z/range
+  ---
+  duration_ms: 0.021239
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/azimuth
+ok 199 - audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.023209
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/elevation
+ok 200 - audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/elevation
+  ---
+  duration_ms: 0.022749
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/range
+ok 201 - audit resources: station-geometry/madrid/2026-11-14T20:00:00.000Z/range
+  ---
+  duration_ms: 0.025509
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/azimuth
+ok 202 - audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.0229
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/elevation
+ok 203 - audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/elevation
+  ---
+  duration_ms: 0.023479
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/range
+ok 204 - audit resources: station-geometry/madrid/2026-11-14T21:00:00.000Z/range
+  ---
+  duration_ms: 0.029149
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/azimuth
+ok 205 - audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020919
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/elevation
+ok 206 - audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020039
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/range
+ok 207 - audit resources: station-geometry/madrid/2026-11-14T22:00:00.000Z/range
+  ---
+  duration_ms: 0.022189
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/azimuth
+ok 208 - audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.021459
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/elevation
+ok 209 - audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020319
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/range
+ok 210 - audit resources: station-geometry/madrid/2026-11-14T23:00:00.000Z/range
+  ---
+  duration_ms: 0.020449
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/azimuth
+ok 211 - audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020749
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/elevation
+ok 212 - audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020079
+  ...
+# Subtest: audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/range
+ok 213 - audit resources: station-geometry/madrid/2026-11-15T00:00:00.000Z/range
+  ---
+  duration_ms: 0.019699
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/azimuth
+ok 214 - audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020199
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/elevation
+ok 215 - audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020689
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/range
+ok 216 - audit resources: station-geometry/canberra/2026-11-14T00:00:00.000Z/range
+  ---
+  duration_ms: 0.021029
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/azimuth
+ok 217 - audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.019389
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/elevation
+ok 218 - audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/elevation
+  ---
+  duration_ms: 0.020959
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/range
+ok 219 - audit resources: station-geometry/canberra/2026-11-14T01:00:00.000Z/range
+  ---
+  duration_ms: 0.028379
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/azimuth
+ok 220 - audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.030229
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/elevation
+ok 221 - audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/elevation
+  ---
+  duration_ms: 0.031279
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/range
+ok 222 - audit resources: station-geometry/canberra/2026-11-14T02:00:00.000Z/range
+  ---
+  duration_ms: 0.028559
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/azimuth
+ok 223 - audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.030129
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/elevation
+ok 224 - audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/elevation
+  ---
+  duration_ms: 0.032409
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/range
+ok 225 - audit resources: station-geometry/canberra/2026-11-14T03:00:00.000Z/range
+  ---
+  duration_ms: 0.029619
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/azimuth
+ok 226 - audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.049589
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/elevation
+ok 227 - audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/elevation
+  ---
+  duration_ms: 0.02063
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/range
+ok 228 - audit resources: station-geometry/canberra/2026-11-14T04:00:00.000Z/range
+  ---
+  duration_ms: 0.01778
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/azimuth
+ok 229 - audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.01829
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/elevation
+ok 230 - audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/elevation
+  ---
+  duration_ms: 0.0195
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/range
+ok 231 - audit resources: station-geometry/canberra/2026-11-14T05:00:00.000Z/range
+  ---
+  duration_ms: 0.019009
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/azimuth
+ok 232 - audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.018539
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/elevation
+ok 233 - audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/elevation
+  ---
+  duration_ms: 0.031249
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/range
+ok 234 - audit resources: station-geometry/canberra/2026-11-14T06:00:00.000Z/range
+  ---
+  duration_ms: 0.01927
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/azimuth
+ok 235 - audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.0175
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/elevation
+ok 236 - audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/elevation
+  ---
+  duration_ms: 0.025749
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/range
+ok 237 - audit resources: station-geometry/canberra/2026-11-14T07:00:00.000Z/range
+  ---
+  duration_ms: 0.01972
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/azimuth
+ok 238 - audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.01715
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/elevation
+ok 239 - audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01787
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/range
+ok 240 - audit resources: station-geometry/canberra/2026-11-14T08:00:00.000Z/range
+  ---
+  duration_ms: 0.020079
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/azimuth
+ok 241 - audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.017779
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/elevation
+ok 242 - audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/elevation
+  ---
+  duration_ms: 0.017649
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/range
+ok 243 - audit resources: station-geometry/canberra/2026-11-14T09:00:00.000Z/range
+  ---
+  duration_ms: 0.018639
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/azimuth
+ok 244 - audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.019809
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/elevation
+ok 245 - audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/elevation
+  ---
+  duration_ms: 0.018899
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/range
+ok 246 - audit resources: station-geometry/canberra/2026-11-14T10:00:00.000Z/range
+  ---
+  duration_ms: 0.018629
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/azimuth
+ok 247 - audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.020019
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/elevation
+ok 248 - audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/elevation
+  ---
+  duration_ms: 0.019129
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/range
+ok 249 - audit resources: station-geometry/canberra/2026-11-14T11:00:00.000Z/range
+  ---
+  duration_ms: 0.01755
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/azimuth
+ok 250 - audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.0175
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/elevation
+ok 251 - audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01775
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/range
+ok 252 - audit resources: station-geometry/canberra/2026-11-14T12:00:00.000Z/range
+  ---
+  duration_ms: 0.01816
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/azimuth
+ok 253 - audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.017429
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/elevation
+ok 254 - audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/elevation
+  ---
+  duration_ms: 0.018599
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/range
+ok 255 - audit resources: station-geometry/canberra/2026-11-14T13:00:00.000Z/range
+  ---
+  duration_ms: 0.030999
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/azimuth
+ok 256 - audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.025999
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/elevation
+ok 257 - audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01834
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/range
+ok 258 - audit resources: station-geometry/canberra/2026-11-14T14:00:00.000Z/range
+  ---
+  duration_ms: 0.01699
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/azimuth
+ok 259 - audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.0229
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/elevation
+ok 260 - audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01868
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/range
+ok 261 - audit resources: station-geometry/canberra/2026-11-14T15:00:00.000Z/range
+  ---
+  duration_ms: 0.01867
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/azimuth
+ok 262 - audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.051429
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/elevation
+ok 263 - audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01925
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/range
+ok 264 - audit resources: station-geometry/canberra/2026-11-14T16:00:00.000Z/range
+  ---
+  duration_ms: 0.01835
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/azimuth
+ok 265 - audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.01739
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/elevation
+ok 266 - audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/elevation
+  ---
+  duration_ms: 0.018139
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/range
+ok 267 - audit resources: station-geometry/canberra/2026-11-14T17:00:00.000Z/range
+  ---
+  duration_ms: 0.020839
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/azimuth
+ok 268 - audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.016219
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/elevation
+ok 269 - audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/elevation
+  ---
+  duration_ms: 0.016729
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/range
+ok 270 - audit resources: station-geometry/canberra/2026-11-14T18:00:00.000Z/range
+  ---
+  duration_ms: 0.017939
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/azimuth
+ok 271 - audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.017429
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/elevation
+ok 272 - audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/elevation
+  ---
+  duration_ms: 0.016709
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/range
+ok 273 - audit resources: station-geometry/canberra/2026-11-14T19:00:00.000Z/range
+  ---
+  duration_ms: 0.01819
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/azimuth
+ok 274 - audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.022329
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/elevation
+ok 275 - audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/elevation
+  ---
+  duration_ms: 0.01805
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/range
+ok 276 - audit resources: station-geometry/canberra/2026-11-14T20:00:00.000Z/range
+  ---
+  duration_ms: 0.01715
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/azimuth
+ok 277 - audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.01684
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/elevation
+ok 278 - audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/elevation
+  ---
+  duration_ms: 0.016949
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/range
+ok 279 - audit resources: station-geometry/canberra/2026-11-14T21:00:00.000Z/range
+  ---
+  duration_ms: 0.017199
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/azimuth
+ok 280 - audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.017469
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/elevation
+ok 281 - audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/elevation
+  ---
+  duration_ms: 0.017369
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/range
+ok 282 - audit resources: station-geometry/canberra/2026-11-14T22:00:00.000Z/range
+  ---
+  duration_ms: 0.01657
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/azimuth
+ok 283 - audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.01644
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/elevation
+ok 284 - audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/elevation
+  ---
+  duration_ms: 0.017589
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/range
+ok 285 - audit resources: station-geometry/canberra/2026-11-14T23:00:00.000Z/range
+  ---
+  duration_ms: 0.016269
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/azimuth
+ok 286 - audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/azimuth
+  ---
+  duration_ms: 0.018379
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/elevation
+ok 287 - audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/elevation
+  ---
+  duration_ms: 0.017639
+  ...
+# Subtest: audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/range
+ok 288 - audit resources: station-geometry/canberra/2026-11-15T00:00:00.000Z/range
+  ---
+  duration_ms: 0.017349
+  ...
+# Subtest: audit resources: archived primary responses reproduce byte identities
+ok 289 - audit resources: archived primary responses reproduce byte identities
+  ---
+  duration_ms: 9.364637
+  ...
+# Subtest: audit resources: two seconds at 360 W is 0.2 Wh, not 720 Wh
+ok 290 - audit resources: two seconds at 360 W is 0.2 Wh, not 720 Wh
+  ---
+  duration_ms: 0.261571
+  ...
+# Subtest: audit resources: half visible disk is half irradiance during the whole hour
+ok 291 - audit resources: half visible disk is half irradiance during the whole hour
+  ---
+  duration_ms: 0.233101
+  ...
+# Subtest: audit resources: one charge/discharge cycle loses 20 Wh charging and 40 Wh discharging
+ok 292 - audit resources: one charge/discharge cycle loses 20 Wh charging and 40 Wh discharging
+  ---
+  duration_ms: 0.549739
+  ...
+# Subtest: audit resources: unknown solar gap censors storage while an independent contact gap censors contacts
+ok 293 - audit resources: unknown solar gap censors storage while an independent contact gap censors contacts
+  ---
+  duration_ms: 0.244361
+  ...
+# Subtest: audit resources: RF power ratios use 10 log, distance/frequency doubling costs 6.0206 dB
+ok 294 - audit resources: RF power ratios use 10 log, distance/frequency doubling costs 6.0206 dB
+  ---
+  duration_ms: 0.248501
+  ...
+# Subtest: audit resources: atmospheric limits and context cannot infer a booked band-specific contact
+ok 295 - audit resources: atmospheric limits and context cannot infer a booked band-specific contact
+  ---
+  duration_ms: 0.239411
+  ...
+# Subtest: a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+ok 296 - a quarter-second shifted provider epoch is rejected rather than rounded into hourly coverage
+  ---
+  duration_ms: 1.91256
+  ...
+# Subtest: provider numeric fields reject JavaScript hexadecimal notation
+ok 297 - provider numeric fields reject JavaScript hexadecimal notation
+  ---
+  duration_ms: 0.314179
+  ...
+# Subtest: strict import rejects geometry columns that do not reproduce archived source bytes
+ok 298 - strict import rejects geometry columns that do not reproduce archived source bytes
+  ---
+  duration_ms: 1.426557
+  ...
+# Subtest: future-issued stationHorizon cannot grant modeled capacity
+ok 299 - future-issued stationHorizon cannot grant modeled capacity
+  ---
+  duration_ms: 2.19823
+  ...
+# Subtest: future-issued lunarMask cannot grant modeled capacity
+ok 300 - future-issued lunarMask cannot grant modeled capacity
+  ---
+  duration_ms: 1.832513
+  ...
+# Subtest: future-issued hardware cannot grant modeled capacity
+ok 301 - future-issued hardware cannot grant modeled capacity
+  ---
+  duration_ms: 1.488495
+  ...
+# Subtest: future-issued allocations cannot grant modeled capacity
+ok 302 - future-issued allocations cannot grant modeled capacity
+  ---
+  duration_ms: 0.992214
+  ...
+# Subtest: missing Earth-orientation coverage stays unknown
+ok 303 - missing Earth-orientation coverage stays unknown
+  ---
+  duration_ms: 1.612111
+  ...
+# Subtest: epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+ok 304 - epochs after the advertised EOP prediction boundary cannot grant modeled capacity
+  ---
+  duration_ms: 1.219395
+  ...
+# Subtest: a fully covered conditional chain retains existing capacity and has no overall authority
+ok 305 - a fully covered conditional chain retains existing capacity and has no overall authority
+  ---
+  duration_ms: 0.951415
+  ...
+# Subtest: source context retains ephemeris and data/prediction dates; malformed and absent dates are unknown
+ok 306 - source context retains ephemeris and data/prediction dates; malformed and absent dates are unknown
+  ---
+  duration_ms: 1.544244
+  ...
+# Subtest: empty and invalid imports expose missing/error states with no capacity or false overall pass
+ok 307 - empty and invalid imports expose missing/error states with no capacity or false overall pass
+  ---
+  duration_ms: 1.36909
+  ...
+# Subtest: station geometry summary exposes source time/location/units and explicit refresh semantics
+ok 308 - station geometry summary exposes source time/location/units and explicit refresh semantics
+  ---
+  duration_ms: 3.01059
+  ...
+# Subtest: proxy and station mask remain distinct; neither grants actual service or acquisition
+ok 309 - proxy and station mask remain distinct; neither grants actual service or acquisition
+  ---
+  duration_ms: 7.148049
+  ...
+# Subtest: partial weather, lunar mask and allocation coverage remain explicit and never become zero loss
+ok 310 - partial weather, lunar mask and allocation coverage remain explicit and never become zero loss
+  ---
+  duration_ms: 9.396796
+  ...
+# Subtest: inapplicable observed weather and mismatched frequency remain unknown, future issues stale
+ok 311 - inapplicable observed weather and mismatched frequency remain unknown, future issues stale
+  ---
+  duration_ms: 3.888888
+  ...
+# Subtest: scenario binding changes cannot launder source provenance or retain capacity
+ok 312 - scenario binding changes cannot launder source provenance or retain capacity
+  ---
+  duration_ms: 2.538557
+  ...
+# Subtest: critical windows preserve exact requirements, known zero, gaps and windows outside the stay
+ok 313 - critical windows preserve exact requirements, known zero, gaps and windows outside the stay
+  ---
+  duration_ms: 3.520211
+  ...
+# Subtest: object imports use UTF-8 byte bounds just like file imports
+ok 314 - object imports use UTF-8 byte bounds just like file imports
+  ---
+  duration_ms: 3.331288
+  ...
+# Subtest: compact workspace component is collapsed, inert, honest about unknowns and safe with untrusted text
+ok 315 - compact workspace component is collapsed, inert, honest about unknowns and safe with untrusted text
+  ---
+  duration_ms: 6.450834
+  ...
+# Subtest: three complexes identify ground antennas with WGS84 geodetic data, not satellites
+ok 316 - three complexes identify ground antennas with WGS84 geodetic data, not satellites
+  ---
+  duration_ms: 0.907616
+  ...
+# Subtest: Earth coordinate texture adapter registers prime meridian, equator, poles and dateline
+ok 317 - Earth coordinate texture adapter registers prime meridian, equator, poles and dateline
+  ---
+  duration_ms: 0.157034
+  ...
+# Subtest: physical body sizes and range retain kilometres; centre light time is not a station path
+ok 318 - physical body sizes and range retain kilometres; centre light time is not a station path
+  ---
+  duration_ms: 0.206682
+  ...
+# Subtest: current model weather never becomes selected future mission weather; interval end exclusive
+ok 319 - current model weather never becomes selected future mission weather; interval end exclusive
+  ---
+  duration_ms: 0.246901
+  ...
+# Subtest: weather rejects bad units, gaps, nonfinite values and oversized arrays
+ok 320 - weather rejects bad units, gaps, nonfinite values and oversized arrays
+  ---
+  duration_ms: 0.247751
+  ...
+# Subtest: lunar body axes preserve source directions and angular semidiameter infers solar range
+ok 321 - lunar body axes preserve source directions and angular semidiameter infers solar range
+  ---
+  duration_ms: 0.151954
+  ...
+# Subtest: all three fresh Horizons observer fixtures agree with independently generated CSPICE reference
+ok 322 - all three fresh Horizons observer fixtures agree with independently generated CSPICE reference
+  ---
+  duration_ms: 2.988351
+  ...
+# Subtest: JPL 105E independent published attenuation and atmospheric-noise example
+ok 323 - JPL 105E independent published attenuation and atmospheric-noise example
+  ---
+  duration_ms: 0.28285
+  ...
+# Subtest: request pins actual station, UTC, airless, km and bounded observer settings
+ok 324 - request pins actual station, UTC, airless, km and bounded observer settings
+  ---
+  duration_ms: 0.393955
+  ...
+# Subtest: parser rejects wrong station, missing epochs, wrong frame, units and target, provider errors
+ok 325 - parser rejects wrong station, missing epochs, wrong frame, units and target, provider errors
+  ---
+  duration_ms: 0.635936
+  ...
+# Subtest: bounded strict offline envelope round trip preserves sources and nulls; strips unrecognized authority
+ok 326 - bounded strict offline envelope round trip preserves sources and nulls; strips unrecognized authority
+  ---
+  duration_ms: 7.566803
+  ...
+# Subtest: non-overlapping dated inputs are mandatory; horizon interpolation closes azimuth seam
+ok 327 - non-overlapping dated inputs are mandatory; horizon interpolation closes azimuth seam
+  ---
+  duration_ms: 1.116799
+  ...
+# Subtest: full chain computes rate-limited delivered data and critical contact equality conditionally
+ok 328 - full chain computes rate-limited delivered data and critical contact equality conditionally
+  ---
+  duration_ms: 2.070064
+  ...
+# Subtest: missing geometry prevents full adequacy even for zero requested bits
+ok 329 - missing geometry prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.55544
+  ...
+# Subtest: missing stationHorizon prevents full adequacy even for zero requested bits
+ok 330 - missing stationHorizon prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 1.08533
+  ...
+# Subtest: missing lunarMask prevents full adequacy even for zero requested bits
+ok 331 - missing lunarMask prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.960134
+  ...
+# Subtest: missing hardware prevents full adequacy even for zero requested bits
+ok 332 - missing hardware prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.905297
+  ...
+# Subtest: missing weather prevents full adequacy even for zero requested bits
+ok 333 - missing weather prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.781011
+  ...
+# Subtest: missing allocations prevents full adequacy even for zero requested bits
+ok 334 - missing allocations prevents full adequacy even for zero requested bits
+  ---
+  duration_ms: 0.656756
+  ...
+# Subtest: missing delivered-data requirement stays unconfigured rather than a zero-bit success
+ok 335 - missing delivered-data requirement stays unconfigured rather than a zero-bit success
+  ---
+  duration_ms: 1.141719
+  ...
+# Subtest: a missing geometry hour is unknown and never extrapolated from final endpoint
+ok 336 - a missing geometry hour is unknown and never extrapolated from final endpoint
+  ---
+  duration_ms: 0.691024
+  ...
+# Subtest: source bytes must reproduce imported computed geometry; wrong station is rejected
+ok 337 - source bytes must reproduce imported computed geometry; wrong station is rejected
+  ---
+  duration_ms: 0.751312
+  ...
+# Subtest: high cutoff, lunar obstruction, negative RF margin and zero allocation each yield known zero
+ok 338 - high cutoff, lunar obstruction, negative RF margin and zero allocation each yield known zero
+  ---
+  duration_ms: 2.428031
+  ...
+# Subtest: station full-disk clearance avoids promoting center just above a cutoff to useful contact
+ok 339 - station full-disk clearance avoids promoting center just above a cutoff to useful contact
+  ---
+  duration_ms: 1.220935
+  ...
+# Subtest: partial allocation clips time precisely while absent remainder stays unknown
+ok 340 - partial allocation clips time precisely while absent remainder stays unknown
+  ---
+  duration_ms: 0.637037
+  ...
+# Subtest: different dated allocation rates and critical subwindows integrate exact seconds
+ok 341 - different dated allocation rates and critical subwindows integrate exact seconds
+  ---
+  duration_ms: 0.767082
+  ...
+# Subtest: critical contact outside run, or unknown lunar sample, prevents adequacy
+ok 342 - critical contact outside run, or unknown lunar sample, prevents adequacy
+  ---
+  duration_ms: 0.986504
+  ...
+# Subtest: stale evidence never grants capacity; dated future ephemeris is identified without inventing forecast
+ok 343 - stale evidence never grants capacity; dated future ephemeris is identified without inventing forecast
+  ---
+  duration_ms: 0.613328
+  ...
+# Subtest: observed weather cannot become a later forecast; wrong band/frequency and future issue date stay unknown
+ok 344 - observed weather cannot become a later forecast; wrong band/frequency and future issue date stay unknown
+  ---
+  duration_ms: 1.762545
+  ...
+# Subtest: Earth-center lunar proxy must be an explicit assumption even if imported as reference
+ok 345 - Earth-center lunar proxy must be an explicit assumption even if imported as reference
+  ---
+  duration_ms: 0.515771
+  ...
+# Subtest: provider handles real response contract, HTTP errors, offline errors and aborted requests
+ok 346 - provider handles real response contract, HTTP errors, offline errors and aborted requests
+  ---
+  duration_ms: 13.416118
+  ...
+# Subtest: loader suppresses obsolete success/error after replacement and cancellation
+ok 347 - loader suppresses obsolete success/error after replacement and cancellation
+  ---
+  duration_ms: 1.08185
+  ...
+# Subtest: finite bounds use actual shared assessments and preserve requirements, operations, baseline and provenance
+ok 348 - finite bounds use actual shared assessments and preserve requirements, operations, baseline and provenance
+  ---
+  duration_ms: 23.287388
+  ...
+# Subtest: finite bounds reject stale binding, invalid physical corners, duplicate/more than three fields and absent provenance
+ok 349 - finite bounds reject stale binding, invalid physical corners, duplicate/more than three fields and absent provenance
+  ---
+  duration_ms: 2.221239
+  ...
+# Subtest: finite cases are cancellable with progress and no partial result published
+ok 350 - finite cases are cancellable with progress and no partial result published
+  ---
+  duration_ms: 2.530757
+  ...
+# (node:1196093) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 27-case bound product has distinct identities and degeneracy does not duplicate cases
+ok 351 - 27-case bound product has distinct identities and degeneracy does not duplicate cases
+  ---
+  duration_ms: 37.650781
+  ...
+# Subtest: lunar proxy reuses antenna timeline, mask and unknowns at exact interval times
+ok 352 - lunar proxy reuses antenna timeline, mask and unknowns at exact interval times
+  ---
+  duration_ms: 0.602598
+  ...
+# Subtest: workspace renders exact integration props, native equations and an honest empty offline state without fetching
+ok 353 - workspace renders exact integration props, native equations and an honest empty offline state without fetching
+  ---
+  duration_ms: 20.111724
+  ...
+# Subtest: streamed provider size limit and in-flight abort terminate with explicit errors
+ok 354 - streamed provider size limit and in-flight abort terminate with explicit errors
+  ---
+  duration_ms: 1.998116
+  ...
+# Subtest: provider timeout aborts the actual HTTP signal and exposes its reason
+ok 355 - provider timeout aborts the actual HTTP signal and exposes its reason
+  ---
+  duration_ms: 0.653546
+  ...
+# Subtest: full-disk station skyline includes a narrow adjacent ridge and wraps through north
+ok 356 - full-disk station skyline includes a narrow adjacent ridge and wraps through north
+  ---
+  duration_ms: 0.733093
+  ...
+# Subtest: negative supplied station cutoffs cannot make the Earth transparent
+ok 357 - negative supplied station cutoffs cannot make the Earth transparent
+  ---
+  duration_ms: 0.53801
+  ...
+# Subtest: SSR selects a returned future mission hour, with explicit units and hourly sampling
+ok 358 - SSR selects a returned future mission hour, with explicit units and hourly sampling
+  ---
+  duration_ms: 7.36131
+  ...
+# Subtest: SSR never substitutes current weather outside mission coverage or at the exclusive end
+ok 359 - SSR never substitutes current weather outside mission coverage or at the exclusive end
+  ---
+  duration_ms: 16.526585
+  ...
+# Subtest: SSR shows actual fetch timestamp, age, coverage and expiry; retained past forecasts stay dated
+ok 360 - SSR shows actual fetch timestamp, age, coverage and expiry; retained past forecasts stay dated
+  ---
+  duration_ms: 5.405102
+  ...
+# Subtest: SSR missing measurements stay unavailable and partial 24-hour coverage is explicit
+ok 361 - SSR missing measurements stay unavailable and partial 24-hour coverage is explicit
+  ---
+  duration_ms: 1.176737
+  ...
+# Subtest: station identity includes pin coordinates and SSR refuses another station's forecast
+ok 362 - station identity includes pin coordinates and SSR refuses another station's forecast
+  ---
+  duration_ms: 0.571189
+  ...
+# Subtest: public SSR is offline-safe, collapsed, sourced and makes no request on render
+ok 363 - public SSR is offline-safe, collapsed, sourced and makes no request on render
+  ---
+  duration_ms: 4.674099
+  ...
+# Subtest: a request session is inert until clicked; unknown navigator connectivity permits the bounded provider fetch
+ok 364 - a request session is inert until clicked; unknown navigator connectivity permits the bounded provider fetch
+  ---
+  duration_ms: 10.586653
+  ...
+# Subtest: cancel aborts caller signal and late success cannot replace cancelled state
+ok 365 - cancel aborts caller signal and late success cannot replace cancelled state
+  ---
+  duration_ms: 0.210552
+  ...
+# Subtest: generation guard prevents old success/failure overwriting a newer request
+ok 366 - generation guard prevents old success/failure overwriting a newer request
+  ---
+  duration_ms: 0.348727
+  ...
+# Subtest: station teardown aborts silently and independent pin sessions never exchange forecasts
+ok 367 - station teardown aborts silently and independent pin sessions never exchange forecasts
+  ---
+  duration_ms: 0.337317
+  ...
+# Subtest: offline prop, file protocol and navigator offline all prevent HTTP even before effects
+ok 368 - offline prop, file protocol and navigator offline all prevent HTTP even before effects
+  ---
+  duration_ms: 0.186554
+  ...
+# Subtest: offline transition cancels an in-flight request and can recover explicitly
+ok 369 - offline transition cancels an in-flight request and can recover explicitly
+  ---
+  duration_ms: 0.126925
+  ...
+# Subtest: provider failure and cancelled refresh retain earlier dated data; wrong-station results are rejected
+ok 370 - provider failure and cancelled refresh retain earlier dated data; wrong-station results are rejected
+  ---
+  duration_ms: 0.335138
+  ...
+# Subtest: the reused provider path rejects oversized, malformed and HTTP failure fixtures
+ok 371 - the reused provider path rejects oversized, malformed and HTTP failure fixtures
+  ---
+  duration_ms: 1.522354
+  ...
+1..371
+# tests 371
+# suites 0
+# pass 371
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 356.312822

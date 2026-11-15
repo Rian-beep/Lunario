@@ -1,6 +1,6 @@
 import { linkBudget } from '../mission';
 import { parseEnvelope, utc, span as parseSpan } from './import';
-import { parseHorizonsResponse, validateHorizonsRequestUrl } from './horizons';
+import { horizonsSourceContext } from './horizons';
 import type { CommunicationsEnvelope, Span } from './types';
 export type ContactSlice = {
     startUtc: string;
@@ -74,14 +74,7 @@ export function evaluateCommunications(input: CommunicationsEnvelope, scenarioKe
     if (e.scenarioKey !== scenarioKey)
         reasons.push('Evidence binding is stale for this scenario');
     const geometry = e.geometry;
-    if (geometry) {
-        // Reparse archived provider bytes; imported computed columns cannot override their source.
-        const request = { stationId: e.stationId, startUtc: geometry.samples[0].utc, endUtc: geometry.samples.at(-1)!.utc };
-        validateHorizonsRequestUrl(geometry.requestUrl, request);
-        const parsed = parseHorizonsResponse({ result: geometry.rawResponse }, request, geometry.fetchedUtc);
-        if (JSON.stringify(parsed.samples) !== JSON.stringify(geometry.samples))
-            throw Error('Imported geometry differs from archived Horizons response');
-    }
+    const source = geometry ? horizonsSourceContext(geometry.rawResponse) : null;
     const boundaries = new Set<number>([start, end]);
     for (const t of geometry?.samples ?? [])
         if (ms(t.utc) > start && ms(t.utc) < end)
@@ -103,6 +96,14 @@ export function evaluateCommunications(input: CommunicationsEnvelope, scenarioKe
             unknown.push('station geometry coverage');
         if (geometry && ms(geometry.fetchedUtc) > ms(nowUtc))
             unknown.push('geometry retrieval date is in the future');
+        const eop = source?.eopCoverage;
+        if (geometry && !eop)
+            unknown.push('Earth-orientation source coverage is unknown');
+        if (eop && (a < ms(eop.dataStartUtc) || b > ms(eop.predictionEndUtc)))
+            unknown.push('Earth-orientation source coverage does not span contact');
+        for (const key of ['stationHorizon', 'lunarMask', 'hardware', 'allocations'] as const)
+            if (e[key] && ms(e[key]!.provenance.issuedUtc) > ms(nowUtc))
+                unknown.push(`${key} issue date is in the future`);
         if (!e.stationHorizon)
             unknown.push('station horizon/cutoff');
         if (!lunar || lunar.visible === null)
@@ -140,6 +141,8 @@ export function evaluateCommunications(input: CommunicationsEnvelope, scenarioKe
     for (const s of slices)
         reasons.push(...s.unknown);
     reasons.push('Hourly left-held apparent geometry; no intra-hour acquisition/event guarantee', 'Station clearance includes a conservative 0° local-horizontal floor in addition to supplied horizon/cutoff', 'Moon-centre station direction uses full-disk clearance and conservative range; lunar mask evidence remains separately scoped', 'Total receiver noise must include atmospheric and lunar hot-body noise; vacuum gain excludes weather attenuation', 'Finite modeled capacity assumes configured rate/coding and allocation; no operational approval');
+    if (source?.eopCoverage && end > ms(source.eopCoverage.dataEndUtc))
+        reasons.push('Station orientation uses predicted EOP after the advertised data boundary; no measured pointing accuracy is inferred');
     const status = e.requirements.minimumBits === null || total.bits === null || critical.some(c => c.status === 'incomplete') ? 'incomplete' : total.bits < e.requirements.minimumBits! || critical.some(c => c.status === 'conditional-shortfall') ? 'conditional-shortfall' : 'conditional-meets';
     return { status, reasons: [...new Set(reasons)], deliveredBits: total.bits, knownDeliveredBits: slices.reduce((sum, s) => sum + (s.bits ?? 0), 0), contactSeconds: total.seconds, critical, slices, scenarioKey, geometryAgeHours: geometry ? (ms(nowUtc) - ms(geometry.fetchedUtc)) / 3600000 : null, futureGeometry: !!geometry && ms(geometry.samples[0].utc) > ms(nowUtc), operationalApproval: false };
 }
