@@ -95,11 +95,10 @@ export async function computeNormalsCooperatively(geometry:T.BufferGeometry, sig
   signal.throwIfAborted();
 }
 
-function* surfaceSteps(data: TerrainData | null, frame: SiteFrame, renderFrame = frame) {
+function* surfaceSteps(data: TerrainData | null, frame: SiteFrame, renderFrame = frame, angularSegments = 384) {
   const geometry = new T.BufferGeometry();
   let complete = false;
   try {
-  const angularSegments = 384;
   // One continuous closed surface: dense site detail, regional context, far side.
   // Rings are arc distances, in metres, from the selected site on the Moon.
   const distancesM = [0];
@@ -174,8 +173,8 @@ export function buildSurface(data: TerrainData | null, frame: SiteFrame) {
 
 /** Bounded chunks let the existing renderer animate while destination detail is sampled. */
 export async function buildSurfaceCooperatively(data: TerrainData | null, frame: SiteFrame, renderFrame: SiteFrame, signal: AbortSignal,
-  yieldControl: () => Promise<void> = () => new Promise(resolve => setTimeout(resolve, 0))) {
-  const steps = surfaceSteps(data, frame, renderFrame);
+  yieldControl: () => Promise<void> = () => new Promise(resolve => setTimeout(resolve, 0)), angularSegments = 384) {
+  const steps = surfaceSteps(data, frame, renderFrame, angularSegments);
   let started = performance.now();
   while (true) {
     if (signal.aborted) { steps.return(undefined as never); throw new DOMException('Surface preparation canceled', 'AbortError'); }

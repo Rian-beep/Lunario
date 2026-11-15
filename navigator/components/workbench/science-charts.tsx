@@ -211,6 +211,7 @@ function Plot({
       <div className="plot-area">
         <svg
           viewBox={`0 0 ${width} ${height}`}
+          width={width} height={height} preserveAspectRatio="xMidYMid meet"
           role="img"
           aria-labelledby={`${id}-title`}
           aria-describedby={`${id}-description ${id}-help`}

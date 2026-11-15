@@ -2968,3 +2968,29 @@ html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground);
  .lunar-app .workspace .viewport { position: relative; inset: auto; grid-column: 1; grid-row: 1; min-width: 0; min-height: 0; height: 100%; }
  .lunar-app .workspace .inspector { position: relative; inset: auto; grid-column: 2; grid-row: 1; align-self: stretch; height: auto; margin: 12px 12px 12px 0; width: calc(100% - 12px) !important; max-width: none !important; }
 }
+.earth-orbits { font-size: 14px; line-height: 1.6; }
+.earth-orbits label { display: grid; gap: 6px; margin: 12px 0; }
+.earth-orbits select, .earth-orbits input { max-width: 100%; min-width: 0; padding: 7px; font: inherit; background: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 6px; }
+.earth-orbits .orbit-check { display: flex; align-items: center; gap: 8px; }
+.orbit-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.earth-orbits h4 { margin-top: 16px; }
+.earth-orbits details { margin: 16px 0; }
+.earth-orbits table { font-size: 12px; border-collapse: collapse; width: 100%; }
+.earth-orbits th, .earth-orbits td { padding: 5px; text-align: left; border-bottom: 1px solid var(--border); }
+.earth-orbits dd { margin-left: 0; }
+.globe-cardinals { display: flex; align-items: center; gap: 2px; }
+.globe-map-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.globe-map-labels button { position: absolute; transform: translate(-50%, -125%); max-width: 210px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: auto; background: #17191deb; color: #fff5df; border: 1px solid #e8b950; border-radius: 5px; padding: 3px 6px; font-size: 11px; box-shadow: 0 1px 4px #000; }
+.globe-map-labels .pole-label { font-weight: 650; border-color: #9ed2f0; }
+.globe-map-labels button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+.globe-location-readout { position: absolute; left: 12px; bottom: 44px; color: #fff5df; background: #17191deb; border: 1px solid #777; border-radius: 6px; padding: 4px 8px; font-size: 12px; pointer-events: none; }
+.globe-location-readout span { margin-left: 9px; }
+/* Small information controls must not inherit full-size studio button padding. */
+.lunar-app .info-button, .variable-tooltip .info-button {
+ width: 24px; min-width: 24px; max-width: 24px;
+ height: 24px; min-height: 24px; max-height: 24px;
+ padding: 0; flex: 0 0 24px; aspect-ratio: 1; align-self: center; vertical-align: middle;
+}
+.science-figure .plot-area > svg { height: auto; min-height: 0; }
+.earth-orbits h3 { font-size: 17px; font-weight: 650; margin-bottom: 10px; }
+.earth-orbits h4 { font-size: 14px; font-weight: 650; }

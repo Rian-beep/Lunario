@@ -1,0 +1,21 @@
+# God’s Eye View → Lunario: reviewed reuse
+
+Reviewed upstream `bilawalsidhu/gods-eye-view` at `3d25a284f9186dcc936c26e0c4f745337b402e37`, 15 November 2026. Source is MIT (notice retained in public/licenses/gods-eye-view.txt); its data and imagery have separate provider terms. Existing Cesium application code is not transplanted into the Three.js Moon renderer. The implementation below is independent, using the same pinned MIT satellite.js6.0.2 library and publicly documented GP/SGP4 transforms. Its MIT notice is retained and both notices are embedded in the offline artifact.
+
+| Upstream value | Lunario application | Evidence / limit |
+| --- | --- | --- |
+| GP/TLE identity and SGP4 propagation | Six curated real GP/OMM identities, including Starcloud-1; fixed-epoch snapshot, explicit provider refresh, bounded JSON import | Source, fetch time, element epoch and clock visible. Not measured position or operational status. Reject duplicates, unsupported frames, wrong known mission names, invalid ranges and stale epochs. |
+| Orbit-frame / GMST alignment | Marker and orbit track in a common Earth-fixed frame at orbit UTC | TEME→GMST ECEF approximation; existing Earth/Moon display attitude remains illustrative. No qualified lunar frame derived. |
+| Age-aware layers | Separate orbit clock, ±72h display limit, unavailable instead of months-ahead extrapolation | A display policy is not an orbital accuracy bound. Current mission science/time not mutated. |
+| Source classification | Role-specific ISS/Hubble/weather/TDRS/compute mission cards and source links | Metadata is not a relay service. A NORAD lookup returned a debris object for an initially investigated identifier; identity validation excluded it. TDRS-13 verified as42915, Starcloud-1 as66303. |
+| Cached refresh / request budgets | Fixed six IDs, explicit request only, server/Next2h cache, in-flight coalescing, bounded input import, failure retains dated snapshot | Provider policy: download only needed data, at most once per update. No arbitrary outbound URL, automatic polling or retry storm. No claim of fleet-wide quota coordination across independent hosts. |
+| Geographic look angles | Approximate WGS84 DSN-to-selected-satellite azimuth/elevation/slant range | Mathematical horizon only, not antenna mask/service/contact/lunar relay availability. Existing station-to-Moon uncertainty preserved. |
+| Weather/source provenance | NOAA nowCOAST resource plus existing dated station forecasts and GOES/NOAA mission examples | No cloud→link-loss inference. No claim that a resource URL installs an observed weather layer. |
+| GPU/render governance | Small persistent marker group, selected-only orbit track, throttled telemetry, capped catalogue128, old geometries/materials disposed | Keeps Moon renderer, actual kilometre placement and existing surface/flight state. Markers are enlarged annotations, not scaled spacecraft models. |
+| Earth map tiles / terrain | Keep NASA Earth and Moon textures/terrain | Esri/Google/Cesium provider terms and terrestrial terrain are not interchangeable with lunar elevations. |
+| Aircraft, AIS, roads, webcams, dams and terrestrial datacentres | Not imported; outside lunar navigation/communications purpose | No speculative data fusion or misleading “mission critical” benefit. Starcloud is a distinct in-orbit compute demonstration, not a terrestrial datacentre pin. |
+| Voice/agent controls | Resource reference only | Adds a second service/auth/control system without solving this mission’s numerical needs. |
+
+Sources: https://github.com/bilawalsidhu/gods-eye-view/blob/3d25a284f9186dcc936c26e0c4f745337b402e37/DATA_SOURCES.md ; https://celestrak.org/NORAD/documentation/gp-data-formats.php ; https://celestrak.org/usage-policy.php ; https://github.com/shashwatak/satellite-js ; https://www.starcloud.com/starcloud-1 . Dataset snapshot requests and actual element epochs are recorded in public/data/orbits/catalog.json.
+
+Refresh API: `/api/orbits`, no query-controlled source or secrets. A maintainer can replace the bundled JSON with a newly validated snapshot, or import1–128 GP records in the UI. Offline file retains the snapshot/import and disables refresh. Current weather, station scheduling, link budgets and new maneuver-aware ephemerides remain separate providers/evidence, not implied by satellite display.
