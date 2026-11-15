@@ -6,20 +6,32 @@ import { Button } from '../ui/button';
 import { PHYSICS_TOPICS, type PhysicsReferenceMode } from '../../lib/physics-reference';
 import { NativeMath } from './native-math';
 import { EquationLesson } from './equation-lesson';
+import { ResourceEvidencePanel } from '../education-materials/resource-evidence';
+import type { Catalog } from '../../lib/catalog';
+import type { AssessmentResult } from '../../lib/planning-types';
+import type { ScenarioState } from '../../lib/scenario';
 
-export function PhysicsReference({ mode }: { mode: PhysicsReferenceMode }) {
-  const [topicId, setTopicId] = useState(PHYSICS_TOPICS[0].id);
+type LearningScenario = { catalog: Catalog; state: ScenarioState; assessment: AssessmentResult | null };
+
+export function PhysicsReference({ mode, scenario }: { mode: PhysicsReferenceMode; scenario?: LearningScenario }) {
+  const [topicId, setTopicId] = useState<string>(PHYSICS_TOPICS[0].id);
   const id = useId();
-  const topic = PHYSICS_TOPICS.find(item => item.id === topicId)!;
+  const topic = PHYSICS_TOPICS.find(item => item.id === topicId) ?? PHYSICS_TOPICS[0];
+  const showResources = topicId === 'lunar-ice' && scenario;
   const heading = useRef<HTMLHeadingElement>(null);
   return <div className="learn-layout">
     <nav className="learn-topics" aria-label="Learning topics">
       {PHYSICS_TOPICS.map(item => <Button key={item.id} variant={item.id === topicId ? 'secondary' : 'ghost'}
         aria-current={item.id === topicId ? 'true' : undefined} aria-controls={id}
         onClick={() => { setTopicId(item.id); heading.current?.focus(); }}>{item.title}</Button>)}
+      {scenario && <Button variant={showResources ? 'secondary' : 'ghost'}
+        aria-current={showResources ? 'true' : undefined} aria-controls={id}
+        onClick={() => { setTopicId('lunar-ice'); heading.current?.focus(); }}>Lunar ice evidence</Button>}
     </nav>
     <article id={id} className="learn-lesson" aria-labelledby={`${id}-title`}>
-      <h3 id={`${id}-title`} ref={heading} tabIndex={-1}>{topic.title}</h3><p>{topic.explanation}</p>
+      <h3 id={`${id}-title`} ref={heading} tabIndex={-1}>{showResources ? 'Lunar ice evidence and next steps' : topic.title}</h3>
+      {showResources ? <ResourceEvidencePanel {...showResources} mode={mode} /> : <>
+      <p>{topic.explanation}</p>
       <p className="learn-correction">{topic.correction}</p>
       <dl><dt>Current model boundary</dt><dd>{topic.calculated}</dd><dt>User-supplied inputs</dt><dd>{topic.inputs}</dd><dt>Requires external evidence</dt><dd>{topic.evidence}</dd></dl>
       <details key={topic.id} open={mode !== 'public'}><summary>Relations, symbols and limits</summary>
@@ -31,18 +43,19 @@ export function PhysicsReference({ mode }: { mode: PhysicsReferenceMode }) {
       </details>
       <p>Educational reference. These relations do not add a solver, supply missing evidence or certify a site. Unknown is not zero.</p>
       <ul>{topic.sources.map(item => <li key={item.url}><a href={item.url} target="_blank" rel="noreferrer">{item.title}</a></li>)}</ul>
+      </>}
     </article>
   </div>;
 }
 
-export function LearningDialog({ mode, onClose }: { mode: PhysicsReferenceMode; onClose: () => void }) {
+export function LearningDialog({ mode, scenario, onClose }: { mode: PhysicsReferenceMode; scenario?: LearningScenario; onClose: () => void }) {
   const titleId = useId();
   return <dialog className="learning-dialog" aria-labelledby={titleId}
     onCancel={event => { event.preventDefault(); onClose(); }}
     ref={node => { if (node && !node.open) node.showModal(); }}>
     <div className="learn-heading"><div><h2 id={titleId}>Learn the models</h2><p>Ideas, native equations and the evidence each model needs.</p></div>
       <Button variant="ghost" size="icon" aria-label="Close learning dialog" onClick={onClose} autoFocus><X size={20} /></Button></div>
-    <PhysicsReference mode={mode} />
+    <PhysicsReference mode={mode} scenario={scenario} />
   </dialog>;
 }
 
