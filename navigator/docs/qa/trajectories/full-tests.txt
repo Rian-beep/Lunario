@@ -1,0 +1,12 @@
+Command: npm test
+Full raw output: /tmp/lunario-mission-trajectories-full-tests.txt
+
+1..992
+# tests 995
+# suites 0
+# pass 995
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23303.579828

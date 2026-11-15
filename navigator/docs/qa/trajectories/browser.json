@@ -1,0 +1,11 @@
+{
+  "browser": "149.0.7827.155",
+  "networkRequests": [],
+  "errors": [],
+  "checks": [
+    "Controlled published selection, source details and rationale citations",
+    "Site change does not retain stale selected state; Apollo 11 offers simulation; Apollo 15 CSM remains orbital context",
+    "390px width and 200% CSS zoom reflow; no horizontal page overflow",
+    "Keyboard simulation selection and dismiss callback"
+  ]
+}

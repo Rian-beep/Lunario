@@ -1,0 +1,16 @@
+{
+  "referenceSource": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-158%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40301%27&START_TIME=%272023-08-23+12%3A16%3A00%27&STOP_TIME=%272023-08-23+12%3A34%3A00%27&STEP_SIZE=%27216%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&OUT_UNITS=%27KM-S%27&VEC_TABLE=%272%27&VEC_CORR=%27NONE%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+    "version": "ch3-descent-midpoints-horizons.txt",
+    "sha256": "533e064d3ba466058ab5c04503f8a8a78834b0a8b5e948c9239812964a81c191"
+  },
+  "description": "All segment midpoints compared to source evaluation; not a bound between checked times and not physical trajectory accuracy.",
+  "ch3": {
+    "midpoints": 108,
+    "maximumPositionDiscrepancyKm": 0.03599127350948101
+  },
+  "apollo15": {
+    "midpoints": 180,
+    "maximumPositionDiscrepancyKm": 0.020171051878636593
+  }
+}
