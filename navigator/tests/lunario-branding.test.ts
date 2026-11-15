@@ -9,7 +9,7 @@ import { createElement, type ComponentType } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { build } from "esbuild";
 import { updateLunarioStartup, type LunarioLoaderAPI } from "../components/branding/lunario-loader-runtime";
-import { LUNARIO_WORDMARK, LUNARIO_MARK, LUNARIO_LOADER_CSS, LUNARIO_LOADER_JS } from "../components/branding/lunario-vendor.generated";
+import { LUNARIO_WORDMARK, LUNARIO_WORDMARK_ON_DARK, LUNARIO_MARK, LUNARIO_LOADER_CSS, LUNARIO_LOADER_JS } from "../components/branding/lunario-vendor.generated";
 
 const vendor = new URL("../public/branding/lunario/", import.meta.url);
 const read = (path: string) => readFileSync(new URL(path, vendor));
@@ -68,7 +68,8 @@ test("legacy brand API renders the real Lunario SVG and ignores caller Sun marku
   new Function("require", "module", "exports", compiled.outputFiles.find(f => f.path.endsWith(".cjs"))!.text)(createRequire(import.meta.url), exportsModule, exportsModule.exports);
   const brand = renderToStaticMarkup(createElement(exportsModule.exports.LunarWindowBrand, { icon: createElement("span", { "data-legacy-sun": true }) }));
   assert.match(brand, /alt="Lunario"/);
-  assert.ok(brand.includes(LUNARIO_WORDMARK));
+  // Default UI theme is dark, so the on-dark wordmark is the first paint.
+  assert.ok(brand.includes(LUNARIO_WORDMARK_ON_DARK));
   assert.doesNotMatch(brand, /legacy-sun|Lunar Window|brand-orbit|lucide|<text/);
   const fallback = renderToStaticMarkup(createElement(exportsModule.exports.LunarWindowLoader));
   assert.match(fallback, /aria-busy="true"/);
