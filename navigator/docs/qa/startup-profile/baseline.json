@@ -1,0 +1,3387 @@
+{
+  "checkedUtc": "2026-11-15T12:44:01.010Z",
+  "revision": "6a3927f99b326b2fc9c210f78254a61ca7c29928",
+  "node": "v20.20.2",
+  "offline": {
+    "bytes": 81236036,
+    "sha256": "8de622395941c418dcdaf73ad95454c3909f6974ebaf4bec336ebdaec2a3be8d",
+    "gzip6EstimateBytes": 55073734,
+    "scripts": [
+      {
+        "startByte": 234155,
+        "bodyBytes": 74370907,
+        "sha256": "5f432a0e3d78f123e9ece9a4766ce6fe9e9477419c96bc7b3a81892cbcaf4339",
+        "embeddedData": true
+      },
+      {
+        "startByte": 74605079,
+        "bodyBytes": 6630926,
+        "sha256": "4f95a4b76841efd119259d53ffe475f150fd4491ab75b98bab3e73f2d3345051",
+        "embeddedData": false
+      }
+    ]
+  },
+  "assets": [
+    {
+      "path": "public/data/catalog.json",
+      "bytes": 1004402,
+      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "gzip6EstimateBytes": 554003
+    },
+    {
+      "path": "public/data/map.png",
+      "bytes": 1363407,
+      "sha256": "4f17664655cffbce577b9affedbb768727ba80f83c5bb1cab747778452ba88a2",
+      "gzip6EstimateBytes": 1363832
+    },
+    {
+      "path": "public/data/terrain.json",
+      "bytes": 12119158,
+      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "gzip6EstimateBytes": 7904752
+    },
+    {
+      "path": "public/data/global-terrain.json",
+      "bytes": 7992,
+      "sha256": "c50ca151194e12cbc244c66eeea473d888a39df00a3112162156894cd168912c",
+      "gzip6EstimateBytes": 3277
+    },
+    {
+      "path": "public/data/global-terrain.bin.gz",
+      "bytes": 6025781,
+      "sha256": "296296decb091b8d7075d70de1fc6acbb341b89f343a55de67855bb823a30350",
+      "gzip6EstimateBytes": 6027639
+    },
+    {
+      "path": "public/data/imagery.json",
+      "bytes": 9517,
+      "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
+      "gzip6EstimateBytes": 1654
+    },
+    {
+      "path": "public/data/nasa-model.json",
+      "bytes": 6034,
+      "sha256": "aeac27f823f27a86efc03543dacdc8ef9c5e9fcb1d58121a78746b6d9d3c5b41",
+      "gzip6EstimateBytes": 2583
+    },
+    {
+      "path": "public/data/nasa-moon-mesh.bin.gz",
+      "bytes": 9587461,
+      "sha256": "b5b8e312a88be26013fb8fd167586ade5ea695a6389e3a7a7d0fdab72158cb8e",
+      "gzip6EstimateBytes": 9293650
+    },
+    {
+      "path": "public/data/imagery/nasa-moon-8k.jpg",
+      "bytes": 4631745,
+      "sha256": "cc32b024491668b8a2d4e1a6c911ce9a130e9eb8e6704f65027697877f6aa77f",
+      "gzip6EstimateBytes": 4626659
+    },
+    {
+      "path": "public/data/equipment/apollo-lunar-module.glb",
+      "bytes": 716840,
+      "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e",
+      "gzip6EstimateBytes": 423894
+    },
+    {
+      "path": "public/data/evidence-manifest.json",
+      "bytes": 29484,
+      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9",
+      "gzip6EstimateBytes": 4964
+    },
+    {
+      "path": "public/data/planning-demo.json",
+      "bytes": 2375452,
+      "sha256": "832662fc0ea4468f82d6a89e7d9cd85cf9e214b805a5718cdaf54e51cdfa82c6",
+      "gzip6EstimateBytes": 93178
+    },
+    {
+      "path": "public/fonts/lunario/geist-var.woff2",
+      "bytes": 23280,
+      "sha256": "b30d37f38abd6d593ac4a379e8628e7771b55031db5ad7cf8c859b011f2d730d",
+      "gzip6EstimateBytes": 23308
+    },
+    {
+      "path": "public/data/imagery/polar.jpg",
+      "bytes": 1796481,
+      "sha256": "699f2faef42d65543adfbcfe0eac959c9705c82b6469cc12f4c607fbff7599eb",
+      "gzip6EstimateBytes": 1796966
+    },
+    {
+      "path": "public/data/imagery/malapert-massif-nac-surface.jpg",
+      "bytes": 48580,
+      "sha256": "21a6883970916e4199759bc8f1f19de4e1aba3f21f4ac5891005a4209d477e60",
+      "gzip6EstimateBytes": 48275
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge-nac-surface.jpg",
+      "bytes": 181038,
+      "sha256": "5efc025f460cc19c8203aa4d75a3585ab7de62870669e125c12c9f675deaab96",
+      "gzip6EstimateBytes": 181048
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton-nac-surface.jpg",
+      "bytes": 22868,
+      "sha256": "84861e480c8895eeff1992a330713ca18e6573f15c2d359b294e22676e81f1ef",
+      "gzip6EstimateBytes": 22674
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton-nac-surface.jpg",
+      "bytes": 85396,
+      "sha256": "abe247c34f41be87cb457ac20747da05c0aa4dc8fbed17bd3074916f1cc490b0",
+      "gzip6EstimateBytes": 84824
+    },
+    {
+      "path": "public/data/imagery/south-pole-nac-surface.jpg",
+      "bytes": 161612,
+      "sha256": "a34576c418818c0a01ae67bae741566c6d2eeeb08f5398eb6de3785875747792",
+      "gzip6EstimateBytes": 161384
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest-nac-surface.jpg",
+      "bytes": 127061,
+      "sha256": "b794cb82edb944a925667e3630b7053d12c9a4652b98fdddefc4764deef754eb",
+      "gzip6EstimateBytes": 127056
+    },
+    {
+      "path": "public/data/imagery/malapert-massif-nac.jpg",
+      "bytes": 320947,
+      "sha256": "bd410efc90e95c553f72cd2f6158a0b06bd63dba832bb5fec3a8e6b88f13fc64",
+      "gzip6EstimateBytes": 319362
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge-nac.jpg",
+      "bytes": 463001,
+      "sha256": "ab968c13f1af2d7a3f1bce213d3e7c685a8fe8253ad643d5c790c7ac03a3edc4",
+      "gzip6EstimateBytes": 462791
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton-nac.jpg",
+      "bytes": 118805,
+      "sha256": "0b1ee513c8bd2358cdd70767a5066a446cf7b16c1e601a3034c41f1d27babd29",
+      "gzip6EstimateBytes": 117360
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton-nac.jpg",
+      "bytes": 290424,
+      "sha256": "47b195692c9295589af9589c3e9ffd1ae13a6ea4cb035403d0c904f9628a0392",
+      "gzip6EstimateBytes": 289171
+    },
+    {
+      "path": "public/data/imagery/south-pole-nac.jpg",
+      "bytes": 406586,
+      "sha256": "338bdbe2accd7efb967f1609f145404cad0d397f28a18e6d995831d97fe75934",
+      "gzip6EstimateBytes": 406081
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest-nac.jpg",
+      "bytes": 124868,
+      "sha256": "6509414413b44cfda45ff9f00e7c72017b3d6906affc7869171376d1d8a8ef3b",
+      "gzip6EstimateBytes": 124819
+    },
+    {
+      "path": "public/data/imagery/malapert-massif.jpg",
+      "bytes": 49821,
+      "sha256": "efa1150cbb54e9a2c9ccab753f445060383315413b4cf7ddb7c182c38a1e5fbd",
+      "gzip6EstimateBytes": 47809
+    },
+    {
+      "path": "public/data/imagery/connecting-ridge.jpg",
+      "bytes": 53521,
+      "sha256": "3fdd7e7d7bfe5851b6ee38f768a4b082d8e4ead993cfa6efe4a5abd0a7e04a19",
+      "gzip6EstimateBytes": 51403
+    },
+    {
+      "path": "public/data/imagery/peak-near-shackleton.jpg",
+      "bytes": 54959,
+      "sha256": "5fcd29477242acf8ecd2ac9071318aaf165d9d7fdd3f6dbc6a64d462a388a6fc",
+      "gzip6EstimateBytes": 54070
+    },
+    {
+      "path": "public/data/imagery/degerlache-shackleton.jpg",
+      "bytes": 53510,
+      "sha256": "07a33b13b1b853202926c58adbc82580927a60592879302b4282b4f6290b7b8e",
+      "gzip6EstimateBytes": 51470
+    },
+    {
+      "path": "public/data/imagery/odysseus.jpg",
+      "bytes": 95979,
+      "sha256": "631ddafd5bafa648d131c3868e6fdb8d76113287e285c4b58e8d13f112f012e7",
+      "gzip6EstimateBytes": 95520
+    },
+    {
+      "path": "public/data/imagery/athena.jpg",
+      "bytes": 85646,
+      "sha256": "116a6621fa34c665b6a32b6c6243d74ce82c8b98d78dc935d3928cfb0c29ed98",
+      "gzip6EstimateBytes": 85110
+    },
+    {
+      "path": "public/data/imagery/lcross-cabeus.jpg",
+      "bytes": 32976,
+      "sha256": "8645ca33db5d033c0b664ba6cb603401ca1292b447d10906360731be5733b7e0",
+      "gzip6EstimateBytes": 30711
+    },
+    {
+      "path": "public/data/imagery/south-pole.jpg",
+      "bytes": 55370,
+      "sha256": "496142b863d390e5774227b2b62197a01ec1fecddc4a27a7ac4f9c4ad066c20b",
+      "gzip6EstimateBytes": 53648
+    },
+    {
+      "path": "public/data/imagery/shackleton-crest.jpg",
+      "bytes": 58825,
+      "sha256": "dc40bd8ff896c6e231472f5559381cd2c16ea1e66c1c54e08660bf92c7ab68e6",
+      "gzip6EstimateBytes": 56977
+    }
+  ],
+  "builds": [
+    {
+      "mode": "iife",
+      "entry": ".startup-profile-virtual/main.js",
+      "initialJSBytes": 6630926,
+      "initialJSGzip6EstimateBytes": 2315149,
+      "totalJSBytes": 6630926,
+      "jsFiles": 1,
+      "cssBytes": 68976,
+      "initialContains": {
+        "three": true,
+        "rapier": true,
+        "next/dist": true,
+        "scene/runtime": true,
+        "flight.ts": true
+      },
+      "largestInitialInputs": [
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/@dimforge/rapier3d-compat/dist/rapier.mjs",
+          "bytesInOutput": 4338898
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/three/build/three.module.js",
+          "bytesInOutput": 357818
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/three/build/three.core.js",
+          "bytesInOutput": 238512
+        },
+        {
+          "name": "lib/generated/native-mathml.json",
+          "bytesInOutput": 180962
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/react-dom/cjs/react-dom-client.production.js",
+          "bytesInOutput": 170036
+        },
+        {
+          "name": "components/navigator.tsx",
+          "bytesInOutput": 59560
+        },
+        {
+          "name": "lib/glossary.ts",
+          "bytesInOutput": 53094
+        },
+        {
+          "name": "components/workbench/scene/runtime.ts",
+          "bytesInOutput": 49218
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+          "bytesInOutput": 44977
+        },
+        {
+          "name": "public/data/stars.json",
+          "bytesInOutput": 43464
+        },
+        {
+          "name": "components/workbench/panels.tsx",
+          "bytesInOutput": 38063
+        },
+        {
+          "name": "lib/math-typesetting.ts",
+          "bytesInOutput": 37688
+        },
+        {
+          "name": "components/branding/lunario-vendor.generated.ts",
+          "bytesInOutput": 32867
+        },
+        {
+          "name": "components/workbench/equation-lesson.tsx",
+          "bytesInOutput": 25344
+        },
+        {
+          "name": "components/workbench/alternatives.tsx",
+          "bytesInOutput": 25050
+        },
+        {
+          "name": "lib/variable-notation.ts",
+          "bytesInOutput": 24079
+        }
+      ],
+      "files": [
+        {
+          "path": ".startup-profile-virtual/main.js",
+          "bytes": 6630926,
+          "gzip6EstimateBytes": 2315149,
+          "initialJS": true,
+          "entryPoint": "standalone/main.tsx",
+          "imports": [],
+          "sha256": "4f95a4b76841efd119259d53ffe475f150fd4491ab75b98bab3e73f2d3345051"
+        },
+        {
+          "path": ".startup-profile-virtual/main.css",
+          "bytes": 68976,
+          "gzip6EstimateBytes": 13792,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "e636126b4a12b2c71c41ab116745bfa19f737c2e81defea3cc9274b6831a1ccd"
+        }
+      ],
+      "inputCount": 2436
+    },
+    {
+      "mode": "esm-next-dynamic",
+      "entry": ".startup-profile-virtual/main.js",
+      "initialJSBytes": 1190584,
+      "initialJSGzip6EstimateBytes": 352245,
+      "totalJSBytes": 6613867,
+      "jsFiles": 28,
+      "cssBytes": 97319,
+      "initialContains": {
+        "three": false,
+        "rapier": false,
+        "next/dist": true,
+        "scene/runtime": false,
+        "flight.ts": true
+      },
+      "largestInitialInputs": [
+        {
+          "name": "lib/generated/native-mathml.json",
+          "bytesInOutput": 180946
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/react-dom/cjs/react-dom-client.production.js",
+          "bytesInOutput": 169743
+        },
+        {
+          "name": "components/navigator.tsx",
+          "bytesInOutput": 59191
+        },
+        {
+          "name": "lib/glossary.ts",
+          "bytesInOutput": 52947
+        },
+        {
+          "name": "components/workbench/panels.tsx",
+          "bytesInOutput": 38014
+        },
+        {
+          "name": "lib/math-typesetting.ts",
+          "bytesInOutput": 37566
+        },
+        {
+          "name": "components/branding/lunario-vendor.generated.ts",
+          "bytesInOutput": 32867
+        },
+        {
+          "name": "components/workbench/equation-lesson.tsx",
+          "bytesInOutput": 25084
+        },
+        {
+          "name": "components/workbench/alternatives.tsx",
+          "bytesInOutput": 24939
+        },
+        {
+          "name": "lib/variable-notation.ts",
+          "bytesInOutput": 23904
+        },
+        {
+          "name": "public/data/evidence-manifest.json",
+          "bytesInOutput": 22514
+        },
+        {
+          "name": "lib/engineering-screens.ts",
+          "bytesInOutput": 20878
+        },
+        {
+          "name": "components/polar-map.tsx",
+          "bytesInOutput": 18954
+        },
+        {
+          "name": "lib/landing-sites.ts",
+          "bytesInOutput": 17471
+        },
+        {
+          "name": "components/workbench/science-charts.tsx",
+          "bytesInOutput": 17419
+        },
+        {
+          "name": "components/workbench/audience-context.tsx",
+          "bytesInOutput": 14190
+        }
+      ],
+      "files": [
+        {
+          "path": ".startup-profile-virtual/main.js",
+          "bytes": 587645,
+          "gzip6EstimateBytes": 184880,
+          "initialJS": true,
+          "entryPoint": "standalone/main.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-XEV7M23B.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-S2GKE32Y.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-N74JEDKD.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-7LATDJXX.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/touchdown-lab-QU6BRPV3.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/solar-system-view-AKXHJQHZ.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/scene-MR53A44L.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/workspace-IQFECCBM.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/teaching-studio-QV67HKUG.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/evidence-workspace-VH6YNDYA.js",
+              "kind": "dynamic-import"
+            }
+          ],
+          "sha256": "6f0ef959379a0925b690c52bb129d3eabe07cfa74598b1b5c9bf1aeba55631eb"
+        },
+        {
+          "path": ".startup-profile-virtual/rapier-2VSWKPSI.js",
+          "bytes": 4336956,
+          "gzip6EstimateBytes": 1645226,
+          "initialJS": false,
+          "entryPoint": "../../../lunario-map-20261115/navigator/node_modules/@dimforge/rapier3d-compat/dist/rapier.mjs",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "a63841a949cc8f603d5d42c530ed1254d5400b1e6ed3d7e2e4081b17e50c2a61"
+        },
+        {
+          "path": ".startup-profile-virtual/touchdown-lab-QU6BRPV3.js",
+          "bytes": 18167,
+          "gzip6EstimateBytes": 7210,
+          "initialJS": false,
+          "entryPoint": "components/workbench/touchdown-lab.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-O7VYFCKJ.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "21829fcc278b840f8cb90b124366536ebd3d07d188a1fd719b859833377701d5"
+        },
+        {
+          "path": ".startup-profile-virtual/solar-system-view-AKXHJQHZ.js",
+          "bytes": 16482,
+          "gzip6EstimateBytes": 6779,
+          "initialJS": false,
+          "entryPoint": "components/workbench/solar-system-view.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "7a4cbaf9fa2c517118718417160370ea94214dfab747465d8c197d058f5f48f7"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+          "bytes": 1841,
+          "gzip6EstimateBytes": 927,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "348998ca76efeeeda8e8616ee627fcd741e3fdf613466cb1f53ac9d6e50a8e15"
+        },
+        {
+          "path": ".startup-profile-virtual/scene-MR53A44L.js",
+          "bytes": 165830,
+          "gzip6EstimateBytes": 60632,
+          "initialJS": false,
+          "entryPoint": "components/workbench/scene.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-XEV7M23B.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-O7VYFCKJ.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "48549f0938df77837f04f71cd2a1a6c8b3d5852b470c9788ba4787fee546ec92"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-XEV7M23B.js",
+          "bytes": 8454,
+          "gzip6EstimateBytes": 3709,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "01f98d3aa7929db01d0ad83011b7bfd2fbc5d310024deb3a0a7efb92fd169bc5"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-O7VYFCKJ.js",
+          "bytes": 18894,
+          "gzip6EstimateBytes": 7895,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/rapier-2VSWKPSI.js",
+              "kind": "dynamic-import"
+            }
+          ],
+          "sha256": "76c17a04691093ea204c46fd4bef4d1de5ebaf805d808254b6fe652be0f338c2"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+          "bytes": 63641,
+          "gzip6EstimateBytes": 22311,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "6a916653a03e32d088f750f1ca38247b9411eed793a4bcf6b7b8e3d0d5aabe6c"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+          "bytes": 5366,
+          "gzip6EstimateBytes": 2352,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "b3891579ddee9bf9076fa804b269ac14b5456448889ce544b1e0f66ffa9c4556"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+          "bytes": 659697,
+          "gzip6EstimateBytes": 167207,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "c8c1ba797c1d1a6252b6b054168817931d298fe3ae931973db06e2039246c3b2"
+        },
+        {
+          "path": ".startup-profile-virtual/workspace-IQFECCBM.js",
+          "bytes": 40835,
+          "gzip6EstimateBytes": 13637,
+          "initialJS": false,
+          "entryPoint": "components/replanning/workspace.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-S2GKE32Y.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-7LATDJXX.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "447b60cbfecee00d2a67780045c7c6567457d1c2e997686540f8b08fa058bd5f"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-S2GKE32Y.js",
+          "bytes": 46520,
+          "gzip6EstimateBytes": 17593,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "44a4ed14a4975ab584f75bdcdfa6e2e9f34a33989775f159c9bd6f657ebf772b"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-DZ7JW5VN.js",
+          "bytes": 82415,
+          "gzip6EstimateBytes": 26659,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "737327367eb0fd4572f7da893c1613fcca6689d47adf24d673c429adb3c259bb"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-5SLLMLLB.js",
+          "bytes": 15102,
+          "gzip6EstimateBytes": 5285,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "17d0acd0f5eeab7826d25268f681028de5bfe8f5663813361d414f6281b5e818"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+          "bytes": 1313,
+          "gzip6EstimateBytes": 748,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "086ce03af2cd9ee7b59f246850ca19ea3bcd39c93ae809ae6d00f435c89379ae"
+        },
+        {
+          "path": ".startup-profile-virtual/teaching-studio-QV67HKUG.js",
+          "bytes": 58876,
+          "gzip6EstimateBytes": 19231,
+          "initialJS": false,
+          "entryPoint": "components/audience/teaching-studio.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-N74JEDKD.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-7LATDJXX.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "f0f6ce00b228d650350a9122017f9d4e27d4b435d294a49959751898210a6579"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-N74JEDKD.js",
+          "bytes": 13066,
+          "gzip6EstimateBytes": 5488,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "dcf2cc4b60d4b46073c8b5cb199fb8240a8438e01a249d3fe45c4b9396b52915"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-7LATDJXX.js",
+          "bytes": 24686,
+          "gzip6EstimateBytes": 10091,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "8bff65b8c704f7b94fe489ff07d01fcec7de5cd8a35bd0d295799cca68708be2"
+        },
+        {
+          "path": ".startup-profile-virtual/evidence-workspace-VH6YNDYA.js",
+          "bytes": 43905,
+          "gzip6EstimateBytes": 14533,
+          "initialJS": false,
+          "entryPoint": "components/engineering/evidence-workspace.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "2ecc492912447726665dadeaae31fdaffdf974205cab08987159eb1788135fe6"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+          "bytes": 5564,
+          "gzip6EstimateBytes": 2599,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "3aaea760457ac72c0adc151990506b121a3c21f8c77d5c1aff0633bd17c428d5"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-FT6RAMV5.js",
+          "bytes": 46179,
+          "gzip6EstimateBytes": 16687,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "d3934b5977c72af5235e1967c92fc4824e0ae6409cdc85ff78189c4624a58c9f"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-NZ43S75G.js",
+          "bytes": 22859,
+          "gzip6EstimateBytes": 8959,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "fe434beec48262f12bb90374d0a91d56595a05c2c4c59cab9cd6b0ce5bb4c873"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-NAU4CKOU.js",
+          "bytes": 264344,
+          "gzip6EstimateBytes": 40383,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "ace5a756becd0bb9257f660cf519ba3be9960bcb9b5877434e0490c78a154df1"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-AML6GIK6.js",
+          "bytes": 3953,
+          "gzip6EstimateBytes": 1549,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "fe6ce3b48d96b30c9c695300e762f95664a5e00d003860472546afe4ba604831"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+          "bytes": 13123,
+          "gzip6EstimateBytes": 5254,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "e95a880e9532cab2720bf026f3229a61183e7a21abb8359de07291fed0d81bc4"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-SOW5VRAV.js",
+          "bytes": 47117,
+          "gzip6EstimateBytes": 18518,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "01cf2bff0d34dabed48146959c9419cedcb062b0dd034622325bbb77ebfa407c"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-EY45BEKX.js",
+          "bytes": 1037,
+          "gzip6EstimateBytes": 564,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "19b588bb922a84128fb3371a9127814028e6af3270c79d8f70cae575fe426ab3"
+        },
+        {
+          "path": ".startup-profile-virtual/main.css",
+          "bytes": 68976,
+          "gzip6EstimateBytes": 13792,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "e636126b4a12b2c71c41ab116745bfa19f737c2e81defea3cc9274b6831a1ccd"
+        },
+        {
+          "path": ".startup-profile-virtual/touchdown-lab-WEPJJO7P.css",
+          "bytes": 8933,
+          "gzip6EstimateBytes": 2448,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "84bce1470ec6c7b90fee556cebd3409c3a983e7c29d2464908f3c1b7095b633a"
+        },
+        {
+          "path": ".startup-profile-virtual/solar-system-view-ONKSZ7UR.css",
+          "bytes": 4478,
+          "gzip6EstimateBytes": 1420,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "6fa7341b8491d260c104d5e4d57a72991e29ecf36840bcdc0544c815f0e3d5f5"
+        },
+        {
+          "path": ".startup-profile-virtual/scene-PYW2QSON.css",
+          "bytes": 1211,
+          "gzip6EstimateBytes": 516,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "dd2728363f1e1ef8e0e3b1365808f9441deba3c455006bdf30ffdb98433ec010"
+        },
+        {
+          "path": ".startup-profile-virtual/workspace-6IRV62HQ.css",
+          "bytes": 8865,
+          "gzip6EstimateBytes": 2709,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "38b64ec483261071df6e651b6c6e863f257ecba04effcf847a9a53d78ed0084f"
+        },
+        {
+          "path": ".startup-profile-virtual/teaching-studio-SALSPS5L.css",
+          "bytes": 4856,
+          "gzip6EstimateBytes": 1588,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "908b1725af294dcc08f54392cd1d2ce575af83f9a33270cb28320fad83f8dc7a"
+        }
+      ],
+      "inputCount": 2436
+    },
+    {
+      "mode": "esm-lazy-shim",
+      "entry": ".startup-profile-virtual/main.js",
+      "initialJSBytes": 1186195,
+      "initialJSGzip6EstimateBytes": 350762,
+      "totalJSBytes": 6609478,
+      "jsFiles": 28,
+      "cssBytes": 97319,
+      "initialContains": {
+        "three": false,
+        "rapier": false,
+        "next/dist": false,
+        "scene/runtime": false,
+        "flight.ts": true
+      },
+      "largestInitialInputs": [
+        {
+          "name": "lib/generated/native-mathml.json",
+          "bytesInOutput": 180946
+        },
+        {
+          "name": "../../../lunario-map-20261115/navigator/node_modules/react-dom/cjs/react-dom-client.production.js",
+          "bytesInOutput": 169743
+        },
+        {
+          "name": "components/navigator.tsx",
+          "bytesInOutput": 59104
+        },
+        {
+          "name": "lib/glossary.ts",
+          "bytesInOutput": 52947
+        },
+        {
+          "name": "components/workbench/panels.tsx",
+          "bytesInOutput": 38014
+        },
+        {
+          "name": "lib/math-typesetting.ts",
+          "bytesInOutput": 37566
+        },
+        {
+          "name": "components/branding/lunario-vendor.generated.ts",
+          "bytesInOutput": 32867
+        },
+        {
+          "name": "components/workbench/equation-lesson.tsx",
+          "bytesInOutput": 25084
+        },
+        {
+          "name": "components/workbench/alternatives.tsx",
+          "bytesInOutput": 24939
+        },
+        {
+          "name": "lib/variable-notation.ts",
+          "bytesInOutput": 23904
+        },
+        {
+          "name": "public/data/evidence-manifest.json",
+          "bytesInOutput": 22514
+        },
+        {
+          "name": "lib/engineering-screens.ts",
+          "bytesInOutput": 20878
+        },
+        {
+          "name": "components/polar-map.tsx",
+          "bytesInOutput": 18954
+        },
+        {
+          "name": "lib/landing-sites.ts",
+          "bytesInOutput": 17471
+        },
+        {
+          "name": "components/workbench/science-charts.tsx",
+          "bytesInOutput": 17419
+        },
+        {
+          "name": "components/workbench/audience-context.tsx",
+          "bytesInOutput": 14190
+        }
+      ],
+      "files": [
+        {
+          "path": ".startup-profile-virtual/main.js",
+          "bytes": 583512,
+          "gzip6EstimateBytes": 183521,
+          "initialJS": true,
+          "entryPoint": "standalone/main.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-3SMLGPCD.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AIDUFDN7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-YOFZCIMQ.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-BOKKGP6I.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/touchdown-lab-JE25HGSD.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/solar-system-view-K6WDLGTB.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/scene-ZO5EMVCB.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/workspace-JVV4KTNA.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/teaching-studio-QAVCPBRL.js",
+              "kind": "dynamic-import"
+            },
+            {
+              "path": ".startup-profile-virtual/evidence-workspace-TGTWZRBA.js",
+              "kind": "dynamic-import"
+            }
+          ],
+          "sha256": "7cce92913852e953f191a9af6b430c37ef531c8242ba4bfce1498f4b71e06d0c"
+        },
+        {
+          "path": ".startup-profile-virtual/rapier-4PAF6GLA.js",
+          "bytes": 4336956,
+          "gzip6EstimateBytes": 1645226,
+          "initialJS": false,
+          "entryPoint": "../../../lunario-map-20261115/navigator/node_modules/@dimforge/rapier3d-compat/dist/rapier.mjs",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "753369717dadb00c4bceba075149c70a9d204e4b9740b6d726fc0115cb621bdb"
+        },
+        {
+          "path": ".startup-profile-virtual/touchdown-lab-JE25HGSD.js",
+          "bytes": 18167,
+          "gzip6EstimateBytes": 7211,
+          "initialJS": false,
+          "entryPoint": "components/workbench/touchdown-lab.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-BXNW3JPM.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "042265b668ea73483461f5e3be3ed80aec85d59a890b4e6d9b7d9247e1cbee0f"
+        },
+        {
+          "path": ".startup-profile-virtual/solar-system-view-K6WDLGTB.js",
+          "bytes": 16482,
+          "gzip6EstimateBytes": 6775,
+          "initialJS": false,
+          "entryPoint": "components/workbench/solar-system-view.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "ed15b04fda01418f2c6f0ed6eea5cc00f9c7f4a38c8b843031b62bac6d82dfc5"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-FLYFGRWH.js",
+          "bytes": 1841,
+          "gzip6EstimateBytes": 927,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "348998ca76efeeeda8e8616ee627fcd741e3fdf613466cb1f53ac9d6e50a8e15"
+        },
+        {
+          "path": ".startup-profile-virtual/scene-ZO5EMVCB.js",
+          "bytes": 165830,
+          "gzip6EstimateBytes": 60627,
+          "initialJS": false,
+          "entryPoint": "components/workbench/scene.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-3SMLGPCD.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-BXNW3JPM.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "d973b5c2c88582a1cfef756a4211b2a29dafa664089294a349db9ed2461b3e24"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-3SMLGPCD.js",
+          "bytes": 8454,
+          "gzip6EstimateBytes": 3707,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "086a64c3537e09ec20c458b510c470e3a927c3d41157bcb0047a2f6a6e62bad5"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-BXNW3JPM.js",
+          "bytes": 18894,
+          "gzip6EstimateBytes": 7893,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/rapier-4PAF6GLA.js",
+              "kind": "dynamic-import"
+            }
+          ],
+          "sha256": "bdc6993efec17a7f571d0e13cdd2ab8fd496f3c52ee57a4ca48d29a612dd856e"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-6T4AVOIH.js",
+          "bytes": 63641,
+          "gzip6EstimateBytes": 22311,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "6a916653a03e32d088f750f1ca38247b9411eed793a4bcf6b7b8e3d0d5aabe6c"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-B2WEM6IL.js",
+          "bytes": 5366,
+          "gzip6EstimateBytes": 2352,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "b3891579ddee9bf9076fa804b269ac14b5456448889ce544b1e0f66ffa9c4556"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-55DUNYYL.js",
+          "bytes": 659697,
+          "gzip6EstimateBytes": 167207,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "c8c1ba797c1d1a6252b6b054168817931d298fe3ae931973db06e2039246c3b2"
+        },
+        {
+          "path": ".startup-profile-virtual/workspace-JVV4KTNA.js",
+          "bytes": 40835,
+          "gzip6EstimateBytes": 13633,
+          "initialJS": false,
+          "entryPoint": "components/replanning/workspace.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-AIDUFDN7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-BOKKGP6I.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "dcc0853f8ab09aa0cae124a5b6f5b98176b79a58afe222fa3d2a57604ada7ca3"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-AIDUFDN7.js",
+          "bytes": 46520,
+          "gzip6EstimateBytes": 17590,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "c16d2bd56dab31f25ebb4018f0eefa03ae29c3aade24bb1f738f7e85dc954070"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-OJEPLSOA.js",
+          "bytes": 82415,
+          "gzip6EstimateBytes": 26659,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "e8ed8632cd7cac96d26c9d97f8de9043999bb6fdfa49502e16323860475f8177"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-D3B6YV37.js",
+          "bytes": 15102,
+          "gzip6EstimateBytes": 5286,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "248f892ae4ed905b81277e4e8b122d73fbfad33ad903305bb3e157f23feea16b"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-SNHMR3AG.js",
+          "bytes": 1313,
+          "gzip6EstimateBytes": 748,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "086ce03af2cd9ee7b59f246850ca19ea3bcd39c93ae809ae6d00f435c89379ae"
+        },
+        {
+          "path": ".startup-profile-virtual/teaching-studio-QAVCPBRL.js",
+          "bytes": 58876,
+          "gzip6EstimateBytes": 19233,
+          "initialJS": false,
+          "entryPoint": "components/audience/teaching-studio.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-YOFZCIMQ.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-BOKKGP6I.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "8216ff9c830c14f3848a3f67ececc2cf97530782841393b478b43f986fb821dc"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-YOFZCIMQ.js",
+          "bytes": 13066,
+          "gzip6EstimateBytes": 5488,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "5768b7026d4f2af631227d18b06214a0bd228f25d6184cbac799853b43eb471e"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-BOKKGP6I.js",
+          "bytes": 24686,
+          "gzip6EstimateBytes": 10086,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "f4f16173275c1000e4fea91e9c011aab0a91972e87d13abae2b9fc17ad8e7915"
+        },
+        {
+          "path": ".startup-profile-virtual/evidence-workspace-TGTWZRBA.js",
+          "bytes": 43905,
+          "gzip6EstimateBytes": 14531,
+          "initialJS": false,
+          "entryPoint": "components/engineering/evidence-workspace.tsx",
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "dddee91806ca9768f615f6093d4228bcd306131d89b6577bf75f37e5162c2b62"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-IJ45LXPE.js",
+          "bytes": 5564,
+          "gzip6EstimateBytes": 2599,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "3aaea760457ac72c0adc151990506b121a3c21f8c77d5c1aff0633bd17c428d5"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-AWAZYIXE.js",
+          "bytes": 46179,
+          "gzip6EstimateBytes": 16688,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "49a6388487ef6c701f64ab9ce87de9001bc49282473f22f014da21423563b7a9"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-WUXAQOZC.js",
+          "bytes": 22859,
+          "gzip6EstimateBytes": 8959,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "31cd18bf15ba13694789ab71920d55d4604b00a6531e71dbd00fd1c0930b40e4"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-J35TYOJA.js",
+          "bytes": 264344,
+          "gzip6EstimateBytes": 40381,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "78a2c5711f52506477fdb1c9d9dbf491a684199f1edecd1747718da5e1bfcc11"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-JY5IVRV7.js",
+          "bytes": 3953,
+          "gzip6EstimateBytes": 1547,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+              "kind": "import-statement"
+            },
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "85cab3e22a745594bc9a6de0ec94ae1440f951fe93e2d98698fe0444b49aaeff"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-GIF7HSPE.js",
+          "bytes": 13123,
+          "gzip6EstimateBytes": 5254,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "e95a880e9532cab2720bf026f3229a61183e7a21abb8359de07291fed0d81bc4"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-RLRZLNTE.js",
+          "bytes": 47117,
+          "gzip6EstimateBytes": 18519,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [
+            {
+              "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+              "kind": "import-statement"
+            }
+          ],
+          "sha256": "598de9f852a2dd6339876156ef57af3c7498a885c152f1d7cfc2d8a1d24e5281"
+        },
+        {
+          "path": ".startup-profile-virtual/chunk-GINGPXMU.js",
+          "bytes": 781,
+          "gzip6EstimateBytes": 451,
+          "initialJS": true,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "692e687dce9fc072c4d373cf55c7ccac673b9bcf9b68c2e0f404b049b71d1b4f"
+        },
+        {
+          "path": ".startup-profile-virtual/main.css",
+          "bytes": 68976,
+          "gzip6EstimateBytes": 13792,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "e636126b4a12b2c71c41ab116745bfa19f737c2e81defea3cc9274b6831a1ccd"
+        },
+        {
+          "path": ".startup-profile-virtual/touchdown-lab-WEPJJO7P.css",
+          "bytes": 8933,
+          "gzip6EstimateBytes": 2448,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "84bce1470ec6c7b90fee556cebd3409c3a983e7c29d2464908f3c1b7095b633a"
+        },
+        {
+          "path": ".startup-profile-virtual/solar-system-view-ONKSZ7UR.css",
+          "bytes": 4478,
+          "gzip6EstimateBytes": 1420,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "6fa7341b8491d260c104d5e4d57a72991e29ecf36840bcdc0544c815f0e3d5f5"
+        },
+        {
+          "path": ".startup-profile-virtual/scene-PYW2QSON.css",
+          "bytes": 1211,
+          "gzip6EstimateBytes": 516,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "dd2728363f1e1ef8e0e3b1365808f9441deba3c455006bdf30ffdb98433ec010"
+        },
+        {
+          "path": ".startup-profile-virtual/workspace-6IRV62HQ.css",
+          "bytes": 8865,
+          "gzip6EstimateBytes": 2709,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "38b64ec483261071df6e651b6c6e863f257ecba04effcf847a9a53d78ed0084f"
+        },
+        {
+          "path": ".startup-profile-virtual/teaching-studio-SALSPS5L.css",
+          "bytes": 4856,
+          "gzip6EstimateBytes": 1588,
+          "initialJS": false,
+          "entryPoint": null,
+          "imports": [],
+          "sha256": "908b1725af294dcc08f54392cd1d2ce575af83f9a33270cb28320fad83f8dc7a"
+        }
+      ],
+      "inputCount": 2432
+    }
+  ],
+  "sourceIdentity": [
+    {
+      "path": "../css/site.css",
+      "bytes": 11326,
+      "sha256": "57660dd30edfdec19253a7336d21f92cf5e0f912a891d99ababe2a7e63c2df84"
+    },
+    {
+      "path": "../index.html",
+      "bytes": 7690,
+      "sha256": "2aeb98329322d93b86552373afafc041c30f5329ce8feef4d1de2966eb601eae"
+    },
+    {
+      "path": "../loader/loader.js",
+      "bytes": 11001,
+      "sha256": "749b19dd77f8921eb757b8cadca1dd554bc06ba529185888193b3c22086751a0"
+    },
+    {
+      "path": "app/mission-theme.css",
+      "bytes": 30404,
+      "sha256": "e5f5f8ef31c0904b0692f5a12645ad2115f86ffe8ed4c1646373cd4683d01533"
+    },
+    {
+      "path": "components/audience/audience.module.css",
+      "bytes": 4992,
+      "sha256": "c94f614af988d52c562ccb8c7d414287d140ed56df438b65818e6017857d3a2a"
+    },
+    {
+      "path": "components/audience/experiment-relation.tsx",
+      "bytes": 2267,
+      "sha256": "2a878f22c676ca66c88790fb5397110f0caac708b89824477ada424974cf1e9d"
+    },
+    {
+      "path": "components/audience/response-plot.tsx",
+      "bytes": 3297,
+      "sha256": "0a183be084b82388bd692f086c1460d5cd19f5d81a09477293c5816b3190c56d"
+    },
+    {
+      "path": "components/audience/solar-lesson.tsx",
+      "bytes": 6422,
+      "sha256": "2d2fea87b5ff25120ec95ed5b6fee652cda92eae8bbcdcdb3f91d88e6c455ab8"
+    },
+    {
+      "path": "components/audience/study-capture.tsx",
+      "bytes": 7129,
+      "sha256": "9ffa7bb5169f672939d57e800190e9feedbe50ede954c201d526f3de5d0e4e34"
+    },
+    {
+      "path": "components/audience/task-strip.tsx",
+      "bytes": 5415,
+      "sha256": "4c343e1451178181127add30be10c635d744b39849cc5a71dc3e4ef05cb946d3"
+    },
+    {
+      "path": "components/audience/teaching-studio.tsx",
+      "bytes": 17453,
+      "sha256": "1ffe7f3fb4d3b5ace90f5078b57663e8736baf7b5aa3e84cb04ea5fd5827f35f"
+    },
+    {
+      "path": "components/branding/branding.css",
+      "bytes": 620,
+      "sha256": "201894edc16be8d689a98dbe5d3ffe832f3b83d6c8bf4536f756b69e60845c52"
+    },
+    {
+      "path": "components/branding/lunar-window-brand.tsx",
+      "bytes": 767,
+      "sha256": "646e8ac092754335ae0127d079d67c0a2415deea65ad7f395570ba9b95a5a7ee"
+    },
+    {
+      "path": "components/branding/lunar-window-loader.tsx",
+      "bytes": 660,
+      "sha256": "d8aef684ad6c38c914126c76eb0a66de61d3d10f87554ff0505cc81986d51283"
+    },
+    {
+      "path": "components/branding/lunario-loader-runtime.ts",
+      "bytes": 1621,
+      "sha256": "f2224df51f8a1b7050ea3f15ea4bb62e0d21359d575cc1d6021b021ffa7ca75b"
+    },
+    {
+      "path": "components/branding/lunario-startup.tsx",
+      "bytes": 810,
+      "sha256": "68c1058de334dde3fe40dfb44b747a1f8e95eacbaa41fb744f399738b88185ca"
+    },
+    {
+      "path": "components/branding/lunario-vendor.generated.ts",
+      "bytes": 34209,
+      "sha256": "11a4e38adbb3ef863b1a319f7542fc91c686a1f84256a60089bd001b1721f382"
+    },
+    {
+      "path": "components/education-materials/material-builder.tsx",
+      "bytes": 4760,
+      "sha256": "9e2282ce459f85704c188715c9797e090b99720f8bbaef7155f6aa66336ed84e"
+    },
+    {
+      "path": "components/education-materials/materials.module.css",
+      "bytes": 772,
+      "sha256": "828715ac48f9fbb07dacc5ddde687562587b98d2c0cd3d376799ba4d172227f3"
+    },
+    {
+      "path": "components/engineering/evidence-workspace.tsx",
+      "bytes": 27031,
+      "sha256": "beb31377e6400ea6986686c3e44d526a43dcbe63bcf670d404d7b714b5c28d67"
+    },
+    {
+      "path": "components/global-map.module.css",
+      "bytes": 3626,
+      "sha256": "7bec0c35db8533809a002444697ad0a7158fac612cb7a7ba3afa3da1706e3f22"
+    },
+    {
+      "path": "components/global-map.tsx",
+      "bytes": 22219,
+      "sha256": "600e986526cd154be713c54a0ff9058d72c49d93cf94b1472e9a7e933c349c6c"
+    },
+    {
+      "path": "components/navigator.tsx",
+      "bytes": 101746,
+      "sha256": "1da3a580b17bbc98da8f1afc879018d260a7e3141f68a15e37fc4c1b7e7d8a5c"
+    },
+    {
+      "path": "components/polar-map.tsx",
+      "bytes": 38484,
+      "sha256": "30e74717a7438e652da3ba9ea1f18bd756ebcb5f1bc97fc612b732a5393406b9"
+    },
+    {
+      "path": "components/replanning/alternatives.tsx",
+      "bytes": 7919,
+      "sha256": "c88e01590bc3af6a356730d2a3523731939dbb6c14f1236c37e383699e5b76ef"
+    },
+    {
+      "path": "components/replanning/candidate-controls.tsx",
+      "bytes": 3143,
+      "sha256": "fdf9b9a9ca06e625f40f7992bd39f8bbfcbc7d15d7bc732788e328fa3ef82ccf"
+    },
+    {
+      "path": "components/replanning/case-panel.tsx",
+      "bytes": 7630,
+      "sha256": "83a4bd3b85854e4bb25c2b1c253c38e2c4dcb0d9f8f05adbb29b2cdf09695793"
+    },
+    {
+      "path": "components/replanning/curves.tsx",
+      "bytes": 5229,
+      "sha256": "3bbb289346403b41bea65bade6e1dda9334831432d7580ff4ba0aa64178a4f65"
+    },
+    {
+      "path": "components/replanning/inputs.tsx",
+      "bytes": 1471,
+      "sha256": "6d98c94e782ba59e92c1da083b8edc27f197a6eefc2cb72d33770092b53a779c"
+    },
+    {
+      "path": "components/replanning/spatial-context.tsx",
+      "bytes": 2044,
+      "sha256": "7abdde84518cce0fa046b8d365e6ad012253215f66bf92c283adbdf786c5d13c"
+    },
+    {
+      "path": "components/replanning/workspace.module.css",
+      "bytes": 7749,
+      "sha256": "5a0d66c57672b903ee4ff4f06d7e780d6d62f6cb1b63f167a0a997f32c347d97"
+    },
+    {
+      "path": "components/replanning/workspace.tsx",
+      "bytes": 12591,
+      "sha256": "e79ada3c2e3a25539deee8bf25895dc03054d646ca731763803ae92ded5bde7d"
+    },
+    {
+      "path": "components/site-shell-nav.tsx",
+      "bytes": 1175,
+      "sha256": "1115613d11dda824f534b78597722f3a3cb61072020e98c86e939caabbb79464"
+    },
+    {
+      "path": "components/ui-theme-toggle.tsx",
+      "bytes": 637,
+      "sha256": "a4dc826e0feb5e0cfe99f7e70172fc4f1bb739144b196c8777b34d3a4472ec5c"
+    },
+    {
+      "path": "components/ui/button.tsx",
+      "bytes": 3230,
+      "sha256": "313353436d0fcc8e44ab470adb614b9fd013d28626f624328ea0d66d41a6c81b"
+    },
+    {
+      "path": "components/ui/input.tsx",
+      "bytes": 1030,
+      "sha256": "dab990dfefa0ba78854ab6602ad074270dba9d7d1262184d9bfbb62bd990903b"
+    },
+    {
+      "path": "components/ui/slider.tsx",
+      "bytes": 2021,
+      "sha256": "14b4f5f1871409586a89c10e92283566fb0cc86ec23303fbdf7cf65f7850322a"
+    },
+    {
+      "path": "components/workbench/alternatives.module.css",
+      "bytes": 8839,
+      "sha256": "36434b930544ac0062a68c208c9cf9b32f9eb6a4259502968ad1f2425bae6026"
+    },
+    {
+      "path": "components/workbench/alternatives.tsx",
+      "bytes": 33679,
+      "sha256": "dc4c38ac9e1a4587e894afc1f9ffb602602ce5fa6e6efac0520d6d620a6d871e"
+    },
+    {
+      "path": "components/workbench/assessment-explanation.tsx",
+      "bytes": 3897,
+      "sha256": "095c229807686983d40d4750b316366f492e404bcf415a1390ed835090d33666"
+    },
+    {
+      "path": "components/workbench/audience-context.tsx",
+      "bytes": 14910,
+      "sha256": "fa2ac724594dbe96ea84f960fd5fbc98ade2e1c4a23ef33a09a52dbcd4f167db"
+    },
+    {
+      "path": "components/workbench/audience-guide.module.css",
+      "bytes": 2000,
+      "sha256": "aed2f84962720e828f3e4c2b371066a5e64a59dbdb3864992feed390eb40644c"
+    },
+    {
+      "path": "components/workbench/audience-guide.tsx",
+      "bytes": 1761,
+      "sha256": "2059d5fee5e015ed902e13ec1843a79cbdffe0a8d077f74370d246568879e906"
+    },
+    {
+      "path": "components/workbench/controls.tsx",
+      "bytes": 3092,
+      "sha256": "8d63810675cf223f361bec3a6c7656e75a41317b83bfb6b9c862b17fa812e285"
+    },
+    {
+      "path": "components/workbench/data-connections.module.css",
+      "bytes": 1087,
+      "sha256": "12c222b0a46c10e3b093ebf40bf798bde61f5f665327aa315e636fdb6217564f"
+    },
+    {
+      "path": "components/workbench/data-connections.tsx",
+      "bytes": 4920,
+      "sha256": "a716c17f1a26700caf8e759be871ff3b9fa2efa6476ab48232c25ba8f74cd9ef"
+    },
+    {
+      "path": "components/workbench/decision-package.tsx",
+      "bytes": 2693,
+      "sha256": "9a11bdc47c5ea3bad7eb196c3c6779c238a2e420c28e76c945761bf5c0918c49"
+    },
+    {
+      "path": "components/workbench/decision-panel.tsx",
+      "bytes": 10902,
+      "sha256": "fa7467277e9572fb1d2e9f40e7b23f9f3204eb45e1d3ac450da7ed2a19bbd2d7"
+    },
+    {
+      "path": "components/workbench/earth-orbits.tsx",
+      "bytes": 8459,
+      "sha256": "df567439e0b8bbacf45cfd987f51eb318687ab59773bdfa99b6f06f7a5a5fa7a"
+    },
+    {
+      "path": "components/workbench/engineering-comparison.tsx",
+      "bytes": 5014,
+      "sha256": "9731aa73b2d86c6652cf06aa695aad1249dbce26db1693b693c0e3fc8bb11de2"
+    },
+    {
+      "path": "components/workbench/engineering-panel.tsx",
+      "bytes": 5872,
+      "sha256": "4b1a2b15cab822d37b5f37167c6c34274c89cd9c20c624877855b97cb5eae1e8"
+    },
+    {
+      "path": "components/workbench/equation-lesson.tsx",
+      "bytes": 27301,
+      "sha256": "90959fa604552aa5458b3933333ff9163ba91ec29fe0d3cd9cd5416cb0815cd0"
+    },
+    {
+      "path": "components/workbench/evidence-panel.tsx",
+      "bytes": 5277,
+      "sha256": "8fff1cd15efdbbcb8b3a36a37ea06d4b53654104c3a732564bbf35256c8ccf4a"
+    },
+    {
+      "path": "components/workbench/flight-experiments.tsx",
+      "bytes": 13827,
+      "sha256": "3e49a0493af62ea1dabf82a60d97c5397f59e1cd1e880ae615a750e656815272"
+    },
+    {
+      "path": "components/workbench/globe-navigation.module.css",
+      "bytes": 1349,
+      "sha256": "0034ab1228703c21e70134e757fc4674f25a029a156c10c102c14c33569c2232"
+    },
+    {
+      "path": "components/workbench/globe-navigation.tsx",
+      "bytes": 3541,
+      "sha256": "2c6de1d949ecf17d9a73a1df7ae271a49e850429b5e3c14b41c3ce4c08990371"
+    },
+    {
+      "path": "components/workbench/gradient-help.tsx",
+      "bytes": 6981,
+      "sha256": "8eecc09682d1bddf8ca2a09fb61eb7d3c2e47e70ef0d0e3c9a4b30e4f6c3f4f1"
+    },
+    {
+      "path": "components/workbench/header-landing-status.tsx",
+      "bytes": 2603,
+      "sha256": "ee1fdc88e47af024d2badcd8833f797cdc368974890bf4e46b37b0bc34b1f1d4"
+    },
+    {
+      "path": "components/workbench/header-lean-dropdown.tsx",
+      "bytes": 2781,
+      "sha256": "3b583a31cda7bc714adb672c51414b8d4d7a26baa7c1b5f0e696322f32aca25a"
+    },
+    {
+      "path": "components/workbench/info.tsx",
+      "bytes": 7858,
+      "sha256": "86e88a5e30f63cf07dced7519cf8043c9c7a218481d5cb853fa38f6b87b6a4d1"
+    },
+    {
+      "path": "components/workbench/mission-calendar.tsx",
+      "bytes": 9280,
+      "sha256": "bb95cf39125b72f81892a5fa5d52dc3526a2ae0eaa4fa77b0de8c881f3974aae"
+    },
+    {
+      "path": "components/workbench/native-math.tsx",
+      "bytes": 1466,
+      "sha256": "e9c03520794d1b180a5bb15a4083aa938245b451c1b5467c90eb18c312eb6a2c"
+    },
+    {
+      "path": "components/workbench/panels.tsx",
+      "bytes": 60069,
+      "sha256": "344bc276d5141cd67b22196d7bab05574a0794b0022a86f8eb7f645379dea6f4"
+    },
+    {
+      "path": "components/workbench/physics-reference.tsx",
+      "bytes": 4398,
+      "sha256": "abc54dea976b8f139e8274b97760d7a56b472fa4e73209d9cf6af13ec8ce9929"
+    },
+    {
+      "path": "components/workbench/public-exploration.tsx",
+      "bytes": 3478,
+      "sha256": "282e25fd506d9deccbe4ec3babc248e29e2b30fc41c0e460a97c785dcc4aba79"
+    },
+    {
+      "path": "components/workbench/scene.tsx",
+      "bytes": 27767,
+      "sha256": "224e0e1b571908a276c02d3127cb711ffe9cd499250a4f523c404120e0e92699"
+    },
+    {
+      "path": "components/workbench/scene/camera-limits.ts",
+      "bytes": 1385,
+      "sha256": "8019b18e9da92ca54d83837db362ae8ed196ba7db0fa6330ae35826bda10ff06"
+    },
+    {
+      "path": "components/workbench/scene/contact-dynamics.ts",
+      "bytes": 20125,
+      "sha256": "48d34f0279487a6debd9b0f08a48842fd5b985fe254bbb033154edb048ef398f"
+    },
+    {
+      "path": "components/workbench/scene/flight-visuals.ts",
+      "bytes": 1626,
+      "sha256": "f65fb6bee92aabf6181c1faef2851a839d394e906ed6943e1941c543fffc2454"
+    },
+    {
+      "path": "components/workbench/scene/geographic-navigation.ts",
+      "bytes": 2590,
+      "sha256": "cd7c25caacddbe4d3cf416825f782a2cd7c10477d16c0e02869defb235b10a14"
+    },
+    {
+      "path": "components/workbench/scene/material.ts",
+      "bytes": 11185,
+      "sha256": "da19ad0ddaaf8b5e1422aa750dc1223854461ffaf96382158864ae25798c8d45"
+    },
+    {
+      "path": "components/workbench/scene/nasa-globe.ts",
+      "bytes": 3653,
+      "sha256": "6cb6c5dabdef72560f63b32048e13a47432ef3e9b92acb116b1b9a2f65b33f06"
+    },
+    {
+      "path": "components/workbench/scene/renderer-lifecycle.ts",
+      "bytes": 296,
+      "sha256": "e5e257033af097ec19cca2b0f34fb2a44158a45e6cf6c5296412344983199855"
+    },
+    {
+      "path": "components/workbench/scene/runtime.ts",
+      "bytes": 94997,
+      "sha256": "3eecf3333aceae88547fc38192b2536443163b012a09428550036feaf1105fe8"
+    },
+    {
+      "path": "components/workbench/scene/surface.ts",
+      "bytes": 10270,
+      "sha256": "83b3ac4d9290d77618c09da17671d93abb41f139ed66b62578471ff49ef0969d"
+    },
+    {
+      "path": "components/workbench/scene/vehicle.ts",
+      "bytes": 1853,
+      "sha256": "3f8d464db807fb2c7af2e351ad5972435aa49c5cf4ec35656691ab8b96bcaad5"
+    },
+    {
+      "path": "components/workbench/science-charts.tsx",
+      "bytes": 31550,
+      "sha256": "b18d1e193d3d6fbc76a689ae8019437dff7da3fca6aaa92210d817a4c46697e3"
+    },
+    {
+      "path": "components/workbench/sensitivity-panel.tsx",
+      "bytes": 8349,
+      "sha256": "fa0355f06c6d5d702cb85980af285efdd61b398d53a27a6c5f8cce4a00741f02"
+    },
+    {
+      "path": "components/workbench/solar-system-view.module.css",
+      "bytes": 5500,
+      "sha256": "5d54b64f46a25dd7f1cc4a26ada899af89b3d454916a49458e66a44f41875329"
+    },
+    {
+      "path": "components/workbench/solar-system-view.tsx",
+      "bytes": 25042,
+      "sha256": "6ae3e76f87af3c2d14e825c3fe6bfa6e147cd120b7b8b54c1622782384df3553"
+    },
+    {
+      "path": "components/workbench/station-weather.tsx",
+      "bytes": 11617,
+      "sha256": "286f821143b3911c2c0c73e6b2087da3992e9b85d6df41d5343e3b0d293a85df"
+    },
+    {
+      "path": "components/workbench/teaching-workbench.module.css",
+      "bytes": 1400,
+      "sha256": "1bf10a586921d29d1ca4fe4242b37a1a42729094cdee5742332a27d651b94e48"
+    },
+    {
+      "path": "components/workbench/teaching-workbench.tsx",
+      "bytes": 10166,
+      "sha256": "7adb1399d37aa15c7a7615d072e1329c113b9d0eb49f8180d2bdaa67036805d6"
+    },
+    {
+      "path": "components/workbench/touchdown-lab.module.css",
+      "bytes": 11100,
+      "sha256": "d811e573e5fd12818f2ab669c464fc0b5f33c640df0d6b38630d755e719c6ba7"
+    },
+    {
+      "path": "components/workbench/touchdown-lab.tsx",
+      "bytes": 24286,
+      "sha256": "8978a189b59528631205a27f7d52c73103150f09de332b8823d49309fc68553c"
+    },
+    {
+      "path": "components/workbench/visibility-windows.module.css",
+      "bytes": 2518,
+      "sha256": "fe1558bc417c3a60620c820eb3b6565dc8d93be5ad6c71c67bf69fce44fd5dd3"
+    },
+    {
+      "path": "components/workbench/visibility-windows.tsx",
+      "bytes": 4692,
+      "sha256": "1c4f2327ebc247d98cf082a95230e0ab33247091a10c32419b24c078f01ca1a8"
+    },
+    {
+      "path": "components/workbench/workspace-dialog.tsx",
+      "bytes": 1131,
+      "sha256": "88060a5d7a926df4bd3c095de6b2fa84265d608eb8758e2998eb21d36743d132"
+    },
+    {
+      "path": "docs/qa/horizons-decoded-validation.json",
+      "bytes": 1570,
+      "sha256": "10f0d6d039a10935cd3001b995decd14931e26498cc751ffece7aea0e9b4af01"
+    },
+    {
+      "path": "lib/after-paint.ts",
+      "bytes": 979,
+      "sha256": "3d13c36f2cc9b54ab26644c7bfb5dff73f8c4d7c4837194df2f1048b6a43a5bb"
+    },
+    {
+      "path": "lib/alternatives.ts",
+      "bytes": 10063,
+      "sha256": "8ff41fbb5ecdc02005668efcd1ba5619866d030eb856943c30933d3fcf2dc63d"
+    },
+    {
+      "path": "lib/analysis-context.ts",
+      "bytes": 5734,
+      "sha256": "d77adfe5720c4c959f6f9c645fb9f72c908b524e0c3c38fcb28a2c788b120d70"
+    },
+    {
+      "path": "lib/assessment-explanation.ts",
+      "bytes": 5677,
+      "sha256": "906fca4b3edfd6eef65919fc5857c39678198409c9c08dde154e1fd2afac716d"
+    },
+    {
+      "path": "lib/assessment.ts",
+      "bytes": 12839,
+      "sha256": "3ae74915e94395ed81fc7cd5a061495f1a076d0bcbc878e7da776c40decfd0de"
+    },
+    {
+      "path": "lib/asset-focus.ts",
+      "bytes": 5995,
+      "sha256": "1eceac5632fafdd66de72cf127260217497e305f1e19a07d1637bfa88a5531ff"
+    },
+    {
+      "path": "lib/astro.ts",
+      "bytes": 21823,
+      "sha256": "8d1beb0bcf2d10f52d6cbd5e4d02a3991be186aeaa53965a5d197f92ad8c90ec"
+    },
+    {
+      "path": "lib/audience/experiments.ts",
+      "bytes": 5726,
+      "sha256": "29dc3d6cb8bd001b3f52ff9484d696846bd5690f608f2fbb38268d209f9aadda"
+    },
+    {
+      "path": "lib/audience/guidance.ts",
+      "bytes": 4469,
+      "sha256": "9edd4a6b73bcf231dc67edf1bc953228c27a1ab9004f82a7fc5a0c596ae866cf"
+    },
+    {
+      "path": "lib/audience/notebook.ts",
+      "bytes": 2218,
+      "sha256": "eec615a266c1ef5bb83a8cddf2739cc2890bc6ba783e196960a39a7da024abfc"
+    },
+    {
+      "path": "lib/audience/study.ts",
+      "bytes": 8303,
+      "sha256": "7646ba95f8ad8367eb8112ad454b1577bdd0a68803436ca2512dd9c98a199146"
+    },
+    {
+      "path": "lib/calendar-navigation.ts",
+      "bytes": 820,
+      "sha256": "c1004a872bff666a406afef290b1c1953515127670119610772da376ed4b1bad"
+    },
+    {
+      "path": "lib/camera-framing.ts",
+      "bytes": 10952,
+      "sha256": "76703a89a921807079dff5f3400630940d65e6fb651c8b457d2b5387a17d75c8"
+    },
+    {
+      "path": "lib/catalog.ts",
+      "bytes": 5737,
+      "sha256": "87fcb058b0aff28be6c4f7ba3ff6ed39e191c48986b5ccff24c4fc1ebc4fd6ae"
+    },
+    {
+      "path": "lib/celestial-assets.ts",
+      "bytes": 7160,
+      "sha256": "53fa2fbb51aec4e84bc5f1bed1e3315edee47ae5ba30a20d78249cc8a8892922"
+    },
+    {
+      "path": "lib/chart-gradient.ts",
+      "bytes": 4735,
+      "sha256": "fe04378c528e84f639e40a06ea5671027efad463b9183bc4ba4eac917bb005dd"
+    },
+    {
+      "path": "lib/charts.ts",
+      "bytes": 8315,
+      "sha256": "abf3e707c108496c595a7ad287d5f8e50bb5e6148d7d668554ecdce6080c0507"
+    },
+    {
+      "path": "lib/custom-marker.ts",
+      "bytes": 800,
+      "sha256": "2cab8e9e0eb8a25a26a77c69d80b2584400c79d71ea9f69db132abdf14913452"
+    },
+    {
+      "path": "lib/decision-export.ts",
+      "bytes": 14799,
+      "sha256": "388cb2ddff9797204b1dad0d52865605eacc76de087b677639a706135e7fb57b"
+    },
+    {
+      "path": "lib/delayed-landing-demo.ts",
+      "bytes": 7956,
+      "sha256": "827f29418d92f29f27255030ec055a7ef1eb30062e48a8eb54339e28b85116df"
+    },
+    {
+      "path": "lib/dsn.ts",
+      "bytes": 8831,
+      "sha256": "be59457840b6d4a17a0c45937982a05ae3a5d854b65613fb619a0fba9bb7e039"
+    },
+    {
+      "path": "lib/education-materials/index.ts",
+      "bytes": 12524,
+      "sha256": "74ec3c03163a012952948d9472dd7c4e135e8f3e889e6ab8717d2741cac1ceb4"
+    },
+    {
+      "path": "lib/engineering-context.ts",
+      "bytes": 2712,
+      "sha256": "1b8c237aec0e301d63d828b54d38e8b5a9c6272cb4e6df5ffb461b19dd0b84ab"
+    },
+    {
+      "path": "lib/engineering-evidence/communications.ts",
+      "bytes": 10387,
+      "sha256": "388a82a35c507bc620ddf7779d812f0c6991f0a5f9531e6847c1c4de541c4a00"
+    },
+    {
+      "path": "lib/engineering-evidence/horizons.ts",
+      "bytes": 10790,
+      "sha256": "fa53168bec90258e91cd707005c745e83f4510cb20f03bc326ac2e6f04138850"
+    },
+    {
+      "path": "lib/engineering-evidence/import.ts",
+      "bytes": 7293,
+      "sha256": "878845c69ceb6671baf18ea327a73795044cd12e4b1544599192b0165606f8ba"
+    },
+    {
+      "path": "lib/engineering-evidence/types.ts",
+      "bytes": 2822,
+      "sha256": "715d414429369db3cfa6553ec64f79a8705d894e1962236df300e2dd407515c5"
+    },
+    {
+      "path": "lib/engineering-evidence/uncertainty.ts",
+      "bytes": 5656,
+      "sha256": "0764868470817cd197c4cd2811818ea00952e824a81d7c90af054a9ef1a3634b"
+    },
+    {
+      "path": "lib/engineering-evidence/workspace.ts",
+      "bytes": 2424,
+      "sha256": "c1a0ad3a90a8ace95b393deec612979950a611d2f4886a969be5579609ac5a4a"
+    },
+    {
+      "path": "lib/engineering-screens.ts",
+      "bytes": 26522,
+      "sha256": "233e8b14aafbc8c086623b1f51cdc91222a0a2fe4e9c7f88cf4a272a344827f2"
+    },
+    {
+      "path": "lib/equipment.ts",
+      "bytes": 3620,
+      "sha256": "c7bc2ae56a3ea2af1f5e89d5bcba213a8c5309196782cdb2e2899847a1179d76"
+    },
+    {
+      "path": "lib/export.ts",
+      "bytes": 337,
+      "sha256": "7b623232fd3c3ae9eb66977402922c3a3ce2c2037e2a70ae9535a397fa88395f"
+    },
+    {
+      "path": "lib/external-assessments.ts",
+      "bytes": 1214,
+      "sha256": "66403d2f053a552a255a76fd320cff2531a9fc526d58e571ce422c1aec4623f1"
+    },
+    {
+      "path": "lib/flight-experiments.ts",
+      "bytes": 6739,
+      "sha256": "75264296cb07eb624fb81825da20aa75469d207a62319fd547f7154eb425a88b"
+    },
+    {
+      "path": "lib/flight-lessons.ts",
+      "bytes": 9757,
+      "sha256": "3e86474f65f508571c73164cbeccb9e4f1b760a5fe437b902c35795440e2ee69"
+    },
+    {
+      "path": "lib/flight.ts",
+      "bytes": 10505,
+      "sha256": "0383c58cad24f5fe7315a75300af31a69db4a97603d82b3a8352cd68ccd63967"
+    },
+    {
+      "path": "lib/generated/native-mathml.json",
+      "bytes": 198372,
+      "sha256": "adb149a00f7edf6f7a138d63547ecc9d552f981a01cb62f666586037dbcc06b5"
+    },
+    {
+      "path": "lib/global-horizon.ts",
+      "bytes": 4072,
+      "sha256": "558f81a37da5b8e8df76735bd0e1024699b75a0401f90c6a713a1c640a53e9dd"
+    },
+    {
+      "path": "lib/global-map.ts",
+      "bytes": 6348,
+      "sha256": "4fbae6e949316ef518531b404d49f896f4dce49bae929b63d5ecba46384d5bba"
+    },
+    {
+      "path": "lib/global-terrain.ts",
+      "bytes": 6122,
+      "sha256": "87497651ccbbb4b85a89d723edb91f8dc801f24d874f610e0e7984cf5e698758"
+    },
+    {
+      "path": "lib/glossary.ts",
+      "bytes": 56381,
+      "sha256": "9302c18d2f67183858f1cc21d1f5cd42c61c82a9a98dfe33fa9beb15b1bde751"
+    },
+    {
+      "path": "lib/imagery.ts",
+      "bytes": 712,
+      "sha256": "972d468bf99ebb647c3c50106f5c956676c256648baa6fa417abba4dca0a4ebb"
+    },
+    {
+      "path": "lib/inspector-layout.ts",
+      "bytes": 494,
+      "sha256": "025d888a51052b09377cd1c72e130668e0cbbdfeffde5f78d7c2bdd0028c17f3"
+    },
+    {
+      "path": "lib/landing-catalog.ts",
+      "bytes": 1421,
+      "sha256": "9d473233f8077fcddd544665c2a64e8d1f597bf76a69475129bc43bf762bc33f"
+    },
+    {
+      "path": "lib/landing-contract.ts",
+      "bytes": 1477,
+      "sha256": "f305ca95072bc1bfff5f249cfe099341672b8bd690d6e86faf8782897a8a5625"
+    },
+    {
+      "path": "lib/landing-flight.ts",
+      "bytes": 13978,
+      "sha256": "13d713540148364f9221147fcb179f440f884f8fd0f4c48a18e02d39a2ef7e50"
+    },
+    {
+      "path": "lib/landing-inputs.ts",
+      "bytes": 1981,
+      "sha256": "9cd4349ecdc0530da8c1b33bc934d284d8f10bfe3edde9c734c1bd8d934f0f44"
+    },
+    {
+      "path": "lib/landing-presets.ts",
+      "bytes": 927,
+      "sha256": "19e4bc80a88f34949d41639ee037bbd3bb1167710fa90c229a5cdea856a43284"
+    },
+    {
+      "path": "lib/landing-sites.ts",
+      "bytes": 23484,
+      "sha256": "5821fbf930ac582c6e2a58c6af45dac210ed02906045ad829e80cf5e487d74a1"
+    },
+    {
+      "path": "lib/lighting.ts",
+      "bytes": 3452,
+      "sha256": "6a5f0f9c058cf1fb3e64b9d00a35e9d5a6a7f8021ce66a10dfcacdaf70192dd5"
+    },
+    {
+      "path": "lib/lunar-appearance.ts",
+      "bytes": 2841,
+      "sha256": "385af4cdea4576625bf4bbfe6b6ed6567c444f012997324b5ec5cc8c859e1b53"
+    },
+    {
+      "path": "lib/lunar-projection.ts",
+      "bytes": 586,
+      "sha256": "9e1bc3aa54699b3bcf1addce0c0aba25ef9cea61f9a509b21e509f8458a11a52"
+    },
+    {
+      "path": "lib/math-typesetting.ts",
+      "bytes": 38934,
+      "sha256": "6bdaa1783bb9c65212831b2e6f4bc52b16d1ad0e139ed62762a9a10564d9f882"
+    },
+    {
+      "path": "lib/mission-events.ts",
+      "bytes": 1604,
+      "sha256": "35405841b81e0cd15df4e37a7014e00c41b0b55e5fa5a7fdab0ee55c84a3f8df"
+    },
+    {
+      "path": "lib/mission.ts",
+      "bytes": 15315,
+      "sha256": "fa80967eb4b21f83633151b11278eb2b07e3eb0d874b4f27259e41011ffd921b"
+    },
+    {
+      "path": "lib/mitigations.ts",
+      "bytes": 3673,
+      "sha256": "eec8c164ca6a94408a6330d3bc931a1839074f54c4ec930238c8fa29f754f22c"
+    },
+    {
+      "path": "lib/moon-atlas-texture.ts",
+      "bytes": 2362,
+      "sha256": "bac88743113f7453452c56e62ab4d6e4317ca26009ba3808f81ccf7d007a0655"
+    },
+    {
+      "path": "lib/nasa-model.ts",
+      "bytes": 8068,
+      "sha256": "b22302648d031dbcea48721173e6e7bb5f37ff49adad8a7b3a0b15779db26208"
+    },
+    {
+      "path": "lib/observed-duration.ts",
+      "bytes": 1371,
+      "sha256": "23d6126f1f90424011b7420a5d215e66f42e23839b97fe377db0eaebc0448f1e"
+    },
+    {
+      "path": "lib/onboarding.ts",
+      "bytes": 3252,
+      "sha256": "02f3728428a28deef8a146f24d1c38cdafd97833fd220c39e0c7b976bff3ad40"
+    },
+    {
+      "path": "lib/orbits.ts",
+      "bytes": 7733,
+      "sha256": "056b58ab4b983eba99fe845071dee48b81557d41c2749bd10d37586d7ed1d136"
+    },
+    {
+      "path": "lib/physics-reference.ts",
+      "bytes": 13753,
+      "sha256": "3ed23f6f38d2491c18a2ed21faed1f8ec36e0ac7a5db9b4529f40decbcc5f6f3"
+    },
+    {
+      "path": "lib/planning-demo-loader.ts",
+      "bytes": 1399,
+      "sha256": "7e450feb57e74747112bd50260b61077d617f358467ba8c1b784d81e089ee962"
+    },
+    {
+      "path": "lib/planning-search.ts",
+      "bytes": 7204,
+      "sha256": "156151d6c71cdc637a75275d7fbd10137ff32c13614dba47cf0063ba4132895b"
+    },
+    {
+      "path": "lib/planning-types.ts",
+      "bytes": 4064,
+      "sha256": "6e233bc9df9f4f4a5ac6b7cea5b25deffee2bcfc515ccae4cdef0a25df2d7095"
+    },
+    {
+      "path": "lib/playback.ts",
+      "bytes": 2512,
+      "sha256": "fd94a224866df3e0711dd1ed9ee10dc994db068fe2a822d639ae2047a7aebd03"
+    },
+    {
+      "path": "lib/polar-imagery.ts",
+      "bytes": 1967,
+      "sha256": "a89e0bd345e2772d670c06d901b91ef33702249abb727e2236e38337a4b6e50c"
+    },
+    {
+      "path": "lib/provenance.ts",
+      "bytes": 2658,
+      "sha256": "31f1cc1e0256a1276112b13ba166377ce70ca1bd88e2447cc8081bc60d303d88"
+    },
+    {
+      "path": "lib/providers/comms.ts",
+      "bytes": 1037,
+      "sha256": "8ba3a6cfbf292d328b36e085168bf7309d0a3d237bd3551efd283f51a65e7e53"
+    },
+    {
+      "path": "lib/providers/contract.ts",
+      "bytes": 2586,
+      "sha256": "7fadec3d034cdf9b834f355c8eed77132b95589e5f921d05844ea3792fa99d86"
+    },
+    {
+      "path": "lib/providers/noaa-xray.ts",
+      "bytes": 6602,
+      "sha256": "05c8ddff0477b65d397960cbab0806b5b6bcf032204f01d78e0f481f11eca1a6"
+    },
+    {
+      "path": "lib/providers/registry.ts",
+      "bytes": 1948,
+      "sha256": "e8122e8c0320e84adc7d41100fb369524a3a05afb288953c431dae5ef0da2a51"
+    },
+    {
+      "path": "lib/public-exploration.ts",
+      "bytes": 3090,
+      "sha256": "716465227f8135ddeff38b27073b011e98192714291a3fe6bb236625684de032"
+    },
+    {
+      "path": "lib/replanning/curves.ts",
+      "bytes": 3814,
+      "sha256": "22bdac6903a41b0c27e53e8315d08c526184b0476698d699995ca10b7582ed75"
+    },
+    {
+      "path": "lib/replanning/model.ts",
+      "bytes": 7490,
+      "sha256": "5d54f2565da3d9413107393b21cf18573510471cae93dff50f0c19518f82beee"
+    },
+    {
+      "path": "lib/replanning/scan.ts",
+      "bytes": 5483,
+      "sha256": "7bbfb7c9a279e395f4860022758d319e84c494ec99e0d3d84631f35b19aa1e9b"
+    },
+    {
+      "path": "lib/replanning/selection.ts",
+      "bytes": 677,
+      "sha256": "9500bc5685a6ba4b98016f0ae555982ded125b3cd1aa774c6e202e4abd62a3d3"
+    },
+    {
+      "path": "lib/resources.ts",
+      "bytes": 5263,
+      "sha256": "47d5d444deb94b7164d45a011a5b4b6f9f484619c15400c43b95bb80ba11c36e"
+    },
+    {
+      "path": "lib/scenario-diff.ts",
+      "bytes": 4348,
+      "sha256": "9f81775f53e165fbcb385df30b042c53c01098c3706df0ba043c17edf9f4ce22"
+    },
+    {
+      "path": "lib/scenario.ts",
+      "bytes": 12953,
+      "sha256": "3b3ec0273160b4215972212daee0229d811da9da4638eb8c0fbee01b79a93a44"
+    },
+    {
+      "path": "lib/search-key.ts",
+      "bytes": 1064,
+      "sha256": "fb8908c266fb84c080c75b66b1def24f1822537e1f989383faaae6d971fedbcd"
+    },
+    {
+      "path": "lib/sensitivity-summary.ts",
+      "bytes": 3134,
+      "sha256": "c2236fa72f71494c6e1c58435c646f1fb1a0432890bb2b7348df7920ecabd548"
+    },
+    {
+      "path": "lib/sensitivity.ts",
+      "bytes": 4695,
+      "sha256": "048301d529d49c1bcaf0cd4efc5de99813d841e44e92d1202f0b1a852d25c938"
+    },
+    {
+      "path": "lib/site-shell-nav.ts",
+      "bytes": 1408,
+      "sha256": "ea5ff6ae89f37ca7df580a10aeff63156de2883cff801d3c27d1675534e6c951"
+    },
+    {
+      "path": "lib/site-transition.ts",
+      "bytes": 7319,
+      "sha256": "58617b50366f7ece48129c6e4450ef1f13b2a70f46811fb6e34fed000d9beb7b"
+    },
+    {
+      "path": "lib/solar-system.ts",
+      "bytes": 6506,
+      "sha256": "c8d14394cf6fe2dc2ac3ac440993325b75098ba3e0bfb96bd979aeada83e3cc3"
+    },
+    {
+      "path": "lib/stars.ts",
+      "bytes": 4471,
+      "sha256": "2a1feb71a1a9892b710aa45b3f32f0ee868ca251d7be3475db28e440b1775909"
+    },
+    {
+      "path": "lib/station-weather-context.ts",
+      "bytes": 2588,
+      "sha256": "1e4165ed729dcd72a1c26cc82d32af85dbdf18ec15897bd390db8e32e74d26fe"
+    },
+    {
+      "path": "lib/teaching.ts",
+      "bytes": 10767,
+      "sha256": "aa0614f0f47fabc8047ceadcb7e859428f0ff01119a151b243e14deba5b50fff"
+    },
+    {
+      "path": "lib/terrain-lod.ts",
+      "bytes": 622,
+      "sha256": "6c109ef468541d09fceccb0bb1657fc9287a370a01f7f9f4903942184aaed0ba"
+    },
+    {
+      "path": "lib/terrain.ts",
+      "bytes": 5450,
+      "sha256": "4a90e62db04d36c5bbf18784dba09845ebb978b2808fffdfa0c07a79c64f0606"
+    },
+    {
+      "path": "lib/touchdown-fragments.ts",
+      "bytes": 5985,
+      "sha256": "57b70ca777cb95589595717d303cdfb983c3613a6c8c6eb394803464b060ba03"
+    },
+    {
+      "path": "lib/touchdown-physics.ts",
+      "bytes": 19826,
+      "sha256": "1fa7810f654676a7a0d2a3cd0ca8c1ee543cf99ff4e9c2b176edd128741caad8"
+    },
+    {
+      "path": "lib/ui-theme.ts",
+      "bytes": 1700,
+      "sha256": "505ef3132be8d809bf53da52677d1c99929db998bb198b2ce16dbe93f4b8850f"
+    },
+    {
+      "path": "lib/variable-notation.ts",
+      "bytes": 24985,
+      "sha256": "e95ffa3d467ea2126eeebd4479faacec6924b75f39f3b93747166e008a4de0cd"
+    },
+    {
+      "path": "lib/windows.ts",
+      "bytes": 4179,
+      "sha256": "69eea88addd9d54474d72589830d08db424e7611138a7e826832f9b9253c18f5"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 347428,
+      "sha256": "4e630452f89e48454365ca5a9336beeba7bbef7b334e33b7905bc62aae43ecfc"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1633,
+      "sha256": "00fdf69925f381b0cc68aefa4310a3e0a9d4396f20664445b32be904633627c3"
+    },
+    {
+      "path": "public/data/evidence-manifest.json",
+      "bytes": 29484,
+      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9"
+    },
+    {
+      "path": "public/data/orbits/catalog.json",
+      "bytes": 3507,
+      "sha256": "f4cf0b24c196acfa0155714978090af4eb6656fd51b0f10eec64206d11edffc5"
+    },
+    {
+      "path": "public/data/stars.json",
+      "bytes": 75006,
+      "sha256": "786f6e2c31474d509def6eb487df953fc5f416c1939539f9e532041aa5dcb1b7"
+    },
+    {
+      "path": "scripts/build-standalone.mjs",
+      "bytes": 6125,
+      "sha256": "5d8096979f4553dd70beaa4ea3dfa171bb382e7c9ec8cb0f8321664a9bce8a47"
+    },
+    {
+      "path": "scripts/startup-profile/lazy-dynamic.mjs",
+      "bytes": 896,
+      "sha256": "315e7396f8f1c2c30c42efb7d806861f2b2ac889d662216049570293004dba80"
+    },
+    {
+      "path": "standalone/main.tsx",
+      "bytes": 267,
+      "sha256": "215e3611634c0c3ee88b5e67778250effa74bf28b61c81c3bf9e6f2fd6c74d2a"
+    }
+  ],
+  "localCPU": {
+    "runtime": "v20.20.2",
+    "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+    "samples": [
+      {
+        "jsonParseMs": 5.322761999999784,
+        "actualDecodeTerrainMs": 172.56710699999985,
+        "cells": 4541976
+      },
+      {
+        "jsonParseMs": 9.338106000000153,
+        "actualDecodeTerrainMs": 173.80680799999982,
+        "cells": 4541976
+      },
+      {
+        "jsonParseMs": 7.7331090000002405,
+        "actualDecodeTerrainMs": 160.69325900000013,
+        "cells": 4541976
+      },
+      {
+        "jsonParseMs": 4.824611999999888,
+        "actualDecodeTerrainMs": 161.47589900000003,
+        "cells": 4541976
+      },
+      {
+        "jsonParseMs": 8.53246799999988,
+        "actualDecodeTerrainMs": 162.16609100000005,
+        "cells": 4541976
+      }
+    ],
+    "flightSamples": [
+      {
+        "simulateFlightMs": 12.496133999999984,
+        "points": 481,
+        "status": "burn complete"
+      },
+      {
+        "simulateFlightMs": 6.154610999999932,
+        "points": 481,
+        "status": "burn complete"
+      },
+      {
+        "simulateFlightMs": 4.000315000000228,
+        "points": 481,
+        "status": "burn complete"
+      },
+      {
+        "simulateFlightMs": 4.118218999999954,
+        "points": 481,
+        "status": "burn complete"
+      },
+      {
+        "simulateFlightMs": 4.0283730000001015,
+        "points": 481,
+        "status": "burn complete"
+      }
+    ],
+    "flightScope": "Actual production simulateFlight(DEFAULT_FLIGHT), default reference sphere, no terrain callback; not a restored scenario or a measured first UI render.",
+    "limits": "Five sequential warm filesystem/string Node observations, no cache flush or CPU throttle. No browser/mobile latency or memory-peak claim."
+  },
+  "assetBaseExample": {
+    "base": "https://rian-beep.github.io/Lunario/navigator/public/",
+    "catalog": "https://rian-beep.github.io/Lunario/navigator/public/data/catalog.json",
+    "wrongOriginAbsolute": "https://rian-beep.github.io/data/catalog.json"
+  },
+  "limits": [
+    "Builds run with write:false, no generated application or dependency edits. CSS byte counts exclude the separate Tailwind CLI output.",
+    "ESM static graph sizes are compile-time estimates; render-triggered dynamic imports can still be needed on initial UI.",
+    "gzip level 6 estimates are not measured CDN wire bytes. No server/browser, bundler build duration, or localhost timings."
+  ],
+  "publicDelivery": {
+    "observations": [
+      {
+        "startedUtc": "2026-11-15T12:44:01.928Z",
+        "method": "GET",
+        "url": "https://rian-beep.github.io/Lunario/",
+        "effectiveURL": "https://rian-beep.github.io/Lunario/",
+        "status": 200,
+        "wireBodyBytes": 3050,
+        "decodedBodyBytes": 8949,
+        "sha256": "cd87ef94bbe2dd096daab6ce9ab17e9645449daf9337eff05bb42e24370d6861",
+        "seconds": {
+          "dns": 0.001049,
+          "connect": 0.020188,
+          "tls": 0.037379,
+          "firstByte": 0.051522,
+          "total": 0.051732
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Sun, 15 Nov 2026 12:31:36 GMT",
+          "etag": "W/\"6af9a628-22f5\"",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "age": "271",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "3050"
+        },
+        "iframe": "navigator/public/solarreach-navigator.html"
+      },
+      {
+        "startedUtc": "2026-11-15T12:44:01.990Z",
+        "method": "GET",
+        "url": "https://rian-beep.github.io/Lunario/navigator/public/solarreach-navigator.html",
+        "effectiveURL": "https://rian-beep.github.io/Lunario/navigator/public/solarreach-navigator.html",
+        "status": 200,
+        "wireBodyBytes": 55488638,
+        "decodedBodyBytes": 81236036,
+        "sha256": "8de622395941c418dcdaf73ad95454c3909f6974ebaf4bec336ebdaec2a3be8d",
+        "seconds": {
+          "dns": 0.000689,
+          "connect": 0.010818,
+          "tls": 0.027907,
+          "firstByte": 0.04094,
+          "total": 9.380155
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Sun, 15 Nov 2026 12:31:36 GMT",
+          "etag": "W/\"6af9a628-4d79044\"",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "age": "400",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "55488638"
+        },
+        "html": {
+          "bytes": 81236036,
+          "sha256": "8de622395941c418dcdaf73ad95454c3909f6974ebaf4bec336ebdaec2a3be8d",
+          "gzip6EstimateBytes": 55073734,
+          "scripts": [
+            {
+              "startByte": 234155,
+              "bodyBytes": 74370907,
+              "sha256": "5f432a0e3d78f123e9ece9a4766ce6fe9e9477419c96bc7b3a81892cbcaf4339",
+              "embeddedData": true
+            },
+            {
+              "startByte": 74605079,
+              "bodyBytes": 6630926,
+              "sha256": "4f95a4b76841efd119259d53ffe475f150fd4491ab75b98bab3e73f2d3345051",
+              "embeddedData": false
+            }
+          ]
+        }
+      },
+      {
+        "startedUtc": "2026-11-15T12:44:12.740Z",
+        "method": "HEAD",
+        "url": "https://rian-beep.github.io/Lunario/loader/loader.js",
+        "effectiveURL": "https://rian-beep.github.io/Lunario/loader/loader.js",
+        "status": 200,
+        "wireBodyBytes": 0,
+        "decodedBodyBytes": 0,
+        "sha256": null,
+        "seconds": {
+          "dns": 0.000855,
+          "connect": 0.022182,
+          "tls": 0.039225,
+          "firstByte": 0.073484,
+          "total": 0.073583
+        },
+        "headers": {
+          "content-type": "application/javascript; charset=utf-8",
+          "last-modified": "Sun, 15 Nov 2026 12:31:36 GMT",
+          "etag": "W/\"6af9a628-2af9\"",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "age": "268",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "4084"
+        }
+      },
+      {
+        "startedUtc": "2026-11-15T12:44:12.826Z",
+        "method": "HEAD",
+        "url": "https://rian-beep.github.io/Lunario/css/site.css",
+        "effectiveURL": "https://rian-beep.github.io/Lunario/css/site.css",
+        "status": 200,
+        "wireBodyBytes": 0,
+        "decodedBodyBytes": 0,
+        "sha256": null,
+        "seconds": {
+          "dns": 0.000824,
+          "connect": 0.012793,
+          "tls": 0.026773,
+          "firstByte": 0.03899,
+          "total": 0.039081
+        },
+        "headers": {
+          "content-type": "text/css; charset=utf-8",
+          "last-modified": "Sun, 15 Nov 2026 12:31:36 GMT",
+          "etag": "W/\"6af9a628-2c3e\"",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "age": "268",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "3131"
+        }
+      },
+      {
+        "startedUtc": "2026-11-15T12:44:12.874Z",
+        "method": "HEAD",
+        "url": "https://rian-beep.github.io/data/catalog.json",
+        "effectiveURL": "https://rian-beep.github.io/data/catalog.json",
+        "status": 404,
+        "wireBodyBytes": 0,
+        "decodedBodyBytes": 0,
+        "sha256": null,
+        "seconds": {
+          "dns": 0.000576,
+          "connect": 0.013651,
+          "tls": 0.032423,
+          "firstByte": 0.044026,
+          "total": 0.044097
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "etag": "W/\"6abd0db9-239b\"",
+          "content-encoding": "gzip",
+          "age": "400",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "5142"
+        }
+      },
+      {
+        "startedUtc": "2026-11-15T12:44:12.927Z",
+        "method": "HEAD",
+        "url": "https://rian-beep.github.io/Lunario/navigator/public/data/catalog.json",
+        "effectiveURL": "https://rian-beep.github.io/Lunario/navigator/public/data/catalog.json",
+        "status": 200,
+        "wireBodyBytes": 0,
+        "decodedBodyBytes": 0,
+        "sha256": null,
+        "seconds": {
+          "dns": 0.000928,
+          "connect": 0.013707,
+          "tls": 0.027531,
+          "firstByte": 0.041693,
+          "total": 0.041759
+        },
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "last-modified": "Sun, 15 Nov 2026 12:31:36 GMT",
+          "etag": "W/\"6af9a628-f5372\"",
+          "cache-control": "max-age=600",
+          "content-encoding": "gzip",
+          "age": "268",
+          "x-cache": "HIT",
+          "vary": "Accept-Encoding",
+          "content-length": "560015"
+        }
+      }
+    ],
+    "limits": "One sequential GET per document and four HEAD probes from Clevo. No browser/cache-controlled navigation, FCP/LCP, React readiness, screenshot, iframe paint, or first 3D timing. CDN cache state is recorded, not flushed."
+  }
+}
