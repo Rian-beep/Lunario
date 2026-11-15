@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "b59a92355fdd6d9012078601ae23d794be9f5c74",
+  "sourceCommit": "9b19f2616d73e25434dc2fae269af7fce612cbb2",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 10978,
-      "sha256": "ef400df219f12fe91331b5bec8a94e175e80216260a19f9ad2b61148e6787d41"
+      "bytes": 12459,
+      "sha256": "b6f66b8a7c56a741d5db348db6827a65fa652af1e5d42596f7a9ee7894e677f1"
     },
     {
       "path": "CODEX_PROMPT.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 16333,
-      "sha256": "b71b4ab8da9da7c211eb962ab8cf81f8fe347d11eca2a02ca50e4c42b49246a3"
+      "bytes": 16689,
+      "sha256": "3eb34f75b2636eb75de88c359ad63a29a1a1a5ec8ad2a8eead46e3ffdb8c1c9b"
     },
     {
       "path": "app/api/orbits/route.ts",
@@ -49,8 +49,8 @@
     },
     {
       "path": "app/globals.css",
-      "bytes": 85904,
-      "sha256": "2350504a89db8d81ebc404b76d36c9f2d865d58c893fb8f0c3be94167e587c7b"
+      "bytes": 88798,
+      "sha256": "5ee4fe8213490ab65ca1ef9bd3b822b14c45a9c051eb2cd7348077c7f81023b5"
     },
     {
       "path": "app/layout.tsx",
@@ -114,8 +114,8 @@
     },
     {
       "path": "components/audience/teaching-studio.tsx",
-      "bytes": 17453,
-      "sha256": "1ffe7f3fb4d3b5ace90f5078b57663e8736baf7b5aa3e84cb04ea5fd5827f35f"
+      "bytes": 17767,
+      "sha256": "77210de9d8eb55e2937f5e3f416bde4d6eabd4bf35c2a2fbbe3761e10c11d544"
     },
     {
       "path": "components/branding/branding.css",
@@ -154,13 +154,23 @@
     },
     {
       "path": "components/education-materials/material-builder.tsx",
-      "bytes": 4760,
-      "sha256": "9e2282ce459f85704c188715c9797e090b99720f8bbaef7155f6aa66336ed84e"
+      "bytes": 5930,
+      "sha256": "35251bf1c630ac79322c01b96c665e0b91c404561deb14ac54e9d72a37f9558e"
     },
     {
       "path": "components/education-materials/materials.module.css",
-      "bytes": 772,
-      "sha256": "828715ac48f9fbb07dacc5ddde687562587b98d2c0cd3d376799ba4d172227f3"
+      "bytes": 785,
+      "sha256": "6618b7b572b53facbcc53bd02c888ac025839008675446f631300a74cbeec912"
+    },
+    {
+      "path": "components/education-materials/resource-evidence.module.css",
+      "bytes": 1493,
+      "sha256": "1068f5bc3254bb602cbbc97071bd6cee3426422988205f5091265b440135778b"
+    },
+    {
+      "path": "components/education-materials/resource-evidence.tsx",
+      "bytes": 4800,
+      "sha256": "91fa80f794f1edf0b68adb909c748dd93ebc93d5b9a335c2a51e3ba6aa74905b"
     },
     {
       "path": "components/engineering/evidence-workspace.tsx",
@@ -174,18 +184,63 @@
     },
     {
       "path": "components/global-map.tsx",
-      "bytes": 22219,
-      "sha256": "600e986526cd154be713c54a0ff9058d72c49d93cf94b1472e9a7e933c349c6c"
+      "bytes": 23856,
+      "sha256": "9678fe97f7732b2fd487e4094ab996074f6e27f883963d142fe4f8dde0b01db8"
+    },
+    {
+      "path": "components/map-screening/README.md",
+      "bytes": 5067,
+      "sha256": "f07faef63984a0a39907dc8770accd954c45c907f299dc1171f18dc6ea7ee1eb"
+    },
+    {
+      "path": "components/map-screening/controls.tsx",
+      "bytes": 12380,
+      "sha256": "21f525a998acb8ddcac9e786fe5e7b3e9a184aed4181a4f1a45d9d57658cfe91"
+    },
+    {
+      "path": "components/map-screening/index.tsx",
+      "bytes": 351,
+      "sha256": "b5dd7ba98cd46dff7f7f7295124c122f44ae2df1633079f0ad946bd8fc32fed1"
+    },
+    {
+      "path": "components/map-screening/model.ts",
+      "bytes": 1556,
+      "sha256": "e55616b13c7d31ef17e57383a2eaf11fbb1d7d8d47ede89daaa8692e699fba9a"
+    },
+    {
+      "path": "components/map-screening/runner.ts",
+      "bytes": 8417,
+      "sha256": "a907c4ab45f32a7825bc868540a8baabb7e82549b5cdaab83cc2efddba3c482e"
+    },
+    {
+      "path": "components/map-screening/styles.css",
+      "bytes": 3237,
+      "sha256": "66bbcfa00397df7e2ed114dcfffa0ae14ea148568c641e58f6c33e5a34baadee"
+    },
+    {
+      "path": "components/map-screening/use-map-layers.ts",
+      "bytes": 7000,
+      "sha256": "c52a2e61cb549e838ecc725f51652a8953b8251c0be9eafc1585d83e1a0d75d2"
+    },
+    {
+      "path": "components/mission-history/README.md",
+      "bytes": 6034,
+      "sha256": "41929abda2ca76c0d4ff1505ed11de07b3fe2469c78f92a6eb76b713e9b86d4a"
+    },
+    {
+      "path": "components/mission-history/index.tsx",
+      "bytes": 9207,
+      "sha256": "60559374d37c1c941e0a8492e3cf4406f24c7caa4481950cacd899b1f551f849"
     },
     {
       "path": "components/navigator.tsx",
-      "bytes": 101746,
-      "sha256": "1da3a580b17bbc98da8f1afc879018d260a7e3141f68a15e37fc4c1b7e7d8a5c"
+      "bytes": 104964,
+      "sha256": "a1d11822e477d6630c1b1ea084db474b604723d475d4936c8dba6b29c16a0422"
     },
     {
       "path": "components/polar-map.tsx",
-      "bytes": 38484,
-      "sha256": "30e74717a7438e652da3ba9ea1f18bd756ebcb5f1bc97fc612b732a5393406b9"
+      "bytes": 39120,
+      "sha256": "e073186c04aaf1980344648e4b7be766fdd3e0bfd17605dcd2080106de3ed9a8"
     },
     {
       "path": "components/replanning/alternatives.tsx",
@@ -414,8 +469,8 @@
     },
     {
       "path": "components/workbench/panels.tsx",
-      "bytes": 60069,
-      "sha256": "344bc276d5141cd67b22196d7bab05574a0794b0022a86f8eb7f645379dea6f4"
+      "bytes": 60370,
+      "sha256": "3a586dcb1f36939779c459ec69c35804d68e92c3db9daa2daf2dab914866a992"
     },
     {
       "path": "components/workbench/physics-reference.module.css",
@@ -424,18 +479,18 @@
     },
     {
       "path": "components/workbench/physics-reference.tsx",
-      "bytes": 4398,
-      "sha256": "abc54dea976b8f139e8274b97760d7a56b472fa4e73209d9cf6af13ec8ce9929"
+      "bytes": 5363,
+      "sha256": "ec7fb8c6b023092d5d9e01caa38b5f5a3c4b30cf20b1097e3795ad0dc2929e0f"
     },
     {
       "path": "components/workbench/public-exploration.tsx",
-      "bytes": 3478,
-      "sha256": "282e25fd506d9deccbe4ec3babc248e29e2b30fc41c0e460a97c785dcc4aba79"
+      "bytes": 3689,
+      "sha256": "54ba3a7c719bb7f3e755f571f1d38245c4c98acd828327f35fe30f8addfc8b5b"
     },
     {
       "path": "components/workbench/scene.tsx",
-      "bytes": 27767,
-      "sha256": "224e0e1b571908a276c02d3127cb711ffe9cd499250a4f523c404120e0e92699"
+      "bytes": 30342,
+      "sha256": "3486fb501fed84f415c238bd3a7c4d7bf5d44626019e388660fd0ce8dc7c709c"
     },
     {
       "path": "components/workbench/scene/camera-limits.test.ts",
@@ -473,19 +528,39 @@
       "sha256": "cd7c25caacddbe4d3cf416825f782a2cd7c10477d16c0e02869defb235b10a14"
     },
     {
+      "path": "components/workbench/scene/ion/atlas-material.ts",
+      "bytes": 1789,
+      "sha256": "2e6076a84a74c7a4fa423461001cc42bf9211c88462e574a4003328e709bfc25"
+    },
+    {
+      "path": "components/workbench/scene/ion/create-ion-moon.ts",
+      "bytes": 10411,
+      "sha256": "bc0a4bb85e4d6dc89aaa09987ad803ca2d7c496e64c5bb756af305f90d962939"
+    },
+    {
+      "path": "components/workbench/scene/ion/pinned-runtime.ts",
+      "bytes": 7570,
+      "sha256": "edf2dd4e3e887e59321bcfe306d2c9a47334765c81f5519259ac2225e1f1bfcb"
+    },
+    {
       "path": "components/workbench/scene/material.test.ts",
       "bytes": 13426,
       "sha256": "cad82b735417fdaa9e9088929ec506cf5a69fdd6460e82463e30d4e976d6b0c1"
     },
     {
       "path": "components/workbench/scene/material.ts",
-      "bytes": 11185,
-      "sha256": "da19ad0ddaaf8b5e1422aa750dc1223854461ffaf96382158864ae25798c8d45"
+      "bytes": 11317,
+      "sha256": "1aa1da9cc40209f7659b1ca7b95574c8e36ec43b0cfded6900bd574126ff965a"
     },
     {
       "path": "components/workbench/scene/nasa-globe.ts",
       "bytes": 3653,
       "sha256": "6cb6c5dabdef72560f63b32048e13a47432ef3e9b92acb116b1b9a2f65b33f06"
+    },
+    {
+      "path": "components/workbench/scene/pole-labels.ts",
+      "bytes": 1543,
+      "sha256": "1db236103b659e695369ed2814218935d6bec752463e65fc2aa33ad0cdba81b5"
     },
     {
       "path": "components/workbench/scene/refine-framing.test.ts",
@@ -504,8 +579,8 @@
     },
     {
       "path": "components/workbench/scene/runtime.ts",
-      "bytes": 94997,
-      "sha256": "3eecf3333aceae88547fc38192b2536443163b012a09428550036feaf1105fe8"
+      "bytes": 101514,
+      "sha256": "57950dfe28bd55357d0b7e18b82d2daa38a4041474706c6547afb22b62ce9015"
     },
     {
       "path": "components/workbench/scene/surface.test.ts",
@@ -588,6 +663,11 @@
       "sha256": "6d5c307c752bcc821eb29fb12e0769b76558a0086e9daa57c4879a18d54487f3"
     },
     {
+      "path": "docs/CONTRACTS-MAP-SCREENING.md",
+      "bytes": 15732,
+      "sha256": "0250f2df04be8e41fe11d61c80605652b5c2d14bc257d270b445bbf132dc0efe"
+    },
+    {
       "path": "docs/CONTRACTS.md",
       "bytes": 10729,
       "sha256": "6ddd2fde63abb419cd21922e494d92e9e7ac579ab121f9caea056d48a8f79c2b"
@@ -599,8 +679,8 @@
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 13637,
-      "sha256": "f0e08db9c0c607ad93b32313eb6f31573b217899433cb75e48ebd9be42e79fe4"
+      "bytes": 17950,
+      "sha256": "36228f35b3e7e797f1144fbef6dbf5b2d1896f26573660109d8cbb70cf0861a6"
     },
     {
       "path": "docs/IN-FLIGHT.md",
@@ -736,6 +816,11 @@
       "path": "docs/decisions/0011-earth-orbital-context.md",
       "bytes": 1930,
       "sha256": "0bb4eac812ff6584929863adf380d8f90fa186add3abb1c980bef224b212149a"
+    },
+    {
+      "path": "docs/decisions/0012-map-screening-and-streamed-visuals.md",
+      "bytes": 3038,
+      "sha256": "180e6f2eae7bd133b9945330fa3ac75fff84d20783a86826889fa27843e82b8a"
     },
     {
       "path": "docs/math-typesetting.md",
@@ -891,6 +976,16 @@
       "path": "docs/qa/lunario/evidence/web-underpowered.png",
       "bytes": 266563,
       "sha256": "9adeb774a0a3843de0efe52714e946bee606625f4cd5577b1cfb9f4822cd83a5"
+    },
+    {
+      "path": "docs/qa/map-integration-final.md",
+      "bytes": 2223,
+      "sha256": "300c3f17298b7385fc3af7bd730d4109f84d27de68ea1487563354799c4808f5"
+    },
+    {
+      "path": "docs/qa/map-screening-worker/README.md",
+      "bytes": 6280,
+      "sha256": "f059ea72ba16f3d735d645cadd72ab861f1110ed96ee5aa3dd88053c20da874d"
     },
     {
       "path": "docs/qa/orbital-terrain-navigation/VERIFICATION.md",
@@ -1798,6 +1893,21 @@
       "sha256": "f223158546055f50f0d28eb28f9d8f5ee5a60c15d9fe3bf45a3af2a3aa9f1f27"
     },
     {
+      "path": "docs/qa/startup-profile/README.md",
+      "bytes": 19367,
+      "sha256": "a4b6f7455aff995489e2fe1b72dbc13fe8768003cb3ca7ed1a775d88f9e4b46d"
+    },
+    {
+      "path": "docs/qa/startup-profile/baseline.json",
+      "bytes": 114055,
+      "sha256": "9ab3a2115567431eff9417f95d11368f20190a25645cd01267926254cac88214"
+    },
+    {
+      "path": "docs/qa/ted-education/REVIEW.md",
+      "bytes": 11536,
+      "sha256": "253da9121d183253c209f85cb28363afb1dfb9255d66a3e2efe6df14d3f55a7e"
+    },
+    {
       "path": "docs/qa/transition-timing.md",
       "bytes": 1937,
       "sha256": "cd35a47bfe32662d7f5278ee0169d4e6091ddd0dba10f24d6e702f5a055cfa3d"
@@ -1823,6 +1933,21 @@
       "sha256": "939dd50d1dbd66d111fcf4e4fa7f146476d257f8167ce2882ced2ba77a92f641"
     },
     {
+      "path": "docs/research/ice/README.md",
+      "bytes": 10042,
+      "sha256": "2960ccd96d78a7ae28f87f68072df1036b3fbff45d662726f709fdb9637f3430"
+    },
+    {
+      "path": "docs/research/ion/README.md",
+      "bytes": 18997,
+      "sha256": "1eb2fde12cd9597597c5aab0c10d848792357f3339b924b4eb4d4e1022b8b7d7"
+    },
+    {
+      "path": "docs/research/suitability/README.md",
+      "bytes": 14264,
+      "sha256": "7dd14f9552e605291458bf3b5cad627dd4333af00837566f97e9e9699200e9b9"
+    },
+    {
       "path": "docs/station-weather.md",
       "bytes": 6362,
       "sha256": "54b5775bc02553fab950c644f55661bcbb49664a5fa0fe96f2937e674d321b8f"
@@ -1833,9 +1958,19 @@
       "sha256": "935c7f453897db3abb729d223cf08ce8ebb7f29330ab19db254b00fb21580b42"
     },
     {
+      "path": "docs/superpowers/plans/2026-11-15-map-screening-streaming-plan.md",
+      "bytes": 1530,
+      "sha256": "8b8d977b88cf572d85dcbd5c07979640b401d4e962b6c6c578c4c7ec3b0cc9d8"
+    },
+    {
       "path": "docs/superpowers/specs/2026-11-14-map-first-lunar-workbench-design.md",
       "bytes": 15946,
       "sha256": "ecc83b8295311a79b38173949038c788c0b1a2d53ea881b969c2f471d2383b67"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-15-map-screening-streaming-design.md",
+      "bytes": 2787,
+      "sha256": "cf0981b5746042a0dca83384cf6c596a82649d118bb2c3353724f8a67d4ae6a9"
     },
     {
       "path": "eslint.config.mjs",
@@ -1914,13 +2049,13 @@
     },
     {
       "path": "lib/catalog.ts",
-      "bytes": 5737,
-      "sha256": "87fcb058b0aff28be6c4f7ba3ff6ed39e191c48986b5ccff24c4fc1ebc4fd6ae"
+      "bytes": 5803,
+      "sha256": "c9507eafa937e15b33bfe20b94971a76334c4696b560f66a4a7fff2669c7af19"
     },
     {
       "path": "lib/celestial-assets.ts",
-      "bytes": 7160,
-      "sha256": "53fa2fbb51aec4e84bc5f1bed1e3315edee47ae5ba30a20d78249cc8a8892922"
+      "bytes": 7226,
+      "sha256": "1ea8fc531864fffed14716bd6d7689df11b47695749eb3caf7c6f465f681e648"
     },
     {
       "path": "lib/celestial-scale.ts",
@@ -1954,13 +2089,18 @@
     },
     {
       "path": "lib/dsn.ts",
-      "bytes": 8831,
-      "sha256": "be59457840b6d4a17a0c45937982a05ae3a5d854b65613fb619a0fba9bb7e039"
+      "bytes": 8897,
+      "sha256": "c16fef76e9355fe88ba0e671b5da6dcb5da3a60adf0c488e93df8887ee60e45b"
     },
     {
       "path": "lib/education-materials/index.ts",
-      "bytes": 12524,
-      "sha256": "74ec3c03163a012952948d9472dd7c4e135e8f3e889e6ab8717d2741cac1ceb4"
+      "bytes": 16555,
+      "sha256": "7e218cec29633bbcd1b666f176820b4ce1777e76dbece270363ac0ef32f0323e"
+    },
+    {
+      "path": "lib/education-materials/resource-evidence.ts",
+      "bytes": 9112,
+      "sha256": "b75a29a49cc7ace5b4469e161bab148e4c6013fba6fab372af039920cdd036f5"
     },
     {
       "path": "lib/engineering-context.ts",
@@ -2009,8 +2149,8 @@
     },
     {
       "path": "lib/equipment.ts",
-      "bytes": 3620,
-      "sha256": "c7bc2ae56a3ea2af1f5e89d5bcba213a8c5309196782cdb2e2899847a1179d76"
+      "bytes": 3686,
+      "sha256": "c81b677090033208f35277a37feadba225c34680cf80247e8388fd4ab805ccd0"
     },
     {
       "path": "lib/export.ts",
@@ -2054,8 +2194,8 @@
     },
     {
       "path": "lib/global-terrain.ts",
-      "bytes": 6122,
-      "sha256": "87497651ccbbb4b85a89d723edb91f8dc801f24d874f610e0e7984cf5e698758"
+      "bytes": 6204,
+      "sha256": "aed6fd38ca8feba0285e92b5a40a2c0917adeb7479bf0a546cc94ebf16883a67"
     },
     {
       "path": "lib/glossary.ts",
@@ -2063,14 +2203,39 @@
       "sha256": "9302c18d2f67183858f1cc21d1f5cd42c61c82a9a98dfe33fa9beb15b1bde751"
     },
     {
+      "path": "lib/ice/index.ts",
+      "bytes": 8340,
+      "sha256": "9d89ecce78e339dc50cb280108c770ccd2ceb54bbff0eac540b1083c1fac9f66"
+    },
+    {
       "path": "lib/imagery.ts",
-      "bytes": 712,
-      "sha256": "972d468bf99ebb647c3c50106f5c956676c256648baa6fa417abba4dca0a4ebb"
+      "bytes": 999,
+      "sha256": "9187746960f446c39b013b48305f0eb9ad8099c4bf4911ef4fcbe78f1df184e9"
     },
     {
       "path": "lib/inspector-layout.ts",
       "bytes": 494,
       "sha256": "025d888a51052b09377cd1c72e130668e0cbbdfeffde5f78d7c2bdd0028c17f3"
+    },
+    {
+      "path": "lib/ion/config.ts",
+      "bytes": 1868,
+      "sha256": "2aaf299fb76708ca46625b8a089701587d7f37856958e75e818bb51d2e0cba33"
+    },
+    {
+      "path": "lib/ion/diagnostics.ts",
+      "bytes": 752,
+      "sha256": "5e972288f719cbdca6b7850093aa2a8f7c685d6cf01a5c7e00bd9115488d6b59"
+    },
+    {
+      "path": "lib/ion/frame.ts",
+      "bytes": 1047,
+      "sha256": "68007bd77acf3f075fb1f0cf4da6da47dd7f651b1e275f4e3b8afccea037496e"
+    },
+    {
+      "path": "lib/ion/limits.ts",
+      "bytes": 2148,
+      "sha256": "8fdce4a369c57fb352dc4900046497c60be2c3065e6a4d5fc267f68e3920e265"
     },
     {
       "path": "lib/landing-catalog.ts",
@@ -2118,6 +2283,16 @@
       "sha256": "9e1bc3aa54699b3bcf1addce0c0aba25ef9cea61f9a509b21e509f8458a11a52"
     },
     {
+      "path": "lib/map-coverage.ts",
+      "bytes": 566,
+      "sha256": "45b73847bdb1e529ec5c280ce82c7a371e73e0d0ed4a197ef0b67753400a8ef2"
+    },
+    {
+      "path": "lib/map-overlays/index.ts",
+      "bytes": 9979,
+      "sha256": "821d69c982dce22e86fd600e597a1f366312ae50a77bcfc72c80468e68395202"
+    },
+    {
       "path": "lib/math-typesetting.ts",
       "bytes": 38934,
       "sha256": "6bdaa1783bb9c65212831b2e6f4bc52b16d1ad0e139ed62762a9a10564d9f882"
@@ -2126,6 +2301,26 @@
       "path": "lib/mission-events.ts",
       "bytes": 1604,
       "sha256": "35405841b81e0cd15df4e37a7014e00c41b0b55e5fa5a7fdab0ee55c84a3f8df"
+    },
+    {
+      "path": "lib/mission-history/index.ts",
+      "bytes": 336,
+      "sha256": "d4c0c091893a0e1477285f8f225344d6d365a525096ad8a21bface070d471a55"
+    },
+    {
+      "path": "lib/mission-history/international.ts",
+      "bytes": 37149,
+      "sha256": "b445b0e98a489e184dc1043ff150b844ac5d5a433b72ebf5335d364056649866"
+    },
+    {
+      "path": "lib/mission-history/types.ts",
+      "bytes": 851,
+      "sha256": "1b646488653e0a7f707c482566c528e14284a888d66d7e107264522fbef6fcc0"
+    },
+    {
+      "path": "lib/mission-history/us.ts",
+      "bytes": 47560,
+      "sha256": "29e4f87b26418bff3cef3e37b28ae227b6b3459a4190f0c897325622f5788da6"
     },
     {
       "path": "lib/mission.ts",
@@ -2139,13 +2334,13 @@
     },
     {
       "path": "lib/moon-atlas-texture.ts",
-      "bytes": 2362,
-      "sha256": "bac88743113f7453452c56e62ab4d6e4317ca26009ba3808f81ccf7d007a0655"
+      "bytes": 2452,
+      "sha256": "e65f9b6db29d4de9e51d56075e7e3c23150eff99e1c87f9c5ce9b7eb82f2fb4f"
     },
     {
       "path": "lib/nasa-model.ts",
-      "bytes": 8068,
-      "sha256": "b22302648d031dbcea48721173e6e7bb5f37ff49adad8a7b3a0b15779db26208"
+      "bytes": 8134,
+      "sha256": "db3934fcf849a6deed569b973c190b321c2f5961099b0ce94420d01047a11486"
     },
     {
       "path": "lib/observed-duration.ts",
@@ -2169,8 +2364,8 @@
     },
     {
       "path": "lib/planning-demo-loader.ts",
-      "bytes": 1399,
-      "sha256": "7e450feb57e74747112bd50260b61077d617f358467ba8c1b784d81e089ee962"
+      "bytes": 1465,
+      "sha256": "7e07214c549177cf1821a6876c44374142308ccb03ea4e011ac933ae14aea479"
     },
     {
       "path": "lib/planning-search.ts",
@@ -2194,8 +2389,8 @@
     },
     {
       "path": "lib/provenance.ts",
-      "bytes": 2658,
-      "sha256": "31f1cc1e0256a1276112b13ba166377ce70ca1bd88e2447cc8081bc60d303d88"
+      "bytes": 2724,
+      "sha256": "86bede3e1dd4888ea4bfe0e476c62e14deca540a5de26061592aa87b305dbfe5"
     },
     {
       "path": "lib/providers/comms.ts",
@@ -2216,6 +2411,11 @@
       "path": "lib/providers/registry.ts",
       "bytes": 1948,
       "sha256": "e8122e8c0320e84adc7d41100fb369524a3a05afb288953c431dae5ef0da2a51"
+    },
+    {
+      "path": "lib/public-assets.ts",
+      "bytes": 2302,
+      "sha256": "9f906a92fe7e2a8064c1a1b6df830c2a4d2cb940c44afdef83acf8af7f84695d"
     },
     {
       "path": "lib/public-exploration.ts",
@@ -2274,8 +2474,8 @@
     },
     {
       "path": "lib/site-shell-nav.ts",
-      "bytes": 1408,
-      "sha256": "ea5ff6ae89f37ca7df580a10aeff63156de2883cff801d3c27d1675534e6c951"
+      "bytes": 1613,
+      "sha256": "68c72b928b684d615c7996db5bbdf4999da93cae545793eb15a7c03f8eae3f9b"
     },
     {
       "path": "lib/site-transition.ts",
@@ -2298,6 +2498,16 @@
       "sha256": "1e4165ed729dcd72a1c26cc82d32af85dbdf18ec15897bd390db8e32e74d26fe"
     },
     {
+      "path": "lib/suitability/geometry.ts",
+      "bytes": 7028,
+      "sha256": "7a0738d2e89430ee3b925db873fda8ee4f3b2ff59be7215a43df185945d7de9f"
+    },
+    {
+      "path": "lib/suitability/index.ts",
+      "bytes": 10862,
+      "sha256": "111e3ae732e1ccb9b0d9280314e1cb5e14831b77e83b8658bebce02d847ba335"
+    },
+    {
       "path": "lib/teaching.ts",
       "bytes": 10767,
       "sha256": "aa0614f0f47fabc8047ceadcb7e859428f0ff01119a151b243e14deba5b50fff"
@@ -2309,8 +2519,8 @@
     },
     {
       "path": "lib/terrain.ts",
-      "bytes": 5450,
-      "sha256": "4a90e62db04d36c5bbf18784dba09845ebb978b2808fffdfa0c07a79c64f0606"
+      "bytes": 6033,
+      "sha256": "d7d077200e049fd6cc29de416ec40f340f21c0c54c9228df4ac80d57a6d09815"
     },
     {
       "path": "lib/touchdown-fragments.ts",
@@ -2349,18 +2559,33 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 347428,
-      "sha256": "4e630452f89e48454365ca5a9336beeba7bbef7b334e33b7905bc62aae43ecfc"
+      "bytes": 351233,
+      "sha256": "f3228bbfa1c50847a162881e70ec01077990561c653479635d59b257b06cf5b4"
     },
     {
       "path": "package.json",
-      "bytes": 1633,
-      "sha256": "00fdf69925f381b0cc68aefa4310a3e0a9d4396f20664445b32be904633627c3"
+      "bytes": 1754,
+      "sha256": "ee0c29a3f9b6fabd80d0ef64e6c2cc094322b8e58e2e43eb8cf59c08184983a6"
     },
     {
       "path": "pipeline/build_dataset.py",
       "bytes": 38649,
       "sha256": "0ab70cc8be367dc615dafe0ccc370e0d2539a61969a82977901e9cdfdb6b5a3c"
+    },
+    {
+      "path": "pipeline/ice/build_catalog.py",
+      "bytes": 6172,
+      "sha256": "fbff1480cc1ef2ad1dcb6b9b01e35c358dd59be9724b282e04d53f1703ba0c5c"
+    },
+    {
+      "path": "pipeline/ice/lcross.json",
+      "bytes": 625,
+      "sha256": "6b969511740c1a08470828d5a2219c01cf99c6848b8ddc3259b215466e42b947"
+    },
+    {
+      "path": "pipeline/ice/source-manifest.json",
+      "bytes": 6555,
+      "sha256": "2008300ca4da78e96508f1d273891ce0082f56321aea943cd0b2a399f8a00579"
     },
     {
       "path": "pipeline/requirements.txt",
@@ -2553,6 +2778,16 @@
       "sha256": "c50ca151194e12cbc244c66eeea473d888a39df00a3112162156894cd168912c"
     },
     {
+      "path": "public/data/ice/catalog.json",
+      "bytes": 79461,
+      "sha256": "cd1d58e8f99e94cdb5c87dde1d97113c7c74bdcf0024d1c8f0da3dab5a1717c8"
+    },
+    {
+      "path": "public/data/ice/sources.json",
+      "bytes": 4329,
+      "sha256": "661a4e9be0ef1be186c3a1e5c69cd4633de68c342f552b8dc126f194011c463e"
+    },
+    {
       "path": "public/data/imagery.json",
       "bytes": 9517,
       "sha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717"
@@ -2734,8 +2969,8 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 81236036,
-      "sha256": "8de622395941c418dcdaf73ad95454c3909f6974ebaf4bec336ebdaec2a3be8d"
+      "bytes": 81624126,
+      "sha256": "c6110a491b71695dd5ece5fa31e51b3be1d1f78d3c8f3d8f2dc0a1908a756bf1"
     },
     {
       "path": "scripts/build-mathml.ts",
@@ -2746,6 +2981,11 @@
       "path": "scripts/build-standalone.mjs",
       "bytes": 6125,
       "sha256": "5d8096979f4553dd70beaa4ea3dfa171bb382e7c9ec8cb0f8321664a9bce8a47"
+    },
+    {
+      "path": "scripts/build-web.mjs",
+      "bytes": 8382,
+      "sha256": "d401fe3d4cd8b26602cf3f35d415030e34cdb639ac8e0796ede07e2262665b89"
     },
     {
       "path": "scripts/prepare-celestial-models.mjs",
@@ -2791,6 +3031,21 @@
       "path": "scripts/prepare-terrain.mjs",
       "bytes": 3580,
       "sha256": "39d99f7e08bfbeedd6988c49850fcfc2824e2776d5b335dbee15370514c80878"
+    },
+    {
+      "path": "scripts/startup-profile/lazy-dynamic.mjs",
+      "bytes": 896,
+      "sha256": "315e7396f8f1c2c30c42efb7d806861f2b2ac889d662216049570293004dba80"
+    },
+    {
+      "path": "scripts/startup-profile/profile.mjs",
+      "bytes": 13913,
+      "sha256": "d925e47fa0436fcce7bda60ff162a236b13040903135bc40e41f180654bfe8ff"
+    },
+    {
+      "path": "scripts/startup-profile/profile.test.mjs",
+      "bytes": 5084,
+      "sha256": "32b09388b0a3237c6b85218da13c05a6a2ff9a00124b6140dbb4d8a8c00aa481"
     },
     {
       "path": "scripts/terrain-codec.mjs",
@@ -2866,6 +3121,11 @@
       "path": "scripts/verify-lunario-startup.mjs",
       "bytes": 2685,
       "sha256": "9d74aa3cc164ffd9a613ac23f7537667514deb541d26f385a784d767d77f1464"
+    },
+    {
+      "path": "scripts/verify-map-screening.mjs",
+      "bytes": 39965,
+      "sha256": "49a490e8a09a13f6683c5f305fe5e35a3da3856b0132e900f5bed31f6b09fc0b"
     },
     {
       "path": "scripts/verify-orbits-navigation.mjs",
@@ -3128,9 +3388,44 @@
       "sha256": "58a709141f6f88f6b1df01a9f4ef6e3977f61b1a0237097d9c46e8961bdff10d"
     },
     {
+      "path": "tests/ice/catalog.test.ts",
+      "bytes": 8736,
+      "sha256": "88c9e46f92f458717adfca5e092d207bb7567a7466b348c3b8fe960b383654eb"
+    },
+    {
+      "path": "tests/ice/test_pipeline.py",
+      "bytes": 3200,
+      "sha256": "7c7aacb92b9f445f22d86ee6e527e214448f45d3e2065fc9dd2433c7e1dc9ed6"
+    },
+    {
       "path": "tests/inspector-layout.test.ts",
       "bytes": 875,
       "sha256": "09e08d25b6f1362f4313c058c8655088970474bc1ff080d5e0aaa209887dadf2"
+    },
+    {
+      "path": "tests/ion/atlas-material.test.ts",
+      "bytes": 1284,
+      "sha256": "7ac83a2bd289cffc3521aa88a311b7af3f82a0e44f0bdf6c3fe6988ba1bd8726"
+    },
+    {
+      "path": "tests/ion/config.test.ts",
+      "bytes": 1468,
+      "sha256": "afefa49de51778357d6086a16e0e6cb56190d00d6a98f8cf0d19fd7785ff68b8"
+    },
+    {
+      "path": "tests/ion/diagnostics.test.ts",
+      "bytes": 754,
+      "sha256": "a084cf65c1f7f2dc23120ac60ca98267a6ce8e8e27073db9491bd8049faa19c9"
+    },
+    {
+      "path": "tests/ion/frame.test.ts",
+      "bytes": 2628,
+      "sha256": "a1485f76900ef14c5d924b5349aaebdcd701fb4e3bebb500753e076c7aff31b7"
+    },
+    {
+      "path": "tests/ion/runtime.test.ts",
+      "bytes": 29217,
+      "sha256": "2fa259d234425929e431473962ee47fdd844a5b91bf32b7a6cc81df47e1f0524"
     },
     {
       "path": "tests/landing-catalog.test.ts",
@@ -3173,6 +3468,11 @@
       "sha256": "daff624dbdc441837da4461a9f9b05432db0423460698486a260ca5e0e3573b8"
     },
     {
+      "path": "tests/lazy-dataset-loading.test.ts",
+      "bytes": 2851,
+      "sha256": "0f2b8ba6760633a94c41d68f2b87631fdd10b9f306beb6752307a7b24fc96905"
+    },
+    {
       "path": "tests/legacy-flight-contact.test.ts",
       "bytes": 8652,
       "sha256": "a23143a16dc219b9b450569ae3552a6c9b72158860ed6d4a8b2c30f78c1259b4"
@@ -3198,6 +3498,26 @@
       "sha256": "a1af60047f03b3e72b82e5092b70b60f9a947ed64c9096c35d6f45f527d23699"
     },
     {
+      "path": "tests/map-coverage.test.ts",
+      "bytes": 1125,
+      "sha256": "c9694e7bf4fa720deb214411c86020758814097c0f8aa0ee2174fd21223cbdd7"
+    },
+    {
+      "path": "tests/map-screening/controls.test.ts",
+      "bytes": 6014,
+      "sha256": "ce267979bd3049ed5553d8be56a0afa5196c1535f0acbfa8a431886bce6781bb"
+    },
+    {
+      "path": "tests/map-screening/overlays.test.ts",
+      "bytes": 7672,
+      "sha256": "2d270b487c4c18cf32549667f368c2fccac58badf3a36f70960106a53d6c793b"
+    },
+    {
+      "path": "tests/map-screening/runner.test.ts",
+      "bytes": 11795,
+      "sha256": "b701ee31739381c749cff73ca1b1a106c102821acd72fc0c45b77d19787e3653"
+    },
+    {
       "path": "tests/math-typesetting.test.ts",
       "bytes": 4520,
       "sha256": "b386d04dec1694ef55c656688175656c95b7f28850e4bebca3a6317d5afdb395"
@@ -3211,6 +3531,26 @@
       "path": "tests/mission-events.test.ts",
       "bytes": 1848,
       "sha256": "329c66115bcd38fc8f4a7e8cf8cd33362e80b1e74e7144488086ce2568f743e0"
+    },
+    {
+      "path": "tests/mission-history/cards.test.ts",
+      "bytes": 8638,
+      "sha256": "1060c2ec2db4e4d85cd1fbf87efa63501660a863bde619c840ae584a128532f7"
+    },
+    {
+      "path": "tests/mission-history/integration.test.ts",
+      "bytes": 575,
+      "sha256": "94a89f2e1c5dc5776a7a107a0ec9ffff26562a409b0c1c6f8c8aac3729a9ea98"
+    },
+    {
+      "path": "tests/mission-history/international.test.ts",
+      "bytes": 6979,
+      "sha256": "e173b8f85626074c49e471a81ecf3c8029003ed2b56513bca6b6d9911dd93b42"
+    },
+    {
+      "path": "tests/mission-history/us.test.ts",
+      "bytes": 12935,
+      "sha256": "77220d57456549508f97fde048b42c50fdcb4c46409ab82e75aedadc1a56ba39"
     },
     {
       "path": "tests/mission.test.ts",
@@ -3288,6 +3628,11 @@
       "sha256": "41b899b1f2a46d24cbb7dcf275363786e5bd883711b6459affb8833b8c7ba511"
     },
     {
+      "path": "tests/pole-labels.test.ts",
+      "bytes": 2068,
+      "sha256": "9c04ba056897f1889d8dff98dad599a1c2fd706c1b57aef9a4d18c202fe65431"
+    },
+    {
       "path": "tests/precompiled-math.test.ts",
       "bytes": 8487,
       "sha256": "40172f277dbec8cf08d71f4d3c08c241c1f56492fec64375797a41961ae3ad2e"
@@ -3301,6 +3646,11 @@
       "path": "tests/providers.test.ts",
       "bytes": 5843,
       "sha256": "e9a270ca899edf7f5aacb6c57212806d4651119efe543271ab0695f1a06ea752"
+    },
+    {
+      "path": "tests/public-assets.test.ts",
+      "bytes": 9407,
+      "sha256": "d71c34e529ff4b72d5fd97aa68dadb9495901c50718ca8cc56791457a2f253cd"
     },
     {
       "path": "tests/public-exploration.test.ts",
@@ -3379,8 +3729,8 @@
     },
     {
       "path": "tests/site-shell-nav.test.ts",
-      "bytes": 1779,
-      "sha256": "4098c315ccda81ef203bb21becc31c7d8d11d295943232f733d1568a4c9a0ab0"
+      "bytes": 2407,
+      "sha256": "54dc211412bb678bb9fc26baa5850c23175b616593e33934ecdb8ae1fd23582d"
     },
     {
       "path": "tests/site-transition.test.ts",
@@ -3403,6 +3753,31 @@
       "sha256": "0c8773e25f3f0db3a21cfc0061828529396c3255da33286710fbf562006214e6"
     },
     {
+      "path": "tests/suitability/fixtures.ts",
+      "bytes": 2859,
+      "sha256": "8d182319c639a435374418efbb82adcc397adce5ee9bac6bed1389071a811c11"
+    },
+    {
+      "path": "tests/suitability/geometry.test.ts",
+      "bytes": 8373,
+      "sha256": "b5ba7eb2966c45b5602a3620d2f2d4b68c00acfbba566626f8dfa14b93cd0d19"
+    },
+    {
+      "path": "tests/suitability/jobs.test.ts",
+      "bytes": 5118,
+      "sha256": "a1773dd82c8e16e062c47e7b067d8a4c631587ba63c014dd1decc62215651933"
+    },
+    {
+      "path": "tests/suitability/metrics.test.ts",
+      "bytes": 8888,
+      "sha256": "2f3662d32fb3093354f979f09deda430100ed3a103cbea6eae8b89db4b4be146"
+    },
+    {
+      "path": "tests/suitability/rerank.test.ts",
+      "bytes": 1833,
+      "sha256": "78304f9321e4c4b267cd1882a084f619ac6787b725c65375c0e70d2517962a1f"
+    },
+    {
       "path": "tests/surface-imagery.test.ts",
       "bytes": 1344,
       "sha256": "6aec42231a63bdddf5da06f9976c1b139daabc7816ab337d9d516bb216f2de71"
@@ -3411,6 +3786,26 @@
       "path": "tests/teaching.test.ts",
       "bytes": 4506,
       "sha256": "38ad084cd45f5ca0cdffc92f1286d50d1d5ade5103504ea54ca1dc046b3fc245"
+    },
+    {
+      "path": "tests/ted-education/fixture.ts",
+      "bytes": 783,
+      "sha256": "ff4c817c9f5b75687db7ce355e69733613eabe55d89a916811be029cb2062e54"
+    },
+    {
+      "path": "tests/ted-education/resource-evidence.test.ts",
+      "bytes": 6540,
+      "sha256": "305df2ea1868e16894dce7f4cc705da0716012ccfeffd1f9b0766a3eb3759ef2"
+    },
+    {
+      "path": "tests/ted-education/worksheet-controls.test.ts",
+      "bytes": 6597,
+      "sha256": "95825fa49b1e9ca3efa8e05fb27de9da84fdc8c5eb88d4ee9a3091ea0510295d"
+    },
+    {
+      "path": "tests/ted-education/worksheet-options.test.ts",
+      "bytes": 6858,
+      "sha256": "bf0d608253732a36d3eb4008265b3e6763e46029a44aa7d835eba1661ca02176"
     },
     {
       "path": "tests/terrain-lod.test.ts",
@@ -3461,6 +3856,26 @@
       "path": "tsconfig.json",
       "bytes": 696,
       "sha256": "b766364530882a9313b3660396302a231674736b695b34cead0ccc33062abd7f"
+    },
+    {
+      "path": "web-source/build-web.test.mjs",
+      "bytes": 8354,
+      "sha256": "b7cf798d06f60ec3c7b4e38baa6204d4e24d3bfeeefd7d9bf1dc70304f94cb09"
+    },
+    {
+      "path": "web-source/fonts.css",
+      "bytes": 275,
+      "sha256": "998fb9f39e3dbf87884acfd1590df07491019ee342a7730bae71f488e08285df"
+    },
+    {
+      "path": "web-source/lazy-dynamic.mjs",
+      "bytes": 1504,
+      "sha256": "8f53ad968dcde3b6a6afaee1da811089f201aa03471c15d984ec4be948dee8ea"
+    },
+    {
+      "path": "web-source/main.tsx",
+      "bytes": 729,
+      "sha256": "6b5a2f6ee2ff8cbc6e8339cf972a29f6f2237f8a9f3b99a0d3d541df5570078a"
     }
   ]
 }
