@@ -1,6 +1,7 @@
 "use client";
 import { useContext, useEffect, useId, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ChartImageActions } from "@/components/chart-image-actions";
 import { AudienceContext, Info } from "./info";
 import { GradientHelp } from "./gradient-help";
 import type { GradientAxis } from "@/lib/chart-gradient";
@@ -191,7 +192,7 @@ function Plot({
       : 5;
   return (
     <figure
-      className="science-figure"
+      className="science-figure chart-image-surface"
       ref={host}
       aria-labelledby={`${id}-title`}
       onBlur={(event) => {
@@ -337,6 +338,7 @@ function Plot({
                 strokeWidth={l.constant ? 1.5 : 2.2}
                 strokeDasharray={l.dash}
                 fill="none"
+                style={{ stroke: l.color }}
               />
             ))}
             {lines
@@ -365,6 +367,7 @@ function Plot({
                       fill={l.shape === "earth" ? "#fffdf7" : l.color}
                       stroke={l.color}
                       strokeWidth={1.5}
+                      style={{ fill: l.shape === "earth" ? "#ffffff" : l.color, stroke: l.color }}
                     />
                   )),
               )}
@@ -392,6 +395,7 @@ function Plot({
                     fill={l.shape === "earth" ? "#fffdf7" : l.color}
                     stroke={l.color}
                     strokeWidth={2}
+                    style={{ fill: l.shape === "earth" ? "#ffffff" : l.color, stroke: l.color }}
                   />
                 ) : null;
               })}
@@ -406,6 +410,7 @@ function Plot({
                     fill={m.shape === "earth" ? "#fffdf7" : m.color}
                     stroke={m.color}
                     strokeWidth={2}
+                    style={{ fill: m.shape === "earth" ? "#ffffff" : m.color, stroke: m.color }}
                   />
                   <text
                     x={Math.max(
@@ -451,6 +456,19 @@ function Plot({
           </span>
         ))}
       </div>
+      <ChartImageActions
+        getPlot={() => host.current?.querySelector(".plot-area > svg") ?? null}
+        title={title}
+        xAxis={xLabel}
+        yAxis={`${yLabel}${yLabel.includes(yUnit) ? "" : ` (${yUnit})`}`}
+        legend={lines.map((line) => ({ label: line.name, color: line.color, dash: line.dash, shape: line.shape }))}
+        notes={[
+          ...(time ? [`UTC extent: ${utc(xd[0])} to ${utc(xd[1])}.`] : []),
+          note,
+          gradientSource,
+          "Unknown values leave gaps. Values are rounded for reading, not uncertainty bounds.",
+        ]}
+      />
       <p id={`${id}-help`} className="chart-note">
         Hover or tap to inspect samples. Focus the graph and use ←/→; Shift
         moves 10 samples; Home/End select the first/last. Values are rounded for
