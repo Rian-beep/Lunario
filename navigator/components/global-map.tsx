@@ -13,9 +13,16 @@ import {
   type MapCamera, type MapCluster, type MapLabelBox, type MapPoint, type MapSize,
 } from "@/lib/global-map";
 import styles from "./global-map.module.css";
+import { drawIceMarkers, type MapScreenRaster } from "@/lib/map-overlays";
+import type { IceFeature } from "@/lib/ice";
+import type { ScreeningViewport } from "@/components/map-screening";
+import {publicAssetURL} from "@/lib/public-assets";
 import {neutralLunarBitmap, LUNAR_ATLAS_POLICY} from "@/lib/lunar-appearance";
 
 export type Props = {
+  raster?: MapScreenRaster | null;
+  iceFeatures?: IceFeature[];
+  onViewportChange?: (viewport:ScreeningViewport|undefined)=>void;
   sites: Site[];
   selectedId: string | null;
   compareIds: string[];
@@ -33,7 +40,7 @@ function coordinates(lat: number, lon: number) {
   return `${Math.abs(lat).toFixed(2)}°${lat < 0 ? "S" : "N"} · ${Math.abs(east).toFixed(2)}°${east < 0 ? "W" : "E"}`;
 }
 
-export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onPlace }: Props) {
+export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onPlace, raster, iceFeatures=[], onViewportChange }: Props) {
   const [showCaption,setShowCaption]=useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -95,7 +102,7 @@ export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onP
         setTexture({ image, nasa: candidate.nasa });
       };
       image.onerror = () => load(index + 1);
-      image.src = candidate.url;
+      image.src = publicAssetURL(candidate.url);
     }
     load(0);
     return () => {
@@ -103,6 +110,17 @@ export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onP
       if (current) { current.onload = null; current.onerror = null; }
     };
   }, []);
+
+  useEffect(()=>{
+    if(!onViewportChange||!size.width||!size.height)return;
+    if(camera.zoom<=1.5){onViewportChange(undefined);return;}
+    const world=mapWorldWidth(size,camera.zoom);
+    const west=(camera.x-size.width/(2*world))*360-180;
+    const east=(camera.x+size.width/(2*world))*360-180;
+    const north=Math.min(90,90-(camera.y-size.height/(2*world))*360);
+    const south=Math.max(-90,90-(camera.y+size.height/(2*world))*360);
+    onViewportChange({west,east,north,south,cols:12,rows:8});
+  },[camera,size,onViewportChange]);
 
   const locationLat = location?.lat;
   const locationLon = location?.lon;
@@ -152,7 +170,11 @@ export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onP
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
       ctx.setTransform(canvas.width / size.width, 0, 0, canvas.height / size.height, 0, 0);
-      drawSurface(ctx, size, camera, texture);
+      drawSurface(ctx, size, camera, texture, raster);
+      drawIceMarkers(ctx,iceFeatures,(lat,lon)=>{
+        const p=mapToScreen(latLonToMap(lat,lon),camera,size);
+        return p.x>=0&&p.y>=0&&p.x<=size.width&&p.y<=size.height?p:null;
+      });
       const customPin = custom && mapToScreen(latLonToMap(custom.lat, custom.lon), camera, size);
       const occupied: MapLabelBox[] = clusters.map((c) => ({ x: c.x - 10, y: c.y - 10, width: 20, height: 20 }));
       // Reserve the corners occupied by controls, provenance and the visible-site list.
@@ -203,7 +225,7 @@ export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onP
       labelsRef.current = labels;
     });
     return () => cancelAnimationFrame(frame);
-  }, [size, camera, texture, clusters, byId, custom, selectedId, compare, hover]);
+  }, [size, camera, texture, clusters, byId, custom, selectedId, compare, hover, raster, iceFeatures]);
 
   function pointerPosition(event: PointerEvent<HTMLCanvasElement>): MapPoint {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -347,7 +369,7 @@ export function GlobalMap({ sites, selectedId, compareIds, custom, onSelect, onP
   );
 }
 
-function drawSurface(ctx: CanvasRenderingContext2D, size: MapSize, camera: MapCamera, texture: Texture | null) {
+function drawSurface(ctx: CanvasRenderingContext2D, size: MapSize, camera: MapCamera, texture: Texture | null, raster?: MapScreenRaster|null) {
   ctx.fillStyle = "#e5e0d3";
   ctx.fillRect(0, 0, size.width, size.height);
   const world = mapWorldWidth(size, camera.zoom);
@@ -363,6 +385,13 @@ function drawSurface(ctx: CanvasRenderingContext2D, size: MapSize, camera: MapCa
     if (texture) ctx.drawImage(neutralLunarBitmap(texture.image), left, y0, world, world / 2);
     ctx.save();
     ctx.beginPath(); ctx.rect(left, y0, world, world / 2); ctx.clip();
+    if(raster?.projection==='global'){
+      const b=raster.bounds??{west:-180,east:180,south:-90,north:90};
+      // Viewport bounds may cross the map seam; repeat only the bounded source rectangle.
+      for(let wrap=-1;wrap<=1;wrap++)ctx.drawImage(raster.canvas,
+        left+(b.west+180+wrap*360)/360*world,y0+(90-b.north)/360*world,
+        (b.east-b.west)/360*world,(b.north-b.south)/360*world);
+    }
     ctx.lineWidth = 0.7;
     ctx.font = '10px "Avenir Next", "Segoe UI", sans-serif';
     ctx.textBaseline = "top";

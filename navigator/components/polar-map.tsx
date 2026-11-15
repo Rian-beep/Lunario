@@ -10,6 +10,9 @@ import {
 } from "react";
 import type { Catalog, Site } from "@/lib/catalog";
 import { Button } from "@/components/ui/button";
+import {drawIceMarkers,type MapScreenRaster} from "@/lib/map-overlays";
+import type {IceFeature} from "@/lib/ice";
+import {publicAssetURL} from "@/lib/public-assets";
 import { SITE_COLORS } from "@/lib/catalog";
 import { loadImagery, type ImageryData, type ImagePatch } from "@/lib/imagery";
 import { latLonToProjected, projectedToLatLon } from "@/lib/astro";
@@ -27,6 +30,8 @@ const MAX_PENDING_TILES = 6;
 const MAX_REQUESTS_PER_VIEW = POLAR_NAC_TILE_BUDGET;
 
 type Props = {
+  raster?:MapScreenRaster|null;
+  iceFeatures?:IceFeature[];
   catalog: Catalog;
   sites: Site[];
   selectedId: string | null;
@@ -42,6 +47,8 @@ type Props = {
 
 export function PolarMap({
   catalog,
+  raster,
+  iceFeatures=[],
   sites,
   selectedId,
   compareIds,
@@ -106,7 +113,7 @@ export function PolarMap({
       imageRef.current = image;
       repaint.current();
     };
-    image.src = catalog.map.url;
+    image.src = publicAssetURL(catalog.map.url);
     return () => {
       image.onload = null;
     };
@@ -129,7 +136,7 @@ export function PolarMap({
       overview.onerror = () => {
         if (active) setImageryStatus("Bundled LROC overview unavailable; LOLA relief shown");
       };
-      overview.src = data.overview.url;
+      overview.src = publicAssetURL(data.overview.url);
     }).catch(() => {
       if (active) setImageryStatus("Bundled LROC imagery unavailable; LOLA relief shown");
     });
@@ -319,6 +326,12 @@ export function PolarMap({
       off.getContext("2d")?.putImageData(overlay, 0, 0);
       ctx.drawImage(off, cam.x, cam.y, map.width * cam.scale, map.height * cam.scale);
     }
+    if(raster?.projection==='polar')ctx.drawImage(raster.canvas,cam.x,cam.y,map.width*cam.scale,map.height*cam.scale);
+    drawIceMarkers(ctx,iceFeatures,(lat,lon)=>{
+      if(lat>-80)return null;
+      const p=imagePoint(lat,lon),s=screenFromImage(p.x,p.y,cam);
+      return s.x>=0&&s.y>=0&&s.x<=width&&s.y<=height?s:null;
+    });
     drawGraticule(ctx, cam);
     drawSites(ctx, cam, width, height);
     if (custom) {
@@ -413,7 +426,7 @@ export function PolarMap({
         bundledImages.current.set(patch.id, next);
         next.onload = () => { if (mounted.current) { neutralLunarBitmap(next); repaint.current(); } };
         next.onerror = () => { if (mounted.current) setImageryStatus("Some LROC patches unavailable; bundled overview / LOLA relief underneath"); };
-        next.src = patch.url;
+        next.src = publicAssetURL(patch.url);
       }
     }
     drawOnline();

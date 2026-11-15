@@ -1,4 +1,6 @@
 "use client";
+import {mapAreaForLocation} from "@/lib/map-coverage";
+import {DEFAULT_MAP_LAYERS,MapLayerControls,MapLayerLegend,useMapLayers,type MapLayerSettings,type ScreeningViewport} from '@/components/map-screening';
 import {PublicSiteStory} from "@/components/workbench/public-exploration";
 import {UiThemeToggle} from "@/components/ui-theme-toggle";
 import {LunarWindowBrand} from '@/components/branding/lunar-window-brand';
@@ -193,6 +195,9 @@ export function Navigator() {
     [saved, setSaved] = useState<SavedScenario[]>([]);
   const [flightRequested,setFlightRequested]=useState(false);
   const [mapArea,setMapArea]=useState<"polar"|"global">("polar");
+  const [mapLayers,setMapLayers]=useState<MapLayerSettings>(DEFAULT_MAP_LAYERS);
+  const [screeningViewport,setScreeningViewport]=useState<ScreeningViewport|undefined>();
+  const mapLayerModel=useMapLayers({catalog,state,terrain:data,projection:mapArea,visible:view!=='terrain',settings:mapLayers,viewport:mapArea==='global'?screeningViewport:undefined});
   const [siteFilter,setSiteFilter]=useState<"all"|"polar"|"apollo"|"robotic"|"attempt">("all");
   const [query, setQuery] = useState(""),
     [latDraft, setLatDraft] = useState("89.5 S"),
@@ -523,7 +528,8 @@ export function Navigator() {
   }, [notice]);
   const selectSite = (id: string) => {
     if(mode==='public'){setLeftOpen(false);if(headingVisible)setHeadingMinimized(false);}
-    if((catalog?.sites.find(s=>s.id===id)?.lat ?? -90)>-80)setMapArea("global");
+    const selected=catalog?.sites.find(s=>s.id===id);
+    if(catalog&&selected)setMapArea(mapAreaForLocation(catalog.map,selected.lat,selected.lon));
     update({ siteId: id, custom: null, terrainMode:state?.terrainMode??'prepared' });
     setCoordError("");
   };
@@ -840,8 +846,10 @@ export function Navigator() {
             <>
             {view !== "terrain" && (
               <div className="map-pane" key="map">
-                {mapArea==='global'?<GlobalMap sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
+                {mapArea==='global'?<GlobalMap raster={mapLayerModel.raster} iceFeatures={mapLayerModel.iceFeatures} onViewportChange={setScreeningViewport} sites={mapSites} selectedId={state.custom?null:site.id} compareIds={saved.map(s=>s.state.siteId)} custom={state.custom} onSelect={selectSite} onPlace={(lat,lon)=>{if(view==='split')setMapArea(mapAreaForLocation(catalog.map,lat,lon));if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:state.terrainMode??'prepared'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>:<PolarMap
                   catalog={catalog}
+                  raster={mapLayerModel.raster}
+                  iceFeatures={mapLayerModel.iceFeatures}
                   sites={mapSites.filter(s=>s.lat<=-80)}
                   selectedId={state.custom ? null : site.id}
                   compareIds={saved.map((v) => v.state.siteId)}
@@ -866,7 +874,7 @@ export function Navigator() {
                   assetFocus={assetFocus}
                   earthBodyKm={scenePositions.earth}
                   sunBodyKm={scenePositions.sun}
-                  onPlace={(lat,lon)=>{if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
+                  onPlace={(lat,lon)=>{setMapArea(mapAreaForLocation(catalog.map,lat,lon));if(mode==='public'&&headingVisible)setHeadingMinimized(false);update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));setNotice('Custom point selected. Coarse terrain context is not a measured landing-footprint assessment.');}}
                   earthRangeKm={sceneContext?.rangeKm}
                   sunRangeKm={sceneContext?.sunRangeKm??undefined}
                   epochMs={sceneContext?.epochMs}
@@ -883,7 +891,7 @@ export function Navigator() {
                   offline={typeof globalThis.location!=='undefined'&&globalThis.location.protocol==='file:'}
                   sites={sceneSites}
                   selectedSiteId={state.custom?CUSTOM_MARKER_ID:site.id}
-                  onSelectSite={id=>{if(id===CUSTOM_MARKER_ID){setRightOpen(true);setPanel(mode==='plan'?'plan':'overview');}else selectSite(id);}}
+                  onSelectSite={id=>{if(id===CUSTOM_MARKER_ID){if(state.custom)setMapArea(mapAreaForLocation(catalog.map,state.custom.lat,state.custom.lon));setRightOpen(true);setPanel(mode==='plan'?'plan':'overview');}else selectSite(id);}}
                   terrain={sceneTerrain}
                   imagery={imageryData}
                   referenceHeightM={referenceHeightM}
@@ -1369,7 +1377,7 @@ export function Navigator() {
             </aside>
           )}
           <div className="map-bottom-tools" hidden={focusMode}>
-            {view!=="terrain"&&mapArea==="polar"&&<div className="glass layer-tools">
+            {view!=="terrain"&&<div className="glass layer-tools">
               <Button
                 variant="ghost"
                 aria-expanded={layers}
@@ -1403,9 +1411,11 @@ export function Navigator() {
                 <ChevronLeft size={13} />
               )}
             </Button>
-          {layers && view!=="terrain" && mapArea==="polar" && (
+          {layers && view!=="terrain" && (
             <div className="layer-popover glass">
               <h3>Map layers</h3><Button className="layer-close" size="icon" variant="ghost" aria-label="Dismiss map layers" onClick={()=>setLayers(false)}><X size={15}/></Button>
+              <MapLayerControls settings={mapLayers} onChange={setMapLayers} model={mapLayerModel} onInspect={(lat,lon)=>{update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>
+              {mapArea==='polar'&&<>
               <label>
                 <input
                   type="radio"
@@ -1435,9 +1445,10 @@ export function Navigator() {
               <p>
                 Imagery records historical illumination. The wash is a coarse
                 horizon-grid estimate, not a per-pixel shadow simulation.
-              </p>
+              </p></>}
             </div>
           )}
+          {view!=='terrain'&&!focusMode&&!layers&&(mapLayers.enabled||mapLayers.iceEnabled)&&<MapLayerLegend settings={mapLayers} onChange={setMapLayers} model={mapLayerModel} onInspect={(lat,lon)=>{update({custom:{lat,lon},terrainMode:'global-at-point'});setLatDraft(`${Math.abs(lat).toFixed(4)} ${lat<0?'S':'N'}`);setLonDraft(lon.toFixed(4));}}/>}
           {terrainError && view !== "map" && (
             <div className="terrain-notice glass">
               {terrainError} Reference surface shown.
