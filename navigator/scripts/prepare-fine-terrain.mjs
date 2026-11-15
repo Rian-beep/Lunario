@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import { fromUrl } from "geotiff";
 import { packTerrain } from "./terrain-codec.mjs";
+import {resampleRegisteredTerrain} from "./terrain-resample.mjs";
 import os from "node:os";
 import path from "node:path";
 // NASA's static file server can close a keep-alive connection between range reads.
@@ -38,7 +39,7 @@ const definitions = {
   fine40: "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF",
 };
 const sources = new Map();
-const cache = path.join(os.tmpdir(), "solarreach-fine-patches-v1");
+const cache = path.join(os.tmpdir(), "solarreach-fine-patches-v2-registered-halo");
 await fs.mkdir(cache, { recursive: true });
 async function source(key) {
   if (sources.has(key)) return sources.get(key);
@@ -91,13 +92,8 @@ async function patch(site, key, half, n) {
   let values;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      values = await im.readRasters({
-        window,
-        width: n,
-        height: n,
-        interleave: true,
-        resampleMethod: "bilinear",
-      });
+      const raw=await im.readRasters({window:[window[0],window[1],window[2]+1,window[3]+1],interleave:true,fillValue:NaN});
+      values=resampleRegisteredTerrain(raw,width+1,height+1,n,n,width/n,height/n,im.getGDALNoData());
       break;
     } catch (e) {
       console.warn(site.id, key, "read failure", attempt + 1, e.message);

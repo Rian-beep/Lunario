@@ -134,7 +134,11 @@ import {DecisionPackageControls} from "./workbench/decision-package";
 import {DecisionPanel} from "./workbench/decision-panel";
 import {createDecisionPackage,stringifyDecisionPackage} from "@/lib/decision-export";
 import {loadEvidenceManifest} from "@/lib/provenance";
-import {evaluateScenario} from "@/lib/assessment";
+import {evaluateScenario,PLANNING_MODEL_VERSION} from "@/lib/assessment";
+import {ScienceFramework} from "@/components/science-framework";
+import type {ScienceFinding} from "@/lib/science-framework";
+import scientificVerification from "@/lib/generated/scientific-verification.json";
+const scientificFindings=scientificVerification.findings as readonly ScienceFinding[];
 import type {EvidenceManifest} from "@/lib/planning-types";
 
 type View = "map" | "terrain" | "split";
@@ -740,10 +744,7 @@ export function Navigator() {
             <UiThemeToggle/>
             <Button variant="ghost" onClick={()=>{setFocusMode(true);setGuideOpen(false);}} aria-label="Hide panels for unobstructed view"><Maximize2 size={16}/><span>Hide panels</span></Button>
             <Button variant="ghost" onClick={() => setGuideOpen(true)} aria-label="Open current mode guide"><BookOpen size={16}/><span>Mode guide</span></Button>
-            <span className="data-badge">
-              <i />
-              NASA data
-            </span>
+            <Button variant="ghost" className="data-badge" onClick={()=>openPanel("sources")} aria-label="Open data pipelines and mathematical framework"><i />Data &amp; math</Button>
             <Button
               variant="ghost"
               aria-label="Share current scenario"
@@ -1375,7 +1376,7 @@ export function Navigator() {
                     onOpen={range}
                   />
                 ) : <Section title="Landing-date search"><p>There is no numerical terrain horizon for this location. A terrain-based date ranking is unavailable. Horizon analysis still shows Sun/Earth geometry and the smooth-sphere reference.</p></Section>)}
-                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={typeof location!=='undefined'&&globalThis.location?.protocol==='file:'}/><ResourcesPanel catalog={catalog} /></>}
+                {panel === "sources" && <><Button variant="outline" className="wide-button" onClick={()=>{setPlaying(false);setFlightPlaying(false);setSolarOverviewOpen(true);}}>Explore Sun, Earth & Moon at true scale</Button><DataConnections missionStartUtc={new Date(indexToMs(catalog,state.startIndex)).toISOString()} missionEndUtcExclusive={new Date(indexToMs(catalog,state.endIndex+1)).toISOString()} mode={mode} offline={typeof location!=='undefined'&&globalThis.location?.protocol==='file:'}/><ScienceFramework mode={mode} context={{lat:location.lat,lon:location.lon,observerHeightM:state.heightM,arrayHeightM:state.arrayHeightM,antennaHeightM:state.antennaHeightM,terrainMode:state.terrainMode??"prepared",terrainLabel:isGlobalTerrainChoice(terrain)?"Coarse global LOLA context":terrain.mask.some(Number.isFinite)?terrain.exact?"Prepared site horizon":"Borrowed polar-grid horizon":"Unknown terrain horizon",epochUtc:new Date(indexToMs(catalog,playhead)).toISOString(),datasetId:evidenceManifest?.datasetId??"Pending evidence manifest",modelVersion:PLANNING_MODEL_VERSION}} findings={scientificFindings}/><ResourcesPanel catalog={catalog} /></>}
               </div>
               <div className="inspector-footer">
                 <span className="data-status-dot" />

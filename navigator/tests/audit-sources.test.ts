@@ -58,11 +58,12 @@ test('audit polar interior heights match original COG interpolation within fixed
  assert.equal(matched,13);
 });
 
-test('audit retains the demonstrated edge registration failure rather than relaxing its tolerance',()=>{
+test('audit corrected source edge matches its declared coordinate without relaxing the original tolerance',()=>{
  const source=capture.sources.find((s:{lod:string})=>s.lod==='fine40'),sample=source.samples.at(-1);
- assert.equal(sample.toleranceM,.0551);assert.ok(sample.errorM>.6);assert.ok(Math.abs(sample.clampedErrorM)<.001);
- assert.ok(Math.hypot(sample.clampShiftXM,sample.clampShiftYM)>11);
- // Green test means the discrepancy is reproduced, not that source acceptance passed.
+ const before=json('docs/qa/scientific-audit/integration/source-capture-before.json').sources.find((s:{lod:string})=>s.lod==='fine40').samples.at(-1);
+ assert.equal(sample.toleranceM,.0551);assert.ok(Math.abs(sample.errorM)<=sample.toleranceM);
+ assert.ok(before.errorM>.6);assert.ok(Math.abs(before.clampedErrorM)<.001);
+ // Original edge clamping failed; the registered halo now samples the declared point.
 });
 
 test('audit fresh PDS label agrees byte-for-byte and preserves radius versus height calibration',async()=>{
@@ -133,9 +134,9 @@ test('audit ice evidence retains association counts and missing abundance; LCROS
  assert.ok(capture.failures.some((f:{name:string})=>f.name==='lemelin'));
 });
 
-test('audit unchanged Python pipeline missing-ray discrepancy remains reproducible',()=>{
+test('audit corrected Python pipeline preserves missing-ray uncertainty',()=>{
  const result=spawnSync('python3',['scripts/audit-sources-pipeline.py'],{encoding:'utf8'});assert.equal(result.status,0,result.stderr);
- const probe=JSON.parse(result.stdout);assert.equal(probe.unknownRayBecameFinite,true);assert.equal(probe.expectedUnknown,true);assert.equal(probe.fixed,false);
+ const probe=JSON.parse(result.stdout);assert.equal(probe.unknownRayBecameFinite,false);assert.equal(probe.expectedUnknown,true);assert.equal(probe.fixed,true);
 });
 
 test('audit angular horizon interpolation wraps at north and preserves unknown sectors',()=>{

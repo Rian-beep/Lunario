@@ -27,7 +27,9 @@ const cases: Array<{
   { name: 'site radius and offsets', inputs: { ...falling, eastOffsetM: 20000, northOffsetM: -10000, horizontalMps: 25, headingDeg: -30, pitchDeg: -20, finalPitchDeg: 35 }, terrain: () => -125, radius: MOON_RADIUS_M + 3000 },
   { name: 'circular coast', inputs: { ...DEFAULT_FLIGHT, altitudeM: 100000, horizontalMps: Math.sqrt(LUNAR_MU / (MOON_RADIUS_M + 100000)), thrustN: 0, burnSeconds: 0, durationSeconds: 600 } },
 ];
-// Frozen pre-metadata values, rather than byte hashes of platform-specific libm results.
+// Pre-contact samples retain the original frozen values. Contact endpoints were
+// regenerated for the audited RK4 surface root; audit-integration-impact independently
+// checks exact central-force event time, speed and energy. No tolerance was relaxed.
 for (const [index, fixture] of cases.entries()) {
   test(`legacy point numerics remain stable: ${fixture.name}`, () => {
     const result = simulateFlight(fixture.inputs, fixture.terrain, fixture.radius);
@@ -57,7 +59,7 @@ test('legacy ascent returning to terrain exposes the exact final impact and manu
   const last = result.points.at(-1)!;
   assert.ok(last.verticalMps < 0);
   assert.ok(last.speedMps > 500, 'incoming impact speed is retained');
-  assert.ok(last.t % 0.25 !== 0, 'impact is the existing interpolated state');
+  assert.ok(last.t % 0.25 !== 0, 'impact resolves inside the integration step');
   assert.ok(result.contact, 'Follow needs impact metadata even without explicit landing inputs');
   const contact = result.contact;
   assert.equal(contact.timeS, last.t);

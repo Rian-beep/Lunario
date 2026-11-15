@@ -26,11 +26,11 @@ missing = dem.copy()
 # One unobserved location on the ray; both source DEMs lack that sample.
 missing[29:31, 31:33] = np.nan
 partial = namespace['horizon_masks'](fine=missing, coarse=missing, **kwargs)[0][0, 0]
-assert math.isfinite(known) and math.isfinite(partial)
+assert math.isfinite(known) and not math.isfinite(partial)
 # At least eight other finite samples make an incomplete ray look complete.
-result = {'method': 'AST-selected unchanged Python functions; synthetic 64x64 terrain',
-          'knownHorizonDeg': float(known), 'missingRayHorizonDeg': float(partial),
+result = {'method': 'AST-selected corrected Python functions; synthetic 64x64 terrain',
+          'knownHorizonDeg': float(known), 'missingRayHorizonDeg': None if not math.isfinite(partial) else float(partial),
           'unknownRayBecameFinite': bool(math.isfinite(partial)),
-          'expectedUnknown': True, 'fixed': False,
+          'expectedUnknown': True, 'fixed': not math.isfinite(partial),
           'limitation': 'No original polar DEM nodata prevalence inferred; pipeline is owned by ephemeris lane.'}
 print(json.dumps(result, indent=2))

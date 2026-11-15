@@ -394,7 +394,10 @@
           "yM": 308140,
           "outside": true,
           "clampShiftXM": 0,
-          "clampShiftYM": 0
+          "clampShiftYM": 0,
+          "bundledHeightM": null,
+          "errorM": null,
+          "clampedErrorM": null
         },
         {
           "index": 131584,
@@ -428,7 +431,7 @@
           "xM": 15747.95321637427,
           "yM": 291732.04678362573,
           "clampedHeightM": 2668.499755859375,
-          "clampedErrorM": 0.000244140625,
+          "clampedErrorM": -0.599755859374909,
           "clampShiftXM": -7.953216374262411,
           "clampShiftYM": 7.953216374269232,
           "sourceCol": 7993.198830409357,
@@ -446,8 +449,8 @@
             2665.242431640625
           ],
           "expectedHeightM": 2667.8980308327373,
-          "bundledHeightM": 2668.5,
-          "errorM": 0.6019691672627232,
+          "bundledHeightM": 2667.9,
+          "errorM": 0.0019691672628141532,
           "toleranceM": 0.0551
         }
       ]
@@ -549,7 +552,10 @@
           "yM": -303454.81481481483,
           "outside": true,
           "clampShiftXM": -94.81481481481751,
-          "clampShiftYM": 94.81481481481751
+          "clampShiftYM": 94.81481481481751,
+          "bundledHeightM": -3950.1,
+          "errorM": null,
+          "clampedErrorM": null
         }
       ]
     }

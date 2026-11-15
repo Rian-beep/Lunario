@@ -21,7 +21,7 @@ set +e
 status=$?
 set -e
 cat "$scratch/baseline-tests.txt"
-if [[ "$status" != 1 ]] || ! rg -q '# pass 14' "$scratch/baseline-tests.txt" || ! rg -q '# fail 1' "$scratch/baseline-tests.txt" || ! rg -q 'not ok.*Earth semidiameter uses site distance' "$scratch/baseline-tests.txt"; then
+if [[ "$status" != 1 ]] || ! rg -q '# pass 13' "$scratch/baseline-tests.txt" || ! rg -q '# fail 2' "$scratch/baseline-tests.txt" || ! rg -q 'not ok.*Earth semidiameter uses site distance' "$scratch/baseline-tests.txt"; then
   echo 'Baseline did not reproduce the single registered semidiameter failure' >&2
   exit 1
 fi

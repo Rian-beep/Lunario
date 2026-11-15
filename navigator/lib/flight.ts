@@ -151,18 +151,23 @@ export function simulateFlight(
   };
   const add = (x: Vec, y: Vec, f: number) =>
     x.map((n, i) => n + y[i] * f) as Vec;
+  const integrate = (position: Vec, velocity: Vec, time: number, dt: number, powered: boolean) => {
+    const k1r = velocity, k1v = accel(position, time, powered);
+    const k2r = add(velocity, k1v, dt / 2), k2v = accel(add(position, k1r, dt / 2), time + dt / 2, powered);
+    const k3r = add(velocity, k2v, dt / 2), k3v = accel(add(position, k2r, dt / 2), time + dt / 2, powered);
+    const k4r = add(velocity, k3v, dt), k4v = accel(add(position, k3r, dt), time + dt, powered);
+    return {
+      position: position.map((x,i) => x + dt / 6 * (k1r[i] + 2*k2r[i] + 2*k3r[i] + k4r[i])) as Vec,
+      velocity: velocity.map((x,i) => x + dt / 6 * (k1v[i] + 2*k2v[i] + 2*k3v[i] + k4v[i])) as Vec,
+    };
+  };
   const points: FlightPoint[] = [];
-  const point = (t: number): FlightPoint => ({
-    t,
-    eastM: r[0],
-    northM: r[2],
-    yM: r[1] - surfaceRadiusM,
-    altitudeM: Math.hypot(...r) - surfaceRadiusM,
-    speedMps: Math.hypot(...v),
-    verticalMps: r.reduce((s, x, i) => s + x * v[i], 0) / Math.hypot(...r),
-    massKg: mass(t),
-    positionM: [...r],
-    velocityMps: [...v],
+  const point = (t: number, position: Vec = r, velocity: Vec = v): FlightPoint => ({
+    t, eastM: position[0], northM: position[2], yM: position[1] - surfaceRadiusM,
+    altitudeM: Math.hypot(...position) - surfaceRadiusM,
+    speedMps: Math.hypot(...velocity),
+    verticalMps: position.reduce((sum,x,i) => sum + x * velocity[i],0) / Math.hypot(...position),
+    massKg: mass(t), positionM: [...position], velocityMps: [...velocity],
     powered: t < burnEnd && a.thrustN > 0,
   });
   points.push(point(0));
@@ -180,33 +185,24 @@ export function simulateFlight(
     let dt = Math.min(0.25, a.durationSeconds - t);
     if (t < burnEnd && t + dt > burnEnd) dt = burnEnd - t;
     const powered = t < burnEnd - 1e-9 && a.thrustN > 0;
-    const k1r = v,
-      k1v = accel(r, t, powered);
-    const k2r = add(v, k1v, dt / 2),
-      k2v = accel(add(r, k1r, dt / 2), t + dt / 2, powered);
-    const k3r = add(v, k2v, dt / 2),
-      k3v = accel(add(r, k2r, dt / 2), t + dt / 2, powered);
-    const k4r = add(v, k3v, dt),
-      k4v = accel(add(r, k3r, dt), t + dt, powered);
-    const before = point(t);
-    r = r.map(
-      (x, i) => x + (dt / 6) * (k1r[i] + 2 * k2r[i] + 2 * k3r[i] + k4r[i]),
-    ) as Vec;
-    v = v.map(
-      (x, i) => x + (dt / 6) * (k1v[i] + 2 * k2v[i] + 2 * k3v[i] + k4v[i]),
-    ) as Vec;
+    const before = point(t), next = integrate(r,v,t,dt,powered);
+    r = next.position; v = next.velocity;
     t += dt;
     let p = point(t);
     const c = clearance(p);
     if (c.value <= 0 && t > 0) {
-      const old = clearance(before).value;
-      const f = Math.max(0, Math.min(1, old / (old - c.value)));
-      r = before.positionM.map((x, i) => x + (r[i] - x) * f) as Vec;
-      v = before.velocityMps.map((x, i) => x + (v[i] - x) * f) as Vec;
-      t = before.t + dt * f;
-      p = point(t);
-      points.push(p);
-      status = c.terrain ? "terrain contact" : "reference contact";
+      // Solve the surface event with the same dynamics as free flight.
+      // Linear interpolation satisfies height but biases event time and speed.
+      let low = 0, high = clearance(before).value === 0 ? 0 : dt;
+      for (let i = 0; i < 48 && high - low > 1e-10; i++) {
+        const middle = (low + high) / 2, state = integrate(before.positionM,before.velocityMps,before.t,middle,powered);
+        if (clearance(point(before.t + middle,state.position,state.velocity)).value > 0) low = middle;
+        else high = middle;
+      }
+      const event = integrate(before.positionM,before.velocityMps,before.t,high,powered);
+      r = event.position; v = event.velocity; t = before.t + high;
+      p = point(t); points.push(p);
+      status = clearance(p).terrain ? "terrain contact" : "reference contact";
       break;
     }
     maxAltitudeM = Math.max(maxAltitudeM, p.altitudeM);

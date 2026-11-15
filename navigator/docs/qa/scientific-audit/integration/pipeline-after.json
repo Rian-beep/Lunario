@@ -1,0 +1,9 @@
+{
+  "method": "AST-selected corrected Python functions; synthetic 64x64 terrain",
+  "knownHorizonDeg": -0.1611439672843969,
+  "missingRayHorizonDeg": null,
+  "unknownRayBecameFinite": false,
+  "expectedUnknown": true,
+  "fixed": true,
+  "limitation": "No original polar DEM nodata prevalence inferred; pipeline is owned by ephemeris lane."
+}

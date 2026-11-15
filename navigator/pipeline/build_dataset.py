@@ -278,6 +278,9 @@ def fetch_series(command: str, quantities: str, center: str = "'500@399'") -> di
                 "STOP_TIME": f"'{stop.strftime('%Y-%b-%d %H:%M')}'",
                 "STEP_SIZE": "'1 h'",
                 "QUANTITIES": quantities,
+                "TIME_TYPE": "'UT'",
+                "APPARENT": "'AIRLESS'",
+                "RANGE_UNITS": "'AU'",
             }
         )
         for stamp, nums in parse_rows(result):
@@ -287,7 +290,7 @@ def fetch_series(command: str, quantities: str, center: str = "'500@399'") -> di
 
 
 def load_ephemeris(times: list[datetime]) -> dict[str, np.ndarray]:
-    cache = CACHE / "ephem.npz"
+    cache = CACHE / "ephem-moon-observed-earth-range-v2.npz"
     if cache.exists():
         print("using cached ephemeris", cache, flush=True)
         data = np.load(cache)
@@ -299,6 +302,8 @@ def load_ephemeris(times: list[datetime]) -> dict[str, np.ndarray]:
     moon = fetch_series("'301'", "'14,15,20'")
     print("fetching solar angular diameter", flush=True)
     sun = fetch_series("'10'", "'13'", center="'500@301'")
+    print("fetching Earth range as observed from the Moon", flush=True)
+    earth = fetch_series("'399'", "'20'", center="'500@301'")
     n = len(times)
     sslat = np.empty(n)
     sslon = np.empty(n)
@@ -316,7 +321,9 @@ def load_ephemeris(times: list[datetime]) -> dict[str, np.ndarray]:
         if len(nums) < 5:
             raise SystemExit(f"unexpected Moon columns at {stamp}: {nums}")
         selon[i], selat[i], sslon[i], sslat[i], delta_au = nums[:5]
-        erange[i] = delta_au * au_km
+        if stamp not in earth or len(earth[stamp]) < 1:
+            raise SystemExit(f"missing lunar-observed Earth range at {stamp.isoformat()}")
+        erange[i] = earth[stamp][0] * au_km
         snums = sun[stamp]
         sdiam[i] = snums[0]
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -471,6 +478,7 @@ def horizon_masks(
         for k in range(n_h):
             max_el[k] = -1.5707963267948966
         valid = 0
+        complete = True
         dist = near_step
         while dist <= max_m:
             theta = dist / R
@@ -485,6 +493,9 @@ def horizon_masks(
             x = rho * math.sin(lon2)
             y = rho * math.cos(lon2)
             h1 = sample_surface(fine, ftie_x, ftie_y, fscale, foff, coarse, ctie_x, ctie_y, cscale, coff, x, y)
+            if h1 != h1:
+                complete = False
+                break
             if h1 == h1:
                 cth = math.cos(theta)
                 sth = math.sin(theta)
@@ -510,7 +521,7 @@ def horizon_masks(
                 if elmax < worst:
                     break
         for k in range(n_h):
-            masks[k, i] = math.degrees(max_el[k]) if valid >= 8 else np.nan
+            masks[k, i] = math.degrees(max_el[k]) if complete and valid >= 8 else np.nan
     return masks, h0
 
 

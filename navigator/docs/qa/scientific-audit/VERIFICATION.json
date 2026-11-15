@@ -1,0 +1,2794 @@
+{
+  "schemaVersion": 1,
+  "checkedUtc": "2026-11-15T15:08:14.540467+00:00",
+  "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748",
+  "modelVersion": "planning-5",
+  "counts": {
+    "verified": 41,
+    "uncertain": 21,
+    "failing": 0
+  },
+  "operationalQualification": false,
+  "scopeNotice": "Verified means the stated bounded implementation/input check passed. It does not mean an arbitrary selected scenario, landing site, vehicle or operational mission is qualified. Baseline reports remain archived; this register supersedes only the listed corrected findings.",
+  "assetHashes": {
+    "public/data/catalog.json": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
+    "public/data/terrain.json": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e",
+    "public/data/evidence-manifest.json": "70e3560c6776f73d960b5c7d96f123371291d06ffc7148029bf792df24b45c37"
+  },
+  "findings": [
+    {
+      "id": "S01",
+      "claim": "Polar metadata uses height in metres, a 1737400 m sphere and DE421 mean-Earth frame",
+      "status": "verified",
+      "scope": "Primary product/GeoTIFF metadata, not an accuracy determination",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Capture NASA PGDA 90/81 and USGS; decode four original COG IFDs including area registration, metric units and sphere axes.",
+      "tolerance": "Exact metadata values; no positional tolerance asserted",
+      "observedError": {
+        "radiusDifferenceM": 0,
+        "rasterType": 1
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Pixel spacing is distinct from effective resolution/error. GeoTIFF projection labels alone do not establish a frame transform.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S02",
+      "claim": "Thirteen un-clamped polar samples reproduce primary COG heights within encoding tolerance",
+      "status": "verified",
+      "scope": "Bounded transfer/resampling check: one 5 m patch, one 10 m patch, one 40 m patch and one 1280 m overview",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/87S/ldem_87s_5mpp.tif",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Read original 2x2 COG windows at declared projected pixel centres; independent scalar bilinear interpolation versus decoded bundled heights. Exact HTTP range bodies replay offline.",
+      "tolerance": "Fine grids: 0.0551 m = 0.005 m decimal rounding + 0.05 m packing + 0.0001 m arithmetic allowance. Overview: 0.2001 m = 0.05 + 0.15 + 0.0001 m.",
+      "observedError": {
+        "samples": 13,
+        "maxFineAbsM": 0.0356486724831484,
+        "maxOverviewAbsM": 0.0674753699277062
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Sampling is deliberately small, not all pixels or an independent measurement. Two requested points lie beyond original support and are excluded, never counted as passes.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S03",
+      "claim": "Corrected polar cutout edge samples the declared source coordinate within the original encoding tolerance",
+      "status": "verified",
+      "scope": "Same bounded original NASA COG stencils; source transfer/resampling only, not physical terrain accuracy",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_40MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Registered native-pixel bilinear sampling with a one-pixel halo; compare against cached original source values without changing tolerance",
+      "tolerance": "0.0551 m fixed encoding bound; no physical terrain tolerance invented",
+      "observedError": {
+        "beforeM": 0.6019691672627232,
+        "afterM": 0.0019691672628141532,
+        "limitM": 0.0551
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Public data read-only. Parent must authorize reproducible regeneration with a source-pixel halo or a correctly registered resampler; changing global spacing would misregister the interior. No whole-map error claim. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "sources",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md",
+      "correctionReceipt": "integration/terrain-registration-after.json"
+    },
+    {
+      "id": "S04",
+      "claim": "Global height calibration and five downsampled cells match original PDS DN values",
+      "status": "verified",
+      "scope": "LDEM_16 V3.1, original 5760x2880 pixel-registered cylindrical grid, output 2560x1280",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.img"
+      ],
+      "referenceVersion": "PDS LRO-L-LOLA-4-GDR-V1.0; LDEM_16 V3.1 created 2019-03-15; input observations 2009-07-13T17:33:17 to 2016-11-29T05:48:19 (source label times).",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Fresh label matches bundled label SHA256. Bounded IMG row ranges decoded little-endian signed int16; independent integer quarter-pixel overlap weights reproduce five selected output DNs. Packed/decoded whole bundled hashes verified.",
+      "tolerance": "0 DN difference for selected rounded output; 0.5 m DN scale; height = DN*0.5 m; radius = height+1737400 m",
+      "observedError": {
+        "cells": 5,
+        "maxDnError": 0,
+        "maxHeightErrorM": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Full upstream IMG hash recorded in bundle metadata was not recomputed from a complete fresh download. Native coordinate-area average is not a spherical area integral.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S05",
+      "claim": "A Malapert regional slope stencil agrees with primary heights at the stated scale",
+      "status": "verified",
+      "scope": "lat -85.99985841143967 deg, lon 359.99670036862335 deg east; DE421 ME; source 10 m, output 23.976608187134502 m projected",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_83S_10MPP_ADJ.TIF"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Four original COG stencil heights, independent central differences and stereographic metric correction, versus regionalSlope on bundled heights.",
+      "tolerance": "0.1864364403885588 deg upper arithmetic bound from atan Lipschitz bound and 0.0551 m per-height encoding error; not source slope accuracy",
+      "observedError": {
+        "expectedDeg": 11.253694481043707,
+        "actualDeg": 11.204527366666207,
+        "beforeDeg": -0.0491671143775001,
+        "afterDeg": -0.0491671143775001,
+        "fixed": false,
+        "groundStencilSpacingM": 23.94740321429714
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "One regional stencil does not validate vehicle footprint slopes, rocks, regolith or PGDA slope-error maps. Source interpolation errors are not covered by this tolerance.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S06",
+      "claim": "Coarse horizon reproduces analytic spherical dip under its discrete ray policy",
+      "status": "verified",
+      "scope": "Synthetic sphere R=1737400 m, observer 2 m, north-clockwise ENU azimuth; no epoch",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Compare all 180 rays with closed-form tangent dip -acos(R/(R+h)). Also check angular interpolation across north and NaN sectors.",
+      "tolerance": "0.001 deg algorithm-only test bound, declared before execution",
+      "observedError": {
+        "analyticDeg": -0.08693657193373108,
+        "maxAbsDeg": 4.481753885275663e-05
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Synthetic-only formula verification; never physical skyline validation. 200 log distances from 1 to 1000000 m and 2 deg azimuth can miss ridges.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S07",
+      "claim": "Missing coarse DEM support remains unknown",
+      "status": "verified",
+      "scope": "Runtime global DEM height/slope/horizon support semantics",
+      "sourceUrls": [
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Replace decoded fixture samples with nodata and verify height/slope null and horizon unavailable; polar inventory keeps int16 -32768 as null.",
+      "tolerance": "Exact unknown states, not a numerical physical tolerance",
+      "observedError": {
+        "inventedFiniteValues": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Does not apply to Python prepared-mask pipeline (S10); no claim that source interpolation holes become measured returns.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S08",
+      "claim": "Observed darkness is censored at stay boundaries and unknown coverage is not darkness",
+      "status": "verified",
+      "scope": "Interval bookkeeping at 1 h sampling; any-limb visibility; implementation-only",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Boundary, interior, entire-window and missing-sample fixtures exercise observedAbsence.",
+      "tolerance": "Exact discrete duration and censor flags",
+      "observedError": {
+        "durationErrorHours": 0,
+        "unknownsConvertedToDarkness": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Real event times remain bracketed by forcing cadence. Censored duration is a lower bound, not a full lunar darkness interval.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S09",
+      "claim": "LCROSS marker agrees with original NASA-hosted impact-location paper",
+      "status": "verified",
+      "scope": "Centaur 2009-10-09T11:31:19.506 UTC; Mean Earth selenocentric degrees east longitude/latitude",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/api/citations/20140005563/downloads/20140005563.pdf"
+      ],
+      "referenceVersion": "Marshall et al. 2012, DOI 10.1007/s11214-011-9765-0; NASA NTRS 20140005563; SHA256 8d1fdffb2db74f67b1801ec4671d557191f35b1025da49da790aab04a79bb660",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Fresh NASA PDF bytes match pinned original SHA256 and byte length; pdftotext confirms published coordinates and impact UTC. Runtime keeps abundance/extent null.",
+      "tolerance": "Exact factual transcription; reported location uncertainty 115 m latitude, 44 m longitude (1 sigma), not pixel resolution",
+      "observedError": {
+        "latitudeDeg": -84.6796,
+        "longitudeEastDeg": -48.7093,
+        "transcriptionDifferenceDeg": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Location paper is not independent remeasurement of water abundance or deposit shape. Ejecta-water detection cannot characterize nearby excavatable resources.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S10",
+      "claim": "A missing terrain sample makes the affected produced horizon unknown",
+      "status": "verified",
+      "scope": "Synthetic missing-on-ray regression of the corrected producer; existing prepared masks are not wholly regenerated or field-validated",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "AST-execute actual producer, preserve finite all-known ray and reject incomplete ray",
+      "tolerance": "Unknown crossing should remain unknown unless a justified conservative occlusion bound is supplied",
+      "observedError": {
+        "method": "AST-selected corrected Python functions; synthetic 64x64 terrain",
+        "knownHorizonDeg": -0.1611439672843969,
+        "missingRayHorizonDeg": null,
+        "unknownRayBecameFinite": false,
+        "expectedUnknown": true,
+        "fixed": true,
+        "limitation": "No original polar DEM nodata prevalence inferred; pipeline is owned by ephemeris lane."
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Pipeline belongs to ephemeris lane. This demonstrates policy failure, not that a specific bundled ray was affected; original DEM nodata prevalence unavailable. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "sources",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md",
+      "correctionReceipt": "integration/pipeline-after.json"
+    },
+    {
+      "id": "S11",
+      "claim": "Registered bundled asset hashes match the current evidence manifest",
+      "status": "verified",
+      "scope": "Cryptographic file identity only; not scientific accuracy",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Recompute current registered SHA256 identities after explicit source regeneration and provenance repair",
+      "tolerance": "Exact SHA256 match required",
+      "observedError": {
+        "registeredChecked": 24,
+        "mismatches": []
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Hash mismatch does not by itself prove numerical corruption. Shared manifest/metadata belong to integrator; no silent rehash. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "sources",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md",
+      "correctionReceipt": "sources/inventory.json"
+    },
+    {
+      "id": "S12",
+      "claim": "Polar DEM effective resolution and physical error are unresolved",
+      "status": "uncertain",
+      "scope": "5/10/40 m native pixel spacing, 80 m base with 160/1280 m overviews; output spacing differs",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Review PGDA height, EFFRES, ERR, slope-error/count metadata and inspect bundled provenance.",
+      "tolerance": "No physical tolerance available",
+      "observedError": {
+        "physicalHeightErrorM": null,
+        "physicalSlopeErrorDeg": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No per-pixel EFFRES/ERR/count maps ingested or compared. PGDA81 mosaic alignment residuals are not a universal height-error guarantee.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S13",
+      "claim": "Cross-dataset lunar orientation registration remains unquantified",
+      "status": "uncertain",
+      "scope": "Polar/global DEM DE421 ME versus catalog DE441/MEAN_ME and M3 GCS_Moon D_Moon_2000",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://psdi.astrogeology.usgs.gov/moon/standards/data_standards/",
+        "https://doi.org/10.5281/zenodo.4646092"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Compare primary metadata with catalog/ice manifests; do not equate a named sphere with a realized orientation frame.",
+      "tolerance": "No justified angular or metre registration tolerance",
+      "observedError": {
+        "rotationErrorDeg": null,
+        "positionErrorM": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No authenticated raw original Horizons headers/epoch-dependent orientation mapping in this lane. M3 archive specifies no DE realization. LCROSS Mean Earth label is not an exact all-dataset transform.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S14",
+      "claim": "Upstream raw data identity is incomplete despite a complete current-byte inventory",
+      "status": "uncertain",
+      "scope": "58 asset SHA256 identities; 24 comparable manifest entries, 23 matching, 1 failing; 24 polar grids / 4541976 samples / 91619 unknown",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81",
+        "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_16.lbl"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Inventory all existing public/data bytes and decode all packed polar grids; compare identities without modifying data.",
+      "tolerance": "Exact current-byte hash/count integrity only",
+      "observedError": {
+        "missingPolarOriginalWholeHashes": true,
+        "upstreamGlobalWholeHashFreshlyRecomputed": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Original polar/horizon source bytes, immutable versions, full response headers and all asset manifest entries are not complete. Hashes prove identity only; physical accuracy is separate.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S15",
+      "claim": "Prepared/coarse horizons are not independently validated physical skylines",
+      "status": "uncertain",
+      "scope": "Named 1 deg horizons 0/2/10 m; nearest custom grid 3 deg at 2 m; global 2 deg rays",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://pgda.gsfc.nasa.gov/products/81"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Read pipeline/runtimes; distinguish nearest terrain sampling, angular interpolation, spatial borrowing, finite radial extent, and discrete terrain from actual disk integration.",
+      "tolerance": "No global terrain occlusion error tolerance supported",
+      "observedError": {
+        "physicalHorizonErrorDeg": null,
+        "illuminationErrorFraction": null
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "No complete original 40/240 m datasets or independent skyline/illumination observations. Numerical display cutouts use bilinear 5/10/40 m products, not the prepared horizon pipeline nearest samples. Narrow obstructions and remote missing terrain can bias exposure.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S16",
+      "claim": "M3 association extraction cannot be freshly reproduced from the author archive in this run",
+      "status": "uncertain",
+      "scope": "169 published PSR representative points, 820 positive M3 detections at ~280 m sampling; no per-point observation epoch",
+      "sourceUrls": [
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://doi.org/10.3847/PSJ/abf3c5",
+        "https://www.jpl.nasa.gov/news/ice-confirmed-at-the-moons-poles/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Inspect extraction/parser and output counts; fetch pinned API URL and alternate official file URL; both return HTTP 403. Existing parser tests verify semantics only.",
+      "tolerance": "Original ZIP/member hashes and byte-for-byte output required for a new provenance pass",
+      "observedError": {
+        "freshArchiveError": [
+          {
+            "name": "lemelin",
+            "url": "https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content",
+            "error": "Error: HTTP 403: https://zenodo.org/api/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip/content"
+          },
+          {
+            "name": "lemelinAlternate",
+            "url": "https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1",
+            "error": "Error: HTTP 403: https://zenodo.org/records/4646092/files/Lemelin_et_al_2021_PSJ_south_pole_volatiles_ROIs_supp.zip?download=1"
+          }
+        ],
+        "newIndependentArchiveMatch": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Existing source-manifest claims remain unrefreshed. PSR representative locations are not individual M3 ice pixels or measured ice outlines; association is not abundance.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S17",
+      "claim": "Exposure/slope ranking and ice markers do not establish safety or recoverable reserves",
+      "status": "uncertain",
+      "scope": "Regional weighted index 0\u2013100 and resource applicability",
+      "sourceUrls": [
+        "https://pgda.gsfc.nasa.gov/products/90",
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://www.jpl.nasa.gov/news/ice-confirmed-at-the-moons-poles/"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Review suitability score inputs, slope ranking preference, explicit limitations and ice evidence types; no mission readiness solver substituted.",
+      "tolerance": "No safety, probability, excavation or concentration tolerance established",
+      "observedError": {
+        "qualifiedLandingFootprintEvidence": false,
+        "excavatableIceEvidence": false
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Mean uniform visible-solar-disk fraction is not electrical power. Contact is geometric Earth-centre clearance plus antenna cutoff, not allocated RF service. Neither PSR nor M3 spectral associations establish deposit depth, grade or excavation feasibility.",
+      "lane": "sources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "S18",
+      "claim": "Runtime ice loader preserves evidence methods and counts rather than inferring resource quantity",
+      "status": "verified",
+      "scope": "Source/schema interpretation and error handling only; no independent physical detections",
+      "sourceUrls": [
+        "https://doi.org/10.5281/zenodo.4646092",
+        "https://ntrs.nasa.gov/api/citations/20140005563/downloads/20140005563.pdf"
+      ],
+      "referenceVersion": "Captured 2026-11-15; see references/responses.json for UTC, ETag, Last-Modified and SHA256",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "assetInventory": "inventory.json",
+        "sourceResponses": "references/responses.json"
+      },
+      "method": "Existing focused parser tests plus audit inspect 169 Point associations and one impact marker, count units, null dates/quantities and source-method constraints.",
+      "tolerance": "Exact schema/count/null semantics; no physical tolerance",
+      "observedError": {
+        "iceBearingPsrPoints": 169,
+        "associatedDetections": 820,
+        "impactWaterMarkers": 1,
+        "surfaceIcePixelFeatures": 0
+      },
+      "reproduce": "npx tsx --test tests/audit-sources.test.ts",
+      "limitations": "Correct parser behavior does not refresh the inaccessible original archive or verify all science interpretations. M3 observationUtc null and LCROSS abundance null remain meaningful.",
+      "lane": "sources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/sources/REPORT.md"
+    },
+    {
+      "id": "E01",
+      "claim": "Fresh requested inputs, response identities and decoded source values agree",
+      "status": "verified",
+      "scope": "23 archived tables, 233 source rows; seven centre epochs; actual committed catalog bytes",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/time.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Explicit UT/JD/KM/AIRLESS requests; verify signature, body IDs, lunar frame/radius, site, columns, exact epochs/count, SHA256; compare source quantities 14/15/20 and 13 to actual decoded inputs. Reject malformed/provider errors.",
+      "tolerance": "Coordinate \u00b10.005001 deg; range 50 m; full solar diameter \u00b10.500001 arcsec; epoch within 1 ms; exact count/identity",
+      "observedError": {
+        "maxSolarCoordinateDeg": 0.0049670000000787695,
+        "maxEarthCoordinateDeg": 0.003857999999999251,
+        "maxEncodedRangeErrorM": 15.520000015385449,
+        "maxSolarDiameterErrorArcsec": 0.29999999999972715
+      },
+      "reproduce": [
+        "npx tsx --test tests/audit-ephemeris.test.ts",
+        "npx tsx scripts/audit-ephemeris.ts (overall expected exit 1)"
+      ],
+      "limitations": "Same provider, not independent observations; original source response provenance remains E09. Synthetic rejection cases do not establish physical accuracy.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E02",
+      "claim": "Decoded Sun/Earth directions satisfy the registered implementation screen",
+      "status": "verified",
+      "scope": "8 sites \u00d7 2 bodies \u00d7 7 covered epochs = 112 site rows, including Rian demo and final endpoint",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Compare production sunAzEl/earthAzEl against direct fresh lunar-site observer quantity 4; great-circle separation plus elevation and elevation-conditioned azimuth gates.",
+      "tolerance": "0.020 deg angular separation and elevation; azimuth 0.020/max(0.001,abs(cos(reference elevation))) deg",
+      "observedError": {
+        "maxSeparationDeg": 0.008222673639733271,
+        "failures": 0
+      },
+      "reproduce": "npx tsx scripts/audit-ephemeris.ts (overall expected exit 1)",
+      "limitations": "Implementation comparison only, not independent astrometry; quantized source/subobserver construction is not an exact apparent observer solver; no terrain validation.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E03",
+      "claim": "Earth local-vector parallax and bounded solar far-field approximation are implemented consistently",
+      "status": "verified",
+      "scope": "Independent Cartesian vectors at polar, equatorial, farside, dateline sites; finite solar distance from fresh Moon-observed Sun range",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/frames.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Construct site/target Cartesian vectors and project onto independently formed ENU axes; compare Earth formulas; compare finite-range solar direction against infinite-distance production formula.",
+      "tolerance": "Earth formula angular error <1e-10 deg; solar omitted site parallax <0.0007 deg",
+      "observedError": "Synthetic Earth vector gates pass; finite Sun parallax <0.0007 deg using actual source range",
+      "reproduce": "npx tsx --test tests/audit-ephemeris.test.ts",
+      "limitations": "Formula verification only; not an independent physical observation. No observer terrain elevation or complete apparent-coordinate corrections added.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E04",
+      "claim": "Rounded source solar semidiameter matches fresh site angular diameter within quantization bounds",
+      "status": "verified",
+      "scope": "56 Sun site samples and seven Moon-centre samples",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Compare catalog solar radius with half quantity-13 full angular diameter; keep Moon-centre source approximation.",
+      "tolerance": "0.000080 deg site semidiameter; 0.000070 deg centre",
+      "observedError": {
+        "maxSiteSemidiameterErrorDeg": 4.388888888889886e-05,
+        "failures": 0
+      },
+      "reproduce": "npx tsx scripts/audit-ephemeris.ts (overall expected exit 1)",
+      "limitations": "No limb darkening or detailed apparent solar figure; range is not separately stored; rounding dominates this check.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E05",
+      "claim": "Earth semidiameter now includes site parallax within the catalog vector model",
+      "status": "verified",
+      "scope": "buildSeries angular radius on reference sphere; subearth, limb, antipode and audit sites",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Red/green regression using independent Cartesian site distance; fix semidiameter from centre range to length of target minus site vector. Baseline lib files archived unchanged for reproduction.",
+      "tolerance": "Synthetic 1e-10 deg; this claim concerns formula implementation, not residual physical accuracy",
+      "observedError": {
+        "baselineFocusedPass": 14,
+        "baselineFocusedFail": 1,
+        "fixedFocusedPass": 15,
+        "fixedFocusedFail": 0,
+        "maxSiteSemidiameterErrorBeforeDeg": 0.004976003567660703,
+        "maxSiteSemidiameterErrorAfterDeg": 0.00016749664733251013
+      },
+      "reproduce": [
+        "bash scripts/audit-ephemeris-baseline.sh",
+        "npx tsx --test tests/audit-ephemeris.test.ts"
+      ],
+      "limitations": "Residual source range failure remains E06/E07. Numerical meaning changes for Earth any-limb/size; integrator owns model identity; no identity edited here.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E06",
+      "claim": "Corrected Moon-observed Earth range passes registered observer-range checks",
+      "status": "verified",
+      "scope": "17521 hourly centre-range input rows validated/encoded; 56 independent site-range checkpoint comparisons at eight sites/seven UTC epochs",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Use explicit Earth target399, Moon centre500@301 apparent quantity20; validate exact epochs and source response identity; apply site parallax",
+      "tolerance": "Pre-registered 5 km = 5000 m; unchanged despite underestimated reversed-light-time effect",
+      "observedError": {
+        "hourlyInputRows": 17521,
+        "maxFloat32EncodingErrorM": 15.620000020135194,
+        "maxOldDirectionDifferenceKm": 81.05440000002272,
+        "maxSiteRangeErrorM": 252.07539019174874,
+        "registeredSiteLimitM": 5000
+      },
+      "reproduce": "npx tsx scripts/audit-ephemeris.ts (expected exit 1)",
+      "limitations": "Earth\u2192Moon and Moon\u2192Earth apparent observer distances are not reciprocal simultaneous geometric ranges. Requires coordinated catalog/input regeneration and downstream owner review; read-only data unchanged. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "ephemeris",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md",
+      "correctionReceipt": "integration/ephemeris-after-input-repair.json"
+    },
+    {
+      "id": "E07",
+      "claim": "Earth site semidiameter passes the unchanged direct observer-table limit",
+      "status": "verified",
+      "scope": "56 Earth checkpoints; approximate apparent-vector model, not all possible sites/times",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Apply site distance to the corrected lunar-observed centre range and compare to independently requested JPL full angular diameter",
+      "tolerance": "0.000100 deg = 0.36 arcsec; never widened",
+      "observedError": {
+        "samples": 56,
+        "maxSemidiameterErrorDeg": 6.309642921475955e-07,
+        "registeredLimitDeg": 0.0001
+      },
+      "reproduce": "npm run verify:horizons (expected exit 1)",
+      "limitations": "Parallax correction alone cannot repair reverse apparent-range input. Approximate Earth equatorial disk is not a qualified full Earth limb/station model. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "ephemeris",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md",
+      "correctionReceipt": "integration/ephemeris-after-input-repair.json"
+    },
+    {
+      "id": "E08",
+      "claim": "Finite-disk semantics and four actual hourly setting brackets are reproduced",
+      "status": "verified",
+      "scope": "Sun centre/upper limb at equator; Earth centre/upper limb near north pole; June 2027; flat zero-degree reference horizon",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Production hourly sign-change brackets compared to fresh observer quantity-4 plus half quantity-13 at 300 s spacing; synthetic summary tests distinguish any-limb sunlight, Earth-centre contact and any Earth limb.",
+      "tolerance": "Model bracket exactly 3600 s; fresh 300 s crossing bracket contained; no claimed sub-hour physical error bound",
+      "observedError": {
+        "events": 4,
+        "containedFreshBrackets": 4,
+        "eventIdentities": "events.json"
+      },
+      "reproduce": [
+        "npx tsx scripts/audit-ephemeris-events.ts",
+        "npx tsx --test tests/audit-ephemeris.test.ts"
+      ],
+      "limitations": "Only four same-JPL smooth-horizon events; no general terrain event guarantee, missed multiple crossings/tangencies remain possible; a visible Earth limb is not a communications pass.",
+      "lane": "ephemeris",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E09",
+      "claim": "Original catalog time, raw-source and cache provenance is fully established",
+      "status": "uncertain",
+      "scope": "Original generatedUtc 2026-11-13T20:08:39Z; Python source and /tmp/lunar-src cache design; covered future UTC epochs",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/time.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Inspect Python requests/parser/cache; compare current source inputs; inspect archived fresh UT headers.",
+      "tolerance": "No invented provenance tolerance",
+      "observedError": "Fresh numerical values match rounding, but original raw headers/request digests are absent; Python import unavailable: ModuleNotFoundError tifffile",
+      "reproduce": "Read pipeline/build_dataset.py; inspect raw/*.json and comparison.json",
+      "limitations": "Original defaults are not original captured evidence; Python cache only checks length; UTC leap-second labels cannot be represented by JS and future UTC corrections are unknown. Python regeneration/check not executed and not counted as pass.",
+      "lane": "ephemeris",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E10",
+      "claim": "Celestial/terrain frame and real site height registration is qualified",
+      "status": "uncertain",
+      "scope": "Reference sphere directions vs actual LOLA/landing coordinates, heights and horizons",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/frames.html",
+        "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_de440_250416.tf"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Inspect current primary lunar frame definition and archived lunar headers; do not assume PA/IAU_MOON/ME equivalence.",
+      "tolerance": "No propagated frame/height/terrain error bound supplied",
+      "observedError": "Current source describes DE440-PA rotation toward DE421-ME; actual combined terrain/height propagation not measured",
+      "reproduce": "Read primary references and REPORT.md frame scope",
+      "limitations": "No terrain transform, physical site-altitude correction, fine horizon evidence or source-to-DEM alignment test in this lane. Nominal metadata/frame names alone cannot qualify lunar landing use.",
+      "lane": "ephemeris",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E11",
+      "claim": "Passing this audit establishes mission-critical real-world sky/contact accuracy",
+      "status": "uncertain",
+      "scope": "All numerical checks in this lane",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/frames.html",
+        "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/time.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Identify evidence independence and uncovered effects rather than treating unit tests/provider agreement as observation.",
+      "tolerance": "No operational tolerance or engineering safety margin established",
+      "observedError": "No independent observed lunar sky measurements or qualified mission acceptance dataset supplied",
+      "reproduce": "Inspect results.json and REPORT.md missing-evidence sections",
+      "limitations": "Same JPL underlying ephemeris is an implementation cross-check, not independent observation. No qualified horizon, thermal, link/station-service, navigation or mission certification.",
+      "lane": "ephemeris",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "E12",
+      "claim": "Sun range is represented and validated as a separate catalog distance series",
+      "status": "uncertain",
+      "scope": "Actual catalog schema has angular diameter but no solar range series",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+      ],
+      "referenceVersion": "Horizons target/centre DE441; API response signature 1.2; documentation API 1.3 (2025 June); EOP eop.261113.p270209 (data to 2026-11-13; predicts to 2027-02-08); fresh 2026-11-15",
+      "inputIdentity": {
+        "baseline": "96079ae",
+        "catalogSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+        "epochsUtc": [
+          "2026-01-01T00:00:00Z",
+          "2026-11-14T00:00:00Z",
+          "2027-06-29T11:00:00Z",
+          "2027-07-20T10:00:00Z",
+          "2027-07-20T11:00:00Z",
+          "2027-12-31T23:00:00Z",
+          "2028-01-01T00:00:00Z"
+        ],
+        "sourceResponseIdentities": "comparison.json identities plus events.json referenceIdentity; exact request/body SHA256 in raw/*.json",
+        "sites": "eight reference-sphere coordinates in scripts/audit-ephemeris-support.ts; altitude 0 m; east-positive degrees",
+        "frame": "Horizons lunar MOON_ME/MEAN_ME, DE441; spherical reference radius 1737400 m; local N/E/up; airless apparent AZ clockwise from north",
+        "units": "angles degrees (radians = degrees*pi/180); source/decoded range km (SI metres = km*1000); times UTC POSIX milliseconds; event durations seconds"
+      },
+      "method": "Inspect decoded schema and compare fresh direct Sun range only for parallax diagnostics.",
+      "tolerance": "No catalog Sun-range tolerance: quantity not stored",
+      "observedError": "Fresh reference ranges archived; distance inferred from rounded diameter would amplify angular quantization, not create precise range evidence",
+      "reproduce": "Read lib/catalog.ts and raw/sun-from-moon.json",
+      "limitations": "No stored solar range; do not treat a nominal/display distance or inversion of rounded diameter as measured SI distance.",
+      "lane": "ephemeris",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/ephemeris/REPORT.md"
+    },
+    {
+      "id": "resources-01",
+      "claim": "Constant-power storage conserves bus energy, applies efficiencies once, and reports reserve/unserved demand onset.",
+      "status": "verified",
+      "scope": "Implementation of specified piecewise-constant model only; W, Wh, h (1 Wh=3600 J); analytic epochs independent; no coordinate frame.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "NASA Power live page archived 2026-11-15 for subsystem scope; closed-form dimensional/conservation references audit-resources-reference-1.",
+      "inputIdentity": "reference.json energy cases; input-identities.json lib/mission.ts SHA-256 at baseline 96079ae.",
+      "method": "Five independently specified closed-form cases, per-segment bus conservation, plus two-second and lossy round-trip tests.",
+      "tolerance": "1e-9 Wh/h, model event offsets 1e-12 h; floating point acceptance only.",
+      "observedError": {
+        "comparisons": [
+          {
+            "id": "dark-depletion/generatedWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/finalBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/minBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/unmetWh",
+            "actual": 88,
+            "expected": 88,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "dark-depletion/reserveHours",
+            "actual": 1.85,
+            "expected": 1.85,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/reserve-crossing",
+            "actual": 1.65,
+            "expected": 1.65,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/unserved-load",
+            "actual": 2.4,
+            "expected": 2.4,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "dark-depletion/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/generatedWh",
+            "actual": 300,
+            "expected": 300,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/finalBatteryWh",
+            "actual": 70,
+            "expected": 70,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/minBatteryWh",
+            "actual": 10,
+            "expected": 10,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/curtailedWh",
+            "actual": 195,
+            "expected": 195,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "charge-bus-cap/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/generatedWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/finalBatteryWh",
+            "actual": 240,
+            "expected": 240,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/minBatteryWh",
+            "actual": 240,
+            "expected": 240,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/unmetWh",
+            "actual": 105,
+            "expected": 105,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "discharge-bus-cap/unserved-load",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-12,
+            "unit": "h"
+          },
+          {
+            "id": "discharge-bus-cap/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/generatedWh",
+            "actual": 600,
+            "expected": 600,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/finalBatteryWh",
+            "actual": 100,
+            "expected": 100,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/minBatteryWh",
+            "actual": 25,
+            "expected": 25,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/curtailedWh",
+            "actual": 400,
+            "expected": 400,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "capacity-saturation/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/generatedWh",
+            "actual": 200,
+            "expected": 200,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/finalBatteryWh",
+            "actual": 100,
+            "expected": 100,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/minBatteryWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/reserveHours",
+            "actual": 2,
+            "expected": 2,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "h"
+          },
+          {
+            "id": "reserve-recovery/unmetWh",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          },
+          {
+            "id": "reserve-recovery/bus-energy-balance",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 1e-09,
+            "unit": "Wh"
+          }
+        ],
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Synthetic closed-form inputs verify implementation, not physical battery performance. Reserve is a warning threshold, not load shedding.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-02",
+      "claim": "Fixed-array cosine incidence and uniform local disk fraction match independent vector/area integration.",
+      "status": "verified",
+      "scope": "Local ENU east/north/up, azimuth clockwise from north, tilt from upward normal; degrees, W, W/m\u00b2, m\u00b2; stationary analytic forcing.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "NASA Power archived 2026-11-15 for technology context; independent ENU and midpoint disk quadrature, 100000 chords.",
+      "inputIdentity": "reference.json solar cases; input-identities.json baseline mission SHA-256.",
+      "method": "Unit-vector dot products and numerical chord quadrature differ from implementation trigonometric expansion and circular-segment formula. Half disk yields half irradiance for a whole interval.",
+      "tolerance": "0.001 W fixed before comparison to allow quadrature discretization.",
+      "observedError": {
+        "count": 8,
+        "before": [
+          {
+            "id": "solar-0/power",
+            "actual": 254.99999999999997,
+            "expected": 255.0000025006029,
+            "error": 2.5006029318319634e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-1/power",
+            "actual": 441.6729559300637,
+            "expected": 441.67296026123506,
+            "error": 4.3311713397997664e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-2/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-3/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-4/power",
+            "actual": 364.71015535551163,
+            "expected": 364.7101568008156,
+            "error": 1.4453039511863608e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-5/power",
+            "actual": 226.66914749802754,
+            "expected": 226.66914828390034,
+            "error": 7.858727997245296e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-6/power",
+            "actual": 88.62813964054347,
+            "expected": 88.62813991821616,
+            "error": 2.7767269727974053e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-7/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          }
+        ],
+        "after": [
+          {
+            "id": "solar-0/power",
+            "actual": 254.99999999999997,
+            "expected": 255.0000025006029,
+            "error": 2.5006029318319634e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-1/power",
+            "actual": 441.6729559300637,
+            "expected": 441.67296026123506,
+            "error": 4.3311713397997664e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-2/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-3/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-4/power",
+            "actual": 364.71015535551163,
+            "expected": 364.7101568008156,
+            "error": 1.4453039511863608e-06,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-5/power",
+            "actual": 226.66914749802754,
+            "expected": 226.66914828390034,
+            "error": 7.858727997245296e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-6/power",
+            "actual": 88.62813964054347,
+            "expected": 88.62813991821616,
+            "error": 2.7767269727974053e-07,
+            "tolerance": 0.001,
+            "unit": "W"
+          },
+          {
+            "id": "solar-7/power",
+            "actual": 0,
+            "expected": 0,
+            "error": 0,
+            "tolerance": 0.001,
+            "unit": "W"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Uniform brightness/straight horizon cut/centre incidence only; no full solar-disk terrain convolution, limb darkening or tracking hardware dynamics.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-03",
+      "claim": "One-way free-space RF budget uses consistent SI, dBW, dBi, power dB and Eb/N0 conventions.",
+      "status": "verified",
+      "scope": "GHz\u2192Hz, km\u2192m, W, K, bit/s; received dBW and Eb/N0/margin dB. Far-field vacuum scalar link, epoch/frame independent.",
+      "sourceUrls": [
+        "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.525-5-202411-I!!PDF-E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "ITU-R P.525-5 (11/2024), \u00a72.3; JPL 810-005 101I (2025-10-09) interface context.",
+      "inputIdentity": "reference.json three RF inputs; exact c=299792458 m/s and k=1.380649e-23 J/K.",
+      "method": "Python linear EIRP flux density \u00d7 receive effective aperture; energy per bit divided by kT; logarithms only at comparison outputs. Doubling invariants test SI/dB factors.",
+      "tolerance": "1e-10 dB roundoff tolerance; not an engineering margin.",
+      "observedError": {
+        "count": 12,
+        "before": [
+          {
+            "id": "rf-0/pathLossDb",
+            "actual": 211.37800752216538,
+            "expected": 211.37800752216538,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/receivedDbw",
+            "actual": -136.36770756552556,
+            "expected": -136.36770756552556,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-0/ebN0Db",
+            "actual": 32.2314596076921,
+            "expected": 32.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/marginDb",
+            "actual": 27.231459607692102,
+            "expected": 27.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/pathLossDb",
+            "actual": 222.97456876968025,
+            "expected": 222.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/receivedDbw",
+            "actual": -103.97456876968025,
+            "expected": -103.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-1/ebN0Db",
+            "actual": 74.62459840353742,
+            "expected": 74.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/marginDb",
+            "actual": 69.62459840353742,
+            "expected": 69.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/pathLossDb",
+            "actual": 233.67683280362724,
+            "expected": 233.67683280362724,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/receivedDbw",
+            "actual": -123.68713276026705,
+            "expected": -123.68713276026705,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-2/ebN0Db",
+            "actual": 23.151121822393804,
+            "expected": 23.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/marginDb",
+            "actual": 20.151121822393804,
+            "expected": 20.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          }
+        ],
+        "after": [
+          {
+            "id": "rf-0/pathLossDb",
+            "actual": 211.37800752216538,
+            "expected": 211.37800752216538,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/receivedDbw",
+            "actual": -136.36770756552556,
+            "expected": -136.36770756552556,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-0/ebN0Db",
+            "actual": 32.2314596076921,
+            "expected": 32.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-0/marginDb",
+            "actual": 27.231459607692102,
+            "expected": 27.231459607692095,
+            "error": 7.105427357601002e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/pathLossDb",
+            "actual": 222.97456876968025,
+            "expected": 222.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/receivedDbw",
+            "actual": -103.97456876968025,
+            "expected": -103.97456876968025,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-1/ebN0Db",
+            "actual": 74.62459840353742,
+            "expected": 74.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-1/marginDb",
+            "actual": 69.62459840353742,
+            "expected": 69.62459840353742,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/pathLossDb",
+            "actual": 233.67683280362724,
+            "expected": 233.67683280362724,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/receivedDbw",
+            "actual": -123.68713276026705,
+            "expected": -123.68713276026705,
+            "error": 0,
+            "tolerance": 1e-10,
+            "unit": "dBW"
+          },
+          {
+            "id": "rf-2/ebN0Db",
+            "actual": 23.151121822393804,
+            "expected": 23.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          },
+          {
+            "id": "rf-2/marginDb",
+            "actual": 20.151121822393804,
+            "expected": 20.1511218223938,
+            "error": 3.552713678800501e-15,
+            "tolerance": 1e-10,
+            "unit": "dB"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Synthetic gain/noise/pointing/loss/coding/rate values are not qualified vehicle or DSN hardware. No measured radio link tested.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-04",
+      "claim": "All three representative ground-antenna coordinates match JPL published Cartesian data at source epoch.",
+      "status": "verified",
+      "scope": "DSS-14 Goldstone, DSS-63 Madrid, DSS-43 Canberra; ITRF93 epoch 2003.0; Earth-fixed XYZ m; WGS84 ellipsoid geodetic heights, east longitude.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301O.pdf"
+      ],
+      "referenceVersion": "301P issued 2026-05-22 Tables 2/3/5/6, 301O issued 2024-07-01; selected Table 5 values unchanged.",
+      "inputIdentity": "reference.json stationsM transcribed Table 2; source manifest full PDF SHA-256 identities.",
+      "method": "Convert code geodetic coordinates to ECEF and compare nine components with directly published Cartesian columns, not radii alone.",
+      "tolerance": "0.002 m: rounding of published DMS/Cartesian tables, not location accuracy.",
+      "observedError": {
+        "maximumComponentErrorM": 0.001145985908806324,
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Reference-epoch implementation comparison only; no propagation or EOP fit, current antenna status or support availability certified.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-05",
+      "claim": "Fresh station Horizons results agree with separately computed retained CSPICE station reference.",
+      "status": "verified",
+      "scope": "75 samples: three stations, hourly inclusive 2026-11-14T00:00:00Z..2026-11-15T00:00:00Z; Moon 301 / Earth coord@399; ITRF93 airless apparent AZ/EL degrees, range km.",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/horizons/manual.html",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf"
+      ],
+      "referenceVersion": "Fresh API 1.2 DE441; EOP eop.261113.p270209 (predicted at these epochs); retained CSPICE/spiceypy8.4.0 DE440s LT+S.",
+      "inputIdentity": "sources/*-fresh-horizons.json and manifest URLs/hashes; baseline public/data/engineering-evidence/spice-reference.json hash pinned in input-identities.json; its four kernel hashes retained.",
+      "method": "Parse fresh provider bytes at 25 hourly epochs/station, wrapped azimuth differences and direct elevation/range differences against retained CSPICE ENU results.",
+      "tolerance": "0.002 deg AZ/EL, 0.1 km range; original cross-kernel implementation check thresholds; neither temporal nor physical truth bounds.",
+      "observedError": {
+        "azimuth": 0.0002686886904257335,
+        "elevation": 7.336623912124196e-05,
+        "range": 0.00324417429510504
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Different calculations of JPL ephemeris are not independent observations. No fresh CSPICE/kernel run. EOP is predicted; station velocities are not applied. No operational acquisition guarantee.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-06",
+      "claim": "Plane-parallel slant attenuation and atmospheric emission noise reproduce JPL published example.",
+      "status": "verified",
+      "scope": "DSS-34 Canberra climatological 90% year-average Ka32GHz, elevation20deg, Azen0.384dB, TM277.5K; approximate mapping valid here10..90deg.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf"
+      ],
+      "referenceVersion": "JPL 810-005 105E issued 2015-10-22 \u00a72.1.2\u20132.1.5 pp12\u201315.",
+      "inputIdentity": "reference.json atmospheric; sources/105E.pdf manifest SHA-256.",
+      "method": "Compare helper results against printed JPL 1.123dB and 63.214K, retaining intermediate-rounding discrepancy.",
+      "tolerance": "0.0005dB and0.06K allow printed/intermediate rounding only.",
+      "observedError": {
+        "count": 2,
+        "before": [
+          {
+            "id": "jpl-105E/slant",
+            "actual": 1.1227408896626256,
+            "expected": 1.123,
+            "error": 0.0002591103373743575,
+            "tolerance": 0.0005,
+            "unit": "dB"
+          },
+          {
+            "id": "jpl-105E/noise",
+            "actual": 63.216417510475054,
+            "expected": 63.214,
+            "error": 0.002417510475055451,
+            "tolerance": 0.06,
+            "unit": "K"
+          }
+        ],
+        "after": [
+          {
+            "id": "jpl-105E/slant",
+            "actual": 1.1227408896626256,
+            "expected": 1.123,
+            "error": 0.0002591103373743575,
+            "tolerance": 0.0005,
+            "unit": "dB"
+          },
+          {
+            "id": "jpl-105E/noise",
+            "actual": 63.216417510475054,
+            "expected": 63.214,
+            "error": 0.002417510475055451,
+            "tolerance": 0.06,
+            "unit": "K"
+          }
+        ],
+        "productionChanged": false
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Published arithmetic example, not actual mission weather or full system noise; applies to DSS-34 rather than representative DSS-43 hardware.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-07",
+      "claim": "Missing forcing and missing communication evidence remain unknown, with exact allocation-time integration and explicit inference boundaries.",
+      "status": "verified",
+      "scope": "Implementation/status behavior only; UTC half-open spans, h for resources, bit/s \u00d7 s for data; no new physical claim.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf"
+      ],
+      "referenceVersion": "Baseline96079ae communications envelope and canonical planning-4 behavior.",
+      "inputIdentity": "tests/audit-resources.test.ts and unchanged existing mission/evidence/weather suites; source identities pinned.",
+      "method": "Exercise unknown solar/contact gaps, missing horizon/hardware/weather/allocation, partial windows, wrong band/frequency, future issue times and current-weather lookup boundaries; verify no operational approval.",
+      "tolerance": "Exact null/status and integer-bit/second equality; numerical energy tolerances separately registered.",
+      "observedError": {
+        "focusedTests": 380,
+        "failed": 0,
+        "skipped": 0,
+        "cancelled": 0,
+        "beforeEqualsAfter": true
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Contract and boundary verification does not validate supplied evidence authenticity, actual contact capacity or all possible malformed numeric inputs.",
+      "lane": "resources",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-08",
+      "claim": "Date-specific irradiance and real photovoltaic generation remain unqualified.",
+      "status": "uncertain",
+      "scope": "W/m\u00b2, W, m\u00b2; selected mission epochs; local ENU incidence.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Fixed default1361W/m\u00b2 with no Sun-distance/temperature/dust/IV/MPPT qualification.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Defaults and synthetic cases cannot certify vehicle output; two-dimensional terrain-disk integration absent.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-09",
+      "claim": "Battery capacity, efficiencies, load profile and reserve policy lack qualified hardware/environment evidence.",
+      "status": "uncertain",
+      "scope": "Wh,W,h; cold lunar operating environment and vehicle requirements.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "No supplied thermal/age/rate-qualified battery test or complete load/heater specification.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Self-discharge, temperature-dependent capacity, lifecycle degradation and qualified reserve policy are missing.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-10",
+      "claim": "Reference-epoch station positions and predicted EOP do not establish dated precision station pointing.",
+      "status": "uncertain",
+      "scope": "ITRF93 epoch2003.0; requests2026-11-14..15 UTC, EOP prediction after2026-11-13.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://ssd.jpl.nasa.gov/horizons/manual.html"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Table3 site velocities are not propagated; current station transform/UTC-UT1/EOP uncertainty is not quantified.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "About23.87yr velocity displacement scale0.466/0.728/1.235m is not an applied transform; JavaScript POSIX time omits leap seconds.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-11",
+      "claim": "Earth-centre lunar visibility and positive RF margin do not prove selected-station support.",
+      "status": "uncertain",
+      "scope": "Lunar terrain-centre ray versus terrestrial station ray; bit/s,s and UTC support windows.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Separate lunar ray/mask, station cutoff, actual radio/noise/coding and dated allocation evidence are required; proxy is a user assumption.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "No actual booking or vehicle specs supplied. Conditional-meets and synthetic allocation never mean operational approval.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-12",
+      "claim": "Weather context does not determine frequency-dependent slant attenuation or total receiving-system noise.",
+      "status": "uncertain",
+      "scope": "Open-Meteo mm/hourly accumulation,cloud%,wind km/h versus RF dB/K; band/frequency/polarization/path dependent.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+        "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.838-3-200503-I!!PDF-E.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "No dated band-specific weather path or full receiver/atmosphere/cosmic/lunar noise qualification. ITU rain model is not implemented.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "No forecast is inferred from current weather or climatology. Missing path length, rain distribution, gas/cloud terms and equipment noise prevent a physical pass.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-13",
+      "claim": "Hourly forcing and boundary-censored runs lack a qualified continuous-time visibility or event guarantee.",
+      "status": "uncertain",
+      "scope": "Half-open UTC stay; sample-held h and model event-offset h; lunar local and station horizons.",
+      "sourceUrls": [
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://ssd.jpl.nasa.gov/horizons/manual.html"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Load/deployment split points add no physical samples; whole-disk station clearance is spatial, not a temporal lower bound.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "Unknown samples remain unknown; runs meeting stay boundaries can extend outside the window. Event bracketing is not a measured timing uncertainty.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "resources-14",
+      "claim": "Finite declared-case stability is not a probability, continuous bound or qualified uncertainty result.",
+      "status": "uncertain",
+      "scope": "At most27 lower/nominal/upper cases across3 fields; canonical scenario requirements and operations held fixed.",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+        "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf"
+      ],
+      "referenceVersion": "Primary versions listed in REPORT.md; missing qualified evidence has no assigned physical accuracy version.",
+      "inputIdentity": "Baseline96079ae unchanged files; source/manifest and input-identities.json; no qualified vehicle or station schedule input supplied.",
+      "method": "Read lib/engineering-evidence/uncertainty.ts and run focused finite-case tests; canonical evaluateScenario remains authoritative.",
+      "tolerance": "No defensible physical tolerance established. Analytic test tolerances must not be reused.",
+      "observedError": {
+        "physicalErrorBound": null,
+        "before": null,
+        "after": null,
+        "reason": "Missing qualified evidence; not measured or certified."
+      },
+      "reproduce": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "limitations": "No correlated distributions, terrain/EOP/frame/error propagation, hardware calibration or continuous enclosure; allCasesHaveBattery does not certify the mission.",
+      "lane": "resources",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/resources/REPORT.md"
+    },
+    {
+      "id": "D01",
+      "claim": "Reference GM, sphere radius, sidereal spin and Isp conversion constants match primary tables",
+      "status": "verified",
+      "scope": "Constant transcription and SI conversions only",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.constants; Moon nominal mean sphere, synthetic t=0",
+      "method": "Read frozen primary tables; km^3/s^2 to m^3/s^2 multiplies by 1e9; 655.720 h to spin uses 3600 s/h.",
+      "tolerance": "Exact displayed constants; no claimed physical error bound.",
+      "observedError": {
+        "muM3s2": 4902800118000,
+        "referenceRadiusM": 1737400,
+        "g0Mps2": 9.80665,
+        "centralSurfaceGravityMps2": 1.6242188765608128,
+        "rigidProxyGravityMps2": 1.62
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "GM reference is DE440; constant mean radius/spin are approximations to an irregular rotating Moon. No date-specific gravity field or orientation validation.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D02",
+      "claim": "Both solvers reproduce force/mass acceleration and the short-time hover limit",
+      "status": "verified",
+      "scope": "Implementation limit at t=0..0.001 s, nonrotating E/up/N, SI",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.propulsion[*].input",
+      "method": "Subtract unpowered from powered velocity; compare delta-v/delta-t to F/m. Set initial F=mu*m/r^2 for hover.",
+      "tolerance": "Acceleration 2e-6 m/s^2; hover residual 1e-8 m/s. Finite-difference O(dt) includes decreasing mass.",
+      "observedError": [
+        {
+          "configured": false,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 1000,
+            "dryMassKg": 500,
+            "thrustN": 3000,
+            "ispSeconds": 300,
+            "burnSeconds": 1,
+            "durationSeconds": 0.001
+          },
+          "forceMassAccelerationErrorMps2": 1.5295761497391425e-06,
+          "massErrorKg": 0,
+          "hoverVerticalMps": 3.5842784784634316e-10
+        },
+        {
+          "configured": true,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 1000,
+            "dryMassKg": 500,
+            "thrustN": 3000,
+            "ispSeconds": 300,
+            "burnSeconds": 1,
+            "durationSeconds": 0.001,
+            "landing": {
+              "guidance": "manual",
+              "targetRadiusM": 20,
+              "maxVerticalMps": 2,
+              "maxHorizontalMps": 1,
+              "maxTiltDeg": 15,
+              "breakupEnergyJ": 100000,
+              "friction": 0.8,
+              "restitution": 0.1,
+              "contactPreviewSeconds": 12
+            }
+          },
+          "forceMassAccelerationErrorMps2": 1.5295761497391425e-06,
+          "massErrorKg": 0,
+          "hoverVerticalMps": 3.5842784784634316e-10
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Short-time formula verification; thrust=m_initial*g does not sustain hover while mass falls.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D03",
+      "claim": "Mass flow, fractional burn cutoff, dry-mass stop and ideal rocket delta-v use standard g0",
+      "status": "verified",
+      "scope": "Propulsion arithmetic, not actual net trajectory delta-v",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/specific-impulse/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts: .37 s burn, 1000 kg wet, 300 s Isp, 10000 N; dry 500/999.9 kg",
+      "method": "Use frozen standard g0=9.80665, independent propellant F*t/(Isp*g0) and logarithmic impulse integral; verify coast stops consuming mass.",
+      "tolerance": "Mass 1e-9 kg; ideal delta-v 1e-8 m/s.",
+      "observedError": {
+        "newTests": "Both configured and legacy fractional/depletion assertions pass",
+        "massErrorKg": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No measured engine Isp, throttling, ignition or performance curve. Ideal delta-v excludes gravity/steering losses; using lunar gravity in Isp would be wrong.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D04",
+      "claim": "Both solvers reproduce analytic circular two-body motion and invariants",
+      "status": "verified",
+      "scope": "Point-mass spherical Moon; nonrotating site axes; 100 km circular orbit, 600 elapsed seconds",
+      "sourceUrls": [
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.circular[*].input",
+      "method": "Compare position to r[sin(nt),cos(nt),0] and energy/angular momentum to exact circular values, independently of RK4.",
+      "tolerance": "Position 1e-5 m; specific energy 1e-5 J/kg; specific angular momentum .01 m^2/s.",
+      "observedError": [
+        {
+          "configured": false,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 1633.5041340503267,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 600
+          },
+          "positionErrorM": 6.61024692473175e-10,
+          "energyErrorJPerKg": 1.862645149230957e-09,
+          "angularMomentumErrorM2PerS": 1.9073486328125e-06
+        },
+        {
+          "configured": true,
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 100000,
+            "horizontalMps": 1633.5041340503267,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 600
+          },
+          "positionErrorM": 1.1109951802522048e-07,
+          "energyErrorJPerKg": -2.3283064365386963e-10,
+          "angularMomentumErrorM2PerS": 0
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No harmonics, third bodies, mascons, tides or actual orbital tracking data; this validates the chosen two-body ODE only.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D05",
+      "claim": "Configured radial contact agrees with closed-form vacuum fall time and energy",
+      "status": "verified",
+      "scope": "100 m drop from rest onto synthetic y=0; nonrotating E/up/N",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.radial.configured.input",
+      "method": "Use exact central-force radial time integral and v^2=2mu(1/R-1/r0); compare refined first crossing and kinetic energy.",
+      "tolerance": "Time 1e-6 s; speed 1e-7 m/s; height 1e-7 m; energy .01 J. Conservative roundoff budget for subtracting lunar-scale radii.",
+      "observedError": {
+        "expectedTimeS": 11.097203526181376,
+        "expectedSpeedMps": 18.022904296123084,
+        "timeErrorS": -1.3507417406799505e-11,
+        "speedErrorMps": -1.830713358685898e-11,
+        "heightResidualM": 2.3283064365386963e-10,
+        "energyErrorJ": -1.5508849173784256e-06
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Synthetic smooth surface only. Probes can miss narrow features; terrain accuracy is not established.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D06",
+      "claim": "Configured constant-spin terms reproduce an analytically rotated inertial circular orbit",
+      "status": "verified",
+      "scope": "Equatorial Moon-fixed E/up/N, left handed; 120 s; no UTC epoch",
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ssd.jpl.nasa.gov/astro_par.html"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.rotating.input/environment",
+      "method": "Start with v_rot=(sqrt(mu/r^3)-omega)r; transform exact orbit to rotating axes at angle (n-omega)t. Existing tests also check polar Coriolis signs.",
+      "tolerance": "Position 1e-5 m.",
+      "observedError": {
+        "input": {
+          "mode": "ascent",
+          "altitudeM": 100000,
+          "horizontalMps": 1628.6135283533608,
+          "verticalMps": 0,
+          "headingDeg": 90,
+          "pitchDeg": 90,
+          "finalPitchDeg": 35,
+          "wetMassKg": 4700,
+          "dryMassKg": 2200,
+          "thrustN": 0,
+          "ispSeconds": 311,
+          "burnSeconds": 0,
+          "durationSeconds": 120,
+          "landing": {
+            "guidance": "manual",
+            "targetRadiusM": 20,
+            "maxVerticalMps": 2,
+            "maxHorizontalMps": 1,
+            "maxTiltDeg": 15,
+            "breakupEnergyJ": 100000,
+            "friction": 0.8,
+            "restitution": 0.1,
+            "contactPreviewSeconds": 12
+          }
+        },
+        "environment": {
+          "latitudeDeg": 0,
+          "rotationRateRadS": 2.661698975163682e-06
+        },
+        "positionErrorM": 3.027381567049939e-09
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Uniform fixed-axis spin only. No validated lunar orientation kernel, libration or site registration to a dated ME/PA frame.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D07",
+      "claim": "Target distance reports a reference-sphere arc in metres",
+      "status": "verified",
+      "scope": "Reference sphere R=1740400 m, radial height -125 m, angular displacement .04 rad",
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.targetArc.input",
+      "method": "Construct position from known spherical angle; compare API target distance to R*angle rather than flat distance or chord.",
+      "tolerance": "Absolute 1e-8 m.",
+      "observedError": {
+        "input": {
+          "eastM": 69592.43855164477,
+          "northM": 0,
+          "yM": -1517.0343805665616,
+          "radiusM": 1740400
+        },
+        "arcErrorM": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Not a terrain geodesic or traversable route. Local east/north components are Cartesian offsets, not surface arc coordinates.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D08",
+      "claim": "Nonfinite terrain cannot poison or suppress legacy reference contact after the fix",
+      "status": "verified",
+      "scope": "Finite/unknown height handling in the legacy solver; configured semantics retained",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.nonfinite; baseline 96079ae vs owned fix",
+      "method": "Reproduce NaN/+Infinity/-Infinity callback heights; compare fixed output with a null callback and inspect all contact numbers.",
+      "tolerance": "All contact numeric fields finite; unknown terrain uses reference contact exactly.",
+      "observedError": {
+        "before": [
+          {
+            "height": "NaN",
+            "status": "coasting",
+            "hasContact": false,
+            "finiteContact": false,
+            "timeS": null
+          },
+          {
+            "height": "Infinity",
+            "status": "terrain contact",
+            "hasContact": true,
+            "finiteContact": false,
+            "timeS": null
+          },
+          {
+            "height": "-Infinity",
+            "status": "coasting",
+            "hasContact": false,
+            "finiteContact": false,
+            "timeS": null
+          }
+        ],
+        "after": [
+          {
+            "height": "NaN",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          },
+          {
+            "height": "Infinity",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          },
+          {
+            "height": "-Infinity",
+            "status": "reference contact",
+            "hasContact": true,
+            "finiteContact": true,
+            "timeS": 0.6473710997078774
+          }
+        ]
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "A reference contact remains unresolved physical terrain. This correction creates no new terrain evidence.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D09",
+      "claim": "Both solvers reject a state initially below known terrain after the fix",
+      "status": "verified",
+      "scope": "Initial local numerical surface consistency only",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.penetratingStart; y=10 m with terrain y=20 m",
+      "method": "Invoke both actual solvers at a penetrated initial point; require a RangeError instead of an accepted negative-clearance time-zero impact.",
+      "tolerance": "Initial nonpenetration guard 1e-6 m, matching configured solver numeric tolerance.",
+      "observedError": {
+        "before": {
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 10,
+            "horizontalMps": 0,
+            "verticalMps": -1,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 5
+          },
+          "rejected": false,
+          "contact": {
+            "timeS": 0,
+            "eastM": 0,
+            "northM": 0,
+            "yM": 10,
+            "velocityMps": [
+              0,
+              -1,
+              0
+            ],
+            "massKg": 4700,
+            "terrainHeightM": 20,
+            "terrainKnown": true,
+            "slopeDeg": 0,
+            "tiltDeg": 0,
+            "headingDeg": 90,
+            "targetErrorM": 0
+          }
+        },
+        "after": {
+          "input": {
+            "mode": "ascent",
+            "altitudeM": 10,
+            "horizontalMps": 0,
+            "verticalMps": -1,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 35,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 5
+          },
+          "rejected": true,
+          "error": "Flight starts below the numerical surface"
+        }
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Does not validate the actual lander footprint or collider support. A point state is not a finite-size vehicle.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D10",
+      "claim": "Legacy surface-event solve passes the exact central-force radial fall benchmark",
+      "status": "verified",
+      "scope": "Synthetic100m radial drop, 4700kg, spherical or flat reference contact; not real touchdown dynamics",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://ssd.jpl.nasa.gov/astro_par.html",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.radial.beforeLegacy/afterLegacy; 100 m drop from rest, 4700 kg, y=0",
+      "method": "Bracket surface contact and reintegrate RK4 to the event; compare with closed-form fall time, energy-derived impact speed and energy",
+      "tolerance": "Exact-event benchmark shared with independently tested D05: 1e-6 s, 1e-7 m/s, .01 J; numerical comparison only, no engineering safety margin.",
+      "observedError": {
+        "before": {
+          "input": {
+            "mode": "descent",
+            "altitudeM": 100,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 30
+          },
+          "expectedTimeS": 11.097203526181374,
+          "expectedSpeedMps": 18.022904296123084,
+          "contact": {
+            "timeS": 11.096535953250337,
+            "eastM": 0,
+            "northM": 0,
+            "yM": 0,
+            "velocityMps": [
+              0,
+              -18.02182026160198,
+              0
+            ],
+            "massKg": 4700,
+            "terrainHeightM": 0,
+            "terrainKnown": true,
+            "slopeDeg": 0,
+            "tiltDeg": 0,
+            "headingDeg": 90,
+            "targetErrorM": 0
+          },
+          "timeErrorS": -0.0006675729310376965,
+          "speedErrorMps": -0.00108403452110295,
+          "heightResidualM": 0,
+          "energyErrorJ": -91.8232554520946
+        },
+        "after": {
+          "input": {
+            "mode": "descent",
+            "altitudeM": 100,
+            "horizontalMps": 0,
+            "verticalMps": 0,
+            "headingDeg": 90,
+            "pitchDeg": 90,
+            "finalPitchDeg": 90,
+            "wetMassKg": 4700,
+            "dryMassKg": 2200,
+            "thrustN": 0,
+            "ispSeconds": 311,
+            "burnSeconds": 0,
+            "durationSeconds": 30
+          },
+          "expectedTimeS": 11.097203526181374,
+          "expectedSpeedMps": 18.022904296123084,
+          "contact": {
+            "timeS": 11.097203526238445,
+            "eastM": 0,
+            "northM": 0,
+            "yM": -2.3283064365386963e-10,
+            "velocityMps": [
+              0,
+              -18.022904296219366,
+              0
+            ],
+            "massKg": 4700,
+            "terrainHeightM": 0,
+            "terrainKnown": true,
+            "slopeDeg": 0,
+            "tiltDeg": 0,
+            "headingDeg": 90,
+            "targetErrorM": 0
+          },
+          "timeErrorS": 5.707079253625125e-11,
+          "speedErrorMps": 9.628209340917238e-11,
+          "heightResidualM": -2.3283064365386963e-10,
+          "energyErrorJ": 8.155708201229572e-06
+        },
+        "limits": {
+          "timeS": 1e-06,
+          "speedMps": 1e-07,
+          "energyJ": 0.01
+        }
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Unfixed: existing frozen legacy point fixtures explicitly retain interpolation. Parent must decide the compatibility change, independently revise those expectations and model identity; do not relax the tolerance or call it operationally safe. Archived baseline finding remains in its original report; this correction is scoped to the current checked implementation/input and does not confer operational qualification.",
+      "lane": "dynamics",
+      "baselineStatus": "failing",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md",
+      "correctionReceipt": "integration/dynamics-after.json"
+    },
+    {
+      "id": "D11",
+      "claim": "Assisted contact tends toward a stable result as command steps shrink",
+      "status": "uncertain",
+      "scope": "Numerical self-convergence of an authored feedback demonstration; not independent guidance truth",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ntrs.nasa.gov/citations/19720018253"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.assistedConvergence.input and rows; y=0 m; 300 m altitude; 300 m west; east 10 m/s, down 8 m/s",
+      "method": "Hold all physical inputs fixed; isolated copies use .1/.05/.025/.0125 s commands. Compare contact time/state/mass to finest case.",
+      "tolerance": "No qualified guidance acceptance tolerance exists. Step differences are diagnostic only, with no pass/fail tolerance assigned after observing them.",
+      "observedError": [
+        {
+          "stepS": 0.1,
+          "timeS": 50.499768491328325,
+          "positionM": [
+            -8.411990587887123,
+            2.3283064365386963e-10,
+            1.9491761964809167e-16
+          ],
+          "velocityMps": [
+            0.7096622612368124,
+            -0.5593924190210684,
+            -1.561316127178475e-17
+          ],
+          "massKg": 4561.955487948457,
+          "timeDifferenceS": 0.003199561574369625,
+          "positionDifferenceM": 0.011375348220356685,
+          "velocityDifferenceMps": 0.006022144219243935,
+          "massDifferenceKg": -0.0404454862464263
+        },
+        {
+          "stepS": 0.05,
+          "timeS": 50.49790026080829,
+          "positionM": [
+            -8.40551399359386,
+            2.3283064365386963e-10,
+            1.96580719213418e-16
+          ],
+          "velocityMps": [
+            0.7106614495826308,
+            -0.5627626797921206,
+            -1.5755869250961995e-17
+          ],
+          "massKg": 4561.978869138979,
+          "timeDifferenceS": 0.0013313310543310308,
+          "positionDifferenceM": 0.004898753927093935,
+          "velocityDifferenceMps": 0.0025070625514079198,
+          "massDifferenceKg": -0.017064295724594558
+        },
+        {
+          "stepS": 0.025,
+          "timeS": 50.49700627122296,
+          "positionM": [
+            -8.4022519240012,
+            2.3283064365386963e-10,
+            1.974156789096871e-16
+          ],
+          "velocityMps": [
+            0.711161257468884,
+            -0.5643697538099696,
+            -1.582745343531903e-17
+          ],
+          "massKg": 4561.990288604617,
+          "timeDifferenceS": 0.00043734146900220594,
+          "positionDifferenceM": 0.0016366843344339799,
+          "velocityDifferenceMps": 0.0008240731572922204,
+          "massDifferenceKg": -0.005644830086566799
+        },
+        {
+          "stepS": 0.0125,
+          "timeS": 50.496568929753956,
+          "positionM": [
+            -8.400615239666767,
+            2.3283064365386963e-10,
+            1.9783401727804424e-16
+          ],
+          "velocityMps": [
+            0.7114112353036021,
+            -0.565154997498718,
+            -1.586330323478868e-17
+          ],
+          "massKg": 4561.995933434703,
+          "timeDifferenceS": 0,
+          "positionDifferenceM": 0,
+          "velocityDifferenceMps": 0,
+          "massDifferenceKg": 0
+        }
+      ],
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Only step sensitivity is measured; finest case is not truth. Held commands make feedback globally lower order than RK4. No independent GNC reconstruction, 6-DoF attitude, sensor/actuator/delay or uncertainty campaign.",
+      "lane": "dynamics",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D12",
+      "claim": "Incoming landing classification preserves known-failure precedence and unknown terrain",
+      "status": "verified",
+      "scope": "Entered preview limits only; radial velocity/tilt and reference-sphere target distance",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://ntrs.nasa.gov/citations/19640005067"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts negative surface case: y=-25 m, 10 m start, -2 m/s; generous entered limits",
+      "method": "Verify contact surface/mass; remove terrain to get unresolved; enter zero speed limit to retain failure; place breakup threshold exactly at measured .5*m*v^2.",
+      "tolerance": "Height 1e-7 m; mass 1e-12 kg. Equality breaks at energy threshold by explicit API policy; entered speed limits use 1e-9 m/s comparison slack.",
+      "observedError": {
+        "assertions": "All pass: known finite terrain within assumptions; unknown unresolved; violation overrides unknown; equal energy threshold outside limits."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No slope, soil, leg stroke, structural stress or operational success follows from within-assumed-limits. Flight point is a surface anchor, not a vehicle centre of mass.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D13",
+      "claim": "Rigid proxy free flight matches its disclosed constant-gravity ballistic equation",
+      "status": "verified",
+      "scope": "Rapier 0.21.0, 120 Hz, right-handed X/up/Z; +X horizontal; synthetic t=0",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/free-falling-objects/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.rigidBallistic.input and frame; 1 s precontact",
+      "method": "Compare v_y=-2-1.62*t, y=101.8-2*t-.5*1.62*t^2 and x=3*t before contact.",
+      "tolerance": "Velocity 1e-4 m/s; position .02 m vertical, 1e-4 m horizontal. Allows single-precision rigid solver and discrete integration.",
+      "observedError": {
+        "verticalVelocityErrorMps": -2.563476562489342e-05,
+        "heightErrorM": -0.0008566284179636341,
+        "horizontalPositionErrorM": -2.7894973754882812e-05
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "1.62 m/s^2 is an approximate constant, versus central mu/R^2=1.62421887656 m/s^2; gravity handoff differs by .00421887656 m/s^2 (~.260%). No local measured gravity claim.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D14",
+      "claim": "Fragment proxies constitute physical vehicle breakup and qualified contact",
+      "status": "uncertain",
+      "scope": "Bounding-box collision/inertia and assumed AABB-volume mass allocation",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "lib/touchdown-fragments.ts; tests/audit-dynamics-formula.test.ts 1 m and 2 m cube mass shares 1/9 and 8/9; existing contact regression suite",
+      "method": "Check geometry units/transforms and normalized assumed mass shares; existing tests check retained total mass, CCD nonpenetration, bounce/friction and deterministic continuation.",
+      "tolerance": "Mass-share arithmetic 1e-12; no physical fracture/soil tolerance available.",
+      "observedError": {
+        "numericalTests": "Pass; no physical validation residual available",
+        "knownBoundary": "Break decision uses pre-step velocity advanced by a full 1/120 s gravity step, then releases solved post-impact boxes."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Proxies are not CAD mass properties. 3 cm thickness floor and overlapping AABBs change inertia; detailed fragments omit mutual collision. Threshold is incoming translational-energy proxy, not absorbed energy, stress, strain, fatigue or material fracture. Contact-time energy discretization can shift decisions near a threshold.",
+      "lane": "dynamics",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D15",
+      "claim": "Analytical touchdown/propulsion/orbit screens reproduce independent mechanics limits",
+      "status": "verified",
+      "scope": "Supplied scalars; SI arithmetic only",
+      "sourceUrls": [
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",
+        "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "measurements.json.screens.input; tests/audit-dynamics-formula.test.ts",
+      "method": "Derive Hohmann apsis velocities from angular momentum l^2=2mu*r1*r2/(r1+r2), compare rocket integral; compare stopping work with m*a*s and tipping projected COM.",
+      "tolerance": "Hohmann/rocket 1e-10 m/s; energy 1e-10 J; load factor 1e-12; tipping exact 45 degree boundary fails.",
+      "observedError": {
+        "hohmannErrorMps": -4.263256414560601e-14,
+        "rocketBudgetErrorMps": 0
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Circular coplanar impulsive endpoints only. Constant net vertical deceleration is not peak gear load. Reported normal load factor 1+a/g should be interpreted as ideal vertical support-force ratio, not slope-resolved individual strut force.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D16",
+      "claim": "Engineering screen success is conditional and missing/known-failing inputs retain their gates",
+      "status": "verified",
+      "scope": "evaluateEngineeringScreens only; parent-owned evaluateScenario is unchanged",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253",
+        "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+        "https://www.nasa.gov/plume-surface-interaction/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/engineering-screens.test.ts and audit-dynamics-formula.test.ts; all seven domains with explicit synthetic inputs",
+      "method": "Exercise empty/not-assessed, complete/conditional, violated/fail, missing-with-known-failure, overflow/null and strict nonfinite/range parsing.",
+      "tolerance": "Exact expected enum states; finite metric or null; no pass state exists.",
+      "observedError": {
+        "focusedTests": "Passing; independent of all physical qualification statuses."
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Shared assessment mapping/stale-scope/model identity are parent-owned and are not certified by these tests. Screens use direct comparisons; shared assessment documentation claims 1e-9 metric-unit tolerance, a contract discrepancy for parent review.",
+      "lane": "dynamics",
+      "baselineStatus": "verified",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D17",
+      "claim": "Steady-state thermal arithmetic predicts real component survival",
+      "status": "uncertain",
+      "scope": "Single-node balance and supplied optical/environment values",
+      "sourceUrls": [
+        "https://www.nasa.gov/smallsat-institute/sst-soa/thermal-control/",
+        "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "tests/audit-dynamics-formula.test.ts blackbody limiting case, 459.300327939 W, 1 m^2, 300 K expected",
+      "method": "Independent constant-power blackbody limit plus existing solar/albedo/IR/view-factor and heater tests.",
+      "tolerance": "Arithmetic temperature assertion 1e-9 K only; no physical transient uncertainty bound.",
+      "observedError": {
+        "equilibriumAssertion": "300 K within 1e-9 K",
+        "survivalResidual": null
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "No heat capacity, conduction, varying radiation geometry, thermal cycle or component validation. Heater electrical draw is separate. Algebraic agreement is not survival evidence.",
+      "lane": "dynamics",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    },
+    {
+      "id": "D18",
+      "claim": "NASA history and empirical literature qualify this generic landing/GNC/soil/plume model",
+      "status": "uncertain",
+      "scope": "Applicability boundary; no claim that editable defaults represent Apollo telemetry",
+      "sourceUrls": [
+        "https://ntrs.nasa.gov/citations/19640005067",
+        "https://ntrs.nasa.gov/citations/19720018253",
+        "https://www.nasa.gov/plume-surface-interaction/"
+      ],
+      "referenceVersion": "2026-11-15 archived responses; SHA256/HTTP identity in references/manifest.json; JPL DE440 GM, NIST CODATA 2022 where applicable",
+      "inputIdentity": "NTRS 19640005067 (NASA-TN-D-2027), 19720018253 (NASA-TN-D-6850); frozen API metadata, not qualified vehicle telemetry",
+      "method": "Compare declared model scope with primary source descriptions of configuration/surface-dependent tests and qualification analyses. Do not transplant historical thresholds or invent empirical cone bounds.",
+      "tolerance": "No applicable independent acceptance tolerance or measured vehicle/soil/plume dataset supplied.",
+      "observedError": {
+        "qualifiedResidual": null,
+        "missing": [
+          "vehicle mass/inertia/engine curves",
+          "GNC/attitude/navigation validation",
+          "landing-gear structural/stroke validation",
+          "site soil/contact properties",
+          "applicable engine/regolith plume/ejecta bounds"
+        ]
+      },
+      "reproduce": "npx tsx scripts/audit-dynamics.ts /tmp/audit-dynamics-measurements.json; npx tsx --test tests/audit-dynamics-*.test.ts; python3 scripts/audit-dynamics-fetch.py --check",
+      "limitations": "Only metadata/abstracts for the historical NTRS reports were archived. No flight telemetry, force/stroke test series or dated Apollo reconstruction was validated. The supplied cone and traverse/support budgets are arithmetic over assumptions, not environmental predictions.",
+      "lane": "dynamics",
+      "baselineStatus": "uncertain",
+      "reportPath": "docs/qa/scientific-audit/dynamics/REPORT.md"
+    }
+  ]
+}

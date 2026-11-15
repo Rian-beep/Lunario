@@ -1,3 +1,9 @@
+## Scientific verification and traceability
+
+- Inspect source-to-output pipelines, native equations, current dataset identities and scoped NASA/JPL audit findings through Data & math.
+- Earth range uses the Moon-observed Earth reference; terrain cutout edges retain their declared source coordinates; missing producer ray support stays unknown. Legacy touchdown timing now solves the actual numerical contact event.
+- Planning model 5 and new data identities prevent earlier assessments from being silently reused. The recorded comparisons pass within their published bounds; physical terrain, vehicle and operations qualification remain outstanding.
+
 # Changelog
 
 ## 15 November 2026 — shareable charts and location stories

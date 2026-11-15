@@ -150,7 +150,7 @@ export function earthAzEl(lat: number, lon: number, elat: number, elon: number, 
 }
 
 /** Site-to-Earth distance in the catalog's approximate apparent-vector model, km.
- * The input is the archived Earth-observed Moon range, not a fresh lunar observer range.
+ * Input is the Moon-observed apparent Earth-centre range, km; see catalog rangeReference.
  */
 export function earthRangeAtSiteKm(lat: number, lon: number, elat: number, elon: number, rangeKm: number): number {
   const r = Math.PI / 180;

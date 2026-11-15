@@ -17,10 +17,10 @@ export async function runAudit(live=false) {
     catch(error) {errors.push({id:spec.id,error:String(error)});}
   }
   const inputErrors:{epoch:string;subsolarDeg:number;subearthDeg:number;rangeKm:number;sunDiameterArcsec:number}[]=[];
-  const moon=tables.get('moon-from-earth'),sun=tables.get('sun-from-moon');
+  const moon=tables.get('moon-from-earth'),sun=tables.get('sun-from-moon'),earth=tables.get('earth-from-moon');
   if(moon && sun) for(let j=0;j<epochs.length;j++) {
     const i=(Date.parse(epochs[j])-c.t0ms)/3600000,m=moon.rows[j],s=sun.rows[j];
-    inputErrors.push({epoch:epochs[j],subsolarDeg:Math.max(Math.abs(c.subsolarLat[i]-m[4]),Math.abs(wrapped(c.subsolarLon[i]-m[3]))),subearthDeg:Math.max(Math.abs(c.subearthLat[i]-m[2]),Math.abs(wrapped(c.subearthLon[i]-m[1]))),rangeKm:Math.abs(c.earthRangeKm[i]-m[5]),sunDiameterArcsec:Math.abs(c.sunRadiusDeg[i]*7200-s[1])});
+    inputErrors.push({epoch:epochs[j],subsolarDeg:Math.max(Math.abs(c.subsolarLat[i]-m[4]),Math.abs(wrapped(c.subsolarLon[i]-m[3]))),subearthDeg:Math.max(Math.abs(c.subearthLat[i]-m[2]),Math.abs(wrapped(c.subearthLon[i]-m[1]))),rangeKm:Math.abs(c.earthRangeKm[i]-earth!.rows[j][2]),sunDiameterArcsec:Math.abs(c.sunRadiusDeg[i]*7200-s[1])});
   }
   const samples=[];
   const flat={mask:new Float64Array(360),stepDeg:1,heightM:0,distanceKm:0,cellLat:null,cellLon:null,exact:true};

@@ -3,6 +3,7 @@ import base64
 import hashlib
 import json
 import struct
+import subprocess
 from pathlib import Path
 
 root = Path('public/data')
@@ -42,7 +43,7 @@ for g in [terrain['overview'], *terrain['patches']]:
                   'sourceUrl': g.get('sourceUrl', terrain['source']), 'sourcePixelM': g['inputPixelM'],
                   'stepXM': g['stepM'], 'stepYM': g.get('stepYM',g['stepM']),
                   'encodingScaleM':g['heightScaleM']})
-output = {'baseline':'96079ae','assets':assets,'terrainGrids':grids,
+output = {'referenceBaseline':'96079ae','auditedCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'workingTreeHasCorrections':True,'assets':assets,'terrainGrids':grids,
           'missingSourceIdentity':['Original polar COG complete hashes and immutable version IDs',
                                    'Original 40/240 m horizon DEM bytes',
                                    'Pixelwise EFFRES and ERR products',

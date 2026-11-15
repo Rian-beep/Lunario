@@ -1,10 +1,12 @@
 {
-  "baseline": "96079ae",
+  "referenceBaseline": "96079ae",
+  "auditedCommit": "edd5917f9412c1e657587c735151dc8f439f4ae0",
+  "workingTreeHasCorrections": true,
   "assets": [
     {
       "path": "public/data/catalog.json",
-      "bytes": 1004402,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "bytes": 1004545,
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "embeddedProvenance": {
         "meta": {
           "frame": "MOON_ME / Horizons MEAN_ME, sphere radius 1737.4 km",
@@ -18,7 +20,7 @@
       "manifestVersion": null,
       "manifestSourceUrl": null,
       "manifestFrame": null,
-      "manifestSha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153",
+      "manifestSha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a",
       "manifestMatches": true
     },
     {
@@ -252,11 +254,11 @@
     },
     {
       "path": "public/data/evidence-manifest.json",
-      "bytes": 29484,
-      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9",
+      "bytes": 29933,
+      "sha256": "70e3560c6776f73d960b5c7d96f123371291d06ffc7148029bf792df24b45c37",
       "embeddedProvenance": {
         "schemaVersion": 1,
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748"
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748"
       },
       "manifestVersion": null,
       "manifestSourceUrl": null,
@@ -597,8 +599,8 @@
       "manifestVersion": null,
       "manifestSourceUrl": null,
       "manifestFrame": null,
-      "manifestSha256": "992f25593bf66c1b660e0f608351cfe254dd60343a956d9b19ae662815e4e9f5",
-      "manifestMatches": false
+      "manifestSha256": "da76bb1bf5b8498a708dec97c352718139249db7fc8a4e14c21437139368d717",
+      "manifestMatches": true
     },
     {
       "path": "public/data/map.png",
@@ -652,11 +654,11 @@
     },
     {
       "path": "public/data/planning-demo.json",
-      "bytes": 2375452,
-      "sha256": "832662fc0ea4468f82d6a89e7d9cd85cf9e214b805a5718cdaf54e51cdfa82c6",
+      "bytes": 2376407,
+      "sha256": "f3679e4ffb254e2feaaf4834351ecb6f7788210bccb7a8cd5fef24f3dd536c2d",
       "embeddedProvenance": {
         "schemaVersion": 1,
-        "datasetId": "solarreach-catalog-00d28b6c04511cae-global-6f07f0b8edf12748"
+        "datasetId": "solarreach-catalog-e5a1528cac7db5f4-terrain-20a4d4261acf15da-global-6f07f0b8edf12748"
       },
       "manifestVersion": null,
       "manifestSourceUrl": null,
@@ -679,17 +681,17 @@
     },
     {
       "path": "public/data/terrain.json",
-      "bytes": 12119158,
-      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "bytes": 12119021,
+      "sha256": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e",
       "embeddedProvenance": {
         "version": 1,
-        "retrievedUtc": "2026-11-14T11:01:57.141Z",
+        "retrievedUtc": "2026-11-15T14:42:41.931Z",
         "frame": "MOON_ME / DE421, south polar stereographic, R=1737400m"
       },
       "manifestVersion": null,
       "manifestSourceUrl": null,
       "manifestFrame": null,
-      "manifestSha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32",
+      "manifestSha256": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e",
       "manifestMatches": true
     }
   ],
@@ -894,7 +896,7 @@
       "lod": null,
       "samples": 66049,
       "unknown": 0,
-      "minM": -466.10000000000036,
+      "minM": -469.2000000000003,
       "maxM": 5170.6,
       "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
       "sourcePixelM": 160,
@@ -907,7 +909,7 @@
       "lod": null,
       "samples": 66049,
       "unknown": 0,
-      "minM": -2831.2000000000003,
+      "minM": -2833.3,
       "maxM": 1955.6,
       "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
       "sourcePixelM": 160,
@@ -933,7 +935,7 @@
       "lod": null,
       "samples": 66049,
       "unknown": 0,
-      "minM": -2738.5,
+      "minM": -2740.9,
       "maxM": 1955.5,
       "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
       "sourcePixelM": 160,
@@ -972,8 +974,8 @@
       "lod": null,
       "samples": 66049,
       "unknown": 0,
-      "minM": -4161.700000000001,
-      "maxM": 15.099999999999909,
+      "minM": -4176.0,
+      "maxM": 22.0,
       "sourceUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_80MPP_ADJ.TIF",
       "sourcePixelM": 160,
       "stepXM": 128.24902723735408,
