@@ -3,7 +3,7 @@ import type { AssessmentResult } from '@/lib/planning-types';
 import type { ScenarioState } from '@/lib/scenario';
 import type { PhysicsReferenceMode } from '@/lib/physics-reference';
 import {
-  RESOURCE_LESSONS, RESOURCE_METRICS, RESOURCE_TOPICS, resourceEvidence, resourceMetric,
+  RESOURCE_BOUNDARY, RESOURCE_LESSONS, RESOURCE_METRICS, RESOURCE_TOPICS, resourceEvidence, resourceMetric,
   type ResearchSource,
 } from '@/lib/education-materials/resource-evidence';
 
@@ -36,6 +36,7 @@ export function ResourceEvidencePanel({ catalog, state, assessment, mode }: Reso
   return <section className="resource-evidence" aria-label="Lunar ice evidence and next steps">
     <p className="resource-evidence-context">{evidence.siteName} · {evidence.arrival} · {evidence.hours} h stay</p>
     <p>{evidence.focus}</p>
+    <p>{RESOURCE_BOUNDARY}</p>
     {evidence.siteSource && <ResearchLinks sources={[evidence.siteSource]} />}
     <div className="resource-evidence-cards">
       {RESOURCE_TOPICS.map(topic => {
@@ -72,6 +73,7 @@ export function ResourceEvidenceComparison({ catalog, cases }: {
 }) {
   return <details className="resource-evidence">
     <summary>Lunar ice evidence and next steps</summary>
+    <p>{RESOURCE_BOUNDARY}</p>
     <p>Local ice concentration, the route to a shadowed target and extraction yield are unassessed. Compare the available power and contact estimates for each stay.</p>
     <div className="resource-evidence-table" tabIndex={0} role="region" aria-label="Lunar ice evidence by saved scenario">
       <table>

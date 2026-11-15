@@ -5,14 +5,17 @@ import {evaluateScenario} from '../assessment';
 import {selectedSolarResponse} from '../audience/experiments';
 import {formatUtc,indexToMs} from '../astro';
 import {nativeMathMarkup} from '../math-typesetting';
-import {RESOURCE_LESSONS,RESOURCE_TOPICS,resourceEvidence,type ResearchSource} from './resource-evidence';
+import {RESOURCE_BOUNDARY,RESOURCE_LESSONS,RESOURCE_TOPICS,resourceEvidence,type ResearchSource} from './resource-evidence';
 export const MATERIAL_TOPICS=['solar','reserve','terrain','contact','evidence',...RESOURCE_TOPICS] as const;
 export type MaterialTopic=typeof MATERIAL_TOPICS[number];
 export type LessonQuestion={topic:MaterialTopic;title:string;prompt:string;hint:string;equation?:string;symbols:string;notation?:Array<{symbol:string;meaning:string;unit:string}>;context?:string[];sources?:ResearchSource[];answer:string;values:Array<{label:string;value:number|null;unit:string;symbol?:string}>};
-export type LessonMaterial={version:1;title:string;createdUtc:string;site:string;arrivalUtc:string;endExclusiveUtc:string;stepHours:number;datasetId:string;modelVersion:string;scenarioKey:string;scenario:ScenarioState;questions:LessonQuestion[]};
+export type WorksheetOptions={audience:'guided'|'advanced';includeHints:boolean};
+export const DEFAULT_WORKSHEET_OPTIONS:Readonly<WorksheetOptions>={audience:'guided',includeHints:true};
+export type LessonMaterial={version:1;title:string;createdUtc:string;site:string;arrivalUtc:string;endExclusiveUtc:string;stepHours:number;datasetId:string;modelVersion:string;scenarioKey:string;scenario:ScenarioState;options?:WorksheetOptions;questions:LessonQuestion[]};
 const number=(value:number|null,unit:string)=>value===null?'Unavailable (do not substitute zero)':`${value.toLocaleString('en-GB',{maximumFractionDigits:6})} ${unit}`;
 /** Capture only after an explicit action; later navigator edits cannot change this sheet. */
-export function createLessonMaterial(c:Catalog,m:EvidenceManifest,state:ScenarioState,topics:readonly MaterialTopic[]=MATERIAL_TOPICS,title='Lunario: a landing-site investigation'):LessonMaterial{
+export function createLessonMaterial(c:Catalog,m:EvidenceManifest,state:ScenarioState,topics:readonly MaterialTopic[]=MATERIAL_TOPICS,title='Lunario: a landing-site investigation',options:WorksheetOptions=DEFAULT_WORKSHEET_OPTIONS):LessonMaterial{
+ if(!['guided','advanced'].includes(options.audience)||typeof options.includeHints!=='boolean')throw Error('Choose a supported worksheet audience and hint setting.');
  if(!topics.length||topics.some(t=>!MATERIAL_TOPICS.includes(t)))throw Error('Choose at least one supported teaching topic.');
  const snapshot=structuredClone(state),a=evaluateScenario(c,snapshot,m),solar=selectedSolarResponse(c,m,snapshot,0);
  const questions:Record<Exclude<MaterialTopic, keyof typeof RESOURCE_LESSONS>,LessonQuestion>={
@@ -33,19 +36,26 @@ export function createLessonMaterial(c:Catalog,m:EvidenceManifest,state:Scenario
     {label:`${model} minimum stored energy`,value:resource.metrics.battery[index],unit:'kWh'},
    );
   }
+  const marking:Record<keyof typeof RESOURCE_LESSONS,string>={
+   'ice-evidence':'Mark for distinguishing a preservation clue from an ice detection, proposing measurements of concentration, depth and physical form at multiple locations, and explaining why the Cabeus estimate cannot be assigned to this site. Accept different sampling plans if their limitations are stated; no local water mass can be calculated from these givens.',
+   'resource-access':'Mark for a route connecting landing, power and sampling locations, with rover-scale slope/obstacle, thermal, return-energy and communication checks. The captured contact percentages describe the stationary scenario, not contact along a route. Shortest distance alone is insufficient; do not award a claim of landing safety or route approval.',
+   'extraction-power':'Mark for testing capture capacity as a possible bottleneck, comparing timed loads with delivered power and storage including losses/reserve, and identifying the need for measured recovered water per unit energy. Generated energy is not energy available for extraction after existing loads. No conversion from kWh to local water yield is supported; LUWEX is a laboratory example, not a prediction for this site.',
+  };
   return {
    topic,title:lesson.title,
-   prompt:`${lesson.prompt} Extension: propose a measurement that would change your recommendation and explain how.`,
+   prompt:lesson.prompt,
    hint:lesson.explanation,symbols:'',values,
-   context:[resource.observations[topic],...(topic==='resource-access'?[resource.focus]:[])],
+   context:[RESOURCE_BOUNDARY,resource.observations[topic],...(topic==='resource-access'?[resource.focus]:[])],
    sources:topic==='resource-access'&&resource.siteSource?[...lesson.sources,resource.siteSource]:lesson.sources,
-   answer:`${lesson.detail} ${lesson.next}`,
+   answer:`${lesson.detail} ${lesson.next} ${marking[topic]}`,
   };
  };
- return {version:1,title:title.trim().slice(0,160)||'Lunario investigation',createdUtc:new Date().toISOString(),site:snapshot.custom?`Custom point ${snapshot.custom.lat}°, ${snapshot.custom.lon}°`:c.sites.find(s=>s.id===snapshot.siteId)?.name??snapshot.siteId,arrivalUtc:new Date(indexToMs(c,snapshot.startIndex)).toISOString(),endExclusiveUtc:new Date(indexToMs(c,snapshot.endIndex+1)).toISOString(),stepHours:c.meta.stepHours,datasetId:a.datasetId,modelVersion:a.modelVersion,scenarioKey:a.scenarioKey,scenario:snapshot,questions:[...new Set(topics)].map(t=>{
-  if(t==='ice-evidence'||t==='resource-access'||t==='extraction-power')return resourceQuestion(t);
-  return questions[t];
- })};
+ return {version:1,title:title.trim().slice(0,160)||'Lunario investigation',createdUtc:new Date().toISOString(),site:snapshot.custom?`Custom point ${snapshot.custom.lat}°, ${snapshot.custom.lon}°`:c.sites.find(s=>s.id===snapshot.siteId)?.name??snapshot.siteId,arrivalUtc:new Date(indexToMs(c,snapshot.startIndex)).toISOString(),endExclusiveUtc:new Date(indexToMs(c,snapshot.endIndex+1)).toISOString(),stepHours:c.meta.stepHours,datasetId:a.datasetId,modelVersion:a.modelVersion,scenarioKey:a.scenarioKey,scenario:snapshot,options:{...options},questions:structuredClone([...new Set(topics)].map(t=>{
+  const question=t==='ice-evidence'||t==='resource-access'||t==='extraction-power'?resourceQuestion(t):questions[t];
+  return {...question,prompt:`${question.prompt} ${options.audience==='advanced'
+   ? 'Extension: propose a controlled test that could change your conclusion. State the held inputs, units and evidence limits.'
+   : 'Work in steps: identify what is known, explain your reasoning, then name what still needs measuring.'}`};
+ }))};
 }
 const escape=(s:unknown)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 function researchLinks(sources:ResearchSource[]|undefined):string{
@@ -55,5 +65,6 @@ function researchLinks(sources:ResearchSource[]|undefined):string{
 }
 /** Student HTML never serializes answers or the teacher-only scenario object. */
 export function lessonMaterialHtml(sheet:LessonMaterial,teacher=false):string{
- return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${escape(sheet.title)} — ${teacher?'answer key':'student worksheet'}</title><style>body{font:17px/1.6 system-ui;max-width:76ch;margin:2rem auto;padding:0 1rem;color:#172018}article{break-inside:avoid;border-top:1px solid #888;padding:1rem 0}dt{font-weight:600}dd{margin:0 0 .5rem}math{font-size:1.2em}p{overflow-wrap:anywhere}.response{height:7rem;border-bottom:1px dotted #888}@media print{body{margin:0;max-width:none}article{break-inside:avoid}}</style></head><body><h1>${escape(sheet.title)}</h1><p>${teacher?'Teacher answer key':'Student worksheet · Name: __________________'}</p><p>Site: ${escape(sheet.site)}<br>Arrival: ${escape(formatUtc(Date.parse(sheet.arrivalUtc)))}<br>End, exclusive: ${escape(formatUtc(Date.parse(sheet.endExclusiveUtc)))}<br>Source step: ${sheet.stepHours} h</p><p>Model ${escape(sheet.modelVersion)}; dataset ${escape(sheet.datasetId)}; captured scenario ${escape(sheet.scenarioKey)}. Numerical results are modeled, not operational approval. Preserve unavailable values.</p>${sheet.questions.map((q,i)=>`<article><h2>${i+1}. ${escape(q.title)}</h2><p>${escape(q.prompt)}</p>${q.equation?nativeMathMarkup(q.equation,true):''}<p>${escape(q.symbols)}</p>${q.notation?`<dl>${q.notation.map(n=>`<dt>${nativeMathMarkup(n.symbol)}</dt><dd>${escape(n.meaning)} (${escape(n.unit)})</dd>`).join('')}</dl>`:''}${q.context?`<div><h3>Captured evidence and givens</h3>${q.context.map(text=>`<p>${escape(text)}</p>`).join('')}</div>`:''}<dl>${q.values.map(v=>`<dt>${escape(v.label)}${v.symbol?` ${nativeMathMarkup(v.symbol)}`:''}</dt><dd>${escape(number(v.value,v.unit))}</dd>`).join('')}</dl><p>Hint: ${escape(q.hint)}</p>${researchLinks(q.sources)}${teacher?`<p><strong>Answer and interpretation:</strong> ${escape(q.answer)}</p>`:'<div class="response" aria-label="Space for your reasoning"></div>'}</article>`).join('')}<footer><p>Captured ${escape(sheet.createdUtc)}. Lunario teaching material. Print this document to paper or PDF using your browser.</p></footer></body></html>`;
+ const options=sheet.options??DEFAULT_WORKSHEET_OPTIONS;
+ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${escape(sheet.title)} — ${teacher?'answer key':'student worksheet'}</title><style>body{font:17px/1.6 system-ui;max-width:76ch;margin:2rem auto;padding:0 1rem;color:#172018}article{break-inside:avoid;border-top:1px solid #888;padding:1rem 0}dt{font-weight:600}dd{margin:0 0 .5rem}math{font-size:1.2em}p{overflow-wrap:anywhere}.response{height:7rem;border-bottom:1px dotted #888}@media print{body{margin:0;max-width:none}article{break-inside:avoid}}</style></head><body><h1>${escape(sheet.title)}</h1><p>${teacher?'Teacher answer key':'Student worksheet · Name: __________________'}</p><p>Learning level: ${options.audience==='advanced'?'Advanced investigation':'Guided investigation'}. Student hints: ${options.includeHints?'included':'omitted'}.</p><p>Site: ${escape(sheet.site)}<br>Arrival: ${escape(formatUtc(Date.parse(sheet.arrivalUtc)))}<br>End, exclusive: ${escape(formatUtc(Date.parse(sheet.endExclusiveUtc)))}<br>Source step: ${sheet.stepHours} h</p><p>Model ${escape(sheet.modelVersion)}; dataset ${escape(sheet.datasetId)}; captured scenario ${escape(sheet.scenarioKey)}. Numerical results are modeled, not operational approval. Preserve unavailable values.</p>${sheet.questions.map((q,i)=>`<article><h2>${i+1}. ${escape(q.title)}</h2><p>${escape(q.prompt)}</p>${q.equation?nativeMathMarkup(q.equation,true):''}<p>${escape(q.symbols)}</p>${q.notation?`<dl>${q.notation.map(n=>`<dt>${nativeMathMarkup(n.symbol)}</dt><dd>${escape(n.meaning)} (${escape(n.unit)})</dd>`).join('')}</dl>`:''}${q.context?`<div><h3>Captured evidence and givens</h3>${q.context.map(text=>`<p>${escape(text)}</p>`).join('')}</div>`:''}<dl>${q.values.map(v=>`<dt>${escape(v.label)}${v.symbol?` ${nativeMathMarkup(v.symbol)}`:''}</dt><dd>${escape(number(v.value,v.unit))}</dd>`).join('')}</dl>${teacher||options.includeHints?`<p>Hint: ${escape(q.hint)}</p>`:''}${researchLinks(q.sources)}${teacher?`<p><strong>Answer and interpretation:</strong> ${escape(q.answer)}</p>`:'<div class="response" aria-label="Space for your reasoning"></div>'}</article>`).join('')}<footer><p>Captured ${escape(sheet.createdUtc)}. Lunario teaching material. Print this document to paper or PDF using your browser.</p></footer></body></html>`;
 }
