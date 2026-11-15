@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { resolveSiteShellNav, type SiteShellNav } from "@/lib/site-shell-nav";
 
 const SSR_FALLBACK: SiteShellNav = {
@@ -9,26 +9,37 @@ const SSR_FALLBACK: SiteShellNav = {
   current: "dashboard",
 };
 
-/** Cream-header Dashboard / About links (replaces the dark site-shell bar when embedded). */
-export function SiteShellNavLinks() {
+function useSiteShellNav(): SiteShellNav {
   const [nav, setNav] = useState<SiteShellNav>(SSR_FALLBACK);
-
   useEffect(() => {
     setNav(resolveSiteShellNav());
   }, []);
+  return nav;
+}
+
+/** Logo / brand → site home (dashboard when embedded). */
+export function SiteShellBrandLink({ children }: { children: ReactNode }) {
+  const nav = useSiteShellNav();
+  return (
+    <a href={nav.dashboardHref} className="brand" target="_top" aria-label="Lunario home">
+      {children}
+    </a>
+  );
+}
+
+/** Clean site action in the header: About the project. */
+export function SiteShellNavLinks() {
+  const nav = useSiteShellNav();
 
   return (
     <nav className="site-shell-nav" aria-label="Site">
       <a
-        className="site-shell-nav__link"
-        href={nav.dashboardHref}
+        className="site-shell-nav__about"
+        href={nav.aboutHref}
         target="_top"
-        aria-current={nav.current === "dashboard" ? "page" : undefined}
+        aria-label="About the project"
       >
-        Dashboard
-      </a>
-      <a className="site-shell-nav__link" href={nav.aboutHref} target="_top">
-        About
+        About the project
       </a>
     </nav>
   );

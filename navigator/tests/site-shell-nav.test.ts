@@ -16,8 +16,12 @@ test("offline HTML under navigator/public resolves Dashboard and About to the si
 
 test("navigator header mounts cream site shell links beside the brand", () => {
   const source = readFileSync(join(process.cwd(), "components/navigator.tsx"), "utf8");
+  assert.match(source, /SiteShellBrandLink/);
   assert.match(source, /SiteShellNavLinks/);
   assert.match(source, /header-brand-cluster/);
+  const nav = readFileSync(join(process.cwd(), "components/site-shell-nav.tsx"), "utf8");
+  assert.match(nav, /About the project/);
+  assert.doesNotMatch(nav, /Dashboard/);
 });
 
 test("Dashboard page drops the dark double nav shell", () => {
@@ -25,4 +29,11 @@ test("Dashboard page drops the dark double nav shell", () => {
   assert.doesNotMatch(index, /<header class="nav">/);
   assert.match(index, /dash-page/);
   assert.match(index, /navigator-frame/);
+  assert.match(index, /About the project/);
+  assert.match(index, /logo\.svg/);
+});
+
+test("dark wordmark keeps the amber arc on the mark", () => {
+  const gen = readFileSync(join(process.cwd(), "components/branding/generate-lunario.mjs"), "utf8");
+  assert.match(gen, /LUNARIO_WORDMARK_ON_DARK:\s*data\("assets\/logo\.svg"/);
 });
