@@ -1,0 +1,68 @@
+{
+  "checkedUtc": "2026-11-15T14:42:07.339228+00:00",
+  "baseline": "96079aec827d9decc2a139b737174a8578f6a67c",
+  "contractSha256": "490d427f1f616327786e9b1a556ac89208eff23ca8cf049c6b35cab282195ffc",
+  "versions": {
+    "node": "v20.20.2",
+    "npm": "10.8.2",
+    "python": "Python 3.14.4"
+  },
+  "checks": [
+    {
+      "command": "npx tsx --test tests/audit-resources.test.ts tests/mission.test.ts tests/mission-events.test.ts tests/dsn.test.ts tests/station-weather.test.ts tests/engineering-evidence.test.ts",
+      "exitCode": 0,
+      "passed": 380,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "command": "npx tsx --test tests/audit-resources.test.ts",
+      "exitCode": 0,
+      "passed": 295,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "command": "npx tsx scripts/audit-resources-compare.ts",
+      "exitCode": 0,
+      "passed": 288,
+      "failed": 0
+    },
+    {
+      "command": "python3 scripts/audit-resources-fetch.py",
+      "exitCode": 0,
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "command": "npm run typecheck -- --incremental false",
+      "exitCode": 0,
+      "errors": 0
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "command": "Python ast.parse for audit-resources scripts",
+      "exitCode": 0
+    }
+  ],
+  "notRun": [
+    {
+      "command": "npm run verify:horizons",
+      "reason": "No catalog ephemeris/geometry change. Fresh station observer requests were independently fetched; this is a distinct check."
+    },
+    {
+      "command": "slop-scan",
+      "reason": "Not installed/configured; no arbitrary tooling installed."
+    }
+  ],
+  "productionChanges": false,
+  "operationalCertification": false,
+  "memoryHandoff": "Milestone and limitations persisted in owned REPORT.md/results.json. Global vault was not edited because worker instructions prohibit edits outside ownership; parent may record integrated milestone."
+}

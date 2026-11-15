@@ -1,0 +1,123 @@
+[
+  {
+    "file": "301P.pdf",
+    "url": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301P.pdf",
+    "retrievedUtc": "2026-11-15T14:32:00.836597+00:00",
+    "bytes": 2745535,
+    "sha256": "53d8c28eddde48a2212b403422689a11fc0ff75fcab830a1e2ec00cdf8a4e160",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"29e4bf-6535c9591b1d7\"",
+    "lastModified": "Wed, 03 Jun 2026 17:16:11 GMT"
+  },
+  {
+    "file": "105E.pdf",
+    "url": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/105/105E.pdf",
+    "retrievedUtc": "2026-11-15T14:32:03.325579+00:00",
+    "bytes": 1459154,
+    "sha256": "e192fd7fa234c349cbf0379c9eaad873624dde0bd78c2d7f10ac95cbf9397131",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"1643d2-587daa789cec0\"",
+    "lastModified": "Wed, 01 May 2019 22:01:07 GMT"
+  },
+  {
+    "file": "power.html",
+    "url": "https://www.nasa.gov/smallsat-institute/sst-soa/power-subsystems/",
+    "retrievedUtc": "2026-11-15T14:32:04.345538+00:00",
+    "bytes": 476455,
+    "sha256": "69c0b3655b6131f053f4f3a80066a47f8a0f98e37485bb613fa5788b345a50ca",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "etag": null,
+    "lastModified": null
+  },
+  {
+    "file": "handbook.html",
+    "url": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/",
+    "retrievedUtc": "2026-11-15T14:32:05.132526+00:00",
+    "bytes": 23410,
+    "sha256": "98f87964f80b75d6abe16df24398ade668943ba8a29fc4bf8ee4f461affeda85",
+    "httpStatus": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "etag": null,
+    "lastModified": null
+  },
+  {
+    "file": "301O.pdf",
+    "url": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/301/301O.pdf",
+    "retrievedUtc": "2026-11-15T14:33:16.667957+00:00",
+    "bytes": 3073743,
+    "sha256": "e048957eff4ec35228a1c22140b1f240650f2c10444bcd38a757523853d6373e",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"2ee6cf-61be46e98de8c\"",
+    "lastModified": "Thu, 27 Jun 2024 19:49:42 GMT"
+  },
+  {
+    "file": "101I.pdf",
+    "url": "https://deepspace.jpl.nasa.gov/dsndocs/810-005/101/101I.pdf",
+    "retrievedUtc": "2026-11-15T14:33:19.436949+00:00",
+    "bytes": 2034934,
+    "sha256": "b751b026fe433e348ba749f3b4e9c6d003e603f7534d7ecad21b8bd119f74132",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"1f0cf6-6437e1f2c8329\"",
+    "lastModified": "Thu, 13 Nov 2025 18:33:48 GMT"
+  },
+  {
+    "file": "P838-3.pdf",
+    "url": "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.838-3-200503-I!!PDF-E.pdf",
+    "retrievedUtc": "2026-11-15T14:33:19.989002+00:00",
+    "bytes": 338506,
+    "sha256": "3ab7482993e51fc63c5127a72e9e8930614e73652ac614882760817e7c1469cb",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"5129f2804fd31:0\"",
+    "lastModified": "Fri, 27 Oct 2017 08:46:09 GMT"
+  },
+  {
+    "file": "P525-5.pdf",
+    "url": "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.525-5-202411-I!!PDF-E.pdf",
+    "retrievedUtc": "2026-11-15T14:33:20.336278+00:00",
+    "bytes": 246217,
+    "sha256": "55ff9bf5bb4534b91863fd84d760fe689e2f969b91db0ea786717fd078df1da5",
+    "httpStatus": 200,
+    "contentType": "application/pdf",
+    "etag": "\"cba98f7ed934db1:0\"",
+    "lastModified": "Tue, 12 Nov 2024 08:04:27 GMT"
+  },
+  {
+    "file": "goldstone-fresh-horizons.json",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27243.11046178888887%2C35.425900866666666%2C1.00139%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+    "httpStatus": 200,
+    "contentType": "application/json",
+    "etag": null,
+    "lastModified": null,
+    "bytes": 8780,
+    "sha256": "39a98b43e7b4a75095c85683fd25a032581206d1d31ab2ad16934b178acd4b08",
+    "retrievedUtc": "2026-11-15T14:35:39.220195+00:00"
+  },
+  {
+    "file": "madrid-fresh-horizons.json",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27355.7519914555556%2C40.43120975%2C0.864816%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+    "httpStatus": 200,
+    "contentType": "application/json",
+    "etag": null,
+    "lastModified": null,
+    "bytes": 8780,
+    "sha256": "5095ca9109c52bd8a7a5aaa424b784f44d442b5b2861657ba396550aada4bb08",
+    "retrievedUtc": "2026-11-15T14:35:39.748320+00:00"
+  },
+  {
+    "file": "canberra-fresh-horizons.json",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40399%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27148.98126730833334%2C-35.402424233333335%2C0.688867%27&START_TIME=%272026-11-14+00%3A00%3A00%27&STOP_TIME=%272026-11-15+00%3A00%3A00%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%2C20%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27SECONDS%27&CAL_FORMAT=%27JD%27&ANG_FORMAT=%27DEG%27&APPARENT=%27AIRLESS%27&RANGE_UNITS=%27KM%27&EXTRA_PREC=%27YES%27",
+    "httpStatus": 200,
+    "contentType": "application/json",
+    "etag": null,
+    "lastModified": null,
+    "bytes": 8781,
+    "sha256": "4c4fc607b94c1070e471a3791fceb7c0482fae24726b1767917730a55b801e00",
+    "retrievedUtc": "2026-11-15T14:35:40.273920+00:00"
+  }
+]

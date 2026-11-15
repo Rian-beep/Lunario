@@ -1,0 +1,286 @@
+{
+  "schema": "audit-resources-reference-1",
+  "epoch": "ITRF93 station positions: 2003.0; analytic power/RF cases epoch-independent",
+  "stationsM": {
+    "goldstone": [
+      -2353621.42,
+      -4641341.472,
+      3677052.318
+    ],
+    "madrid": [
+      4849092.518,
+      -360180.348,
+      4115109.251
+    ],
+    "canberra": [
+      -4460894.917,
+      2682361.507,
+      -3674748.152
+    ]
+  },
+  "rf": [
+    {
+      "input": {
+        "frequencyGHz": 2.3,
+        "rangeKm": 384400,
+        "txPowerW": 20,
+        "txGainDbi": 5,
+        "rxGainDbi": 60,
+        "lossDb": 3,
+        "noiseTempK": 100,
+        "dataRateBps": 10000,
+        "requiredEbN0Db": 5
+      },
+      "expected": {
+        "pathLossDb": 211.37800752216538,
+        "receivedDbw": -136.36770756552556,
+        "ebN0Db": 32.231459607692095,
+        "marginDb": 27.231459607692095
+      }
+    },
+    {
+      "input": {
+        "frequencyGHz": 8.4,
+        "rangeKm": 400000,
+        "txPowerW": 100,
+        "txGainDbi": 30,
+        "rxGainDbi": 74,
+        "lossDb": 5,
+        "noiseTempK": 100,
+        "dataRateBps": 1000,
+        "requiredEbN0Db": 5
+      },
+      "expected": {
+        "pathLossDb": 222.97456876968025,
+        "receivedDbw": -103.97456876968025,
+        "ebN0Db": 74.62459840353742,
+        "marginDb": 69.62459840353742
+      }
+    },
+    {
+      "input": {
+        "frequencyGHz": 32,
+        "rangeKm": 360000,
+        "txPowerW": 5,
+        "txGainDbi": 35,
+        "rxGainDbi": 78,
+        "lossDb": 10,
+        "noiseTempK": 150,
+        "dataRateBps": 1000000.0,
+        "requiredEbN0Db": 3
+      },
+      "expected": {
+        "pathLossDb": 233.67683280362724,
+        "receivedDbw": -123.68713276026705,
+        "ebN0Db": 23.1511218223938,
+        "marginDb": 20.1511218223938
+      }
+    }
+  ],
+  "solar": [
+    {
+      "elevation": 30,
+      "azimuth": 0,
+      "tilt": 0,
+      "facing": 0,
+      "horizon": 29.46,
+      "radius": 0.27,
+      "incidence": 0.49999999999999994,
+      "visibleFraction": 1.000000009806286,
+      "expectedPowerW": 255.0000025006029
+    },
+    {
+      "elevation": 30,
+      "azimuth": 90,
+      "tilt": 90,
+      "facing": 90,
+      "horizon": 29.46,
+      "radius": 0.27,
+      "incidence": 0.8660254037844387,
+      "visibleFraction": 1.000000009806286,
+      "expectedPowerW": 441.67296026123506
+    },
+    {
+      "elevation": 30,
+      "azimuth": 90,
+      "tilt": 90,
+      "facing": 270,
+      "horizon": 29.46,
+      "radius": 0.27,
+      "incidence": 0,
+      "visibleFraction": 1.000000009806286,
+      "expectedPowerW": 0.0
+    },
+    {
+      "elevation": 15,
+      "azimuth": 250,
+      "tilt": 65,
+      "facing": 10,
+      "horizon": 14.46,
+      "radius": 0.27,
+      "incidence": 0,
+      "visibleFraction": 1.000000009806286,
+      "expectedPowerW": 0.0
+    },
+    {
+      "elevation": 40,
+      "azimuth": 31,
+      "tilt": 57,
+      "facing": 64,
+      "horizon": 39.865,
+      "radius": 0.27,
+      "incidence": 0.8888986176393237,
+      "visibleFraction": 0.8044988937102463,
+      "expectedPowerW": 364.7101568008156
+    },
+    {
+      "elevation": 40,
+      "azimuth": 31,
+      "tilt": 57,
+      "facing": 64,
+      "horizon": 40.0,
+      "radius": 0.27,
+      "incidence": 0.8888986176393237,
+      "visibleFraction": 0.500000001733524,
+      "expectedPowerW": 226.66914828390034
+    },
+    {
+      "elevation": 40,
+      "azimuth": 31,
+      "tilt": 57,
+      "facing": 64,
+      "horizon": 40.135,
+      "radius": 0.27,
+      "incidence": 0.8888986176393237,
+      "visibleFraction": 0.19550111009039595,
+      "expectedPowerW": 88.62813991821616
+    },
+    {
+      "elevation": 40,
+      "azimuth": 31,
+      "tilt": 57,
+      "facing": 64,
+      "horizon": 40.54,
+      "radius": 0.27,
+      "incidence": 0.8888986176393237,
+      "visibleFraction": 0.0,
+      "expectedPowerW": 0.0
+    }
+  ],
+  "atmospheric": {
+    "zenithDb": 0.384,
+    "elevationDeg": 20,
+    "meanRadiatingK": 277.5,
+    "printedSlantDb": 1.123,
+    "printedNoiseK": 63.214
+  },
+  "energy": [
+    {
+      "id": "dark-depletion",
+      "hours": 3.5,
+      "sun": -30,
+      "assumptions": {
+        "loadW": 80,
+        "batteryWh": 300,
+        "initialSoc": 0.8,
+        "reserveSoc": 0.25,
+        "dischargeEfficiency": 0.8
+      },
+      "expected": {
+        "generatedWh": 0,
+        "finalBatteryWh": 0,
+        "minBatteryWh": 0,
+        "unmetWh": 88,
+        "reserveHours": 1.85
+      },
+      "eventHours": {
+        "reserve-crossing": 1.65,
+        "unserved-load": 2.4
+      }
+    },
+    {
+      "id": "charge-bus-cap",
+      "hours": 0.75,
+      "sun": 30,
+      "assumptions": {
+        "solarFlux": 400,
+        "loadW": 40,
+        "batteryWh": 100,
+        "initialSoc": 0.1,
+        "chargeEfficiency": 0.8
+      },
+      "operations": {
+        "maxChargeW": 100
+      },
+      "expected": {
+        "generatedWh": 300,
+        "finalBatteryWh": 70,
+        "minBatteryWh": 10,
+        "curtailedWh": 195,
+        "unmetWh": 0
+      }
+    },
+    {
+      "id": "discharge-bus-cap",
+      "hours": 1.5,
+      "sun": -30,
+      "assumptions": {
+        "loadW": 90,
+        "batteryWh": 300,
+        "initialSoc": 1,
+        "dischargeEfficiency": 0.5
+      },
+      "operations": {
+        "maxDischargeW": 20
+      },
+      "expected": {
+        "generatedWh": 0,
+        "finalBatteryWh": 240,
+        "minBatteryWh": 240,
+        "unmetWh": 105
+      },
+      "eventHours": {
+        "unserved-load": 0
+      }
+    },
+    {
+      "id": "capacity-saturation",
+      "hours": 2,
+      "sun": 30,
+      "assumptions": {
+        "solarFlux": 300,
+        "loadW": 50,
+        "batteryWh": 100,
+        "initialSoc": 0.25,
+        "chargeEfficiency": 0.75
+      },
+      "expected": {
+        "generatedWh": 600,
+        "finalBatteryWh": 100,
+        "minBatteryWh": 25,
+        "curtailedWh": 400,
+        "unmetWh": 0
+      }
+    },
+    {
+      "id": "reserve-recovery",
+      "hours": 2,
+      "sun": 30,
+      "assumptions": {
+        "solarFlux": 100,
+        "loadW": 0,
+        "batteryWh": 500,
+        "initialSoc": 0,
+        "reserveSoc": 0.2,
+        "chargeEfficiency": 0.5
+      },
+      "expected": {
+        "generatedWh": 200,
+        "finalBatteryWh": 100,
+        "minBatteryWh": 0,
+        "reserveHours": 2,
+        "unmetWh": 0
+      }
+    }
+  ]
+}
