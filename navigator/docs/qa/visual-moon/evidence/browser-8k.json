@@ -1,0 +1,93 @@
+{
+  "scope": "Private Chromium SwiftShader fixture; no app server or integrated-app/browser acceptance",
+  "probe": [
+    209,
+    160,
+    90,
+    255
+  ],
+  "loaded": {
+    "ms": 272.90000009536743,
+    "status": {
+      "colour": "NASA 2025",
+      "width": 1024,
+      "relief": "LOLA 1x",
+      "warnings": []
+    },
+    "triangles": 1015808,
+    "maxRadiusKm": 1747.8305284317191,
+    "maxTextureSize": 8192
+  },
+  "state": {
+    "colour": "NASA 2025",
+    "width": 8192,
+    "relief": "LOLA 1x",
+    "warnings": [],
+    "space": "srgb",
+    "textures": 2,
+    "geometries": 1
+  },
+  "requests": [
+    "/",
+    "/fixture.js",
+    "/data/nasa-model.json",
+    "/data/nasa-moon-mesh.bin.gz",
+    "/data/visual-moon/radii-1x.bin.gz",
+    "/data/visual-moon/colour-2025-1024.webp",
+    "/data/visual-moon/colour-2025-2048.webp",
+    "/data/visual-moon/colour-2025-4096.webp",
+    "/data/visual-moon/colour-2025-8192.webp",
+    "/data/nasa-model.json",
+    "/data/nasa-moon-mesh.bin.gz",
+    "/data/imagery/nasa-moon-8k.jpg",
+    "/data/nasa-model.json",
+    "/data/nasa-moon-mesh.bin.gz"
+  ],
+  "errors": [],
+  "baselineMemory": {
+    "geometries": 0,
+    "textures": 1
+  },
+  "disposal": {
+    "textures": 1,
+    "geometries": 0
+  },
+  "legacy": {
+    "ms": 7078.800000190735,
+    "status": {
+      "colour": "legacy",
+      "width": 8192,
+      "relief": "authored",
+      "warnings": []
+    },
+    "triangles": 1015808,
+    "maxRadiusKm": 1769.2882576775685,
+    "maxTextureSize": 8192
+  },
+  "stability": {
+    "seam": {
+      "repeatMeanCodeDelta": 0,
+      "orbitMeanCodeDelta": 0.05834322916666667,
+      "orbitStepDeg": 0.01
+    },
+    "pole": {
+      "repeatMeanCodeDelta": 0,
+      "orbitMeanCodeDelta": 0.00045677083333333333,
+      "orbitStepDeg": 0.01
+    }
+  },
+  "fallback": {
+    "ms": 232.90000009536743,
+    "status": {
+      "colour": "unavailable",
+      "width": 0,
+      "relief": "LOLA 1x",
+      "warnings": [
+        "Colour unavailable: No NASA 2025 texture fits the device budget"
+      ]
+    },
+    "triangles": 1015808,
+    "maxRadiusKm": 1747.8305284317191,
+    "maxTextureSize": 8192
+  }
+}
