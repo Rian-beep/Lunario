@@ -119,3 +119,9 @@ In **Lander → Flight experiments**, choose a reference and explicitly **Load r
 Public flight controls are task-first: select **Lander** to see Play without scrolling past technical reports. Each flight variable has adjacent **i** help describing its effect, including settings that only change acceptance limits or motion after contact. A changed-setting card compares the previous calculation; a plain-language prediction lists every failed touchdown check and missing ground evidence. The scene follows automatically when playback starts.
 
 The original loader holds for at least three seconds before its lift-away on first load and reload (including cache-bypassing reload). Changing audience, variables or camera within the loaded document does not replay it. The original reduced-motion still version keeps its shorter timing.
+
+### Interface appearance and Public context
+
+Use the header’s Dark/Light button to switch between the light mint/cream reference and near-black/orange. The preference persists in this browser and affects UI surfaces, not NASA imagery or mission calculations. Original Lunario dark/white wordmarks are used on their corresponding surfaces.
+
+Public site selections expand a dismissible location story: historical mission context, source links and nearby published touchdown pins. In Earth focus, selecting a DSN complex opens its role and communication explanation. These are ground antennas, not satellites. Weather is requested explicitly and dated; a separate current forecast never fills an unsupported future mission instant.

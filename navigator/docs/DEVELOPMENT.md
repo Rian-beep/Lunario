@@ -98,3 +98,9 @@ Wait for the document-owned loader and native intro before interacting. Native d
 
 
 Public flight usability regression: `node scripts/verify-public-flight.mjs --url http://127.0.0.1:4344 --file /tmp/lunario-public-flight-final.html --out /tmp/public-flight-check`. Fresh contexts use the real Public introduction, check that first-use Play fits inside the inspector without scrolling, edit every numeric control and open its help, and sample fixed-scale Follow framing through nominal, weak-engine and ascent playback. File transport runs disconnected. Loader lifecycle is observed from document startup so a completed transient animation is not mistaken for a missing loader. This is an automated friction/visibility check, not a human enjoyment study.
+
+## Public context and theme checks
+
+`node scripts/verify-public-context-theme.mjs` checks the production server at port 4341 and `/tmp/lunario-features.html` with disconnected file access. Override `LUNARIO_THEME_URL`, `LUNARIO_THEME_FILE`, `LUNARIO_THEME_EVIDENCE` and `SOLARREACH_VIEWPORT_CHROME` as needed. Weather responses in that verifier are explicitly synthetic fixtures, never a live station observation. It checks normal/cache-bypassing reloads, original three-second loader, theme persistence and original white logo, Public Apollo history, all three DSN complex disclosures, and on-demand weather behavior.
+
+Theme preference uses the separate `lunario-ui-theme` localStorage key. Light remains the default; storage-denied contexts still support an in-document toggle. Surface tokens live in `app/mission-theme.css`; imagery, renderer lighting and mission state must not depend on this preference.

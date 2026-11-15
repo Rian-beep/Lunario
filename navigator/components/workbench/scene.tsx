@@ -3,6 +3,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { afterPaint } from "@/lib/after-paint";
 import { createPortal } from "react-dom";
 import type { LandingDynamicsReadout } from "@/lib/landing-contract";
+import {PublicStationStory} from "./public-exploration";
 import { StationWeather } from "./station-weather";
 import { HeaderLeanDropdown } from "./header-lean-dropdown";
 import { physicalAsset, type AssetFocus } from "@/lib/asset-focus";
@@ -36,6 +37,7 @@ export type SceneProps = {
   landingConfiguration?: import('@/lib/landing-contract').LandingConfiguration;
   onLandingDynamics?: (value: LandingDynamicsReadout | null) => void;
   audienceMode?: 'public' | 'teach' | 'plan';
+  siteEarthContact?: boolean | null;
   offline?: boolean;
   onAssetFocusChange?: (focus: AssetFocus) => void;
   onInspectTouchdown?: () => void;
@@ -81,6 +83,8 @@ export function LunarScene(props: SceneProps) {
   const [textureFailed, setTextureFailed] = useState(false);
   const [mode, setMode] = useState<CameraMode | "auto">("auto");
   const [localFocus, setLocalFocus] = useState<AssetFocus>("moon");
+  const [stationDetailsRequest,setStationDetailsRequest]=useState(0);
+  const selectStation=(id:string|null)=>{setStationId(id);if(id)setStationDetailsRequest(v=>v+1);};
   const [stationId, setStationId] = useState<string | null>(null);
   const focus = props.assetFocus ?? localFocus;
   const focusRef = useRef(focus);
@@ -159,7 +163,7 @@ export function LunarScene(props: SceneProps) {
           setMode(value.mode ?? "orbit");
           setRevision(v=>v+1);
           return true;
-        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),()=>setMode('orbit'),setSurfaceStatus,setGeography,setStationId,()=>focusRequest.current('lander'));
+        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),()=>setMode('orbit'),setSurfaceStatus,setGeography,selectStation,()=>focusRequest.current('lander'));
     } catch (error) {
       handoff?.globe?.asset.dispose();
       console.error("Lunar scene initialization failed.", error);
@@ -181,11 +185,12 @@ export function LunarScene(props: SceneProps) {
     .map((grid) => grid.inputPixelM ?? props.terrain!.sourcePixelM) : [];
   const sceneControls = <>
       {focus === 'earth' && <div className="header-dsn-context">
-        <div role="group" aria-label="DSN ground complexes" className="header-station-buttons">{DSN_STATIONS.map(station => <Button key={station.id} variant="ghost" aria-pressed={stationId === station.id} onClick={() => {setStationId(station.id);setMode('earth');runtime.current?.inspectStation(station.id);}}>{station.name}</Button>)}</div>
-        <HeaderLeanDropdown label="Ground complex details" className="header-station-details">
+        <div role="group" aria-label="DSN ground complexes" className="header-station-buttons">{DSN_STATIONS.map(station => <Button key={station.id} variant="ghost" aria-pressed={stationId === station.id} onClick={() => {selectStation(station.id);setMode('earth');runtime.current?.inspectStation(station.id);}}>{station.name}</Button>)}</div>
+        <HeaderLeanDropdown label="Ground complex details" className="header-station-details" openRequest={props.audienceMode==='public'?stationDetailsRequest:undefined}>
           {!stationId && <p>Select Goldstone, Madrid or Canberra for its sourced antenna and dated weather context.</p>}
           {DSN_STATIONS.filter(station => station.id === stationId).map(station => <div key={station.id}>
             <strong>{station.name} · {station.antenna}</strong><p>{station.description}</p>
+            {props.audienceMode==='public'&&<PublicStationStory station={station} contact={props.siteEarthContact??null}/>}
             <details open={props.audienceMode === 'plan' || undefined}><summary>Coordinates & source</summary>
               <p>WGS84 {station.latitudeDeg.toFixed(7)}°, {(((station.longitudeEastDeg+540)%360)-180).toFixed(7)}° east · {station.heightM.toFixed(3)} m ellipsoid height. <a href={DSN_SOURCES.coordinates} target="_blank" rel="noreferrer">JPL 810-005/301 Table 5</a>.</p>
               <p>Enlarged annotations at representative ground antennas, not satellites. NASA Blue Marble geography uses an Earth-fixed display attitude, not a qualified celestial frame. The original NASA Earth asset is retained.</p>

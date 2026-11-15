@@ -607,3 +607,48 @@ html:root .scene-legend {
   text-shadow: 0 1px 2px #000, 0 -1px 2px #000, 1px 0 2px #000, -1px 0 2px #000;
 }
 html:root .scene-legend .muted { color: var(--mission-on-space-muted); }
+
+/* Explicit user preference; imagery and original loader retain authored pixels. */
+html:root[data-ui-theme="dark"] {
+  color-scheme: dark;
+  --background: #111214;
+  --foreground: #f5eee2;
+  --card: #1b1d20;
+  --secondary: #24272b;
+  --popover: #1b1d20;
+  --primary: #ffae66;
+  --primary-foreground: #171411;
+  --muted-foreground: #d0c3b5;
+  --mission-cream: #141619;
+  --mission-ink: #0b0d0f;
+  --mission-title: #ee9447;
+  --mission-backing: #f4ad64;
+  --mission-frame: #f4ad64;
+  --mission-hover: #3b2c23;
+  --mission-selected: #f3a760;
+  --mission-primary-hover: #ffc58e;
+  --mission-control-border: #897868;
+  --mission-success: #9bddad;
+  --mission-success-bg: #1a3024;
+  --mission-warning: #ffc66d;
+  --mission-warning-bg: #392c18;
+  --mission-link: #9ed2f0;
+  --destructive: #ffb19b;
+  --border: #897868;
+  --input: #897868;
+  --ring: #ffc780;
+  --sun: #ffc66d;
+  --earth: #a3d8f8;
+  --chart-4: #d8b5ef;
+}
+html:root[data-ui-theme="dark"] .header-context-toolbar {
+  background: var(--secondary);
+  color: var(--foreground);
+  --muted-foreground: var(--foreground);
+  border-color: var(--mission-title);
+  box-shadow: 0 2px 0 var(--mission-title);
+}
+html:root[data-ui-theme="dark"] .lunar-app summary:hover { color: var(--primary); }
+html:root[data-ui-theme="dark"] :is(.inspector-nav, .drawer-heading, .comparison-header, .comparison-tabs) summary:hover { color: var(--mission-ink); }
+html:root[data-ui-theme="dark"] :is([aria-label="Touchdown experiment controls"], [aria-label="Sun, Earth and Moon explorer"] > aside) { color: var(--foreground); }
+html:root[data-ui-theme="dark"] :is(section:has(> [data-controls]) > header, .inspector-section > h3, .inspector details > summary, .header-dropdown-content details > summary) { color: var(--mission-ink); }
