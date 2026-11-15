@@ -1,5 +1,5 @@
 {
-  "sourceCommit": "4a8dec71fa63992f0daf8beb698ec998cc5e9b5e",
+  "sourceCommit": "774956fb63f9b6aa38f057c0a6090bf39007834c",
   "baselineImportSourceCommit": "4a47f8e4091ad4e71508e932a293b91e56e49a8f",
   "files": [
     {
@@ -14,13 +14,13 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 9577,
-      "sha256": "6b0f356bb54dd4738d1f9fa44be58226fca132253cd10887b6ea09f6ca4052a5"
+      "bytes": 9669,
+      "sha256": "9d0de3b61e5930018edfda6e0e4774e0f649dad7baff283da32d49fe9d12b23a"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 12459,
-      "sha256": "b6f66b8a7c56a741d5db348db6827a65fa652af1e5d42596f7a9ee7894e677f1"
+      "bytes": 14341,
+      "sha256": "efc3c15db0c02d4d373243b8e45fe4fa57e1dba755caed5a403d5f00096d5e54"
     },
     {
       "path": "CODEX_PROMPT.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 16689,
-      "sha256": "3eb34f75b2636eb75de88c359ad63a29a1a1a5ec8ad2a8eead46e3ffdb8c1c9b"
+      "bytes": 17845,
+      "sha256": "ebe603f524eb9ffecb166321ba90236351f53b6bd5e868ded1049a6407bdb6ec"
     },
     {
       "path": "app/api/orbits/route.ts",
@@ -49,8 +49,8 @@
     },
     {
       "path": "app/globals.css",
-      "bytes": 88798,
-      "sha256": "5ee4fe8213490ab65ca1ef9bd3b822b14c45a9c051eb2cd7348077c7f81023b5"
+      "bytes": 89021,
+      "sha256": "961560a4828c2456c56d856d0b26fbf20dea5f166952f90e3f17eed8a43f3597"
     },
     {
       "path": "app/layout.tsx",
@@ -94,8 +94,8 @@
     },
     {
       "path": "components/audience/response-plot.tsx",
-      "bytes": 3297,
-      "sha256": "0a183be084b82388bd692f086c1460d5cd19f5d81a09477293c5816b3190c56d"
+      "bytes": 4024,
+      "sha256": "7cfcab5f6537039e2a6ab3c0bd0d86062c436ff44ebcc80173abc4c5e5e27b2d"
     },
     {
       "path": "components/audience/solar-lesson.tsx",
@@ -151,6 +151,11 @@
       "path": "components/branding/lunario-vendor.generated.ts",
       "bytes": 34209,
       "sha256": "11a4e38adbb3ef863b1a319f7542fc91c686a1f84256a60089bd001b1721f382"
+    },
+    {
+      "path": "components/chart-image-actions.tsx",
+      "bytes": 3206,
+      "sha256": "1dcc0b23877c0b35a74893bd495ec91b98e73c7ad984ceb65ecd9ab5facb2b8d"
     },
     {
       "path": "components/education-materials/material-builder.tsx",
@@ -233,9 +238,24 @@
       "sha256": "60559374d37c1c941e0a8492e3cf4406f24c7caa4481950cacd899b1f551f849"
     },
     {
+      "path": "components/mission-trajectories/replay.tsx",
+      "bytes": 7114,
+      "sha256": "5c3ceb10710bbc2ecdf660febc024d2495f3e028fa91994f5fe2ca012f058be1"
+    },
+    {
+      "path": "components/mission-trajectories/selector.tsx",
+      "bytes": 6272,
+      "sha256": "c1c80e59972cd96cfefb516da336126914bca3b53d6e626d67e57e668d7a864d"
+    },
+    {
+      "path": "components/mission-trajectories/workspace.tsx",
+      "bytes": 1051,
+      "sha256": "b0a9c8498578cc844206297cd44e8e7ee920ae1e0b985ee383b8ee4fa0d02f2f"
+    },
+    {
       "path": "components/navigator.tsx",
-      "bytes": 104964,
-      "sha256": "a1d11822e477d6630c1b1ea084db474b604723d475d4936c8dba6b29c16a0422"
+      "bytes": 107009,
+      "sha256": "bf5f5ad47877e70f8a7898ca89c07985b5c616e84ec7dbb457bf056ebe5c7f3a"
     },
     {
       "path": "components/polar-map.tsx",
@@ -283,14 +303,29 @@
       "sha256": "e79ada3c2e3a25539deee8bf25895dc03054d646ca731763803ae92ded5bde7d"
     },
     {
+      "path": "components/science-framework/equations.tsx",
+      "bytes": 16959,
+      "sha256": "6be736246b178de79fffd11d5397709e7b538eafeb3ddd5215abf5fb253192f8"
+    },
+    {
+      "path": "components/science-framework/index.tsx",
+      "bytes": 11185,
+      "sha256": "dc3e463ecf8fad95319d69f033ef68fbecf5b70bf4ad346b399b314939effe89"
+    },
+    {
+      "path": "components/science-framework/styles.ts",
+      "bytes": 3681,
+      "sha256": "843a9ba452b2b8d0b3d2bf522feceb2037835d83242d886f18da11e1636cdc43"
+    },
+    {
       "path": "components/site-shell-nav.tsx",
       "bytes": 1175,
       "sha256": "1115613d11dda824f534b78597722f3a3cb61072020e98c86e939caabbb79464"
     },
     {
       "path": "components/sky-views.tsx",
-      "bytes": 14028,
-      "sha256": "055ce3851a697678d005e07273389ef634a741e20799db235f2a2bb2081b9f06"
+      "bytes": 18421,
+      "sha256": "b7481aaf29683800a04dcf50762391ad059ff3f9413bf731baf17a448f95a3a7"
     },
     {
       "path": "components/ui-theme-toggle.tsx",
@@ -484,8 +519,8 @@
     },
     {
       "path": "components/workbench/public-exploration.tsx",
-      "bytes": 3689,
-      "sha256": "54ba3a7c719bb7f3e755f571f1d38245c4c98acd828327f35fe30f8addfc8b5b"
+      "bytes": 3888,
+      "sha256": "0cf1adfda55e9b16640f9be558f58b23ddb2d3db044a4d96544a06b88ccd14db"
     },
     {
       "path": "components/workbench/scene.tsx",
@@ -554,8 +589,8 @@
     },
     {
       "path": "components/workbench/scene/nasa-globe.ts",
-      "bytes": 3653,
-      "sha256": "6cb6c5dabdef72560f63b32048e13a47432ef3e9b92acb116b1b9a2f65b33f06"
+      "bytes": 4533,
+      "sha256": "b98adbb9671a64ae616ed9c80ccfb7d9406945463a830fa360dff370ee0151c5"
     },
     {
       "path": "components/workbench/scene/pole-labels.ts",
@@ -579,8 +614,8 @@
     },
     {
       "path": "components/workbench/scene/runtime.ts",
-      "bytes": 101514,
-      "sha256": "57950dfe28bd55357d0b7e18b82d2daa38a4041474706c6547afb22b62ce9015"
+      "bytes": 102395,
+      "sha256": "de203b7de54242cfb8e9cf2dfcfdc7ac21ce5284fef01e5497956559b3ed0e1a"
     },
     {
       "path": "components/workbench/scene/surface.test.ts",
@@ -598,9 +633,19 @@
       "sha256": "3f8d464db807fb2c7af2e351ad5972435aa49c5cf4ec35656691ab8b96bcaad5"
     },
     {
+      "path": "components/workbench/scene/visual-moon/assets.ts",
+      "bytes": 5157,
+      "sha256": "9f6d15be4daeea6cb45154287a0b06a82b4d0a36786242ba39916b8b2a69d03e"
+    },
+    {
+      "path": "components/workbench/scene/visual-moon/material.ts",
+      "bytes": 2461,
+      "sha256": "74d6e1c84525df3416f04db6d10e08ce6d959c0c07d0b0d28f43291866699f3a"
+    },
+    {
       "path": "components/workbench/science-charts.tsx",
-      "bytes": 31550,
-      "sha256": "b18d1e193d3d6fbc76a689ae8019437dff7da3fca6aaa92210d817a4c46697e3"
+      "bytes": 32568,
+      "sha256": "4b8cfbeea2d47ebba7ad891ab31f6a2871fde1a767a08b75e4d45dc363c4923f"
     },
     {
       "path": "components/workbench/sensitivity-panel.tsx",
@@ -659,8 +704,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 14109,
-      "sha256": "6d5c307c752bcc821eb29fb12e0769b76558a0086e9daa57c4879a18d54487f3"
+      "bytes": 15209,
+      "sha256": "2d2fc4db254f3680589492355172711c17cd280eb68db97f3f157dcb1f6b95df"
     },
     {
       "path": "docs/CONTRACTS-MAP-SCREENING.md",
@@ -673,19 +718,24 @@
       "sha256": "6ddd2fde63abb419cd21922e494d92e9e7ac579ab121f9caea056d48a8f79c2b"
     },
     {
+      "path": "docs/DATA-PIPELINE.md",
+      "bytes": 13779,
+      "sha256": "5ac5861a4abcf9e17ab0fd11889dbaeefbddd3b759e85be1292e75ec3895ff78"
+    },
+    {
       "path": "docs/DEMO.md",
       "bytes": 12491,
       "sha256": "2391a910ad684097e8746a03f856ad1fe798018b0a11a7c5b05c8c6873e8e30f"
     },
     {
       "path": "docs/DEVELOPMENT.md",
-      "bytes": 17950,
-      "sha256": "36228f35b3e7e797f1144fbef6dbf5b2d1896f26573660109d8cbb70cf0861a6"
+      "bytes": 18905,
+      "sha256": "cbefa8f9d0d4b512e7168cc4549cb2175c761ac9f67c6f3f5e7282c0c38e4b9c"
     },
     {
       "path": "docs/IN-FLIGHT.md",
-      "bytes": 15690,
-      "sha256": "a1cf63764ee143616ead30873d4893189fa0a615b328c2483f6c88f0428ed416"
+      "bytes": 17258,
+      "sha256": "dcd4242d5bbd5ae3e1adea94cef9d4bb4b91563b4fdf9d41906af2c26116a57c"
     },
     {
       "path": "docs/LANDING-CONTRACTS.md",
@@ -693,9 +743,14 @@
       "sha256": "e3891bff54554314699c1c35fc26ffda9a378ba69ac79c54e164b54e0706405f"
     },
     {
+      "path": "docs/MATH-ENGINE.md",
+      "bytes": 53328,
+      "sha256": "75b1bb3fcf8a5b8d19bd1fe874cc2a0545f4330b48534460be719cd887685458"
+    },
+    {
       "path": "docs/MODELS.md",
-      "bytes": 15549,
-      "sha256": "461c82008bb51cfd1983fec8d2a1e61d9c3c93e6bdd7584f7c5f9a2d168255a0"
+      "bytes": 16313,
+      "sha256": "4bac190b482a288e1b75464a0be24b8d808cf76ed68f26479004964c87cd25c9"
     },
     {
       "path": "docs/PROVIDERS.md",
@@ -711,6 +766,11 @@
       "path": "docs/STARS.md",
       "bytes": 10077,
       "sha256": "a15e2255cc38bf4101ada8fc823ee1daf82b2ce792b5a00a85963d3f3019c634"
+    },
+    {
+      "path": "docs/TRAJECTORY-COVERAGE.md",
+      "bytes": 16213,
+      "sha256": "38e8f2954e7800e917cde28b538c07470be388a037323fde2cb7834bcc091e55"
     },
     {
       "path": "docs/agent-log/alternatives-engine.md",
@@ -789,13 +849,13 @@
     },
     {
       "path": "docs/decisions/0005-planning-evidence-contract.md",
-      "bytes": 5337,
-      "sha256": "3be529b6393d0abc2945d65850101e130442d3bc67ae7f3f5ffea35a981503dc"
+      "bytes": 6269,
+      "sha256": "7fe1e228e8609d04126b5ac833a2ce26e3a6e1b2504473dae0aa867ff56edcec"
     },
     {
       "path": "docs/decisions/0006-shared-planning-assessment.md",
-      "bytes": 2241,
-      "sha256": "2c1b9974fec3904e0c78e0521a34fe9a0718741d57f1c4822b659175155b0865"
+      "bytes": 2711,
+      "sha256": "5357d06d21f47c0c5234c2eb2fe8b6c867a1c0a68c741960a8e558d4587addf6"
     },
     {
       "path": "docs/decisions/0007-scoped-engineering-screens.md",
@@ -836,6 +896,136 @@
       "path": "docs/qa/INTEGRATION.md",
       "bytes": 4287,
       "sha256": "200c5ae04d842929f67ef4de04ffd45ec14293c298a406edd119d4e9b2dc3a1d"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/VERIFICATION.md",
+      "bytes": 2535,
+      "sha256": "74ca3eb13c741c59786c827656eb44f910273266fbd94b5828b4ca1957502e88"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/charts.json",
+      "bytes": 411,
+      "sha256": "930aff7ccd042a82737cc52c8f5152a1bbc28e4e15eeae4347b9d4131e453384"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/flight.json",
+      "bytes": 455409,
+      "sha256": "1ae9583e69d6d1842d52d9cca1e31eafa676ab314f468c736e7f0e6e988dc2c6"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/locations.json",
+      "bytes": 2007,
+      "sha256": "1bef1eae0446d47b54a46134c64fe1407abb2d54a6ac3421c23aed7d2961f3bf"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/mission-paths.json",
+      "bytes": 361,
+      "sha256": "d140ab19e4e5f404ea1ad55be157552db92340619b44cace9e426038c71f5b2b"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/receipt.json",
+      "bytes": 1758,
+      "sha256": "96c4c46ab8625681a281ee08e4547e3bb668fa3e98233507de9686d9a0428df9"
+    },
+    {
+      "path": "docs/qa/audit-replay-release/transfers.json",
+      "bytes": 39113,
+      "sha256": "8ba2e30cc3c0031071e1f60ac367ca6a05a0886bbb7ae9258318af3bca2ba654"
+    },
+    {
+      "path": "docs/qa/final-science-review/REPORT.md",
+      "bytes": 13876,
+      "sha256": "d49d5e479de5c3123297a85572251d88cb4abd60aa6a74c2f183256b0ddf4407"
+    },
+    {
+      "path": "docs/qa/final-science-review/RESOLUTION.md",
+      "bytes": 2099,
+      "sha256": "0df5fa29bc0bf789aa2025f5f73049fff1955368eec3733361b78c9dcbd4b542"
+    },
+    {
+      "path": "docs/qa/final-science-review/check-production.mts",
+      "bytes": 8763,
+      "sha256": "e660eb93ddd05eb10cf982a746fd41464eb384e65005761479f470950f55a80f"
+    },
+    {
+      "path": "docs/qa/final-science-review/dynamics-reproduction.json",
+      "bytes": 22681,
+      "sha256": "3df9d84e0bc3e548393bcef093b3b5045c5d3b69aa223f2eb1708d38d7d89206"
+    },
+    {
+      "path": "docs/qa/final-science-review/dynamics-source-check.txt",
+      "bytes": 58,
+      "sha256": "e2c5eaacaf12df1206fc392307fa07105e68fe93de2fdefbc48c75fee348a1db"
+    },
+    {
+      "path": "docs/qa/final-science-review/focused-tests.tap",
+      "bytes": 67660,
+      "sha256": "10229d74a9e19c541c2a2a71e90d250bcc2b0849a11fbe1c03ffde4c470f38de"
+    },
+    {
+      "path": "docs/qa/final-science-review/identity-contact-tests.tap",
+      "bytes": 13486,
+      "sha256": "d3e57bb5888af232bf6bb51285ed33ee223f37b84b3652ddeefff9a0e2f6f368"
+    },
+    {
+      "path": "docs/qa/final-science-review/probe-register.py",
+      "bytes": 3899,
+      "sha256": "c626c635e7b056bd94db3237ef0292c1b10162daa81f775011f9d3d4c39dce23"
+    },
+    {
+      "path": "docs/qa/final-science-review/production-check.json",
+      "bytes": 4381,
+      "sha256": "324204105bd44831ea0ab37b0011355b8ecddc4befe9fd9595b7e9d5cf5baa27"
+    },
+    {
+      "path": "docs/qa/final-science-review/production-check.txt",
+      "bytes": 137,
+      "sha256": "551976a18eec7fc86a970a50e72a8421eec47a304c8ef8f1082a02fd53b47cb6"
+    },
+    {
+      "path": "docs/qa/final-science-review/reference-check.txt",
+      "bytes": 591,
+      "sha256": "4dbb39daaf6a74d63b15569fd47d080e6f4b1792782198b7e30cd843e9c36cbc"
+    },
+    {
+      "path": "docs/qa/final-science-review/reference-macos.json",
+      "bytes": 52430,
+      "sha256": "9e3cc533a91af14f5ec1800eb516735dab3affc2c917baf992270cf84ecde9ae"
+    },
+    {
+      "path": "docs/qa/final-science-review/reference.json",
+      "bytes": 52424,
+      "sha256": "436eb88f4c9cb1960f927a9c21896ca5fbc744b81143b697c5d80b7644643150"
+    },
+    {
+      "path": "docs/qa/final-science-review/register-freshness.json",
+      "bytes": 1581,
+      "sha256": "b2ae8eeafa9970849be48064dba5221f9fc1a96ca11425d5051565516e3ebf20"
+    },
+    {
+      "path": "docs/qa/final-science-review/register-probe.txt",
+      "bytes": 1581,
+      "sha256": "b2ae8eeafa9970849be48064dba5221f9fc1a96ca11425d5051565516e3ebf20"
+    },
+    {
+      "path": "docs/qa/final-science-review/reproduce.py",
+      "bytes": 9075,
+      "sha256": "b89b7807e64acb87ee3b43be0539fcd6b4fe3ab5e36ccd2e73af0ce2b57efb45"
+    },
+    {
+      "path": "docs/qa/final-science-review/resources-reproduction.json",
+      "bytes": 65161,
+      "sha256": "ebe629ede101a7045fd2bdaed3f2cf363fe2680059d130f3f377dd46ed250855"
+    },
+    {
+      "path": "docs/qa/final-science-review/results.json",
+      "bytes": 9990,
+      "sha256": "b7422c068804e05dc4518b9f73311dfa8cc6a3d5266362c6506a0d60e10781aa"
+    },
+    {
+      "path": "docs/qa/final-science-review/typecheck.txt",
+      "bytes": 75,
+      "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f"
     },
     {
       "path": "docs/qa/flight-experiments.md",
@@ -1888,6 +2078,601 @@
       "sha256": "be857ee72a79e61de66cae2969f183558182826847e453edc65bc1fcc5e61834"
     },
     {
+      "path": "docs/qa/scientific-audit/CONTRACTS.md",
+      "bytes": 3104,
+      "sha256": "490d427f1f616327786e9b1a556ac89208eff23ca8cf049c6b35cab282195ffc"
+    },
+    {
+      "path": "docs/qa/scientific-audit/VERIFICATION.json",
+      "bytes": 227918,
+      "sha256": "a1854067cc0168421c2ff21f92cfb7af6bd4edc996f2fb1e56d920d5255d5b81"
+    },
+    {
+      "path": "docs/qa/scientific-audit/VERIFICATION.md",
+      "bytes": 15249,
+      "sha256": "66b9ad986c01f84a808c1bd04dd4a1a7d3d8a6133f6adee2291977b350ec0401"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/REPORT.md",
+      "bytes": 15223,
+      "sha256": "794e2ae3e0551716008ba11a0d5d47e8aa3df5bbaf669357b53225b12acb408e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/after-contact-tests.txt",
+      "bytes": 905,
+      "sha256": "e2fd68d77f21a227575d90bfbb6bfe8332d7c92fa5db43bc4c99adc6f4d61d9b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/audit-tests.txt",
+      "bytes": 4547,
+      "sha256": "86870e632562dab54c3e7eb4beb12f44d45f23ad9c8b6a30d27a4480d490eb64"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/before-contact-tests.txt",
+      "bytes": 3360,
+      "sha256": "e2929132a2757c1884d1f042b81cea465b335315f1a4330351c6e7f2810ebcd6"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/before-initial-surface-tests.txt",
+      "bytes": 1642,
+      "sha256": "ef79cde56add5f1371f40017d959104fcec9d56b85a9fd7333a5f6a8004cc58c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/before-penetrating-start.txt",
+      "bytes": 205,
+      "sha256": "d3952626da5e7276677e5b21dc3d3e6667337c99e71a412debb5ee933eb5b26d"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/checks.json",
+      "bytes": 1682,
+      "sha256": "b7d10840f6323439cd644c75891207ab36237b318e87a2bc36cca6e8a741658f"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/focused-tests.txt",
+      "bytes": 29291,
+      "sha256": "2c237ce4986f1a9df6cd0f1a5412e7ddcc29d963232298a8ffa2f3eac016d3a6"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/lint.txt",
+      "bytes": 44,
+      "sha256": "ac8d21e95284435efae7165338d29139a0a6888bec29aeb58b02f452a3d050d5"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/measurements.json",
+      "bytes": 22488,
+      "sha256": "588f10c86479e5cf91f02a99ce2ee8d21bb15c3969816584ec5e453d2af7bca5"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/jpl-parameters.html",
+      "bytes": 22489,
+      "sha256": "168f48b94ae3a65f31c96f081d08e7ca91ecc9e65678fdc57353821b492b313e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/manifest.json",
+      "bytes": 5795,
+      "sha256": "b874c923ea60b2793b8ec2812c5e9e25927ff5325c8eedabc8ae8a5675aa7f7b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-free-fall.html",
+      "bytes": 72424,
+      "sha256": "05883cd2f08aa99899eafeb82c3cec73b70f37c3c6ee81a9e22026965553363c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-moon-facts.html",
+      "bytes": 8980,
+      "sha256": "a468979dfb4179e36a3f6579cd2d1d4a475b5c6da29313fd470fa68ca1aa30c1"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-newton.html",
+      "bytes": 80141,
+      "sha256": "e746a6e546b5b5a925e8873770653401efd65af06da345b40e679942f49ac2e0"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-plume.html",
+      "bytes": 308359,
+      "sha256": "73e0e055dec0bf8155fe7e215e1ef203daba56bf6e1fc73e5bc9c7ba53fdfaf6"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-rocket-equation.html",
+      "bytes": 75368,
+      "sha256": "40859d05af429b64e1d50a36fef962a081df7efb05ac26acb684fa0598586f88"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-specific-impulse.html",
+      "bytes": 74313,
+      "sha256": "bfef839d1a7ef1ff6fb5fd743eae4eed3668c55d480cc71cf61938b5f0a8b47c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-thermal.html",
+      "bytes": 408133,
+      "sha256": "76e25c17c0dccbe4c402d1927a525432c883db376fc1675de0918361f86c28d3"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nasa-trajectories.html",
+      "bytes": 292392,
+      "sha256": "1f7fba6079103d282da22a77cc561c5ff9e0d9d5acbb0f69fc965468c88b1afb"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/nist-codata-2022.txt",
+      "bytes": 40801,
+      "sha256": "77fb90e66c40db3e6eb16630bc9c88e4c7c8beddbe5e71be406f2f26e3f67e67"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/ntrs-apollo-gear-1972.json",
+      "bytes": 3155,
+      "sha256": "cc1cac8c49fed4961f28a742358f9c2c21b58ead97866437b69750c2b9152092"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/references/ntrs-landing-1964.json",
+      "bytes": 5052,
+      "sha256": "b1d5b4a2fd2edbfcc3bde46f6cb560d658e98c42cf0310fcf3f03f67cb484f47"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/results.json",
+      "bytes": 37842,
+      "sha256": "9062a60afa41f19a5f107bdc1952eb0824c39f523b024a53e991d9df136654c8"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/slop-scan-baseline.txt",
+      "bytes": 1151,
+      "sha256": "646b665eb25d104a6b15a24ba2d6bb44518d7fcf6079f4c8f27a869ce15c7049"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/slop-scan.txt",
+      "bytes": 1151,
+      "sha256": "319d8ea3dd90f954cad6dc6791cf152c03269113e47938077f0e4604b9a989b3"
+    },
+    {
+      "path": "docs/qa/scientific-audit/dynamics/typecheck.txt",
+      "bytes": 75,
+      "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/REPORT.md",
+      "bytes": 13216,
+      "sha256": "460bd0ef32c90f004025f1774ac07cd206dbe4d636b9ba6884ff285e709104e4"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/TOLERANCES.md",
+      "bytes": 3155,
+      "sha256": "777eb317ce12a3934cf2d4289ad2dc24f15506d236ca0aecb8637cbc2fd8515a"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/baseline-tests.txt",
+      "bytes": 3169,
+      "sha256": "373e0a138d3973ca76c4170a9f41a41b9f8f09499e658e0e589f125bd938eba2"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/before.json",
+      "bytes": 110524,
+      "sha256": "37e9b1b2a18fa1d419e96194df1f34eb62fdb1261e145af074efaf193563ae54"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/checks.json",
+      "bytes": 1843,
+      "sha256": "29d413f70852d6c3282445ebd3c6bbc9425a065744e596c06ef3c3cc3094e7ec"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/comparison.json",
+      "bytes": 110486,
+      "sha256": "b04206e6c229f91b6d196fa789b017feb95f4f78ce187cfb20cd41ea8d61c7f2"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/events.json",
+      "bytes": 7747,
+      "sha256": "b13bbbcec0595a5e3146986625ee591b61530890608c0186a7a671b069c17945"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/focused-tests.txt",
+      "bytes": 2428,
+      "sha256": "e0d37261110debc267ea36199868456a0977aefb4d5d268b8068f95cd6b83607"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/apollo-11-10.json",
+      "bytes": 10357,
+      "sha256": "3937048f34977da065e2b8819a680ee365b2bc2af7c5869e1f3b08b619b0c076"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/apollo-11-399.json",
+      "bytes": 10919,
+      "sha256": "2b4806b41806e39958bfc7a4df2638e05a08e9fb8c304ebf2d739ba0f41b0021"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/connecting-ridge-10.json",
+      "bytes": 10377,
+      "sha256": "ee5389de71c2e61ccfac0e98d0cbe895dcf80a8dbc481a2da9810841c5b7feab"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/connecting-ridge-399.json",
+      "bytes": 10939,
+      "sha256": "0768636164c32704195994f5c43fda48997a50d3d6a0ce4f10e0c42fbaf30b65"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/dateline-east-10.json",
+      "bytes": 10351,
+      "sha256": "cb21908c4c6f789480d3d2a1b28dcccc2c30705e6602547255a21b9622295d4e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/dateline-east-399.json",
+      "bytes": 10913,
+      "sha256": "f964cac6c9406d4453e38d0e36e4d380093ddb236134126015b25392aaa5482c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/dateline-west-10.json",
+      "bytes": 10355,
+      "sha256": "a0bc0ee18105c39900c6a3d098dc628383ddf7fce87df544aa7d4f2c00b0fd7d"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/dateline-west-399.json",
+      "bytes": 10917,
+      "sha256": "ca1a78aca8ebb1377790374e6bb718cd76204b38b0803613851bbfca8c4814b2"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/earth-from-moon.json",
+      "bytes": 9079,
+      "sha256": "49220ef6df24c86f88bd12266dca0c79a770ad8a5d6d07f69bf6dd6d28ce0cd7"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/equator-10.json",
+      "bytes": 10327,
+      "sha256": "6ac68289280e1c6c0523156ef6894d95c3dbecfac35d320b750c339c16102145"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/equator-399.json",
+      "bytes": 10889,
+      "sha256": "feb7c510d19316c2e54d4a7d945ee2df10fc12d677b08193e2b9ff3831bce0a2"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/event-10-centre.json",
+      "bytes": 13356,
+      "sha256": "51b353a16dafe5b9e0bedd24fa900c360367d0bb150149c082410c07cf4b17bf"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/event-10-upper-limb.json",
+      "bytes": 13363,
+      "sha256": "2c904bb207f7f18120c51dc114b4c5846c69a342a55c9479b17b2e7b0b4e690c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/event-399-centre.json",
+      "bytes": 13926,
+      "sha256": "abc2dc7d4a7ea4471fbe5d31cf751370356dff46b799cb201edb293d360a0db0"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/event-399-upper-limb.json",
+      "bytes": 13929,
+      "sha256": "23da6c4f1744867cff67d865b769857ab2472b195ce236ecb62c12f25bff7c60"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/far-side-10.json",
+      "bytes": 10333,
+      "sha256": "9bd4ba91b554b3d1c6f624954b4e7961d337c98f37cfc3809d38161b3a0aa5dc"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/far-side-399.json",
+      "bytes": 10895,
+      "sha256": "0619d770a44fc9e6d7aa1349fe2c45e2978d1f2733a098ca626d72404b0cde9d"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/malapert-massif-10.json",
+      "bytes": 10347,
+      "sha256": "c76746c839d69b75727c5af7b5e6b99b29a0db5a907451f42e78863dc0aa4ce3"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/malapert-massif-399.json",
+      "bytes": 10909,
+      "sha256": "eba30fc547639dbdd21bcc4f8c2c8dbb9d5057b77e1e52ad2f3bf649689c8890"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/moon-from-earth.json",
+      "bytes": 10774,
+      "sha256": "d1b76e8915af7d02c49392724983d557a3b6151d9489ead373d42031d0465cd6"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/north-10.json",
+      "bytes": 10331,
+      "sha256": "bbd25e8b9a4815f79fa0fc7e5d47c8167b028b81a1b01cb18e49b6c2ec162f8c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/north-399.json",
+      "bytes": 10893,
+      "sha256": "f3373891a3346b866ec3b514aaa9ebbc0b009be21819b67eced924da75ab39b9"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/raw/sun-from-moon.json",
+      "bytes": 8516,
+      "sha256": "ea7ee2b5aae3a01b3b1428902dee88b1e42f81c0dbf3b9dcc78d1487e7e61c5c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ephemeris/results.json",
+      "bytes": 28946,
+      "sha256": "ef73ee20bd665566c982f9d21a9abb3be6ef2e8c2d730c7f7b22a51a576f0211"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/dynamics-after.json",
+      "bytes": 22679,
+      "sha256": "5602003aad73b1b015b5fb818abb06eabf08f6fc2228a8ff7896368d020db556"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/earth-range-reference.json",
+      "bytes": 972355,
+      "sha256": "cda8ac3dd3e2a8ff664bdf76c5e049eebe66e82851fbe8fed6993b44f07981dc"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/earth-range-repair.json",
+      "bytes": 1050,
+      "sha256": "fb67a6e1c1d64adcf02c5f596d70f24abe5001df253e6e7bb1b21ae55132e4e0"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/ephemeris-after-input-repair.json",
+      "bytes": 110486,
+      "sha256": "b04206e6c229f91b6d196fa789b017feb95f4f78ce187cfb20cd41ea8d61c7f2"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/ephemeris-before-input-repair.json",
+      "bytes": 110570,
+      "sha256": "c1d4f9201338eccdb6e2ffd55d053ae9bce30ce3d508931682a2329964a08c1b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/pipeline-after.json",
+      "bytes": 342,
+      "sha256": "f8e2d8620c6e33415e2628a90a44255f54e659765059ff2229cd3238854d48ee"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/receipt-bindings.json",
+      "bytes": 3398,
+      "sha256": "503cbc7066f8b5190d24176bd4f2e06625d177e8e6cab4582840172baee62986"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/source-capture-before.json",
+      "bytes": 20238,
+      "sha256": "01e9c678406b273197b51183ae15220f9665d805ce981e37ac0841bcd2b3c25b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/source-inventory-before.json",
+      "bytes": 34042,
+      "sha256": "4bec9fa5faec2dea958c3f1cb9adce24c3f7db87c01285aed18cb498715fc7ad"
+    },
+    {
+      "path": "docs/qa/scientific-audit/integration/terrain-registration-after.json",
+      "bytes": 860,
+      "sha256": "02861123be415fbec316fd70f91d41ded90f01ffcb49f1347a93410d9bcbdc62"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/REPORT.md",
+      "bytes": 14628,
+      "sha256": "725d8a0d97461c2c6bf3353e149ecf3057498d60f111dbf452e1c47376489a1c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/comparisons.json",
+      "bytes": 65161,
+      "sha256": "ebe629ede101a7045fd2bdaed3f2cf363fe2680059d130f3f377dd46ed250855"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/input-identities.json",
+      "bytes": 2398,
+      "sha256": "3c756e52441be6be5b95f78b67b436f2b2df2148182f67c8f2f1d81bb220c7b8"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/reference.json",
+      "bytes": 6337,
+      "sha256": "d15c03fc934b78558a0a36cecb0a0014432063736c6eb058b097f67d5992e736"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/results.json",
+      "bytes": 39390,
+      "sha256": "6107dc03d6f8f39f9447565a0cc5cc138b04022424bad26c8608a0f69fe8d6da"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/101I.pdf",
+      "bytes": 2034934,
+      "sha256": "b751b026fe433e348ba749f3b4e9c6d003e603f7534d7ecad21b8bd119f74132"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/105E.pdf",
+      "bytes": 1459154,
+      "sha256": "e192fd7fa234c349cbf0379c9eaad873624dde0bd78c2d7f10ac95cbf9397131"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/301O.pdf",
+      "bytes": 3073743,
+      "sha256": "e048957eff4ec35228a1c22140b1f240650f2c10444bcd38a757523853d6373e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/301P.pdf",
+      "bytes": 2745535,
+      "sha256": "53d8c28eddde48a2212b403422689a11fc0ff75fcab830a1e2ec00cdf8a4e160"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/P525-5.pdf",
+      "bytes": 246217,
+      "sha256": "55ff9bf5bb4534b91863fd84d760fe689e2f969b91db0ea786717fd078df1da5"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/P838-3.pdf",
+      "bytes": 338506,
+      "sha256": "3ab7482993e51fc63c5127a72e9e8930614e73652ac614882760817e7c1469cb"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/canberra-fresh-horizons.json",
+      "bytes": 8781,
+      "sha256": "4c4fc607b94c1070e471a3791fceb7c0482fae24726b1767917730a55b801e00"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/goldstone-fresh-horizons.json",
+      "bytes": 8780,
+      "sha256": "39a98b43e7b4a75095c85683fd25a032581206d1d31ab2ad16934b178acd4b08"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/handbook.html",
+      "bytes": 23410,
+      "sha256": "98f87964f80b75d6abe16df24398ade668943ba8a29fc4bf8ee4f461affeda85"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/madrid-fresh-horizons.json",
+      "bytes": 8780,
+      "sha256": "5095ca9109c52bd8a7a5aaa424b784f44d442b5b2861657ba396550aada4bb08"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/manifest.json",
+      "bytes": 5946,
+      "sha256": "5b8f2810ef74c0876e507f5a8176d77cb3c184a3521214c53fe1ac62811f29ff"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/sources/power.html",
+      "bytes": 476455,
+      "sha256": "69c0b3655b6131f053f4f3a80066a47f8a0f98e37485bb613fa5788b345a50ca"
+    },
+    {
+      "path": "docs/qa/scientific-audit/resources/verification.json",
+      "bytes": 2517,
+      "sha256": "be32a0e70d2f1c4e090677853ed05da124f66babd7c41ddfc34a830ebf409584"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/REPORT.md",
+      "bytes": 15133,
+      "sha256": "6c35823a7476ed4d4fd6853654b21bd98130b38e82a3554f92e2769a06f9aafa"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/checks.json",
+      "bytes": 1644,
+      "sha256": "7053d874f74d281b82dec8ac9f7293e40babb1bf7fbedf5ae6eec0ee3767009e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/checks/focused.txt",
+      "bytes": 3333,
+      "sha256": "356720cc600aed299d80546d7d3a1d975545a1b578c725d724d615c5802706c0"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/checks/lint.txt",
+      "bytes": 44,
+      "sha256": "ac8d21e95284435efae7165338d29139a0a6888bec29aeb58b02f452a3d050d5"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/checks/regression.txt",
+      "bytes": 12320,
+      "sha256": "bd58f247fdb6d38fd02ab53a6419c2cf9f9e9975bfe1031e980333284f499cc8"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/checks/typecheck.txt",
+      "bytes": 75,
+      "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/inventory.json",
+      "bytes": 34162,
+      "sha256": "6df226700b297f842583952837f7a5626f987d190514045640d0704e1dd40c9b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/pipeline-probe.json",
+      "bytes": 357,
+      "sha256": "5ee101174ade88915a824e7128153a96c67e32ea37c66954ddc93c3576cf1d2b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/references/capture.json",
+      "bytes": 20434,
+      "sha256": "6c97fe1ab4b9a1d541bb12afb049656bf9e3484f03b8fcd343c44f4f73ea76f3"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/references/responses.json",
+      "bytes": 7171756,
+      "sha256": "7b38ccdf4194087b839fba47f8c08531b5733698cc665b689232fa4a98492485"
+    },
+    {
+      "path": "docs/qa/scientific-audit/sources/results.json",
+      "bytes": 29268,
+      "sha256": "0d443e3083c40401022d903efa148a106fe2ee027cf3a5efcbf2cbe8ba64fc2a"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/REPORT.md",
+      "bytes": 13124,
+      "sha256": "ce2346e2ba51dda678abd6aaa756aa6ee1a8f7b4f421058a7ca42e33a3071ccb"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/browser-after.tap",
+      "bytes": 1758,
+      "sha256": "d67fa8933676966d1e7291bd63696006eaaf4f8a8e159a725e8f618de8608266"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/browser-observations.json",
+      "bytes": 9471,
+      "sha256": "c6ce4206d44f036af448772037ad0fad582b97bab5eede40309b76e784a0bf3e"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/contrast-before.tap",
+      "bytes": 4008,
+      "sha256": "61e8c75c903f760ff4ae09b46c43d9b88b24d1ca729aaf049b490d080de94604"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/contrast-ratios.json",
+      "bytes": 232,
+      "sha256": "b45c064b3a2cfc6eae00d8aa89e4e38b93ab93857fa8f03ff0b42d3076c29466"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/existing-browser-after.tap",
+      "bytes": 1561,
+      "sha256": "b7b225c079091973434aca40a98a0639da38002f3a6043f126f63dad6f58dc7b"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/focused.tap",
+      "bytes": 11483,
+      "sha256": "d479c19645a025996a5aa1753247441bb3501e0fc29747d205682cc772839e33"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/integrated-observations.json",
+      "bytes": 10607,
+      "sha256": "09b8858a5c504976079b5128652d40defd97149a0d4408505697e234edc1cb04"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/lint.log",
+      "bytes": 44,
+      "sha256": "ac8d21e95284435efae7165338d29139a0a6888bec29aeb58b02f452a3d050d5"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/raster-manifest.json",
+      "bytes": 3370,
+      "sha256": "e8485fb6939ba2ac72a9daac35093022826e79c6fd6742d828f7c644b261d0f7"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/supporting-text-after.json",
+      "bytes": 2003,
+      "sha256": "0005a36a3e3cbca019f6be08d159238fdbe6f2a570cdf2c6595dda474accd7f1"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/supporting-text-before.json",
+      "bytes": 2006,
+      "sha256": "c200cc603ea7577f62ced629cf3d0d47495553a57728833cb20b8fe2a9053f45"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/evidence/typecheck.log",
+      "bytes": 75,
+      "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/references/canvas.json",
+      "bytes": 8453,
+      "sha256": "d0b3d4a59bf0e5a00b977dc8e65c8795b80fb59c47e13f0b222aa74110ad3960"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/references/clipboard.json",
+      "bytes": 9526,
+      "sha256": "1549ee93e8144d6d346a08bc9d5493057614a1a23894edf4539dc79cf661119c"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/references/contrast.json",
+      "bytes": 8217,
+      "sha256": "7c2c05a614100841142a97cb95693394998b395fcf06d497641c902bb473b5f8"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/references/manifest.json",
+      "bytes": 672,
+      "sha256": "5176d3ac82730abe559631ff841429897caa129a4c6faa3402ddc7b08ddb687d"
+    },
+    {
+      "path": "docs/qa/scientific-audit/ui/results.json",
+      "bytes": 25054,
+      "sha256": "cd4ebd8bbe99fc07ba2ad402873634979473830d98ebfbf2a77d70b1cf78a8dd"
+    },
+    {
       "path": "docs/qa/site-transition.md",
       "bytes": 3837,
       "sha256": "f223158546055f50f0d28eb28f9d8f5ee5a60c15d9fe3bf45a3af2a3aa9f1f27"
@@ -1908,9 +2693,124 @@
       "sha256": "253da9121d183253c209f85cb28363afb1dfb9255d66a3e2efe6df14d3f55a7e"
     },
     {
+      "path": "docs/qa/trajectories/HANDOFF.md",
+      "bytes": 2889,
+      "sha256": "9fc6f38850e5e8b90f803f430e52c5b37ae58d3c5698c390969cde321e0e80d1"
+    },
+    {
+      "path": "docs/qa/trajectories/INTEGRATION.md",
+      "bytes": 1925,
+      "sha256": "8fb008cbb20cfbaef2ed5c51006229817f3a7924a0277e49e7ca96eb604d9530"
+    },
+    {
+      "path": "docs/qa/trajectories/browser.json",
+      "bytes": 426,
+      "sha256": "1f0580b68f227db20baa8209cdfea5ff0ecc7e0718e7ae2279e92b6e3475ead2"
+    },
+    {
+      "path": "docs/qa/trajectories/conversion.json",
+      "bytes": 2085,
+      "sha256": "767416fae8faeb6e5d0ba1030076b13d8caf4b86438ef540f726d86276c215ae"
+    },
+    {
+      "path": "docs/qa/trajectories/focused-tests.txt",
+      "bytes": 2335,
+      "sha256": "b63a3ba86b8a9330b71ad430c3b468c082ad383653dde85346497a5e97d21230"
+    },
+    {
+      "path": "docs/qa/trajectories/full-tests.txt",
+      "bytes": 197,
+      "sha256": "dca6ea08a6cb6fb106b2353ceb23ddcf207dc71de8ee9b23c79a109c9650add7"
+    },
+    {
+      "path": "docs/qa/trajectories/interpolation.json",
+      "bytes": 905,
+      "sha256": "a31499ed716529597e25e11c0d5c8b8302281126024ac5bef90a08340dc85eff"
+    },
+    {
+      "path": "docs/qa/trajectories/lint.txt",
+      "bytes": 44,
+      "sha256": "ac8d21e95284435efae7165338d29139a0a6888bec29aeb58b02f452a3d050d5"
+    },
+    {
+      "path": "docs/qa/trajectories/preparation.txt",
+      "bytes": 973,
+      "sha256": "ae7e56565d28ed61445331eabe20a5882a418091226c702e0ad995b955a6370a"
+    },
+    {
+      "path": "docs/qa/trajectories/selector-desktop.png",
+      "bytes": 288517,
+      "sha256": "6f3e36ac396f64b8f82d5801b2afe65036ce14f063cd554cde9144154a58255b"
+    },
+    {
+      "path": "docs/qa/trajectories/selector-mobile.png",
+      "bytes": 149633,
+      "sha256": "5804d8f4a6e403b0ff3b37e391f5b0983986a25c23631eba4a161a5c99a165bb"
+    },
+    {
+      "path": "docs/qa/trajectories/source-attempts.json",
+      "bytes": 10803,
+      "sha256": "ef174a45494a7671a6d94bf500c5f705b92c606cd45a6da3fb4608d65bf07947"
+    },
+    {
+      "path": "docs/qa/trajectories/typecheck.txt",
+      "bytes": 75,
+      "sha256": "0934f6d848a93685ccc9d9b20baf02c4ff189a93ad0bdfa218168120e9d9964f"
+    },
+    {
       "path": "docs/qa/transition-timing.md",
       "bytes": 1937,
       "sha256": "cd35a47bfe32662d7f5278ee0169d4e6091ddd0dba10f24d6e702f5a055cfa3d"
+    },
+    {
+      "path": "docs/qa/ui-polish/VERIFICATION.md",
+      "bytes": 1921,
+      "sha256": "e7012dd4263492fc10be8cea36b21cf477d62aa1aacc794c49c511b047b4aa08"
+    },
+    {
+      "path": "docs/qa/visual-moon/README.md",
+      "bytes": 12809,
+      "sha256": "824ddd2ba1ab69e9eb62429822039d15454d3e584dfba12dac0d1ec8435e5350"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/browser-4k.json",
+      "bytes": 2053,
+      "sha256": "52101b22cedffcc33c71a8afbba036259a5528bae7854917797c2b73f43d469a"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/browser-8k.json",
+      "bytes": 2123,
+      "sha256": "e2351158c629641d7cb9689ccbba1d5f935e075e5ef52235981032dd924e4309"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/legacy-south-pole-epoch.png",
+      "bytes": 351983,
+      "sha256": "d087f74900606590b878213324c9d8080045dcce2d4a4596b0cda74b066d9a65"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/near-side-8k.png",
+      "bytes": 528265,
+      "sha256": "4e4db6ed621858cb4f4635ed05f46fbac3a53e0d3ee5b281987565f503e8ba49"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/south-pole-8k.png",
+      "bytes": 522349,
+      "sha256": "30756dcfdba353b91fb1973bf07471f239581212c832d0067d38d0b65bc9b9cf"
+    },
+    {
+      "path": "docs/qa/visual-moon/evidence/south-pole-epoch-8k.png",
+      "bytes": 462942,
+      "sha256": "50642c679ba4553d5cd42a0bd1db9dc3a91601059b0619dbc16509c5c3b2922b"
+    },
+    {
+      "path": "docs/qa/visual-moon/source-receipts.json",
+      "bytes": 2705,
+      "sha256": "64a37433d22daffce5ee0d8f7d6553722f5325a28a16053aac6bd8ce45d3c96b"
+    },
+    {
+      "path": "docs/qa/visual-moon/verify-browser.mjs",
+      "bytes": 8841,
+      "sha256": "ec26d5dabf6156d030e35bb495629dded3e514f51010c1a6fe78233e0f951918"
     },
     {
       "path": "docs/qa/workspace-room/VERIFICATION.md",
@@ -2005,17 +2905,17 @@
     {
       "path": "lib/assessment.ts",
       "bytes": 12839,
-      "sha256": "3ae74915e94395ed81fc7cd5a061495f1a076d0bcbc878e7da776c40decfd0de"
+      "sha256": "66fa3a6e7ed31f1aae638e7653170a86bf7f438ba3664b5416e2a638477c5c27"
     },
     {
       "path": "lib/asset-focus.ts",
-      "bytes": 5995,
-      "sha256": "1eceac5632fafdd66de72cf127260217497e305f1e19a07d1637bfa88a5531ff"
+      "bytes": 6249,
+      "sha256": "a24f01c36c316c48fddb7ea95b7fb9145c54edc0166da1c898a7ff06a2f0b8f2"
     },
     {
       "path": "lib/astro.ts",
-      "bytes": 21823,
-      "sha256": "8d1beb0bcf2d10f52d6cbd5e4d02a3991be186aeaa53965a5d197f92ad8c90ec"
+      "bytes": 22456,
+      "sha256": "52d2f0867819d65696cfbc076bc3b9c91c528c7f4791e81c82bedae8b1248353"
     },
     {
       "path": "lib/audience/experiments.ts",
@@ -2066,6 +2966,11 @@
       "path": "lib/chart-gradient.ts",
       "bytes": 4735,
       "sha256": "fe04378c528e84f639e40a06ea5671027efad463b9183bc4ba4eac917bb005dd"
+    },
+    {
+      "path": "lib/chart-image.ts",
+      "bytes": 9703,
+      "sha256": "0b2f2bd919a2a32b0d3aac206eb49a676b48c1c5b21fe4172080d8f95ebfcdc6"
     },
     {
       "path": "lib/charts.ts",
@@ -2174,13 +3079,18 @@
     },
     {
       "path": "lib/flight.ts",
-      "bytes": 10505,
-      "sha256": "0383c58cad24f5fe7315a75300af31a69db4a97603d82b3a8352cd68ccd63967"
+      "bytes": 11421,
+      "sha256": "5d19bcc7fe1b6b728795bf223e7cf6d8239cc2be965c2fa0396720b918a84b9a"
     },
     {
       "path": "lib/generated/native-mathml.json",
       "bytes": 198372,
       "sha256": "adb149a00f7edf6f7a138d63547ecc9d552f981a01cb62f666586037dbcc06b5"
+    },
+    {
+      "path": "lib/generated/scientific-verification.json",
+      "bytes": 227918,
+      "sha256": "a1854067cc0168421c2ff21f92cfb7af6bd4edc996f2fb1e56d920d5255d5b81"
     },
     {
       "path": "lib/global-horizon.ts",
@@ -2323,6 +3233,16 @@
       "sha256": "29e4f87b26418bff3cef3e37b28ae227b6b3459a4190f0c897325622f5788da6"
     },
     {
+      "path": "lib/mission-trajectories-catalog.ts",
+      "bytes": 10550,
+      "sha256": "59c4d1c49255397c5eacd14664e08c953bd0dfbafcde387dd84a325fbc4fc5f6"
+    },
+    {
+      "path": "lib/mission-trajectories.ts",
+      "bytes": 11326,
+      "sha256": "f2bfef9401f4352bd6f1cdf08a64e5efb923798152f534df5d29d561551c7f7a"
+    },
+    {
       "path": "lib/mission.ts",
       "bytes": 15315,
       "sha256": "fa80967eb4b21f83633151b11278eb2b07e3eb0d874b4f27259e41011ffd921b"
@@ -2458,6 +3378,11 @@
       "sha256": "3b3ec0273160b4215972212daee0229d811da9da4638eb8c0fbee01b79a93a44"
     },
     {
+      "path": "lib/science-framework.ts",
+      "bytes": 29778,
+      "sha256": "332cbaca394bed56dc5c0633ddaf4fc75fcebf5fdadf7f3adb685841115afe27"
+    },
+    {
       "path": "lib/search-key.ts",
       "bytes": 1064,
       "sha256": "fb8908c266fb84c080c75b66b1def24f1822537e1f989383faaae6d971fedbcd"
@@ -2548,6 +3473,16 @@
       "sha256": "e95ffa3d467ea2126eeebd4479faacec6924b75f39f3b93747166e008a4de0cd"
     },
     {
+      "path": "lib/visual-moon-device.ts",
+      "bytes": 449,
+      "sha256": "d6e129ee05c1aaa2f0613903667200f29057a5efbd770b64eda06f578df02986"
+    },
+    {
+      "path": "lib/visual-moon.ts",
+      "bytes": 2440,
+      "sha256": "fc4fce530d6361d5638e2327a450552551fd8bd64695721241bff42ca2f305d2"
+    },
+    {
       "path": "lib/windows.ts",
       "bytes": 4179,
       "sha256": "69eea88addd9d54474d72589830d08db424e7611138a7e826832f9b9253c18f5"
@@ -2568,9 +3503,14 @@
       "sha256": "ee0c29a3f9b6fabd80d0ef64e6c2cc094322b8e58e2e43eb8cf59c08184983a6"
     },
     {
+      "path": "pipeline/audit-requirements.txt",
+      "bytes": 80,
+      "sha256": "3ca9a894d467b905912ec9cda354fdf80f0c7d11f9e530d3cba2fb62ec891c99"
+    },
+    {
       "path": "pipeline/build_dataset.py",
-      "bytes": 38649,
-      "sha256": "0ab70cc8be367dc615dafe0ccc370e0d2539a61969a82977901e9cdfdb6b5a3c"
+      "bytes": 39200,
+      "sha256": "017aa457778bed45b5af192f94ba7fffda924bb82ed05058138e4fc2a2cc373e"
     },
     {
       "path": "pipeline/ice/build_catalog.py",
@@ -2659,8 +3599,8 @@
     },
     {
       "path": "public/data/catalog.json",
-      "bytes": 1004402,
-      "sha256": "00d28b6c04511cae06353c7a9aa9ca7c35c9f7146821a824e49b138b4b1c0153"
+      "bytes": 1004545,
+      "sha256": "e5a1528cac7db5f4c17e399a12e837fd4fac6c1ea76e7a7e8a9ff7997d2cf35a"
     },
     {
       "path": "public/data/celestial-models/assets/earth.glb",
@@ -2764,8 +3704,8 @@
     },
     {
       "path": "public/data/evidence-manifest.json",
-      "bytes": 29484,
-      "sha256": "cd50cc5e57d28e8cb2f7a0a88ba0e99c8b60f2653539e760df130098abd0a1a9"
+      "bytes": 29933,
+      "sha256": "70e3560c6776f73d960b5c7d96f123371291d06ffc7148029bf792df24b45c37"
     },
     {
       "path": "public/data/global-terrain.bin.gz",
@@ -2934,8 +3874,8 @@
     },
     {
       "path": "public/data/planning-demo.json",
-      "bytes": 2375452,
-      "sha256": "832662fc0ea4468f82d6a89e7d9cd85cf9e214b805a5718cdaf54e51cdfa82c6"
+      "bytes": 2376407,
+      "sha256": "f3679e4ffb254e2feaaf4834351ecb6f7788210bccb7a8cd5fef24f3dd536c2d"
     },
     {
       "path": "public/data/stars.json",
@@ -2944,8 +3884,53 @@
     },
     {
       "path": "public/data/terrain.json",
-      "bytes": 12119158,
-      "sha256": "be7f59a95901f36cda1050538ea75fb1ce51e8b9cf5aebb532073086c0f70c32"
+      "bytes": 12119021,
+      "sha256": "20a4d4261acf15daced712a8a6049bc3c17df94eaf5a7a05fbb757e27966072e"
+    },
+    {
+      "path": "public/data/trajectories/apollo-15-csm-orbit-reconstructed.json",
+      "bytes": 42554,
+      "sha256": "55bebe4a3bde95e09c6c276e4ae6393945f07258a19e6c8a022ef868732974ec"
+    },
+    {
+      "path": "public/data/trajectories/ch3-source-vectors.json",
+      "bytes": 31796,
+      "sha256": "23e6adc984f667585ba67c1285ae0364632e13a02436eb11cd5d2171c61fe6b2"
+    },
+    {
+      "path": "public/data/trajectories/chandrayaan-3-descent-reference.json",
+      "bytes": 26964,
+      "sha256": "6b1b4a4a7028134ec9aab255e07ae23d90875a622c21f08e74b1ebf9652dd831"
+    },
+    {
+      "path": "public/data/visual-moon/colour-2025-1024.webp",
+      "bytes": 511424,
+      "sha256": "2d96f1bdf7a62f8dea3d182a85f12c10ec4659b82d1f9f989d754afc94016fa5"
+    },
+    {
+      "path": "public/data/visual-moon/colour-2025-2048.webp",
+      "bytes": 1970572,
+      "sha256": "02129aeb81425e4f5cc423880282a090ee205e27d136189a4ed6c4216322c9e4"
+    },
+    {
+      "path": "public/data/visual-moon/colour-2025-4096.webp",
+      "bytes": 7873346,
+      "sha256": "9a6e48c63f7a679cd805ae29f2664938389ce3e36a0c08e615fac2be1b3cd8ed"
+    },
+    {
+      "path": "public/data/visual-moon/colour-2025-8192.webp",
+      "bytes": 31037918,
+      "sha256": "9de2d8c8b33d1e8b8fb5f2cab3df6eaa0c68f9c021ddd4a2fe4d2db6b2c0c5b1"
+    },
+    {
+      "path": "public/data/visual-moon/manifest.json",
+      "bytes": 9713,
+      "sha256": "0fbc903430361ec0f6fdfd4b35fe96519ad7e99bff512ac71477f6f8df43f12f"
+    },
+    {
+      "path": "public/data/visual-moon/radii-1x.bin.gz",
+      "bytes": 1393258,
+      "sha256": "e222cf437d4a0e5b2b5fe190fd6e59a8315bf83faf40743926e1f523b620c5db"
     },
     {
       "path": "public/fonts/lunario/OFL.txt",
@@ -2969,8 +3954,93 @@
     },
     {
       "path": "public/solarreach-navigator.html",
-      "bytes": 81624145,
-      "sha256": "500ecca4774b7adead4a5268f3ad9b22bc970510a05c6b4d69b074ee77680828"
+      "bytes": 97610381,
+      "sha256": "21c24beda8e7dc9b31d638835dbe6d24f42ca76ecca90f499b0bb0b5634aedcb"
+    },
+    {
+      "path": "scripts/audit-dynamics-fetch.py",
+      "bytes": 3311,
+      "sha256": "17359786422087bed15cc000abc0545f980076a47a017e8eaeaa611c9d7b166e"
+    },
+    {
+      "path": "scripts/audit-dynamics.ts",
+      "bytes": 10023,
+      "sha256": "9b5c6d3abc9d1c231482133d446bdd94e7ff1e0fa7b445c09b9c6eca41cd5fd8"
+    },
+    {
+      "path": "scripts/audit-ephemeris-baseline.sh",
+      "bytes": 2664,
+      "sha256": "22c81048a9e7ad8467a6885d69514560d1bc6fb37dd78ec9829b7e8043ed4d81"
+    },
+    {
+      "path": "scripts/audit-ephemeris-events.ts",
+      "bytes": 2606,
+      "sha256": "3f48435813017474a6d663f690506a831c7cc098181c6f3c7c5aa1199c2785e0"
+    },
+    {
+      "path": "scripts/audit-ephemeris-support.ts",
+      "bytes": 6740,
+      "sha256": "332d9c02c07878444b2671a5c73c06d117f43fc09e6840731b70d6c74e5b3a86"
+    },
+    {
+      "path": "scripts/audit-ephemeris.ts",
+      "bytes": 5939,
+      "sha256": "b00be5ae835ca8a6ab2e7276cd7f1f250e9dd5aae27a27b5dceed6a59a53ced2"
+    },
+    {
+      "path": "scripts/audit-resources-compare.ts",
+      "bytes": 6112,
+      "sha256": "e54d0c7277ad70fb528026205100fa6a78a6139b88e27a6279ac02aa3ace9e42"
+    },
+    {
+      "path": "scripts/audit-resources-fetch.py",
+      "bytes": 1778,
+      "sha256": "88e5da173c3f061c9de10990b4df2592d2b02323ee0e537da8a99bd250a40fbb"
+    },
+    {
+      "path": "scripts/audit-resources-identities.py",
+      "bytes": 1131,
+      "sha256": "d84ea793e94471b762c1d53fe05c47b4b1f8847ef29725e2eaa9f1f0ecf68496"
+    },
+    {
+      "path": "scripts/audit-resources-reference.py",
+      "bytes": 4636,
+      "sha256": "d8ebbdb33eb10c54dc24447ceeac8227467deea283fc8cd76846d11d5b6fb8ec"
+    },
+    {
+      "path": "scripts/audit-sources-fetch.mjs",
+      "bytes": 7068,
+      "sha256": "d880575a051665b4f66d890dbd4741593434cc3b91d0f038532f653b78b05bcd"
+    },
+    {
+      "path": "scripts/audit-sources-inventory.py",
+      "bytes": 3721,
+      "sha256": "613c6b06d39addebd1d465a2c3bf22d377ff707672eb7703aaf6f8cd86071a44"
+    },
+    {
+      "path": "scripts/audit-sources-pipeline.py",
+      "bytes": 2084,
+      "sha256": "526fa87f13ba43980226cc08e09292aa99f9b3997fec530fb34a3b5a48eb5539"
+    },
+    {
+      "path": "scripts/audit-sources-results.py",
+      "bytes": 16687,
+      "sha256": "d94c06bc47d2385bf80a4983de277e4db713617ae3ffc60946cd1ea5e8f88e40"
+    },
+    {
+      "path": "scripts/audit-ui-contrast.mjs",
+      "bytes": 1502,
+      "sha256": "f077d08ff209fd9e9a36a11060f1ade20c2aa4df213fe543978afc90bdf72a0e"
+    },
+    {
+      "path": "scripts/audit-ui-integrated.mjs",
+      "bytes": 8232,
+      "sha256": "003acb970f2d261ef94708560fabb2ac6b03550db0fc005cebf00508f08e5148"
+    },
+    {
+      "path": "scripts/audit-ui-references.py",
+      "bytes": 2751,
+      "sha256": "d4269d7788a641a65762745fe2076ac24f1363b251d6cb4c33dead2943ab6373"
     },
     {
       "path": "scripts/build-mathml.ts",
@@ -2979,8 +4049,8 @@
     },
     {
       "path": "scripts/build-standalone.mjs",
-      "bytes": 6125,
-      "sha256": "5d8096979f4553dd70beaa4ea3dfa171bb382e7c9ec8cb0f8321664a9bce8a47"
+      "bytes": 6659,
+      "sha256": "a27e71b62f7bb337752b43c622b4ae3e4de2f892bfa37d4548ae13b49567eb2a"
     },
     {
       "path": "scripts/build-web.mjs",
@@ -2991,6 +4061,11 @@
       "path": "scripts/check-demo-final.mjs",
       "bytes": 812,
       "sha256": "efa6f423eb09ddbfae94b1b81a174f992191863b44433768600c13c227d091b9"
+    },
+    {
+      "path": "scripts/compile-scientific-verification.py",
+      "bytes": 12544,
+      "sha256": "51af531e4dd2db89e6a719e6bbae362c7e06e1a1c15e04488e923b985e3d2954"
     },
     {
       "path": "scripts/prepare-celestial-models.mjs",
@@ -3004,8 +4079,8 @@
     },
     {
       "path": "scripts/prepare-fine-terrain.mjs",
-      "bytes": 5062,
-      "sha256": "b61c7525ff3cd814f912521c698d93841b5e43a6861dfa30d987ac97cde3eb38"
+      "bytes": 5207,
+      "sha256": "6209150e42b547131eeed1958450aafc61db85e99b492823629d360d1d0c36c9"
     },
     {
       "path": "scripts/prepare-global-terrain.mjs",
@@ -3016,6 +4091,21 @@
       "path": "scripts/prepare-imagery.mjs",
       "bytes": 5342,
       "sha256": "5490029b292aa36f8cf32eea14267c22ea2cc436a4baa38a2a52565aed21ccc8"
+    },
+    {
+      "path": "scripts/prepare-mission-trajectories-browser.mjs",
+      "bytes": 5925,
+      "sha256": "100ee0cca5ae6e737a2f997f522ca66dccbdfdd6c96ed70de785c87ebba412dc"
+    },
+    {
+      "path": "scripts/prepare-mission-trajectories-review.py",
+      "bytes": 5181,
+      "sha256": "7301dbeacb5217251bd61e3a318f4e078552f0313f2419e1994f7b5e15638763"
+    },
+    {
+      "path": "scripts/prepare-mission-trajectories.py",
+      "bytes": 8524,
+      "sha256": "7c73112d026101b38832322820b98371f5cdc79df4fbe8b90fd9942aea5ff317"
     },
     {
       "path": "scripts/prepare-nac-detail.mjs",
@@ -3034,8 +4124,23 @@
     },
     {
       "path": "scripts/prepare-terrain.mjs",
-      "bytes": 3580,
-      "sha256": "39d99f7e08bfbeedd6988c49850fcfc2824e2776d5b335dbee15370514c80878"
+      "bytes": 3757,
+      "sha256": "ff0f7db08c3eb48a4adfe5332e820e350b35dbaa8f3943a3fdcc9374adf94eb9"
+    },
+    {
+      "path": "scripts/prepare-visual-moon.mjs",
+      "bytes": 8651,
+      "sha256": "8176ce84bd5340712180de3563c678bcfee2043cfae4c75097f5498d059b08d7"
+    },
+    {
+      "path": "scripts/refresh-source-sample-audit.ts",
+      "bytes": 1804,
+      "sha256": "4475d0961796f1f9a5fdf1a0f9e07f2e28992d247621dee34bca3624353d3782"
+    },
+    {
+      "path": "scripts/repair-earth-range.mjs",
+      "bytes": 3947,
+      "sha256": "22151eda390e333e31702cbe7c2735f3e6a90856e845449c6811509b282ee803"
     },
     {
       "path": "scripts/startup-profile/lazy-dynamic.mjs",
@@ -3058,9 +4163,24 @@
       "sha256": "13dda079a31ca00858f68562c01378cbcbb25048e58f986b8f7ad2720924193f"
     },
     {
+      "path": "scripts/terrain-resample.mjs",
+      "bytes": 1545,
+      "sha256": "b3de46434dc34e4475755a3cd20cd1ef8abfe2a5e8877105d952d51841340208"
+    },
+    {
+      "path": "scripts/verify-asset-transfer.mjs",
+      "bytes": 2963,
+      "sha256": "ce68f755b8cdb60516370edd3a06fc7a57e442b403862935a66ec05f19cc9afc"
+    },
+    {
       "path": "scripts/verify-calendar-navigation.mjs",
       "bytes": 6489,
       "sha256": "563891767d7e0ebd138a616576badb1a57a49c15fc3acb4ff028c27bfce3e036"
+    },
+    {
+      "path": "scripts/verify-chart-images.mjs",
+      "bytes": 2912,
+      "sha256": "12b9253fa1acdc7ada06361daf211dfbd15c8846b542f76df073d1df73f1e91f"
     },
     {
       "path": "scripts/verify-chart-proportions.mjs",
@@ -3114,8 +4234,13 @@
     },
     {
       "path": "scripts/verify-horizons.ts",
-      "bytes": 3492,
-      "sha256": "85d2a0ebc91a510572f2c3add6cdba90ee2f75cf1263e1f386f6668def966656"
+      "bytes": 306,
+      "sha256": "dd50157c49c498cd68ea0f132e98ad07ec6a8c556c76241592d48c0c474dba17"
+    },
+    {
+      "path": "scripts/verify-location-history.mjs",
+      "bytes": 2810,
+      "sha256": "fbf838250f366411aa9447451d4ebc89ba5bfb78906bb1ef10b3bc2cdb29cbee"
     },
     {
       "path": "scripts/verify-lunario-flight.mjs",
@@ -3131,6 +4256,11 @@
       "path": "scripts/verify-map-screening.mjs",
       "bytes": 39965,
       "sha256": "49a490e8a09a13f6683c5f305fe5e35a3da3856b0132e900f5bed31f6b09fc0b"
+    },
+    {
+      "path": "scripts/verify-mission-paths.mjs",
+      "bytes": 3768,
+      "sha256": "acb6c21c7cabfd120d1df465fd574f223d26ef9fa1e942acf2b27bbaa002a90b"
     },
     {
       "path": "scripts/verify-orbits-navigation.mjs",
@@ -3233,9 +4363,14 @@
       "sha256": "8bbc09b141373c4e16b5012fd8f7b7efdca4563897aba2330f80ab4e9c5fb9e7"
     },
     {
+      "path": "tests/asset-focus-runtime.test.ts",
+      "bytes": 7932,
+      "sha256": "016e318dbf1fe7cee7b0882eb038e23593b8d2430fcb0ee9b132af3f605f6395"
+    },
+    {
       "path": "tests/asset-focus.test.ts",
-      "bytes": 9165,
-      "sha256": "1214112425119b7c56f93ac7423d6b537da293750ec4ab9a93d1ee933192b8d3"
+      "bytes": 9859,
+      "sha256": "05e635ab50a1aaa40a30024ae477b10576782e47126c85cd05498cda0ce869d3"
     },
     {
       "path": "tests/audience-context.test.ts",
@@ -3246,6 +4381,51 @@
       "path": "tests/audience-workspaces.test.ts",
       "bytes": 17303,
       "sha256": "f3b0fd3330a1595d07ff814b43f85cac87fb8b71b867f723ecc0a7d1ed1948ff"
+    },
+    {
+      "path": "tests/audit-dynamics-contact.test.ts",
+      "bytes": 1681,
+      "sha256": "8e53766cbf9287973df997a28b34d9600be8d24d739d318d4efa6d94955bce05"
+    },
+    {
+      "path": "tests/audit-dynamics-formula.test.ts",
+      "bytes": 9041,
+      "sha256": "f6da97ac2cc94744d6106eefffb51f9aeb578a564705397304d65a1ff484041e"
+    },
+    {
+      "path": "tests/audit-ephemeris.test.ts",
+      "bytes": 6161,
+      "sha256": "5baadb5c6c1b06b96a7350fb2579ef47ea5cbe2e96921c4f950e4dbd3a5df536"
+    },
+    {
+      "path": "tests/audit-integration-impact.test.ts",
+      "bytes": 1087,
+      "sha256": "2e24f935ae448f3d74262da76c7a23a387f29bfed5d97852734b98eea85abdf3"
+    },
+    {
+      "path": "tests/audit-integration-terrain.test.ts",
+      "bytes": 1455,
+      "sha256": "4a41af109e89219263d54522ad49c0e25862a4ba9b84c6c5df2ea2e2af4253c8"
+    },
+    {
+      "path": "tests/audit-register-freshness.test.ts",
+      "bytes": 3584,
+      "sha256": "bc2514cf99ee035ac8b087a9ef3de28455ea7dd658ccc5a4cc03ffcc37bd2246"
+    },
+    {
+      "path": "tests/audit-resources.test.ts",
+      "bytes": 4017,
+      "sha256": "0f23006c06289cb42ec00121d1fb5f0172cff61ecdd08eac3c7b57389557a0d6"
+    },
+    {
+      "path": "tests/audit-sources.test.ts",
+      "bytes": 11243,
+      "sha256": "1c6b8c0fc5327e07e999e8fbbd37673cdd9a4676b791359195c7fceb6cf30597"
+    },
+    {
+      "path": "tests/audit-ui.browser.mjs",
+      "bytes": 15151,
+      "sha256": "9cca021cc0551ff174cead01eed1059e2cede413a1c1efe63e80cd5edb7f0a87"
     },
     {
       "path": "tests/celestial-assets.test.ts",
@@ -3263,6 +4443,16 @@
       "sha256": "d9286e871a055b3d4fb03da607450f55daa38b913c5b7f0b142499c48a30fbb9"
     },
     {
+      "path": "tests/chart-image.browser.mjs",
+      "bytes": 10750,
+      "sha256": "3e7393ef5d369e610add868a34e3904d9598dd9764963eaad80da14eff8e0f97"
+    },
+    {
+      "path": "tests/chart-image.test.ts",
+      "bytes": 3183,
+      "sha256": "6c64cee35209c99ea240d2ad660171a1d8dfdcb68ed62b1e5429c9484785c8fa"
+    },
+    {
       "path": "tests/charts.test.ts",
       "bytes": 10270,
       "sha256": "40ae6d77e6113ad404a22e03c0363b962a01dd1f92891ee09ca6225bad9df52b"
@@ -3274,8 +4464,8 @@
     },
     {
       "path": "tests/contact-penetration.test.ts",
-      "bytes": 11199,
-      "sha256": "f3be0fa391d654d52c137ec81a7069f311eec73ebdc0ff0ddcb4d0aa0c600774"
+      "bytes": 11284,
+      "sha256": "2d89ef54e189ee6d64cb4bb0203cb4175b5884861dfe171ddabb85348a4d40e5"
     },
     {
       "path": "tests/custom-marker.test.ts",
@@ -3339,8 +4529,8 @@
     },
     {
       "path": "tests/fixtures/legacy-flight-reference.json",
-      "bytes": 109389,
-      "sha256": "58c80fe4322b60245c84da31afe2f464e0282518424eafe9a5f38115e22b6660"
+      "bytes": 109536,
+      "sha256": "a2290d44c1449030297b46fa4b8f3d262880ac0ea566bac1447d375a22266854"
     },
     {
       "path": "tests/fixtures/orbit-reference.json",
@@ -3365,7 +4555,7 @@
     {
       "path": "tests/global-context.test.ts",
       "bytes": 9655,
-      "sha256": "3ef458bf56067bc6f1df9691a99567524fb937ebf3f09972708dc61d04be89b3"
+      "sha256": "9a8e5ddab82747005e05eb367dd08ff8f69cff91e956e098d94456722f447efa"
     },
     {
       "path": "tests/global-horizon.test.ts",
@@ -3479,8 +4669,8 @@
     },
     {
       "path": "tests/legacy-flight-contact.test.ts",
-      "bytes": 8652,
-      "sha256": "a23143a16dc219b9b450569ae3552a6c9b72158860ed6d4a8b2c30f78c1259b4"
+      "bytes": 8819,
+      "sha256": "af5201fe351ec7fd1b5fcd03b00f32f363af09221d4b7ff3d07a54648b641a57"
     },
     {
       "path": "tests/lunar-appearance.test.ts",
@@ -3553,9 +4743,19 @@
       "sha256": "e173b8f85626074c49e471a81ecf3c8029003ed2b56513bca6b6d9911dd93b42"
     },
     {
+      "path": "tests/mission-history/location-context.test.ts",
+      "bytes": 2167,
+      "sha256": "580647c7c5e891389ea921b228eb550092d6158d54f8b64d6f44a719106d99a1"
+    },
+    {
       "path": "tests/mission-history/us.test.ts",
       "bytes": 12935,
       "sha256": "77220d57456549508f97fde048b42c50fdcb4c46409ab82e75aedadc1a56ba39"
+    },
+    {
+      "path": "tests/mission-trajectories.test.ts",
+      "bytes": 8362,
+      "sha256": "6dd2ad83d9e3e5a2877890869c72d2d6f6cd8381bf2ef0157c4eb4945093a327"
     },
     {
       "path": "tests/mission.test.ts",
@@ -3705,7 +4905,7 @@
     {
       "path": "tests/replanning-workspace.test.ts",
       "bytes": 25614,
-      "sha256": "d71e33c77b85b92397bbc6915beb3302818e9a0d72f41b52d241a77c25809539"
+      "sha256": "581dffb18055ba2255ef1b6093ed9f809aa923fbb547c7d5c8f58e878ec231c4"
     },
     {
       "path": "tests/scenario-diff.test.ts",
@@ -3716,6 +4916,11 @@
       "path": "tests/scenario.test.ts",
       "bytes": 4529,
       "sha256": "a4b5617978c67ea4a41c45a3548eb9eed2b627830ab0dd053894a553ffda9222"
+    },
+    {
+      "path": "tests/science-framework.test.ts",
+      "bytes": 6902,
+      "sha256": "d8baa1a9f118038c3f14c6b5d496f8cac5be253ccdbbdd5d48464ea4d4999714"
     },
     {
       "path": "tests/search-key.test.ts",
@@ -3734,8 +4939,8 @@
     },
     {
       "path": "tests/site-shell-nav.test.ts",
-      "bytes": 2407,
-      "sha256": "54dc211412bb678bb9fc26baa5850c23175b616593e33934ecdb8ae1fd23582d"
+      "bytes": 2458,
+      "sha256": "08807fd3980d3ee4477e5c5dd4f5c3d74b43cda7f32baa2fec5bb026cd7d7936"
     },
     {
       "path": "tests/site-transition.test.ts",
@@ -3851,6 +5056,21 @@
       "path": "tests/visibility.test.ts",
       "bytes": 1979,
       "sha256": "0b39329380bc74b96c52dc2d83a8c5a4e45978236128fdc825ab7a4402aca1e7"
+    },
+    {
+      "path": "tests/visual-moon-assets.test.ts",
+      "bytes": 5646,
+      "sha256": "25a17be2af09bc7b05b723725bb6f08f203fd36028c806a1518ab043e50aa0c5"
+    },
+    {
+      "path": "tests/visual-moon-device.test.ts",
+      "bytes": 670,
+      "sha256": "d8bc07e4f1abc7e4776f881ffa0fa7696b70ba37dffceb90e3674c01ebbe95b3"
+    },
+    {
+      "path": "tests/visual-moon-lifecycle.test.ts",
+      "bytes": 7164,
+      "sha256": "b823ba1c661d645a48be56305f339c34188920059677d51bd80d9c9b7ad57977"
     },
     {
       "path": "tests/windows.test.ts",

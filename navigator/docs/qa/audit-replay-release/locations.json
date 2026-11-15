@@ -1,0 +1,107 @@
+[
+  {
+    "transport": "web",
+    "status": "pass",
+    "observations": [
+      {
+        "mode": "Public",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Public",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Public",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      }
+    ],
+    "restoreExpanded": true
+  },
+  {
+    "transport": "file",
+    "status": "pass",
+    "observations": [
+      {
+        "mode": "Public",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Public",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Public",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Educator",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Apollo 11",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Luna 9",
+        "visible": true
+      },
+      {
+        "mode": "Planner",
+        "name": "Chang\u2019e 6",
+        "visible": true
+      }
+    ],
+    "restoreExpanded": true,
+    "offlineHTTP": []
+  }
+]

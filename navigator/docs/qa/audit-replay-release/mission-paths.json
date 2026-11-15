@@ -1,0 +1,19 @@
+[
+  {
+    "transport": "web",
+    "status": "pass",
+    "elapsedAt1x": 2.2,
+    "sourceRationale": true,
+    "frame": "IAU_MOON",
+    "planningModel": "planning-5"
+  },
+  {
+    "transport": "file",
+    "status": "pass",
+    "elapsedAt1x": 2.1,
+    "sourceRationale": true,
+    "frame": "IAU_MOON",
+    "planningModel": "planning-5",
+    "offlineHTTP": []
+  }
+]

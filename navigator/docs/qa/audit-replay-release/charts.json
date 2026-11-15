@@ -1,0 +1,26 @@
+[
+  {
+    "transport": "web",
+    "status": "pass",
+    "width": 1292,
+    "height": 1392,
+    "bytes": 267006,
+    "clipboard": [
+      {
+        "types": [
+          "image/png"
+        ],
+        "bytes": 242277
+      }
+    ]
+  },
+  {
+    "transport": "file",
+    "status": "pass",
+    "width": 1292,
+    "height": 1392,
+    "bytes": 267006,
+    "clipboard": "download fallback",
+    "offlineHTTP": []
+  }
+]

@@ -1,3 +1,13 @@
+# Current audited release — 15 November 2026
+
+Planning-5, source-to-output Data & math framework, per-location mission histories and cited Mission paths & reasons are integrated. Two bounded source paths replay independently of planning time; no confirmed as-flown lander/launch/ascent series for all missions is claimed. NASA2025 colour and calibrated1× LOLA visual relief reach8K on supported high-memory web devices and4K offline. Scientific comparisons and final-review findings are documented with their limits; this is not operational qualification.
+
+Current validation:1361 tests, nonincremental types/lint, Next production build, web/offline builds, and actual browser web/file workflows. Final artifact identities and exact test scope are in navigator/docs/qa/audit-replay-release/VERIFICATION.md. Hosting remains teammate-owned. Use repository-root index.html (`?demo=1` for Rian's selected demo); final TODOs and qualification/acceptance gaps are in navigator/docs/IN-FLIGHT.md.
+
+The earlier chronology below preserves historical counts and hashes; use the current release receipt above for deployment.
+
+---
+
 # Lunario navigator delivery
 
 15 November 2026. The `navigator/` directory began as a byte-identical import of tested source `4a47f8e4091ad4e71508e932a293b91e56e49a8f`; private Git history was not imported. It now includes the original per-load animation, persistent light/dark themes and Public mission/DSN/weather context. The current file manifest records every delivery file independently. Lunario's original brand assets retain their provenance at `aeb673fff6de377e5dba0982c0c55c8b0d874ee8`. Original static-shell artwork and loader implementation are preserved; entry configuration now replays the original animation on each load with a three-second minimum.
