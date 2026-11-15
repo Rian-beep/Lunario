@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1",
+  "baseCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "findings": [
+    {
+      "id": "GPU-01",
+      "observedBehavior": "Native Clevo HTML-image maximum post-ready gaps are 400.8\u2013417.9 ms stationary and 468.7\u2013534.6 ms during continuous existing-camera orbit.",
+      "reproducibleSteps": [
+        "BASELINE_REF=3c82b5a RUNS=1 MAX_GAP_MS=150 node scripts/evaluation-performance-gpu/measure.mjs /tmp/lunario-gpu-red",
+        "Expected exit 1; recorded maximum gap 421.1 ms.",
+        "RUNS=3 BITMAP=1 MAX_GAP_MS=150 node scripts/evaluation-performance-gpu/measure.mjs /tmp/lunario-gpu-accepted",
+        "ORBIT=1 BASELINE_REF=3c82b5a RUNS=3 node scripts/evaluation-performance-gpu/measure.mjs /tmp/lunario-gpu-orbit-base",
+        "ORBIT=1 RUNS=3 BITMAP=1 MAX_GAP_MS=150 node scripts/evaluation-performance-gpu/measure.mjs /tmp/lunario-gpu-orbit-fixed"
+      ],
+      "rootCause": "Source-specific synchronous preparation/upload inside WebGL texSubImage2D for HTMLImageElement. Direct Blob ImageBitmap avoids most of this cost; raw GPU transfer versus decode/conversion is not fully separated.",
+      "changeTestEvidence": [
+        "bitmapDecode opt-in and bounded bitmap leases",
+        "evidence/baseline-native.json",
+        "evidence/bitmap-native.json",
+        "evidence/comparison.json",
+        "evidence/red-control.json",
+        "evidence/html-decode-native.json",
+        "evidence/html-to-bitmap-native.json",
+        "evidence/orbit-baseline-native.json",
+        "evidence/orbit-bitmap-native.json",
+        "evidence/orbit-comparison.json",
+        "Moving loop maximum gaps 78.0,79.8,79.6ms; median reduction 83.1%. Failed 450.3ms run is separate HTML-image conversion diagnostic, not the delivered Blob decode."
+      ],
+      "status": "fixed",
+      "limitations": [
+        "Fixed only for opted-in clients; parent wiring required.",
+        "Residual 77.9\u201386.0 ms native fixture gaps.",
+        "CPU API durations, no GPU fences.",
+        "Intercepted transport; not cold network.",
+        "Parent provider streaming/model refinement and complete navigation/flight states remain unmeasured; no idle-gating API added."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    },
+    {
+      "id": "GPU-02",
+      "observedBehavior": "Adding asynchronous Blob decode introduces resource ownership that must survive cancellation, consumer sharing and site-frame lifetime transfer.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/visual-moon*.test.ts"
+      ],
+      "rootCause": "Browser ImageBitmap decode cannot be cancelled after it begins, and ImageBitmap sources require explicit close independently from Texture.dispose.",
+      "changeTestEvidence": [
+        "tests/visual-moon-bitmap.test.ts",
+        "One active job; four manifest pending-key bound; cancel queued jobs without fetch; settle cancelled consumer immediately; close late result; last-owner texture dispose/source clear/bitmap close.",
+        "evidence/focused-tests.tap"
+      ],
+      "status": "fixed",
+      "limitations": [
+        "A cancelled active browser decode may finish before the next decode starts.",
+        "This bounds work; it cannot force native browser decoder cancellation.",
+        "Full app site-transfer/context-restore acceptance belongs to parent."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    },
+    {
+      "id": "GPU-03",
+      "observedBehavior": "No colour, UV, seam, pole, lighting-mode or same-view flicker regression observed for the new option.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-performance-gpu/compare.mjs /tmp/lunario-gpu-exact-base-final/results.json /tmp/lunario-gpu-accepted/results.json /tmp/lunario-gpu-comparison.json"
+      ],
+      "rootCause": "Direct Blob ImageBitmap must bake flipY and suppress colour conversion; source pixels, SRGBColorSpace, shader and geometry are unchanged.",
+      "changeTestEvidence": [
+        "Six whole-frame RGBA hashes identical across both lanes and all three runs.",
+        "Nine source landmark RGB probes exact.",
+        "Source asset/hash/relief tests pass; no asset re-encoding.",
+        "Appearance/camera operations issue zero new requests."
+      ],
+      "status": "not-reproduced",
+      "limitations": [
+        "Six fixed views, not every integrated camera/date/lighting transition.",
+        "No geological/scientific measurement or creative acceptance."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    },
+    {
+      "id": "GPU-04",
+      "observedBehavior": "Embedded offline output must keep its original 4K HTML image path with no HTTP dependency.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-performance-gpu/offline.mjs /tmp/lunario-gpu-offline"
+      ],
+      "rootCause": "The new web Blob lane is intentionally bypassed when the existing embedded visual-Moon identity is present.",
+      "changeTestEvidence": [
+        "evidence/offline-native.json",
+        "Both option settings: real file fixture offline; 1K/2K/4K uploads; zero HTTP and bitmap decodes; identical near/pole frames; no warnings/errors; geometry/texture disposal."
+      ],
+      "status": "not-reproduced",
+      "limitations": [
+        "Real disconnected fixture, not the parent-generated offline application.",
+        "Parent owns final offline artifact generation/acceptance."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    },
+    {
+      "id": "GPU-05",
+      "observedBehavior": "Parent reported a 1.1-second maximum post-ready gap on native M1 Pro; this worker does not have that measurement/environment.",
+      "reproducibleSteps": [
+        "Parent reruns its original native Mac harness with bitmapDecode false and true on the same integrated artifact and inputs."
+      ],
+      "rootCause": "Unresolved on M1 Pro; native Clevo reproduces a smaller source-upload stall, not the exact 1.1-second event.",
+      "changeTestEvidence": [
+        "Native Clevo source-upload intervention only.",
+        "Parent reported 1363 baseline tests and M1 figures are not substituted for this worker evidence."
+      ],
+      "status": "needs-external-evidence",
+      "limitations": [
+        "No Mac measurement or integrated-app result here.",
+        "Real network/cold transport, full date/navigation flows and target acceptance pending."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    },
+    {
+      "id": "GPU-06",
+      "observedBehavior": "8K colour remains uncompressed on GPU and uses the existing explicit high-memory budget.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/visual-moon-assets.test.ts tests/visual-moon-device.test.ts"
+      ],
+      "rootCause": "This smaller source-decode fix preserves pixels and does not introduce GPU compression. Existing uncompressed memory accounting remains necessary.",
+      "changeTestEvidence": [
+        "No KTX2 texture/transcoder shipped or encoding performed.",
+        "Existing four WebP files and all source hashes unchanged.",
+        "GPU mip-chain estimate 170.7 MiB, old/new image+chain estimate 373.3 MiB, additional maximum encoded Blob 29.6 MiB; estimates are not measured driver/process memory."
+      ],
+      "status": "open",
+      "limitations": [
+        "No reduction in 8K GPU residency claimed.",
+        "No conclusion that compression cannot help a future memory/payload target.",
+        "Unknown-memory/offline devices retain existing 4K policy."
+      ],
+      "sourceCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1"
+    }
+  ],
+  "productionImplementationCommit": "545807bbe4ee88d16fb1fd708e7d1355cb898555"
+}

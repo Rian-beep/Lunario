@@ -1,0 +1,16 @@
+renderer ANGLE (AMD, Vulkan 1.4.335 (Radeon 8060S Graphics (RADV STRIX_HALO) (0x00001586)), radv)
+{"run":0,"uploads":[{"width":1024,"height":512,"start":296,"end":305.2999999523163,"ms":9.299999952316284,"compressed":false,"calls":[{"name":"texStorage2D","ms":0},{"name":"texSubImage2D","ms":8.400000095367432},{"name":"generateMipmap","ms":0}]},{"width":2048,"height":1024,"start":349.40000009536743,"end":375.09999990463257,"ms":25.699999809265137,"compressed":false,"calls":[{"name":"texStorage2D","ms":0},{"name":"texSubImage2D","ms":25.40000009536743},{"name":"generateMipmap","ms":0}]},{"width":4096,"height":2048,"start":439.90000009536743,"end":544.5999999046326,"ms":104.69999980926514,"compressed":false,"calls":[{"name":"texStorage2D","ms":0},{"name":"texSubImage2D","ms":104.59999990463257},{"name":"generateMipmap","ms":0}]},{"width":8192,"height":4096,"start":768.9000000953674,"end":1189.2999999523163,"ms":420.39999985694885,"compressed":false,"calls":[{"name":"texStorage2D","ms":0},{"name":"texSubImage2D","ms":420.2000000476837},{"name":"generateMipmap","ms":0.09999990463256836}]}],"afterReady":{"start":305.59999990463257,"end":3305.5999999046326,"count":153,"maxGapMs":421.09999990463257,"gapsOver50ms":[{"t":544.9000000953674,"gap":105.60000014305115,"renderMs":0.2999999523162842,"width":4096},{"t":1189.5,"gap":421.09999990463257,"renderMs":0.2999999523162842,"width":8192}],"maxRenderMs":23.199999809265137},"decodes":[{"mode":"main","width":1024,"fetchMs":10.100000143051147,"decodeMs":8.5,"wallMs":18.600000143051147},{"mode":"worker","width":1024,"fetchMs":5.799999952316284,"decodeMs":7.8999998569488525,"wallMs":17.699999809265137},{"mode":"main","width":2048,"fetchMs":16.5,"decodeMs":26.600000143051147,"wallMs":43.200000047683716},{"mode":"worker","width":2048,"fetchMs":14.900000095367432,"decodeMs":27.09999990463257,"wallMs":45.30000019073486},{"mode":"main","width":4096,"fetchMs":54.200000047683716,"decodeMs":99.09999990463257,"wallMs":153.29999995231628},{"mode":"worker","width":4096,"fetchMs":52.19999980926514,"decodeMs":98.10000014305115,"wallMs":154.89999985694885},{"mode":"main","width":8192,"fetchMs":216.20000004768372,"decodeMs":389.60000014305115,"wallMs":605.8000001907349},{"mode":"worker","width":8192,"fetchMs":206.79999995231628,"decodeMs":393.7000000476837,"wallMs":604.7999999523163}]}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Post-ready frame gap exceeds explicit local regression threshold
+    at file:///tmp/lunario-eval-performance/navigator/scripts/evaluation-performance-gpu/measure.mjs:55:35 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v20.20.2

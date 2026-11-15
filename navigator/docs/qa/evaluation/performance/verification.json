@@ -1,0 +1,45 @@
+{
+  "sourceCommit": "545807bbe4ee88d16fb1fd708e7d1355cb898555",
+  "utcRecorded": "2026-11-15T19:18:29.228185+00:00",
+  "focusedTests": {
+    "command": "npx tsx --test tests/visual-moon*.test.ts",
+    "pass": 23,
+    "fail": 0,
+    "skip": 0,
+    "cancelled": 0
+  },
+  "fullTests": {
+    "command": "npm test",
+    "pass": 1375,
+    "fail": 0,
+    "skip": 0,
+    "cancelled": 0,
+    "durationMs": 23005.538797
+  },
+  "typecheck": {
+    "command": "npm run typecheck -- --incremental false",
+    "exit": 0
+  },
+  "ownedLint": {
+    "command": "npx eslint components/workbench/scene/visual-moon/*.ts tests/visual-moon*.test.ts scripts/evaluation-performance-gpu/*",
+    "exit": 0
+  },
+  "fullLint": "not run; no pre-existing-error attribution",
+  "scientificChecks": "not run; no scientific changes",
+  "sharedVault": "untouched by explicit worker scope",
+  "parentNotes": "Late decode-control warning investigated; production Blob path and failed HTML-image conversion clearly distinguished; moving-camera same-native-GPU follow-up green; no speculative idle gate.",
+  "benchmarkHarnessCommit": "37f01592b6f485c808847f8fa0b9bd5d394a59d1",
+  "nativeBrowserSamples": {
+    "stationary": {
+      "base": 3,
+      "fixed": 3
+    },
+    "orbit": {
+      "base": 3,
+      "fixed": 3
+    },
+    "failedDiagnostics": 2,
+    "redControl": 1,
+    "offlineOptions": 2
+  }
+}
