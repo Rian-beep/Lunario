@@ -15,6 +15,7 @@ try{
   const begin=performance.now();await page.goto(url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.getByRole('button',{name:'Dismiss introduction',exact:true}).waitFor({timeout:120000});await page.locator('.lunario-loader').waitFor({state:'hidden',timeout:120000});
   const initialMs=performance.now()-begin;await page.getByRole('button',{name:'Dismiss introduction',exact:true}).click();
+  await page.getByRole('button',{name:'Pick a site',exact:true}).click();await page.getByRole('button',{name:/^Malapert Massif/}).click();await page.getByRole('button',{name:'Show inspector',exact:true}).click();
   const open=performance.now();await page.getByRole('button',{name:'Preview a lunar flight',exact:true}).click();
   await page.waitForFunction(()=>document.querySelector('.scene-host')?.dataset.moonModel==='ready',null,{timeout:120000});const firstMoonMs=performance.now()-open;
   const frames=await page.evaluate(async()=>{

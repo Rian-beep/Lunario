@@ -63,7 +63,7 @@ function render(){const stay=scenarioStay(c,s);root.render(kind==='data'?<DataMa
   for (const file of output.outputFiles!) writeFileSync(file.path, file.contents);
   const input = { catalog: JSON.parse(readFileSync('public/data/catalog.json', 'utf8')), manifest, state: selected };
   writeFileSync(join(dir, 'fixture.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="fixture.css"><style>${readFileSync('app/mission-theme.css', 'utf8')}body{margin:0;padding:16px;font-family:Arial,sans-serif}#root{max-width:900px;margin:auto}*{box-sizing:border-box}button,input,select{font:inherit;max-width:100%}button{padding:8px}p{overflow-wrap:anywhere}section{min-width:0}</style></head><body><main id="root"></main><script>window.input=${JSON.stringify(input).replace(/</g, '\\u003c')};</script><script src="fixture.js"></script></body></html>`);
-  const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
+  const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ?? process.env.CHROME_PATH ?? (process.platform === 'darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : '/usr/bin/google-chrome'), headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   try {
     const page = await browser.newPage({ viewport: { width: 720, height: 1000 } });
     await page.clock.setFixedTime(new Date('2026-11-16T00:00:00Z'));
