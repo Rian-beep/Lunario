@@ -1,6 +1,7 @@
 import * as T from "three";
 import { latLonToProjected } from "@/lib/astro";
 import { bodyToScene, siteFrame, type SiteFrame } from "./surface";
+import { publicAssetURL } from "@/lib/public-assets";
 
 /** Half-width of the bundled 150 m polar overview, in stereographic metres. */
 const OVERVIEW_HALF_M = 153_600;
@@ -32,10 +33,19 @@ export function sceneToTerrainRotation(matrix: T.Matrix4) {
   return new T.Matrix3().setFromMatrix4(matrix).invert();
 }
 
-/** Manifest URL for both the Next app and the static navigator file. */
-export function southPoleManifestUrl() {
-  if (typeof location !== "undefined" && /solarreach-navigator\.html$/.test(location.pathname)) {
-    return new URL("data/south-pole-detail/manifest.json", location.href).href;
-  }
-  return "/data/south-pole-detail/manifest.json";
+/** Empty URL offline: detail grids are not embedded; keep canonical embedded terrain. */
+export function southPoleManifestUrl(offline = false) {
+  if (offline || (typeof location !== "undefined" && location.protocol === "file:")) return "";
+  return publicAssetURL("/data/south-pole-detail/manifest.json");
+}
+
+export function wantsSouthPoleDetail(options: {
+  offline: boolean; showFlight: boolean; globalSurface: boolean; navigating: boolean;
+  geography: {latDeg: number; lonDeg: number} | null; distanceKm: number; mode: string;
+}) {
+  const {offline, showFlight, globalSurface, navigating, geography, distanceKm, mode} = options;
+  // Visual detail is not registered to the numerical flight/contact terrain.
+  return !offline && !showFlight && !globalSurface && !navigating &&
+    ["orbit", "surface", "globe"].includes(mode) && Number.isFinite(distanceKm) && distanceKm < 80 &&
+    !!geography && insideSouthPoleDetail(geography.latDeg, geography.lonDeg);
 }

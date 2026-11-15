@@ -1,0 +1,2 @@
+Owned-path ESLint: exit 0; no diagnostics.
+Paths: four authorized production files, new fixes.test.ts, new fixes-browser.mjs.

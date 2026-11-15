@@ -111,6 +111,7 @@ export function LunarScene(props: SceneProps) {
   const [retry, setRetry] = useState(0);
   const [geography,setGeography]=useState<{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>}>({latDeg:props.lat,lonDeg:props.lon});
   const [surfaceStatus,setSurfaceStatus]=useState('');
+  const [detailStatus,setDetailStatus]=useState('Canonical terrain context. Visual detail loads only during close inspection.');
   const [modelStatus,setModelStatus]=useState('');
   const [equipmentStatus,setEquipmentStatus]=useState('loading');
   const [celestialStatus,setCelestialStatus]=useState({sun:'loading',earth:'loading'});
@@ -166,6 +167,7 @@ export function LunarScene(props: SceneProps) {
     mounted.current = props;mountedRevision.current={revision,retry};
     setError(null);
     setTextureFailed(false);
+    setModelStatus('');setEquipmentStatus('loading');
     const cancelMount = afterPaint(() => {
     try {
       runtime.current = mountScene(element, live.current, () => live.current, () => settings.current,
@@ -177,7 +179,7 @@ export function LunarScene(props: SceneProps) {
           setMode(value.mode ?? "orbit");
           setRevision(v=>v+1);
           return true;
-        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),()=>setMode('orbit'),setSurfaceStatus,setGeography,selectStation,()=>focusRequest.current('lander'));
+        },setNavigationStatus,(kind,status)=>setCelestialStatus(value=>({...value,[kind]:status})),()=>setMode('orbit'),setSurfaceStatus,setGeography,selectStation,()=>focusRequest.current('lander'),setDetailStatus);
     } catch (error) {
       handoff?.globe?.asset.dispose();
       console.error("Lunar scene initialization failed.", error);
@@ -195,6 +197,10 @@ export function LunarScene(props: SceneProps) {
     props.flight, props.showFlight, props.referenceHeightM, retry, revision, navigationStatus]);
   useEffect(() => () => { runtime.current?.(); runtime.current=null; mounted.current=null; transfer.current?.globe?.asset.dispose();transfer.current=null; }, []);
   const hasFlight = props.showFlight && !!props.flight?.points.length;
+  const pendingModel = !modelStatus || /^Loading/.test(modelStatus) ? 'Loading Moon model…' :
+    focus==='earth'&&celestialStatus.earth==='loading' ? 'Loading Earth model…' :
+    focus==='lander'&&equipmentStatus==='loading' ? 'Loading lander model…' :
+    detailStatus.startsWith('Loading') ? 'Loading measured relief…' : '';
   const terrainSamplingM = props.terrain ? [props.terrain.overview, ...props.terrain.patches]
     .map((grid) => grid.inputPixelM ?? props.terrain!.sourcePixelM) : [];
   const sceneControls = <>
@@ -229,7 +235,7 @@ export function LunarScene(props: SceneProps) {
         {focus === 'moon' && <><Button variant="ghost" aria-pressed={activeMode === "globe"} onClick={() => setMode("globe")} title="Explore the whole Moon and both poles">Globe</Button><Button variant="ghost" aria-pressed={activeMode === "orbit"} onClick={() => setMode("orbit")} title="Orbit the selected site's terrain"><Orbit />Orbit</Button>
         <Button variant="ghost" aria-pressed={activeMode === "surface"} onClick={() => setMode("surface")} title="View from 3 m above the displayed site surface"><Eye />Surface</Button></>}
         <Button variant="ghost" aria-label="Reset current 3D camera" onClick={() => setReset((value) => value + 1)}><RotateCcw /></Button>
-        <Button variant="ghost" aria-pressed={inspection} onClick={() => setInspection(v=>!v)} title="Toggle stable neutral source atlas and illustrative epoch lighting; computed sunlight and visibility are unchanged">{inspection ? "Stable atlas appearance" : "Epoch light"}</Button>
+        <Button variant="ghost" aria-pressed={inspection} onClick={() => setInspection(v=>!v)} title="Toggle stable atlas appearance / fixed studio light for visual relief and illustrative epoch lighting; computed sunlight and visibility are unchanged">{inspection ? detailStatus.startsWith('Effective source:') ? "Studio inspection light" : "Stable atlas appearance" : "Epoch light"}</Button>
         <Button variant="ghost" aria-pressed={showReadout} onClick={()=>setShowReadout(v=>!v)}>Vehicle readout</Button>
         <Button variant="ghost" aria-pressed={guides} onClick={()=>setGuides(v=>!v)}>Coordinate guides</Button>
 
@@ -254,7 +260,9 @@ export function LunarScene(props: SceneProps) {
           <p>{props.terrain ? `DEM input sampling: ${Math.min(...terrainSamplingM)}–${Math.max(...terrainSamplingM)} m across bundled products. Surface mesh sampling is densest at the site and coarser regionally; interpolated display detail is not a new measurement.` : "Numerical terrain is unavailable. Only the reference-sphere shape is shown."}</p>
           <p>{textureFailed ? "Some bundled imagery could not load. Numerical shape remains available with a neutral material or the images that loaded." : props.imagery ? "NASA LROC / Moon Trek imagery is mapped from its polar extent and global longitude/latitude metadata. Its acquisition shadows are historical, not a simulation for this date." : "The bundled LOLA hillshade supplies the polar fallback texture with historical lighting. Outside its extent the surface uses a neutral material."}</p>
           <p>Epoch light follows the supplied Sun direction with a small display fill. Stable atlas appearance shows neutral source imagery without camera-dependent lighting or exposure. Its acquisition shadows remain historical. Disable it for illustrative epoch lighting. Neither changes computed terrain/sphere visibility. The Moon has no atmospheric sky glow.</p>
-          <p>Inside about 80 km of a south-polar landing site, the view switches to the measured Shackleton terrain, from 150 m down to 2 m on the western rim. That close-up stays lit so the ridges remain visible. The inspection light does not change the calculated sunlight.</p>
+          <p>Close south-polar inspection can load a separate measured visual relief, with grid spacing from 150 m to 2 m in limited coverage. Grid spacing is not positional or elevation accuracy; this relief is not registered to flight/contact ground. Offline and active flight views retain canonical terrain. The visual relief has neutral shading, without photographic imagery.</p>
+          <p data-surface-detail-source>{detailStatus}</p>
+          <p>Visual relief elevations are metres relative to the 1,737,400 m sphere. Contributors and feather weights describe the camera target and available loaded sources. LOLA and stereo source frames have not been independently registered here. Extra mesh triangles and 2 m grid posts do not establish 2 m accuracy or resolved landing hazards.</p>
           <p>At the selected site: Sun azimuth {props.pose.sunAz.toFixed(2)}°, elevation {props.pose.sunEl.toFixed(2)}°; Earth azimuth {props.pose.earthAz.toFixed(2)}°, elevation {props.pose.earthEl.toFixed(2)}°. Azimuth starts at north and increases clockwise.</p>
           <p>All spatial readouts are local <strong>east, north and tangent up in km</strong>. Tangent up is relative to the site reference radius, not radial altitude or terrain clearance. Sun and Earth use physical kilometre scale when JPL ranges are supplied; amber and blue annotations identify them. The HYG v4.1 star background uses an approximate IAU_MOON rotation, not a qualified MOON_ME pointing frame; proper motion and apparent-position corrections are omitted. HYG credit: David Nash / Astronomy Nexus, CC BY-SA 4.0. Stars require a supplied epoch.</p>
           <p>Whole-Moon site markers are enlarged annotations at sourced catalogue coordinates, not physical spacecraft or terrain-hazard evidence. Back-side markers are hidden. Hover for the site name; click a marker to select that site and approach it.</p>
@@ -270,6 +278,7 @@ export function LunarScene(props: SceneProps) {
       <div ref={host} className="scene-host" data-focus-request-id={props.focusRequestId} />
 
       {surfaceStatus && <p className="sq-preparing" role="status">{surfaceStatus}</p>}
+      {!error && pendingModel && <p className="sq-loading" role="status">{pendingModel} Camera controls remain available.</p>}
 
       <span className="sr-only" role="status">{navigationStatus}</span>
       {error && <div className="scene-error glass" role="alert">
@@ -296,6 +305,7 @@ export function LunarScene(props: SceneProps) {
         .sq-position { position: absolute; left: 50%; transform: translateX(-50%); bottom: 121px; width: max-content; max-width: calc(100% - 32px); border-radius: 12px; padding: 10px 15px; display: grid; gap: 3px; font-size: 12px; line-height: 1.45; text-align: center; font-variant-numeric: tabular-nums; pointer-events: none; }
         .sq-readout-close {position:absolute;right:4px;top:3px;pointer-events:auto;border:0;background:transparent;font-size:18px;width:25px;height:25px;cursor:pointer}.sq-position{padding-right:34px}
         .sq-position strong { font-weight: 600; font-size: 13px; }
+        .sq-loading {position:absolute;left:12px;bottom:54px;max-width:calc(100% - 24px);margin:0;padding:4px 7px;background:#10120fe0;color:#f3eee1;font-size:12px;line-height:1.4;pointer-events:none;z-index:4;}
         .sq-preparing { position:absolute;top:70px;left:24px;max-width:340px;padding:8px 12px;background:var(--paper);color:var(--foreground);border:1px solid var(--border);border-radius:8px;font-size:12px;z-index:5; }
         .sq-flight .sq-position { bottom: 294px; }
         .sq-notes { position: static; z-index: 3; border-radius: 9px; font-size: 12px; line-height: 1.55; background: transparent; box-shadow: none; border: none; }
