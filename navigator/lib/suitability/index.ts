@@ -136,8 +136,8 @@ async function sampleCoordinates(request:ScreeningRequest,locations:readonly {la
   await yieldTask();abort(options.signal);options.onProgress?.(0,total);abort(options.signal);
   for(const location of locations){
     const p=coordinates(location.lat,location.lon),work=pointWork(validated,p.lat,p.lon);
-    let began=performance.now(),next=work.next();
-    while(!next.done){abort(options.signal);if(performance.now()-began>=6){await yieldTask();abort(options.signal);began=performance.now();}next=work.next();}
+    let began=performance.now(),steps=0,next=work.next();
+    while(!next.done){abort(options.signal);if(++steps>=32||performance.now()-began>=6){await yieldTask();abort(options.signal);began=performance.now();steps=0;}next=work.next();}
     abort(options.signal);results.push(next.value);options.onProgress?.(results.length,total);abort(options.signal);await yieldTask();abort(options.signal);
   }
   return results;
