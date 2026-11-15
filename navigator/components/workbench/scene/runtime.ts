@@ -71,7 +71,7 @@ export function mountScene(
   onNavigationHandoff: (value:SceneCameraHandoff)=>boolean = () => false,
   onNavigationStatus: (value:string)=>void = () => {},
   onCelestialStatus:(kind:CelestialAssetKind,status:string)=>void=()=>{},
-  onSiteMode:()=>void=()=>{},
+  onSiteMode:(request:CameraSettings)=>void=()=>{},
   onSurfaceStatus:(status:string)=>void=()=>{},
   onGeography:(value:{latDeg:number;lonDeg:number;screenNorthAngleDeg?:number;hoveredId?:string;labels?:Array<{id:string;name:string;x:number;y:number;lat:number;lon:number;pole?:boolean;farSide?:boolean;offscreen?:boolean}>})=>void=()=>{},
   onStation:(id:string|null)=>void=()=>{},
@@ -548,7 +548,8 @@ export function mountScene(
       host.dataset.surfaceRevision=String(Number(host.dataset.surfaceRevision??0)+1);
     }).catch(error=>{if(replaceMaterial)nextMaterial.dispose();if(!abort.signal.aborted&&!disposed){console.error('Destination surface preparation failed',error);host.dataset.surfaceStatus='error';onSurfaceStatus('Destination terrain could not load; previous surface context remains visible.');onTextureFailure();}});
   };
-  let assetMotion:{plan:AssetFlight;fromUp:T.Vector3;toUp:T.Vector3;anchor:T.Vector3;mode:CameraMode}|null=null;
+  type AssetMotion={plan:AssetFlight;fromUp:T.Vector3;toUp:T.Vector3;anchor:T.Vector3;mode:CameraMode};
+  let assetMotion:AssetMotion|null=null;
   let focusedAnchor:T.Vector3|null=null;
   let missingFocusRange=false;
   const moonCentre=new T.Vector3(0,-frame.referenceRadiusM/1000,0);
@@ -569,7 +570,7 @@ export function mountScene(
   let geographicMotion:{start:number;from:T.Vector3;to:T.Vector3;fromUp:T.Vector3;toUp:T.Vector3;fromTarget:T.Vector3}|null=null;
   const navigateGeography=(latDeg:number,lonDeg:number,overview=false)=>{
     const physical=sceneToBody(camera.position),radius=Math.max(globeMinimumRadiusKm(nasaGlobe?.maxRadiusKm??1770),overview?framingDistanceKm(1770,camera.aspect,camera.fov):physical.length());
-    assetMotion=null;focusedAnchor=null;poleMeridian=lonDeg;hoveredId=undefined;navigation.cancel();awaitingHandoff=false;
+    assetMotion=null;interruptedFocus=null;focusedAnchor=null;poleMeridian=lonDeg;hoveredId=undefined;navigation.cancel();awaitingHandoff=false;
     geographicMotion={start:performance.now(),from:physical,to:new T.Vector3(...geographicBodyVector(latDeg,lonDeg,radius)),fromUp:sceneToBody(camera.up,true).normalize(),toUp:new T.Vector3(...geographicNorthVector(latDeg,lonDeg)),fromTarget:sceneToBody(controls.target)};
     lastMode='globe';lastReset=getSettings().reset;controls.minDistance=.006;controls.maxDistance=Math.max(3e9,radius*1.01);controls.maxPolarAngle=Math.PI;
   };
@@ -636,7 +637,9 @@ export function mountScene(
         const started=performance.now(),rect=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,viewCamera);
         raycaster.params.Line2={threshold:6};raycaster.params.Line={threshold:Math.max(.01,viewCamera.position.distanceTo(currentPoint)*.008)};
         const vehicleHit=getLive().showFlight && raycaster.intersectObjects([path,currentRing,lander,contactPieces].filter(object=>object.visible),true).length>0;
-        if(vehicleHit) onVehicleFocus();
+        if(vehicleHit){
+          if(!['vehicle','follow'].includes(getSettings().mode))onVehicleFocus();
+        }
         else if(!['earth','sun','vehicle','follow'].includes(getSettings().mode)&&getLive().onPlace){
           const surfaces:T.Object3D[]=[];
           if(nasaGlobe?.mesh.visible) surfaces.push(nasaGlobe.mesh);
@@ -654,7 +657,7 @@ export function mountScene(
   let navigationCamera = {mode:getSettings().mode, reset:getSettings().reset};
   const configureNavigation=(live:SceneProps,now:number,overview:boolean)=>{
     navigationCamera = {mode:getSettings().mode, reset:getSettings().reset};
-    assetMotion=null;focusedAnchor=null;geographicMotion=null;hoveredId=undefined;
+    assetMotion=null;interruptedFocus=null;focusedAnchor=null;geographicMotion=null;hoveredId=undefined;
     const reference=live.referenceHeightM??(live.terrain?heightAt(live.terrain,live.lat,live.lon)?.heightM:null)??0;
     const destination=siteFrame(live.lat,live.lon,reference);
     const height=displayHeight(live.terrain,live.lat,live.lon,reference).heightM;
@@ -670,15 +673,58 @@ export function mountScene(
     navigation.begin({key:requestedKey,now,fromCamera:tuple(physicalCamera),fromTarget:tuple(sceneToBody(controls.target)),toCamera:tuple(endpoint),toTarget:tuple(target),overviewRadiusKm:Math.max(6200,(nasaGlobe?.maxRadiusKm??1770)*3.5),alreadyOverview:overview,reducedMotion:reducedMotion.matches});
     controls.minDistance=0.006;controls.maxPolarAngle=Math.PI;followPosition=null;awaitingHandoff=false;
   };
-  const userStart=()=>{if(tileMotion||pendingTileCloseup){tileMotion=null;pendingTileCloseup=0;status('Close terrain approach canceled. Camera control is yours.');}if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();rebuildControls();status('Asset focus travel canceled. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
+  const userStart=()=>{if(tileMotion||pendingTileCloseup){tileMotion=null;pendingTileCloseup=0;status('Close terrain approach canceled. Camera control is yours.');}if(assetMotion){assetMotion=null;focusedAnchor=(getSettings().mode==='earth'?earth.position:getSettings().mode==='sun'?sun.position:controls.target).clone();followPosition=currentPoint.clone();status('Asset focus travel interrupted. Camera control is yours.');}if(geographicMotion){geographicMotion=null;status('Geographic camera rotation canceled. Camera control is yours.');}if(navigation.sample(performance.now())){navigation.cancel();canceledGesture=true;status("Site navigation canceled. Camera control is yours.");}};
+  let interruptedFocus:{motion:AssetMotion;reset:number}|null=null;
+  let cameraGesture:{x:number;y:number;moved:boolean}|null=null;
   const userEnd=()=>{
-    if(!canceledGesture)return;canceledGesture=false;
-    onSiteMode();lastMode='orbit';lastReset=getSettings().reset;rebuildControls();
+    if(canceledGesture){
+      canceledGesture=false;
+      const settings=getSettings(),retain=retainCameraAfterSiteArrival(navigationCamera,settings);
+      if(!retain)onSiteMode(settings);
+      lastMode='orbit';lastReset=retain?-1:settings.reset;
+      rebuildControls();
+    }
+    const pending=interruptedFocus;interruptedFocus=null;
+    if(pending&&getSettings().mode===pending.motion.mode&&getSettings().reset===pending.reset){
+      const motion=pending.motion;
+      const anchor=motion.mode==='earth'?earth.position:motion.mode==='sun'?sun.position:motion.mode==='vehicle'||motion.mode==='follow'?currentPoint:motion.anchor;
+      const drift=anchor.clone().sub(motion.anchor);
+      const source=earth.visible&&camera.position.distanceTo(earth.position)<camera.position.distanceTo(moonCentre)?earth.position:sun.visible&&camera.position.distanceTo(sun.position)<camera.position.distanceTo(moonCentre)?sun.position:moonCentre;
+      assetMotion={...motion,fromUp:camera.up.clone(),anchor:anchor.clone(),plan:{...motion.plan,startMs:performance.now(),
+        fromCamera:tuple(camera.position),fromTarget:tuple(controls.target),fromCentre:tuple(source),
+        toCamera:tuple(new T.Vector3(...motion.plan.toCamera).add(drift)),toTarget:tuple(new T.Vector3(...motion.plan.toTarget).add(drift)),
+        toCentre:motion.mode==='earth'||motion.mode==='sun'?tuple(anchor):motion.plan.toCentre}};
+      rebuildControls();
+      status('Continuing to the selected camera destination.');
+    }
   };
-  const cancelFocusGesture=()=>{if(assetMotion)userStart();};
-  renderer.domElement.addEventListener('pointerdown',cancelFocusGesture,true);
-  renderer.domElement.addEventListener('wheel',cancelFocusGesture,true);
-  const bindGestures=()=>{controls.addEventListener('start',userStart);controls.addEventListener('end',userEnd);};
+  const interruptCameraGesture=()=>{
+    if(assetMotion)interruptedFocus={motion:assetMotion,reset:getSettings().reset};
+    userStart();
+  };
+  const cameraDown=(event:PointerEvent)=>{
+    if(cameraGesture)return;
+    cameraGesture={x:event.clientX,y:event.clientY,moved:false};
+    // Refresh OrbitControls' cached up axis before it captures the pointer,
+    // never while it owns an active drag. A pointer-down alone is not a drag.
+    if(assetMotion||navigation.sample(performance.now())||geographicMotion)rebuildControls();
+  };
+  const cameraMove=(event:PointerEvent)=>{
+    if(!cameraGesture||cameraGesture.moved)return;
+    if(Math.hypot(event.clientX-cameraGesture.x,event.clientY-cameraGesture.y)<5){
+      if(assetMotion||navigation.sample(performance.now())||geographicMotion)event.stopImmediatePropagation();
+      return;
+    }
+    cameraGesture.moved=true;pointerDown=null;interruptCameraGesture();
+  };
+  const cameraUp=()=>{cameraGesture=null;};
+  const cameraWheel=()=>{interruptCameraGesture();};
+  renderer.domElement.addEventListener('pointerdown',cameraDown,true);
+  renderer.domElement.addEventListener('pointermove',cameraMove,true);
+  renderer.domElement.addEventListener('pointerup',cameraUp);
+  renderer.domElement.addEventListener('pointercancel',cameraUp);
+  renderer.domElement.addEventListener('wheel',cameraWheel,true);
+  const bindGestures=()=>{controls.addEventListener('end',userEnd);};
   function rebuildControls(){
     const target=controls.target.clone(),old={minDistance:controls.minDistance,maxDistance:controls.maxDistance,maxPolarAngle:controls.maxPolarAngle,enablePan:controls.enablePan};
     const position=camera.position.clone(),rotation=camera.quaternion.clone();
@@ -715,7 +761,7 @@ export function mountScene(
   // OrbitControls handles pointer/touch; explicit keys keep camera use possible
   // without stealing the root's left/right time-scrubbing shortcuts.
   const key = (event: KeyboardEvent) => {
-    if(event.key==='Escape'){userStart();userEnd();return;}
+    if(event.key==='Escape'){interruptedFocus=null;userStart();userEnd();rebuildControls();return;}
     const step = camera.position.distanceTo(controls.target) * 0.08;
     const offset = new T.Vector3();
     if (event.key === "+" || event.key === "=") camera.position.lerp(controls.target, 0.15);
@@ -725,15 +771,18 @@ export function mountScene(
     else if (event.key.toLowerCase() === "w") offset.z = -step;
     else if (event.key.toLowerCase() === "s") offset.z = step;
     else return;
-    userStart();camera.position.add(offset); controls.target.add(offset);userEnd();
+    userStart();camera.position.add(offset); controls.target.add(offset);userEnd();rebuildControls();
     event.preventDefault();
   };
   renderer.domElement.addEventListener("keydown", key);
   disposeListeners = () => {
     renderer.domElement.removeEventListener("webglcontextlost", lost);
     renderer.domElement.removeEventListener("keydown", key);
-    renderer.domElement.removeEventListener('pointerdown',cancelFocusGesture,true);
-    renderer.domElement.removeEventListener('wheel',cancelFocusGesture,true);
+    renderer.domElement.removeEventListener('pointerdown',cameraDown,true);
+    renderer.domElement.removeEventListener('pointermove',cameraMove,true);
+    renderer.domElement.removeEventListener('pointerup',cameraUp);
+    renderer.domElement.removeEventListener('pointercancel',cameraUp);
+    renderer.domElement.removeEventListener('wheel',cameraWheel,true);
     renderer.domElement.removeEventListener('pointerleave',poiLeave);
     renderer.domElement.removeEventListener('pointerdown',poiDown);renderer.domElement.removeEventListener('pointermove',poiMove);renderer.domElement.removeEventListener('pointerup',poiUp);
     clearPois();poiGeometry.dispose();
@@ -1081,7 +1130,7 @@ export function mountScene(
       status(sample.phase==='zoom-out'?"Zooming out from the current lunar site.":sample.phase==='rotate'?"Moving around the Moon to the selected site.":sample.phase==='zoom-in'?"Approaching the selected lunar site.":"Selected lunar site reached.");
       if(sample.phase==='complete'){
         const retain = retainCameraAfterSiteArrival(navigationCamera, settings);
-        if (!retain) onSiteMode();
+        if (!retain) onSiteMode(settings);
         navigation.cancel();allowFullPolarOrbit(controls);controls.minDistance=.006;rebuildControls();lastMode="orbit";lastReset=retain?-1:settings.reset;
       }
     }
@@ -1101,7 +1150,7 @@ export function mountScene(
       if(object.visible){if(focusedAnchor){camera.position.add(object.position.clone().sub(focusedAnchor));controls.target.add(object.position.clone().sub(focusedAnchor));}focusedAnchor=object.position.clone();}
     }
     host.dataset.focusRange=missingRange?'unavailable':'ready';
-    host.dataset.assetFlight=assetMotion?'traveling':'idle';
+    host.dataset.assetFlight=assetMotion?'traveling':interruptedFocus?'interrupted':'idle';
     if(pendingTileCloseup&&!geographicMotion&&!assetMotion&&ionMoon&&streamedSurface){
       const direction=bodyToLocal(new T.Vector3(...geographicBodyVector(live.lat,live.lon)),true).normalize();
       const point=ionMoon.surfacePoint(direction);
