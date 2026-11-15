@@ -112,3 +112,27 @@ Orbital context: `public/data/orbits/catalog.json` is a small validated CelesTra
 `node scripts/verify-orbits-navigation.mjs` checks web/file satellites, independent time/age gates, mission descriptions, pole/POI labels, direction controls and measured close-up LOD. Override `LUNARIO_ORBITS_URL`, `LUNARIO_ORBITS_FILE`, `LUNARIO_ORBITS_EVIDENCE`. `node scripts/verify-chart-proportions.mjs` verifies actual info-button circles and uniform SVG scaling in replanning charts at1600/1280/800px; same URL/file overrides, plus `LUNARIO_CHART_EVIDENCE`.
 
 `tests/fixtures/orbit-reference.json` holds18 independent Python sgp4/Vallado C++ reference states. They check implementation consistency, not real spacecraft accuracy. The snapshot’s source elements, manoeuvres, age and frame limitations still apply. See `docs/research/GODS-EYE-REVIEW.md` for reviewed reuse, source terms and excluded unrelated datasets.
+
+## Hosted ESM entry (separate from the offline download)
+
+From `navigator/`, run `node scripts/build-web.mjs`. It writes repository-root `web/index.html`, hashed ESM chunks, CSS and Geist font under `web/assets/`, plus `web/metafile.json` and `web/build-receipt.json`. No dependency/package change or Next server is required. Keep `navigator/public/` alongside `web/` on the host: large science, terrain, imagery and model assets are requested from that existing directory, not copied or embedded in the hosted document. The existing standalone builder and its self-contained offline output remain separate.
+
+Use a temporary destination for worker/candidate verification:
+
+```sh
+LUNARIO_WEB_OUTPUT=/tmp/lunario-web-candidate node scripts/build-web.mjs
+npx tsx --test tests/public-assets.test.ts
+node --test web-source/build-web.test.mjs
+npm run typecheck -- --incremental false
+npm run lint
+```
+
+`LUNARIO_WEB_OUTPUT` selects an output **directory**. The HTML uses relative chunk/style links and sets `window.__LUNARIO_PUBLIC_BASE__='../navigator/public/'`. `lib/public-assets.ts` exports `publicAssetURL(canonicalPath)`: with no configuration it preserves Next's canonical paths; the hosted configuration resolves against `document.documentURI` (independent of a `<base>` tag), including nested GitHub Pages repository paths. HTTP(S), protocol-relative, data and blob transport URLs pass through. Local paths reject traversal, encoded paths, query/hash suffixes and unsafe schemes; configured bases must be same-origin HTTP(S) directories with no credentials/query/hash/encoding. One leading `../` is allowed for the sibling layout; internal/repeated parent traversal is rejected. A hosted build is for HTTP(S), not a substitute for the disconnected offline HTML.
+
+Apply the helper only when assigning an image/texture URL or starting a fetch/loader. Keep `/data/...` values in source metadata, provenance and cache keys canonical. The web entry also exposes `window.__LUNARIO_PUBLIC_ASSET_URL__` for same-origin parent adapters. Loader coalescing, failure retry, hash checks, decompression, AbortSignal ownership and embedded-global precedence are unchanged. The actual celestial loader source is `lib/celestial-assets.ts`.
+
+The entry mounts the existing Navigator, compiles real Tailwind `app/globals.css`, emits the imported mission theme/component CSS and font stylesheet, and distributes the Geist OFL and orbital source licences. It starts the same document-owned original three-second Lunario loader; Navigator's existing readiness/completion paths reuse it. It preserves the URL, scenario parameters, persistence identities and theme preference boot. The hosted-only `next/dynamic` adapter supports this app's function loaders and `ssr`/`loading` options, leaves Three/Rapier deferred, and offers an explicit page reload if a lazy view fails. Next and offline builds retain their own dynamic implementation.
+
+The deterministic receipt inventories payload/metafile bytes and SHA-256 hashes; gzip-6 values are estimates. `initialJS` is the complete transitive static import closure, not just the entry file, and excludes dynamic imports. Builds fail on missing emitted dependencies or eager Three/Rapier/scene-runtime imports. Receipts contain no output-directory names or timestamps, and the builder test compares two independently emitted destinations. No module preloading of deferred branches is added. Previously hashed assets are retained when rebuilding a destination; publish/prune an immutable candidate as part of the integrator's release process.
+
+Ownership handoff: the integrator must apply `publicAssetURL` at map/image/material I/O boundaries (including `catalog.map.url` and nested imagery URLs), preserve/wire the parent ready/error bridge, and retarget the root entry to `web/index.html`. Those shared files are intentionally outside the web-entry worker delivery. Until those adapters are integrated, the standalone hosted candidate can still request map images from origin-absolute `/data/` paths. Static tests validate chunks, CSS/fonts, transport helper and loader semantics; actual map paint, one-loader parent/iframe behavior, restored URLs, 3D and disconnected offline regression remain integrator browser gates. No browser timing or user acceptance is implied by byte reductions.

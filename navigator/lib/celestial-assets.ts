@@ -1,3 +1,4 @@
+import { publicAssetURL } from "./public-assets";
 import * as T from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
@@ -15,7 +16,7 @@ export function celestialAssetUrl(kind: CelestialAssetKind): string {
   const embedded = globalThis.__SOLARREACH_CELESTIAL_MODELS__?.[metadata.path];
   if (embedded) return embedded;
   if (typeof location !== "undefined" && location.protocol === "file:") throw new Error(`Offline NASA ${metadata.name} model is missing`);
-  return metadata.path;
+  return publicAssetURL(metadata.path);
 }
 export function disposeCelestialObject(object: T.Object3D) {
   const geometry = new Set<T.BufferGeometry>(), materials = new Set<T.Material>(), textures = new Set<T.Texture>();
