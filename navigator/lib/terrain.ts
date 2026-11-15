@@ -71,16 +71,16 @@ declare global {
     __SOLARREACH_TERRAIN__?: TerrainData | SerializedTerrainData;
   }
 }
-export async function loadTerrain(): Promise<TerrainData> {
-  if (window.__SOLARREACH_TERRAIN__)
-    return decodeTerrain(window.__SOLARREACH_TERRAIN__);
-  const r = await fetch("/data/terrain.json");
-  if (!r.ok)
-    throw new Error(
-      "Numerical terrain could not be loaded. The map and horizon analysis remain available.",
-    );
-  return decodeTerrain(await r.json());
+let terrainRequest:Promise<TerrainData>|null=null;
+const embeddedTerrain=new WeakMap<object,Promise<TerrainData>>();
+/** Shared loads decode once; a failed request can be retried by the next caller. */
+export function loadTerrain():Promise<TerrainData>{
+  const injected=typeof window==='undefined'?undefined:window.__SOLARREACH_TERRAIN__;
+  if(injected){let result=embeddedTerrain.get(injected);if(!result){result=Promise.resolve().then(()=>decodeTerrain(injected));embeddedTerrain.set(injected,result);void result.catch(()=>embeddedTerrain.delete(injected));}return result;}
+  if(!terrainRequest)terrainRequest=(async()=>{const r=await fetch('/data/terrain.json');if(!r.ok)throw Error('Numerical terrain could not be loaded. The map and horizon analysis remain available.');return decodeTerrain(await r.json());})().catch(error=>{terrainRequest=null;throw error;});
+  return terrainRequest;
 }
+
 export function sampleGrid(
   g: TerrainGrid,
   x: number,

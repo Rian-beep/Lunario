@@ -50,6 +50,12 @@ function score(request: ScreeningRequest, point: ScreeningPoint) {
   return 100 * clamp(sum / total);
 }
 
+/** Recolour an existing physical screen without rerunning horizons or ephemeris. */
+export function reweightScreeningPoints(request:ScreeningRequest,points:readonly ScreeningPoint[]):ScreeningPoint[]{
+  const validated=validate(request);return points.map(point=>({...point,score:score(validated,point)}));
+}
+export const SCREENING_MODEL_VERSION='regional-screening-1';
+
 function* resolveHorizon(request: ScreeningRequest, lat: number, lon: number, heightM: number): Generator<void, {terrain: TerrainChoice | null; source: string}> {
   if (!Number.isFinite(heightM) || heightM < 0) return {terrain: null, source: `Unsupported instrument height ${heightM} m`};
   const exact = prepared(request.catalog, lat, lon, heightM);
@@ -124,28 +130,25 @@ function abort(signal?: AbortSignal) {
 }
 const yieldTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
 
-export async function screeningSamples(request: ScreeningRequest, projection: 'polar' | 'global', options: {signal?: AbortSignal; onProgress?: (completed: number, total: number) => void} = {}): Promise<ScreeningPoint[]> {
-  abort(options.signal);
-  const validated = validate(request);
-  if (projection !== 'polar' && projection !== 'global') throw new RangeError('Unsupported screening projection.');
-  const total = projection === 'polar' ? request.catalog.grid.lat.length : 288;
-  const results: ScreeningPoint[] = [];
-  // Initial macrotask gives callers a chance to cancel before the first geometry job.
-  await yieldTask(); abort(options.signal); options.onProgress?.(0, total); abort(options.signal);
-  for (let i = 0; i < total; i++) {
-    const lat = projection === 'polar' ? request.catalog.grid.lat[i] : -82.5 + Math.floor(i / 24) * 15;
-    const lon = projection === 'polar' ? request.catalog.grid.lon[i] : 7.5 + (i % 24) * 15;
-    const p = coordinates(lat, lon), work = pointWork(validated, p.lat, p.lon);
-    let began = performance.now(), next = work.next();
-    while (!next.done) {
-      abort(options.signal);
-      if (performance.now() - began >= 6) { await yieldTask(); abort(options.signal); began = performance.now(); }
-      next = work.next();
-    }
-    abort(options.signal); results.push(next.value);
-    options.onProgress?.(i + 1, total); abort(options.signal);
-    // Never perform two points in the same task, even with warm geometry caches.
-    await yieldTask(); abort(options.signal);
+type ScreeningJobOptions={signal?:AbortSignal;onProgress?:(completed:number,total:number)=>void};
+async function sampleCoordinates(request:ScreeningRequest,locations:readonly {lat:number;lon:number}[],options:ScreeningJobOptions):Promise<ScreeningPoint[]>{
+  abort(options.signal);const validated=validate(request),total=locations.length,results:ScreeningPoint[]=[];
+  await yieldTask();abort(options.signal);options.onProgress?.(0,total);abort(options.signal);
+  for(const location of locations){
+    const p=coordinates(location.lat,location.lon),work=pointWork(validated,p.lat,p.lon);
+    let began=performance.now(),next=work.next();
+    while(!next.done){abort(options.signal);if(performance.now()-began>=6){await yieldTask();abort(options.signal);began=performance.now();}next=work.next();}
+    abort(options.signal);results.push(next.value);options.onProgress?.(results.length,total);abort(options.signal);await yieldTask();abort(options.signal);
   }
   return results;
+}
+/** Bounded viewport refinement: never create an unbounded global fine-grid job. */
+export async function screeningLocations(request:ScreeningRequest,locations:readonly {lat:number;lon:number}[],options:ScreeningJobOptions={}):Promise<ScreeningPoint[]>{
+  if(locations.length>256)throw new RangeError('Viewport screening is limited to256 samples.');
+  return sampleCoordinates(request,locations,options);
+}
+export async function screeningSamples(request:ScreeningRequest,projection:'polar'|'global',options:ScreeningJobOptions={}):Promise<ScreeningPoint[]>{
+  abort(options.signal);if(projection!=='polar'&&projection!=='global')throw new RangeError('Unsupported screening projection.');
+  const locations=projection==='polar'?Array.from(request.catalog.grid.lat,(lat,i)=>({lat,lon:request.catalog.grid.lon[i]})):Array.from({length:288},(_,i)=>({lat:-82.5+Math.floor(i/24)*15,lon:7.5+(i%24)*15}));
+  return sampleCoordinates(request,locations,options);
 }

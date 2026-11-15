@@ -191,6 +191,7 @@ export function Navigator() {
     [rightOpen, setRightOpen] = useState(false),
     [compareOpen, setCompareOpen] = useState(false),
     [saved, setSaved] = useState<SavedScenario[]>([]);
+  const [flightRequested,setFlightRequested]=useState(false);
   const [mapArea,setMapArea]=useState<"polar"|"global">("polar");
   const [siteFilter,setSiteFilter]=useState<"all"|"polar"|"apollo"|"robotic"|"attempt">("all");
   const [query, setQuery] = useState(""),
@@ -217,7 +218,6 @@ export function Navigator() {
   latestPlayhead.current=playhead;latestFlightTime.current=flightTime;
   useEffect(() => {
     let active = true;
-    const globalReady=loadGlobalTerrain().catch(error=>{if(active)setGlobalTerrainError(String(error.message??error));return null;});
     loadCatalog()
       .then((rawCatalog) => {
         if (!active) return;
@@ -279,7 +279,6 @@ export function Navigator() {
         }
         if((initial.custom?.lat ?? c.sites.find(s=>s.id===initial.siteId)?.lat ?? -90)>-80)setMapArea("global");
         setCatalog(c);
-        void globalReady.then(globalTerrain=>{if(active&&globalTerrain)setCatalog(previous=>previous?{...previous,globalTerrain}:previous);});
         setState(initial);
         const opensOnCatalogDemo=initial.siteId===c.meta.demo.siteId&&initial.startIndex===start&&!initial.custom;
         setPlayhead(opensOnCatalogDemo?firstSunlitPlayheadForScenario(c,initial):initial.startIndex);
@@ -292,14 +291,29 @@ export function Navigator() {
           ),
       );
     loadEvidenceManifest().then(m=>{if(active)setEvidenceManifest(m);}).catch(e=>{if(active)setEvidenceError(String(e.message??e));});
-    loadImagery().then(value=>{if(active)setImageryData(value);}).catch(()=>{if(active)setNotice("Higher-resolution imagery is unavailable; original relief remains available.");});
-    loadTerrain()
-      .then((t) => active && setData(t))
-      .catch((e) => active && setTerrainError(String(e.message ?? e)));
     return () => {
       active = false;
     };
   }, []);
+  useEffect(()=>{if(view!=='map'||panel==='flight'||assetFocus==='lander')setFlightRequested(true);},[view,panel,assetFocus]);
+  // The 2D prepared map does not need the large numerical 3D datasets.
+  const needsGlobalTerrain=useMemo(()=>{
+    if(!catalog||!state||catalog.globalTerrain||(state.terrainMode??'prepared')==='prepared')return false;
+    if(view!=='map'||state.terrainMode==='global-at-point')return true;
+    const selected=catalog.sites.find(s=>s.id===state.siteId);if(!selected)return false;
+    return [state.heightM,state.arrayHeightM,state.antennaHeightM].some(height=>[0,2,10].includes(height)&&!resolveTerrainChoice(catalog,selected,state.custom,height,'prepared').mask.some(Number.isFinite));
+  },[catalog,state,view]);
+  useEffect(()=>{
+    if(!needsGlobalTerrain)return;let active=true;
+    loadGlobalTerrain().then(globalTerrain=>{if(active){setCatalog(previous=>previous?{...previous,globalTerrain}:previous);setGlobalTerrainError('');}}).catch(error=>{if(active)setGlobalTerrainError(String(error.message??error));});
+    return()=>{active=false;};
+  },[needsGlobalTerrain]);
+  useEffect(()=>{
+    if(view==='map')return;let active=true;
+    loadImagery().then(value=>{if(active)setImageryData(value);}).catch(()=>{if(active)setNotice('Higher-resolution imagery is unavailable; original relief remains available.');});
+    loadTerrain().then(value=>{if(active){setData(value);setTerrainError('');}}).catch(error=>{if(active)setTerrainError(String(error.message??error));});
+    return()=>{active=false;};
+  },[view]);
   useEffect(() => {
     const q = matchMedia("(prefers-reduced-motion: reduce)"),
       apply = () => setReduced(q.matches);
@@ -385,7 +399,7 @@ export function Navigator() {
   }, [data, location, site, state?.custom,state?.terrainMode,catalog?.globalTerrain]);
   const flightInputKey=JSON.stringify(state?.flight);
   const flight = useMemo(() => {
-    if (!state || !location) return null;
+    if (!state || !location || !flightRequested) return null;
     const base = referenceHeightM;
     const ground = data
       ? (east: number, north: number) => {
@@ -399,7 +413,7 @@ export function Navigator() {
         }
       : undefined;
     return simulateFlight(state.flight, ground, 1737400 + base, {latitudeDeg: location.lat});
-  }, [flightInputKey, location, data, referenceHeightM]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [flightInputKey, location, data, referenceHeightM,flightRequested]); // eslint-disable-line react-hooks/exhaustive-deps
   const relative = series
     ? Math.max(0, Math.min(series.sunEl.length - 1, playhead - series.index0))
     : 0;
@@ -629,8 +643,7 @@ export function Navigator() {
     !series ||
     !summary ||
     !mission ||
-    !sphere ||
-    !flight
+    !sphere
   )
     return (
       <><LunarioStartup ready={false} /><LunarWindowLoader /></>
@@ -638,7 +651,7 @@ export function Navigator() {
   const now = indexToMs(catalog, playhead),
     name = state.custom ? "Custom landing point" : site.name;
   const currentFlight =
-    flight.points.find((p) => p.t >= flightTime) ?? flight.points.at(-1)!;
+    flight?.points.find((p) => p.t >= flightTime) ?? flight?.points.at(-1) ?? null;
   const contactActive=!!landingFlight?.contact&&flightTime>=landingFlight.contact.timeS;
   const dynamics=currentLandingDynamics(landingReadout,landingReadoutKey,landingFlight?.contact,flightTime,flightPlaying?flightSpeed:0);
   const shift = (h: number) => range(state.startIndex + h, state.endIndex + h);
@@ -1266,7 +1279,7 @@ export function Navigator() {
                   {evidenceManifest&&!teachingStudioOpen&&<TeachingWorkbench catalog={catalog} manifest={evidenceManifest} state={state} onChange={next=>update(next)} onCompare={comparePair}/>}
                   </>
                 )}
-                {panel === "flight" && (
+                {panel === "flight" && flight && (
                   <>
                     <FlightPanel
                       value={state.flight}
@@ -1430,7 +1443,7 @@ export function Navigator() {
               {terrainError} Reference surface shown.
             </div>
           )}
-          {showFlight && !focusMode && assetFocus!=='earth' && (flightHud==='hidden'?<Button className="flight-hud-restore glass" variant="outline" onClick={()=>setFlightHud('compact')}><Rocket size={15}/> Flight controls</Button>:<div
+          {showFlight && currentFlight && !focusMode && assetFocus!=='earth' && (flightHud==='hidden'?<Button className="flight-hud-restore glass" variant="outline" onClick={()=>setFlightHud('compact')}><Rocket size={15}/> Flight controls</Button>:<div
               className={`flight-telemetry glass ${flightHud==='compact'?'flight-hud-compact':''}`}
               aria-label="Flight telemetry"
             >
