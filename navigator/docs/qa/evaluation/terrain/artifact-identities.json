@@ -1,0 +1,21 @@
+{
+  "reviewedSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "implementationCommit": "9e08dc6ec8c0b53e93bf970c702729c06c0b6b22",
+  "node": "v20.20.2",
+  "artifacts": {
+    "REPORT.md": "1c29f16590c2711806edfe0a942f3688f6bbe5942b1c335612b31758b0e13892",
+    "browser.json": "2b59aab9c965183e63e7fb6232623bc0eca0f4fb76e00e3534224297e1281ea4",
+    "confidence-samples.json": "37d46cf14ed91eb0730eb53f9d98bfd6da8019b1c86ec86656e78359838e21d5",
+    "findings.json": "3beffcf8b1f5d1195f6fe2fe7ca23540eff6efd4f7f24040741bb5f064719d7f",
+    "height-comparison.json": "61014cbc5561093ae73cb5b46c1de2298e2f2d364cba693e48c5035603ab1e0d",
+    "incoming-1km-adjacent.png": "b81d4409808575c561b31e4f584eefe576306d3feba07a9bb22ebe5fd0e4f283",
+    "incoming-1km.png": "4046e84bd1c6bf87dd566cdf1358d62be4bf86fab51e72c54f9e4d82840b07b9",
+    "incoming-audit.json": "780baf2bde44883f48a99efcc1575107230f5af325c3a2db73ad4f986c195a59",
+    "material-after.png": "f0943c77715a2c43c6fa7d6c41d7c42e6717f217259b4d0df68eabc74501885e",
+    "material-before.png": "23c9ad3d4cf8ba36f2e2762432721fc98c01e489b08df3449cd1c037481329cc",
+    "material-browser.json": "baea06e516575863fe474fc551579c0dc6221006a86ecee3a27c2b86f47bbbad",
+    "primary-documents.json": "f4f5ffe63eb31a3e62397099ba51ddcc4bcb0b34aa6097a6d0426c64b3d56a0a",
+    "primary-samples.json": "87f7744f3a9193aeeb93b6c04c71413f1b6740f34c961e6928fe3f34651d6946",
+    "verification.txt": "afb73022224435fa7b37993b03fb6190cc64b3f8c1938485f4307acefd69de71"
+  }
+}

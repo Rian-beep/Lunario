@@ -1,0 +1,226 @@
+{
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "grids": [
+    {
+      "id": "overview-150m",
+      "width": 2049,
+      "height": 2049,
+      "spacing": 150,
+      "nativeSpacing": 20,
+      "bytes": 7127280,
+      "decodedBytes": 8396802,
+      "sha256": "186eba2b3679f9221aa6c71062ca40432fedb04a6048e9a5e8e9a5b848b811e3",
+      "nodata": 0,
+      "minM": -5497,
+      "maxM": 7025,
+      "countMatches": true,
+      "hashMatches": true,
+      "registrationMatches": true
+    },
+    {
+      "id": "regional-60m",
+      "width": 2561,
+      "height": 2561,
+      "spacing": 60,
+      "nativeSpacing": 20,
+      "bytes": 10378675,
+      "decodedBytes": 13117442,
+      "sha256": "de3d41b0ef90ff3a28591b7a785223a6595b4ec70526b820b54d260b53ed87e1",
+      "nodata": 0,
+      "minM": -4378,
+      "maxM": 2386,
+      "countMatches": true,
+      "hashMatches": true,
+      "registrationMatches": true
+    },
+    {
+      "id": "shackleton-20m",
+      "width": 2401,
+      "height": 2401,
+      "spacing": 20,
+      "nativeSpacing": 20,
+      "bytes": 7275307,
+      "decodedBytes": 11529602,
+      "sha256": "383262974962d6f2c0513fd58dfd7a61042395fad34ea806567e2f8bd6413f01",
+      "nodata": 0,
+      "minM": -2872,
+      "maxM": 1959,
+      "countMatches": true,
+      "hashMatches": true,
+      "registrationMatches": true
+    },
+    {
+      "id": "shackleton-rim-5m",
+      "width": 3200,
+      "height": 3200,
+      "spacing": 5,
+      "nativeSpacing": 5,
+      "bytes": 9527971,
+      "decodedBytes": 20480000,
+      "sha256": "30391b16b4ccf240b9f20dd1d5f66008a196496044fb98a2d93ba0e75cdd7e16",
+      "nodata": 0,
+      "minM": -2848,
+      "maxM": 1805,
+      "countMatches": true,
+      "hashMatches": true,
+      "registrationMatches": true
+    },
+    {
+      "id": "shackleton-stereo-2m",
+      "width": 2500,
+      "height": 2500,
+      "spacing": 2,
+      "nativeSpacing": 2,
+      "bytes": 5370957,
+      "decodedBytes": 12500000,
+      "sha256": "04958a7272d602bd9988ac5dbb355f1b3de7cea41e58ccfd24a15554a9dbf4dd",
+      "nodata": 2069251,
+      "minM": 645.2,
+      "maxM": 1739.4,
+      "countMatches": true,
+      "hashMatches": true,
+      "registrationMatches": true,
+      "blendMask": {
+        "bytes": 85192,
+        "decodedBytes": 6250000,
+        "hashMatches": true
+      }
+    }
+  ],
+  "startupRequests": [
+    "https://fixture.invalid/lunario/data/south-pole-detail/manifest.json",
+    "https://fixture.invalid/lunario/data/south-pole-detail/overview-150m.bin.gz"
+  ],
+  "totalCompressedDemBytes": 39680190,
+  "imageryManifestPresent": false,
+  "blendedSample": {
+    "x": -4824,
+    "y": -4862,
+    "sourceM": 1141.8,
+    "underlayM": 1141.9500000000003,
+    "weight": 0.027450980392156862,
+    "inspection": {
+      "x": -4824,
+      "y": -4862,
+      "elevation": 1141.9458823529415,
+      "height": 1141.9458823529415,
+      "spacing": 2,
+      "nativeSpacing": 2,
+      "dataset": "shackleton-stereo-2m",
+      "datasetName": "Shackleton rim · LROC stereo",
+      "slope": 18.601905158872523,
+      "sourceUrl": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/ESALL_SR12/NAC_DTM_ESALL_SR12.TIF",
+      "sourcePage": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_ESALL_SR12"
+    }
+  },
+  "lod1km": {
+    "focus": {
+      "x": -3000,
+      "y": -7000
+    },
+    "tiles": 286,
+    "nearbyTiles": 115,
+    "nearbySpacingsM": [
+      2.34375,
+      4.6875,
+      9.375,
+      18.75
+    ],
+    "minSpacingM": 2.34375,
+    "triangles": 2489344
+  },
+  "roundTrips": [
+    {
+      "x": -3000,
+      "y": -7000,
+      "errorXYM": 1.016845989170083e-12,
+      "errorHeightM": 2.3283064365386963e-10
+    },
+    {
+      "x": -153600,
+      "y": 153600,
+      "errorXYM": 4.1159031748919956e-11,
+      "errorHeightM": 2.3283064365386963e-10
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "errorXYM": 0,
+      "errorHeightM": 0
+    }
+  ],
+  "seams": [
+    {
+      "id": "shackleton-rim-5m",
+      "x": -8997.5,
+      "y": -7000,
+      "layerStepM": -0.1875
+    },
+    {
+      "id": "shackleton-rim-5m",
+      "x": 6997.5,
+      "y": -7000,
+      "layerStepM": -0.125
+    },
+    {
+      "id": "shackleton-rim-5m",
+      "x": -1000,
+      "y": -14997.5,
+      "layerStepM": 3.8125
+    },
+    {
+      "id": "shackleton-rim-5m",
+      "x": -1000,
+      "y": 997.5,
+      "layerStepM": 1.75
+    },
+    {
+      "id": "shackleton-20m",
+      "x": -24000,
+      "y": 0,
+      "layerStepM": -0.5
+    },
+    {
+      "id": "shackleton-20m",
+      "x": 24000,
+      "y": 0,
+      "layerStepM": -0.5
+    },
+    {
+      "id": "shackleton-20m",
+      "x": 0,
+      "y": -24000,
+      "layerStepM": -0.5
+    },
+    {
+      "id": "shackleton-20m",
+      "x": 0,
+      "y": 24000,
+      "layerStepM": 0.5
+    },
+    {
+      "id": "regional-60m",
+      "x": -76800,
+      "y": 0,
+      "layerStepM": 1
+    },
+    {
+      "id": "regional-60m",
+      "x": 76800,
+      "y": 0,
+      "layerStepM": 0
+    },
+    {
+      "id": "regional-60m",
+      "x": 0,
+      "y": -76800,
+      "layerStepM": 0
+    },
+    {
+      "id": "regional-60m",
+      "x": 0,
+      "y": 76800,
+      "layerStepM": -2.5
+    }
+  ]
+}

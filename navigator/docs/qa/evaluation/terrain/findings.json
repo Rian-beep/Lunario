@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "lane": "terrain",
+  "reviewedSourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "implementationCommit": "9e08dc6ec8c0b53e93bf970c702729c06c0b6b22",
+  "scope": "Before parent runtime fixes; owned ion corrections plus reproducible evidence. No operational or creative acceptance.",
+  "statuses": {
+    "open": 9,
+    "fixed": 2,
+    "not-reproduced": 4,
+    "needs-external-evidence": 2
+  },
+  "verification": {
+    "focused": {
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "full": {
+      "pass": 1371,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "typecheckExit": 0,
+    "lintExit": 1,
+    "lintErrors": 1,
+    "lintWarnings": 0,
+    "isolatedBaseLintExit": 1,
+    "ownedLintExit": 0,
+    "publicationExit": 0,
+    "publicationCounts": {
+      "verified": 41,
+      "uncertain": 21,
+      "failing": 0
+    },
+    "scopeWarning": "Three focused incoming tests characterize open defects; publication counts do not qualify new visual terrain."
+  },
+  "findings": [
+    {
+      "id": "TER-001",
+      "status": "fixed",
+      "observedBehavior": "Bare streamed geometry becomes unlit; exact-base synthetic box has one RGB value across 7000 interior pixels.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/ion/atlas-material.test.ts",
+        "node scripts/evaluation-terrain/material-browser.mjs"
+      ],
+      "rootCause": "Unconditional MeshBasicMaterial conversion removes normal-based illumination without source imagery/colours.",
+      "changeTestEvidence": [
+        "New material regressions: before 1 pass/3 fail; after 4 pass/0 fail.",
+        "material-browser.json",
+        "material-before.png",
+        "material-after.png"
+      ],
+      "requiredParentAction": "Integrate owned commit; inspect real tile payload using appearance getter.",
+      "limitations": "Fixture proves material bug, not current authenticated provider content or accepted texture.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": "9e08dc6ec8c0b53e93bf970c702729c06c0b6b22"
+    },
+    {
+      "id": "TER-002",
+      "status": "fixed",
+      "observedBehavior": "A registered load-error callback remains attached after terminal cleanup.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/ion/runtime.test.ts"
+      ],
+      "rootCause": "release removed fail instead of registered tileFailure.",
+      "changeTestEvidence": [
+        "Listener assertion before 1 fail/13 filtered skips; after full ion/runtime pass.",
+        "verification.txt"
+      ],
+      "requiredParentAction": "Integrate owned callback cleanup.",
+      "limitations": "Does not establish complete browser heap reclamation.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": "9e08dc6ec8c0b53e93bf970c702729c06c0b6b22"
+    },
+    {
+      "id": "TER-003",
+      "status": "open",
+      "observedBehavior": "Hosted subpath requests root /data manifest (404); named file standalone fetch rejects.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/terrain-evaluation/incoming.test.ts",
+        "node scripts/evaluation-terrain/browser.mjs"
+      ],
+      "rootCause": "southPoleManifestUrl bypasses publicAssetURL; standalone has no embedded detail loader.",
+      "changeTestEvidence": [
+        "browser.json wrongPath/ offline",
+        "Standalone builder read-only source inspection"
+      ],
+      "requiredParentAction": "Parent owns publicAssetURL path fix and explicit offline fallback or independently validated embedded loader.",
+      "limitations": "Parent separately reproduced; generated applications were not rebuilt here.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-004",
+      "status": "open",
+      "observedBehavior": "Hidden terrain initialization downloads 7127280-byte overview before local detail is needed.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs",
+        "Inspect runtime.ts:182-198"
+      ],
+      "rootCause": "Unconditional runtime constructor/init; group visibility does not delay network work.",
+      "changeTestEvidence": [
+        "incoming-audit.json startupRequests",
+        "browser.json observation.startup"
+      ],
+      "requiredParentAction": "Parent lazily constructs/initializes detail with current view/lifetime and explicit loading/failure state.",
+      "limitations": "Controlled transport startup, not live network latency.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-005",
+      "status": "open",
+      "observedBehavior": "Late body completion creates heightTexture and invokes status after terrain disposal.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/terrain-evaluation/incoming.test.ts"
+      ],
+      "rootCause": "Missing disposed/generation checks after awaits in _loadDatasetInternal and _emit.",
+      "changeTestEvidence": [
+        "incoming late-completion characterization passes by observing the defect."
+      ],
+      "requiredParentAction": "Parent adds guards after awaited body/decompression/mask work, before resource publication; suppress disposed callbacks and dispose late resources.",
+      "limitations": "Fixture deliberately completes an in-flight read after disposal; normal complete-load browser disposal returns isolated GPU counters to zero.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-006",
+      "status": "open",
+      "observedBehavior": "Incoming manifest references missing imagery directory; runtime renders clay with imageryEnabled=0.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/terrain-evaluation/incoming.test.ts",
+        "node scripts/evaluation-terrain/browser.mjs"
+      ],
+      "rootCause": "Image assets are absent and runtime never invokes loadImagery.",
+      "changeTestEvidence": [
+        "incoming-audit.json imageryManifestPresent=false",
+        "browser.json",
+        "incoming-1km.png"
+      ],
+      "requiredParentAction": "Parent labels clay surface or supplies verified imagery and source/loading/error states; do not infer texture from geometric detail.",
+      "limitations": "Actual local data rendered; no authenticated imagery claim.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-007",
+      "status": "open",
+      "observedBehavior": "Incoming detail differs from canonical flight display by -1.883 to +0.904m at six sites and can replace visible ground during flight/follow.",
+      "reproducibleSteps": [
+        "npx tsx scripts/evaluation-terrain/height-comparison.ts",
+        "Inspect runtime.ts showSouthPoleDetail/ground.visible versus flight ground authority"
+      ],
+      "rootCause": "Different native grids/resampling/blending; visibility gate does not exclude flight/follow/vehicle.",
+      "changeTestEvidence": [
+        "height-comparison.json"
+      ],
+      "requiredParentAction": "Parent preserves canonical contact geometry in flight/follow/vehicle or reviews an explicit display strategy; do not change collision numerics implicitly.",
+      "limitations": "Six site centres only; not an exhaustive along-trajectory clearance audit or physical measurement.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-008",
+      "status": "open",
+      "observedBehavior": "Detail uses fixed illustrative Sun azimuth225/elevation28 and studio lighting independent of selected epoch.",
+      "reproducibleSteps": [
+        "Inspect runtime.ts:188-191 and LunarTerrain.setSun"
+      ],
+      "rootCause": "Runtime sets fixed Sun once.",
+      "changeTestEvidence": [
+        "Read-only source; manifest itself discloses illustrative lighting."
+      ],
+      "requiredParentAction": "Parent exposes fixed illustrative lighting in view; validate terrain-frame mapping if later wiring epoch Sun.",
+      "limitations": "No ephemeris or science path modified.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-009",
+      "status": "open",
+      "observedBehavior": "Inspection labels blended height as stereo/2m only: 1141.94588235m at (-4824,-4862), source1141.8m, LOLA1141.95m, weight7/255.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs"
+      ],
+      "rootCause": "getElevation omits _sample blendWeight and underlyingData provenance.",
+      "changeTestEvidence": [
+        "incoming-audit.json blendedSample"
+      ],
+      "requiredParentAction": "Parent exposes raw/display heights, blend/underlay/source/datum/frame and display-only state.",
+      "limitations": "An example of display provenance, not evidence source heights were rewritten.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-010",
+      "status": "needs-external-evidence",
+      "observedBehavior": "Unauthenticated primary Cesium asset endpoint returns HTTP401; no live authenticated texture/material quality established.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/primary-docs.mjs"
+      ],
+      "rootCause": "Asset access requires ion account/token; fixture payloads are not provider acceptance.",
+      "changeTestEvidence": [
+        "primary-documents.json source5 status401",
+        "Current Cesium source specification linked in REPORT.md"
+      ],
+      "requiredParentAction": "Parent captures credential-safe real selected tile image/UV/vertex-colour/material metadata, credits and nearby convergence at1km; use IonMoon.appearance on throttled diagnostic cadence.",
+      "limitations": "No unauthenticated primary Moon3DTiles endpoint validated/adopted. No credentials read, stored or exported; current advertised product source scales are not observed tile resolution.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-011",
+      "status": "not-reproduced",
+      "observedBehavior": "All five DEM hashes/counts/nodata/extents and feather hash/count match; nine independent source-stencil comparisons fit encoding bounds.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs",
+        "node scripts/evaluation-terrain/primary-samples.mjs",
+        "node scripts/evaluation-terrain/confidence-samples.mjs"
+      ],
+      "rootCause": "No unit/encoding or native pixel-centre error found in bounded checks.",
+      "changeTestEvidence": [
+        "incoming-audit.json",
+        "primary-samples.json",
+        "confidence-samples.json"
+      ],
+      "requiredParentAction": "Retain distinction between grid/source spacing, rounding bounds and unquantified physical uncertainty.",
+      "limitations": "Nine heights, six confidence pixels and source labels; not full independent regeneration or physical error calibration.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-012",
+      "status": "not-reproduced",
+      "observedBehavior": "Projected/world and six site-frame rigid transforms agree below5.5e-10m in tested cases.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs",
+        "npx tsx scripts/evaluation-terrain/height-comparison.ts"
+      ],
+      "rootCause": "No rigid registration implementation discrepancy found.",
+      "changeTestEvidence": [
+        "height-comparison.json",
+        "incoming-audit.json roundTrips"
+      ],
+      "requiredParentAction": "Keep historical LROC versus explicitly DE421 LOLA frame distinction.",
+      "limitations": "Numerical self-consistency is not observed geodetic registration; source/image offsets remain unknown locally.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-013",
+      "status": "not-reproduced",
+      "observedBehavior": "At 1km and after500m lateral move, plans settle at286 tiles and inspected clay frames show no obvious LOD gap; repeated unchanged frame identical.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs",
+        "node scripts/evaluation-terrain/browser.mjs"
+      ],
+      "rootCause": "No visible LOD-crack defect at these two bounded views; skirted geometry uses consistent sampled surface.",
+      "changeTestEvidence": [
+        "browser.json",
+        "incoming-1km.png",
+        "incoming-1km-adjacent.png"
+      ],
+      "requiredParentAction": "Parent performs integrated/native-device and edge review before accepting quality.",
+      "limitations": "SwiftShader private fixture; all grids deliberately loaded for proof. Not natural load convergence, all seams or performance qualification.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-014",
+      "status": "not-reproduced",
+      "observedBehavior": "One shared renderer/canvas used in native proof; existing ion accepts existing camera/renderer, raycast leaves them unchanged.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/ion/runtime.test.ts",
+        "node scripts/evaluation-terrain/browser.mjs"
+      ],
+      "rootCause": "No duplicate renderer introduced; shadow target uses supplied renderer.",
+      "changeTestEvidence": [
+        "browser.json observation.canvases and adjacent.canvases=1",
+        "Focused raycast/renderer tests"
+      ],
+      "requiredParentAction": "Preserve single renderer/camera and body-centred outside ray origin in parent wiring.",
+      "limitations": "Private harness plus source/fixture tests, not full integrated app observation.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-015",
+      "status": "open",
+      "observedBehavior": "Twelve selected layer-boundary probes show a maximum3.8125m source/sampling step at Site04 south edge.",
+      "reproducibleSteps": [
+        "node scripts/evaluation-terrain/audit-incoming.mjs"
+      ],
+      "rootCause": "Only stereo has explicit transition blending; other datasets switch at their bounding rectangles.",
+      "changeTestEvidence": [
+        "incoming-audit.json seams"
+      ],
+      "requiredParentAction": "Parent visually reviews boundary probes and discloses any visualization-only seam treatment; preserve raw scientific heights.",
+      "limitations": "Not proof of a visible mesh crack; edges not included in two native1km screenshots.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-016",
+      "status": "open",
+      "observedBehavior": "Full lint exits1 with one ban-ts-comment error at incoming lunar-terrain.js:1; exact base isolated lint matches.",
+      "reproducibleSteps": [
+        "npm run lint",
+        "npm --prefix /tmp/lunario-eval-terrain-lint-base/navigator run lint"
+      ],
+      "rootCause": "Incoming parent-owned file starts with @ts-nocheck.",
+      "changeTestEvidence": [
+        "verification.txt"
+      ],
+      "requiredParentAction": "Parent resolves incoming type/lint treatment; worker did not suppress or edit it.",
+      "limitations": "Owned-path lint and full nonincremental typecheck pass.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    },
+    {
+      "id": "TER-017",
+      "status": "needs-external-evidence",
+      "observedBehavior": "Queue/cache settings pass fixture tests: four total downloads, one parse,300entries/128MiB; actual peak RAM/GPU use unmeasured.",
+      "reproducibleSteps": [
+        "npx tsx --test tests/ion/runtime.test.ts"
+      ],
+      "rootCause": "Pinned cache accounts decoded models and admits pending jobs before exact parse sizes; it is not a hard total-process memory cap.",
+      "changeTestEvidence": [
+        "Existing budgets/cancellation/stale-parse tests pass; source-reviewed pinned LRUCache."
+      ],
+      "requiredParentAction": "Parent measures peak memory and authenticated nearby loading on target hardware before stronger budget claims.",
+      "limitations": "No whole-Moon prefetch or huge dependency added; complete-load isolated browser resources return to zero, but late-body race remains TER-005.",
+      "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+      "implementationCommit": null
+    }
+  ]
+}

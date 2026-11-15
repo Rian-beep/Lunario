@@ -1,0 +1,60 @@
+{
+  "browser": "149.0.7827.155",
+  "transport": "intercepted committed local data; no authenticated provider",
+  "wrongPath": {
+    "url": "/data/south-pole-detail/manifest.json",
+    "status": 404
+  },
+  "observation": {
+    "renderer": "WebKit WebGL",
+    "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "maxTextureSize": 8192,
+    "startup": [
+      "overview-150m"
+    ],
+    "loaded": [
+      "overview-150m",
+      "regional-60m",
+      "shackleton-20m",
+      "shackleton-rim-5m",
+      "shackleton-stereo-2m"
+    ],
+    "tiles": 286,
+    "triangles": 670208,
+    "redChannelRange": [
+      75,
+      199
+    ],
+    "nonBackground": 360000,
+    "canvases": 1,
+    "imageryEnabled": 0
+  },
+  "identicalRepeatFrame": true,
+  "adjacent": {
+    "tiles": 286,
+    "triangles": 722432,
+    "pending": false,
+    "canvases": 1
+  },
+  "cleanup": {
+    "geometries": 0,
+    "textures": 0
+  },
+  "offline": {
+    "url": "file:///tmp/lunario-eval-terrain-browser/data/south-pole-detail/manifest.json",
+    "loaded": false,
+    "error": "Failed to fetch"
+  },
+  "requests": [
+    "https://terrain-fixture.invalid/lunario/index.html",
+    "https://terrain-fixture.invalid/data/south-pole-detail/manifest.json",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/manifest.json",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/overview-150m.bin.gz",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/regional-60m.bin.gz",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/shackleton-20m.bin.gz",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/shackleton-rim-5m.bin.gz",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/shackleton-stereo-2m.bin.gz",
+    "https://terrain-fixture.invalid/lunario/data/south-pole-detail/stereo-feather-20m.bin.gz"
+  ],
+  "errors": []
+}

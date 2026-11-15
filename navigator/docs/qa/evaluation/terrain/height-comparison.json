@@ -1,0 +1,108 @@
+{
+  "sourceCommit": "3c82b5aa02c4da52053fd3c12c180cca18fd6d4e",
+  "scope": "Display-source discrepancy only; no collision/mission authority changed",
+  "rows": [
+    {
+      "id": "malapert-massif",
+      "lat": -86,
+      "lon": 0,
+      "x": 0,
+      "y": 121342.68982992518,
+      "incomingM": 4796.8060055544465,
+      "dataset": "overview-150m",
+      "flightDisplayM": 4798.689020620437,
+      "canonicalMeasured": {
+        "heightM": 4798.689020620437,
+        "stepM": 23.976608187134502,
+        "inputPixelM": 10
+      },
+      "detailMinusFlightM": -1.8830150659905485,
+      "rigidRegistrationErrorM": 2.6335848613974206e-10
+    },
+    {
+      "id": "connecting-ridge",
+      "lat": -89.53432,
+      "lon": 209.94767,
+      "x": -7049.355538480447,
+      "y": -12235.63633955415,
+      "incomingM": 1653,
+      "dataset": "shackleton-rim-5m",
+      "flightDisplayM": 1653.0801461741971,
+      "canonicalMeasured": {
+        "heightM": 1653.0801461741971,
+        "stepM": 7.992202729044834,
+        "inputPixelM": 5
+      },
+      "detailMinusFlightM": -0.08014617419712522,
+      "rigidRegistrationErrorM": 4.038588402727175e-10
+    },
+    {
+      "id": "peak-near-shackleton",
+      "lat": -89.01701,
+      "lon": 126.27302,
+      "x": 24031.644097810684,
+      "y": -17635.581119401115,
+      "incomingM": 1167.7577383007053,
+      "dataset": "regional-60m",
+      "flightDisplayM": 1167.960709215198,
+      "canonicalMeasured": {
+        "heightM": 1167.960709215198,
+        "stepM": 7.992202729044834,
+        "inputPixelM": 5
+      },
+      "detailMinusFlightM": -0.2029709144926528,
+      "rigidRegistrationErrorM": 2.2934471783177938e-10
+    },
+    {
+      "id": "degerlache-shackleton",
+      "lat": -89.495,
+      "lon": 222.5,
+      "x": -10345.577072186026,
+      "y": -11290.216207343967,
+      "incomingM": 1905.080203333174,
+      "dataset": "shackleton-20m",
+      "flightDisplayM": 1904.873939179181,
+      "canonicalMeasured": {
+        "heightM": 1904.873939179181,
+        "stepM": 7.992202729044834,
+        "inputPixelM": 5
+      },
+      "detailMinusFlightM": 0.20626415399306097,
+      "rigidRegistrationErrorM": 5.437736658820222e-10
+    },
+    {
+      "id": "south-pole",
+      "lat": -89.99,
+      "lon": 0,
+      "x": 0,
+      "y": 303.23350501161343,
+      "incomingM": 1290.889974248258,
+      "dataset": "shackleton-rim-5m",
+      "flightDisplayM": 1290.8422253831163,
+      "canonicalMeasured": {
+        "heightM": 1290.8422253831163,
+        "stepM": 7.992202729044834,
+        "inputPixelM": 5
+      },
+      "detailMinusFlightM": 0.047748865141784336,
+      "rigidRegistrationErrorM": 1.9073634075394815e-10
+    },
+    {
+      "id": "shackleton-crest",
+      "lat": -89.77,
+      "lon": 204,
+      "x": -2836.7358937421673,
+      "y": -6371.413135198957,
+      "incomingM": 1730.781751799579,
+      "dataset": "shackleton-stereo-2m",
+      "flightDisplayM": 1729.8781816635208,
+      "canonicalMeasured": {
+        "heightM": 1729.8781816635208,
+        "stepM": 7.992202729044834,
+        "inputPixelM": 5
+      },
+      "detailMinusFlightM": 0.9035701360583062,
+      "rigidRegistrationErrorM": 2.250066167192973e-10
+    }
+  ]
+}
