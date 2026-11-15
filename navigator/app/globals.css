@@ -3064,7 +3064,7 @@ html[data-ui-theme="dark"] .lunario-loading-fallback { color: var(--foreground);
 .ion-credit { position:absolute; left:12px; bottom:48px; max-width:min(440px,65%); z-index:4; padding:4px 8px; border-radius:6px; font-size:10px; color:#fff7e5; background:rgb(12 14 16 / 88%); }
 .ion-credit a { text-decoration:underline; }
 
-.workspace > .map-screening-legend { position:absolute; left:16px; bottom:76px; z-index:15; max-width:calc(100% - 32px); }
+.workspace > .map-screening-legend { position:absolute; left:16px; bottom:76px; z-index:15; max-width:calc(100% - 32px); max-height:calc(100% - 160px); overflow:auto; }
 .layer-popover { max-height:calc(100% - 108px); overflow-y:auto; overscroll-behavior:contain; width:min(340px,calc(100% - 32px)); }
 .layer-popover .map-screening-controls label { display:grid; align-items:start; }
 .layer-popover .map-screening-controls .map-screening-toggle { display:flex; align-items:center; }

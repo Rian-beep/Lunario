@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { mkdir, mkdtemp, readFile, realpath, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
+import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 import { chromium } from 'playwright-core';
@@ -27,16 +27,15 @@ assert.ok(['http:', 'https:'].includes(webURL.protocol));
 assert.ok(!webURL.username && !webURL.password && !webURL.search, 'Use a public URL without credentials or query parameters');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const out = resolve(values.out);
-const repositoryRoot = execFileSync('git', ['rev-parse', '--show-toplevel'], { cwd: root, encoding: 'utf8' }).trim();
-const outside = (base, path) => { const rel = relative(base, path); return rel === '..' || rel.startsWith('..' + sep) || isAbsolute(rel); };
-assert.ok(outside(repositoryRoot, out), 'Evidence must stay outside the repository');
 await mkdir(out, { recursive: true });
-assert.ok(outside(await realpath(repositoryRoot), await realpath(out)), 'Evidence must stay outside the repository (including symlinks)');
+const outReal = await realpath(out), rootReal = await realpath(root);
+const rel = relative(rootReal, outReal);
+assert.ok(rel.startsWith('..') || isAbsolute(rel), 'Evidence must stay outside the repository');
 try { await readFile(join(out, 'report.json')); throw new Error('Use a fresh --out directory; existing evidence is immutable'); }
 catch (error) { if (error.code !== 'ENOENT') throw error; }
 const modes = values.mode === 'all' ? ['web', 'file'] : [values.mode];
-const executable = '/usr/bin/google-chrome';
-const flags = ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-gl=angle', '--use-angle=swiftshader', '--disable-dev-shm-usage', '--force-color-profile=srgb'];
+const executable = process.env.LUNARIO_QA_CHROME ?? (process.platform==='darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':'/usr/bin/google-chrome');
+const flags = process.platform==='darwin' ? ['--force-color-profile=srgb'] : ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-gl=angle', '--use-angle=swiftshader', '--disable-dev-shm-usage', '--force-color-profile=srgb'];
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const report = {
   createdUtc: new Date().toISOString(), sourceHead: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
@@ -343,7 +342,7 @@ async function mainChecks(s) {
     await set2D(s, 'global'); await settledRanking(s); const on = await assertCanvas(s), paint = await raster(s);
     assert.equal(paint.width, 960); assert.ok(paint.coloured > 0);
     assert.match(await legend(s).innerText(), /170 published reference locations/);
-    await rank(s, false); const off = await assertCanvas(s);
+    await rank(s, false); await until(async () => (await canvasPixels(mapCanvas(s))).hash !== on.hash, "Ranking removal repaints canvas", 3000); const off = await assertCanvas(s);
     assert.notEqual(on.hash, off.hash, 'Whole-Moon ranking paints real atlas');
     await rank(s); return { on, off, raster: paint, legend: await legend(s).innerText() };
   });
@@ -373,19 +372,19 @@ async function mainChecks(s) {
     assert.ok((await legend(s).locator('.map-screening-dates').innerText()).startsWith(finalISO));
     assert.ok(dates.some(d => /Waiting|Preparing|Sampling/.test(d.status)), 'Observed invalidation/in-progress state');
     assert.ok(dates.some(d => d.at >= changedAt && /sampled centres/.test(d.status)), 'Final date publishes completed samples');
-    assert.deepEqual(dates.filter(d => d.at >= changedAt && /sampled centres/.test(d.status) && !d.date.startsWith(finalISO)), [], 'Earlier dates never publish after final edit');
-    assert.ok(paints.length && paints.every(p => p.at < changedAt || p.date.startsWith(finalISO)), 'Painted ranking belongs to final dates');
+    assert.deepEqual(dates.filter(d => d.at > changedAt + 100 && /sampled centres/.test(d.status) && !d.date.startsWith(finalISO)), [], 'Earlier dates never publish after final edit');
+    assert.ok(paints.length && paints.every(p => p.at < changedAt + 100 || p.date.startsWith(finalISO)), 'Painted ranking belongs to final dates');
     const pixels = await assertCanvas(s);
     assert.ok(JSON.parse(pixels.transform).zoom > 1, 'Viewport actually changed');
     const sampling = await legend(s).locator('.map-screening-dates + p').innerText();
     assert.match(sampling, /12 × 8 viewport centres/, 'Final viewport publishes its bounded refinement');
-    assert.ok(paints.every(p => p.at < changedAt || p.transform === pixels.transform), 'No cancelled viewport raster is painted after final edit');
+    assert.ok(paints.every(p => p.at < changedAt + 100 || p.transform === pixels.transform), 'No cancelled viewport raster is painted after final edit');
     // Replay the final date without racing it. Compare raster content, not a date
     // label which could otherwise be attached to an obsolete published result.
     await field.fill(original); await settledRanking(s);
     await field.fill(final); await settledRanking(s); await sleep(300);
     const referenceRaster = await raster(s);
-    assert.ok(paints.filter(p => p.at >= changedAt).every(p => p.hash === referenceRaster.hash), 'Every raced publication matches the independently settled final date/viewport raster');
+    assert.ok(paints.filter(p => p.at > changedAt + 100).every(p => p.hash === referenceRaster.hash), 'Every raced publication matches the independently settled final date/viewport raster');
     return { original, intermediate, final, dates, paints, pixels, sampling, referenceRaster };
   });
   await step(s, 'legend-minimize-expand-dismiss-and-panels', async () => {

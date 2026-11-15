@@ -1,0 +1,11 @@
+# Integrated release acceptance
+
+15 November 2026. Rian demo defaults and incoming main/Ted educational changes are integrated. US and international history workers independently passed 24 focused tests, types and lint before merge. Combined source suite: 970 passed, zero failures/skips. Final ion/history focused suite: 45 passed. Types/lint, production Next build, standalone and modular web builds pass. Native MathML: 314 expressions unchanged.
+
+Public flight browser acceptance: 16/16 hosted/disconnected-file groups passed (`/tmp/lunario-final-flight/report.json`). Current full map verifier is `/tmp/lunario-final-map/report.json`; do not substitute the older worker result. Historical worker receipt was 40 pass/4 fail, preserved in map-screening-worker. Loader cached-frame readiness and pole pixel stability were fixed; ranking repaint verification now waits for the actual animation-frame repaint. Legend height is bounded by its workspace at native 200%. macOS verifier uses hardware GPU; Linux retains SwiftShader.
+
+Authenticated ion connection and an actual mesh-hit camera arrival at 1 km were observed in Luke’s normal Chrome. Initial close-up imagery was excessively dark: stable atlas material handling is registered on tile model processing. This visual must be rechecked separately from successful authentication/AGL. Streamed imagery is optional online display only, read token stays in memory, never exported. Offline keeps bundled NASA geometry/imagery and numerical DEM. No operational qualification is implied by regional ranking, historical mission success or visually detailed tiles.
+
+Mission histories cover existing historical landing/attempt pins, with native-country primary references and English paraphrases. Missing sponsor/operator/discovery/area facts remain explicit; traverse distance does not invent a surveyed area or route. Candidate/custom points never inherit an asserted mission.
+
+Slop scan reviewed 11 findings across 372 files; no blanket clean claim. Callback cleanup guards and browser-storage fallbacks remain intentional. PR14’s second renderer is not adopted: the integrated pinned NASA-AMMOS streaming adapter uses one Three camera and bounded neighbour refinement.

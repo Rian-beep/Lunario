@@ -178,6 +178,7 @@ export function createIonMoon(options: IonMoonOptions): IonMoon {
         if (!tiles) {
           tiles = new IonTilesRenderer(fail);
           configureIonLimits(tiles, fail);
+          tiles.registerPlugin({name:"LUNARIO_STABLE_STREAMED_ATLAS",processTileModel:useStreamedAtlasMaterials});
           // The committed decoder is JS only; do not request missing WASM files.
           draco = new AbortableDracoLoader(credentials.value.decoderUrl, abort.signal);
           tiles.registerPlugin(new GLTFExtensionsPlugin({ dracoLoader: draco, autoDispose: false }));
