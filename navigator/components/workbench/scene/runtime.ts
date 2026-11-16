@@ -901,6 +901,7 @@ export function mountScene(
     if(poiSites!==live.sites)updatePois(live);
     const terrainRangeKm=camera.position.distanceTo(siteRing.position),detail=terrainDetailPolicy(live.terrain,live.lat,live.lon,terrainRangeKm,requestedSurfaceSegments);
     if(detail.segments!==requestedSurfaceSegments&&!navigating){if(!lodChangedAt)lodChangedAt=now;if(now-lodChangedAt>500){lodChangedAt=0;prepareSurface(live,detail.segments);}}else lodChangedAt=0;
+    host.dataset.terrainRangeKm=Number.isFinite(terrainRangeKm)?terrainRangeKm.toFixed(4):'';
     host.dataset.terrainSourceSpacingM=detail.spacingM===null?'unavailable':String(detail.spacingM);
     host.dataset.terrainDetail=detail.spacingM===null?'No fine measured DEM at selected point':`Measured DEM sampling ${detail.spacingM.toFixed(1)} m; mesh ${surfaceSegments} angular segments`;
     const nextIonToken=live.offline?'':(live.ionAccessToken??'');
